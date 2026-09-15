@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Sitemap debresser.nl · visueel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  @page { size: A3 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: var(--db-font); color: var(--db-antraciet); background: #fff; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  h1, h2, h3 { margin: 0; font-weight: 600; color: var(--db-nachtblauw); }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
+  svg.i { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  :root { --lijn: #B9C3D3; }
+
+  .page {
+    width: 420mm; height: 297mm;
+    padding: 10mm 11mm 8mm;
+    display: flex; flex-direction: column; gap: 12px;
+    background: #F6F8FB;
+    overflow: hidden;
+  }
+
+  /* ---------- Kop ---------- */
+  .top {
+    position: relative; overflow: hidden;
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px;
+    padding: 14px 22px; border-radius: 12px;
+    background: var(--db-nachtblauw); color: #C9D1E8;
+  }
+  .top img { width: 64px; filter: brightness(0) invert(1); }
+  .top h1 { color: #fff; font-size: 26px; line-height: 1.1; letter-spacing: -.02em; }
+  .top p { margin: 5px 0 0; font-size: 11.5px; }
+  .top .ruit { position: absolute; left: 44%; top: -70px; width: 220px; opacity: .22; pointer-events: none; }
+  .top .ruit polygon { fill: none; stroke-width: 36; }
+  .stats { display: flex; gap: 20px; position: relative; }
+  .stats div { display: flex; flex-direction: column; }
+  .stats b { color: var(--db-signaalgroen); font-size: 22px; line-height: 1.1; font-weight: 600; }
+  .stats span { font-size: 9.5px; color: #AEB8D6; }
+
+  /* ---------- Home ---------- */
+  .home-wrap { display: flex; justify-content: center; position: relative; padding-bottom: 16px; }
+  .home-wrap::after { content: ""; position: absolute; left: 50%; bottom: 0; height: 16px; border-left: 2px solid var(--db-nachtblauw); }
+  .home {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 26px 11px 13px; border-radius: 10px;
+    background: var(--db-signaalgroen); color: var(--db-nachtblauw);
+    box-shadow: 0 8px 20px -10px rgba(109,178,63,.9);
+  }
+  .home .ic { width: 30px; height: 30px; border-radius: 7px; background: var(--db-nachtblauw); color: var(--db-signaalgroen); display: grid; place-items: center; }
+  .home b { font-size: 18px; display: block; line-height: 1.1; }
+  .home span { font-size: 9.5px; }
+
+  /* ---------- Hoofdmenu (niveau 1) ---------- */
+  .l1-row { display: grid; grid-template-columns: 1.38fr 1.12fr repeat(7, 1fr); position: relative; }
+  .col { position: relative; padding: 16px 5px 0; }
+  .col::before { content: ""; position: absolute; top: 0; left: 0; right: 0; border-top: 2px solid var(--db-nachtblauw); }
+  .col:first-child::before { left: 50%; }
+  .col:last-child::before { right: 50%; }
+  .col::after { content: ""; position: absolute; top: 0; left: 50%; height: 16px; border-left: 2px solid var(--db-nachtblauw); }
+
+  .l1 {
+    position: relative;
+    display: flex; flex-direction: column; gap: 5px;
+    padding: 11px 12px 10px; border-radius: 8px;
+    background: var(--db-nachtblauw); color: #fff;
+    box-shadow: 0 6px 16px -8px rgba(2,13,65,.6);
+  }
+  .l1-top { display: flex; align-items: center; justify-content: space-between; }
+  .l1-top .i { color: var(--db-hemelsblauw); }
+  .count { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.12); color: #DDE3F2; }
+  .l1 h2 { color: #fff; font-size: 14px; line-height: 1.2; }
+  .l1 .path { font-family: "IBM Plex Mono", monospace; font-size: 9px; color: #AEB8D6; }
+  .tag { display: inline-block; font-size: 7.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 1px 5px; border-radius: 3px; background: var(--db-kroongeel); color: var(--db-nachtblauw); vertical-align: 1px; }
+
+  /* ---------- Boom (niveau 2 en 3) ---------- */
+  .tree { margin: 2px 0 0 12px; }
+  .tree li { position: relative; padding: 8px 0 0 13px; }
+  .tree li::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; border-left: 1.5px solid var(--lijn); }
+  .tree li:last-child::before { bottom: auto; height: 23px; }
+  .tree li::after { content: ""; position: absolute; left: 0; top: 23px; width: 10px; border-top: 1.5px solid var(--lijn); }
+  .tree .tree { margin-left: 10px; }
+  .tree .tree li { padding-top: 5px; }
+  .tree .tree li:last-child::before { height: 18px; }
+  .tree .tree li::after { top: 18px; }
+
+  .n2 {
+    display: block;
+    padding: 7px 10px; border-radius: 6px;
+    background: #fff; border: 1px solid #D5DBE5;
+    color: var(--db-nachtblauw); font-size: 12px; line-height: 16px; font-weight: 500;
+    box-shadow: 0 1px 2px rgba(2,13,65,.05);
+  }
+  .n3 { display: block; padding: 4px 8px; border-radius: 5px; background: var(--db-mist); color: var(--db-nachtblauw); font-size: 10.5px; line-height: 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+  .chip { font-size: 9.5px; line-height: 14px; padding: 1px 6px; border-radius: 4px; background: var(--db-mist); color: var(--db-nachtblauw); font-weight: 400; }
+  .sub-label { display: block; margin-top: 1px; font-size: 9.5px; color: var(--db-grijs); font-weight: 400; }
+
+  /* ---------- Onderste blokken ---------- */
+  .bottom { margin-top: auto; display: grid; grid-template-columns: 2.15fr 1fr 1fr; gap: 10px; }
+  .band { padding: 10px 12px 12px; border-radius: 10px; background: #fff; border: 1px solid #D5DBE5; }
+  .band h3 { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11.5px; margin-bottom: 4px; }
+  .band h3 .count { background: var(--db-mist); color: var(--db-nachtblauw); }
+  .band p { margin: 0 0 7px; font-size: 9px; color: var(--db-grijs); }
+  .band p code { font-family: "IBM Plex Mono", monospace; color: var(--db-nachtblauw); font-size: 8.5px; }
+  .regio { display: flex; flex-wrap: wrap; gap: 4px; }
+  .regio span { font-size: 9px; line-height: 14px; padding: 1px 7px; border-radius: 4px; border: 1px solid #D5DBE5; color: var(--db-nachtblauw); background: #fff; }
+  .regio span.dup { border-style: dashed; border-color: var(--db-webblauw); }
+  .list li { display: flex; justify-content: space-between; gap: 8px; padding: 3.5px 0; border-bottom: 1px dotted #D5DBE5; font-size: 10px; color: var(--db-nachtblauw); }
+  .list li:last-child { border-bottom: 0; }
+  .list .mono { font-size: 8.5px; color: var(--db-grijs); }
+
+  /* ---------- Legenda en voet ---------- */
+  .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 9px; color: var(--db-grijs); }
+  .legend { display: flex; align-items: center; gap: 14px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { display: inline-block; width: 18px; height: 10px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <img src="../assets/img/logo-de-bresser.png" alt="De Bresser">
+    <div>
+      <h1>Sitemap debresser.nl</h1>
+      <p>Websitestructuur per hoofdmenu · stand 11 september 2026 · bron: Yoast-sitemap van de live site</p>
+    </div>
+    <div class="stats">
+      <div><b>100</b><span>pagina's</span></div>
+      <div><b>9</b><span>menu-items</span></div>
+      <div><b>41</b><span>regiopagina's</span></div>
+      <div><b>12</b><span>blogartikelen</span></div>
+      <div><b>2</b><span>vacatures</span></div>
+    </div>
+    <svg class="ruit" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F"/></svg>
+  </header>
+
+  <div class="home-wrap">
+    <div class="home">
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></svg></span>
+      <div><b>Home</b><span class="mono">debresser.nl/</span></div>
+    </div>
+  </div>
+
+  <div class="l1-row">
+
+    <!-- Verhuizen -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 9.5h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.9"/><circle cx="16.8" cy="17.5" r="1.9"/></svg><span class="count">19</span></div>
+        <h2>Verhuizen</h2><span class="path">/verhuizen/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Particuliere verhuizing</span></li>
+        <li><span class="n2">Zakelijke verhuizing</span>
+          <ul class="tree">
+            <li><span class="n3">Kantoor verhuizen</span></li>
+            <li><span class="n3">Winkelverhuizing</span></li>
+            <li><span class="n3">Verhuisservice zakelijk</span></li>
+          </ul>
+        </li>
+        <li><span class="n2">Internationale verhuizing
+          <span class="chips"><span class="chip">Engeland</span><span class="chip">Duitsland</span><span class="chip">Frankrijk</span><span class="chip">Zwitserland</span><span class="chip">Benelux</span><span class="chip">België</span><span class="chip">Brussel</span><span class="chip">Europa</span></span></span></li>
+        <li><span class="n2">Zorgverhuizing</span></li>
+        <li><span class="n2">Senioren verhuizen</span></li>
+        <li><span class="n2">Duurzaam verhuizen</span></li>
+        <li><span class="n2">Full service verhuizing</span></li>
+      </ul>
+    </section>
+
+    <!-- Opslag -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></svg><span class="count">10</span></div>
+        <h2>Opslag</h2><span class="path">/opslag/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Zakelijke opslag</span></li>
+        <li><span class="n2">Particuliere opslag<span class="sub-label">incl. DIY-opslag</span></span></li>
+        <li><span class="n2">Container opslag</span></li>
+        <li><span class="n2">Opslagruimte per plaats
+          <span class="chips"><span class="chip">Breda</span><span class="chip">Den Bosch</span><span class="chip">Etten-Leur</span><span class="chip">Goirle</span><span class="chip">Oirschot</span><span class="chip">Roosendaal</span></span></span></li>
+      </ul>
+    </section>
+
+    <!-- Meubelprojecten -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M5 10.5V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2.5"/><path d="M3 11h3v3.5h12V11h3v5.5H3z"/><path d="M5 16.5v2M19 16.5v2"/></svg><span class="count">4</span></div>
+        <h2>Meubelprojecten</h2><span class="path">/meubelprojecten/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Meubeltransport</span></li>
+        <li><span class="n2">Meubelmontage</span></li>
+        <li><span class="n2">Veilingen</span></li>
+      </ul>
+    </section>
+
+    <!-- Gebouwbeheer -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M4.5 20.5v-16h9.5v16M14 9.5h5.5v11M2.5 20.5h19"/><path d="M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h.5M16.5 16.5h.5"/></svg><span class="count">4</span></div>
+        <h2>Gebouwbeheer</h2><span class="path">/gebouwbeheer/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Onderhoud</span></li>
+        <li><span class="n2">Verduurzamen</span></li>
+        <li><span class="n2">Huismeester</span></li>
+      </ul>
+    </section>
+
+    <!-- Assetmanagement -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/></svg><span class="count">6</span></div>
+        <h2>Assetmanagement</h2><span class="path">/assetmanagement/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Inventarisatie</span></li>
+        <li><span class="n2">WMS en Meubelpaspoort</span></li>
+        <li><span class="n2">Opslag assets</span></li>
+        <li><span class="n2">Inkoop en verkoop assets</span></li>
+        <li><span class="n2">Circulair meubilair</span></li>
+      </ul>
+    </section>
+
+    <!-- Duurzame werkomgeving -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13.5 14.5-14.5C18.5 14 13 19 5 19z"/><path d="M5 19 13 11"/></svg><span class="count">1</span></div>
+        <h2>Duurzame werkomgeving <span class="tag">Nieuw</span></h2><span class="path">/duurzame-werkomgeving/</span>
+      </div>
+    </section>
+
+    <!-- Over ons -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.7 3 2.4 3 4.7"/></svg><span class="count">6</span></div>
+        <h2>Over ons</h2><span class="path">/over-ons/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">100-jarig jubileum</span></li>
+        <li><span class="n2">Vacatures</span>
+          <ul class="tree">
+            <li><span class="n3">Verhuizer</span></li>
+            <li><span class="n3">Chauffeur C/CE</span></li>
+            <li><span class="n3">Tekenbonus</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Blog -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><path d="M5 4.5h14v15H5z"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"/></svg><span class="count">13</span></div>
+        <h2>Blog</h2><span class="path">/blog/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">12 artikelen<span class="sub-label">2024 – 2026</span></span>
+          <ul class="tree">
+            <li><span class="n3">Samen bouwen aan succes</span></li>
+            <li><span class="n3">De Bresser verwelkomt Brocken</span></li>
+            <li><span class="n3">Verhuizen met kinderen</span></li>
+            <li><span class="n3">+ 9 oudere artikelen</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="col">
+      <div class="l1">
+        <div class="l1-top"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><span class="count">4</span></div>
+        <h2>Contact</h2><span class="path">/contact/</span>
+      </div>
+      <ul class="tree">
+        <li><span class="n2">Offerte</span></li>
+        <li><span class="n2">Videogesprek</span></li>
+        <li><span class="n2">FAQ</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="bottom">
+    <section class="band">
+      <h3>Verhuisbedrijf per plaats <span class="count">41</span></h3>
+      <p>Regionale landingspagina's buiten het menu · URL <code>/verhuisbedrijf-[plaats]/</code>, behalve Breda, Roosendaal en Bergen op Zoom · gestippeld = Tilburg heeft twee pagina's</p>
+      <div class="regio">
+        <span>Baarle-Nassau</span><span>Bavel</span><span>Bergen op Zoom</span><span>Best</span><span>Boxtel</span><span>Breda</span><span>Den Bosch</span><span>Dongen</span><span>Dordrecht</span><span>Drunen</span><span>Eindhoven</span><span>Etten-Leur</span><span>Goirle</span><span>Helvoirt</span><span>Hilvarenbeek</span><span>Kaatsheuvel</span><span>Maastricht</span><span>Moerdijk</span><span>Oirschot</span><span>Oisterwijk</span><span>Oosterhout</span><span>Oss</span><span>Oudenbosch</span><span>Poppel</span><span>Raamsdonksveer</span><span>Roermond</span><span>Roosendaal</span><span>Rucphen</span><span>Schijndel</span><span>Sint-Oedenrode</span><span>Steenbergen</span><span class="dup">Tilburg ×2</span><span>Udenhout</span><span>Venlo</span><span>Vlijmen</span><span>Vught</span><span>Waalwijk</span><span>Weert</span><span>Zevenbergen</span><span>Zundert</span>
+      </div>
+    </section>
+
+    <section class="band">
+      <h3>Losse landingspagina's <span class="count">4</span></h3>
+      <p>Niet in het menu, wel in de sitemap</p>
+      <ul class="list">
+        <li><span>Logistiek full service</span><span class="mono">/logistiek-full-service/</span></li>
+        <li><span>Groupage transport</span><span class="mono">/groupage-transport/</span></li>
+        <li><span>Handyman services</span><span class="mono">/handyman-services/</span></li>
+        <li><span>Quick scan</span><span class="mono">/quick-scan/</span></li>
+      </ul>
+    </section>
+
+    <section class="band">
+      <h3>Service en juridisch</h3>
+      <p>Footer en utility-balk</p>
+      <ul class="list">
+        <li><span>Privacyverklaring</span><span class="mono">/privacyverklaring/</span></li>
+        <li><span>Voorwaarden</span><span class="mono">6 pdf's</span></li>
+        <li><span>Snelmenu (regio's)</span><span class="mono">footer</span></li>
+        <li><span>Engelse versie · WPML</span><span class="mono">/en/</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <div class="legend">
+      <span><i style="background:var(--db-signaalgroen)"></i>Homepage</span>
+      <span><i style="background:var(--db-nachtblauw)"></i>Hoofdmenu</span>
+      <span><i style="background:#fff;border:1px solid #D5DBE5"></i>Subpagina</span>
+      <span><i style="background:var(--db-mist)"></i>Onderliggende pagina</span>
+      <span><i style="background:var(--db-kroongeel)"></i>Nieuw</span>
+    </div>
+    <span>De Bresser B.V. · Schijfstraat 13, Oisterwijk · 013 52 82 372 · debresser.nl</span>
+  </footer>
+
+</div>
+</body>
+</html>

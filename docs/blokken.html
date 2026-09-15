@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Blokkenbibliotheek debresser.nl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: var(--db-font); color: var(--db-antraciet); font-size: 9pt; line-height: 1.45; background: #fff; }
+  h1, h2, h3 { margin: 0; font-weight: 600; color: var(--db-nachtblauw); }
+  p { margin: 0; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
+
+  .page { width: 297mm; height: 210mm; padding: 10mm 12mm 8mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+  .page:last-child { break-after: auto; }
+  .ph { display: flex; align-items: center; justify-content: space-between; padding-bottom: 7px; margin-bottom: 10px; border-bottom: 1px solid var(--db-mist); font-size: 8pt; color: var(--db-grijs); }
+  .ph img { height: 22px; }
+  .ph b { color: var(--db-nachtblauw); }
+  .pf { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; gap: 16px; font-size: 7.3pt; color: var(--db-grijs); border-top: 1px solid var(--db-mist); }
+
+  .eyebrow { position: relative; display: inline-block; padding: 0 12px 6px 8px; color: var(--db-diepblauw); font-size: 7.5pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1.5px; background: currentColor; }
+  .eyebrow::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: currentColor; clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%); }
+  .title-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 10px; }
+  .title-row h2 { font-size: 15pt; margin-top: 5px; letter-spacing: -.01em; }
+  .title-row p { max-width: 66ch; font-size: 8.6pt; }
+
+  /* Achtergrond-pills */
+  .bgp { display: inline-flex; align-items: center; gap: 4px; font-size: 6.8pt; font-weight: 600; color: var(--db-nachtblauw); white-space: nowrap; }
+  .bgp i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; border: 1px solid #C9D1DD; }
+  .c-N { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw) !important; }
+  .c-W { background: #fff; }
+  .c-M { background: var(--db-mist); }
+  .c-G { background: var(--db-signaalgroen); border-color: var(--db-signaalgroen) !important; }
+
+  /* ---------- Omslag ---------- */
+  .cover { background: var(--db-nachtblauw); color: #C9D1E8; padding: 16mm; display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; }
+  .cover .ruit { position: absolute; left: 32%; bottom: -130px; width: 420px; opacity: .26; }
+  .cover .ruit polygon { fill: none; stroke-width: 34; }
+  .cover-l { position: relative; display: flex; flex-direction: column; }
+  .cover-l img { width: 110px; filter: brightness(0) invert(1); }
+  .cover-l .eyebrow { color: var(--db-hemelsblauw); margin-top: 14mm; }
+  .cover h1 { color: #fff; font-size: 32pt; line-height: 1.05; letter-spacing: -.02em; margin-top: 10px; }
+  .cover h1 span { color: var(--db-signaalgroen); }
+  .cover .lead { margin-top: 12px; font-size: 11pt; line-height: 1.55; font-weight: 300; color: #DDE3F2; max-width: 38ch; }
+  .cover-meta { margin-top: auto; font-size: 7.5pt; color: #AEB8D6; }
+  .cover-r { position: relative; display: flex; flex-direction: column; gap: 12px; }
+  .flow { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr; align-items: stretch; gap: 4px; }
+  .flow .st { background: #fff; border-radius: 10px; padding: 12px; color: var(--db-antraciet); display: flex; flex-direction: column; gap: 4px; }
+  .flow .st b { font-size: 24pt; line-height: 1; color: var(--db-nachtblauw); font-weight: 600; }
+  .flow .st.g { background: var(--db-signaalgroen); }
+  .flow .st span { font-size: 9pt; font-weight: 600; color: var(--db-nachtblauw); }
+  .flow .st small { font-size: 7.6pt; line-height: 1.35; }
+  .flow .ar { color: var(--db-signaalgroen); display: grid; place-items: center; font-size: 14px; }
+  .why { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 12px 14px; }
+  .why h3 { color: #fff; font-size: 10pt; margin-bottom: 6px; }
+  .why li { position: relative; padding: 3px 0 3px 16px; font-size: 8.6pt; color: #DDE3F2; }
+  .why li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 5px; border-left: 2px solid var(--db-signaalgroen); border-bottom: 2px solid var(--db-signaalgroen); transform: rotate(-45deg); }
+  .toc { background: #fff; border-radius: 10px; padding: 10px 14px; }
+  .toc li { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted #D5DBE5; font-size: 8.4pt; color: var(--db-nachtblauw); }
+  .toc li:last-child { border-bottom: 0; }
+  .toc .pg { font-family: "IBM Plex Mono", monospace; font-size: 7.6pt; color: var(--db-grijs); }
+
+  /* ---------- Blokkaarten ---------- */
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 9px; flex: 1; min-height: 0; }
+  .card { display: flex; flex-direction: column; gap: 6px; padding: 9px 10px; border: 1px solid #DDE3EC; border-radius: 10px; background: #fff; min-height: 0; }
+  .card-h { display: flex; align-items: center; gap: 7px; }
+  .id { font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; font-weight: 500; background: var(--db-nachtblauw); color: #fff; padding: 1px 6px; border-radius: 4px; }
+  .card-h h3 { font-size: 9.8pt; line-height: 1.2; }
+  .card-h .cat { font-size: 6.6pt; color: var(--db-grijs); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+  .card-h .bgp { margin-left: auto; }
+  .doel { font-size: 7.8pt; line-height: 1.38; color: var(--db-nachtblauw); font-weight: 500; }
+  .inh li { position: relative; padding-left: 9px; font-size: 7.1pt; line-height: 1.35; }
+  .inh li::before { content: ""; position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--db-webblauw); transform: skewX(-20deg); }
+  .regel { font-size: 7pt; line-height: 1.35; padding-left: 7px; border-left: 2px solid var(--db-signaalgroen); color: var(--db-nachtblauw); }
+  .use { margin-top: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 3px; font-size: 6.6pt; color: var(--db-grijs); }
+  .tp { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; padding: 0 5px; border-radius: 3px; border: 1px solid #D5DBE5; color: #9AA3B5; }
+  .tp.on { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw); color: #fff; }
+
+  /* Mini-wireframes */
+  .wf { position: relative; height: 70px; border-radius: 6px; border: 1px solid #D5DBE5; overflow: hidden; padding: 6px; display: flex; gap: 5px; flex: none; }
+  .wf.N { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw); }
+  .wf.M { background: var(--db-mist); }
+  .wf.W, .wf.G { background: #fff; }
+  .wf .col { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+  .wf .row { display: flex; gap: 3px; align-items: center; }
+  .wf .l { display: block; height: 3px; border-radius: 2px; background: #C4CCD9; }
+  .wf .l.t { height: 6px; background: #8E9AB0; }
+  .wf .l.bl { background: var(--db-webblauw); }
+  .wf.N .l { background: rgba(255,255,255,.4); }
+  .wf.N .l.t { background: #fff; }
+  .wf.N .l.bl { background: var(--db-hemelsblauw); }
+  .wf .p { display: block; border-radius: 4px; background: linear-gradient(150deg, #7FA7CF, #2D5E93); }
+  .wf .k { display: block; width: 22px; height: 7px; border-radius: 2px; background: var(--db-signaalgroen); }
+  .wf .o { display: block; width: 22px; height: 7px; border-radius: 2px; border: 1px solid #8E9AB0; }
+  .wf.N .o { border-color: rgba(255,255,255,.6); }
+  .wf .nb { display: block; width: 22px; height: 7px; border-radius: 2px; background: var(--db-nachtblauw); }
+  .wf .b { display: block; border-radius: 4px; background: #fff; border: 1px solid #DDE3EC; box-shadow: 0 1px 2px rgba(2,13,65,.08); padding: 3px; }
+  .wf .ic { display: block; width: 8px; height: 8px; border-radius: 2px; background: var(--db-mist); border: 1px solid #C4CCD9; }
+  .wf .y { display: block; width: 14px; height: 4px; border-radius: 2px; background: var(--db-kroongeel); }
+  .wf .gr { display: block; height: 4px; width: 60%; border-radius: 2px; background: #B8C0CC; }
+  .wf .step { display: block; width: 14px; height: 9px; background: var(--db-nachtblauw); clip-path: polygon(22% 0, 100% 0, 78% 100%, 0 100%); }
+  .wf .step.g { background: var(--db-signaalgroen); }
+  .wf .gp { position: absolute; inset: 7px; border-radius: 6px; background: var(--db-signaalgroen); padding: 7px; display: flex; gap: 6px; }
+  .wf .ruit { position: absolute; right: -12px; top: -14px; width: 60px; opacity: .5; }
+  .wf .ruit polygon { fill: none; stroke-width: 36; }
+
+  /* ---------- Templates ---------- */
+  .tpl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 1; min-height: 0; }
+  .tpl { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+  .tpl-h { display: flex; align-items: baseline; gap: 7px; }
+  .tpl-h .id { font-size: 8pt; }
+  .tpl-h h3 { font-size: 11pt; }
+  .tpl-meta { font-size: 7.4pt; line-height: 1.35; color: var(--db-antraciet); min-height: 30px; }
+  .tpl-meta b { color: var(--db-nachtblauw); }
+  .stack { display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; border: 1px solid #D5DBE5; }
+  .strip { display: flex; align-items: center; gap: 6px; padding: 0 8px; font-size: 7.3pt; color: var(--db-nachtblauw); border-top: 1px solid rgba(2,13,65,.07); }
+  .strip:first-child { border-top: 0; }
+  .strip .sid { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; opacity: .75; width: 22px; flex: none; }
+  .strip .opt { margin-left: auto; font-size: 6.3pt; opacity: .7; font-style: normal; }
+  .strip.N { background: var(--db-nachtblauw); color: #fff; }
+  .strip.M { background: var(--db-mist); }
+  .strip.W { background: #fff; }
+  .strip.G { background: #fff; padding: 3px 5px; }
+  .strip.G span.inner { flex: 1; display: flex; align-items: center; gap: 6px; height: 100%; padding: 0 6px; border-radius: 5px; background: var(--db-signaalgroen); }
+  .tpl-foot { font-size: 7pt; color: var(--db-grijs); }
+
+  /* ---------- Regels ---------- */
+  .rules-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; flex: 1; min-height: 0; }
+  .panel { border: 1px solid #DDE3EC; border-radius: 10px; padding: 12px 14px; }
+  .panel h3 { font-size: 10.5pt; margin-bottom: 7px; }
+  .rules li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px dotted #DDE3EC; font-size: 8.2pt; line-height: 1.4; }
+  .rules li:last-child { border-bottom: 0; }
+  .rules .n { width: 20px; height: 20px; border-radius: 6px; background: var(--db-nachtblauw); color: #fff; display: grid; place-items: center; font-size: 8pt; font-weight: 600; }
+  .rules b { color: var(--db-nachtblauw); }
+  .steps li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 5px 0; font-size: 8.1pt; line-height: 1.4; }
+  .steps .sn { width: 30px; height: 20px; display: grid; place-items: center; background: var(--db-nachtblauw); color: #fff; font-weight: 600; font-size: 8pt; clip-path: polygon(22% 0, 100% 0, 78% 100%, 0 100%); }
+  .steps li:last-child .sn { background: var(--db-signaalgroen); color: var(--db-nachtblauw); }
+  .steps b { color: var(--db-nachtblauw); }
+  .el li { position: relative; padding: 3px 0 3px 14px; font-size: 8pt; line-height: 1.4; }
+  .el li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: var(--db-signaalgroen); transform: skewX(-20deg); }
+  .el code { font-family: "IBM Plex Mono", monospace; font-size: 7.3pt; color: var(--db-nachtblauw); background: var(--db-mist); padding: 0 4px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<main id="doc"></main>
+<script>
+const LOGO = '../assets/img/logo-de-bresser.png';
+const LOGOC = '../assets/img/logo-de-bresser-compact.png';
+const RUIT = (cls, sw) => `<svg class="${cls}" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F" stroke-width="${sw || 34}"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2" stroke-width="${sw || 34}"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F" stroke-width="${sw || 34}"/></svg>`;
+const BGNAME = { N: 'Nachtblauw', W: 'Wit', M: 'Mist', G: 'Signaalgroen' };
+const bgPill = bg => `<span class="bgp">${bg.split('/').map(b => `<i class="c-${b}"></i>`).join('')}${bg.split('/').map(b => BGNAME[b]).join(' / ')}</span>`;
+
+/* ---------- Mini-wireframes ---------- */
+const L = (w, cls = '') => `<i class="l ${cls}" style="width:${w}%"></i>`;
+const WF = {
+  util: `<div class="col" style="justify-content:center"><div class="row">${L(18)}${L(16)}${L(22)}<span style="flex:1"></span>${L(14)}${L(18)}</div></div>`,
+  header: `<div class="row" style="width:100%"><i class="ic" style="width:14px;height:14px"></i><span style="flex:1"></span>${L(8)}${L(8)}${L(8)}${L(8)}${L(8)}<i class="k" style="width:28px"></i></div>`,
+  footer: `<div class="col" style="flex:.7"><i class="ic" style="width:14px;height:14px;background:#fff"></i>${L(80)}${L(60)}${L(70)}</div>${[1,2,3,4].map(() => `<div class="col">${L(60,'t')}${L(80)}${L(70)}${L(75)}${L(60)}</div>`).join('')}`,
+  mobile: `<div class="col" style="align-items:center;justify-content:flex-end"><div style="width:52px;height:100%;border:1px solid #C4CCD9;border-radius:6px;display:flex;flex-direction:column;justify-content:flex-end;padding:3px;gap:2px"><div class="row"><i class="o" style="width:14px"></i><i class="k" style="width:26px"></i></div></div></div>`,
+  herohome: `<div class="col" style="justify-content:center"><i class="y"></i>${L(70,'t')}${L(55,'t')}${L(80)}<div class="row" style="margin-top:2px"><i class="k"></i><i class="o"></i></div></div><i class="p" style="flex:1"></i>`,
+  heropage: `<div class="col" style="justify-content:center">${L(30)}${L(25,'bl')}${L(75,'t')}${L(85)}${L(60)}<div class="row" style="margin-top:2px"><i class="k"></i><i class="o"></i></div></div><i class="p" style="flex:.8"></i>`,
+  logos: `<div class="row" style="width:100%;justify-content:space-around">${'<i class="gr" style="width:14%"></i>'.repeat(5)}</div>`,
+  usps: [1,2,3,4].map(() => `<div class="col" style="justify-content:center"><i class="ic"></i>${L(70,'t')}${L(90)}${L(60)}</div>`).join(''),
+  stats: [1,2,3,4].map(() => `<div class="col" style="justify-content:center"><i class="l" style="width:70%;height:9px;background:var(--db-signaalgroen)"></i>${L(90)}${L(60)}</div>`).join(''),
+  reviews: [1,2,3].map(() => `<i class="b col"><span class="row"><i class="y"></i></span>${L(90)}${L(85)}${L(70)}<span style="flex:1"></span>${L(40,'t')}</i>`).join(''),
+  cards6: `<div class="col">${[0,1].map(() => `<div class="row" style="flex:1">${[1,2,3].map(() => `<i class="b col" style="flex:1;height:100%"><i class="ic"></i>${L(60,'t')}${L(85)}</i>`).join('')}</div>`).join('')}</div>`,
+  cards3: [1,2,3].map(() => `<i class="b col"><i class="ic"></i>${L(60,'t')}${L(90)}${L(80)}<span style="flex:1"></span>${L(35,'bl')}</i>`).join(''),
+  cards3w: [1,2,3].map(() => `<i class="b col" style="box-shadow:none"><i class="ic"></i>${L(60,'t')}${L(90)}<span style="flex:1"></span>${L(35,'bl')}</i>`).join(''),
+  textimg: `<div class="col" style="justify-content:center">${L(25,'bl')}${L(70,'t')}${L(95)}${L(90)}${L(92)}${L(70)}</div><i class="p" style="flex:.85"></i>`,
+  steps: [0,1,2,3].map(i => `<div class="col" style="justify-content:center"><i class="step ${i === 3 ? 'g' : ''}"></i>${L(60,'t')}${L(90)}${L(70)}</div>`).join(''),
+  green: `${RUIT('ruit', 40)}<div class="col" style="justify-content:center">${L(30,'bl')}${L(70,'t')}${L(90)}${L(85)}<i class="o"></i></div><div class="col" style="justify-content:center"><i class="b" style="background:#0B1650;border-color:rgba(255,255,255,.15);box-shadow:none;height:80%;display:flex;flex-direction:column;gap:3px"><i class="l" style="width:60%;height:8px;background:var(--db-signaalgroen)"></i>${L(80)}${L(70)}</i></div>`,
+  about: `<div style="flex:.9;position:relative"><i class="p" style="height:100%"></i><i class="b" style="position:absolute;left:4px;bottom:4px;width:40%;height:14px"></i></div><div class="col" style="justify-content:center">${L(25,'bl')}${L(80,'t')}${L(95)}${L(90)}<div class="row">${L(20,'t')}${L(20,'t')}${L(20,'t')}</div><i class="nb"></i></div>`,
+  blog: [1,2,3].map(() => `<i class="b col" style="padding:0;overflow:hidden"><i class="p" style="height:26px;border-radius:0"></i><span class="col" style="padding:3px">${L(40)}${L(80,'t')}${L(90)}</span></i>`).join(''),
+  faq: `<div class="col" style="justify-content:center">${[1,2,3,4].map(() => `<div class="row" style="border-bottom:1px solid #DDE3EC;padding:2px 0">${L(70,'t')}<span style="flex:1"></span><i class="l" style="width:6px;height:6px;border-radius:50%;background:var(--db-webblauw)"></i></div>`).join('')}</div>`,
+  area: `<div class="col" style="flex:.8;justify-content:center">${L(30,'bl')}${L(80,'t')}${[1,2,3,4].map(() => `<div class="row"><i class="l" style="width:5px;height:5px;border-radius:50%;background:var(--db-signaalgroen)"></i>${L(50)}</div>`).join('')}</div><div class="col" style="flex:1.2;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;align-content:center">${'<i class="l" style="width:100%;height:7px;border-radius:2px;background:var(--db-mist);border:1px solid #C4CCD9"></i>'.repeat(16)}</div>`,
+  form: `<div class="col" style="flex:.7;justify-content:center">${L(30,'bl')}${L(80,'t')}${L(90)}${L(70)}</div><i class="b" style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-content:center">${'<i class="l" style="width:100%;height:8px;border-radius:2px;background:#fff;border:1px solid #B8C0CC"></i>'.repeat(4)}<i class="k" style="grid-column:1/-1"></i></i>`,
+  cta: `<div class="gp">${RUIT('ruit', 40).replace('opacity', 'o')}<div class="col" style="justify-content:center">${'<i class="l" style="width:75%;height:6px;background:var(--db-nachtblauw)"></i>'}${'<i class="l" style="width:55%;height:6px;background:var(--db-nachtblauw)"></i>'}<i class="l" style="width:80%;background:rgba(2,13,65,.45)"></i></div><div class="col" style="flex:.6;justify-content:center;align-items:flex-end"><i class="nb"></i><i class="o" style="border-color:var(--db-nachtblauw)"></i></div></div>`,
+};
+
+/* ---------- Blokken ---------- */
+const B = [
+  { id: 'B01', cat: 'Globaal', name: 'Utility-balk', bg: 'N', wf: 'util', t: [1,2,3,4],
+    doel: 'Vertrouwen en contact direct zichtbaar, op elke pagina.',
+    inh: ['3 vinkjes: Erkende Verhuizer · Sinds 1923 · Eén vast aanspreekpunt', 'Telefoon en e-mail', 'Taalkeuze NL / EN'],
+    regel: 'Tekst 13 px, vinkjes Signaalgroen. Verborgen op mobiel.' },
+  { id: 'B02', cat: 'Globaal', name: 'Header', bg: 'W', wf: 'header', t: [1,2,3,4],
+    doel: 'Navigatie naar alle diensten en altijd een offerteknop.',
+    inh: ['Logo zonder payoff (min. 80 px breed)', 'Mega menu Diensten, Over ons, Vacatures, Blog, Contact', 'Telefoon + knop Offerte aanvragen'],
+    regel: 'Blijft vast bovenaan. Mobiel: menuknop. Eén groene knop.' },
+  { id: 'B03', cat: 'Globaal', name: 'Footer', bg: 'N', wf: 'footer', t: [1,2,3,4],
+    doel: 'Alle links, contact en juridische informatie onderaan.',
+    inh: ['Wit logo, adres, telefoon, e-mail', 'Kolommen: diensten, De Bresser, voorwaarden', 'Snelmenu met alle regiopagina’s (uitklapbaar)'],
+    regel: 'Witte logoversie. Snelmenu als gewone links, geen keuzelijst.' },
+  { id: 'B04', cat: 'Globaal', name: 'Mobiele actiebalk', bg: 'W', wf: 'mobile', t: [1,2,3,4],
+    doel: 'Op mobiel altijd bellen of een offerte aanvragen met één tik.',
+    inh: ['Knop Bellen (omlijnd)', 'Knop Offerte aanvragen (groen)'],
+    regel: 'Alleen onder 640 px, vast onderin het scherm.' },
+  { id: 'B05', cat: 'Hero', name: 'Home-hero', bg: 'N', wf: 'herohome', t: [1],
+    doel: 'In één oogopslag: wie De Bresser is en wat de bezoeker kan doen.',
+    inh: ['Label “Nieuw!” (Kroongeel)', 'H1 met wisselend woord: verhuizen · opslag · logistiek', 'Intro, Offerte aanvragen + Bel, 3 USP’s, teamfoto'],
+    regel: 'Enige H1 van de pagina. Foto WebP, max. 200 kB.' },
+  { id: 'B06', cat: 'Hero', name: 'Pagina-hero', bg: 'N', wf: 'heropage', t: [2,3,4],
+    doel: 'Opent elke dienst- en regiopagina met de dienst en de actie.',
+    inh: ['Kruimelpad: Home › Verhuizen › …', 'Hoeklijn-label + H1 (dienst of “Verhuisbedrijf [plaats]”)', 'Intro, Offerte aanvragen + Bel of Videogesprek, 3 USP’s, foto'],
+    regel: 'Compacter dan de home-hero. Variant zonder foto voor actiepagina’s.' },
+  { id: 'B07', cat: 'Vertrouwen', name: 'Keurmerkenbalk', bg: 'W', wf: 'logos', t: [1,2,4],
+    doel: 'Bewijs van kwaliteit, direct onder de hero.',
+    inh: ['Erkende Verhuizers · Erkende Projectverhuizers', 'Top Movers · FEDEMAC · IAM'],
+    regel: 'Klein en in grijstinten. Eén globale versie voor de hele site.' },
+  { id: 'B08', cat: 'Vertrouwen', name: 'Voordelen', bg: 'W', wf: 'usps', t: [2,3,4],
+    doel: 'Waarom De Bresser, specifiek voor deze dienst.',
+    inh: ['3 of 4 items: icoon, korte titel, één zin', 'Bijv. Afspraak = afspraak · Verhuislift via het raam · Erkende Verhuizer'],
+    regel: 'Feiten, geen superlatieven. Iconen uit de merkboekset.' },
+  { id: 'B09', cat: 'Vertrouwen', name: 'Kerncijfers', bg: 'N/W', wf: 'stats', t: [], ook: 'Over ons · 100-jarig jubileum',
+    doel: 'Harde cijfers die vertrouwen geven.',
+    inh: ['1923 · 100+ jaar · ±80 mensen', '40–90% minder CO₂ · 7.000 m² Circulaire Hub'],
+    regel: 'Alleen echte, controleerbare cijfers. 3 of 4 per blok.' },
+  { id: 'B10', cat: 'Vertrouwen', name: 'Reviews', bg: 'M', wf: 'reviews', t: [1,2,3,4],
+    doel: 'Klanten laten vertellen hoe het ging.',
+    inh: ['Klantenvertellen-score (widget)', '3 reviewkaarten: sterren, quote, naam · plaats · datum', 'Link “Alle reviews”'],
+    regel: 'Letterlijke reviews, nooit verzonnen of herschreven.' },
+  { id: 'B11', cat: 'Diensten', name: 'Dienstkaarten', bg: 'M', wf: 'cards6', t: [1,4],
+    doel: 'Overzicht van de diensten met doorklik.',
+    inh: ['6 kaarten (homepage) of 3 (regiopagina)', 'Icoon, titel, korte tekst, Lees meer', 'Label “Nieuw!” waar van toepassing'],
+    regel: 'Hele kaart klikbaar. Hover: kaart omhoog + groene hoeklijn.' },
+  { id: 'B12', cat: 'Diensten', name: 'Subdienstkaarten', bg: 'M', wf: 'cards3', t: [2],
+    doel: 'Vanaf een dienstpagina naar alle onderliggende pagina’s.',
+    inh: ['Kaarten naar subpagina’s (bijv. Particulier, Zakelijk, Internationaal)', 'Variant “chips” voor landen of plaatsen'],
+    regel: 'Toont álle subpagina’s, ook die nu nergens gelinkt zijn.' },
+  { id: 'B13', cat: 'Diensten', name: 'Gerelateerde diensten', bg: 'W', wf: 'cards3w', t: [3],
+    doel: 'Bezoeker verder helpen en interne links versterken.',
+    inh: ['3 kaarten naar verwante diensten', 'Bijv. Particuliere verhuizing → Opslag, Meubelmontage, Duurzaam verhuizen'],
+    regel: 'Altijd 3, nooit de huidige pagina zelf.' },
+  { id: 'B14', cat: 'Inhoud', name: 'Tekst + beeld', bg: 'W/M', wf: 'textimg', t: [2,3,4],
+    doel: 'Uitleg van de dienst met een eigen foto.',
+    inh: ['Hoeklijn-label, H2, tekst, opsomming', 'Foto links of rechts (hoeken 20 px)', 'Optionele omlijnde knop'],
+    regel: 'Max. 70 tekens per regel. 1–3× per pagina, wisselend links/rechts.' },
+  { id: 'B15', cat: 'Inhoud', name: 'Werkwijze', bg: 'W', wf: 'steps', t: [1,2,3],
+    doel: 'Laten zien wat er na de aanvraag gebeurt.',
+    inh: ['Stappen met nummer in ruitvorm', 'Aanvraag → Huisbezoek → Offerte op maat → Verhuisdag', 'Laatste stap Signaalgroen'],
+    regel: 'Stappen per dienst aan te passen, altijd 3 tot 5.' },
+  { id: 'B16', cat: 'Inhoud', name: 'Met oog voor morgen', bg: 'N', wf: 'green', t: [1], ook: 'Duurzaam verhuizen',
+    doel: 'Duurzaamheid als onderscheid laten zien.',
+    inh: ['Tekst over duurzaam verhuizen', 'Cijferkaart: 40–90% · 7.000 m²', 'Links: Duurzaam verhuizen, Meubelpaspoort, Circulair meubilair'],
+    regel: 'De ruit groot in de hoek, altijd als lijn.' },
+  { id: 'B17', cat: 'Inhoud', name: 'Over ons', bg: 'W', wf: 'about', t: [1],
+    doel: 'Het familiebedrijf achter de dienst.',
+    inh: ['Foto met badge “Sinds 1923”', 'H2, tekst, kerncijfers', 'Knop Over ons + link Vacatures'],
+    regel: 'Badge binnen de foto, niets steekt uit.' },
+  { id: 'B18', cat: 'Inhoud', name: 'Nieuws & tips', bg: 'M', wf: 'blog', t: [1], ook: 'Blog',
+    doel: 'Actualiteit en tips, automatisch bijgewerkt.',
+    inh: ['3 nieuwste artikelen: foto, datum, titel, intro', 'Link “Alle berichten”'],
+    regel: 'Dynamisch (Loop Grid), nooit met de hand bijhouden.' },
+  { id: 'B19', cat: 'Inhoud', name: 'Veelgestelde vragen', bg: 'W', wf: 'faq', t: [2,3], ook: 'FAQ',
+    doel: 'Twijfels wegnemen vlak voor de aanvraag.',
+    inh: ['4 tot 6 vragen per dienst, uitklapbaar', 'Link naar de volledige FAQ'],
+    regel: 'Vragen in de woorden van de klant, met FAQ-gegevens voor Google.' },
+  { id: 'B20', cat: 'Inhoud', name: 'Werkgebied', bg: 'W', wf: 'area', t: [4], ook: 'Contact',
+    doel: 'Laten zien waar De Bresser werkt en regiopagina’s linken.',
+    inh: ['Vestigingen: Oisterwijk, Tilburg, Breda, Brussel', 'Alle plaatsen als link naar hun regiopagina'],
+    regel: 'Lost op dat 23 regiopagina’s nu nergens gelinkt zijn.' },
+  { id: 'B21', cat: 'Conversie', name: 'Offerteformulier', bg: 'M/W', wf: 'form', t: [3,4], ook: 'Offerte · Contact',
+    doel: 'Direct een offerte aanvragen zonder de pagina te verlaten.',
+    inh: ['Soort dienst, postcode van/naar, datum, e-mail, telefoon', 'Alternatieven: Videogesprek · Bellen', 'Knop Offerte aanvragen'],
+    regel: 'Label boven het veld, foutmelding eronder met een voorbeeld.' },
+  { id: 'B22', cat: 'Conversie', name: 'CTA-paneel', bg: 'G', wf: 'cta', t: [1,2],
+    doel: 'Afsluitende oproep om contact op te nemen.',
+    inh: ['“Benieuwd wat wij voor u kunnen betekenen?”', 'Telefoon, e-mail, adres', 'Offerte aanvragen (Nachtblauw) + Neem contact op'],
+    regel: 'Eén keer per pagina, vlak voor de footer. Alles binnen het paneel.' },
+];
+
+/* ---------- Paginatemplates: [blok, achtergrond, hoogte, optioneel] ---------- */
+const T = [
+  { id: 'T1', name: 'Homepage', n: 1, pages: '<b>1 pagina</b> · debresser.nl/ — de 11 secties uit Merkboek hoofdstuk 07.',
+    s: [['B01','N',14],['B02','W',20],['B05','N',60],['B07','W',22],['B11','M',44],['B15','W',30],['B10','M',34],['B16','N',34],['B17','W',34],['B18','M',30],['B22','G',30],['B03','N',38]] },
+  { id: 'T2', name: 'Dienst-overzicht', n: 6, pages: '<b>6 pagina’s</b> · Verhuizen, Opslag, Meubelprojecten, Gebouwbeheer, Assetmanagement, Duurzame werkomgeving.',
+    s: [['B01','N',14],['B02','W',20],['B06','N',48],['B07','W',22],['B12','M',40],['B08','W',28],['B14','M',36],['B15','W',30],['B10','M',34],['B19','W',30],['B22','G',30],['B03','N',38]] },
+  { id: 'T3', name: 'Dienst-detail', n: 36, pages: '<b>36 pagina’s</b> · alle subdiensten, landenpagina’s en losse landingspagina’s (bijv. Particuliere verhuizing, Engeland, Onderhoud, Quick scan).',
+    s: [['B01','N',14],['B02','W',20],['B06','N',48],['B08','W',28],['B14','M',36],['B14','W',36,'optioneel'],['B15','M',30],['B10','W',34],['B19','M',30],['B13','W',30],['B21','M',38],['B03','N',38]] },
+  { id: 'T4', name: 'Regiopagina', n: 47, pages: '<b>47 pagina’s</b> · 41 × “Verhuisbedrijf [plaats]” en 6 × “Opslagruimte [plaats]”. Elk met een eigen lokale tekst.',
+    s: [['B01','N',14],['B02','W',20],['B06','N',48],['B07','W',22],['B14','M',36],['B08','W',28],['B11','M',34],['B20','W',34],['B10','M',34],['B21','W',38],['B03','N',38]] },
+];
+const bname = id => B.find(b => b.id === id).name;
+
+/* ---------- Opbouw ---------- */
+const doc = document.getElementById('doc');
+const TOTAL = 6;
+const head = t => `<div class="ph"><img src="${LOGOC}" alt="De Bresser"><span><b>Blokkenbibliotheek debresser.nl</b> · ${t}</span></div>`;
+const foot = n => `<div class="pf"><span>Opgesteld volgens Merkboek De Bresser v1.1 · kleuren, Sora, componenten en homepage-opbouw uit hoofdstuk 07</span><span>September 2026 · pagina ${n} van ${TOTAL}</span></div>`;
+
+function card(b) {
+  return `<article class="card">
+    <div class="card-h"><span class="id">${b.id}</span><div><h3>${b.name}</h3><span class="cat">${b.cat}</span></div>${bgPill(b.bg)}</div>
+    <div class="wf ${b.bg.split('/')[0]}">${WF[b.wf]}</div>
+    <p class="doel">${b.doel}</p>
+    <ul class="inh">${b.inh.map(x => `<li>${x}</li>`).join('')}</ul>
+    <p class="regel">${b.regel}</p>
+    <div class="use">Gebruikt in: ${['T1','T2','T3','T4'].map((t, i) => `<span class="tp${b.t.includes(i + 1) ? ' on' : ''}">${t}</span>`).join('')}${b.ook ? `<span>· ook: ${b.ook}</span>` : ''}</div>
+  </article>`;
+}
+
+function page(n, html, cls = '') { const s = document.createElement('section'); s.className = 'page ' + cls; s.innerHTML = html; doc.appendChild(s); }
+
+/* 1 · Omslag */
+page(1, `${RUIT('ruit')}
+  <div class="cover-l">
+    <img src="${LOGO}" alt="De Bresser">
+    <span class="eyebrow">Blokjes-architectuur</span>
+    <h1>Blokkenbibliotheek<br><span>debresser.nl</span></h1>
+    <p class="lead">Van losse pagina’s naar vaste bouwblokken. Elke pagina wordt samengesteld uit dezelfde blokken, allemaal volgens Merkboek v1.1.</p>
+    <p class="cover-meta">Voor: directie en webteam De Bresser · september 2026</p>
+  </div>
+  <div class="cover-r">
+    <div class="flow">
+      <div class="st"><b>22</b><span>bouwblokken</span><small>Elk blok één keer ontworpen en gebouwd.</small></div>
+      <span class="ar">→</span>
+      <div class="st"><b>4</b><span>paginatemplates</span><small>Vaste volgorde van blokken per soort pagina.</small></div>
+      <span class="ar">→</span>
+      <div class="st g"><b>90</b><span>van de 100 pagina’s</span><small>Direct gedekt door de vier templates.</small></div>
+    </div>
+    <div class="why"><h3>Waarom blokjes?</h3><ul>
+      <li>Elke pagina ziet er hetzelfde uit en klopt met het merkboek.</li>
+      <li>Nieuwe pagina’s in minuten: template kiezen, teksten invullen.</li>
+      <li>Eén keer aanpassen, overal aangepast (bijv. keurmerken of CTA-paneel).</li>
+      <li>Lost de sitemap-knelpunten op: interne links, lege Google-omschrijvingen, losse pagina’s.</li>
+    </ul></div>
+    <div class="toc"><ul>
+      <li><span>Bouwblokken B01 – B08 · globaal, hero, vertrouwen</span><span class="pg">p. 2</span></li>
+      <li><span>Bouwblokken B09 – B16 · vertrouwen, diensten, inhoud</span><span class="pg">p. 3</span></li>
+      <li><span>Bouwblokken B17 – B22 · inhoud en conversie</span><span class="pg">p. 4</span></li>
+      <li><span>Vier paginatemplates T1 – T4</span><span class="pg">p. 5</span></li>
+      <li><span>Spelregels, bouwen in Elementor en volgorde</span><span class="pg">p. 6</span></li>
+    </ul></div>
+  </div>`, 'cover');
+
+/* 2–4 · Blokken */
+const chunks = [B.slice(0, 8), B.slice(8, 16), B.slice(16)];
+const titles = [
+  ['Bouwblokken 1/3', 'Globaal, hero en vertrouwen', 'Globale blokken staan op elke pagina en worden in Elementor Theme Builder één keer gebouwd. Elke kaart toont het doel, de inhoud, de belangrijkste merkboekregel en in welke templates het blok voorkomt.'],
+  ['Bouwblokken 2/3', 'Vertrouwen, diensten en inhoud', 'Inhoudsblokken wisselen van achtergrond (Wit / Mist) zodat de pagina ritme krijgt. Nachtblauw is voor hero, “Met oog voor morgen” en footer.'],
+  ['Bouwblokken 3/3', 'Inhoud en conversie', 'Elke pagina eindigt met een conversieblok: het CTA-paneel of het offerteformulier, nooit allebei.'],
+];
+chunks.forEach((ch, i) => {
+  let extra = '';
+  if (i === 2) {
+    extra = `<article class="card" style="background:#F6F8FB">
+        <div class="card-h"><span class="id" style="background:var(--db-webblauw)">i</span><div><h3>Zo lees je een blokkaart</h3><span class="cat">Legenda</span></div></div>
+        <ul class="inh" style="margin-top:4px">
+          <li><b>ID</b> · vaste code, gebruikt in Elementor-namen: “DB · B11 Dienstkaarten”.</li>
+          <li><b>Achtergrond</b> · ${bgPill('N')} ${bgPill('W')} ${bgPill('M')} ${bgPill('G')}</li>
+          <li><b>Schets</b> · vereenvoudigde opbouw, geen definitief ontwerp.</li>
+          <li><b>Groene lijn</b> · de belangrijkste regel uit het merkboek.</li>
+          <li><b>T1–T4</b> · templates waarin het blok standaard staat.</li>
+        </ul></article>
+      <article class="card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8">
+        <div class="card-h"><span class="id" style="background:var(--db-signaalgroen);color:var(--db-nachtblauw)">T</span><div><h3 style="color:#fff">De vier templates</h3><span class="cat" style="color:#AEB8D6">Zie pagina 5</span></div></div>
+        <ul class="inh" style="margin-top:4px;color:#DDE3F2">
+          ${T.map(t => `<li><b style="color:#fff">${t.id} ${t.name}</b> · ${t.n} ${t.n === 1 ? 'pagina' : 'pagina’s'}</li>`).join('')}
+          <li>Overige 10 pagina’s (Over ons, Vacatures, Blog, Contact, Offerte, FAQ …) worden vrij samengesteld uit dezelfde blokken.</li>
+        </ul></article>`;
+  }
+  page(i + 2, `${head(titles[i][0])}
+    <div class="title-row"><div><span class="eyebrow">${titles[i][0]}</span><h2>${titles[i][1]}</h2></div><p>${titles[i][2]}</p></div>
+    <div class="grid">${ch.map(card).join('')}${extra}</div>
+    ${foot(i + 2)}`);
+});
+
+/* 5 · Templates */
+page(5, `${head('Paginatemplates')}
+  <div class="title-row"><div><span class="eyebrow">Paginatemplates</span><h2>Vier templates, 90 pagina’s</h2></div>
+    <p>Elke kolom is één template: de blokken van boven naar beneden, in de kleur van hun achtergrond. Wit en Mist wisselen elkaar af; Nachtblauw staat nooit twee keer achter elkaar. Het groene CTA-paneel of het formulier sluit elke pagina af.</p></div>
+  <div class="tpl-grid">${T.map(t => `<div class="tpl">
+      <div class="tpl-h"><span class="id">${t.id}</span><h3>${t.name}</h3></div>
+      <p class="tpl-meta">${t.pages}</p>
+      <div class="stack">${t.s.map(([id, bg, h, opt]) => bg === 'G'
+        ? `<div class="strip G" style="height:${h}px"><span class="inner"><span class="sid">${id}</span>${bname(id)}</span></div>`
+        : `<div class="strip ${bg}" style="height:${h}px"><span class="sid">${id}</span>${bname(id)}${opt ? `<em class="opt">${opt}</em>` : ''}</div>`).join('')}</div>
+      <p class="tpl-foot">+ B04 Mobiele actiebalk op mobiel</p>
+    </div>`).join('')}</div>
+  ${foot(5)}`);
+
+/* 6 · Regels */
+page(6, `${head('Spelregels en bouwen')}
+  <div class="title-row"><div><span class="eyebrow">Spelregels en bouwen</span><h2>Zo blijft het systeem heel</h2></div>
+    <p>Deze regels komen uit Merkboek v1.1 en gelden voor elk blok en elke pagina, ook voor pagina’s die later worden toegevoegd.</p></div>
+  <div class="rules-grid">
+    <div class="panel"><h3>Spelregels</h3><ol class="rules">
+      <li><span class="n">1</span><span><b>Alleen blokken uit de bibliotheek.</b> Geen losse opmaak per pagina; een nieuw blok komt eerst in de bibliotheek.</span></li>
+      <li><span class="n">2</span><span><b>Eén H1 per pagina,</b> altijd in de hero. Blokken gebruiken H2, kaarten H3.</span></li>
+      <li><span class="n">3</span><span><b>Achtergronden wisselen</b> Wit en Mist af. Nachtblauw nooit twee blokken achter elkaar.</span></li>
+      <li><span class="n">4</span><span><b>Maximaal één groene knop per scherm.</b> CTA-paneel of formulier één keer per pagina, vlak voor de footer.</span></li>
+      <li><span class="n">5</span><span><b>Toon:</b> “u” op dienst- en regiopagina’s, “je” op blog en vacatures. Feiten in plaats van superlatieven.</span></li>
+      <li><span class="n">6</span><span><b>Beeld:</b> eigen foto’s, WebP, hero max. 200 kB, altijd een alt-tekst. De ruit alleen als lijn.</span></li>
+      <li><span class="n">7</span><span><b>Elk blok werkt op mobiel</b> (één kolom) en haalt WCAG AA: contrast 4,5 : 1, zichtbare focus.</span></li>
+      <li><span class="n">8</span><span><b>Interne links horen erbij:</b> elke detailpagina toont Gerelateerde diensten, elke regiopagina het Werkgebied.</span></li>
+    </ol></div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="panel"><h3>Bouwen in Elementor</h3><ul class="el">
+        <li>Elk blok één keer bouwen als opgeslagen sjabloon: <code>DB · B11 Dienstkaarten</code>.</li>
+        <li>B01–B04 in Theme Builder (header, footer, mobiele balk).</li>
+        <li>Overal gelijke blokken (B07, B10-score, B22) als globaal sjabloon: één keer aanpassen, overal aangepast.</li>
+        <li>B18 Nieuws en B10 Reviews dynamisch met Loop Grid.</li>
+        <li>T1–T4 als paginasjabloon; nieuwe pagina = sjabloon kiezen en teksten invullen.</li>
+        <li>Opmaak via <code>tokens.css</code> en <code>style.css</code> uit de map brand-book.</li>
+      </ul></div>
+      <div class="panel"><h3>Volgorde van uitvoeren</h3><ol class="steps">
+        <li><span class="sn">1</span><span><b>Blokken bouwen</b> B01–B22 als Elementor-sjablonen.</span></li>
+        <li><span class="sn">2</span><span><b>Homepage (T1)</b> — de code staat al klaar.</span></li>
+        <li><span class="sn">3</span><span><b>6 dienst-overzichten (T2).</b></span></li>
+        <li><span class="sn">4</span><span><b>36 detailpagina’s (T3)</b>, bestaande teksten hergebruiken.</span></li>
+        <li><span class="sn">5</span><span><b>47 regiopagina’s (T4)</b> met eigen lokale tekst en Google-omschrijving.</span></li>
+        <li><span class="sn">6</span><span><b>Testen:</b> mobiel, snelheid, contrast, formulieren.</span></li>
+      </ol></div>
+    </div>
+  </div>
+  ${foot(6)}`);
+</script>
+</body>
+</html>

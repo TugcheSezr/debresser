@@ -1,0 +1,71 @@
+/* =========================================================
+   De Bresser · design tokens
+   Bron: Merkboek De Bresser, versie 1.1 (september 2026), hoofdstuk 07
+   Gebruik overal deze variabelen in plaats van losse waarden.
+   ========================================================= */
+
+:root {
+  /* Merkkleuren (logo) */
+  --db-diepblauw:    #00498F;
+  --db-blauw:        #007DC2;
+  --db-groen:        #6DB23F;
+  --db-logozwart:    #231F20;
+
+  /* Digitaal palet */
+  --db-nachtblauw:   #020D41;  /* koppen, footer, donkere vlakken */
+  --db-webblauw:     #007AC0;  /* links */
+  --db-signaalgroen: #7BD534;  /* primaire knop, accent op donker */
+  --db-hemelsblauw:  #33BCFA;  /* focus, highlights op donker */
+  --db-bosgroen:     #166909;  /* groene tekst op licht */
+  --db-kroongeel:    #FFC400;  /* 'Nieuw!', sterren */
+
+  /* Neutraal */
+  --db-wit:          #FFFFFF;
+  --db-mist:         #EBEFF4;
+  --db-lichtgrijs:   #C7C7C7;
+  --db-grijs:        #676767;
+  --db-antraciet:    #2F2F2F;
+
+  /* Rollen */
+  --db-kleur-kop:    var(--db-nachtblauw);
+  --db-kleur-tekst:  var(--db-antraciet);
+  --db-kleur-link:   var(--db-webblauw);
+  --db-kleur-fout:   #C4302B;
+  --db-kleur-succes: var(--db-bosgroen);
+  --db-focus:        0 0 0 3px var(--db-hemelsblauw);
+
+  /* Typografie */
+  --db-font:         "Sora", Arial, Helvetica, sans-serif;
+  --db-fs-display:   clamp(2.25rem, 1.6rem + 2.8vw, 3.5rem);   /* 36 → 56 */
+  --db-fs-h2:        clamp(1.75rem, 1.5rem + 1.1vw, 2.25rem);  /* 28 → 36 */
+  --db-fs-h3:        1.5rem;     /* 24 */
+  --db-fs-intro:     1.25rem;    /* 20 */
+  --db-fs-body:      1rem;       /* 16 */
+  --db-fs-small:     0.8125rem;  /* 13 */
+  --db-lh-kop:       1.15;
+  --db-lh-tekst:     1.75;       /* 28px bij 16px */
+  --db-fw-light:     300;
+  --db-fw-regular:   400;
+  --db-fw-medium:    500;
+  --db-fw-semibold:  600;
+
+  /* Ruimte (4px-schaal) */
+  --db-space-1: 4px;   --db-space-2: 8px;   --db-space-3: 12px;
+  --db-space-4: 16px;  --db-space-5: 24px;  --db-space-6: 32px;
+  --db-space-7: 48px;  --db-space-8: 64px;  --db-space-9: 96px;
+  --db-space-10: 128px;
+  --db-sectie:  clamp(64px, 8vw, 96px);
+
+  /* Layout */
+  --db-max:     1240px;
+  --db-marge:   clamp(16px, 4vw, 48px);
+
+  /* Hoeken, schaduw, beweging */
+  --db-radius-s: 6px;   /* knoppen, velden */
+  --db-radius-m: 12px;  /* kaarten */
+  --db-radius-l: 20px;  /* foto's, grote vlakken */
+  --db-schaduw:  0 1px 2px rgba(2,13,65,.06), 0 8px 24px rgba(2,13,65,.08);
+  --db-schaduw-hover: 0 2px 4px rgba(2,13,65,.08), 0 16px 36px rgba(2,13,65,.14);
+  --db-duur:     200ms;
+  --db-ease:     cubic-bezier(.2,.7,.2,1);
+}

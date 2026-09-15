@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Sitemap debresser.nl · per onderdeel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: var(--db-font); color: var(--db-antraciet); font-size: 9pt; line-height: 1.45; background: #fff; }
+  h1, h2, h3, h4 { margin: 0; font-weight: 600; color: var(--db-nachtblauw); }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
+  svg.i { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  :root { --lijn: #AFBACB; }
+
+  .page { width: 297mm; height: 210mm; padding: 10mm 12mm 8mm; display: flex; flex-direction: column; position: relative; overflow: hidden; break-after: page; }
+  .page:last-child { break-after: auto; }
+
+  .ph { display: flex; align-items: center; justify-content: space-between; padding-bottom: 7px; margin-bottom: 10px; border-bottom: 1px solid var(--db-mist); font-size: 8pt; color: var(--db-grijs); }
+  .ph img { height: 22px; }
+  .ph b { color: var(--db-nachtblauw); font-weight: 600; }
+  .pf { margin-top: auto; padding-top: 7px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 7.3pt; color: var(--db-grijs); border-top: 1px solid var(--db-mist); }
+
+  .eyebrow { position: relative; display: inline-block; padding: 0 12px 6px 8px; color: var(--db-diepblauw); font-size: 7.5pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1.5px; background: currentColor; }
+  .eyebrow::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: currentColor; clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%); }
+
+  /* Link-pills */
+  .pill { display: inline-block; font-size: 6.8pt; font-weight: 600; padding: 1px 6px; border-radius: 4px; white-space: nowrap; line-height: 1.5; }
+  .p-M { background: var(--db-nachtblauw); color: #fff; }
+  .p-S { background: #DDEFFA; color: var(--db-diepblauw); }
+  .p-F { background: var(--db-mist); color: var(--db-nachtblauw); }
+  .p-H { background: #E3F5D3; color: var(--db-bosgroen); }
+  .p-T { background: #FFF1C2; color: var(--db-nachtblauw); }
+  .p-N { background: #fff; color: var(--db-grijs); border: 1px dashed var(--db-lichtgrijs); padding: 0 6px; }
+  .warn { display: inline-flex; align-items: center; gap: 3px; font-size: 6.3pt; font-weight: 600; color: var(--db-kleur-fout); }
+  .warn::before { content: "!"; width: 9px; height: 9px; border-radius: 50%; background: var(--db-kleur-fout); color: #fff; font-size: 6pt; display: grid; place-items: center; line-height: 1; }
+
+  /* ---------- Omslag ---------- */
+  .cover { background: var(--db-nachtblauw); color: #C9D1E8; padding: 16mm 16mm 12mm; display: grid; grid-template-columns: 1.1fr 1fr; gap: 14mm; }
+  .cover .ruit { position: absolute; left: 28%; bottom: -120px; width: 420px; opacity: .28; }
+  .cover .ruit polygon, .band-ruit polygon { fill: none; stroke-width: 34; }
+  .cover-l { position: relative; display: flex; flex-direction: column; }
+  .cover-l img { width: 110px; filter: brightness(0) invert(1); }
+  .cover-l .eyebrow { color: var(--db-hemelsblauw); margin-top: 16mm; }
+  .cover h1 { color: #fff; font-size: 34pt; line-height: 1.05; letter-spacing: -.02em; margin-top: 10px; }
+  .cover h1 span { color: var(--db-signaalgroen); }
+  .cover .lead { margin-top: 12px; font-size: 11.5pt; line-height: 1.55; font-weight: 300; color: #DDE3F2; max-width: 36ch; }
+  .cover-stats { margin-top: auto; display: flex; gap: 22px; }
+  .cover-stats b { display: block; color: var(--db-signaalgroen); font-size: 20pt; font-weight: 600; line-height: 1.1; }
+  .cover-stats span { font-size: 8pt; color: #AEB8D6; }
+  .cover-meta { margin-top: 10px; font-size: 7.5pt; color: #AEB8D6; }
+  .toc { position: relative; align-self: start; background: #fff; border-radius: 12px; padding: 16px 20px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+  .toc h2 { font-size: 12pt; margin-bottom: 6px; }
+  .toc li { display: grid; grid-template-columns: 24px 1fr auto; align-items: baseline; gap: 6px; padding: 4px 0; border-bottom: 1px dotted #D5DBE5; font-size: 8.8pt; color: var(--db-nachtblauw); }
+  .toc li:last-child { border-bottom: 0; }
+  .toc .nr, .toc .pg { font-family: "IBM Plex Mono", monospace; font-size: 7.8pt; }
+  .toc .nr { color: var(--db-webblauw); }
+  .toc .pg { color: var(--db-grijs); }
+  .toc .cnt { color: var(--db-grijs); font-size: 7.8pt; margin-left: 4px; }
+
+  /* ---------- Overzicht ---------- */
+  .ov-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 10px; }
+  .ov-title h2 { font-size: 16pt; letter-spacing: -.01em; margin-top: 6px; }
+  .ov-title p { max-width: 64ch; }
+  .ov-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; }
+  .ov-card { display: flex; flex-direction: column; gap: 4px; padding: 9px 11px; border-radius: 8px; border: 1px solid #D5DBE5; background: #fff; }
+  .ov-card.main { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw); color: #C9D1E8; }
+  .ov-card.main h3 { color: #fff; }
+  .ov-card .top { display: flex; align-items: center; justify-content: space-between; }
+  .ov-card .top .i { color: var(--db-hemelsblauw); }
+  .ov-card:not(.main) .top .i { color: var(--db-webblauw); }
+  .ov-card h3 { font-size: 10pt; }
+  .ov-card p { font-size: 7.8pt; line-height: 1.4; }
+  .ov-card .meta { margin-top: auto; display: flex; justify-content: space-between; font-family: "IBM Plex Mono", monospace; font-size: 7.3pt; opacity: .85; }
+  .badge { font-family: "IBM Plex Mono", monospace; font-size: 7.3pt; padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.14); }
+  .ov-card:not(.main) .badge { background: var(--db-mist); color: var(--db-nachtblauw); }
+  .ov-bottom { margin-top: 10px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 10px; }
+  .box { border-radius: 10px; padding: 11px 13px; background: #F6F8FB; border: 1px solid #E3E8F0; }
+  .box h3 { font-size: 9.5pt; margin-bottom: 7px; }
+  .route { display: grid; grid-template-columns: 1fr 14px 1fr 14px 1fr 14px 1.1fr; align-items: center; gap: 4px; }
+  .route + .route { margin-top: 6px; }
+  .route .step { background: #fff; border: 1px solid #D5DBE5; border-radius: 7px; padding: 6px 8px; font-size: 7.8pt; line-height: 1.35; color: var(--db-nachtblauw); }
+  .route .step b { display: block; font-size: 8.3pt; }
+  .route .step small { color: var(--db-grijs); font-size: 7.1pt; }
+  .route .step.end { background: var(--db-signaalgroen); border-color: var(--db-signaalgroen); }
+  .route .step.end small { color: var(--db-nachtblauw); }
+  .route .arr { color: var(--db-webblauw); text-align: center; }
+  .legend-list li { display: grid; grid-template-columns: 70px 1fr; gap: 8px; align-items: center; padding: 2.5px 0; font-size: 7.8pt; }
+
+  /* ---------- Onderdeel: kopband ---------- */
+  .band { position: relative; overflow: hidden; display: grid; grid-template-columns: 62mm 1fr 78mm; gap: 7mm; align-items: start; padding: 10px 16px; border-radius: 10px; background: var(--db-nachtblauw); color: #C9D1E8; }
+  .band-ruit { position: absolute; right: -40px; top: -70px; width: 200px; opacity: .22; }
+  .b-head { display: flex; gap: 10px; align-items: flex-start; position: relative; }
+  .b-nr { font-size: 28pt; line-height: .9; font-weight: 300; color: var(--db-signaalgroen); letter-spacing: -.03em; }
+  .b-head h2 { color: #fff; font-size: 14pt; line-height: 1.15; }
+  .b-head .path { font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; color: #AEB8D6; }
+  .b-head .kpis { margin-top: 6px; display: flex; gap: 10px; font-size: 7.3pt; }
+  .b-head .kpis b { color: #fff; font-size: 10pt; margin-right: 3px; }
+  .b-what { position: relative; }
+  .b-what small, .b-facts small { display: block; font-size: 6.8pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--db-hemelsblauw); margin-bottom: 3px; }
+  .b-what p { font-size: 8.6pt; line-height: 1.5; color: #DDE3F2; }
+  .b-facts { position: relative; display: flex; flex-direction: column; gap: 4px; }
+  .b-facts > div { display: grid; grid-template-columns: 27mm 1fr; gap: 6px; align-items: baseline; }
+  .b-facts > div small { margin: 0; }
+  .b-facts span { font-size: 8pt; line-height: 1.35; color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 3px; }
+  .chip { font-size: 7.2pt; padding: 1px 7px; border-radius: 4px; background: rgba(255,255,255,.12); color: #fff; }
+
+  /* ---------- Onderdeel: sitemap-boom ---------- */
+  .org { flex: 1; display: flex; flex-direction: column; align-items: stretch; padding-top: 6px; min-height: 0; }
+  .root-wrap { position: relative; display: flex; justify-content: center; padding-bottom: 14px; }
+  .root-wrap::after { content: ""; position: absolute; left: 50%; bottom: 0; height: 14px; border-left: 2px solid var(--db-nachtblauw); }
+  .root { display: flex; align-items: center; gap: 10px; padding: 8px 16px 8px 10px; border-radius: 9px; background: var(--db-signaalgroen); color: var(--db-nachtblauw); box-shadow: 0 8px 18px -10px rgba(109,178,63,.9); }
+  .root .ic { width: 28px; height: 28px; border-radius: 7px; background: var(--db-nachtblauw); color: var(--db-signaalgroen); display: grid; place-items: center; }
+  .root .ic .i { width: 16px; height: 16px; }
+  .root b { display: block; font-size: 11pt; line-height: 1.15; }
+  .root .u { font-family: "IBM Plex Mono", monospace; font-size: 7pt; }
+  .root .pill { margin-left: 6px; }
+
+  .row { display: grid; margin: 0 auto; width: 100%; }
+  .col { position: relative; padding: 14px 4px 0; }
+  .col::before { content: ""; position: absolute; top: 0; left: 0; right: 0; border-top: 2px solid var(--db-nachtblauw); }
+  .col:first-child::before { left: 50%; }
+  .col:last-child::before { right: 50%; }
+  .col::after { content: ""; position: absolute; top: 0; left: 50%; height: 14px; border-left: 2px solid var(--db-nachtblauw); }
+
+  .n1 { position: relative; display: flex; flex-direction: column; gap: 3px; padding: 8px 9px; border-radius: 8px; background: #fff; border: 1px solid #D5DBE5; border-top: 3px solid var(--db-diepblauw); box-shadow: 0 2px 6px -3px rgba(2,13,65,.18); }
+  .n1.grp { background: var(--db-mist); border: 1px dashed #B9C3D3; border-top: 3px solid var(--db-webblauw); }
+  .n1 .nm { font-size: 8.6pt; font-weight: 600; color: var(--db-nachtblauw); line-height: 1.25; }
+  .n1 .u { font-family: "IBM Plex Mono", monospace; font-size: 6.5pt; color: var(--db-grijs); word-break: break-all; }
+  .n1 .d { font-size: 7.3pt; line-height: 1.38; }
+  .n1 .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 3px; }
+
+  .kids { position: relative; margin-top: 10px; padding: 5px; border-radius: 8px; background: #F1F4F9; display: grid; gap: 4px; }
+  .kids::before { content: ""; position: absolute; top: -10px; left: 50%; height: 10px; border-left: 1.5px solid var(--lijn); }
+  .kids.c2 { grid-template-columns: 1fr 1fr; }
+  .kids.c3 { grid-template-columns: repeat(3, 1fr); }
+  .n2 { display: flex; flex-direction: column; gap: 1px; padding: 4px 6px; border-radius: 6px; background: #fff; border: 1px solid #E3E8F0; }
+  .n2 .nm { font-size: 7.7pt; font-weight: 500; color: var(--db-nachtblauw); line-height: 1.25; }
+  .n2 .u { font-family: "IBM Plex Mono", monospace; font-size: 6.2pt; color: var(--db-grijs); word-break: break-all; }
+  .n2 .d { font-size: 6.8pt; line-height: 1.32; }
+  .n2 .tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
+  .n2 .pill { font-size: 6pt; padding: 0 5px; }
+  .n2.chip { padding: 3px 7px; }
+  .n2.chip .nm { font-size: 7.4pt; }
+
+  .legend-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 7pt; color: var(--db-grijs); }
+  .legend-row span { display: inline-flex; align-items: center; gap: 4px; }
+  .note { font-size: 7.3pt; color: var(--db-nachtblauw); }
+
+  /* ---------- Aandachtspunten ---------- */
+  .issues { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+  .issue { border-radius: 10px; border: 1px solid #E3E8F0; padding: 10px 13px; display: flex; flex-direction: column; gap: 5px; }
+  .issue .ih { display: flex; align-items: center; gap: 8px; }
+  .issue .inr { width: 22px; height: 22px; border-radius: 6px; background: var(--db-nachtblauw); color: #fff; display: grid; place-items: center; font-size: 8.5pt; font-weight: 600; flex: none; }
+  .issue h3 { font-size: 9.6pt; }
+  .issue .prio { margin-left: auto; }
+  .issue p { font-size: 8.1pt; }
+  .issue .adv { padding-left: 10px; border-left: 2px solid var(--db-signaalgroen); color: var(--db-nachtblauw); }
+  .issue code { font-family: "IBM Plex Mono", monospace; font-size: 7.2pt; color: var(--db-nachtblauw); }
+</style>
+</head>
+<body>
+<main id="doc"></main>
+
+<script>
+/* ---------- Iconen ---------- */
+const IC = {
+  truck: '<path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 9.5h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.9"/><circle cx="16.8" cy="17.5" r="1.9"/>',
+  box: '<path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/>',
+  sofa: '<path d="M5 10.5V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2.5"/><path d="M3 11h3v3.5h12V11h3v5.5H3z"/><path d="M5 16.5v2M19 16.5v2"/>',
+  building: '<path d="M4.5 20.5v-16h9.5v16M14 9.5h5.5v11M2.5 20.5h19"/><path d="M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h.5M16.5 16.5h.5"/>',
+  passport: '<path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/>',
+  leaf: '<path d="M5 19c0-8 5-13.5 14.5-14.5C18.5 14 13 19 5 19z"/><path d="M5 19 13 11"/>',
+  people: '<circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.7 3 2.4 3 4.7"/>',
+  doc: '<path d="M5 4.5h14v15H5z"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"/>',
+  mail: '<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+  shield: '<path d="M12 3.5 5 6v5.5c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>',
+  pin: '<path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  spark: '<path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4M6 6l2.8 2.8M15.2 15.2 18 18M18 6l-2.8 2.8M8.8 15.2 6 18"/>',
+};
+const icon = k => `<svg class="i" viewBox="0 0 24 24">${IC[k]}</svg>`;
+
+const LINK = { M: 'Hoofdmenu', S: 'Snelmenu', F: 'Footer', H: 'Homepage', T: 'Taalkeuze', N: 'Geen link' };
+const pill = c => c ? `<span class="pill p-${c}">${LINK[c]}</span>` : '';
+const NO_META = ['/container-opslag/','/de-bresser-brussel/','/faq/','/kantoor-verhuizen/','/logistiek-full-service/','/opslagruimte-breda/','/opslagruimte-den-bosch/','/opslagruimte-etten-leur/','/opslagruimte-goirle/','/opslagruimte-oirschot/','/opslagruimte-roosendaal/','/privacyverklaring/','/quick-scan/','/senioren-verhuizen/','/verhuisservice-zakelijk/','/winkelverhuizing/'];
+const warn = u => NO_META.includes(u) ? '<span class="warn">geen omschrijving</span>' : '';
+
+/* ---------- Inhoud ----------
+   rows: [niveau, naam, url, omschrijving, link]
+   niveau 0 = pagina van het onderdeel zelf, 1 = subpagina, 2 = onderliggend, 'g' = groep (geen eigen pagina) */
+const CH = [
+  { id: 'verhuizen', nr: '01', title: 'Verhuizen', path: '/verhuizen/', icon: 'truck', main: true,
+    one: 'Verhuizingen voor particulieren, bedrijven en zorg, in Nederland en internationaal.',
+    wat: 'Alle verhuisdiensten van De Bresser: voor particulieren, bedrijven en zorginstellingen, binnen Nederland en naar het buitenland. Het grootste onderdeel van de website.',
+    voor: ['Particulieren', 'Bedrijven', 'Zorginstellingen', 'Internationaal'], actie: 'Offerte aanvragen of videogesprek plannen', menu: 'Diensten → Verhuizingen',
+    rows: [
+      [0, 'Verhuizen', '/verhuizen/', '', 'M'],
+      [1, 'Particuliere verhuizing', '/particuliere-verhuizing/', 'Verhuizen voor particulieren met ervaren verhuizers.', 'M'],
+      [1, 'Zakelijke verhuizing', '/zakelijke-verhuizing/', 'Professionele, stressvrije verhuizing van een bedrijfspand.', 'M'],
+      [2, 'Kantoor verhuizen', '/kantoor-verhuizen/', 'Snel verhuizen, zodat het werk kort stilligt.', 'S'],
+      [2, 'Winkelverhuizing', '/winkelverhuizing/', 'Hulp bij het verhuizen van een winkel.', 'S'],
+      [2, 'Verhuisservice zakelijk', '/verhuisservice-zakelijk/', 'Complete zakelijke verhuisservice.', 'S'],
+      [1, 'Internationale verhuizing', '/internationale-verhuizing/', 'Internationaal verhuizen met vaste routes en duidelijke planning. Landenpagina’s met een offerte voor die bestemming:', 'M'],
+      [2, 'Engeland', '/internationale-verhuizing/engeland/', 'Naar het VK, ook na de Brexit geregeld.', 'N'],
+      [2, 'Zwitserland', '/zwitserland/', 'Wekelijkse routes, ook buiten de EU.', 'N'],
+      [2, 'Benelux-verhuizing', '/benelux-verhuizing/', 'Verhuizing of meubeltransport in de Benelux.', 'N'],
+      [2, 'De Bresser Brussel', '/de-bresser-brussel/', 'Vestiging in Evere sinds 1 januari 2024.', 'N'],
+      [2, 'Duitsland', '/duitsland/', '', 'N'],
+      [2, 'Frankrijk', '/frankrijk/', '', 'N'],
+      [2, 'Verhuisbedrijf België', '/verhuisbedrijf-belgie/', '', 'S'],
+      [2, 'Verhuisbedrijf Europa', '/verhuisbedrijf-europa/', '', 'S'],
+      [1, 'Zorgverhuizing', '/zorg-verhuizing/', 'Verhuizing van zorginstellingen, met aandacht voor bewoners.', 'M'],
+      [1, 'Senioren verhuizen', '/senioren-verhuizen/', 'Verhuizingen voor senioren door erkende verhuizers.', 'N'],
+      [1, 'Duurzaam verhuizen', '/duurzaam-verhuizen/', 'Met o.a. Top Movers: 40–90% minder CO₂ door duurzaam meubilair.', 'M'],
+      [1, 'Full service verhuizing', '/full-service-verhuizing/', 'Alles geregeld: inpakken, transport, montage en nazorg.', 'N'],
+    ] },
+  { id: 'opslag', nr: '02', title: 'Opslag', path: '/opslag/', icon: 'box', main: true,
+    one: 'Opslag voor particulieren en bedrijven, met lokale pagina’s per plaats.',
+    wat: 'Veilige, flexibele opslag voor particulieren en bedrijven: tijdelijk tijdens een verhuizing of verbouwing, of structureel bij ruimtegebrek. Zes lokale pagina’s richten zich op opslag in een bepaalde plaats.',
+    voor: ['Particulieren', 'Bedrijven'], actie: 'Offerte aanvragen', menu: 'Diensten → Opslag',
+    rows: [
+      [0, 'Opslag', '/opslag/', '', 'M'],
+      [1, 'Zakelijke opslag', '/zakelijke-opslag/', 'Flexibele huur, geconditioneerde units, goed bereikbaar.', 'M'],
+      [1, 'Particuliere opslag', '/particuliere-opslag/', 'Veilige units voor meubels en spullen. Inclusief DIY-opslag.', 'M'],
+      [1, 'Container opslag', '/container-opslag/', 'Inboedel tijdelijk in een container, in Breda, Tilburg en Oisterwijk.', 'S'],
+      ['g', 'Opslagruimte per plaats', '', 'Lokale pagina’s voor opslag op korte of lange termijn.', ''],
+      [2, 'Breda', '/opslagruimte-breda/', '', 'S'],
+      [2, 'Den Bosch', '/opslagruimte-den-bosch/', '', 'S'],
+      [2, 'Etten-Leur', '/opslagruimte-etten-leur/', '', 'S'],
+      [2, 'Goirle', '/opslagruimte-goirle/', '', 'S'],
+      [2, 'Oirschot', '/opslagruimte-oirschot/', '', 'S'],
+      [2, 'Roosendaal', '/opslagruimte-roosendaal/', '', 'S'],
+    ] },
+  { id: 'meubel', nr: '03', title: 'Meubelprojecten', path: '/meubelprojecten/', icon: 'sofa', main: true,
+    one: 'Meubeltransport, montage op locatie en transport van veilingaankopen.',
+    wat: 'Diensten rond meubilair: transport door heel Europa, montage op locatie en het vervoer van veilingaankopen.',
+    voor: ['Bedrijven', 'Meubelleveranciers', 'Veilingkopers'], actie: 'Offerte aanvragen', menu: 'Diensten → Meubelprojecten',
+    rows: [
+      [0, 'Meubelprojecten', '/meubelprojecten/', '', 'M'],
+      [1, 'Meubeltransport', '/meubeltransport/', 'Inpakken, transport en bezorging door heel Europa.', 'M'],
+      [1, 'Meubelmontage', '/meubelmontage/', 'Meubels vakkundig monteren bij de klant op locatie.', 'M'],
+      [1, 'Veilingen', '/veilingen/', 'Met TBA Auctions: wekelijks naar BeNeLux, FR, DE en CH, incl. inklaring.', 'M'],
+    ] },
+  { id: 'gebouw', nr: '04', title: 'Gebouwbeheer', path: '/gebouwbeheer/', icon: 'building', main: true,
+    one: 'Onderhoud en dagelijks beheer van bedrijfspanden.',
+    wat: 'Onderhoud, verduurzaming en dagelijks beheer van bedrijfspanden, met één vast aanspreekpunt.',
+    voor: ['Bedrijven', 'Vastgoedeigenaren'], actie: 'Offerte aanvragen', menu: 'Diensten → Gebouwbeheer',
+    rows: [
+      [0, 'Gebouwbeheer', '/gebouwbeheer/', '', 'M'],
+      [1, 'Onderhoud', '/gebouwbeheer/onderhoud/', 'Van schilderwerk tot schoonmaak en groenonderhoud.', 'M'],
+      [1, 'Verduurzamen', '/gebouwbeheer/verduurzamen/', 'Werkomgeving energiezuiniger maken en de levensduur verlengen.', 'M'],
+      [1, 'Huismeester', '/gebouwbeheer/huismeester/', 'Dagelijks beheer en organisatie van gebouwen.', 'M'],
+    ] },
+  { id: 'asset', nr: '05', title: 'Assetmanagement', path: '/assetmanagement/', icon: 'passport', main: true,
+    one: 'Overzicht, opslag en hergebruik van meubilair en bedrijfsmiddelen.',
+    wat: 'Beheer van meubilair en bedrijfsmiddelen in één overzicht, met het WMS en Meubelpaspoort. Gericht op hergebruik en een lagere CO₂-voetafdruk.',
+    voor: ['Bedrijven', 'Facility managers'], actie: 'Offerte aanvragen', menu: 'Diensten → Assetmanagement',
+    rows: [
+      [0, 'Assetmanagement', '/assetmanagement/', '', 'M'],
+      [1, 'Inventarisatie', '/assetmanagement/inventarisatie/', 'Grondige inventarisatie van alle assets door specialisten.', 'M'],
+      [1, 'WMS en Meubelpaspoort', '/assetmanagement/wms-en-meubelpaspoort/', 'Compleet overzicht van assets en efficiëntere logistiek.', 'M'],
+      [1, 'Opslag assets', '/assetmanagement/opslag-assets/', 'Opslag van bedrijfsassets met registratie en snelle toegang.', 'M'],
+      [1, 'Inkoop en verkoop assets', '/assetmanagement/inkoop-en-verkoop-assets/', 'Ongebruikte meubels een nieuw leven geven via het platform.', 'M'],
+      [1, 'Circulair meubilair', '/assetmanagement/circulair-meubilair/', 'Bijdragen aan een toekomst met circulair meubilair.', 'M'],
+    ] },
+  { id: 'dw', nr: '06', title: 'Duurzame werkomgeving', path: '/duurzame-werkomgeving/', icon: 'leaf', main: true, nieuw: true,
+    one: 'Nieuwe dienst: gebouw- en assetmanagement in één duurzame aanpak.',
+    wat: 'Nieuwe dienst die gebouw- en assetmanagement combineert: bedrijfspanden duurzamer maken op energie, welzijn en circulair beheer, met 24/7 één aanspreekpunt. Staat met “Nieuw!” op de homepage.',
+    voor: ['Bedrijven'], actie: 'Gratis quick scan aanvragen', menu: 'Diensten (label “Nieuw!”) en hero homepage',
+    rows: [
+      [0, 'Duurzame werkomgeving', '/duurzame-werkomgeving/', '', 'H'],
+      [1, 'Quick scan', '/quick-scan/', 'Actiepagina: gratis quick scan van het bedrijfspand.', 'N'],
+    ] },
+  { id: 'over', nr: '07', title: 'Over ons & werken bij', path: 'bedrijf en vacatures', icon: 'people', main: true,
+    one: 'Het familiebedrijf sinds 1923, het team en de vacatures.',
+    wat: 'Het verhaal van het familiebedrijf uit Oisterwijk en alles over werken bij De Bresser: vacatures, open sollicitatie en een wervingsactie.',
+    voor: ['Klanten', 'Sollicitanten'], actie: 'Solliciteren of contact opnemen', menu: 'Over ons · Vacatures',
+    rows: [
+      [0, 'Over ons', '/over-ons/', 'Kennismaking: 100 jaar, afspraak is afspraak, het team.', 'M'],
+      [1, '100-jarig jubileum', '/100-jarig-jubileum/', 'Terugblik op het 100-jarig bestaan.', 'N'],
+      [0, 'Vacatures', '/overzicht-vacatures/', 'Overzicht van vacatures en open sollicitatie.', 'M'],
+      [1, 'Verhuizer', '/vacature/verhuizer/', '40 uur of in overleg.', 'N'],
+      [1, 'Chauffeur verhuizingen C/CE', '/vacature/chauffeur-verhuizingen-c-ce/', 'Fulltime; Tilburg, Oisterwijk, Breda of Venlo.', 'N'],
+      [1, 'Tekenbonus', '/tekenbonus/', 'Wervingsactie: bonus na 7 maanden inzet.', 'N'],
+    ] },
+  { id: 'blog', nr: '08', title: 'Blog', path: '/blog/', icon: 'doc', main: true,
+    one: 'Verhuistips, advies en bedrijfsnieuws: 12 artikelen.',
+    wat: 'Verhuistips, advies en nieuws van De Bresser. De homepage toont de zes nieuwste artikelen; de oudere zijn alleen via de blogpagina te vinden. Omschrijvingen hieronder zijn afgeleid van de titel.',
+    voor: ['Particulieren (tips)', 'Klanten en partners (nieuws)'], actie: 'Doorlezen naar een dienst of offerte', menu: 'Blog',
+    rows: [
+      [0, 'Blog', '/blog/', '', 'M'],
+      ['g', 'Op de homepage', '', 'De zes nieuwste artikelen staan als blok op de homepage.', 'H'],
+      [2, 'Samen bouwen aan succes', '11-06-2026', 'Samenwerking met Satelliet hospitality furniture.', ''],
+      [2, 'De Bresser verwelkomt Brocken Verhuizingen', '19-11-2025', 'Brocken Verhuizingen uit Tilburg sluit aan.', ''],
+      [2, 'Verhuizen met kinderen', '06-11-2025', 'Tips voor een positieve verhuiservaring.', ''],
+      [2, 'De populairste reden om te verhuizen', '29-03-2024', 'Samenwonen, groter wonen, dichter bij werk.', ''],
+      [2, 'Nieuw! Qwiek.snooze reinigingsservice', '29-03-2024', 'Nieuwsbericht over een nieuwe service.', ''],
+      [2, 'Interne verhuizing', '29-03-2024', 'Interne verhuizingen voor bedrijven.', ''],
+      ['g', 'Oudere artikelen', '', 'Alleen via de blogpagina, niet op de homepage.', 'N'],
+      [2, 'Verhuislift maakt alles makkelijker', '29-03-2024', 'Over verhuizen met de verhuislift.', ''],
+      [2, 'De drie grootste verhuisblunders', '29-03-2024', 'Veelgemaakte fouten bij verhuizen.', ''],
+      [2, 'Logistieke dienstverlening', '29-03-2024', 'Over de logistieke diensten.', ''],
+      [2, 'Spullen weg doen: waarom is het zo moeilijk?', '29-03-2024', 'Over opruimen voor een verhuizing.', ''],
+      [2, 'Waarom verhuizen met een Erkende Verhuizer', '29-03-2024', 'Voordelen van een Erkende Verhuizer.', ''],
+      [2, 'Inhuren professionals kan stressniveau verminderen', '29-03-2024', 'Waarom professionele hulp stress scheelt.', ''],
+    ] },
+  { id: 'contact', nr: '09', title: 'Contact & offerte', path: 'conversiepagina’s', icon: 'mail', main: true,
+    one: 'Offerte, videogesprek, contact en veelgestelde vragen.',
+    wat: 'De pagina’s waar een bezoeker klant wordt: een offerte aanvragen, een videogesprek plannen of contact opnemen. Hier eindigt elke route door de website.',
+    voor: ['Alle bezoekers'], actie: 'Offerteformulier invullen', menu: 'Contact · Offerte',
+    rows: [
+      [0, 'Offerte', '/offerte/', 'Formulier voor verhuizing, opslag, transport, gebouwbeheer of assetmanagement.', 'M'],
+      [0, 'Videogesprek', '/videogesprek/', 'Huis laten zien via videochat; binnen 24 uur een vrijblijvende offerte.', 'N'],
+      [0, 'Contact', '/contact/', 'Vragen stellen, offerte aanvragen of een afspraak maken.', 'M'],
+      [0, 'FAQ', '/faq/', 'Veelgestelde vragen, bijvoorbeeld hoe ver vooruit u een datum vastlegt.', 'N'],
+    ] },
+  { id: 'service', nr: '10', title: 'Service & juridisch', path: 'footer en taalkeuze', icon: 'shield',
+    one: 'Privacyverklaring, voorwaarden en Engelse versie.',
+    wat: 'Verplichte en ondersteunende informatie. De voorwaarden zijn pdf-bestanden, geen webpagina’s.',
+    voor: ['Alle bezoekers'], actie: 'Informatie nalezen', menu: 'Footer · taalkeuze in de header',
+    rows: [
+      [0, 'Privacyverklaring', '/privacyverklaring/', 'Hoe De Bresser met persoonsgegevens omgaat.', 'F'],
+      [0, 'Voorwaarden', '6 pdf-bestanden', 'Alle algemene voorwaarden, te downloaden in de footer.', 'F'],
+      [1, 'Voorwaarden verhuizingen', 'pdf', '', ''],
+      [1, 'Algemene vervoerscondities', 'pdf', '', ''],
+      [1, 'Voorwaarden bedrijfsverhuizing', 'pdf', '', ''],
+      [1, 'Voorwaarden logistieke services', 'pdf', '', ''],
+      [1, 'CMR conditions', 'pdf', '', ''],
+      [1, 'Opslagvoorwaarden', 'pdf', '', ''],
+      [0, 'Engelse versie', '/en/', 'Dezelfde website in het Engels (WPML).', 'T'],
+    ] },
+  { id: 'losse', nr: '11', title: 'Losse landingspagina’s', path: 'buiten het menu', icon: 'spark',
+    one: 'Drie dienstpagina’s die niet in het menu staan.',
+    wat: 'Pagina’s voor specifieke diensten die niet in het menu staan. Ze worden vooral via Google of directe links gevonden.',
+    voor: ['Bedrijven', 'Particulieren'], actie: 'Offerte aanvragen', menu: 'Niet in het menu',
+    rows: [
+      [0, 'Logistiek full service', '/logistiek-full-service/', 'Het complete logistieke proces van goederen uit handen.', 'N'],
+      [0, 'Groupage transport', '/groupage-transport/', 'Gebundeld vervoer van goederen binnen Nederland en Europa.', 'N'],
+      [0, 'Handyman services', '/handyman-services/', 'Klusjes, onderhoud en reparaties snel opgelost.', 'N'],
+    ] },
+];
+
+/* Regiopagina's: [plaats, afwijkende url of '', in snelmenu] */
+const REGIO = [
+  ['Baarle-Nassau','',0],['Bavel','',0],['Bergen op Zoom','/bergen-op-zoom/',0],['Best','',0],['Boxtel','',0],
+  ['Breda','/breda/',1],['Den Bosch','',1],['Dongen','',0],['Dordrecht','',1],['Drunen','',0],
+  ['Eindhoven','',1],['Etten-Leur','',1],['Goirle','',1],['Helvoirt','',0],['Hilvarenbeek','',0],
+  ['Kaatsheuvel','',0],['Maastricht','',1],['Moerdijk','',0],['Oirschot','',0],['Oisterwijk','',1],
+  ['Oosterhout','',1],['Oss','',1],['Oudenbosch','',0],['Poppel','',0],['Raamsdonksveer','',0],
+  ['Roermond','',1],['Roosendaal','/roosendaal/',1],['Rucphen','',0],['Schijndel','',0],['Sint-Oedenrode','',1],
+  ['Steenbergen','',0],['Tilburg','/verhuisbedrijf-tilburg/',0],['Tilburg (2e pagina)','/tilburg/',0],['Udenhout','',0],['Venlo','',1],
+  ['Vlijmen','',0],['Vught','',1],['Waalwijk','',1],['Weert','',1],['Zevenbergen','',1],['Zundert','',0],
+];
+const regioRows = [
+  ['g', 'In het snelmenu', '', 'Gelinkt vanuit het Snelmenu onderaan de homepage.', 'S'],
+  ...REGIO.filter(r => r[2]).map(r => [2, r[0], r[1], '', '']),
+  ['g', 'Geen link vanaf de homepage', '', 'Alleen via Google, andere pagina’s of de directe URL.', 'N'],
+  ...REGIO.filter(r => !r[2]).map(r => [2, r[0], r[1], '', '']),
+];
+CH.push({ id: 'regio', nr: '12', title: 'Verhuisbedrijf per plaats', path: '/verhuisbedrijf-[plaats]/', icon: 'pin', chips: true,
+  one: 'Lokale pagina’s voor zoekopdrachten als “verhuisbedrijf Breda”.',
+  wat: 'Lokale landingspagina’s voor zoekopdrachten als “verhuisbedrijf Breda”. Elke pagina heeft dezelfde opzet: een vrijblijvende offerte aanvragen bij een verhuisbedrijf in die plaats. Een afwijkende URL staat onder de plaatsnaam.',
+  voor: ['Bezoekers via Google', 'Particulieren'], actie: 'Offerte aanvragen', menu: 'Deels in het Snelmenu (footer)',
+  rows: regioRows, count: REGIO.length });
+
+/* ---------- Boom opbouwen ---------- */
+function tree(c) {
+  const zeros = c.rows.filter(r => r[0] === 0);
+  const single = zeros.length === 1;
+  const root = single ? { name: zeros[0][1], url: zeros[0][2], link: zeros[0][4] } : { name: c.title, url: c.path, link: '' };
+  const l1 = []; let cur = null;
+  for (const r of c.rows) {
+    if (single && r[0] === 0) continue;
+    const isL1 = r[0] === 'g' || (single ? r[0] === 1 : r[0] === 0);
+    const node = { lvl: r[0], name: r[1], url: r[2], d: r[3], link: r[4], kids: [] };
+    if (isL1) { cur = node; l1.push(node); } else if (cur) cur.kids.push(node);
+  }
+  return { root, l1 };
+}
+const pagesCount = c => c.count || c.rows.filter(r => r[0] !== 'g' && !String(r[2]).includes('pdf')).length;
+const linkCount = (c, code) => c.rows.filter(r => r[0] !== 'g' && r[4] === code).length;
+
+const esc = s => s;
+function nodeL2(k, chips) {
+  if (chips) return `<div class="n2 chip"><span class="nm">${k.name}</span>${k.url ? `<span class="u">${k.url}</span>` : ''}</div>`;
+  return `<div class="n2"><span class="nm">${k.name}</span>${k.url ? `<span class="u">${k.url}</span>` : ''}${k.d ? `<span class="d">${k.d}</span>` : ''}${(k.link || warn(k.url)) ? `<span class="tags">${pill(k.link)}${warn(k.url)}</span>` : ''}</div>`;
+}
+function orgHTML(c) {
+  const t = tree(c);
+  const wide = t.l1.length >= 6;          // veel kolommen: kolommen met subpagina's krijgen meer ruimte
+  const cols = t.l1.map(n => {
+    const many = n.kids.length > 5;
+    const sub = many ? (wide ? 3 : 2) : 1;
+    const cls = c.chips ? 'c3' : (sub === 3 ? 'c3' : sub === 2 ? 'c2' : '');
+    const w = c.chips ? 2.2 : (many ? sub : (n.kids.length && wide ? 1.6 : 1));
+    return { n, w, cls };
+  });
+  const unit = 205;
+  const total = cols.reduce((s, x) => s + x.w, 0);
+  const gtc = cols.map(x => `${x.w}fr`).join(' ');
+  const colHTML = cols.map(({ n, cls }) => `<div class="col">
+      <div class="n1${n.lvl === 'g' ? ' grp' : ''}">
+        <span class="nm">${n.name}</span>
+        ${n.url && n.lvl !== 'g' ? `<span class="u">${n.url}</span>` : ''}
+        ${n.d ? `<span class="d">${n.d}</span>` : ''}
+        ${(n.link || warn(n.url) || n.kids.length) ? `<span class="tags">${pill(n.link)}${warn(n.url)}${n.lvl === 'g' ? `<span class="pill p-F">${n.kids.length} pagina’s</span>` : ''}</span>` : ''}
+      </div>
+      ${n.kids.length ? `<div class="kids ${cls}">${n.kids.map(k => nodeL2(k, c.chips)).join('')}</div>` : ''}
+    </div>`).join('');
+  return `<div class="org">
+    <div class="root-wrap"><div class="root">
+      <span class="ic">${icon(c.icon)}</span>
+      <div><b>${t.root.name}</b><span class="u">${t.root.url}</span></div>${pill(t.root.link)}
+    </div></div>
+    <div class="row" style="grid-template-columns:${gtc};max-width:${Math.round(total * unit)}px">${colHTML}</div>
+  </div>`;
+}
+
+/* ---------- Pagina's ---------- */
+const doc = document.getElementById('doc');
+const LOGO = '../assets/img/logo-de-bresser.png';
+const LOGOC = '../assets/img/logo-de-bresser-compact.png';
+const RUIT = cls => `<svg class="${cls}" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F"/></svg>`;
+
+const PLAN = [{ type: 'cover' }, { type: 'overview' }, ...CH.map(c => ({ type: 'chap', id: c.id })), { type: 'issues' }];
+const pageOf = {};
+PLAN.forEach((p, i) => { pageOf[p.id || p.type] = i + 1; });
+const head = title => `<div class="ph"><img src="${LOGOC}" alt="De Bresser"><span><b>Sitemap debresser.nl</b> · ${title}</span></div>`;
+const LEGEND = `<div class="legend-row"><b style="color:var(--db-nachtblauw)">Link vanaf de homepage:</b>${['M','S','F','H','T','N'].map(k => `<span>${pill(k)}</span>`).join('')}<span><span class="warn">geen omschrijving</span>&nbsp;= geen eigen Google-omschrijving</span></div>`;
+const foot = n => `<div class="pf">${LEGEND}<span>Stand 11 september 2026 · pagina ${n} van ${PLAN.length}</span></div>`;
+
+const notLinkedAll = CH.filter(c => !['blog', 'regio'].includes(c.id)).flatMap(c => c.rows.filter(r => r[0] !== 'g' && r[4] === 'N' && !String(r[2]).startsWith('/vacature/')));
+const regioNot = REGIO.filter(r => !r[2]).length;
+
+PLAN.forEach((p, i) => {
+  const n = i + 1;
+  const el = document.createElement('section');
+  el.className = 'page' + (p.type === 'cover' ? ' cover' : '');
+
+  if (p.type === 'cover') {
+    const toc = [['', 'Overzicht en bezoekersroute', pageOf.overview, ''], ...CH.map(c => [c.nr, c.title, pageOf[c.id], pagesCount(c)]), ['', 'Aandachtspunten en advies', pageOf.issues, '']];
+    el.innerHTML = `${RUIT('ruit')}
+      <div class="cover-l">
+        <img src="${LOGO}" alt="De Bresser">
+        <span class="eyebrow">Websitestructuur</span>
+        <h1>Sitemap<br><span>debresser.nl</span></h1>
+        <p class="lead">Per onderdeel een eigen sitemap: welke pagina’s er zijn, wat erop staat, voor wie ze bedoeld zijn en hoe een bezoeker ze vindt.</p>
+        <div class="cover-stats"><div><b>100</b><span>pagina’s</span></div><div><b>12</b><span>onderdelen</span></div><div><b>41</b><span>regiopagina’s</span></div><div><b>12</b><span>blogartikelen</span></div></div>
+        <p class="cover-meta">Bron: Yoast-sitemap en paginagegevens van de live site · stand 11 september 2026</p>
+      </div>
+      <div class="toc"><h2>Inhoud</h2><ul>${toc.map(t => `<li><span class="nr">${t[0]}</span><span>${t[1]}${t[3] !== '' ? `<span class="cnt">· ${t[3]} pag.</span>` : ''}</span><span class="pg">p. ${t[2]}</span></li>`).join('')}</ul></div>`;
+  }
+
+  if (p.type === 'overview') {
+    const cards = CH.map(c => `<div class="ov-card${c.main ? ' main' : ''}">
+      <div class="top">${icon(c.icon)}<span class="badge">${pagesCount(c)} pag.</span></div>
+      <h3>${c.title}${c.nieuw ? ' <span class="pill p-T">Nieuw</span>' : ''}</h3>
+      <p>${c.one}</p>
+      <div class="meta"><span>${c.nr}</span><span>p. ${pageOf[c.id]}</span></div></div>`).join('');
+    el.innerHTML = `${head('Overzicht')}
+      <div class="ov-title"><div><span class="eyebrow">Zo is de website opgebouwd</span><h2>Home → 12 onderdelen → subpagina’s</h2></div>
+        <p>De <b style="color:var(--db-nachtblauw)">donkere kaarten</b> zijn de onderdelen uit het hoofdmenu, de lichte kaarten staan er niet in. Elk onderdeel heeft verderop een eigen pagina met een eigen sitemap.</p></div>
+      <div class="ov-grid">${cards}</div>
+      <div class="ov-bottom">
+        <div class="box"><h3>Hoe komt een bezoeker bij een offerte?</h3>
+          <div class="route"><div class="step"><b>Homepage</b><small>via naam of advertentie</small></div><span class="arr">→</span><div class="step"><b>Hoofdmenu</b><small>Diensten, Over ons …</small></div><span class="arr">→</span><div class="step"><b>Dienstpagina</b><small>bijv. Particuliere verhuizing</small></div><span class="arr">→</span><div class="step end"><b>Offerte · Videogesprek · Bellen</b><small>013 52 82 372</small></div></div>
+          <div class="route"><div class="step"><b>Google</b><small>“verhuisbedrijf Oss”</small></div><span class="arr">→</span><div class="step"><b>Regio- of landingspagina</b><small>geen menu nodig</small></div><span class="arr">→</span><div class="step"><b>Dienst of direct</b><small>meer info of meteen door</small></div><span class="arr">→</span><div class="step end"><b>Offerte · Videogesprek · Bellen</b><small>013 52 82 372</small></div></div>
+        </div>
+        <div class="box"><h3>Zo lees je de sitemaps per onderdeel</h3>
+          <ul class="legend-list">
+            <li><span class="pill" style="background:var(--db-signaalgroen);color:var(--db-nachtblauw)">Groen blok</span><span>De hoofdpagina van het onderdeel.</span></li>
+            <li>${pill('M')}<span>Link in het hoofdmenu van de homepage.</span></li>
+            <li>${pill('S')}<span>Link in het Snelmenu onderaan de homepage.</span></li>
+            <li>${pill('H')}<span>Staat als blok op de homepage.</span></li>
+            <li>${pill('N')}<span>Geen link vanaf de homepage; alleen via Google of andere pagina’s.</span></li>
+            <li><span class="warn">geen omschrijving</span><span>Geen eigen Google-omschrijving ingevuld in Yoast.</span></li>
+          </ul></div>
+      </div>
+      <div class="pf"><span>De Bresser B.V. · Schijfstraat 13, 5061 KA Oisterwijk · 013 52 82 372 · debresser.nl</span><span>Stand 11 september 2026 · pagina ${n} van ${PLAN.length}</span></div>`;
+  }
+
+  if (p.type === 'chap') {
+    const c = CH.find(x => x.id === p.id);
+    const total = pagesCount(c);
+    const inMenu = linkCount(c, 'M');
+    const none = c.id === 'regio' ? regioNot : c.id === 'blog' ? 6 : linkCount(c, 'N');
+    el.innerHTML = `${head(`${c.nr} · ${c.title}`)}
+      <div class="band">${RUIT('band-ruit')}
+        <div class="b-head"><span class="b-nr">${c.nr}</span><div><h2>${c.title}</h2><span class="path">${c.path}</span>
+          <div class="kpis"><span><b>${total}</b>pagina’s</span>${inMenu ? `<span><b>${inMenu}</b>in hoofdmenu</span>` : ''}<span><b>${none}</b>geen link</span></div></div></div>
+        <div class="b-what"><small>Wat is dit?</small><p>${c.wat}</p></div>
+        <div class="b-facts">
+          <div><small>Voor wie</small><span>${c.voor.join(' · ')}</span></div>
+          <div><small>Belangrijkste actie</small><span>${c.actie}</span></div>
+          <div><small>Te vinden in</small><span>${c.menu}</span></div>
+        </div>
+      </div>
+      ${orgHTML(c)}
+      ${foot(n)}`;
+  }
+
+  if (p.type === 'issues') {
+    const noMetaCount = NO_META.length;
+    const I = [
+      ['Menu linkt via doorverwijzingen', 'Hoog', 'Vier menulinks gaan eerst naar een oude URL en worden dan doorgestuurd (301): <code>/opslag-zakelijk/</code>, <code>/opslag-particulier/</code>, <code>/montage-service/</code> en <code>/zakelijk-verhuizen/</code>.', 'Menulinks laten wijzen naar de echte URL. In de nieuwe homepage is dit al gedaan.'],
+      [`${noMetaCount} pagina’s zonder eigen Google-omschrijving`, 'Hoog', 'Google toont dan zelf een stuk tekst, vaak het telefoonnummer en de eerste zin. Onder andere Kantoor verhuizen, Winkelverhuizing, Senioren verhuizen, FAQ en alle zes opslagruimte-pagina’s.', 'In Yoast per pagina een korte omschrijving invullen (± 150 tekens) met dienst en plaats.'],
+      ['Tilburg heeft twee pagina’s', 'Middel', '<code>/tilburg/</code> en <code>/verhuisbedrijf-tilburg/</code> gaan over hetzelfde. Google weet dan niet welke het moet tonen.', 'Eén pagina houden (met de beste tekst) en de andere doorsturen.'],
+      [`${notLinkedAll.length} dienstpagina’s en ${regioNot} regiopagina’s zonder link vanaf de homepage`, 'Middel', 'Bijvoorbeeld Senioren verhuizen, Full service verhuizing, de landenpagina’s, Videogesprek en FAQ. Bezoekers vinden ze moeilijk en Google weegt ze minder zwaar.', 'Opnemen in het menu, de footer of als link op de passende dienstpagina.'],
+      ['Dubbele vermeldingen in de sitemap', 'Laag', 'Zes pagina’s staan twee keer in de Yoast-sitemap, zoals <code>/</code>, <code>/contact/</code> en <code>/over-ons/</code>.', 'Controleren in Yoast en de WPML-instellingen; elke pagina één keer vermelden.'],
+      ['URL-structuur niet consequent', 'Laag', 'Engeland staat onder <code>/internationale-verhuizing/</code>, Duitsland en Frankrijk niet. Breda, Roosendaal en Bergen op Zoom missen het voorvoegsel <code>verhuisbedrijf-</code>.', 'Bij de nieuwe website één vaste opbouw kiezen en oude URL’s doorsturen.'],
+    ];
+    el.innerHTML = `${head('Aandachtspunten')}
+      <div class="ov-title"><div><span class="eyebrow">Aandachtspunten en advies</span><h2>Wat kan er beter aan de structuur?</h2></div>
+        <p>Gevonden bij het doorlopen van alle pagina’s, gesorteerd op belang voor bezoekers en vindbaarheid in Google.</p></div>
+      <div class="issues">${I.map((x, k) => `<div class="issue"><div class="ih"><span class="inr">${k + 1}</span><h3>${x[0]}</h3><span class="pill ${x[1] === 'Hoog' ? 'p-M' : x[1] === 'Middel' ? 'p-S' : 'p-F'} prio">${x[1]}</span></div><p>${x[2]}</p><p class="adv"><b>Advies:</b> ${x[3]}</p></div>`).join('')}</div>
+      <div class="pf"><span>De Bresser B.V. · Schijfstraat 13, 5061 KA Oisterwijk · 013 52 82 372 · debresser.nl</span><span>Stand 11 september 2026 · pagina ${n} van ${PLAN.length}</span></div>`;
+  }
+  doc.appendChild(el);
+});
+</script>
+</body>
+</html>

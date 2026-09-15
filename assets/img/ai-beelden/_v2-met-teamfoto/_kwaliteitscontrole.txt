@@ -1,0 +1,21 @@
+BESTE POGING       04-zakelijk-verhuizen-kantoor  (poging 4, score 4)  opmerking: Logo symbols on the truck, boxes, and uniforms are incorrect shapes (appearing as solid blocks or cubes rather than outlined interlocking rhombi). Obvious anatomical errors are present, notably the mangled hand of the worker standing on the far right.
+BESTE POGING       05-particulier-verhuizen-gezin  (poging 1, score 3)  opmerking: The generated image fails due to severe text garbling on the moving boxes (e.g., 'BEWELIGIG IN VERRUIJEEN', 'DE EESSER', 'FULL SORRVICE IN LOOIRTIEK'). Additionally, the movers' shirts read 'TOP MOVERS' instead of the required brand name. There are also minor anatomical issues with hands.
+BESTE POGING       14-meubeltransport  (poging 1, score 4)  opmerking: Misspelled brand name 'DE ERESSER' on shirt. Garbled slogans on boxes ('FIGLE SERVICE IN LOGI2OLCK', 'GRWELING IN VERNUjLEN'). Distorted fingers on the man's hands.
+BESTE POGING       20-huismeester  (poging 2, score 4)  opmerking: Van has unpermitted extra text (cities, numbers). Shirt logo lacks required colors.
+BESTE POGING       21-assetmanagement-hero  (poging 4, score 4)  opmerking: Boxes feature clearly readable garbled text and fake URLs. Minor anatomical deformities on the man's right hand.
+BESTE POGING       23-wms-meubelpaspoort  (poging 2, score 4)  opmerking: The prominent logo symbols on both the van and the cardboard box display only two overlapping diamonds instead of the required three interlocking rhombi.
+BESTE POGING       24-inkoop-verkoop-meubilair  (poging 1, score 3)  opmerking: Logo symbols on the window, boxes, and van incorrectly feature non-interlocking shapes and cubes instead of the required three interlocking outlined rhombi.
+BESTE POGING       27-werkwijze-1-aanvraag  (poging 1, score 3)  opmerking: The van displays incorrect logo shapes (green solid cubes) and includes garbled, invented text below the brand name. Additionally, the woman's right hand exhibits noticeable anatomical errors with fused fingers.
+BESTE POGING       28-werkwijze-2-huisbezoek  (poging 1, score 3)  opmerking: The brand name is misspelled on the van outside ('DE RRESSER') and partially on the boxes ('DE E').
+BESTE POGING       29-werkwijze-3-offerte-op-maat  (poging 4, score 4)  opmerking: Misspelled text on the truck ('LOGISTIER' instead of 'LOGISTIEK') and incorrect brand name on the document ('DE CACCER').
+BESTE POGING       30-werkwijze-4-verhuisdag  (poging 1, score 4)  opmerking: The large green logos on the vehicles are solid shapes rather than interlocking outlined rhombi. The smaller logos on the boxes have an incorrect interlocking structure. There is also garbled text visible on the inside panel of the open van door.
+BESTE POGING       31-met-oog-voor-morgen-elektrisch  (poging 1, score 3)  opmerking: Logos on cardboard boxes have incorrect solid shapes instead of outlines, garbled text on the side of the woman's box, and the man's right hand holding the box is deformed.
+BESTE POGING       32-over-ons-team-voor-pand  (poging 1, score 3)  opmerking: Logos on vehicles and boxes are incorrect shapes (cube-like or garbled). Clearly visible text on uniforms, vehicles, and boxes is incorrect ('TOP') or garbled.
+BESTE POGING       33-over-ons-historie-1923  (poging 1, score 4)  opmerking: Horse has malformed front hoof.
+BESTE POGING       38-vacatures-werken-bij  (poging 2, score 4)  opmerking: Anatomical errors (fused/malformed fingers on hands). Green cubes on the truck violate the specific rule against cube shapes.
+BESTE POGING       39-werkgebied-brabant-regio  (poging 3, score 4)  opmerking: The logo symbol on the side of the truck has an incorrect shape; it does not consist of three distinct interlocking outlined rhombi.
+BESTE POGING       40-cta-offerte-contact  (poging 3, score 4)  opmerking: The logo symbol on the cardboard box has the wrong shape; it is not three interlocking outlined rhombi.
+GOEDGEKEURD       16-montageservice  (poging 2, score 7)
+GOEDGEKEURD       18-onderhoud-technicus  (poging 1, score 7)
+GOEDGEKEURD       22-inventarisatie  (poging 4, score 8)
+GOEDGEKEURD       35-tips-verhuisdozen-inpakken  (poging 2, score 8)

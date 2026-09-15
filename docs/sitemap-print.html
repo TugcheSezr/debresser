@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Sitemap debresser.nl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: var(--db-font); color: var(--db-antraciet); font-size: 9.5pt; line-height: 1.5; }
+  h1, h2, h3 { margin: 0; color: var(--db-nachtblauw); font-weight: 600; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 7.6pt; color: var(--db-grijs); }
+
+  /* Kop */
+  .cover { background: var(--db-nachtblauw); color: #C9D1E8; border-radius: 10px; padding: 22px 26px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; position: relative; overflow: hidden; }
+  .cover img { width: 78px; filter: brightness(0) invert(1); }
+  .cover h1 { color: #fff; font-size: 22pt; line-height: 1.1; letter-spacing: -.02em; }
+  .cover p { margin: 6px 0 0; font-size: 9pt; }
+  .cover svg { position: absolute; right: -30px; top: -40px; width: 190px; opacity: .35; }
+  .cover svg polygon { fill: none; stroke-width: 36; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 14px 0 18px; border-top: 2px solid var(--db-nachtblauw); }
+  .stats div { padding: 8px 10px 0 0; }
+  .stats div + div { padding-left: 10px; border-left: 1px solid var(--db-mist); }
+  .stats b { display: block; color: var(--db-nachtblauw); font-size: 17pt; font-weight: 600; line-height: 1.2; }
+  .stats span { font-size: 8pt; color: var(--db-grijs); }
+
+  /* Hoeklijn-label */
+  .eyebrow { position: relative; display: inline-block; padding: 0 12px 6px 8px; margin-bottom: 8px; color: var(--db-diepblauw); font-size: 7.5pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1.5px; background: currentColor; }
+  .eyebrow::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: currentColor; clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%); }
+
+  .grid { columns: 2; column-gap: 16px; }
+  .block { break-inside: avoid; margin-bottom: 12px; padding: 12px 14px; border: 1px solid #DDE3EC; border-radius: 8px; background: #fff; }
+  .block h2 { font-size: 11pt; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 6px; margin-bottom: 6px; border-bottom: 1px solid var(--db-mist); }
+  .block li { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; }
+  .block li.sub { padding-left: 12px; }
+  .block li.sub::before { content: "–"; color: var(--db-lichtgrijs); margin-left: -12px; width: 12px; }
+  .block li .n { flex: 1; }
+  .block .group { margin-top: 4px; font-weight: 600; color: var(--db-nachtblauw); }
+
+  .section-title { margin: 18px 0 8px; break-after: avoid; }
+  .regio-note { margin: -2px 0 8px; font-size: 8pt; color: var(--db-grijs); }
+  .regio { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 16px; border: 1px solid #DDE3EC; border-radius: 8px; padding: 10px 14px; }
+  .regio div { display: flex; justify-content: space-between; gap: 6px; padding: 2.5px 0; border-bottom: 1px dotted #DDE3EC; }
+  .regio div .mono { font-size: 7pt; }
+
+  .blog { border: 1px solid #DDE3EC; border-radius: 8px; padding: 6px 14px; }
+  .blog li { break-inside: avoid; display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 4px 0; border-bottom: 1px dotted #DDE3EC; }
+  .blog li:last-child { border-bottom: 0; }
+  .blog time { color: var(--db-grijs); font-size: 8pt; }
+  .blog .mono { display: block; font-size: 7pt; }
+
+  .note { break-inside: avoid; margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: var(--db-mist); }
+  .note h2 { font-size: 10.5pt; margin-bottom: 6px; }
+  .note li { position: relative; padding: 3px 0 3px 14px; }
+  .note li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--db-signaalgroen); transform: skewX(-20deg); }
+  code { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 7.8pt; color: var(--db-nachtblauw); }
+
+  .foot { margin-top: 16px; padding-top: 8px; border-top: 1px solid var(--db-mist); font-size: 7.5pt; color: var(--db-grijs); display: flex; justify-content: space-between; }
+  .page-break { break-before: page; }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <img src="../assets/img/logo-de-bresser.png" alt="De Bresser">
+  <div>
+    <h1>Sitemap debresser.nl</h1>
+    <p>Alle pagina's van de live site, gegroepeerd per dienst · stand 11 september 2026</p>
+    <p class="mono" style="color:#AEB8D6">Bron: Yoast-sitemap /sitemap_index.xml · namen afgeleid van de URL · alle paden achter https://www.debresser.nl</p>
+  </div>
+  <svg viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F"/></svg>
+</header>
+
+<div class="stats">
+  <div><b>100</b><span>unieke pagina's</span></div>
+  <div><b>41</b><span>regiopagina's</span></div>
+  <div><b>12</b><span>blogartikelen</span></div>
+  <div><b>2</b><span>vacatures</span></div>
+</div>
+
+<div class="eyebrow">Hoofdstructuur</div>
+<div class="grid">
+  <section class="block">
+    <h2>Home <span class="mono">/</span></h2>
+    <ul><li><span class="n">Homepage</span><span class="mono">/</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2>Verhuizen <span class="mono">/verhuizen/</span></h2>
+    <ul>
+      <li><span class="n">Particuliere verhuizing</span><span class="mono">/particuliere-verhuizing/</span></li>
+      <li><span class="n">Zakelijke verhuizing</span><span class="mono">/zakelijke-verhuizing/</span></li>
+      <li class="sub"><span class="n">Kantoor verhuizen</span><span class="mono">/kantoor-verhuizen/</span></li>
+      <li class="sub"><span class="n">Winkelverhuizing</span><span class="mono">/winkelverhuizing/</span></li>
+      <li class="sub"><span class="n">Verhuisservice zakelijk</span><span class="mono">/verhuisservice-zakelijk/</span></li>
+      <li><span class="n">Internationale verhuizing</span><span class="mono">/internationale-verhuizing/</span></li>
+      <li class="sub"><span class="n">Engeland</span><span class="mono">/internationale-verhuizing/engeland/</span></li>
+      <li class="sub"><span class="n">Duitsland</span><span class="mono">/duitsland/</span></li>
+      <li class="sub"><span class="n">Frankrijk</span><span class="mono">/frankrijk/</span></li>
+      <li class="sub"><span class="n">Zwitserland</span><span class="mono">/zwitserland/</span></li>
+      <li class="sub"><span class="n">Benelux-verhuizing</span><span class="mono">/benelux-verhuizing/</span></li>
+      <li class="sub"><span class="n">Verhuisbedrijf België</span><span class="mono">/verhuisbedrijf-belgie/</span></li>
+      <li class="sub"><span class="n">De Bresser Brussel</span><span class="mono">/de-bresser-brussel/</span></li>
+      <li class="sub"><span class="n">Verhuisbedrijf Europa</span><span class="mono">/verhuisbedrijf-europa/</span></li>
+      <li><span class="n">Zorgverhuizing</span><span class="mono">/zorg-verhuizing/</span></li>
+      <li><span class="n">Senioren verhuizen</span><span class="mono">/senioren-verhuizen/</span></li>
+      <li><span class="n">Duurzaam verhuizen</span><span class="mono">/duurzaam-verhuizen/</span></li>
+      <li><span class="n">Full service verhuizing</span><span class="mono">/full-service-verhuizing/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Opslag <span class="mono">/opslag/</span></h2>
+    <ul>
+      <li><span class="n">Zakelijke opslag</span><span class="mono">/zakelijke-opslag/</span></li>
+      <li><span class="n">Particuliere opslag (incl. DIY-opslag)</span><span class="mono">/particuliere-opslag/</span></li>
+      <li><span class="n">Container opslag</span><span class="mono">/container-opslag/</span></li>
+      <li class="group">Opslagruimte per plaats</li>
+      <li class="sub"><span class="n">Breda</span><span class="mono">/opslagruimte-breda/</span></li>
+      <li class="sub"><span class="n">Den Bosch</span><span class="mono">/opslagruimte-den-bosch/</span></li>
+      <li class="sub"><span class="n">Etten-Leur</span><span class="mono">/opslagruimte-etten-leur/</span></li>
+      <li class="sub"><span class="n">Goirle</span><span class="mono">/opslagruimte-goirle/</span></li>
+      <li class="sub"><span class="n">Oirschot</span><span class="mono">/opslagruimte-oirschot/</span></li>
+      <li class="sub"><span class="n">Roosendaal</span><span class="mono">/opslagruimte-roosendaal/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Meubelprojecten <span class="mono">/meubelprojecten/</span></h2>
+    <ul>
+      <li><span class="n">Meubeltransport</span><span class="mono">/meubeltransport/</span></li>
+      <li><span class="n">Meubelmontage</span><span class="mono">/meubelmontage/</span></li>
+      <li><span class="n">Veilingen</span><span class="mono">/veilingen/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Gebouwbeheer <span class="mono">/gebouwbeheer/</span></h2>
+    <ul>
+      <li><span class="n">Onderhoud</span><span class="mono">/gebouwbeheer/onderhoud/</span></li>
+      <li><span class="n">Verduurzamen</span><span class="mono">/gebouwbeheer/verduurzamen/</span></li>
+      <li><span class="n">Huismeester</span><span class="mono">/gebouwbeheer/huismeester/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Assetmanagement <span class="mono">/assetmanagement/</span></h2>
+    <ul>
+      <li><span class="n">Inventarisatie</span><span class="mono">…/inventarisatie/</span></li>
+      <li><span class="n">WMS en Meubelpaspoort</span><span class="mono">…/wms-en-meubelpaspoort/</span></li>
+      <li><span class="n">Opslag assets</span><span class="mono">…/opslag-assets/</span></li>
+      <li><span class="n">Inkoop en verkoop assets</span><span class="mono">…/inkoop-en-verkoop-assets/</span></li>
+      <li><span class="n">Circulair meubilair</span><span class="mono">…/circulair-meubilair/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Duurzame werkomgeving <span class="mono">/duurzame-werkomgeving/</span></h2>
+    <ul><li><span class="n">Gebouw- en assetmanagement, 24/7 één aanspreekpunt</span></li></ul>
+  </section>
+
+  <section class="block">
+    <h2>Overige diensten</h2>
+    <ul>
+      <li><span class="n">Logistiek full service</span><span class="mono">/logistiek-full-service/</span></li>
+      <li><span class="n">Groupage transport</span><span class="mono">/groupage-transport/</span></li>
+      <li><span class="n">Handyman services</span><span class="mono">/handyman-services/</span></li>
+      <li><span class="n">Quick scan</span><span class="mono">/quick-scan/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Over De Bresser</h2>
+    <ul>
+      <li><span class="n">Over ons</span><span class="mono">/over-ons/</span></li>
+      <li><span class="n">100-jarig jubileum</span><span class="mono">/100-jarig-jubileum/</span></li>
+      <li><span class="n">Vacatures</span><span class="mono">/overzicht-vacatures/</span></li>
+      <li class="sub"><span class="n">Verhuizer</span><span class="mono">/vacature/verhuizer/</span></li>
+      <li class="sub"><span class="n">Chauffeur verhuizingen C/CE</span><span class="mono">/vacature/chauffeur-verhuizingen-c-ce/</span></li>
+      <li class="sub"><span class="n">Tekenbonus</span><span class="mono">/tekenbonus/</span></li>
+      <li><span class="n">Blog (12 artikelen)</span><span class="mono">/blog/</span></li>
+      <li><span class="n">FAQ</span><span class="mono">/faq/</span></li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2>Contact, offerte en juridisch</h2>
+    <ul>
+      <li><span class="n">Contact</span><span class="mono">/contact/</span></li>
+      <li><span class="n">Offerte</span><span class="mono">/offerte/</span></li>
+      <li><span class="n">Videogesprek</span><span class="mono">/videogesprek/</span></li>
+      <li><span class="n">Privacyverklaring</span><span class="mono">/privacyverklaring/</span></li>
+      <li><span class="n">Voorwaarden (pdf's in de footer)</span></li>
+      <li><span class="n">Engelse versie (WPML)</span><span class="mono">/en/</span></li>
+    </ul>
+  </section>
+</div>
+
+
+
+<div class="eyebrow section-title">Verhuisbedrijf per plaats · 41 pagina's</div>
+<p class="regio-note">URL: <code>/verhuisbedrijf-[plaats]/</code>. Afwijkende URL's staan erbij.</p>
+<div class="regio">
+  <div><span>Baarle-Nassau</span></div>
+  <div><span>Bavel</span></div>
+  <div><span>Bergen op Zoom</span><span class="mono">bergen-op-zoom</span></div>
+  <div><span>Best</span></div>
+  <div><span>Boxtel</span></div>
+  <div><span>Breda</span><span class="mono">breda</span></div>
+  <div><span>Den Bosch</span></div>
+  <div><span>Dongen</span></div>
+  <div><span>Dordrecht</span></div>
+  <div><span>Drunen</span></div>
+  <div><span>Eindhoven</span></div>
+  <div><span>Etten-Leur</span></div>
+  <div><span>Goirle</span></div>
+  <div><span>Helvoirt</span></div>
+  <div><span>Hilvarenbeek</span></div>
+  <div><span>Kaatsheuvel</span></div>
+  <div><span>Maastricht</span></div>
+  <div><span>Moerdijk</span></div>
+  <div><span>Oirschot</span></div>
+  <div><span>Oisterwijk</span></div>
+  <div><span>Oosterhout</span></div>
+  <div><span>Oss</span></div>
+  <div><span>Oudenbosch</span></div>
+  <div><span>Poppel</span></div>
+  <div><span>Raamsdonksveer</span></div>
+  <div><span>Roermond</span></div>
+  <div><span>Roosendaal</span><span class="mono">roosendaal</span></div>
+  <div><span>Rucphen</span></div>
+  <div><span>Schijndel</span></div>
+  <div><span>Sint-Oedenrode</span></div>
+  <div><span>Steenbergen</span></div>
+  <div><span>Tilburg</span></div>
+  <div><span>Tilburg (2e pagina)</span><span class="mono">tilburg</span></div>
+  <div><span>Udenhout</span></div>
+  <div><span>Venlo</span></div>
+  <div><span>Vlijmen</span></div>
+  <div><span>Vught</span></div>
+  <div><span>Waalwijk</span></div>
+  <div><span>Weert</span></div>
+  <div><span>Zevenbergen</span></div>
+  <div><span>Zundert</span></div>
+</div>
+
+<div class="eyebrow section-title">Blog · 12 artikelen</div>
+<ul class="blog">
+  <li><time>11-06-2026</time><span>Samen bouwen aan succes<span class="mono">/2026/06/11/samen-bouwen-aan-succes/</span></span></li>
+  <li><time>19-11-2025</time><span>De Bresser verwelkomt Brocken Verhuizingen<span class="mono">/2025/11/19/de-bresser-verwelkomt-brocken-verhuizingen/</span></span></li>
+  <li><time>06-11-2025</time><span>Verhuizen met kinderen<span class="mono">/2025/11/06/verhuizen-met-kinderen/</span></span></li>
+  <li><time>29-03-2024</time><span>De populairste reden om te verhuizen<span class="mono">/2024/03/29/de-populairste-reden-om-te-verhuizen/</span></span></li>
+  <li><time>29-03-2024</time><span>Nieuw: Qwiek.snooze reinigingsservice<span class="mono">/2024/03/29/nieuw-qwiek-snooze-reinigingsservice/</span></span></li>
+  <li><time>29-03-2024</time><span>Interne verhuizing<span class="mono">/2024/03/29/interne-verhuizing/</span></span></li>
+  <li><time>29-03-2024</time><span>Verhuislift maakt alles makkelijker<span class="mono">/2024/03/29/verhuislift-maakt-alles-makkelijker/</span></span></li>
+  <li><time>29-03-2024</time><span>De drie grootste verhuisblunders<span class="mono">/2024/03/29/de-drie-grootste-verhuisblunders/</span></span></li>
+  <li><time>29-03-2024</time><span>Logistieke dienstverlening<span class="mono">/2024/03/29/logistieke-dienstverlening/</span></span></li>
+  <li><time>29-03-2024</time><span>Spullen weg doen: waarom is het zo moeilijk?<span class="mono">/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/</span></span></li>
+  <li><time>29-03-2024</time><span>Waarom verhuizen met een Erkende Verhuizer<span class="mono">/2024/03/29/waarom-verhuizen-met-een-erkende-verhuizer/</span></span></li>
+  <li><time>29-03-2024</time><span>Inhuren professionals kan stressniveau verminderen<span class="mono">/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/</span></span></li>
+</ul>
+
+<section class="note">
+  <h2>Aandachtspunten</h2>
+  <ul>
+    <li>Het menu linkt naar oude URL's die met een 301 doorsturen: <code>/opslag-zakelijk/</code>, <code>/opslag-particulier/</code>, <code>/montage-service/</code> en <code>/zakelijk-verhuizen/</code>. Beter direct naar de echte URL linken.</li>
+    <li><code>/tilburg/</code> en <code>/verhuisbedrijf-tilburg/</code> bestaan allebei: mogelijk dubbele inhoud voor Google.</li>
+    <li>Zes pagina's staan dubbel in de Yoast-sitemap: <code>/</code>, <code>/contact/</code>, <code>/over-ons/</code>, <code>/overzicht-vacatures/</code>, <code>/veilingen/</code>, <code>/internationale-verhuizing/engeland/</code>.</li>
+    <li>URL-structuur is niet consequent: Engeland staat onder <code>/internationale-verhuizing/</code>, Duitsland en Frankrijk niet; Breda, Roosendaal en Bergen op Zoom missen het voorvoegsel <code>verhuisbedrijf-</code>.</li>
+  </ul>
+</section>
+
+<div class="foot">
+  <span>De Bresser B.V. · Schijfstraat 13, 5061 KA Oisterwijk · 013 52 82 372 · info@debresser.nl</span>
+  <span>Sitemap · 11 september 2026</span>
+</div>
+
+</body>
+</html>

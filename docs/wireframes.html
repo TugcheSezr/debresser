@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Wireframes debresser.nl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; font-family: var(--db-font); color: var(--db-antraciet); font-size: 9pt; line-height: 1.45; background: #fff; }
+  h1, h2, h3 { margin: 0; font-weight: 600; color: var(--db-nachtblauw); }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
+  svg.i { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* ---------- Vel ---------- */
+  .sheet { width: 297mm; height: 210mm; padding: 8mm 11mm 6mm; display: flex; flex-direction: column; overflow: hidden; break-after: page; position: relative; }
+  .sheet:last-child { break-after: auto; }
+  .sh-top { display: flex; align-items: center; gap: 12px; padding-bottom: 7px; margin-bottom: 9px; border-bottom: 1px solid var(--db-mist); }
+  .sh-top img { height: 22px; }
+  .sh-top .doc { font-size: 7.6pt; color: var(--db-grijs); }
+  .sh-top .doc b { color: var(--db-nachtblauw); }
+  .tab { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .tab .pn { font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; background: var(--db-nachtblauw); color: #fff; padding: 2px 7px; border-radius: 4px; }
+  .tab .nm { font-size: 9.5pt; font-weight: 600; color: var(--db-nachtblauw); }
+  .tab .url { font-family: "IBM Plex Mono", monospace; font-size: 7.3pt; color: var(--db-grijs); }
+  .tab .tpl { font-size: 6.8pt; font-weight: 600; padding: 1px 6px; border-radius: 4px; background: #DDEFFA; color: var(--db-diepblauw); }
+  .sh-foot { margin-top: auto; padding-top: 6px; border-top: 1px solid var(--db-mist); display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 6.8pt; color: var(--db-grijs); }
+  .sh-foot .lg { display: flex; align-items: center; gap: 8px; }
+
+  .page-intro { display: grid; grid-template-columns: auto 1fr 1fr; gap: 16px; align-items: center; padding: 8px 12px; margin-bottom: 9px; border-radius: 9px; background: var(--db-nachtblauw); color: #C9D1E8; }
+  .page-intro .big { font-size: 24pt; font-weight: 300; line-height: 1; color: var(--db-signaalgroen); }
+  .page-intro h2 { color: #fff; font-size: 13pt; }
+  .page-intro .u { font-family: "IBM Plex Mono", monospace; font-size: 7pt; color: #AEB8D6; }
+  .page-intro small { display: block; font-size: 6.4pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--db-hemelsblauw); }
+  .page-intro span.v { font-size: 7.8pt; color: #fff; line-height: 1.4; }
+
+  .sh-body { flex: 1; min-height: 0; display: grid; grid-template-columns: 112px 1fr; gap: 14px; }
+  .mini { border-right: 1px solid var(--db-mist); padding-right: 10px; }
+  .mini h4 { margin: 0 0 6px; font-size: 6.4pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--db-grijs); }
+  .mini li { display: grid; grid-template-columns: 9px 14px 1fr; gap: 4px; align-items: center; padding: 2px 3px; font-size: 6.6pt; line-height: 1.25; color: #9AA3B5; border-radius: 3px; }
+  .mini li i { width: 9px; height: 9px; border-radius: 2px; border: 1px solid #C9D1DD; }
+  .mini li .n { font-family: "IBM Plex Mono", monospace; font-size: 6pt; }
+  .mini li.on { color: var(--db-nachtblauw); font-weight: 600; background: #F1F4F9; }
+  .mini li.g { font-style: italic; }
+  .c-N { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw) !important; }
+  .c-W { background: #fff; }
+  .c-M { background: var(--db-mist); }
+  .c-G { background: var(--db-signaalgroen); border-color: var(--db-signaalgroen) !important; }
+
+  .rows { display: flex; flex-direction: column; gap: 9px; min-height: 0; }
+  .row { display: grid; grid-template-columns: 520px 1fr; gap: 14px; align-items: start; }
+  .rl { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .rl .no { width: 17px; height: 17px; border-radius: 5px; background: var(--db-nachtblauw); color: #fff; font-size: 7pt; font-weight: 600; display: grid; place-items: center; }
+  .rl .code { font-family: "IBM Plex Mono", monospace; font-size: 6.8pt; color: var(--db-webblauw); font-weight: 500; }
+  .rl .bn { font-size: 8.4pt; font-weight: 600; color: var(--db-nachtblauw); }
+  .rl .bgp { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; font-size: 6.4pt; color: var(--db-grijs); }
+  .rl .bgp i { width: 9px; height: 9px; border-radius: 2px; border: 1px solid #C9D1DD; display: inline-block; }
+  .frame { border-radius: 8px; overflow: hidden; border: 1px solid #D5DBE5; box-shadow: 0 6px 16px -10px rgba(2,13,65,.35); }
+
+  .spec { padding-top: 21px; }
+  .spec li { display: grid; grid-template-columns: 66px 1fr; gap: 8px; padding: 2.5px 0; border-bottom: 1px dotted #E3E8F0; font-size: 7.3pt; line-height: 1.42; }
+  .spec li:last-child { border-bottom: 0; }
+  .spec .k { font-size: 6.2pt; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--db-grijs); padding-top: 1px; }
+  .spec .v { color: var(--db-antraciet); }
+  .spec q { quotes: "“" "”"; color: var(--db-nachtblauw); font-weight: 500; }
+  .sb { display: inline-block; font-size: 6.4pt; font-weight: 600; padding: 0 6px; border-radius: 3px; line-height: 1.7; white-space: nowrap; vertical-align: 1px; }
+  .sb.g { background: var(--db-signaalgroen); color: var(--db-nachtblauw); }
+  .sb.n { background: var(--db-nachtblauw); color: #fff; }
+  .sb.o { border: 1px solid var(--db-nachtblauw); color: var(--db-nachtblauw); line-height: 1.5; }
+  .sb.l { color: var(--db-webblauw); padding: 0; }
+  .sb.t { background: var(--db-kroongeel); color: var(--db-nachtblauw); }
+  .vt, .ct, .at { display: inline-block; font-size: 5.8pt; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 0 4px; border-radius: 3px; vertical-align: 1px; margin-left: 3px; }
+  .vt { background: #EDE7FF; color: #4B3A99; }
+  .ct { background: #FFE3E0; color: var(--db-kleur-fout); }
+  .at { background: #FFF1C2; color: #7A5B00; }
+
+  /* ---------- Mockups ---------- */
+  .m { position: relative; overflow: hidden; padding: 12px 16px; font-family: var(--db-font); color: #2F2F2F; font-size: 7px; line-height: 1.5; }
+  .m.N { background: var(--db-nachtblauw); color: #C9D1E8; }
+  .m.M { background: var(--db-mist); }
+  .m.W { background: #fff; }
+  .m.G { background: #fff; padding: 9px; }
+  .m-eb { position: relative; display: inline-block; padding: 0 8px 4px 5px; font-size: 5.6px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--db-diepblauw); }
+  .m-eb::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: currentColor; }
+  .m-eb::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: currentColor; clip-path: polygon(0 0, 100% 85%, 100% 100%, 0 100%); }
+  .N .m-eb { color: var(--db-hemelsblauw); }
+  .m-h1 { font-size: 19px; line-height: 1.12; font-weight: 600; letter-spacing: -.02em; color: #fff; }
+  .m-h1 .g { color: var(--db-signaalgroen); }
+  .m-h2 { font-size: 12.5px; line-height: 1.2; font-weight: 600; letter-spacing: -.01em; color: var(--db-nachtblauw); }
+  .N .m-h2 { color: #fff; }
+  .m-h3 { font-size: 8px; font-weight: 600; color: var(--db-nachtblauw); line-height: 1.25; }
+  .m-p { font-size: 7px; line-height: 1.55; }
+  .N .m-p { color: #DDE3F2; }
+  .m-b { display: inline-flex; align-items: center; gap: 3px; font-size: 6.4px; font-weight: 600; padding: 4px 8px; border-radius: 3px; white-space: nowrap; border: 1px solid transparent; }
+  .m-b.g { background: var(--db-signaalgroen); color: var(--db-nachtblauw); box-shadow: 0 3px 8px -4px rgba(123,213,52,.8); }
+  .m-b.n { background: var(--db-nachtblauw); color: #fff; }
+  .m-b.o { border-color: var(--db-nachtblauw); color: var(--db-nachtblauw); }
+  .m-b.ow { border-color: rgba(255,255,255,.6); color: #fff; }
+  .m-b.l { padding: 0; color: var(--db-webblauw); }
+  .m-b.lw { padding: 0; color: var(--db-signaalgroen); }
+  .m-btns { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
+  .m-img { background-size: cover; background-position: center; border-radius: 8px; }
+  .m-card { background: #fff; border: 1px solid #E3E8F0; border-radius: 6px; padding: 7px 8px; box-shadow: 0 2px 6px -3px rgba(2,13,65,.18); display: flex; flex-direction: column; gap: 3px; position: relative; }
+  .m-ic { width: 17px; height: 17px; border-radius: 4px; background: var(--db-mist); color: var(--db-nachtblauw); display: grid; place-items: center; }
+  .m-tag { display: inline-block; font-size: 5.2px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 1px 4px; border-radius: 2px; background: var(--db-kroongeel); color: var(--db-nachtblauw); font-style: normal; }
+  .m-chip { display: inline-block; font-size: 5.8px; padding: 1px 5px; border-radius: 3px; background: #fff; border: 1px solid #D5DBE5; color: var(--db-nachtblauw); margin: 0 2px 2px 0; }
+  .m-g { display: grid; gap: 6px; }
+  .m-row { display: flex; gap: 12px; }
+  .m-col { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .m-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 8px; gap: 10px; }
+  .m-head .m-col { gap: 3px; }
+  .cl2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .cl3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .m-more { margin-top: auto; font-size: 6px; font-weight: 600; color: var(--db-webblauw); }
+  .m-usps { display: flex; gap: 9px; font-size: 6px; color: #DDE3F2; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.12); }
+  .m-usps span::before { content: "✓ "; color: var(--db-signaalgroen); font-weight: 700; }
+  .m-announce { display: inline-flex; gap: 5px; align-items: center; font-size: 6px; color: #fff; padding: 2px 6px 2px 2px; border: 1px solid rgba(255,255,255,.18); border-radius: 3px; width: max-content; }
+  .m-announce b { color: var(--db-signaalgroen); }
+  .m-crumb { font-size: 5.8px; color: #AEB8D6; }
+  .m-stars { color: var(--db-kroongeel); letter-spacing: 1px; font-size: 7px; }
+  .m-step { width: 20px; height: 13px; background: var(--db-nachtblauw); color: #fff; display: grid; place-items: center; font-size: 6.5px; font-weight: 600; clip-path: polygon(22% 0, 100% 0, 78% 100%, 0 100%); }
+  .m-step.g { background: var(--db-signaalgroen); color: var(--db-nachtblauw); }
+  .m-field { display: flex; flex-direction: column; gap: 1px; font-size: 5.6px; font-weight: 600; color: var(--db-nachtblauw); }
+  .m-field i { display: block; height: 12px; border: 1px solid #C7C7C7; border-radius: 3px; background: #fff; font-style: normal; font-weight: 400; font-size: 5.6px; color: #9AA3B5; padding: 1px 4px; }
+  .m-field.ta i { height: 26px; }
+  .m-opt { display: inline-flex; align-items: center; gap: 3px; font-size: 5.8px; margin: 0 6px 3px 0; color: var(--db-nachtblauw); }
+  .m-opt::before { content: ""; width: 6px; height: 6px; border: 1px solid #8E9AB0; border-radius: 50%; }
+  .m-opt.sq::before { border-radius: 1px; }
+  .m-ruit { position: absolute; pointer-events: none; }
+  .m-ruit polygon { fill: none; stroke-width: 36; }
+  .m-stat b { display: block; font-size: 15px; line-height: 1; font-weight: 600; color: var(--db-signaalgroen); }
+  .W .m-stat b, .M .m-stat b { color: var(--db-nachtblauw); }
+  .m-stat span { font-size: 5.8px; }
+  .m-faq { display: flex; justify-content: space-between; gap: 8px; padding: 4px 0; border-bottom: 1px solid #E3E8F0; font-size: 6.6px; font-weight: 600; color: var(--db-nachtblauw); }
+  .m-faq em { font-style: normal; color: var(--db-webblauw); }
+  .m-logo { height: 13px; filter: brightness(0); opacity: .45; }
+
+  /* ---------- Omslag en intro ---------- */
+  .cover { background: var(--db-nachtblauw); color: #C9D1E8; padding: 15mm 16mm 12mm; display: grid; grid-template-columns: 1.05fr 1fr; gap: 14mm; }
+  .cover .ruit { position: absolute; left: 30%; bottom: -130px; width: 430px; opacity: .26; }
+  .cover .ruit polygon { fill: none; stroke-width: 34; }
+  .cv-l { position: relative; display: flex; flex-direction: column; }
+  .cv-l img { width: 108px; filter: brightness(0) invert(1); }
+  .cv-l .eb { margin-top: 13mm; font-size: 7.5pt; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--db-hemelsblauw); }
+  .cover h1 { color: #fff; font-size: 33pt; line-height: 1.04; letter-spacing: -.02em; margin-top: 8px; }
+  .cover h1 span { color: var(--db-signaalgroen); }
+  .cover .lead { margin-top: 12px; font-size: 11pt; line-height: 1.55; font-weight: 300; color: #DDE3F2; max-width: 40ch; }
+  .cv-stats { margin-top: auto; display: flex; gap: 22px; }
+  .cv-stats b { display: block; color: var(--db-signaalgroen); font-size: 20pt; font-weight: 600; line-height: 1.1; }
+  .cv-stats span { font-size: 7.8pt; color: #AEB8D6; }
+  .cv-meta { margin-top: 10px; font-size: 7.3pt; color: #AEB8D6; }
+  .toc { position: relative; align-self: start; background: #fff; border-radius: 12px; padding: 14px 18px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+  .toc h2 { font-size: 11.5pt; margin-bottom: 4px; }
+  .toc li { display: grid; grid-template-columns: 30px 1fr auto auto; align-items: baseline; gap: 8px; padding: 4px 0; border-bottom: 1px dotted #D5DBE5; font-size: 8.6pt; color: var(--db-nachtblauw); }
+  .toc li:last-child { border-bottom: 0; }
+  .toc .nr, .toc .pg { font-family: "IBM Plex Mono", monospace; font-size: 7.4pt; }
+  .toc .nr { color: var(--db-webblauw); }
+  .toc .pg { color: var(--db-grijs); }
+  .toc .t { font-size: 6.6pt; padding: 0 5px; border-radius: 3px; background: #DDEFFA; color: var(--db-diepblauw); font-weight: 600; }
+
+  .intro-grid { flex: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; min-height: 0; }
+  .box { border: 1px solid #DDE3EC; border-radius: 10px; padding: 12px 14px; }
+  .box h3 { font-size: 10.5pt; margin-bottom: 8px; }
+  .how { display: grid; grid-template-columns: 112px 1fr 1fr; gap: 10px; }
+  .how div { border-radius: 8px; padding: 9px; font-size: 7.6pt; line-height: 1.45; }
+  .how b { display: block; color: var(--db-nachtblauw); font-size: 8.4pt; margin-bottom: 3px; }
+  .legend li { display: grid; grid-template-columns: 118px 1fr; gap: 8px; align-items: center; padding: 3.5px 0; border-bottom: 1px dotted #E3E8F0; font-size: 7.6pt; }
+  .legend li:last-child { border-bottom: 0; }
+  .legend .sw { display: inline-flex; gap: 4px; align-items: center; }
+  .legend .sw i { width: 12px; height: 12px; border-radius: 3px; border: 1px solid #C9D1DD; display: inline-block; }
+</style>
+</head>
+<body>
+<main id="doc"></main>
+<script>
+/* ================= Hulpfuncties ================= */
+const IMG = '../assets/img/';
+const IC = {
+  truck: '<path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 9.5h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.9"/><circle cx="16.8" cy="17.5" r="1.9"/>',
+  box: '<path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/>',
+  sofa: '<path d="M5 10.5V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2.5"/><path d="M3 11h3v3.5h12V11h3v5.5H3z"/><path d="M5 16.5v2M19 16.5v2"/>',
+  building: '<path d="M4.5 20.5v-16h9.5v16M14 9.5h5.5v11M2.5 20.5h19"/><path d="M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h.5M16.5 16.5h.5"/>',
+  passport: '<path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/>',
+  leaf: '<path d="M5 19c0-8 5-13.5 14.5-14.5C18.5 14 13 19 5 19z"/><path d="M5 19 13 11"/>',
+  people: '<circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M16 5.2a3 3 0 0 1 0 5.6M18 14.3c1.8.7 3 2.4 3 4.7"/>',
+  mail: '<rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+  phone: '<path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/>',
+  video: '<rect x="3" y="6.5" width="12.5" height="11" rx="2"/><path d="m15.5 10.5 5-3v9l-5-3"/>',
+  doc: '<path d="M5 4.5h14v15H5z"/><path d="M8.5 8.5h7M8.5 12h7M8.5 15.5h4"/>',
+  pin: '<path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  check: '<circle cx="12" cy="12" r="8.5"/><path d="m8.2 12.2 2.6 2.6 5-5.2"/>',
+  handshake: '<path d="M3 12.5 7 8.5l3 1.5 3-2 4 1 4 3.5"/><path d="M7 8.5 3.5 7M21 12.5l-3.5 3.5-2.5-1-2 2-2-1-2 1.5-3-3"/>',
+  clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  lift: '<path d="M7 20.5V4M17 20.5V4M7 8h10M7 13h10"/><path d="m10 17 2-2 2 2"/>',
+  shield: '<path d="M12 3.5 5 6v5.5c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>',
+  crown: '<path d="m4 17 1.5-9 4.5 4 2-6 2 6 4.5-4L20 17z"/><path d="M4 20h16"/>',
+  spark: '<path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4M6 6l2.8 2.8M15.2 15.2 18 18M18 6l-2.8 2.8M8.8 15.2 6 18"/>',
+  flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+};
+const ic = (k, s = 10) => `<svg class="i" width="${s}" height="${s}" viewBox="0 0 24 24">${IC[k] || IC.check}</svg>`;
+const btn = (k, t) => `<span class="m-b ${k}">${t}</span>`;
+const RUIT = (style, sw) => `<svg class="m-ruit" style="${style}" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F" stroke-width="${sw || 36}"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2" stroke-width="${sw || 36}"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F" stroke-width="${sw || 36}"/></svg>`;
+const fmt = s => s
+  .replace(/"([^"]+)"/g, '<q>$1</q>')
+  .replace(/\{g:([^}]+)\}/g, '<span class="sb g">$1</span>')
+  .replace(/\{n:([^}]+)\}/g, '<span class="sb n">$1</span>')
+  .replace(/\{o:([^}]+)\}/g, '<span class="sb o">$1</span>')
+  .replace(/\{l:([^}]+)\}/g, '<span class="sb l">$1</span>')
+  .replace(/\{t:([^}]+)\}/g, '<span class="sb t">$1</span>')
+  .replace(/\{v\}/g, '<span class="vt">tekstvoorstel</span>')
+  .replace(/\{c\}/g, '<span class="ct">controleren</span>')
+  .replace(/\{a\}/g, '<span class="at">aanleveren</span>')
+  ;
+
+const EB = t => `<span class="m-eb">${t}</span>`;
+const head = (eb, h2, right = '') => `<div class="m-head"><div class="m-col">${eb ? EB(eb) : ''}<div class="m-h2">${h2}</div></div>${right}</div>`;
+
+/* ================= Mockup-bouwstenen ================= */
+const MOCK = {
+  util: () => `<div class="m N" style="padding:5px 14px;display:flex;justify-content:space-between;font-size:6px"><span><b style="color:var(--db-signaalgroen)">✓</b> Erkende Verhuizer &nbsp; <b style="color:var(--db-signaalgroen)">✓</b> Sinds 1923 &nbsp; <b style="color:var(--db-signaalgroen)">✓</b> Eén vast aanspreekpunt</span><span style="color:#fff">+31 (0)13 52 82 372 &nbsp; info@debresser.nl &nbsp; <b>NL</b> · EN</span></div>`,
+  header: () => `<div class="m W" style="padding:7px 14px;display:flex;align-items:center;gap:12px"><img src="${IMG}logo-de-bresser-compact.png" style="height:26px"><span style="margin-left:auto;display:flex;gap:11px;font-size:6.6px;font-weight:500;color:var(--db-nachtblauw)"><span>Diensten ▾</span><span>Over ons</span><span>Vacatures</span><span>Blog</span><span>Contact</span></span><span style="font-size:6.6px;font-weight:600;color:var(--db-nachtblauw)">${ic('phone', 8)} 013 52 82 372</span>${btn('g', 'Offerte aanvragen')}</div>`,
+  mega: () => `<div class="m W" style="padding:10px 14px"><div class="m-g" style="grid-template-columns:repeat(5,1fr) 1.3fr;gap:9px">${[
+      ['truck', 'Verhuizingen', ['Zakelijk', 'Particulier', 'Internationaal', 'Zorgverhuizing', 'Duurzaam verhuizen']],
+      ['box', 'Opslag', ['Zakelijk', 'Particulier', 'DIY-opslag']],
+      ['sofa', 'Meubelprojecten', ['Meubeltransport', 'Veilingen', 'Montageservice']],
+      ['building', 'Gebouwbeheer', ['Onderhoud', 'Verduurzamen', 'Huismeester']],
+      ['passport', 'Assetmanagement', ['Inventarisatie', 'WMS en Meubelpaspoort', 'Opslag assets', 'Inkoop en verkoop', 'Circulair meubilair']],
+    ].map(([i, t, l]) => `<div class="m-col" style="gap:2px"><span class="m-h3" style="display:flex;gap:3px;align-items:center;color:var(--db-nachtblauw)"><span style="color:var(--db-webblauw)">${ic(i, 9)}</span>${t}</span>${l.map(x => `<span style="font-size:6px;padding-left:12px">${x}</span>`).join('')}</div>`).join('')}
+    <div class="m-card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8"><i class="m-tag">Nieuw!</i><span class="m-h3" style="color:#fff">Duurzame werkomgeving</span><span style="font-size:5.8px" class="cl3">Met De Bresser als uw partner voor gebouw- en assetmanagement, heeft u altijd een betrouwbare ondersteuning, 24/7.</span>${btn('lw', 'Lees meer →')}</div></div></div>`,
+  footer: () => `<div class="m N" style="padding:12px 14px"><div class="m-g" style="grid-template-columns:1.2fr 1fr 1fr 1fr 1.1fr;gap:10px"><div class="m-col"><img src="${IMG}logo-de-bresser.png" style="width:44px;filter:brightness(0) invert(1)"><span style="font-size:5.8px">Erkende verhuizers &amp; uw partner in full service logistiek</span><span style="font-size:5.8px">Schijfstraat 13, 5061 KA Oisterwijk<br>+31 (0)13 52 82 372 · info@debresser.nl</span></div>${[
+      ['Verhuizen', ['Zakelijk', 'Particulier', 'Internationaal', 'Zorgverhuizing', 'Duurzaam verhuizen']],
+      ['Opslag · Meubels', ['Zakelijk', 'Particulier', 'DIY-opslag', 'Meubeltransport', 'Veilingen']],
+      ['De Bresser', ['Gebouwbeheer', 'Assetmanagement', 'Over ons', 'Vacatures', 'Contact']],
+      ['Voorwaarden', ['Verhuizingen', 'Vervoerscondities', 'Bedrijfsverhuizing', 'Opslagvoorwaarden', 'Privacyverklaring']],
+    ].map(([t, l]) => `<div class="m-col" style="gap:2px"><span style="font-size:5.6px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff">${t}</span>${l.map(x => `<span style="font-size:5.8px">${x}</span>`).join('')}</div>`).join('')}</div>
+    <div style="margin-top:8px;padding-top:5px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;font-size:5.6px"><span><b style="color:#fff">Snelmenu</b> · Verhuisbedrijf en opslag in de regio ▾</span><span>Copyright © 2026 De Bresser B.V. | KVK 18014730 | BTW NL0055.15.452.B.01</span></div></div>`,
+  mobile: () => `<div class="m W" style="display:flex;gap:18px;align-items:center;padding:8px 16px"><div style="width:74px;height:94px;border:1.5px solid #8E9AB0;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><div style="flex:1;background:var(--db-nachtblauw)"></div><div style="padding:4px;display:flex;gap:3px;background:#fff;box-shadow:0 -3px 6px rgba(2,13,65,.12)"><span class="m-b o" style="padding:2px 4px;font-size:5px">Bellen</span><span class="m-b g" style="padding:2px 4px;font-size:5px;flex:1;justify-content:center">Offerte</span></div></div><div class="m-col"><span class="m-h3">Vaste balk onderin (alleen mobiel)</span><div class="m-btns">${btn('o', ic('phone', 7) + ' Bellen')}${btn('g', 'Offerte aanvragen')}</div></div></div>`,
+
+  heroHome: d => `<div class="m N" style="height:100%;display:grid;grid-template-columns:1fr 1.05fr;gap:14px;align-items:center;padding:14px 18px">
+      <div class="m-col" style="gap:7px"><span class="m-announce"><i class="m-tag">Nieuw!</i> Duurzame Werkomgeving <b>Lees meer →</b></span>
+        <div class="m-h1">Geweldig in<br><span class="g">verhuizen</span></div>
+        <p class="m-p">Erkende verhuizers &amp; uw partner in full service logistiek</p>
+        <div class="m-btns">${btn('g', 'Offerte aanvragen →')}${btn('ow', ic('phone', 7) + ' Bel 013 52 82 372')}</div>
+        <div class="m-usps"><span>Erkende Verhuizer</span><span>100 jaar ervaring</span><span>Ook internationaal</span></div></div>
+      <div class="m-img" style="height:132px;background-image:url(${IMG}hero-team.jpg)"></div></div>`,
+  heroPage: d => `<div class="m N" style="height:100%;display:grid;grid-template-columns:${d.img ? '1.1fr 1fr' : '1fr'};gap:14px;align-items:center;padding:12px 18px">
+      ${d.ruit ? RUIT('right:-40px;top:-50px;width:170px;opacity:.28') : ''}
+      <div class="m-col" style="gap:6px;position:relative"><span class="m-crumb">${d.crumb}</span>${d.tag ? `<i class="m-tag" style="width:max-content">${d.tag}</i>` : ''}${EB(d.eb)}
+        <div class="m-h1" style="font-size:${d.h1s || 16}px">${d.h1}</div>
+        <p class="m-p cl3" style="max-width:${d.img ? 'none' : '70%'}">${d.intro}</p>
+        ${d.btns ? `<div class="m-btns">${d.btns.map(b => btn(b[0], b[1])).join('')}</div>` : ''}
+        ${d.usps ? `<div class="m-usps">${d.usps.map(u => `<span>${u}</span>`).join('')}</div>` : ''}</div>
+      ${d.img ? `<div class="m-img" style="height:${d.imgh || 112}px;background-image:url(${IMG}${d.img})"></div>` : ''}</div>`,
+  logos: d => `<div class="m W" style="height:100%;display:flex;align-items:center;gap:18px;padding:0 16px">${EB(d && d.eb || 'Erkend en aangesloten')}<div style="flex:1;display:flex;justify-content:space-between;align-items:center">${['erkende-verhuizers', 'erkende-projectverhuizers', 'top-movers', 'fedemac', 'iam'].map(f => `<img class="m-logo" src="${IMG}keurmerk-${f}.png">`).join('')}</div></div>`,
+  cards: d => `<div class="m ${d.bg || 'M'}" style="height:100%">${head(d.eb, d.h2, d.link ? btn('l', d.link) : '')}
+      <div class="m-g" style="grid-template-columns:repeat(${d.cols || 3},1fr)">${d.items.map(x => `<div class="m-card">${x.tag ? `<i class="m-tag" style="position:absolute;top:6px;right:6px">${x.tag}</i>` : ''}<span class="m-ic">${ic(x.i, 10)}</span><span class="m-h3">${x.t}</span><span class="m-p ${d.clamp || 'cl2'}" style="font-size:6.2px">${x.p}</span><span class="m-more">Lees meer →</span></div>`).join('')}</div>
+      ${d.chips ? `<div style="margin-top:6px"><span style="font-size:5.8px;font-weight:600;color:var(--db-nachtblauw);margin-right:4px">${d.chipsLabel || 'Ook:'}</span>${d.chips.map(c => `<span class="m-chip">${c}</span>`).join('')}</div>` : ''}</div>`,
+  usps: d => `<div class="m ${d.bg || 'W'}" style="height:100%">${d.h2 ? head(d.eb, d.h2) : ''}<div class="m-g" style="grid-template-columns:repeat(${d.items.length},1fr);gap:10px">${d.items.map(x => `<div class="m-col" style="gap:3px"><span class="m-ic" style="background:var(--db-nachtblauw);color:var(--db-hemelsblauw)">${ic(x.i, 10)}</span><span class="m-h3">${x.t}</span><span class="m-p cl3" style="font-size:6.2px">${x.p}</span></div>`).join('')}</div></div>`,
+  textimg: d => `<div class="m ${d.bg || 'W'}" style="height:100%;display:grid;grid-template-columns:${d.side === 'left' ? '0.9fr 1.1fr' : '1.1fr 0.9fr'};gap:14px;align-items:center">
+      ${d.side === 'left' ? `<div class="m-img" style="height:${d.imgh || 118}px;background-image:url(${IMG}${d.img})"></div>` : ''}
+      <div class="m-col" style="gap:5px">${EB(d.eb)}<div class="m-h2">${d.h2}</div><p class="m-p cl3">${d.p}</p>${d.bullets ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:2px 8px">${d.bullets.map(b => `<span style="font-size:6.2px;color:var(--db-nachtblauw)"><b style="color:var(--db-groen)">✓</b> ${b}</span>`).join('')}</div>` : ''}${d.btn ? `<div class="m-btns">${btn(d.btn[0], d.btn[1])}</div>` : ''}</div>
+      ${d.side !== 'left' ? `<div class="m-img" style="height:${d.imgh || 118}px;background-image:url(${IMG}${d.img})"></div>` : ''}</div>`,
+  sizes: d => `<div class="m ${d.bg || 'M'}" style="height:100%">${head(d.eb, d.h2)}<div class="m-g" style="grid-template-columns:1.2fr repeat(4,1fr) 1fr;gap:6px;align-items:stretch"><p class="m-p" style="font-size:6.3px">${d.p}</p>${d.items.map(([m, l]) => `<div class="m-card" style="align-items:center;text-align:center"><span class="m-ic">${ic('box', 10)}</span><b style="font-size:13px;color:var(--db-nachtblauw);line-height:1">${m}</b><span style="font-size:5.8px">${l}</span></div>`).join('')}<div class="m-card" style="align-items:center;justify-content:center;text-align:center;background:var(--db-nachtblauw);color:#fff;border-color:var(--db-nachtblauw)"><b style="font-size:7px">Weet ik niet</b><span style="font-size:5.6px;color:#C9D1E8">Wij adviseren</span></div></div></div>`,
+  steps: d => `<div class="m ${d.bg || 'W'}" style="height:100%">${head(d.eb, d.h2, d.link ? btn('l', d.link) : '')}<div class="m-g" style="grid-template-columns:repeat(${d.items.length},1fr);gap:9px">${d.items.map(([t, p], i) => `<div class="m-col" style="gap:3px"><span class="m-step ${i === d.items.length - 1 ? 'g' : ''}">${i + 1}</span><span class="m-h3">${t}</span><span class="m-p cl3" style="font-size:6px">${p}</span></div>`).join('')}</div></div>`,
+  reviews: d => `<div class="m ${d.bg || 'M'}" style="height:100%">${head(d.eb || 'Succesverhalen', d.h2 || 'Klanten zijn blij met ons', `<span style="display:flex;gap:8px;align-items:center"><span style="border:1.5px solid var(--db-diepblauw);border-radius:3px;padding:2px 5px;font-size:5.6px;color:var(--db-diepblauw);background:#fff">Klantenvertellen<br><b>score</b></span>${btn('l', 'Alle reviews ↗')}</span>`)}
+      <div class="m-g" style="grid-template-columns:repeat(3,1fr)">${d.items.map(([n, pl, dt, q]) => `<div class="m-card"><span class="m-stars">★★★★★</span><span class="m-p cl3" style="font-size:6.2px">“${q}”</span><span style="display:flex;gap:4px;align-items:center;margin-top:2px;padding-top:3px;border-top:1px solid #E3E8F0"><i style="width:11px;height:11px;border-radius:50%;background:var(--db-nachtblauw);color:#fff;font-size:5.5px;display:grid;place-items:center;font-style:normal">${n[0]}</i><span style="font-size:5.8px"><b style="color:var(--db-nachtblauw)">${n}</b> · ${pl} · ${dt}</span></span></div>`).join('')}</div></div>`,
+  green: () => `<div class="m N" style="height:100%;display:grid;grid-template-columns:1.1fr 1fr;gap:14px;align-items:center">${RUIT('right:-30px;top:-50px;width:170px;opacity:.4')}
+      <div class="m-col" style="gap:5px;position:relative">${EB('Met oog voor morgen')}<div class="m-h2">Duurzaam verhuizen</div><p class="m-p cl3">Bij De Bresser werken we dagelijks aan een betere wereld, samen met partners zoals Top Movers. Door gebruik te maken van duurzaam meubilair kunnen we onze CO₂-uitstoot met 40 tot 90% verminderen.</p><div class="m-btns">${btn('ow', 'Lees meer')}</div></div>
+      <div class="m-card" style="background:#0C1850;border-color:rgba(255,255,255,.12);position:relative"><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div class="m-stat"><b>40–90%</b><span style="color:#C9D1E8">minder CO₂-uitstoot</span></div><div class="m-stat"><b>7.000 m²</b><span style="color:#C9D1E8">Circulaire Hub</span></div></div>${['Duurzaam verhuizen', 'WMS en Meubelpaspoort', 'Circulair meubilair'].map(t => `<span style="display:flex;justify-content:space-between;font-size:6px;color:#fff;padding-top:3px;border-top:1px solid rgba(255,255,255,.1)">${t}<b style="color:var(--db-signaalgroen)">→</b></span>`).join('')}</div></div>`,
+  about: () => `<div class="m W" style="height:100%;display:grid;grid-template-columns:0.85fr 1.15fr;gap:14px;align-items:center">
+      <div style="position:relative"><div class="m-img" style="height:150px;background-image:url(${IMG}over-ons.jpg)"></div><div class="m-card" style="position:absolute;left:6px;bottom:6px">${EB('Sinds 1923')}<b style="font-size:6.4px;color:var(--db-nachtblauw)">Familiebedrijf uit Oisterwijk</b></div></div>
+      <div class="m-col" style="gap:5px">${EB('Over ons')}<div class="m-h2">De oplossing van vandaag is het succes van morgen.</div><p class="m-p cl3" style="font-size:6.3px">Bij De Bresser zijn we meer dan alleen een verhuis- en opslagbedrijf; al ruim 100 jaar staan wij klaar voor al uw logistieke behoeften.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--db-nachtblauw);padding-top:4px">${[['1923', 'Opgericht in Oisterwijk'], ['100+', 'Jaar ervaring'], ['±80', 'Mensen']].map(([b, s]) => `<div class="m-stat"><b style="font-size:12px">${b}</b><span>${s}</span></div>`).join('')}</div>
+        <div class="m-btns">${btn('n', 'Over ons')}${btn('l', 'Vacatures →')}</div></div></div>`,
+  blog: () => `<div class="m M" style="height:100%">${head('Blog', 'Nieuws &amp; tips', btn('l', 'Alle berichten →'))}<div class="m-g" style="grid-template-columns:repeat(3,1fr)">${[['blog-samen-bouwen.jpg', '11 juni 2026', 'Samen bouwen aan succes'], ['blog-brocken.jpg', '19 november 2025', 'De Bresser verwelkomt Brocken Verhuizingen'], ['blog-kinderen.jpg', '6 november 2025', 'Verhuizen met kinderen']].map(([im, dt, t]) => `<div class="m-card" style="padding:0;overflow:hidden"><div class="m-img" style="height:46px;border-radius:0;background-image:url(${IMG}${im})"></div><div class="m-col" style="padding:5px 7px;gap:2px"><span style="font-size:5.6px;color:#676767">${dt}</span><span class="m-h3 cl2">${t}</span><span class="m-more">Lees meer →</span></div></div>`).join('')}</div></div>`,
+  faq: d => `<div class="m ${d.bg || 'W'}" style="height:100%;display:grid;grid-template-columns:0.75fr 1.25fr;gap:16px">
+      <div class="m-col" style="gap:5px">${EB(d.eb || 'Veelgestelde vragen')}<div class="m-h2">${d.h2}</div><p class="m-p">Staat uw vraag er niet tussen? Neem contact met ons op.</p><div class="m-btns">${btn('l', d.link || 'Alle veelgestelde vragen →')}</div></div>
+      <div class="m-col" style="gap:0"><div class="m-faq" style="border-bottom:0">${d.items[0]}<em>–</em></div><p class="m-p" style="font-size:6px;padding-bottom:4px;border-bottom:1px solid #E3E8F0">${d.open}</p>${d.items.slice(1).map(q => `<div class="m-faq">${q}<em>+</em></div>`).join('')}</div></div>`,
+  cta: d => `<div class="m G" style="height:100%"><div style="position:relative;overflow:hidden;height:100%;border-radius:9px;background:linear-gradient(120deg,var(--db-signaalgroen) 55%,#71BE3A);padding:12px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;color:var(--db-nachtblauw)">
+      <svg class="m-ruit" style="right:-30px;top:-40px;width:150px;opacity:.14" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316" stroke="#020D41"/><polygon points="58,294 208,214 346,297 186,378" stroke="#020D41"/><polygon points="268,134 422,220 422,402 268,318" stroke="#020D41"/></svg>
+      <div class="m-col" style="gap:5px;position:relative"><div class="m-h2" style="font-size:13px">${(d && d.h2) || 'Benieuwd wat wij voor u kunnen betekenen?'}</div><span style="font-size:6.3px;font-weight:500">${ic('phone', 7)} +31 (0)13 52 82 372 &nbsp; ${ic('mail', 7)} info@debresser.nl &nbsp; ${ic('pin', 7)} Schijfstraat 13, Oisterwijk</span></div>
+      <div class="m-btns" style="position:relative">${((d && d.btns) || [['n', 'Offerte aanvragen →'], ['o', 'Neem contact op']]).map(b => btn(b[0], b[1])).join('')}</div></div></div>`,
+  contactcards: d => `<div class="m W" style="height:100%">${d.h2 ? head(d.eb, d.h2) : ''}<div class="m-g" style="grid-template-columns:repeat(${d.items.length},1fr)">${d.items.map(x => `<div class="m-card" style="${x.dark ? 'background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8' : ''}"><span class="m-ic" style="${x.dark ? 'background:rgba(255,255,255,.12);color:var(--db-signaalgroen)' : ''}">${ic(x.i, 10)}</span><span class="m-h3" style="${x.dark ? 'color:#fff' : ''}">${x.t}</span><span class="m-p" style="font-size:6.2px">${x.p}</span><span style="margin-top:auto">${btn(x.b[0], x.b[1])}</span></div>`).join('')}</div></div>`,
+  form: d => `<div class="m ${d.bg || 'M'}" style="height:100%;display:grid;grid-template-columns:1.25fr 0.75fr;gap:14px">
+      <div class="m-card" style="gap:5px">${EB(d.eb || 'Neem contact op')}<div class="m-h2">${d.h2}</div><p class="m-p" style="font-size:6.2px">${d.p}</p>
+        <div class="m-g" style="grid-template-columns:1fr 1fr;gap:4px">${d.fields.map(f => `<span class="m-field${f[2] ? ' ta' : ''}" style="${f[2] ? 'grid-column:1/-1' : ''}">${f[0]}<i>${f[1] || ''}</i></span>`).join('')}</div>
+        <span style="font-size:5.4px;color:#676767">Door dit formulier te verzenden gaat u akkoord met onze privacyverklaring.</span><div class="m-btns">${btn('g', d.btn)}</div></div>
+      <div class="m-card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8;gap:4px"><span class="m-h3" style="color:#fff">${d.side.t}</span>${d.side.l.map(x => `<span style="font-size:6.2px;display:flex;gap:4px;align-items:center"><span style="color:var(--db-hemelsblauw)">${ic(x[0], 8)}</span>${x[1]}</span>`).join('')}</div></div>`,
+  offer: () => `<div class="m M" style="height:100%;display:grid;grid-template-columns:1.35fr 0.65fr;gap:14px">
+      <div class="m-card" style="gap:4px">${EB('Offerte aanvragen')}<div class="m-h2">Uw vrijblijvende offerte</div>
+        <div style="display:flex;gap:4px;font-size:5.6px;font-weight:600;color:var(--db-nachtblauw)">${['1 Uw gegevens', '2 Wat wilt u?', '3 Adressen en datum', '4 Contactvoorkeur'].map((s, i) => `<span style="flex:1;padding:2px 4px;border-radius:2px;background:${i === 1 ? 'var(--db-nachtblauw)' : 'var(--db-mist)'};color:${i === 1 ? '#fff' : 'inherit'}">${s}</span>`).join('')}</div>
+        <div class="m-g" style="grid-template-columns:repeat(3,1fr);gap:4px"><span class="m-field">Naam *<i></i></span><span class="m-field">E-mailadres *<i></i></span><span class="m-field">Telefoonnummer *<i></i></span></div>
+        <div><span style="font-size:5.8px;font-weight:600;color:var(--db-nachtblauw)">Waarvoor wilt u een offerte? </span><br>${['Particuliere verhuizing', 'Zakelijke verhuizing', 'Opslag', 'Transport', 'Gebouwbeheer', 'Assetmanagement'].map(o => `<span class="m-opt sq">${o}</span>`).join('')}</div>
+        <div><span style="font-size:5.8px;font-weight:600;color:var(--db-nachtblauw)">Opslag: containermaat en duur </span><br>${['8 m³', '16 m³', '33 m³', '48 m³', 'Weet ik niet'].map(o => `<span class="m-opt">${o}</span>`).join('')}&nbsp;·&nbsp;${['1–4 weken', '1–2 mnd', '2–3 mnd', '> 3 mnd'].map(o => `<span class="m-opt">${o}</span>`).join('')}</div>
+        <div class="m-g" style="grid-template-columns:1fr 1fr 0.7fr;gap:4px"><span class="m-field">Oude adres<i></i></span><span class="m-field">Nieuwe adres<i></i></span><span class="m-field">Datum verhuizing<i>dd-mm-jjjj</i></span></div>
+        <div>${['Inboedel inpakken', 'Meubels demonteren'].map(o => `<span class="m-opt sq">${o}</span>`).join('')} · <span style="font-size:5.8px;font-weight:600;color:var(--db-nachtblauw)">Offerte via: </span>${['Via de mail', 'Videogesprek', 'Persoonlijk bezoek'].map(o => `<span class="m-opt">${o}</span>`).join('')}</div>
+        <div class="m-btns" style="justify-content:space-between"><span style="font-size:5.4px;color:#676767">Akkoord met de privacyverklaring</span>${btn('g', 'Offerte aanvragen')}</div></div>
+      <div class="m-col" style="gap:6px"><div class="m-card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8"><span class="m-h3" style="color:#fff">Liever direct contact?</span><span style="font-size:6.2px">${ic('phone', 8)} 013 52 82 372</span><span style="font-size:6.2px">${ic('video', 8)} Videogesprek: offerte binnen 24 uur</span></div><div class="m-card"><span class="m-stars">★★★★★</span><span class="m-p cl3" style="font-size:6px">“Van de inventarisatie tot en met de daadwerkelijke verhuizing, alles ging heel relaxed en goed.”</span><span style="font-size:5.6px"><b>Maarten</b> · Oisterwijk</span></div></div></div>`,
+  locations: d => `<div class="m W" style="height:100%">${head(d.eb, d.h2)}<div class="m-g" style="grid-template-columns:repeat(3,1fr);gap:5px">${d.items.map(([c, a, t, n]) => `<div class="m-card" style="flex-direction:row;gap:6px"><span class="m-ic">${ic('pin', 10)}</span><span class="m-col" style="gap:1px"><span class="m-h3">${c}${n ? ` <i class="m-tag" style="background:#FFE3E0;color:#C4302B">check</i>` : ''}</span><span style="font-size:5.8px">${a}</span><span style="font-size:5.8px;color:var(--db-webblauw)">${t}</span></span></div>`).join('')}</div>${d.chips ? `<div style="margin-top:6px"><span style="font-size:5.8px;font-weight:600;color:var(--db-nachtblauw);margin-right:4px">Werkgebied:</span>${d.chips.map(c => `<span class="m-chip">${c}</span>`).join('')}</div>` : ''}</div>`,
+  stats: d => `<div class="m ${d.bg || 'W'}" style="height:100%;display:grid;grid-template-columns:repeat(${d.items.length},1fr);gap:10px;align-items:center">${d.items.map(([b, s]) => `<div class="m-stat" style="border-left:2px solid var(--db-signaalgroen);padding-left:7px"><b style="font-size:16px">${b}</b><span>${s}</span></div>`).join('')}</div>`,
+  timeline: d => `<div class="m M" style="height:100%">${head(d.eb, d.h2)}<div style="position:relative;display:grid;grid-template-columns:repeat(${d.items.length},1fr);gap:8px"><i style="position:absolute;left:0;right:0;top:5px;height:1.5px;background:#C4CCD9"></i>${d.items.map(([y, t], i) => `<div class="m-col" style="gap:2px;position:relative"><i style="width:10px;height:10px;transform:rotate(45deg) scaleY(.8);border:2px solid var(--db-webblauw);background:${i === d.items.length - 1 ? 'var(--db-webblauw)' : '#EBEFF4'}"></i><b style="font-size:10px;color:var(--db-nachtblauw)">${y}</b><span class="m-p cl3" style="font-size:5.9px">${t}</span></div>`).join('')}</div></div>`,
+  team: d => `<div class="m M" style="height:100%">${head(d.eb, d.h2)}<div class="m-g" style="grid-template-columns:repeat(6,1fr);gap:5px">${d.items.map(([n, r]) => `<div class="m-card" style="padding:4px;align-items:center;text-align:center;gap:2px"><i style="width:26px;height:26px;border-radius:50%;background:linear-gradient(150deg,#7FA7CF,#2D5E93)"></i><b style="font-size:6px;color:var(--db-nachtblauw)">${n}</b><span style="font-size:5.2px">${r}</span></div>`).join('')}</div></div>`,
+  twolists: d => `<div class="m ${d.bg || 'W'}" style="height:100%">${head(d.eb, d.h2)}<div class="m-g" style="grid-template-columns:1fr 1fr;gap:10px">${d.cols.map(c => `<div class="m-card"><span style="display:flex;gap:5px;align-items:center"><span class="m-ic">${ic(c.i, 10)}</span><span class="m-h3">${c.t}</span></span><div style="display:grid;grid-template-columns:1fr 1fr;gap:1px 6px">${c.l.map(x => `<span style="font-size:6px;color:var(--db-nachtblauw)"><b style="color:var(--db-groen)">✓</b> ${x}</span>`).join('')}</div></div>`).join('')}</div></div>`,
+};
+
+/* ================= Blok-helper ================= */
+const B = (code, name, bg, h, mock, spec) => ({ code, name, bg, h, mock, spec });
+const G = (name) => ({ ref: true, name });
+
+/* Standaardblokken */
+const REV_HOME = [['M.', 'Esch', '24-08-2026', 'Fijne verhuizers alles goed geregeld. 2de keer verhuisd was weer top. Verhuizers doen niet moeilijk kijken naar mogelijkheden.'], ['A.', 'Tilburg', '21-08-2026', 'Met verbazing gekeken hoe efficiënt de verhuizing is gegaan . Zo’n til lift is een uitkomst, vooral als je hoog woont.'], ['Berry', 'Tilburg', '05-08-2026', 'De verhuizing verliep heel soepel, voor alles werd een oplossing bedacht.']];
+const REV_VERH = [['Kevin', 'Tilburg', '06-01-2026', 'Wij zijn erg tevreden over dit verhuisbedrijf. Het team was netjes op tijd, werkte vlot en goed samen, en ging zorgvuldig om met al onze spullen.'], ['Marc', 'Tilburg', '05-01-2026', 'Mannen waaren op.tijd en hebben alles snel en goed ingeladen. En daarna netjes alles snel uitgeladen en naar de goede plek gebracht'], ['A.', 'Berkel-Enschot', '09-12-2025', 'De eerste keer dat we een verhuisbedrijf hebben ingeschakeld. Super geregeld, en goed personeel.']];
+const REV_CONT = [['J.', 'Rotterdam', '13-04-2026', 'De mannen waren keurig ( en zelfs te vroeg) op tijd. Prima communicatie en handelen.'], ['Maarten', 'Oisterwijk', '07-04-2026', 'Van de inventarisatie op basis waarvan het aantal kuubs (en dozen) bepaald werd tot en met de daadwerkelijke verhuizing, alles ging heel relaxed en goed.'], ['Kevin', 'Tilburg', '06-01-2026', 'Het team was netjes op tijd, werkte vlot en goed samen, en ging zorgvuldig om met al onze spullen.']];
+const revSpec = (src) => [['Layout', 'Kop links, rechts Klantenvertellen-widget (live score) + {l:Alle reviews ↗} (nieuw venster). Daaronder 3 witte reviewkaarten, hover: kaart omhoog.'], ['Eyebrow', '"Succesverhalen"'], ['H2', '"Klanten zijn blij met ons"'], ['Kaart', '5 sterren (Kroongeel) · letterlijke review · initiaal-avatar · naam · plaats · datum'], ['Reviews', src], ['Regel', 'Reviews nooit herschrijven; typefouten van klanten blijven staan.']];
+const ctaSpec = [['Layout', 'Wit vlak met afgerond Signaalgroen paneel (hoeken 20 px). Tekst links, knoppen rechts; ruit als lijn rechtsboven, binnen het paneel.'], ['H2', '"Benieuwd wat wij voor u kunnen betekenen?"'], ['Contact', '+31 (0)13 52 82 372 (tel-link) · info@debresser.nl · Schijfstraat 13, Oisterwijk (Google Maps)'], ['Knoppen', '{n:Offerte aanvragen →} naar /offerte/ · {o:Neem contact op} naar /contact/'], ['Regel', 'Laatste blok vóór de footer, één keer per pagina.']];
+const logosSpec = [['Layout', 'Eén rij: hoeklijn-label links, 5 logo’s gelijk verdeeld, grijs (hover: iets donkerder).'], ['Label', '"Erkend en aangesloten"'], ['Logo’s', 'Erkende Verhuizers · Erkende Projectverhuizers · Top Movers · FEDEMAC · IAM'], ['Regel', 'Globaal blok: één keer bouwen, overal hetzelfde.']];
+
+/* ================= Pagina's ================= */
+const PAGES = [
+  { nr: 'P01', name: 'Homepage', url: '/', tpl: 'T1', doel: 'In één oogopslag laten zien wie De Bresser is en de bezoeker naar een dienst of offerte leiden.', actie: '{g:Offerte aanvragen} en bellen',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B05', 'Home-hero', 'N', 172, MOCK.heroHome(), [
+        ['Layout', '2 kolommen: tekst links, teamfoto rechts (hoeken 20 px, zachte schaduw). Mobiel: foto onder de tekst.'],
+        ['Label', '{t:Nieuw!} "Duurzame Werkomgeving" + "Lees meer →" naar /duurzame-werkomgeving/'],
+        ['H1', '"Geweldig in [verhuizen · opslag · logistiek]" — het laatste woord wisselt elke 2,6 s, in Signaalgroen'],
+        ['Intro', '"Erkende verhuizers & uw partner in full service logistiek"'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Bel 013 52 82 372}'],
+        ['USP’s', '✓ Erkende Verhuizer · ✓ 100 jaar ervaring · ✓ Ook internationaal'],
+        ['Beeld', 'Teamfoto voor bus en vrachtwagen (hero-team.jpg, WebP ≤ 200 kB)'],
+      ]),
+      B('B07', 'Keurmerkenbalk', 'W', 44, MOCK.logos(), logosSpec),
+      B('B11', 'Dienstkaarten', 'M', 204, MOCK.cards({ eb: 'Waar we goed in zijn', h2: 'Onze diensten', items: [
+          { i: 'truck', t: 'Verhuizen', p: 'Ontdek onze complete verhuisservice. Laat ons alle zorgen uit handen nemen.' },
+          { i: 'box', t: 'Opslag', p: 'Tijdelijke opslag tijdens een verhuizing of voorraadbeheer voor uw bedrijf.' },
+          { i: 'sofa', t: 'Meubelprojecten', p: 'Transport, montage op locatie en veilingaankopen in het buitenland.' },
+          { i: 'building', t: 'Gebouwbeheer', p: 'Een kantooromgeving die functioneel, duurzaam en aangenaam is.' },
+          { i: 'passport', t: 'Assetmanagement', p: 'Al uw assets in één overzicht met WMS en Meubelpaspoort.' },
+          { i: 'leaf', t: 'Duurzame werkomgeving', p: 'Gebouw- en assetmanagement met 24/7 één aanspreekpunt.', tag: 'Nieuw!' } ] }), [
+        ['Layout', '3 × 2 witte kaarten op Mist. Hele kaart klikbaar; hover: omhoog + groene hoeklijn onderaan.'],
+        ['Eyebrow', '"Waar we goed in zijn"'], ['H2', '"Onze diensten"'],
+        ['Kaarten', 'Verhuizen · Opslag · Meubelprojecten · Gebouwbeheer · Assetmanagement · Duurzame werkomgeving {t:Nieuw!}'],
+        ['Per kaart', 'Lijnicoon (24 px) · titel (H3) · bestaande korte tekst van de dienst · {l:Lees meer →}'],
+      ]),
+      B('B15', 'Werkwijze', 'W', 104, MOCK.steps({ eb: 'Werkwijze', h2: 'Van aanvraag tot verhuisdag', link: 'Offerte aanvragen →', items: [['Aanvraag', 'Online via het offerteformulier of telefonisch op 013 52 82 372.'], ['Huisbezoek', 'We komen langs om de inboedel te inventariseren en uw wensen te bespreken.'], ['Offerte op maat', 'Vrijblijvend, op basis van wat we tijdens het huisbezoek hebben gezien.'], ['Verhuisdag', 'Onze verhuizers doen de rest, met de verhuislift als dat nodig is.']] }), [
+        ['Layout', '4 stappen naast elkaar, verbonden met een stippellijn. Nummer in ruitvorm; stap 4 Signaalgroen.'],
+        ['H2', '"Van aanvraag tot verhuisdag" · rechts {l:Offerte aanvragen →}'],
+        ['Stappen', '1 "Aanvraag" · 2 "Huisbezoek" · 3 "Offerte op maat" · 4 "Verhuisdag" (teksten zoals in de schets)'],
+      ]),
+      B('B10', 'Reviews', 'M', 132, MOCK.reviews({ items: REV_HOME }), revSpec('M., Esch (24-08-2026) · A., Tilburg (21-08-2026) · Berry, Tilburg (05-08-2026)')),
+      B('B16', 'Met oog voor morgen', 'N', 132, MOCK.green(), [
+        ['Layout', 'Tekst links, rechts één kaart met cijfers en 3 links. De ruit groot rechtsboven, als lijn, deels achter de kaart.'],
+        ['Eyebrow', '"Met oog voor morgen"'], ['H2', '"Duurzaam verhuizen"'],
+        ['Tekst', 'Bestaande tekst: "Bij De Bresser werken we dagelijks aan een betere wereld … CO₂-uitstoot met 40 tot 90% verminderen. In onze Circulaire Hub, verspreid over 7.000 m² …"'],
+        ['Cijfers', '"40–90%" minder CO₂-uitstoot met duurzaam meubilair · "7.000 m²" Circulaire Hub'],
+        ['Links', 'Duurzaam verhuizen · WMS en Meubelpaspoort · Circulair meubilair · knop {o:Lees meer}'],
+      ]),
+      B('B17', 'Over ons', 'W', 162, MOCK.about(), [
+        ['Layout', 'Foto links (4:5, hoeken 20 px) met badge binnen de foto; tekst rechts.'],
+        ['Badge', 'Hoeklijn "Sinds 1923" + "Familiebedrijf uit Oisterwijk"'],
+        ['H2', '"De oplossing van vandaag is het succes van morgen."'],
+        ['Tekst', 'De 2 bestaande alinea’s ("Bij De Bresser zijn we meer dan alleen een verhuis- en opslagbedrijf …")'],
+        ['Cijfers', '"1923" Opgericht in Oisterwijk · "100+" Jaar ervaring · "±80" Mensen in de magazijnen en onderweg'],
+        ['Knoppen', '{n:Over ons} · {l:Vacatures →}'],
+      ]),
+      B('B18', 'Nieuws & tips', 'M', 128, MOCK.blog(), [
+        ['Layout', '3 blogkaarten (foto 16:10, datum, titel, Lees meer). Automatisch de 3 nieuwste (Loop Grid).'],
+        ['Eyebrow', '"Blog"'], ['H2', '"Nieuws & tips" · rechts {l:Alle berichten →}'],
+        ['Nu', 'Samen bouwen aan succes · De Bresser verwelkomt Brocken Verhuizingen · Verhuizen met kinderen'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P02', name: 'Verhuizen', url: '/verhuizen/', tpl: 'T2', doel: 'De bezoeker de juiste soort verhuizing laten kiezen en vertrouwen geven in de aanpak.', actie: '{g:Offerte aanvragen} of videogesprek plannen',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Verhuizen', eb: 'Verhuizen', h1: 'Verhuizen: lokaal, nationaal<br>en internationaal', intro: 'Een zakelijke of particuliere verhuizing, een zorgverhuizing of internationaal verhuizen: De Bresser staat voor u klaar. Als Erkende Verhuizer nemen wij alle zorgen uit handen.', btns: [['g', 'Offerte aanvragen →'], ['ow', ic('video', 7) + ' Videogesprek plannen']], usps: ['Erkende Verhuizer', 'Offerte binnen 24 uur', 'Ook internationaal'], img: 'wf/verhuizen.jpg' }), [
+        ['Layout', 'Kruimelpad, tekst links, foto rechts. Compacter dan de home-hero.'],
+        ['Kruimelpad', '"Home › Verhuizen"'], ['Eyebrow', '"Verhuizen"'],
+        ['H1', '"Verhuizen: lokaal, nationaal en internationaal" {v}'],
+        ['Intro', '"Een zakelijke of particuliere verhuizing, een zorgverhuizing of internationaal verhuizen: De Bresser staat voor u klaar. Als Erkende Verhuizer nemen wij alle zorgen uit handen." (ingekort van de huidige tekst)'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Videogesprek plannen} naar /videogesprek/'],
+        ['USP’s', '✓ Erkende Verhuizer · ✓ Offerte binnen 24 uur (via videogesprek) · ✓ Ook internationaal'],
+        ['Beeld', 'Verhuizers laden uit bij een nieuwbouwwoning'],
+      ]),
+      B('B07', 'Keurmerkenbalk', 'W', 44, MOCK.logos(), logosSpec),
+      B('B12', 'Subdienstkaarten', 'M', 210, MOCK.cards({ eb: 'Ons aanbod', h2: 'Welke verhuizing past bij u?', items: [
+          { i: 'people', t: 'Particuliere verhuizing', p: 'Verhuizen voor particulieren met ervaren verhuizers.' },
+          { i: 'building', t: 'Zakelijke verhuizing', p: 'Kantoor, winkel of bedrijfspand: stressvrij verhuisd.' },
+          { i: 'flag', t: 'Internationale verhuizing', p: 'Vaste routes door Europa, ook naar het VK en Zwitserland.' },
+          { i: 'handshake', t: 'Zorgverhuizing', p: 'Verhuizing van zorginstellingen, met aandacht voor bewoners.' },
+          { i: 'people', t: 'Senioren verhuizen', p: 'Verhuizen voor senioren door erkende verhuizers.' },
+          { i: 'leaf', t: 'Duurzaam verhuizen', p: '40 tot 90% minder CO₂ met duurzaam meubilair.' } ],
+          chips: ['Kantoor verhuizen', 'Winkelverhuizing', 'Full service verhuizing', 'Engeland', 'Duitsland', 'Frankrijk', 'Zwitserland', 'België'] }), [
+        ['Layout', '3 × 2 kaarten + een rij chips met alle overige verhuispagina’s. Zo is elke verhuispagina vanaf hier gelinkt.'],
+        ['Eyebrow', '"Ons aanbod"'], ['H2', '"Welke verhuizing past bij u?" {v}'],
+        ['Kaarten', 'Particuliere · Zakelijke · Internationale verhuizing · Zorgverhuizing · Senioren verhuizen · Duurzaam verhuizen, elk met {l:Lees meer →}'],
+        ['Chips', '"Ook:" Kantoor verhuizen · Winkelverhuizing · Full service verhuizing · Engeland · Duitsland · Frankrijk · Zwitserland · België'],
+      ]),
+      B('B08', 'Voordelen', 'W', 92, MOCK.usps({ h2: 'Waarom verhuizen met De Bresser?', items: [
+          { i: 'shield', t: 'Erkende Verhuizer', p: 'Aangesloten bij de Organisatie voor Erkende Verhuizers.' },
+          { i: 'handshake', t: 'Afspraak = afspraak', p: 'Wat in de offerte staat, doen we op de verhuisdag.' },
+          { i: 'lift', t: 'Verhuislift', p: 'Grote kasten via het raam, demonteren is vaak niet nodig.' },
+          { i: 'crown', t: 'Sinds 1923', p: 'Ruim 100 jaar ervaring als familiebedrijf.' } ] }), [
+        ['Layout', '4 kolommen: icoon (Hemelsblauw op Nachtblauw tegel), titel, één zin.'],
+        ['H2', '"Waarom verhuizen met De Bresser?"'],
+        ['Items', '"Erkende Verhuizer" · "Afspraak = afspraak" · "Verhuislift" · "Sinds 1923" (teksten zoals in de schets)'],
+        ['Regel', 'Alleen feiten, geen “de beste” of “ongeëvenaard”.'],
+      ]),
+      B('B14', 'Tekst + beeld', 'M', 132, MOCK.textimg({ bg: 'M', eb: 'De Bresser Verhuizingen', h2: 'Wij nemen alle zorgen uit handen', p: 'Een verhuizing is een hele gebeurtenis voor u en uw familie. Met onze professionele aanpak en ervaren team worden uw eigendommen veilig en efficiënt verplaatst naar hun nieuwe bestemming.', bullets: ['Zelf inpakken of door ons', 'Inpakmateriaal thuisbezorgd', 'Verhuislift waar nodig', 'Uitpakken en nazorg'], img: 'wf/zakelijk.jpg', side: 'right' }), [
+        ['Layout', 'Tekst links, foto rechts (hoeken 20 px). Max. 70 tekens per regel.'],
+        ['Eyebrow', '"De Bresser Verhuizingen"'], ['H2', '"Wij nemen alle zorgen uit handen"'],
+        ['Tekst', 'Bestaande tekst ingekort: "Een verhuizing is een hele gebeurtenis voor u en uw familie. Met onze professionele aanpak en ervaren team …"'],
+        ['Opsomming', 'Zelf inpakken of door ons · Inpakmateriaal thuisbezorgd · Verhuislift waar nodig · Uitpakken en nazorg'],
+      ]),
+      B('B15', 'Werkwijze', 'W', 106, MOCK.steps({ eb: 'Werkwijze', h2: 'Zo gaat uw verhuizing', items: [['Intake / offerte', 'Telefonisch, via videogesprek of met een adviseur aan huis: een exacte offerte zonder verrassingen.'], ['Inpakken', 'Zelf inpakken of door ons laten doen. Wij bezorgen het inpakmateriaal thuis.'], ['Laatste controle', 'Enkele dagen vooraf neemt een specialist de details met u door.'], ['Verhuizen', 'De dag ervoor bevestigt de binnendienst de tijden; onze verhuizers doen de rest.'], ['Nazorg', 'Uitpakken, inpakmateriaal laten ophalen en nazorg.']] }), [
+        ['Layout', '5 stappen, nummer in ruitvorm, laatste stap Signaalgroen.'],
+        ['H2', '"Zo gaat uw verhuizing"'],
+        ['Stappen', '1 "Intake / offerte" · 2 "Inpakken" · 3 "Laatste controle" · 4 "Verhuizen" · 5 "Nazorg" — de bestaande werkwijze van de huidige pagina, ingekort'],
+      ]),
+      B('B10', 'Reviews', 'M', 132, MOCK.reviews({ items: REV_VERH }), revSpec('Kevin, Tilburg (06-01-2026) · Marc, Tilburg (05-01-2026) · A., Berkel-Enschot (09-12-2025)')),
+      B('B19', 'Veelgestelde vragen', 'W', 124, MOCK.faq({ h2: 'Veelgestelde vragen over verhuizen', items: ['Hoe ver van tevoren leg ik mijn verhuisdatum vast?', 'Kan ik een offerte krijgen zonder huisbezoek?', 'Verhuizen jullie ook op zaterdag?', 'Wanneer worden de verhuisdozen bezorgd?', 'Hoe laat komen de verhuizers?'], open: 'Onze richtlijn is minimaal 8 weken van tevoren, in de zomer 10 weken. Hoe eerder de datum bekend is, hoe groter de kans dat uw gewenste dag vrij is.' }), [
+        ['Layout', 'Links kop en link naar alle vragen, rechts uitklapbare vragen (eerste staat open). Met FAQ-gegevens voor Google.'],
+        ['H2', '"Veelgestelde vragen over verhuizen"'],
+        ['Vragen', 'Verhuisdatum vastleggen (min. 8 weken, zomer 10) · Offerte zonder huisbezoek · Zaterdag verhuizen · Bezorging verhuisdozen · Hoe laat de verhuizers komen'],
+        ['Bron', 'Antwoorden uit de bestaande FAQ-pagina · {l:Alle veelgestelde vragen →} naar /faq/'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P03', name: 'Opslag', url: '/opslag/', tpl: 'T2', doel: 'Particulier of zakelijk naar de juiste opslagvorm leiden en de containermaat helpen kiezen.', actie: '{g:Offerte aanvragen}',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Opslag', eb: 'Opslag', h1: 'Opslag voor particulieren<br>en bedrijven', intro: 'Moderne, geconditioneerde opslag: tijdelijk tijdens een verhuizing of verbouwing, of zolang u ruimte tekortkomt.', btns: [['g', 'Offerte aanvragen →'], ['ow', ic('phone', 7) + ' Bel 013 52 82 372']], usps: ['Geconditioneerde opslag', 'Containers van 8 tot 48 m³', 'Kort of lang'], img: 'wf/opslag.jpg' }), [
+        ['Kruimelpad', '"Home › Opslag"'], ['Eyebrow', '"Opslag"'],
+        ['H1', '"Opslag voor particulieren en bedrijven" {v}'],
+        ['Intro', '"Moderne, geconditioneerde opslag: tijdelijk tijdens een verhuizing of verbouwing, of zolang u ruimte tekortkomt." (op basis van huidige tekst)'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Bel 013 52 82 372}'],
+        ['USP’s', '✓ Geconditioneerde opslag · ✓ Containers van 8 tot 48 m³ · ✓ Korte of lange termijn'],
+        ['Beeld', 'Opslagfoto (De-Bresser-Full-Service-Opslag.jpg)'],
+      ]),
+      B('B07', 'Keurmerkenbalk', 'W', 44, MOCK.logos(), logosSpec),
+      B('B12', 'Subdienstkaarten', 'M', 150, MOCK.cards({ eb: 'Aanbod', h2: 'Welke opslag zoekt u?', items: [
+          { i: 'people', t: 'Particuliere opslag', p: 'Veilige units voor meubels en spullen, flexibel te huren. Met DIY-opslag.' },
+          { i: 'building', t: 'Zakelijke opslag', p: 'Flexibele huur, geconditioneerde units en goed bereikbaar.' },
+          { i: 'box', t: 'Container opslag', p: 'Uw inboedel in een container, in Breda, Tilburg en Oisterwijk.' } ],
+          chipsLabel: 'Opslagruimte in:', chips: ['Breda', 'Den Bosch', 'Etten-Leur', 'Goirle', 'Oirschot', 'Roosendaal'] }), [
+        ['Eyebrow', '"Aanbod"'], ['H2', '"Welke opslag zoekt u?" {v}'],
+        ['Kaarten', 'Particuliere opslag · Zakelijke opslag · Container opslag, elk met {l:Lees meer →}'],
+        ['Chips', '"Opslagruimte in:" Breda · Den Bosch · Etten-Leur · Goirle · Oirschot · Roosendaal (de 6 lokale pagina’s)'],
+        ['Let op', 'De huidige pagina linkt “Zorgverhuizingen” onder Aanbod; dat hoort bij Verhuizen en vervalt hier. {c}'],
+      ]),
+      B('B08', 'Voordelen', 'W', 92, MOCK.usps({ h2: 'Opslag bij De Bresser', items: [
+          { i: 'shield', t: 'Geconditioneerd', p: 'Moderne opslag, geschikt voor meubels en inboedel.' },
+          { i: 'clock', t: 'Flexibel', p: 'Van 1–4 weken tot langer dan 3 maanden.' },
+          { i: 'truck', t: 'Verhuizing en opslag', p: 'Full service: wij pakken in, vervoeren en slaan op.' },
+          { i: 'check', t: 'Erkende Verhuizer', p: 'Uw spullen vakkundig ingepakt en vervoerd.' } ] }), [
+        ['H2', '"Opslag bij De Bresser" {v}'],
+        ['Items', '"Geconditioneerd" · "Flexibel" (1–4 weken tot langer dan 3 maanden) · "Verhuizing en opslag" (full service) · "Erkende Verhuizer"'],
+        ['Bron', 'Termijnen en full service komen uit het huidige offerteformulier.'],
+      ]),
+      B('B14', 'Tekst + beeld · containermaten', 'M', 118, MOCK.sizes({ eb: 'Containers', h2: 'Kies de container die bij u past', p: 'Van een paar dozen tot een complete inboedel. Weet u het niet? Wij adviseren bij het huisbezoek of via een videogesprek.', items: [['8 m³', 'Kamer of studio'], ['16 m³', 'Kleine woning'], ['33 m³', 'Gemiddelde woning'], ['48 m³', 'Grote woning']] }), [
+        ['Layout', 'Korte tekst links, 4 tegels met containermaat, tegel “Weet ik niet” in Nachtblauw.'],
+        ['H2', '"Kies de container die bij u past" {v}'],
+        ['Maten', '"8 m³" · "16 m³" · "33 m³" · "48 m³" · "Weet ik niet" (zelfde opties als het offerteformulier)'],
+        ['Tekst', 'Kamer of studio · Kleine woning · Gemiddelde woning · Grote woning {a}'],
+      ]),
+      B('B15', 'Werkwijze', 'W', 100, MOCK.steps({ eb: 'Werkwijze', h2: 'Zo werkt opslag', items: [['Aanvraag', 'Kies particulier of zakelijk, de containermaat en hoe lang.'], ['Advies', 'Twijfelt u over de maat? We bepalen het samen, telefonisch of aan huis.'], ['Ophalen', 'Wij pakken in en halen op, of u brengt het zelf (DIY-opslag).'], ['Veilig opgeslagen', 'Uw spullen staan geconditioneerd opgeslagen tot u ze terug wilt.']] }), [
+        ['H2', '"Zo werkt opslag" {v}'],
+        ['Stappen', '1 "Aanvraag" · 2 "Advies" · 3 "Ophalen" · 4 "Veilig opgeslagen"'],
+        ['Let op', 'Stappen 2–4 afstemmen met de opslagafdeling. {a}'],
+      ]),
+      B('B10', 'Reviews', 'M', 132, MOCK.reviews({ items: REV_CONT }), revSpec('Tijdelijk algemene reviews (J., Rotterdam · Maarten, Oisterwijk · Kevin, Tilburg); zodra er reviews over opslag zijn, die tonen.')),
+      B('B19', 'Veelgestelde vragen', 'W', 124, MOCK.faq({ h2: 'Veelgestelde vragen over opslag', items: ['Hoe lang kan ik mijn spullen opslaan?', 'Welke containermaat heb ik nodig?', 'Kan ik zelf bij mijn spullen?', 'Is mijn inboedel verzekerd tijdens opslag?', 'Kunnen jullie ook ophalen en terugbrengen?'], open: 'Zo lang als u wilt: van enkele weken tot langer dan drie maanden. [Antwoord laten bevestigen door De Bresser.]' }), [
+        ['H2', '"Veelgestelde vragen over opslag"'],
+        ['Vragen', 'Hoe lang opslaan · Welke containermaat · Zelf bij spullen (DIY) · Verzekering tijdens opslag · Ophalen en terugbrengen {v}'],
+        ['Antwoorden', 'Er is nog geen opslag-FAQ op de site. {a}'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P04', name: 'Meubelprojecten', url: '/meubelprojecten/', tpl: 'T2', doel: 'Bedrijven en meubelleveranciers overtuigen van De Bresser als logistieke partner voor meubels.', actie: '{g:Offerte aanvragen} of contact',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Meubelprojecten', eb: 'Meubelprojecten', h1: 'Meubels geleverd<br>door heel Europa', intro: 'Uw partner voor het leveren van verpakte en onverpakte meubels door Europa. Met meer dan 100 jaar ervaring in meubelvervoer en meubellogistiek.', btns: [['g', 'Offerte aanvragen →'], ['ow', 'Neem contact op']], usps: ['Eigen ordersysteem', 'Vervoer in uw huisstijl', 'Wekelijks door Europa'], img: 'wf/meubel.jpg', imgh: 118 }), [
+        ['Kruimelpad', '"Home › Meubelprojecten"'], ['H1', '"Meubels geleverd door heel Europa" {v}'],
+        ['Intro', '"Uw partner voor het leveren van verpakte en onverpakte meubels door Europa. Met meer dan 100 jaar ervaring in meubelvervoer en meubellogistiek." (huidige tekst)'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Neem contact op}'],
+        ['USP’s', '✓ Eigen ordersysteem · ✓ Vervoer in uw huisstijl · ✓ Wekelijks door Europa'],
+      ]),
+      B('B07', 'Keurmerkenbalk', 'W', 44, MOCK.logos(), logosSpec),
+      B('B12', 'Subdienstkaarten', 'M', 138, MOCK.cards({ eb: 'Aanbod', h2: 'Complete service voor meubels', items: [
+          { i: 'truck', t: 'Meubeltransport', p: 'Inpakken, transport en bezorging door heel Europa.' },
+          { i: 'sofa', t: 'Meubelmontage', p: 'Meubels vakkundig gemonteerd bij de klant op locatie.' },
+          { i: 'flag', t: 'Veilingen', p: 'Met TBA Auctions: wekelijks naar BeNeLux, FR, DE en CH, incl. inklaring.' } ] }), [
+        ['H2', '"Complete service voor meubels"'],
+        ['Kaarten', 'Meubeltransport · Meubelmontage · Veilingen (teksten uit de huidige pagina’s)'],
+      ]),
+      B('B08', 'Voordelen', 'W', 92, MOCK.usps({ h2: 'Waarom De Bresser voor meubels?', items: [
+          { i: 'doc', t: 'Eigen ordersysteem', p: 'Elke order volledig te volgen.' },
+          { i: 'spark', t: 'Altijd een oplossing', p: 'Wij zijn zeer flexibel.' },
+          { i: 'people', t: 'Korte lijnen', p: 'Snel schakelen, intern kort contact.' },
+          { i: 'truck', t: 'In uw huisstijl', p: 'Vervoer in de huisstijl van de klant.' } ] }), [
+        ['H2', '"Waarom De Bresser voor meubels?"'],
+        ['Items', 'De vier punten van de huidige pagina: eigen ordersysteem · zeer flexibel, altijd een oplossing · korte lijnen intern · vervoer in de huisstijl van de klant'],
+      ]),
+      B('B14', 'Tekst + beeld', 'M', 124, MOCK.textimg({ bg: 'M', eb: 'Meubellogistiek', h2: 'Van magazijn tot montage op locatie', p: 'Het transporteren van meubels, het monteren ervan op locatie, of het afhandelen van veilingaankopen in het buitenland: De Bresser biedt complete oplossingen voor al uw meubelbehoeften.', img: 'wf/transport.jpg', side: 'left' }), [
+        ['Layout', 'Foto links, tekst rechts (afwisselend met de hero).'],
+        ['H2', '"Van magazijn tot montage op locatie" {v}'],
+        ['Tekst', 'Bestaande tekst “Complete service”.'],
+      ]),
+      B('B10', 'Reviews · klantverhaal', 'W', 104, MOCK.textimg({ bg: 'W', eb: 'Klantverhaal', h2: 'Samen bouwen aan succes', p: 'Satelliet hospitality furniture en De Bresser: al jaren een sterk team.', img: 'blog-samen-bouwen.jpg', side: 'right', imgh: 86, btn: ['l', 'Lees het verhaal →'] }), [
+        ['Layout', 'Variant van B10: één uitgelicht klantverhaal in plaats van 3 reviews (zakelijke doelgroep).'],
+        ['H2', '"Samen bouwen aan succes"'], ['Tekst', '"Satelliet hospitality furniture en De Bresser: al jaren een sterk team."'],
+        ['Link', '{l:Lees het verhaal →} naar het blogartikel van 11 juni 2026'],
+      ]),
+      B('B19', 'Veelgestelde vragen', 'M', 118, MOCK.faq({ bg: 'M', h2: 'Vragen over meubelprojecten', items: ['Naar welke landen leveren jullie?', 'Kunnen jullie ook monteren op locatie?', 'Hoe werkt transport van veilingaankopen?', 'Kan het vervoer in onze huisstijl?'], open: 'Wekelijks naar de Benelux, Frankrijk, Duitsland en Zwitserland. [Overige landen laten aanvullen.]' }), [
+        ['Vragen', 'Landen · Montage op locatie · Veilingaankopen · Vervoer in huisstijl {v}'], ['Antwoorden', 'Deels uit de huidige pagina’s, rest {a}'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P05', name: 'Gebouwbeheer', url: '/gebouwbeheer/', tpl: 'T2', doel: 'Facility- en vastgoedverantwoordelijken laten zien dat De Bresser het gebouw 24/7 ontzorgt.', actie: 'Gratis quick scan en {g:Offerte aanvragen}',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Gebouwbeheer', eb: 'Gebouwbeheer', h1: 'Een duurzame<br>kantooromgeving', intro: 'Stelt u zich voor: een kantooromgeving die niet alleen functioneel is, maar ook duurzaam en aangenaam om in te werken. Met één vast aanspreekpunt, 24/7.', btns: [['g', 'Offerte aanvragen →'], ['ow', 'Gratis quick scan']], usps: ['24/7 bereikbaar', 'Eén vast aanspreekpunt', 'Maandelijkse quality-scan'], img: 'wf/gebouw.jpg' }), [
+        ['Kruimelpad', '"Home › Gebouwbeheer"'], ['H1', '"Een duurzame kantooromgeving" (huidige H2)'],
+        ['Intro', 'Huidige tekst: "Stelt u zich voor: een kantooromgeving die niet alleen functioneel is, maar ook duurzaam en aangenaam om in te werken." + "Met één vast aanspreekpunt, 24/7."'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Gratis quick scan} naar /quick-scan/'],
+        ['USP’s', '✓ 24/7 bereikbaar · ✓ Eén vast aanspreekpunt · ✓ Maandelijkse quality-scan'],
+      ]),
+      B('B12', 'Subdienstkaarten', 'M', 146, MOCK.cards({ eb: 'Aanbod', h2: 'Wat wij voor uw gebouw doen', items: [
+          { i: 'building', t: 'Onderhoud', p: 'Van schilderwerk tot schoonmaak en groenonderhoud.' },
+          { i: 'leaf', t: 'Verduurzamen', p: 'Werkomgeving energie-efficiënt maken en de levensduur verlengen.' },
+          { i: 'people', t: 'Huismeester', p: 'Dagelijks beheer en organisatie van uw gebouw.' } ], chips: ['Handyman services', 'Quick scan'] }), [
+        ['H2', '"Wat wij voor uw gebouw doen" {v}'],
+        ['Kaarten', 'Onderhoud · Verduurzamen · Huismeester'], ['Chips', '"Ook:" Handyman services · Quick scan (nu nergens gelinkt)'],
+      ]),
+      B('B08', 'Voordelen', 'W', 92, MOCK.usps({ h2: 'De dienstverlener van morgen', items: [
+          { i: 'clock', t: '24/7 beschikbaar', p: 'Altijd betrouwbare ondersteuning.' },
+          { i: 'people', t: 'Eén aanspreekpunt', p: 'Bespaart u tijd en geld.' },
+          { i: 'check', t: 'Quality-scan', p: 'Elke maand, zodat alles optimaal blijft werken.' },
+          { i: 'leaf', t: 'Groener transport', p: 'Met onze elektrische voertuigen.' } ] }), [
+        ['H2', '"De dienstverlener van morgen" (huidige H2)'],
+        ['Items', '24/7 beschikbaar · Eén vast aanspreekpunt · Maandelijkse quality-scan · Groener transport (elektrische voertuigen)'],
+      ]),
+      B('B14', 'Tekst + beeld · aanbod', 'M', 128, MOCK.twolists({ bg: 'M', eb: 'Dienstverlening', h2: 'Alles voor uw pand en terrein', cols: [{ i: 'building', t: 'Onderhoud en beheer', l: ['Onderhoud bedrijfsterrein', 'Onderhoud bedrijfspand', 'Klein-bouwkundig onderhoud', 'Schilderwerken'] }, { i: 'shield', t: 'Toegang en omgeving', l: ['Toegangsverlening', 'Beveiligingsdiensten', 'Groenonderhoud', 'Huismeester'] }] }), [
+        ['Layout', 'Twee kaarten met vinklijsten.'], ['H2', '"Alles voor uw pand en terrein" {v}'],
+        ['Lijsten', 'Letterlijk het aanbod van de pagina Duurzame werkomgeving: onderhoud bedrijfsterrein, bedrijfspand, klein-bouwkundig onderhoud, schilderwerken, toegangsverlening, beveiligingsdiensten, groenonderhoud'],
+      ]),
+      B('B15', 'Werkwijze', 'W', 100, MOCK.steps({ eb: 'Werkwijze', h2: 'Zo starten we', items: [['Gratis quick scan', 'We bekijken uw pand en terrein.'], ['Plan van aanpak', 'Welk onderhoud, wanneer en door wie.'], ['Uitvoering', 'Eén vast aanspreekpunt regelt alles.'], ['Quality-scan', 'Elke maand controleren we of alles optimaal werkt.']] }), [
+        ['H2', '"Zo starten we" {v}'], ['Stappen', '1 Gratis quick scan · 2 Plan van aanpak · 3 Uitvoering · 4 Maandelijkse quality-scan'], ['Let op', 'Stap 2 afstemmen met De Bresser. {a}'],
+      ]),
+      B('B19', 'Veelgestelde vragen', 'M', 112, MOCK.faq({ bg: 'M', h2: 'Vragen over gebouwbeheer', items: ['Wat houdt de gratis quick scan in?', 'Voor welke gebouwen werken jullie?', 'Hoe snel zijn jullie ter plaatse?', 'Kan ik losse klussen afnemen?'], open: '[Antwoord aan te leveren door De Bresser.]' }), [
+        ['Vragen', 'Quick scan · Soort gebouwen · Reactietijd · Losse klussen (Handyman) {v}'], ['Antwoorden', '{a}'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P06', name: 'Assetmanagement', url: '/assetmanagement/', tpl: 'T2', doel: 'Bedrijven laten zien hoe De Bresser hun meubilair in kaart brengt, beheert en circulair inzet.', actie: '{g:Offerte aanvragen}',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Assetmanagement', eb: 'Assetmanagement', h1: 'Al uw assets<br>in één overzicht', intro: 'Met ons WMS en Meubelpaspoort brengen we uw assets in kaart, minimaliseren we de CO₂-voetafdruk en dragen we bij aan een efficiëntere circulaire economie.', btns: [['g', 'Offerte aanvragen →'], ['ow', 'Neem contact op']], usps: ['WMS en Meubelpaspoort', 'Circulair meubilair', 'Minder CO₂'], img: 'wf/asset.jpg' }), [
+        ['Kruimelpad', '"Home › Assetmanagement"'], ['H1', '"Al uw assets in één overzicht" (huidige tekst)'],
+        ['Intro', 'Huidige tekst over WMS en Meubelpaspoort, CO₂-voetafdruk en circulaire economie.'],
+        ['USP’s', '✓ WMS en Meubelpaspoort · ✓ Circulair meubilair · ✓ Minder CO₂'],
+      ]),
+      B('B12', 'Subdienstkaarten · stappen', 'M', 132, MOCK.steps({ bg: 'M', eb: 'Aanbod', h2: 'Van inventarisatie tot circulair', items: [['Inventarisatie', 'Grondige inventarisatie van alle assets.'], ['WMS en Meubelpaspoort', 'Assetbewaking op aantal, omschrijving en locatie.'], ['Opslag assets', 'Opslag met registratie en snelle toegang.'], ['Inkoop en verkoop', 'Meubels een nieuw leven via ons online platform.'], ['Circulair meubilair', 'Repareren, renoveren en upcyclen met kringlooppartners.']] }), [
+        ['Layout', 'Variant van B12: de 5 subpagina’s als genummerde stappen, elk klikbaar.'],
+        ['H2', '"Van inventarisatie tot circulair" {v}'],
+        ['Stappen', '1 Inventarisatie · 2 WMS en Meubelpaspoort · 3 Opslag assets · 4 Inkoop en verkoop assets · 5 Circulair meubilair — volgorde van de huidige site'],
+      ]),
+      B('B14', 'Tekst + beeld · strategieën', 'W', 124, MOCK.twolists({ eb: 'Circulair', h2: 'Zes circulaire strategieën', cols: [{ i: 'passport', t: 'WMS-data', l: ['Assetbewaking op aantal', 'op omschrijving', 'op locatie', 'Meubelpaspoort per object'] }, { i: 'leaf', t: 'Strategieën', l: ['Refurbished', 'Reuse', 'Repair', 'Repurpose', 'Recycling', 'Recover'] }] }), [
+        ['H2', '"Zes circulaire strategieën" {v}'],
+        ['Lijsten', 'WMS-data: assetbewaking op aantal, omschrijving en locatie · Strategieën: Refurbished, Reuse, Repair, Repurpose, Recycling, Recover (letterlijk van de huidige site)'],
+      ]),
+      B('B08', 'Voordelen', 'M', 92, MOCK.usps({ bg: 'M', h2: 'Waarom duurzaam assetmanagement?', items: [
+          { i: 'leaf', t: 'Minder CO₂', p: 'Verminderen van de CO₂-voetafdruk.' },
+          { i: 'spark', t: 'Circulaire economie', p: 'Natuurlijke hulpbronnen behouden.' },
+          { i: 'clock', t: '24/7 beschikbaar', p: 'Betrouwbare ondersteuning.' },
+          { i: 'people', t: 'Eén aanspreekpunt', p: 'Voor gebouw én assets.' } ] }), [
+        ['H2', '"Waarom duurzaam assetmanagement?"'], ['Items', 'Uit de huidige lijst: CO₂-voetafdruk verminderen · circulaire economie · 24/7 beschikbaar · één vast aanspreekpunt'],
+      ]),
+      B('B19', 'Veelgestelde vragen', 'W', 112, MOCK.faq({ h2: 'Vragen over assetmanagement', items: ['Wat is een Meubelpaspoort?', 'Wat gebeurt er met meubels die we niet meer gebruiken?', 'Kunnen wij zelf in het WMS kijken?', 'Voor welke organisaties is dit geschikt?'], open: '[Antwoord aan te leveren door De Bresser.]' }), [
+        ['Vragen', 'Meubelpaspoort · Overtollige meubels · Inzage WMS · Doelgroep {v}'], ['Antwoorden', '{a}'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P07', name: 'Duurzame werkomgeving', url: '/duurzame-werkomgeving/', tpl: 'T2', doel: 'De nieuwe dienst uitleggen en bedrijven naar de gratis quick scan leiden.', actie: '{g:Gratis quick scan aanvragen}',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Duurzame werkomgeving', tag: 'Nieuw!', eb: 'Duurzame werkomgeving', h1: 'Gebouw en assets,<br>samen duurzaam', intro: 'Ontdek onze nieuwe dienstverlening: gebouwbeheer en assetmanagement in één aanpak, met 24/7 één vast aanspreekpunt.', btns: [['g', 'Gratis quick scan aanvragen →'], ['ow', 'Offerte aanvragen']], usps: ['Nieuwe dienst', '24/7 één aanspreekpunt', 'Circulair'], img: 'wf/gebouw.jpg', ruit: true }), [
+        ['Label', '{t:Nieuw!}'], ['H1', '"Gebouw en assets, samen duurzaam" {v}'],
+        ['Intro', '"Ontdek onze nieuwe dienstverlening" (huidige tekst) + uitleg in één zin'],
+        ['Knoppen', '{g:Gratis quick scan aanvragen →} · {o:Offerte aanvragen}'],
+      ]),
+      B('B14', 'Tekst + beeld · twee pijlers', 'W', 136, MOCK.twolists({ eb: 'Twee pijlers', h2: 'Gebouwbeheer en assetmanagement', cols: [{ i: 'building', t: 'Gebouwbeheer', l: ['Onderhoud bedrijfsterrein', 'Onderhoud bedrijfspand', 'Klein-bouwkundig', 'Schilderwerken', 'Toegangsverlening', 'Beveiliging', 'Groenonderhoud'] }, { i: 'passport', t: 'Assetmanagement', l: ['Inventarisatie', 'WMS en Meubelpaspoort', 'Opslag assets', 'Inkoop en verkoop', 'Circulair meubilair', '6 R-strategieën'] }] }), [
+        ['H2', '"Gebouwbeheer en assetmanagement"'],
+        ['Links', 'Aanbod gebouwbeheer (7 punten) met {l:Naar Gebouwbeheer →}'], ['Rechts', 'De 5 stappen assetmanagement met {l:Naar Assetmanagement →}'],
+      ]),
+      B('B08', 'Voordelen', 'M', 96, MOCK.usps({ bg: 'M', h2: 'Waarom duurzaam gebouw- en assetmanagement?', items: [
+          { i: 'leaf', t: 'Minder milieubelasting', p: 'Natuurlijke hulpbronnen behouden, minder CO₂.' },
+          { i: 'truck', t: 'Groener transport', p: 'Met onze elektrische voertuigen.' },
+          { i: 'clock', t: '24/7 beschikbaar', p: 'Betrouwbare ondersteuning.' },
+          { i: 'people', t: 'Eén aanspreekpunt', p: 'Voor gebouw en assets samen.' } ] }), [
+        ['H2', '"Waarom duurzaam gebouw- en assetmanagement van De Bresser?" (huidige kop)'],
+        ['Items', 'Samengevat uit de 8 punten van de huidige pagina (hulpbronnen, milieubelasting, CO₂, circulaire economie, groener transport, ondersteuning, 24/7, één aanspreekpunt)'],
+      ]),
+      B('B09', 'Kerncijfers', 'N', 64, MOCK.stats({ bg: 'N', items: [['40–90%', 'minder CO₂ met duurzaam meubilair'], ['7.000 m²', 'Circulaire Hub'], ['24/7', 'bereikbaar'], ['1', 'vast aanspreekpunt']] }), [
+        ['Cijfers', '"40–90%" · "7.000 m²" · "24/7" · "1" vast aanspreekpunt'], ['Regel', 'Alleen cijfers die ook elders op de site staan.'],
+      ]),
+      B('B22', 'CTA-paneel · quick scan', 'G', 84, MOCK.cta({ h2: 'Gratis quick scan van uw bedrijfspand', btns: [['n', 'Quick scan aanvragen →'], ['o', 'Neem contact op']] }), [
+        ['H2', '"Gratis quick scan van uw bedrijfspand" {v}'], ['Knoppen', '{n:Quick scan aanvragen →} naar /quick-scan/ · {o:Neem contact op}'], ['Regel', 'Variant van het CTA-paneel, zelfde opbouw.'],
+      ]),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P08', name: 'Over ons', url: '/over-ons/', tpl: 'Vrij', doel: 'Het familiebedrijf, de mensen en de kernwaarden laten zien; sollicitanten doorsturen naar vacatures.', actie: '{g:Offerte aanvragen} en vacatures',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero', 'N', 150, MOCK.heroPage({ crumb: 'Home › Over ons', eb: 'Over ons', h1: 'Full service in logistiek<br>en geweldig in verhuizen', intro: 'Ons bedrijf bestaat al meer dan 100 jaar. In 1923 begonnen als vervoersbedrijf met paard en wagen, nu een professionele organisatie met diverse specialismen.', btns: [['g', 'Offerte aanvragen →'], ['ow', 'Bekijk vacatures']], img: 'hero-team.jpg' }), [
+        ['Kruimelpad', '"Home › Over ons"'], ['H1', '"Full service in logistiek en geweldig in verhuizen" (huidige kop)'],
+        ['Intro', 'Huidige tekst: "Ons bedrijf bestaat al meer dan 100 jaar. We zijn in 1923 als vervoersbedrijf begonnen met paard en wagen …"'],
+        ['Knoppen', '{g:Offerte aanvragen →} · {o:Bekijk vacatures} naar /overzicht-vacatures/'],
+      ]),
+      B('B09', 'Kerncijfers', 'W', 64, MOCK.stats({ items: [['1923', 'opgericht in Oisterwijk'], ['100+', 'jaar ervaring'], ['±80', 'mensen in magazijnen en onderweg'], ['6', 'locaties in NL en België']] }), [
+        ['Cijfers', '"1923" · "100+" · "±80" · "6" locaties (Oisterwijk, Tilburg, Breda, Venlo, Reeuwijk, Brussel)'],
+      ]),
+      B('B14', 'Tijdlijn', 'M', 112, MOCK.timeline({ eb: 'Ons verhaal', h2: 'Vier generaties De Bresser', items: [['1923', 'Cis de Bresser start met paard en wagen in Oisterwijk.'], ['1983', 'Zonen Jan en Nico nemen het bedrijf over.'], ['2011', 'Tomas Brands neemt de aandelen over.'], ['2023', 'De Bresser bestaat 100 jaar.'], ['2025', 'Brocken Verhuizingen sluit aan.']] }), [
+        ['Layout', 'Variant van B14: tijdlijn met ruit-markeringen.'], ['H2', '"Vier generaties De Bresser" {v} {c}'],
+        ['Mijlpalen', '1923 · 1983 · 2011 · 2023 (100 jaar) · 2025 (Brocken Verhuizingen, blog 19-11-2025)'],
+      ]),
+      B('B08', 'Kernwaarden', 'W', 92, MOCK.usps({ h2: 'Waar wij voor staan', items: [
+          { i: 'handshake', t: 'Afspraak = afspraak', p: 'We doen wat we zeggen.' },
+          { i: 'check', t: 'Eerlijkheid voorop', p: 'Eerlijke offerte, eerlijk advies.' },
+          { i: 'spark', t: 'Altijd een oplossing', p: 'Geen standaardpakket.' },
+          { i: 'leaf', t: 'Met oog voor morgen', p: 'Duurzaam en circulair.' } ] }), [
+        ['H2', '"Waar wij voor staan"'], ['Items', 'De 4 kernwaarden uit Merkboek hoofdstuk 01, met de korte uitleg daaruit.'],
+      ]),
+      B('B23', 'Team (nieuw blok)', 'M', 128, MOCK.team({ eb: 'Ons team', h2: 'Maak kennis met ons team', items: [['Tomas', 'Algemeen directeur'], ['Ineke', 'Buitendienst'], ['Aafke', 'Binnendienst'], ['Eric', 'Planner'], ['Niels', 'Buitenlandplanner'], ['Patrick', 'Inventarisatie']] }), [
+        ['Layout', 'Nieuw blok B23: raster van teamkaarten (eigen foto, voornaam, rol). Toe te voegen aan de bibliotheek.'],
+        ['H2', '"Maak kennis met ons team"'],
+        ['Inhoud', 'Kantoorteam van de huidige pagina, o.a. Tomas, Ineke, Aafke, Danique, Patrick, Eric, Niels, Aaron, Femke, Yvonne … + "± 80 mensen in de magazijnen en onderweg"'],
+        ['Beeld', 'Echte portretfoto’s, zelfde uitsnede en achtergrond {a}'],
+      ]),
+      B('B07', 'Keurmerkenbalk', 'W', 44, MOCK.logos(), logosSpec),
+      B('B14', 'Tekst + beeld · werken bij', 'M', 112, MOCK.textimg({ bg: 'M', eb: 'Werken bij De Bresser', h2: 'Kom ons team versterken', p: 'Wij zoeken verhuizers en chauffeurs (C/CE) die verantwoordelijkheid nemen en trots zijn op hun werk.', img: 'wf/transport.jpg', side: 'left', imgh: 90, btn: ['o', 'Bekijk vacatures'] }), [
+        ['H2', '"Kom ons team versterken" {v}'], ['Tekst', 'Op basis van de vacatureteksten (verhuizer, chauffeur C/CE)'], ['Knop', '{o:Bekijk vacatures}'],
+      ]),
+      B('B22', 'CTA-paneel', 'G', 84, MOCK.cta(), ctaSpec),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P09', name: 'Contact', url: '/contact/', tpl: 'Vrij', doel: 'De bezoeker in één oogopslag laten kiezen hoe hij contact opneemt en waar De Bresser zit.', actie: 'Bellen, mailen, videogesprek of formulier',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero · compact', 'N', 92, MOCK.heroPage({ crumb: 'Home › Contact', eb: 'Contact', h1: 'Contact', h1s: 18, intro: 'Heeft u vragen of wilt u een offerte? Neem contact met ons op en wij helpen u binnen 24 uur.', ruit: true }), [
+        ['Layout', 'Compacte hero zonder foto; ruit rechtsboven als lijn.'],
+        ['H1', '"Contact"'], ['Intro', '"Heeft u vragen of wilt u een offerte? Neem contact met ons op en wij helpen u binnen 24 uur." (huidige tekst, nu consequent “u”)'],
+      ]),
+      B('B08', 'Contactopties', 'W', 108, MOCK.contactcards({ items: [
+          { i: 'phone', t: 'Bellen', p: '+31 (0)13 52 82 372', b: ['l', 'Bel ons →'] },
+          { i: 'mail', t: 'Mailen', p: 'info@debresser.nl · binnen 24 uur antwoord', b: ['l', 'Stuur een e-mail →'] },
+          { i: 'video', t: 'Videogesprek', p: 'Laat uw huis zien en ontvang binnen 24 uur een offerte.', b: ['l', 'Plan een videogesprek →'] },
+          { i: 'doc', t: 'Offerte', p: 'Voor verhuizing, opslag, transport of beheer.', b: ['g', 'Offerte aanvragen'], dark: true } ] }), [
+        ['Layout', 'Variant van B08: 4 keuzekaarten. De offertekaart is Nachtblauw met de enige groene knop.'],
+        ['Kaarten', '"Bellen" +31 (0)13 52 82 372 · "Mailen" info@debresser.nl · "Videogesprek" · "Offerte"'],
+        ['Knoppen', '{l:Bel ons →} · {l:Stuur een e-mail →} · {l:Plan een videogesprek →} · {g:Offerte aanvragen}'],
+      ]),
+      B('B21', 'Contactformulier', 'M', 170, MOCK.form({ h2: 'Stel uw vraag', p: 'Vul het formulier in; wij reageren binnen 24 uur.', fields: [['Naam *'], ['Telefoonnummer *'], ['E-mailadres *'], ['Onderwerp', 'Verhuizing, opslag, …'], ['Bericht', '', true]], btn: 'Bericht versturen', side: { t: 'De Bresser B.V.', l: [['pin', 'Schijfstraat 13, 5061 KA Oisterwijk'], ['phone', '+31 (0)13 52 82 372'], ['mail', 'info@debresser.nl'], ['doc', 'KVK 18014730']] } }), [
+        ['Layout', 'Formulier in witte kaart links, Nachtblauwe kaart met gegevens rechts.'],
+        ['H2', '"Stel uw vraag" {v}'],
+        ['Velden', 'Naam * · Telefoonnummer * · E-mailadres * · Onderwerp (keuzelijst, nieuw) · Bericht'],
+        ['Knop', '{g:Bericht versturen} (nu “E-mail verzenden”)'],
+        ['Meldingen', 'Fout onder het veld, bijv. "Vul een volledig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl" · Na verzenden: "Bedankt, wij nemen binnen 24 uur contact met u op."'],
+      ]),
+      B('B20', 'Locaties', 'W', 156, MOCK.locations({ eb: 'Locaties', h2: 'Onze locaties', items: [
+          ['Oisterwijk', 'Schijfstraat 13, 5061 KA', '+31 (0)13 52 82 372', true], ['Tilburg', 'Herastraat 9, 5047 TX', '+31 (0)13 54 25 935'], ['Breda', 'Mijkenbroek 46, 4824 AC', '+31 (0)76 52 24 100'],
+          ['Venlo', 'Coehoornstraat 11, 5916 PH', '+31 (0)77 32 32 100'], ['Reeuwijk', 'Edisonstraat 1A-B, 2811 EM', '+31 (0)13 54 25 935'], ['Brussel', 'Bazellaan 8, 1140 Evere', '+32 (0)26 701 894', true] ],
+          chips: ['Tilburg', 'Breda', 'Eindhoven', 'Den Bosch', 'Oss', 'Venlo', '… alle 41 plaatsen'] }), [
+        ['Layout', '6 locatiekaarten (3 × 2) met adres en telefoon, daaronder alle werkgebied-plaatsen als link naar hun regiopagina.'],
+        ['H2', '"Onze locaties"'],
+        ['Adressen', 'Oisterwijk · Tilburg · Breda · Venlo · Reeuwijk · Brussel (adressen van de huidige contactpagina)'],
+        ['Check', 'Oisterwijk staat er twee keer (Schijfstraat 13 én Luxemburgstraat 7). Brussel heeft twee nummers (+31 (0)13 52 82 372 en +32 (0)26 701 894). {c}'],
+      ]),
+      B('B10', 'Reviews', 'M', 132, MOCK.reviews({ items: REV_CONT }), revSpec('J., Rotterdam (13-04-2026) · Maarten, Oisterwijk (07-04-2026) · Kevin, Tilburg (06-01-2026)')),
+      B('B19', 'Veelgestelde vragen', 'W', 112, MOCK.faq({ h2: 'Snel antwoord', items: ['Kan ik een offerte krijgen zonder huisbezoek?', 'Hoe laat komen de verhuizers?', 'Wat als er iets beschadigd raakt?', 'Werken jullie op zaterdag?'], open: 'Jazeker. Wij komen het liefst langs om rustig te inventariseren, maar een offerte per e-mail of via videogesprek kan ook.' }), [
+        ['H2', '"Snel antwoord" {v}'], ['Vragen', 'Offerte zonder huisbezoek · Hoe laat de verhuizers komen · Schade (melden binnen 2 weken) · Zaterdag'],
+        ['Bron', 'Bestaande FAQ-antwoorden · {l:Alle veelgestelde vragen →}'],
+      ]),
+      G('Footer + mobiele actiebalk'),
+    ] },
+
+  { nr: 'P10', name: 'Offerte', url: '/offerte/', tpl: 'Vrij', doel: 'Zo makkelijk mogelijk een complete offerteaanvraag laten invullen.', actie: '{g:Offerte aanvragen}',
+    blocks: [
+      G('Utility-balk + header'),
+      B('B06', 'Pagina-hero · compact', 'N', 92, MOCK.heroPage({ crumb: 'Home › Offerte', eb: 'Offerte', h1: 'Vraag uw offerte aan', h1s: 18, intro: 'Vrijblijvend en op maat. Wij nemen binnen 24 uur contact met u op.', usps: ['Erkende Verhuizer', 'Afspraak = afspraak', 'Binnen 24 uur reactie'], ruit: true }), [
+        ['H1', '"Vraag uw offerte aan" {v}'], ['Intro', '"Vrijblijvend en op maat. Wij nemen binnen 24 uur contact met u op."'],
+        ['USP’s', '✓ Erkende Verhuizer · ✓ Afspraak = afspraak · ✓ Binnen 24 uur reactie'],
+      ]),
+      B('B21', 'Offerteformulier · in stappen', 'M', 256, MOCK.offer(), [
+        ['Layout', 'Formulier in 4 stappen met voortgangsbalk; rechts een Nachtblauwe kaart met bellen/videogesprek en één review.'],
+        ['Stap 1', 'Naam * · E-mailadres * · Telefoonnummer *'],
+        ['Stap 2', 'Waarvoor? Particuliere verhuizing · Zakelijke verhuizing · Opslag · Transport · Gebouwbeheer · Assetmanagement. Bij Opslag: particulier/zakelijk/full service, containermaat (8 · 16 · 33 · 48 m³ · Weet ik niet), duur (1–4 weken · 1–2 maanden · 2–3 maanden · langer dan 3 maanden)'],
+        ['Stap 3', 'Oude adres · Nieuwe adres · Datum verhuizing · Extra: Inboedel inpakken, Meubels demonteren'],
+        ['Stap 4', 'Offerte via: de mail · videogesprek · persoonlijk bezoek · Opmerkingen'],
+        ['Knop', '{g:Offerte aanvragen} (nu “Verzenden”) · alle opties komen uit het huidige formulier'],
+      ]),
+      B('B10', 'Reviews', 'W', 132, MOCK.reviews({ bg: 'W', items: REV_VERH }), revSpec('Kevin, Tilburg · Marc, Tilburg · A., Berkel-Enschot')),
+      G('Footer + mobiele actiebalk'),
+    ] },
+];
+
+/* Globale onderdelen */
+const GLOBALS = [
+  B('B01', 'Utility-balk', 'N', 22, MOCK.util(), [['Links', '✓ "Erkende Verhuizer" · ✓ "Sinds 1923" · ✓ "Eén vast aanspreekpunt" (vinkjes Signaalgroen)'], ['Rechts', '"+31 (0)13 52 82 372" · "info@debresser.nl" · taalkeuze "NL · EN"'], ['Regel', 'Scrolt weg; verborgen onder 640 px.']]),
+  B('B02', 'Header', 'W', 40, MOCK.header(), [['Links', 'Logo zonder payoff (min. 80 px breed), link naar home'], ['Menu', '"Diensten ▾" · "Over ons" · "Vacatures" · "Blog" · "Contact"'], ['Rechts', '"013 52 82 372" (tel-link) + {g:Offerte aanvragen}'], ['Gedrag', 'Blijft vast bovenaan; na scrollen licht doorschijnend met schaduw. Menu-hover: groene lijn onder het item. Onder 1024 px: menuknop.']]),
+  B('B02', 'Header · mega menu Diensten (open)', 'W', 112, MOCK.mega(), [['Layout', '5 kolommen (icoon + dienst + subpagina’s) en een Nachtblauwe promotiekaart.'], ['Kolommen', 'Verhuizingen · Opslag · Meubelprojecten · Gebouwbeheer · Assetmanagement, met alle subpagina’s'], ['Promo', '{t:Nieuw!} "Duurzame werkomgeving" + korte tekst + "Lees meer →"'], ['Gedrag', 'Opent bij hover en klik, sluit met Esc. Links naar de échte URL’s (geen doorverwijzingen).']]),
+  B('B03', 'Footer', 'N', 112, MOCK.footer(), [['Kolom 1', 'Wit logo · "Erkende verhuizers & uw partner in full service logistiek" · adres, telefoon, e-mail'], ['Kolommen', 'Verhuizen · Opslag en meubels · De Bresser · Voorwaarden (6 pdf’s + privacyverklaring)'], ['Snelmenu', '"Snelmenu · Verhuisbedrijf en opslag in de regio" uitklapbaar, met alle 41 regiopagina’s als gewone links'], ['Onderbalk', '"Copyright © 2026 De Bresser B.V. | KVK 18014730 | BTW NL0055.15.452.B.01" + NL · EN']]),
+  B('B04', 'Mobiele actiebalk', 'W', 108, MOCK.mobile(), [['Knoppen', '{o:Bellen} · {g:Offerte aanvragen}'], ['Gedrag', 'Alleen onder 640 px, vast onderin, verbergt zich als het menu open is.']]),
+];
+
+/* ================= Opbouw ================= */
+const LOGO = '../assets/img/logo-de-bresser.png', LOGOC = '../assets/img/logo-de-bresser-compact.png';
+const COVER_RUIT = '<svg class="ruit" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498F"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F"/></svg>';
+const BGN = { N: 'Nachtblauw', W: 'Wit', M: 'Mist', G: 'Signaalgroen' };
+
+function rowHTML(b, i) {
+  if (b.ref) return `<div class="row" style="grid-template-columns:1fr"><div style="display:flex;align-items:center;gap:8px;padding:4px 10px;border:1px dashed #C4CCD9;border-radius:6px;font-size:7pt;color:var(--db-grijs)"><b style="color:var(--db-nachtblauw)">${b.name}</b> · globaal onderdeel, zie “Globale onderdelen”</div></div>`;
+  return `<div class="row"><div><div class="rl"><span class="no">${i}</span><span class="code">${b.code}</span><span class="bn">${b.name}</span><span class="bgp"><i class="c-${b.bg}"></i>${BGN[b.bg]}</span></div><div class="frame" style="height:${b.h}px">${b.mock}</div></div>
+    <ul class="spec">${b.spec.map(([k, v]) => `<li><span class="k">${k}</span><span class="v">${fmt(v)}</span></li>`).join('')}</ul></div>`;
+}
+function miniHTML(blocks, onSet, title) {
+  let n = 0;
+  return `<div class="mini"><h4>${title || 'Pagina-opbouw'}</h4><ul>${blocks.map(b => {
+    if (b.ref) return `<li class="g ${onSet.has(b) ? 'on' : ''}"><i style="border-style:dashed"></i><span class="n"></span><span>${b.name}</span></li>`;
+    n++; return `<li class="${onSet.has(b) ? 'on' : ''}"><i class="c-${b.bg}"></i><span class="n">${n}</span><span>${b.name}</span></li>`;
+  }).join('')}</ul></div>`;
+}
+const sheetTop = (tab) => `<div class="sh-top"><img src="${LOGOC}" alt="De Bresser"><span class="doc"><b>Wireframes debresser.nl</b> · Merkboek v1.1</span>${tab}</div>`;
+const LEG = `<span class="lg"><span class="sb g">Primaire knop</span><span class="sb n">Nachtblauwe knop</span><span class="sb o">Omlijnd</span><span class="sb l">Tekstlink →</span><span class="vt">tekstvoorstel</span><span class="at">aanleveren</span><span class="ct">controleren</span></span>`;
+const foot = (n, t) => `<div class="sh-foot">${LEG}<span>Wireframe, geen definitief ontwerp · september 2026 · pagina ${n} van ${t}</span></div>`;
+const introHTML = p => `<div class="page-intro"><span class="big">${p.nr.slice(1)}</span><div><h2>${p.name}</h2><span class="u">debresser.nl${p.url}</span></div><div style="display:grid;grid-template-columns:1fr 0.7fr;gap:14px"><div><small>Doel van de pagina</small><span class="v">${p.doel}</span></div><div><small>Belangrijkste actie</small><span class="v">${fmt(p.actie)}</span></div></div></div>`;
+const pageTab = (p, ci, tot) => `<span class="tab"><span class="pn">${p.nr}</span><span class="nm">${p.name}</span><span class="url">${p.url}</span><span class="tpl">${p.tpl === 'Vrij' ? 'Vrije opbouw' : 'Template ' + p.tpl}</span><span class="url">vel ${ci + 1}/${tot}</span></span>`;
+
+async function build() {
+  if (document.fonts) {
+    await Promise.all(['300', '400', '500', '600'].map(w => document.fonts.load(w + ' 12px Sora')).concat([document.fonts.load('400 12px "IBM Plex Mono"'), document.fonts.load('500 12px "IBM Plex Mono"')]));
+    await document.fonts.ready;
+  }
+  const doc = document.getElementById('doc');
+
+  /* Beschikbare hoogte meten met een proefvel */
+  const probe = withIntro => {
+    const s = document.createElement('section'); s.className = 'sheet';
+    s.innerHTML = sheetTop(pageTab(PAGES[0], 0, 1)) + (withIntro ? introHTML(PAGES[0]) : '') + '<div class="sh-body"><div class="mini"></div><div class="rows"></div></div>' + foot(1, 1);
+    doc.appendChild(s); const r = s.querySelector('.rows').getBoundingClientRect(); s.remove(); return r;
+  };
+  const r1 = probe(true), r2 = probe(false);
+  const capFirst = r1.height - 12, capRest = r2.height - 12;
+
+  /* Elke rij meten op dezelfde breedte */
+  const meas = document.createElement('div'); meas.className = 'rows';
+  meas.style.cssText = `position:absolute;left:-5000px;top:0;width:${r2.width}px`; document.body.appendChild(meas);
+  const hOf = html => { meas.innerHTML = html; return meas.firstElementChild.getBoundingClientRect().height; };
+  const GAP = 9;
+  const paginate = (blocks, numbering, first, rest) => {
+    const out = []; let cur = []; let used = 0; let cap = first;
+    for (const b of blocks) {
+      const h = hOf(rowHTML(b, numbering.get(b)));
+      if (cur.length && used + GAP + h > cap) { out.push(cur); cur = []; used = 0; cap = rest; }
+      used += (cur.length ? GAP : 0) + h; cur.push(b);
+    }
+    if (cur.length) out.push(cur);
+    return out;
+  };
+
+  const gNum = new Map(GLOBALS.map((b, i) => [b, i + 1]));
+  const globalChunks = paginate(GLOBALS, gNum, capRest, capRest);
+  const pageSheets = [];
+  PAGES.forEach(p => {
+    const num = new Map(); let k = 0; p.blocks.forEach(b => { if (!b.ref) num.set(b, ++k); });
+    const chunks = paginate(p.blocks, num, capFirst, capRest);
+    chunks.forEach((ch, ci) => pageSheets.push({ p, ci, chunks, ch, num }));
+  });
+  meas.remove();
+
+  const TOTAL = 2 + globalChunks.length + pageSheets.length;
+  const startOf = {}; let no = 2 + globalChunks.length;
+  pageSheets.forEach(s => { no++; if (s.ci === 0) startOf[s.p.nr] = no; });
+  const sheets = [];
+
+  /* 1 · Omslag */
+  sheets.push(`<section class="sheet cover">${COVER_RUIT}
+    <div class="cv-l"><img src="${LOGO}" alt="De Bresser"><span class="eb">Wireframes · website</span>
+      <h1>Wireframes<br><span>debresser.nl</span></h1>
+      <p class="lead">Per pagina alle blokken van boven naar beneden: hoe het eruitziet, wat er precies staat en welke knop waarheen leidt. Volgens Merkboek v1.1.</p>
+      <div class="cv-stats"><div><b>${PAGES.length}</b><span>pagina’s</span></div><div><b>${PAGES.reduce((s, p) => s + p.blocks.filter(b => !b.ref).length, 0)}</b><span>blokken uitgewerkt</span></div><div><b>${TOTAL}</b><span>vellen</span></div></div>
+      <p class="cv-meta">Voor: directie De Bresser · september 2026 · op basis van de live teksten van debresser.nl</p></div>
+    <div class="toc"><h2>Inhoud</h2><ul>
+      <li><span class="nr"></span><span>Zo lees je dit document</span><span></span><span class="pg">p. 2</span></li>
+      <li><span class="nr">G</span><span>Globale onderdelen: utility-balk, header, mega menu, footer, mobiel</span><span></span><span class="pg">p. 3</span></li>
+      ${PAGES.map(p => `<li><span class="nr">${p.nr}</span><span>${p.name} <span class="mono" style="font-size:7pt;color:var(--db-grijs)">${p.url}</span></span><span class="t">${p.tpl === 'Vrij' ? 'vrij' : p.tpl}</span><span class="pg">p. ${startOf[p.nr]}</span></li>`).join('')}
+    </ul></div></section>`);
+
+  /* 2 · Intro */
+  sheets.push(INTRO(TOTAL));
+
+  /* Globaal */
+  globalChunks.forEach((ch, ci) => {
+    sheets.push(`<section class="sheet">${sheetTop(`<span class="tab"><span class="pn">G</span><span class="nm">Globale onderdelen</span><span class="tpl">op elke pagina</span>${globalChunks.length > 1 ? `<span class="url">vel ${ci + 1}/${globalChunks.length}</span>` : ''}</span>`)}
+      <div class="sh-body">${miniHTML(GLOBALS, new Set(ch), 'Onderdelen')}<div class="rows">${ch.map(b => rowHTML(b, gNum.get(b))).join('')}</div></div>${foot(3 + ci, TOTAL)}</section>`);
+  });
+
+  /* Pagina’s */
+  let n = 2 + globalChunks.length;
+  pageSheets.forEach(({ p, ci, chunks, ch, num }) => {
+    n++;
+    sheets.push(`<section class="sheet">${sheetTop(pageTab(p, ci, chunks.length))}${ci === 0 ? introHTML(p) : ''}
+      <div class="sh-body">${miniHTML(p.blocks, new Set(ch))}<div class="rows">${ch.map(b => rowHTML(b, num.get(b))).join('')}</div></div>${foot(n, TOTAL)}</section>`);
+  });
+
+  doc.innerHTML = sheets.join('');
+
+  /* Alleen voor controle op scherm: ?from=3&to=6 toont een deel van de vellen */
+  const q = new URLSearchParams(location.search);
+  if (q.get('from')) {
+    const f = +q.get('from'), t = +q.get('to');
+    document.querySelectorAll('.sheet').forEach((s, i) => { if (i + 1 < f || i + 1 > t) s.style.display = 'none'; });
+  }
+}
+
+function INTRO(TOTAL) {
+  return `<section class="sheet">${sheetTop('<span class="tab"><span class="nm">Zo lees je dit document</span></span>')}
+  <div class="intro-grid">
+    <div class="box"><h3>Opbouw van elk vel</h3>
+      <div class="how">
+        <div style="background:#F6F8FB"><b>Pagina-opbouw</b>Links alle blokken van de pagina, van boven naar beneden. De blokken op dit vel zijn gemarkeerd.</div>
+        <div style="background:#F6F8FB"><b>Schets van het blok</b>Het blok zoals de bezoeker het ziet, met de echte kleuren, teksten, knoppen en foto’s. Verkleind, geen definitief ontwerp.</div>
+        <div style="background:#F6F8FB"><b>Specificatie</b>Per blok precies wat erin staat: layout, eyebrow, H1/H2, tekst, knoppen, beeld en regels uit het merkboek.</div>
+      </div>
+      <h3 style="margin-top:14px">Afspraken</h3>
+      <ul class="legend">
+        <li><span>Teksten</span><span>Waar mogelijk de <b>bestaande teksten</b> van debresser.nl. Nieuwe koppen en teksten zijn gemarkeerd als <span class="vt">tekstvoorstel</span>.</span></li>
+        <li><span>Ontbrekende inhoud</span><span><span class="at">aanleveren</span> = De Bresser levert de tekst of het antwoord aan (bijv. FAQ over opslag).</span></li>
+        <li><span>Tegenstrijdigheden</span><span><span class="ct">controleren</span> = op de huidige site staan verschillende gegevens (bijv. twee adressen Oisterwijk).</span></li>
+        <li><span>Reviews</span><span>Letterlijk overgenomen van de site, inclusief typefouten van klanten.</span></li>
+        <li><span>Blokcodes</span><span>B01–B22 uit de Blokkenbibliotheek; B23 Team is nieuw.</span></li>
+      </ul></div>
+    <div class="box"><h3>Legenda</h3><ul class="legend">
+      <li><span class="sw"><i class="c-N"></i>Nachtblauw</span><span>Hero, “Met oog voor morgen”, footer</span></li>
+      <li><span class="sw"><i class="c-W"></i>Wit</span><span>Inhoudsblokken (wisselt af met Mist)</span></li>
+      <li><span class="sw"><i class="c-M"></i>Mist</span><span>Inhoudsblokken met kaarten</span></li>
+      <li><span class="sw"><i class="c-G"></i>Signaalgroen</span><span>Alleen het afsluitende CTA-paneel</span></li>
+      <li><span><span class="sb g">Offerte aanvragen</span></span><span>Primaire knop · max. één per scherm</span></li>
+      <li><span><span class="sb n">Over ons</span></span><span>Knop op licht of groen vlak</span></li>
+      <li><span><span class="sb o">Neem contact op</span></span><span>Secundaire, omlijnde knop</span></li>
+      <li><span><span class="sb l">Lees meer →</span></span><span>Tekstlink in Webblauw</span></li>
+      <li><span><span class="sb t">Nieuw!</span></span><span>Label in Kroongeel, spaarzaam</span></li>
+      <li><span>Lettertype</span><span>Sora · H1 56/64 · H2 36/44 · H3 24/32 · tekst 16/28</span></li>
+      <li><span>Raster</span><span>Max. 1240 px · 12 kolommen · hoeken 6 / 12 / 20 px</span></li>
+    </ul></div>
+  </div>
+  ${foot(2, TOTAL)}</section>`;
+}
+
+build();
+
+</script>
+</body>
+</html>
