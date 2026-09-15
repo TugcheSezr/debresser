@@ -9,7 +9,9 @@
    07 Actieve link in de aanbod-navigatie
    08 Formulieren: validatie, voorwaardelijke velden, verzenden
    09 Jaartal in de footer
-   10 Hero met filmpjes (homepage)
+   10 Hero met filmpjes (homepage), 10b hero met YouTube-film
+   11 Werkwijze: verhuiswagen langs de stappen (homepage)
+   12 Werkwijze: grote vrachtwagen rijdt alleen als hij in beeld is
    ===================================================================== */
 (function () {
   'use strict';
@@ -400,14 +402,16 @@
     var controls = vhero.querySelector('.vhero__controls');
     var dotsEl = vhero.querySelector('.vhero__dots');
     var pauseBtn = vhero.querySelector('.vhero__pause');
-    var canPlay = window.matchMedia('(min-width: 761px) and (prefers-reduced-motion: no-preference)');
+    /* Film altijd als achtergrond, ook op mobiel en bij 'beperk beweging' (pauzeknop blijft) */
+    var canPlay = { matches: true, addEventListener: function () {} };
     var saveData = navigator.connection && navigator.connection.saveData;
     var current = -1, front = 0, paused = false, started = false, fading = false;
     if (!clips.length || videos.length < 2 || saveData) return;
 
     var srcFor = function (clip) { return (window.innerWidth <= 1280 && clip.srcKlein) ? clip.srcKlein : clip.src; };
 
-    clips.forEach(function (clip, i) {
+    /* bolletjes en pauzeknop zijn optioneel: zonder die elementen speelt de film gewoon */
+    if (dotsEl) clips.forEach(function (clip, i) {
       var li = document.createElement('li');
       var b = document.createElement('button');
       b.type = 'button';
@@ -416,14 +420,17 @@
       li.appendChild(b);
       dotsEl.appendChild(li);
     });
-    var dots = dotsEl.querySelectorAll('button');
+    var dots = dotsEl ? dotsEl.querySelectorAll('button') : [];
+    /* Eén film: geen bolletjes, en aan het eind vloeit hij weer in zijn eigen begin over */
+    if (clips.length === 1 && dotsEl) dotsEl.style.display = 'none';
 
     function show(i) {
-      if (fading || i === current) return;
+      if (fading || (i === current && clips.length > 1)) return;
       var next = videos[1 - front], prev = videos[front];
       current = i;
       dots.forEach(function (d, n) { d.setAttribute('aria-current', String(n === i)); d.style.setProperty('--progress', '0%'); });
       next.src = srcFor(clips[i]);
+      next.loop = clips.length === 1; /* nooit stilstaan, ook als de overgang gemist wordt */
       next.currentTime = 0;
       var go = function () {
         next.removeEventListener('canplay', go);
@@ -441,7 +448,7 @@
     videos.forEach(function (v) {
       v.addEventListener('timeupdate', function () {
         if (v !== videos[front] || !v.duration) return;
-        dots[current].style.setProperty('--progress', (v.currentTime / v.duration * 100).toFixed(1) + '%');
+        if (dots[current]) dots[current].style.setProperty('--progress', (v.currentTime / v.duration * 100).toFixed(1) + '%');
         if (v.duration - v.currentTime < 1.1 && !fading) show((current + 1) % clips.length);
       });
     });
@@ -456,12 +463,12 @@
         ? '<path d="M2 1l10 6-10 6z"/>'
         : '<rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/>';
     }
-    pauseBtn.addEventListener('click', function () { setPaused(!paused); });
+    if (pauseBtn) pauseBtn.addEventListener('click', function () { setPaused(!paused); });
 
     function start() {
       if (started || !canPlay.matches) return;
       started = true;
-      controls.hidden = false;
+      /* Geen pauzeknop: de film loopt altijd door (controls blijven verborgen) */
       show(0);
     }
     if (document.readyState === 'complete') start(); else window.addEventListener('load', start);
@@ -478,6 +485,399 @@
         if (entries[0].isIntersecting) videos[front].play().catch(function () {}); else videos[front].pause();
       }, { threshold: .05 }).observe(vhero);
     }
+  })();
+
+  /* ---------- 10b Hero met YouTube-film ----------
+     Laadt de YouTube-speler pas na 'load'. De film staat zonder geluid in een
+     lus en wordt pas zichtbaar als hij speelt; tot die tijd blijft de poster.
+     Buiten beeld of in een ander tabblad wordt hij gepauzeerd. */
+  (function () {
+    var box = document.querySelector('[data-yt]');
+    if (!box) return;
+    var id = box.getAttribute('data-yt');
+    var player = null, ready = false, visible = true;
+
+    function create() {
+      player = new YT.Player(box.querySelector('.vhero__yt-player'), {
+        videoId: id,
+        host: 'https://www.youtube-nocookie.com',
+        playerVars: { autoplay: 1, mute: 1, controls: 0, disablekb: 1, fs: 0, loop: 1, playlist: id, modestbranding: 1, rel: 0, iv_load_policy: 3, playsinline: 1, cc_load_policy: 0 },
+        events: {
+          onReady: function (e) { ready = true; e.target.mute(); if (visible && !document.hidden) e.target.playVideo(); },
+          onStateChange: function (e) {
+            if (e.data === 1) box.classList.add('is-playing');
+            if (e.data === 0) { e.target.seekTo(0); e.target.playVideo(); }
+          },
+          onError: function () { box.remove(); }
+        }
+      });
+    }
+    function sync() {
+      if (!ready) return;
+      if (visible && !document.hidden) player.playVideo(); else player.pauseVideo();
+    }
+    function load() {
+      if (window.YT && window.YT.Player) return create();
+      var prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () { if (prev) prev(); create(); };
+      var s = document.createElement('script');
+      s.src = 'https://www.youtube.com/iframe_api';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    if (document.readyState === 'complete') load(); else window.addEventListener('load', load);
+    document.addEventListener('visibilitychange', sync);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; sync(); }, { threshold: .05 }).observe(box.parentNode);
+    }
+  })();
+
+  /* ---------- 11 Werkwijze: verhuiswagen rijdt langs de stappen ---------- */
+  (function () {
+    var route = document.querySelector('[data-route]');
+    if (!route) return;
+    var van = route.querySelector('.route__van');
+    var road = route.querySelector('.route__road');
+    var steps = Array.prototype.slice.call(route.querySelectorAll('.steps-route .step'));
+    if (!van || !road || steps.length < 2) return;
+
+    var LEG = 1400, STOP = 1900, PARTY = 2800;
+    var index = -1;          // -1 = nog niet vertrokken, steps.length = weggereden
+    var timer = null, running = false, inView = false;
+    route.style.setProperty('--leg', LEG + 'ms');
+
+    function vertical() { return !desktop.matches; }
+
+    /* Midden van een stap-halte (of een punt buiten de weg) langs de rij-as */
+    function target(i) {
+      var r = route.getBoundingClientRect();
+      var rr = road.getBoundingClientRect();
+      var v = vertical();
+      var size = v ? van.offsetHeight : van.offsetWidth;
+      var center;
+      if (i < 0) center = (v ? rr.top - r.top : rr.left - r.left) - size * .6;
+      else if (i >= steps.length) center = (v ? rr.bottom - r.top : rr.right - r.left) + size * .6;
+      else {
+        var s = steps[i].querySelector('.step__stop').getBoundingClientRect();
+        center = v ? s.top + s.height / 2 - r.top : s.left + s.width / 2 - r.left;
+      }
+      var roadStart = v ? rr.top - r.top : rr.left - r.left;
+      var roadLen = v ? rr.height : rr.width;
+      return {
+        van: center - size / 2,
+        trail: Math.max(0, Math.min(roadLen, center - roadStart))
+      };
+    }
+
+    function place(i, jump) {
+      var t = target(i);
+      if (jump) route.classList.add('is-jump');
+      /* De wagen staat verticaal met rotate: 90deg, dus vooruit is altijd de eigen x-as */
+      van.style.transform = 'translate3d(' + t.van + 'px,0,0)';
+      route.style.setProperty('--trail', (i < 0 ? 0 : t.trail) + 'px');
+      if (jump) { void van.offsetWidth; route.classList.remove('is-jump'); }
+    }
+
+    function mark(i) {
+      steps.forEach(function (s, n) {
+        s.classList.toggle('is-active', n === i);
+        s.classList.toggle('is-passed', n < i);
+        if (n !== i) s.classList.remove('is-party');
+      });
+    }
+
+    function later(fn, ms) { clearTimeout(timer); timer = setTimeout(fn, ms); }
+
+    function next() {
+      if (!running) return;
+      if (index >= steps.length) {                       // opnieuw beginnen
+        mark(-1);
+        index = -1;
+        van.classList.add('is-hidden');
+        place(-1, true);
+        later(function () { van.classList.remove('is-hidden'); next(); }, 500);
+        return;
+      }
+      if (index < 0) van.classList.remove('is-hidden');
+      index++;
+      route.classList.add('is-driving');
+      van.classList.remove('is-braking');
+      if (index === steps.length) van.classList.add('is-hidden');
+      place(index);
+      later(function () {
+        route.classList.remove('is-driving');
+        if (index === steps.length) { later(next, 300); return; }
+        van.classList.add('is-braking');
+        mark(index);
+        var last = index === steps.length - 1;
+        if (last) steps[index].classList.add('is-party');
+        later(next, last ? PARTY : STOP);
+      }, LEG);
+    }
+
+    function update() {
+      var go = inView && !document.hidden && !reduceMotion.matches;
+      if (go === running) return;
+      running = go;
+      if (go) next(); else { clearTimeout(timer); route.classList.remove('is-driving'); }
+    }
+
+    if (reduceMotion.matches) {
+      /* Geen rijden: wagen staat bij de verhuisdag, alle haltes gehaald */
+      mark(steps.length - 1);
+      steps[steps.length - 1].classList.remove('is-active');
+      steps.forEach(function (s) { s.classList.add('is-passed'); });
+      index = steps.length - 1;
+      place(index, true);
+      route.classList.add('is-ready');
+    } else {
+      van.classList.add('is-hidden');
+      place(-1, true);
+      route.classList.add('is-ready');
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          inView = entries[0].isIntersecting;
+          /* even wachten tot de kaarten zijn ingeschoven */
+          setTimeout(update, inView && index < 0 ? 900 : 0);
+        }, { threshold: .25 }).observe(route);
+      } else { inView = true; update(); }
+      document.addEventListener('visibilitychange', update);
+    }
+
+    /* Bij formaatwijziging of andere breakpoint direct op de juiste plek */
+    var resizeRaf = null;
+    window.addEventListener('resize', function () {
+      if (resizeRaf) cancelAnimationFrame(resizeRaf);
+      resizeRaf = requestAnimationFrame(function () {
+        place(Math.min(index, steps.length - 1), true);
+      });
+    });
+  })();
+
+  /* ---------- 12 Werkwijze: grote vrachtwagen rijdt alleen in beeld ---------- */
+  (function () {
+    var stage = document.querySelector('[data-truck]');
+    if (!stage || !('IntersectionObserver' in window)) return;
+    var visible = false;
+    function update() { stage.classList.toggle('is-paused', !visible || document.hidden); }
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      update();
+    }, { threshold: 0 }).observe(stage);
+    document.addEventListener('visibilitychange', update);
+  })();
+
+  /* ---------- 13 Contactformulier in 3D: kantelen + objecten-script laden ---------- */
+  (function () {
+    var cards = document.querySelectorAll('[data-form3d]');
+    if (!cards.length) return;
+
+    cards.forEach(function (card) {
+      var raf = null;
+      function typing() {
+        var el = document.activeElement;
+        return el && card.contains(el) && el.matches('input, textarea, select');
+      }
+      function flat() {
+        if (raf) cancelAnimationFrame(raf);
+        card.classList.remove('is-tilting');
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      }
+      card.addEventListener('pointermove', function (e) {
+        if (!finePointer.matches || reduceMotion.matches || typing()) return;
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          card.classList.add('is-tilting');
+          card.style.setProperty('--ry', ((px - .5) * 7).toFixed(2) + 'deg');
+          card.style.setProperty('--rx', ((.5 - py) * 5).toFixed(2) + 'deg');
+          card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        });
+      });
+      card.addEventListener('pointerleave', flat);
+      card.addEventListener('focusin', flat);
+    });
+
+    var self = document.querySelector('script[src*="main.js"]');
+    var src = self ? self.src.replace(/main\.js.*$/, 'contact-3d.js') : 'js/contact-3d.js';
+    var loaded = false;
+    function load() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = src;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    if (!('IntersectionObserver' in window)) { load(); return; }
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) { io.disconnect(); load(); }
+    }, { rootMargin: '900px 0px' });
+    cards.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* ---------- 14 Werkwijze: lijn groeit mee en knooppunten lichten op ---------- */
+  (function () {
+    var flow = document.querySelector('[data-wk-flow]');
+    if (!flow) return;
+    var steps = Array.prototype.slice.call(flow.querySelectorAll('.wk-step'));
+    if (reduceMotion.matches) {
+      flow.style.setProperty('--wk-p', '100%');
+      steps.forEach(function (s) { s.classList.add('is-reached'); });
+      return;
+    }
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var mark = window.innerHeight * .7;
+      var r = flow.getBoundingClientRect();
+      var p = Math.max(0, Math.min(1, (mark - r.top) / r.height));
+      flow.style.setProperty('--wk-p', (p * 100).toFixed(1) + '%');
+      steps.forEach(function (s) { s.classList.toggle('is-reached', s.getBoundingClientRect().top + 70 < mark); });
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
+  /* ---------- 15 Blog: hero-foto's volgen de muis in de diepte ---------- */
+  (function () {
+    var hero = document.querySelector('[data-blog-hero]');
+    if (!hero || reduceMotion.matches || !finePointer.matches) return;
+    var raf = null;
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = ((e.clientX - r.left) / r.width - .5) * 2;
+      var y = ((e.clientY - r.top) / r.height - .5) * 2;
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(function () {
+        hero.style.setProperty('--hx', x.toFixed(3));
+        hero.style.setProperty('--hy', y.toFixed(3));
+      });
+    });
+    hero.addEventListener('pointerleave', function () {
+      hero.style.setProperty('--hx', '0');
+      hero.style.setProperty('--hy', '0');
+    });
+  })();
+
+  /* ---------- 16 Contact: kaart en locatiekaarten lichten samen op ---------- */
+  (function () {
+    var board = document.querySelector('[data-loc-board]');
+    if (!board) return;
+    var parts = board.querySelectorAll('[data-loc]');
+    function activate(name) {
+      parts.forEach(function (el) { el.classList.toggle('is-active', el.getAttribute('data-loc') === name); });
+    }
+    board.querySelectorAll('.loc-card, .loc-pin').forEach(function (el) {
+      var name = el.getAttribute('data-loc');
+      el.addEventListener('mouseenter', function () { activate(name); });
+      el.addEventListener('focusin', function () { activate(name); });
+      el.addEventListener('click', function () { activate(name); });
+    });
+    activate('oisterwijk');
+  })();
+
+  /* ---------- 17 Locaties: echte kaart (Leaflet + Esri-straatkaart, werkt zonder sleutel) over de 3D-kaart ----------
+     Laadt Leaflet pas als er een locatiebord op de pagina staat. Lukt dat niet
+     (offline), dan blijft de getekende 3D-kaart gewoon staan. Kaarten en pinnen
+     volgen de actieve locatie uit blok 16; klikken op een kaart vliegt ernaartoe. */
+  (function () {
+    var board = document.querySelector('[data-loc-board]');
+    var panel = board && board.querySelector('.loc-map');
+    if (!panel) return;
+    var PLACES = {
+      tilburg: [51.58918, 5.01356], oisterwijk: [51.58260, 5.19253], breda: [51.60675, 4.75461],
+      venlo: [51.38918, 6.18544], reeuwijk: [52.04074, 4.71758], brussel: [50.87354, 4.41736]
+    };
+    var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/';
+
+    function loadCss(href) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; document.head.appendChild(l); }
+    function loadJs(src, done, fail) { var s = document.createElement('script'); s.src = src; s.onload = done; s.onerror = fail; document.head.appendChild(s); }
+
+    function build() {
+      var L = window.L;
+      var cards = Array.prototype.slice.call(board.querySelectorAll('.loc-card[data-loc]'));
+      var box = document.createElement('div');
+      box.className = 'loc-real';
+      box.setAttribute('aria-label', 'Kaart met de vestigingen van De Bresser');
+      panel.appendChild(box);
+
+      var map = L.map(box, { scrollWheelZoom: false, zoomControl: false, attributionControl: true, dragging: !L.Browser.mobile, tap: false });
+      L.control.zoom({ position: 'topright' }).addTo(map);
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+        attribution: 'Kaart &copy; Esri, HERE, Garmin, &copy; OpenStreetMap-bijdragers'
+      }).addTo(map);
+
+      var markers = {}, bounds = [];
+      cards.forEach(function (card) {
+        var id = card.getAttribute('data-loc');
+        if (!PLACES[id]) return;
+        var nr = (card.querySelector('.loc-card__nr') || {}).textContent || '';
+        var naam = (card.querySelector('h3') || {}).textContent || id;
+        var icon = L.divIcon({
+          className: 'loc-real__icon',
+          html: '<span class="lr-pin"><span class="lr-pin__label">' + naam + '</span><span class="lr-pin__head"><b>' + nr + '</b></span><span class="lr-pin__pulse"></span></span>',
+          iconSize: [0, 0]
+        });
+        var m = L.marker(PLACES[id], { icon: icon, keyboard: false, title: naam, riseOnHover: true }).addTo(map);
+        m.on('click', function () { card.click(); fly(id); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
+        markers[id] = m;
+        bounds.push(PLACES[id]);
+      });
+      var all = L.latLngBounds(bounds);
+      map.fitBounds(all, { padding: [48, 48] });
+
+      function fly(id) {
+        if (!PLACES[id]) return;
+        map.flyTo(PLACES[id], 13, { duration: reduceMotion.matches ? 0 : 0.9 });
+      }
+      function sync() {
+        cards.forEach(function (card) {
+          var m = markers[card.getAttribute('data-loc')];
+          if (!m || !m.getElement()) return;
+          var on = card.classList.contains('is-active');
+          m.getElement().classList.toggle('is-active', on);
+          m.setZIndexOffset(on ? 1000 : 0);
+        });
+      }
+      cards.forEach(function (card) {
+        new MutationObserver(sync).observe(card, { attributes: true, attributeFilter: ['class'] });
+        card.addEventListener('click', function (e) { if (!e.target.closest('a')) fly(card.getAttribute('data-loc')); });
+      });
+
+      /* knop om weer alles te tonen */
+      var reset = document.createElement('button');
+      reset.type = 'button';
+      reset.className = 'loc-real__all';
+      reset.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Alle locaties';
+      reset.addEventListener('click', function () { map.flyToBounds(all, { padding: [48, 48], duration: reduceMotion.matches ? 0 : 0.9 }); });
+      panel.appendChild(reset);
+
+      panel.classList.add('has-real');
+      setTimeout(function () { map.invalidateSize(); map.fitBounds(all, { padding: [48, 48] }); sync(); }, 60);
+      window.addEventListener('resize', function () { map.invalidateSize(); });
+    }
+
+    function start() {
+      if (window.L && window.L.map) return build();
+      loadCss(CDN + 'leaflet.min.css');
+      loadJs(CDN + 'leaflet.min.js', build, function () {});
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        start();
+      }, { rootMargin: '400px 0px' });
+      io.observe(panel);
+    } else start();
   })();
 
   /* ---------- 09 Jaartal ---------- */

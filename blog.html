@@ -3,43 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog | De Bresser</title>
-  <meta name="description" content="Alles over efficiënt verhuizen, transport en logistiek. Nieuws en tips van De Bresser.">
+  <title>Verhuisblog: tips, advies &amp; inspiratie - De Bresser</title>
+  <meta name="description" content="Lees de verhuisblog van De Bresser met praktische verhuistips, advies en inzichten voor een zorgeloze verhuizing.">
   <meta name="theme-color" content="#0f2c59">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/blog-samen-bouwen.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="page-blog">
 
 <a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
 
 <!-- =====================================================================
-     UTILITY-BALK
-     ===================================================================== -->
-<div class="topbar">
-  <div class="wrap topbar__in">
-    <ul class="topbar__usps">
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Erkende Verhuizer</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Sinds 1923</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Eén vast aanspreekpunt</li>
-    </ul>
-    <div class="topbar__contact">
-      <a href="tel:+31135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg>+31 (0)13 52 82 372</a>
-      <a href="mailto:info@debresser.nl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>info@debresser.nl</a>
-    </div>
-  </div>
-</div>
-
-<!-- =====================================================================
      HEADER + 3D MEGA MENU
      ===================================================================== -->
-<header class="header">
+<header class="header header--overlay">
   <div class="wrap">
     <div class="header__bar">
-      <a class="logo" href="index.html">
-        <img src="assets/img/logo-de-bresser-compact.png" alt="De Bresser, naar de homepage" width="768" height="592">
+      <a class="logo" href="index.html" aria-label="De Bresser, naar de homepage">
+        <img class="logo__wit" src="assets/img/logo-de-bresser-compact-wit.png" alt="" width="768" height="592">
+        <img class="logo__kleur" src="assets/img/logo-de-bresser-compact.png" alt="" width="768" height="592">
       </a>
 
       <nav class="nav" id="hoofdmenu" aria-label="Hoofdmenu">
@@ -58,12 +42,11 @@
                     Verhuizen
                   </a>
                   <ul class="mega__list">
-                    <li><a href="diensten-verhuizen.html#bedrijfsverhuizen">Bedrijfsverhuizen</a></li>
-                    <li><a href="diensten-verhuizen.html#particulier-verhuizen">Particulier verhuizen</a></li>
-                    <li><a href="diensten-verhuizen.html#internationale-verhuizingen">Internationale verhuizingen</a></li>
-                    <li><a href="diensten-verhuizen.html#speciale-objecten">Speciale objecten</a></li>
-                    <li><a href="diensten-verhuizen.html#zorgverhuizing">Zorgverhuizing</a></li>
-                    <li><a href="diensten-verhuizen.html#duurzaam-verhuizen">Duurzaam verhuizen</a></li>
+                    <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
+                    <li><a href="particuliere-verhuizing.html">Particulier</a></li>
+                    <li><a href="internationale-verhuizing.html">Internationaal</a></li>
+                    <li><a href="zorg-verhuizing.html">Zorgverhuizing</a></li>
+                    <li><a href="duurzaam-verhuizen.html">Duurzaam verhuizen</a></li>
                   </ul>
                 </div>
                 <div class="mega__col" data-tilt="6">
@@ -72,9 +55,9 @@
                     Opslag
                   </a>
                   <ul class="mega__list">
-                    <li><a href="diensten-opslag.html#zakelijk">Zakelijk</a></li>
-                    <li><a href="diensten-opslag.html#particulier">Particulier</a></li>
-                    <li><a href="diensten-opslag.html#diy-opslag">DIY-opslag</a></li>
+                    <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
+                    <li><a href="particuliere-opslag.html">Particulier</a></li>
+                    <li><a href="particuliere-opslag.html#diy-opslag">DIY-opslag</a></li>
                   </ul>
                 </div>
                 <div class="mega__col" data-tilt="6">
@@ -83,9 +66,9 @@
                     Meubelprojecten
                   </a>
                   <ul class="mega__list">
-                    <li><a href="diensten-meubelprojecten.html#meubeltransport">Meubeltransport</a></li>
-                    <li><a href="diensten-meubelprojecten.html#veilingen">Veilingen</a></li>
-                    <li><a href="diensten-meubelprojecten.html#montageservice">Montageservice</a></li>
+                    <li><a href="meubeltransport.html">Meubeltransport</a></li>
+                    <li><a href="veilingen.html">Veilingen</a></li>
+                    <li><a href="meubelmontage.html">Montageservice</a></li>
                   </ul>
                 </div>
                 <div class="mega__col" data-tilt="6">
@@ -94,9 +77,9 @@
                     Gebouwbeheer
                   </a>
                   <ul class="mega__list">
-                    <li><a href="diensten-gebouwbeheer.html#onderhoud">Onderhoud</a></li>
-                    <li><a href="diensten-gebouwbeheer.html#verduurzamen">Verduurzamen</a></li>
-                    <li><a href="diensten-gebouwbeheer.html#huismeester">Huismeester</a></li>
+                    <li><a href="gebouwbeheer-onderhoud.html">Onderhoud</a></li>
+                    <li><a href="gebouwbeheer-verduurzamen.html">Verduurzamen</a></li>
+                    <li><a href="gebouwbeheer-huismeester.html">Huismeester</a></li>
                   </ul>
                 </div>
                 <div class="mega__col" data-tilt="6">
@@ -105,18 +88,17 @@
                     Assetmanagement
                   </a>
                   <ul class="mega__list">
-                    <li><a href="diensten-assetmanagement.html#inventarisatie">Inventarisatie</a></li>
-                    <li><a href="diensten-assetmanagement.html#wms-en-meubelpaspoort">WMS en Meubelpaspoort</a></li>
-                    <li><a href="diensten-assetmanagement.html#opslag-assets">Opslag assets</a></li>
-                    <li><a href="diensten-assetmanagement.html#inkoop-en-verkoop-assets">Inkoop en verkoop assets</a></li>
-                    <li><a href="diensten-assetmanagement.html#circulair-meubilair">Circulair meubilair</a></li>
+                    <li><a href="assetmanagement-inventarisatie.html">Inventarisatie</a></li>
+                    <li><a href="assetmanagement-wms-en-meubelpaspoort.html">WMS en Meubelpaspoort</a></li>
+                    <li><a href="assetmanagement-opslag-assets.html">Opslag assets</a></li>
+                    <li><a href="assetmanagement-inkoop-en-verkoop-assets.html">Inkoop en verkoop assets</a></li>
+                    <li><a href="assetmanagement-circulair-meubilair.html">Circulair meubilair</a></li>
                   </ul>
                 </div>
                 <a class="mega__promo" href="duurzame-werkomgeving.html">
                   <svg class="bg-ruit " viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
                   <span class="tag">Nieuw!</span>
                   <strong>Duurzame werkomgeving</strong>
-                  <span>Met De Bresser als uw partner voor gebouw- en assetmanagement, heeft u altijd een betrouwbare ondersteuning, 24/7.</span>
                   <span class="btn btn--green btn--sm">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </a>
                 </div>
@@ -125,19 +107,20 @@
           </li>
           <li><a class="menu__link" href="over-ons.html">Over ons</a></li>
           <li><a class="menu__link" href="vacatures.html">Vacatures</a></li>
-          <li><a class="menu__link" href="blog.html" aria-current="page">Blog</a></li>
           <li><a class="menu__link" href="contact.html">Contact</a></li>
+          <li><a class="menu__link" href="offerte.html">Offerte</a></li>
+          <li><a class="menu__link" href="blog.html" aria-current="page">Blog</a></li>
         </ul>
         <div class="drawer-foot">
           <a class="btn btn--green btn--block" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn--light btn--block" href="tel:+31135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> 013 52 82 372</a>
+          <a class="btn btn--light btn--block" href="tel:0031135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> +31 (0)13 52 82 372</a>
         </div>
       </nav>
 
       <div class="header__cta">
-        <a class="header-tel" href="tel:+31135282372">
+        <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
-          <span><small>Bel ons</small>013 52 82 372</span>
+          <span>+31 (0)13 52 82 372</span>
         </a>
         <a class="btn btn--green btn--sm" href="offerte.html">Offerte aanvragen</a>
         <button class="burger" type="button" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu openen">
@@ -154,12 +137,11 @@
   <!-- =====================================================================
        PAGINA-HERO
        ===================================================================== -->
-  <section class="page-hero page-hero--compact" aria-labelledby="page-title">
+  <section class="page-hero page-hero--compact page-hero--photo" aria-labelledby="page-title">
+    <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/page-hero/blog.webp" srcset="assets/img/page-hero/blog-960.webp 960w, assets/img/page-hero/blog.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
     <svg class="bg-ruit bg-ruit--tr" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
     <div class="wrap page-hero__grid">
       <div class="page-hero__copy">
-        <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">Blog</span></nav>
-        
         <h1 class="h1" id="page-title">Blog</h1>
         <p class="lead">Alles over efficiënt verhuizen, transport en logistiek.</p>
         <div class="chips">
@@ -171,412 +153,109 @@
     </div>
   </section>
 
-  <section class="section" aria-label="Alle berichten">
+  <section class="section blog-bg blog-bg--berichten" aria-label="Alle berichten">
+    <svg class="bg-ruit blog-bg__ruit blog-bg__ruit--a" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+    <svg class="bg-ruit blog-bg__ruit blog-bg__ruit--b" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
     <div class="wrap">
-      <ul class="posts reveal-group">
+      <ul class="posts posts--3d reveal-group">
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
-            <img src="assets/img/blog-samen-bouwen.jpg" alt="Sander Uphus" loading="lazy">
-            <time class="post-card__date" datetime="2026-06-11">11 juni 2026</time>
+            <img src="assets/img/site/Sander-Uphus.jpg" alt="" loading="lazy">
           </div>
           <div class="post-card__body">
-            <h3><a href="#samen-bouwen-aan-succes">Samen bouwen aan succes</a></h3>
+            <h3><a href="blog-samen-bouwen-aan-succes.html">Samen bouwen aan succes</a></h3>
             <p>Satelliet hospitality furniture en De Bresser al jaren een sterk team</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
-            <img src="assets/img/blog-brocken.jpg" alt="Verhuiswagens De bresser en Brocken verhuizingen" loading="lazy">
-            <time class="post-card__date" datetime="2025-11-19">19 november 2025</time>
+            <img src="assets/img/site/De-Bresser-Brocken-verhuizingen.jpg" alt="Verhuiswagens De bresser en Brocken verhuizingen" loading="lazy">
           </div>
           <div class="post-card__body">
-            <h3><a href="#de-bresser-verwelkomt-brocken-verhuizingen">De Bresser verwelkomt Brocken Verhuizingen</a></h3>
+            <h3><a href="blog-de-bresser-verwelkomt-brocken-verhuizingen.html">De Bresser verwelkomt Brocken Verhuizingen</a></h3>
             <p>Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
-            <img src="assets/img/blog-kinderen.jpg" alt="twee kinderen aan het tekenen" loading="lazy">
-            <time class="post-card__date" datetime="2025-11-06">6 november 2025</time>
+            <img src="assets/img/site/De-Bresser-intervieuw-klant-1.jpg" alt="twee kinderen aan het tekenen" loading="lazy">
           </div>
           <div class="post-card__body">
-            <h3><a href="#verhuizen-met-kinderen">Verhuizen met kinderen</a></h3>
+            <h3><a href="blog-verhuizen-met-kinderen.html">Verhuizen met kinderen</a></h3>
             <p>Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
             <img src="assets/img/site/Particuliere-verhuizing-De-Bresser-Nieuwbouw-1.jpg" alt="Verhuiswagen die uitgeladen wordt" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
           </div>
           <div class="post-card__body">
-            <h3><a href="#de-populairste-reden-om-te-verhuizen">De populairste reden om te verhuizen!</a></h3>
+            <h3><a href="blog-de-populairste-reden-om-te-verhuizen.html">De populairste reden om te verhuizen!</a></h3>
             <p>De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
-            <img src="assets/img/site/42191532-0ad7-4e06-a297-bf29f214d68d.jpg" alt="Verhuis(sterren) van De Bresser" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
+            <img src="assets/img/site/42191532-0ad7-4e06-a297-bf29f214d68d.jpg" alt="" loading="lazy">
           </div>
           <div class="post-card__body">
-            <h3><a href="#nieuw-qwiek-snooze-reinigingsservice">Nieuw! Qwiek.snooze reinigingsservice</a></h3>
+            <h3><a href="blog-nieuw-qwiek-snooze-reinigingsservice.html">Nieuw! Qwiek.snooze reinigingsservice</a></h3>
             <p>Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team!</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
             <img src="assets/img/site/De-bresser-zakelijk-verhuizen-1.jpg" alt="zakelijke spullen inpakken" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
           </div>
           <div class="post-card__body">
-            <h3><a href="#interne-verhuizing">Interne verhuizing</a></h3>
+            <h3><a href="blog-interne-verhuizing.html">Interne verhuizing</a></h3>
             <p>Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
             <img src="assets/img/site/flat-appartement-verhuizingen-e1674040615430-1.jpg" alt="Verhuislift" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
           </div>
           <div class="post-card__body">
-            <h3><a href="#verhuislift-maakt-alles-makkelijker">Verhuislift maakt alles makkelijker!</a></h3>
+            <h3><a href="blog-verhuislift-maakt-alles-makkelijker.html">Verhuislift maakt alles makkelijker!</a></h3>
             <p>Niet bij elke verhuizing is een verhuislift nodig, vaak wordt er een lift ingezet als er vanaf een hoogte gewerkt moet worden.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
             <img src="assets/img/site/Inboedel-opslag-lossen-De-Bresser.jpg" alt="Warehuis" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
           </div>
           <div class="post-card__body">
-            <h3><a href="#spullen-weg-doen-waarom-is-het-zo-moeilijk">Spullen weg doen waarom is het zo moeilijk?</a></h3>
-            <p>Als er een verhuizing voor de deur staat is het de perfecte kans om overbodige spullen, materialen en overige inboedel weg te doen.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <h3><a href="blog-spullen-weg-doen-waarom-is-het-zo-moeilijk.html">Spullen weg doen waarom is het zo moeilijk?</a></h3>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
         <li class="post-card card-3d" data-tilt="7">
           <div class="post-card__img">
             <img src="assets/img/site/Erkende-verhuizer-bedrijf-De-Bresser-1.jpg" alt="Erkende verhuizers verhuiswagen" loading="lazy">
-            <time class="post-card__date" datetime="2024-03-29">29 maart 2024</time>
           </div>
           <div class="post-card__body">
-            <h3><a href="#waarom-verhuizen-met-een-erkende-verhuizer">Waarom verhuizen met een Erkende Verhuizer?</a></h3>
-            <p>Dankzij een Erkende Verhuizer kan je altijd rekenen op een professionele en veilige verhuizing!</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <h3><a href="blog-waarom-verhuizen-met-een-erkende-verhuizer.html">Waarom verhuizen met een Erkende Verhuizer?</a></h3>
+            <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
         </li>
       </ul>
+      <nav class="blog-pager reveal" aria-label="Paginering">
+        <span class="blog-pager__item is-disabled">&lt;-</span>
+        <span class="blog-pager__item is-current" aria-current="page" aria-label="Pagina 1">1</span>
+        <a class="blog-pager__item" href="blog-2.html" aria-label="Pagina 2">2</a>
+        <a class="blog-pager__item" href="blog-2.html">-&gt;</a>
+      </nav>
     </div>
   </section>
 
-  <section class="section section--mist" aria-labelledby="artikelen-title">
-    <svg class="bg-ruit bg-ruit--bl" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
-    <div class="wrap wrap--narrow" style="max-width:calc(1000px + 2 * var(--gutter))">
-      
-      <div class="section-head reveal">
-        <div class="section-head__text">
-          <p class="eyebrow">Nieuws &amp; Tips</p>
-          <h2 class="h2" id="artikelen-title">Alle artikelen</h2>
-          
-        </div>
-        
-      </div>
-      <article class="article card-3d reveal" id="samen-bouwen-aan-succes" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/blog-samen-bouwen.jpg" alt="Sander Uphus" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2026-06-11"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>11 juni 2026</time>
-              <h2 class="h3">Samen bouwen aan succes</h2>
-              <p class="muted">Satelliet hospitality furniture en De Bresser al jaren een sterk team</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<h2>Satelliet hospitality furniture en De Bresser al jaren een sterk team</h2>
-<p>Al ruim vier jaar werken Satelliet en De Bresser samen aan uiteenlopende projecten in binnen- en buitenland. Van restaurants en hotels tot cruiseschepen en recreatieparken. Voor Sander Uphus, projectmanager bij Satelliet, is die samenwerking inmiddels een vanzelfsprekend onderdeel van het succes achter veel projecten.</p>
-<p>Sander vierde onlangs zijn vijfjarig jubileum bij Satelliet. Ooit begon hij als orderplanner, maar inmiddels begeleidt hij projecten van begin tot eind als projectmanager. “Ik vind het mooi om op bijzondere plekken te komen en met verschillende mensen samen te werken. Of het nu gaat om opdrachtgevers, aannemers of leveranciers, ik probeer altijd een positieve band op te bouwen met iedereen met wie ik werk.</p>
-<p>De grootste voldoening haalt Sander uit het eindresultaat. “Je ziet soms een leegstaand pand veranderen in een prachtige omgeving waar mensen straks samenkomen. Dat blijft bijzonder.” Projecten zoals een hotel in Schiedam, diverse restaurants, locaties in Oostenrijk en zelfs cruiseschepen behoren tot de hoogtepunten uit zijn carrière.</p>
-<p>Daarbij speelt duurzaamheid een belangrijke rol. “We kijken steeds vaker naar hergebruik van inventaris en manieren om de levensduur van producten te verlengen. Zo verkleinen we onze ecologische voetafdruk.”</p>
-<figure><img src="assets/img/site/De-Bresser-Transport--e1787651507557.jpg" alt="Transport" loading="lazy"></figure>
-<h2>Een samenwerking gebaseerd op vertrouwen</h2>
-<p>Voor veel projecten werkt Satelliet samen met De Bresser. Wat begon als een contact via een oud-collega, groeide uit tot een hecht partnerschap. “We hebben samen echt iets opgebouwd. Wat voor mij het verschil maakt, is de mentaliteit van de mensen. De bereidwilligheid, flexibiliteit en het meedenken. Je krijgt niet snel een ‘nee’ te horen.”</p>
-<p>Volgens Sander is De Bresser veel meer dan een leverancier. “Wij zien hen als een verlengstuk van onze eigen organisatie. Als zij op locatie zijn, weet ik dat het goed komt. Niet alleen met de spullen, maar ook met onze klanten.”</p>
-<p>Ook het persoonlijke contact maakt het verschil. Daarbij noemt hij zijn vaste contactpersoon Aafke. “Zij voelt feilloos aan wat er nodig is. Soms hoef ik maar half uit te leggen wat de situatie is en begrijpt ze al wat de juiste actie is.”</p>
-<h2>Trots op wat samen is opgebouwd</h2>
-<p>Terugkijkend overheerst vooral trots. “Samen hebben we mooie projecten gerealiseerd en daar mogen we best trots op zijn!” Met vertrouwen kijkt hij vooruit. “Als er een uitdagende vraag komt, weet ik dat we samen met De Bresser een oplossing vinden. Dat is uiteindelijk waar een sterke samenwerking om draait!”</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="de-bresser-verwelkomt-brocken-verhuizingen" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/blog-brocken.jpg" alt="Verhuiswagens De bresser en Brocken verhuizingen" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2025-11-19"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>19 november 2025</time>
-              <h2 class="h3">De Bresser verwelkomt Brocken Verhuizingen</h2>
-              <p class="muted">Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<h2>Brocken Verhuizingen</h2>
-<p>Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p>
-<p>Een mooie stap waarin wij onze dienstverlening verder uitbreiden, terwijl de vertrouwde service van Brocken volledig behouden blijft.</p>
-<p>Brocken verhuizingen is gespecialiseerd in senioren verhuizingen. Een verhuizing op latere leeftijd is vaak meer dan alleen dozen verplaatsen. Het is een emotionele stap, met veel praktische vragen. Samen met Brocken blijven wij ons daarom specifiek richten op seniorenverhuizingen, met:</p>
-<ul><li>extra duidelijke uitleg en begeleiding;</li><li>een rustig tempo en heldere afspraken;</li><li>hulp bij in- en uitpakken indien gewenst;</li><li>zorgvuldige omgang met persoonlijke en dierbare spullen.</li></ul>
-<p>Met de kennis van Brocken en de kracht van De Bresser kunnen wij senioren en hun naasten nog beter begeleiden – van eerste kennismaking tot de laatste doos.</p>
-<h3>Wat betekent dit voor de klanten van Brocken?</h3>
-<p>Voor de klanten van Brocken verandert er in de praktijk bijna niets – en dat is precies de bedoeling.</p>
-<p>Alle medewerkers van Brocken blijven gewoon aan boord en werkzaam vanuit de vertrouwde locatie in Tilburg. U blijft dus de bekende gezichten zien. Ook Barry en Betty hebben binnen De Bresser een mooie plek gekregen. Hun kennis, ervaring en betrokkenheid bij klanten blijven daarmee volledig behouden.</p>
-<p>Kortom: de vertrouwde service van Brocken blijft, maar staat nu nóg sterker dankzij de ondersteuning van De Bresser.</p>
-<h3>Waarom Brocken zo goed bij De Bresser past</h3>
-<p>Bij De Bresser hechten we veel waarde aan persoonlijke aandacht, zorgvuldigheid en betrouwbaarheid. Dat zijn precies de waarden waar Brocken al jaren om bekendstaat.</p>
-<p>Brocken is gespecialiseerd in verhuizingen voor ouderen en senioren. Die expertise past perfect binnen onze visie om klanten in elke levensfase zo goed mogelijk te ontzorgen.</p>
-<p>Door onze krachten te bundelen, kunnen wij:</p>
-<ul><li>nog beter inspelen op de specifieke wensen van senioren;</li><li>meer tijd en aandacht bieden tijdens het verhuisproces;</li><li>extra ondersteuning bieden bij voorbereiding, inpakken en inrichting.</li></ul>
-<figure><img src="assets/img/site/senioren-brocken-verhuizing-1536x1152-1-1024x768.jpg" alt="Verhuiswagen van Brocken verhuizingen" loading="lazy"></figure>
-<h3>Meer mogelijkheden, dezelfde persoonlijke aanpak</h3>
-<p>Als onderdeel van De Bresser krijgt Brocken toegang tot extra middelen en capaciteit, terwijl de eigen stijl behouden blijft. Denk aan:</p>
-<ul><li>een groter wagenpark en meer verhuiscapaciteit;</li><li>aanvullende hulpmiddelen en materialen om verhuizen nog comfortabeler te maken;</li><li>versterking in planning, organisatie en logistiek.</li></ul>
-<p>Voor klanten betekent dit: dezelfde vertrouwde aanpak, maar met nóg meer mogelijkheden om de verhuizing zorgeloos te laten verlopen.</p>
-<h3>Samen verder</h3>
-<p>Wij zijn blij en trots dat we Brocken Verhuizingen binnen De Bresser mogen verwelkomen.</p>
-<p>Met deze stap combineren we het vertrouwde karakter van een lokale specialist met de kracht en continuïteit van een grotere organisatie.</p>
-<p>Heeft u vragen over wat deze overname betekent of wat wij voor u kunnen betekenen?</p>
-<p>Neem gerust <a href="contact.html">contact</a> met ons op – we denken graag met u mee over een verhuizing die écht zorgeloos verloopt.</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="verhuizen-met-kinderen" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/blog-kinderen.jpg" alt="twee kinderen aan het tekenen" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2025-11-06"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>6 november 2025</time>
-              <h2 class="h3">Verhuizen met kinderen</h2>
-              <p class="muted">Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<h2>Verhuizen met kinderen: zo maak je er samen een positieve ervaring van</h2>
-<p>Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Een nieuwe omgeving, een ander huis, soms zelfs een nieuwe school: dat zijn grote veranderingen. Gelukkig kun je veel doen om de overgang soepel te laten verlopen. Bij De Bresser Verhuizingen hebben we al talloze gezinnen geholpen en weten we precies hoe je van een verhuizing met kinderen een positieve ervaring maakt.</p>
-<h3>1. Betrek je kinderen bij de voorbereiding</h3>
-<p>Kinderen voelen zich veiliger als ze begrijpen wat er gebeurt. Vertel op tijd dat jullie gaan verhuizen en leg uit waarom. Laat ze het nieuwe huis zien of bekijk samen foto’s van de buurt. Kleine kinderen vinden het leuk om een kamer ‘uit te kiezen’ of te helpen bij het inpakken van hun eigen speelgoeddozen. Zo voelen ze zich betrokken en belangrijk.</p>
-<h3>2. Planning verhuizen</h3>
-<p>Plan de verhuizing in een vakantie. Dit is het prettigste voor het kind nu hebben ze even rust en zijn er geen andere spannende zaken aan de orde, denk hierbij aan het maken van een belangrijke toets. Als je kind naar een andere school gaat is dit voor het kind het makkelijkste om in de zomer te verhuizen zo kan het kind wennen aan het nieuwe huis en daarna naar de nieuwe school.</p>
-<figure><img src="assets/img/site/De-Bresser-Zorg-verhuizing-Zakelijk-1024x683.jpg" alt="Verhuiswagen Top Movers en busje De Bresser" loading="lazy"></figure>
-<h3>3. Richt de nieuwe kamer samen in</h3>
-<p>Niets is zo belangrijk voor kinderen als hun eigen plekje. Laat ze helpen bij het inrichten van hun nieuwe kamer — of het nu gaat om de kleur van de muren of het kiezen van een nieuwe poster. Zo wordt het nieuwe huis sneller vertrouwd.</p>
-<h3>4. Neem de tijd om te wennen</h3>
-<p>Het is normaal dat kinderen even moeten wennen aan de nieuwe situatie. Geef ze tijd, luister naar hun gevoelens en maak ruimte voor vragen. Binnen de kortste keren voelen ze zich weer helemaal thuis.</p>
-<h3>Een zorgeloze start in jullie nieuwe huis</h3>
-<p>Bij De Bresser Verhuizingen begrijpen we dat een verhuizing meer is dan dozen verplaatsen. Het gaat om mensen, emoties en een frisse start. Ons ervaren team helpt jullie graag met een goed georganiseerde, stressvrije verhuizing — zodat jullie als gezin met een glimlach aan het nieuwe avontuur kunnen beginnen.</p>
-<p><strong>Wil je meer weten?</strong> Neem gerust <a href="contact.html">contact</a> met ons op voor persoonlijk verhuisadvies.</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="de-populairste-reden-om-te-verhuizen" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/Particuliere-verhuizing-De-Bresser-Nieuwbouw-1.jpg" alt="Verhuiswagen die uitgeladen wordt" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">De populairste reden om te verhuizen!</h2>
-              <p class="muted">De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<p>De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk. Zoals je leest zijn het over het algemeen allemaal leuke redenen om te gaan verhuizen, alleen scheidingen zijn natuurlijk helaas niet te voorkomen. Om een verhuizing zo soepel en stress vrij te laten verlopen is het verstandig om een Erkende Verhuizer bij je verhuizing te betrekken. Het is natuurlijk erg belangrijk dat er veilig en verantwoord met uw inboedel wordt omgegaan.</p>
-<figure><img src="assets/img/site/Internationaal-verhuizen-Frankrijk-De-Bresser-1024x576.jpg" alt="De Bresser Frankrijk" loading="lazy"></figure>
-<h3>Huwelijk of samenwonen</h3>
-<p>Vertel op tijd aan je kind dat jullie als gezin gaan verhuizen. Neem hier echter ook echt de tijd voor om alles in alle rust te kunnen vertellen. Bij jonge kinderen is dit nog meer van belang omdat zij nog niet zo goed kunnen relativeren. Vertel het ongeveer 6 weken van tevoren. Als je al een ouder kind hebt kun je hem of haar ook bij betrekken. Denk hierbij aan spullen uitzoeken wat gaat wel en wat gaat niet mee? Zo ga je rustig het verhuisproces in.</p>
-<h3>Groter wonen</h3>
-<p>Wauw, jullie zijn toegekomen aan de volgende fase, verhuizen naar een grotere woning! In de jaren hebben jullie een tal van spullen verzameld. Veel gaat mee naar jullie nieuwe woning, maar een aantal spullen zullen ook achterblijven. Zoek eerst goed uit wat wel en niet meegaat. Daarna is het verstandig om een adviseur langs te sturen en samen een ronde te lopen door jullie woning. De adviseur inventariseert hoeveel m3 er mee verhuisd moet worden. Op basis daarvan volgt een vrijblijvende offerte op maat. Vraag ook eens naar de aanvullende opties, een verhuisbedrijf biedt vaak meerdere services aan. Zo kan je alles uit handen geven en is verhuisstress niet aan de orde!</p>
-<figure><img src="assets/img/site/Verhuizen-Amsterdam-De-Bresser.jpg" alt="De Bresser in Amsterdam" loading="lazy"></figure>
-<h3>Dichterbij werk</h3>
-<p>Jaren heb je uren heen en weer gereden naar je werk. Dat kost toch wel veel tijd en energie, uiteindelijk ben je tot de conclusie gekomen dat je toch liever dichter bij je werk gaat wonen. Hierbij moet je, je oude vertrouwde omgeving loslaten en open staan voor een nieuwe stad en nieuwe buurt. Omdat het niet niks is zo een gehele verhuizing is het verstandig om een Erkende Verhuizer een offerte op maat te laten maken zodat je in kan zien wat de kosten zijn en of je dit wellicht wilt uitbesteden. Er kan een afspraak gemaakt worden met een adviseur, die gaat kijken hoeveel m3 er meeverhuist moet worden naar je nieuwe woonplaats. Ook heeft een adviseur vaak interessante tips hoe je snel een beetje kan integreren in je nieuwe wijk!</p>
-<h3>Scheidingen of relatiebreuk</h3>
-<p>Helaas horen scheidingen en relatiebreuken ook bij het leven. Soms kan het niet anders en slaan jullie beide jullie eigen weg in. Wel moet jullie inboedel verdeeld worden. Wie neemt wat mee? Dit moeten jullie samen eerst gaan uitzoeken. Vervolgens is het slim om een adviseur bij het verhuisproces te betrekken. Een adviseur kan bekijken hoeveel m3 er verhuist moet worden. Mocht een van jullie nog geen nieuw onderkomen hebben dan is het ook mogelijk om je inboedel (tijdelijk) op te slaan. Overleg goed met je adviseur over de mogelijkheden, dit kan veel stress wegnemen tijdens deze moeilijke periode.</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="nieuw-qwiek-snooze-reinigingsservice" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/42191532-0ad7-4e06-a297-bf29f214d68d.jpg" alt="Verhuis(sterren) van De Bresser" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">Nieuw! Qwiek.snooze reinigingsservice</h2>
-              <p class="muted">Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team!</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<h3>Verhuizers of Verhuis(sterren)?</h3>
-<p>Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team! En die hebben we zeker nodig!</p>
-<figure><img src="assets/img/site/doneren-particulier-de-bresser-villa-pardoes.jpg" alt="2 duimen" loading="lazy"></figure>
-<h3>Verhuis (sterren)</h3>
-<p>Verhuis (ster) is de vrouwelijke versie voor een verhuizer. Een verhuizing verrichten dit kan een team van mannen zijn. Maar ook vrouwen kunnen prima onderdeel zijn van het verhuisteam!</p>
-<p>Natuurlijk is het zo dat een man meer spierballen heeft dan een vrouw maar daarom kunnen de verhuis (sterren) zich meer gaan richten op het verhuizen met hun hersenen. Denk bijvoorbeeld aan een verhuislift dit een slimme methode om zware stukken te vervoeren. Ook kan een verhuis (ster) goed nadenken over het vasthouden van een groot stuk. Door slimme manieren en tactieken in te zetten hoef je echt niet sterk te zijn ;).</p>
-<p>Natuurlijk is het fijn om in een keer veel dozen naar de wagen te brengen. Maar neem nu niet teveel hooi op je vork en loop nu maar een aantal keer extra. Dit is ook veel beter voor je rug en knieën.</p>
-<h3>Andere eigenschappen</h3>
-<p>Vrouwen zijn over het algemeen super gestructureerd en georganiseerd dit is ook een fijne eigenschap als verhuis (ster). Op deze manier kan je dozen slim inpakken en weet jij precies in welke doos wat zit.</p>
-<p>Natuurlijk kan je, je mannelijke collega altijd om hulp vragen zodat jullie samen kunnen werken. Dit is geen probleem!</p>
-<p>Bij de Bresser hebben wij ook verhuis (sterren) in ons team, wij zijn trots op onze power woman’s!</p>
-<figure><img src="assets/img/site/Anne-Kienhuis-Facilitair-medewerker-1024x683.jpg" alt="Foto anne" loading="lazy"></figure>
-<h3>Benieuwd naar de mogelijkheden?</h3>
-<p>Onze verhuizers en verhuis(sterren) kunnen u altijd ondersteunen tijdens een verhuizing. Voor meer informatie kan u ons mailen naar <a href="mailto:info@debresser.nl">info@debresser.nl</a> of bel <a href="tel:+31135282372">013-528 23 72</a> dan plannen we een vrijblijvend gesprek in voor u!</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="interne-verhuizing" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/De-bresser-zakelijk-verhuizen-1.jpg" alt="zakelijke spullen inpakken" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">Interne verhuizing</h2>
-              <p class="muted">Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<p>Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven. Vaak moet een afdeling naar een nieuwe locatie verhuisd worden of er komt een verbouwing aan waardoor een kantoor tijdelijk naar een andere locatie moet. Ook verzorgen wij het intern verhuizen van grote stukken. Denk hierbij aan bureaus, bureau stoelen en overige kantoorartikelen.</p>
-<figure><img src="assets/img/site/Handyman-Verhuizing-goed-geregeld.jpg" alt="handdruk" loading="lazy"></figure>
-<h3>Ervaring door de jaren heen</h3>
-<p>De Bresser heeft al jaren ervaring met het verzorgen van interne verhuizingen. De werkwijze gaat als volgt: een van onze adviseurs komt bij u langs op locatie en neemt met u door wat er verhuisd moet worden. Het kan zo zijn dat u de verhuizing full service wilt uitbesteden, maar het is ook mogelijk om alleen de grote stukken te laten verhuizen. Op basis van uw wensen stellen wij een offerte op maat op.</p>
-<p>Mocht u ook opzoek zijn naar opslag voor het (tijdelijk) plaatsen van uw inboedel van uw afdeling of kantoor? Dat is ook mogelijk bij de Bresser. Wij kunnen uw inboedel stukken (tijdelijk) bij ons opslaan in onze geconditioneerde hallen, waar onze containers beveiligd en vochtvrij zijn opgeslagen.</p>
-<h3>Handyman service</h3>
-<p>Bij de Bresser bieden wij ook een handyman service aan, met deze service ondersteunen wij zaken als: monteren en demonteren van meubels in uw kantoor. Professioneel apparatuur aansluiten, lampen en schilderijen ophangen en overige klusjes uitvoeren.</p>
-<figure><img src="assets/img/site/Erkende-verhuizer-bedrijf-De-Bresser.jpg" alt="foto verhuiswagen" loading="lazy"></figure>
-<h3>Erkend verhuisbedrijf</h3>
-<p>Op de verhuisdag zorgen we dat de Bresser alles vakkundig en professioneel verhuisd. Het is namelijk niet niks om een interne verhuizing te regelen, doe dit dan ook altijd met een erkend verhuisbedrijf. Zij zijn gekwalificeerd en opgeleid om alles perfect uit te voeren. U wilt toch ook dat uw personeel weer snel aan de slag kan op de nieuwe locatie?</p>
-<h3>De Bresser</h3>
-<p>De Bresser is een Erkende Verhuizer! Mocht u geïnteresseerd zijn om uw interne verhuizing uit te besteden kunt u altijd contact op nemen met <a href="mailto:info@debresser.nl">info@debresser.nl</a> of telefonisch via: <a href="tel:+31135282372">013-5282372</a>. Wij staan voor u klaar!</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="verhuislift-maakt-alles-makkelijker" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/flat-appartement-verhuizingen-e1674040615430-1.jpg" alt="Verhuislift" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">Verhuislift maakt alles makkelijker!</h2>
-              <p class="muted">Niet bij elke verhuizing is een verhuislift nodig, vaak wordt er een lift ingezet als er vanaf een hoogte gewerkt moet worden.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<p>Niet bij elke verhuizing is een verhuislift nodig, vaak wordt er een lift ingezet als er vanaf een hoogte gewerkt moet worden. Waar bijvoorbeeld de grote stukken niet via de trap of de lift verhuist kunnen worden.</p>
-<h3>Verhuislift</h3>
-<p>Veel mensen zien het gemak van een verhuislift in, je hoeft veel minder vaak trappen te lopen. Ook gaat alles sneller. Maar niet bij elke verhuizing is een verhuislift nodig. Adressen zoals een flat of een hoog appartement is het erg prettig om te werk te gaan met een verhuislift, ook grote en zware stukken die vaak onmogelijk door het huis passen daar is een lift nodig.</p>
-<p>In dit soort gevallen komen verhuisliften goed van pas. Zo hoef jij niet allerlei trappen op te lopen met zware spullen in je handen en vermijd je lastige situaties met krappe trappenhuizen, scherpe trappenbochten of smalle deuropeningen. Daarbij zal de verhuizing een stuk sneller en veiliger verlopen wanneer er gebruik wordt gemaakt van een verhuislift.</p>
-<figure><img src="assets/img/site/verhuizen-flat-appartement-verhuislift.jpg" alt="De Bresser Flatverhuizing" loading="lazy"></figure>
-<h3>Verschillende soorten verhuisliften</h3>
-<p>Bij de Bresser beschikken wij over een verhuislift op een auto. Ook maken onze verhuizers gebruik van geda liften. Deze bouwen ze op locatie op en breken ze ook weer af. De geda variant is vaak voor wat kleinere stukken. De adviseur die komt inventariseren kijkt rond hoeveel m3 mee gaat naar de nieuwe woning. Op basis daarvan bekijkt hij ook of er een verhuislift aan de pas moet komen of niet.</p>
-<p>Een verhuislift brengt natuurlijk kosten met zich mee, maar zorgt er anderzijds weer voor dat de verhuizers ook weer sneller klaar zijn. Soms ontkom je er niet aan om gebruik te maken van een verhuislift.</p>
-<h3>Benieuwd naar de mogelijkheden?</h3>
-<p>Je kan ons mailen naar <a href="mailto:info@debresser.nl">info@debresser.nl</a> of bel <a href="tel:+31135282372">013-528 23 72</a> dan plannen we een vrijblijvend gesprek in met een van onze taxateurs.</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="spullen-weg-doen-waarom-is-het-zo-moeilijk" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/Inboedel-opslag-lossen-De-Bresser.jpg" alt="Warehuis" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">Spullen weg doen waarom is het zo moeilijk?</h2>
-              <p class="muted">Als er een verhuizing voor de deur staat is het de perfecte kans om overbodige spullen, materialen en overige inboedel weg te doen.</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<p>Als er een verhuizing voor de deur staat is het de perfecte kans om overbodige spullen, materialen en overige inboedel weg te doen. Toch is het zo dat heel erg veel mensen hier veel moeite mee hebben. Hoe kan je nou makkelijker je overbodige spullen weg doen?</p>
-<figure><img src="assets/img/site/vehruizen-spullen-een-tweede-leven-1024x576.jpg" alt="polo's" loading="lazy"></figure>
-<h3>Geef je spullen een tweede leven</h3>
-<p>Voor de meeste mensen geldt minder spullen in huis meer rust in het hoofd. Naarmate de jaren verbaas je erover hoeveel spullen je inmiddels wel niet verzameld hebt!</p>
-<p>Het kan helpen om te kijken of je, je spullen een tweede leven kan geven. Denk hierbij aan kleding die je op verkoopt via apps als Vinted of United Wardrobe. Ook kan je veel doneren bij goede doelen. Op deze manier weet je zeker dat jou spullen een tweede leven krijgen en dat maakt het meteen minder erg!</p>
-<h3>Inboedel</h3>
-<p>Voor de inboedel geldt dat je dit kan laten ophalen door tweedehands zaken, zij proberen het te verkopen. Dit is ook gelijk een win-win situatie. Je maakt er een winkel blij mee en jij hoeft geen afvoerkosten te betalen! Wat wil je nog meer?</p>
-<p>Je wilt graag in je nieuwe huis met een schone lei beginnen. Hou dat tijdens het opruimen en het maken van de keuzes in je hoofd. Wellicht heb je sommige spullen al jaren niet gebruikt of zelf niet aangeraakt. Dan weet je eigenlijk ook al zeker dat je het meteen weg kan doen.</p>
-<p>Mocht je echt niet je oude spullen kunnen loslaten dan is het altijd mogelijk om je spullen (tijdelijk) in opslag te zetten. Bij de Bresser bieden wij opslag containers aan van 8m3 tot 45m3.</p>
-<figure><img src="assets/img/site/Verhuizen-planning-1024x683.jpg" alt="meubeltransport" loading="lazy"></figure>
-<h3>De Bresser Erkende Verhuizer</h3>
-<p>Mocht je er tijdens een verhuizing achter komen dat er nog veel spullen afgevoerd moeten worden? Dan kan je dit ook aan de Bresser uitbesteden. Wij kunnen de spullen voor je afvoeren, mochten de spullen in goede staat zijn kopen wij dit ook op!</p>
-<p>De Bresser is een Erkende Verhuizer! Mocht u geïnteresseerd zijn om uw inboedel tijdelijk in opslag te laten nemen of in een verhuizing dan kunt u altijd contact op nemen met <a href="mailto:info@debresser.nl">info@debresser.nl</a> of telefonisch via: <a href="tel:+31135282372">013-5282372</a>. Wij staan voor u klaar!</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-      <article class="article card-3d reveal" id="waarom-verhuizen-met-een-erkende-verhuizer" data-tilt="1.5">
-        <details>
-          <summary class="article__head">
-            <div class="article__img"><img src="assets/img/site/Erkende-verhuizer-bedrijf-De-Bresser-1.jpg" alt="Erkende verhuizers verhuiswagen" loading="lazy"></div>
-            <div class="stack">
-              <time class="chip" datetime="2024-03-29"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>29 maart 2024</time>
-              <h2 class="h3">Waarom verhuizen met een Erkende Verhuizer?</h2>
-              <p class="muted">Dankzij een Erkende Verhuizer kan je altijd rekenen op een professionele en veilige verhuizing!</p>
-              <span class="btn btn--light btn--sm read-more-label">Lees het artikel</span>
-            </div>
-          </summary>
-          <div class="prose">
-<p>Je bent van plan om te gaan verhuizen met een verhuisbedrijf maar vindt het erg belangrijk dat je er nooit alleen voor komt te staan. Dankzij een Erkende Verhuizer kan je altijd rekenen op een professionele en veilige verhuizing! Maar wat houdt een Erkende Verhuizer nou precies in en wat zijn de voordelen?</p>
-<h3>Verhuisbedrijf inhuren</h3>
-<p>Als je een verhuisbedrijf inhuurt zijn de kosten een van de belangrijkste zaken. De prijs van een totale verhuizing is natuurlijk afhankelijk van verschillende factoren: de prijs van de verhuiswagens, de manuren van de verhuizers en de voorrijkosten. Als u de allerbeste kwaliteit wilt, bent u bij een Erkende Verhuizer aan het goede adres! Hier staat natuurlijk wel een prijs tegenover, maar die kan in elk geval niet op tegen de voordelen die de service biedt!</p>
-<figure><img src="assets/img/site/Erkende-Verhuizer-Tilburg-Breda-De-Bresser-e1674057204965.jpg" alt="Logo erkende verhuizers" loading="lazy"></figure>
-<h3>Wat zijn de voordelen?</h3>
-<p>Een Erkende Verhuizer biedt interessante voorwaarden, zo worden de voorwaarden toegelicht bij een verhuisopdracht, ook zijn deze online te vinden. Op deze manier worden eventuele geschillen goed afgehandeld maar worden problemen in de eerste plaats eenvoudig vermeden!</p>
-<p>Verhuizingen zijn ook goed verzekerd! Een verhuizing wordt alleen uitgevoerd als er een garantie certificaat bij zit. Ook is het team van personeel opgeleid en gediplomeerd op deze manier is al het personeel een betrouwbaar verhuisteam voor jou!</p>
-<h3>Erkende verhuizer</h3>
-<p>De Bresser Verhuizingen is een Erkende Verhuizer! Wij hebben al meer dan 100 jaar ervaring in verhuizingen groot en klein. U kunt uw verhuizing altijd volledig aan ons overlaten, zo hoeft u zelf niet de verhuisstress mee te dragen en regelen wij alles tot in de puntjes voor u.</p>
-<h3>Benieuwd naar de mogelijkheden?</h3>
-<p>U kan ons mailen naar <a href="mailto:info@debresser.nl">info@debresser.nl</a> of bel <a href="tel:+31135282372">013-528 23 72</a> dan plannen we een vrijblijvend gesprek in met een van onze taxateurs.</p>
-            <div class="actions mt-m"><a class="btn btn--green" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="link-arrow" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-          </div>
-        </details>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="video-title">
-    <div class="wrap">
-      
-      <div class="section-head section-head--center reveal">
-        <div class="section-head__text">
-          
-          <h2 class="h2" id="video-title">Ontvang nu ook uw offerte via onze videochat</h2>
-          
-        </div>
-        
-      </div>
-      <ol class="steps-3d steps-3 reveal-group">
-        <li class="step card-3d" data-tilt="8"><img class="feature__img" src="assets/img/site/1-plan-video-chat-de-bresser.png" alt="icoon nummer 1" loading="lazy"><h3>Plan een video chat</h3></li>
-        <li class="step card-3d" data-tilt="8"><img class="feature__img" src="assets/img/site/2-plan-video-chat-de-bresser.png" alt="icoon nummer 2" loading="lazy"><h3>Laat ons uw huis zien</h3></li>
-        <li class="step card-3d" data-tilt="8"><img class="feature__img" src="assets/img/site/3-plan-video-chat-de-bresser.png" alt="icoon nummer 3" loading="lazy"><h3>Ontvang een offerte</h3></li>
-      </ol>
-      <div class="actions mt-m" style="justify-content:center"><a class="btn btn--green" href="offerte.html#offerteformulier">Plan video chat <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-    </div>
-  </section>
 
 
   <!-- =====================================================================
@@ -585,8 +264,8 @@
   <section class="cta-band" aria-labelledby="cta-title">
     <div class="wrap">
       <div class="cta" data-tilt="3">
-        <div class="cta__person" aria-hidden="true">
-          <img src="assets/img/site/De-Bresser-Transport-Contact-e1711724004960.png" alt="" loading="lazy">
+        <div class="cta__person">
+          <img src="assets/img/site/De-Bresser-Transport-Contact-e1711724004960.png" alt="Foto medewerker met doos" loading="lazy">
         </div>
         <div class="cta__body">
           <div>
@@ -594,9 +273,8 @@
             <div class="cta__icons">
               <a class="cta__icon" href="tel:+31135282372" aria-label="Bel +31 (0)13 52 82 372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></a>
               <a class="cta__icon" href="mailto:info@debresser.nl" aria-label="Mail info@debresser.nl"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
-              <a class="cta__icon" href="contact.html#locaties" aria-label="Adres: Schijfstraat 13, 5061 KA Oisterwijk"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></a>
+              <a class="cta__icon" href="https://maps.app.goo.gl/fiTtYM83db5SjHLLA" target="_blank" rel="noopener" aria-label="Route naar De Bresser"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></a>
             </div>
-            <p class="cta__address">+31 (0)13 52 82 372 · info@debresser.nl · Schijfstraat 13, 5061 KA Oisterwijk</p>
           </div>
           <a class="btn btn--navy" href="contact.html">Neem contact op <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
@@ -611,38 +289,38 @@
 <footer class="footer">
   <div class="wrap">
     <ul class="footer__logos glass-dark reveal">
-      <li><img src="assets/img/keurmerk-erkende-verhuizers.png" alt="Zeker bij Erkende Verhuizers" loading="lazy"></li>
-      <li><img src="assets/img/keurmerk-erkende-projectverhuizers.png" alt="Erkende Projectverhuizers" loading="lazy"></li>
-      <li><img src="assets/img/keurmerk-top-movers.png" alt="Top Movers" loading="lazy"></li>
-      <li><img src="assets/img/keurmerk-fedemac.png" alt="FEDEMAC European Movers" loading="lazy"></li>
-      <li><img src="assets/img/keurmerk-iam.png" alt="IAM International Association of Movers" loading="lazy"></li>
+      <li><a href="https://www.erkendeverhuizers.nl/" rel="noopener"><img src="assets/img/keurmerk-erkende-verhuizers.png" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
+      <li><a href="https://www.erkendeprojectverhuizers.nl/" rel="noopener"><img src="assets/img/keurmerk-erkende-projectverhuizers.png" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
+      <li><a href="https://www.topmovers.nl/" rel="noopener"><img src="assets/img/keurmerk-top-movers.png" alt="Logo Top Movers" loading="lazy"></a></li>
+      <li><img src="assets/img/keurmerk-fedemac.png" alt="Logo Fedemac" loading="lazy"></li>
+      <li><img src="assets/img/keurmerk-iam.png" alt="Logo IAM" loading="lazy"></li>
     </ul>
 
     <nav class="footer__cols" aria-label="Footer">
       <div>
         <h2><a href="diensten-verhuizen.html">Verhuizen</a></h2>
         <ul>
-          <li><a href="diensten-verhuizen.html#bedrijfsverhuizen">Zakelijk</a></li>
-          <li><a href="diensten-verhuizen.html#particulier-verhuizen">Particulier</a></li>
-          <li><a href="diensten-verhuizen.html#internationale-verhuizingen">Internationaal</a></li>
-          <li><a href="diensten-verhuizen.html#zorgverhuizing">Zorg verhuizing</a></li>
-          <li><a href="diensten-verhuizen.html#duurzaam-verhuizen">Duurzaam</a></li>
+          <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
+          <li><a href="particuliere-verhuizing.html">Particulier</a></li>
+          <li><a href="internationale-verhuizing.html">Internationaal</a></li>
+          <li><a href="zorg-verhuizing.html">Zorg verhuizing</a></li>
+          <li><a href="duurzaam-verhuizen.html">Duurzaam</a></li>
         </ul>
       </div>
       <div>
         <h2><a href="diensten-opslag.html">Opslag</a></h2>
         <ul>
-          <li><a href="diensten-opslag.html#zakelijk">Zakelijk</a></li>
-          <li><a href="diensten-opslag.html#particulier">Particulier</a></li>
-          <li><a href="diensten-opslag.html#diy-opslag">DIY opslag</a></li>
+          <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
+          <li><a href="particuliere-opslag.html">Particulier</a></li>
+          <li><a href="particuliere-opslag.html#diy-opslag">DIY opslag</a></li>
         </ul>
       </div>
       <div>
         <h2><a href="diensten-meubelprojecten.html">Meubelprojecten</a></h2>
         <ul>
-          <li><a href="diensten-meubelprojecten.html#meubeltransport">Meubeltransport</a></li>
-          <li><a href="diensten-meubelprojecten.html#veilingen">Veilingen</a></li>
-          <li><a href="diensten-meubelprojecten.html#montageservice">Montageservice</a></li>
+          <li><a href="meubeltransport.html">Meubeltransport</a></li>
+          <li><a href="veilingen.html">Veilingen</a></li>
+          <li><a href="meubelmontage.html">Montageservice</a></li>
         </ul>
       </div>
       <div>
@@ -666,14 +344,47 @@
       </div>
     </nav>
 
+    <details class="footer__snel">
+      <summary>Snelmenu <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="kantoor-verhuizen.html">Kantoor verhuizen</a></li>
+        <li><a href="zakelijke-verhuizing.html">Zakelijk verhuizen</a></li>
+        <li><a href="winkelverhuizing.html">Winkelverhuizing</a></li>
+        <li><a href="verhuisservice-zakelijk.html">Verhuisservice zakelijk</a></li>
+        <li><a href="opslagruimte-goirle.html">Opslagruimte Goirle</a></li>
+        <li><a href="opslagruimte-den-bosch.html">Opslagruimte Den Bosch</a></li>
+        <li><a href="opslagruimte-roosendaal.html">Opslagruimte Roosendaal</a></li>
+        <li><a href="opslagruimte-etten-leur.html">Opslagruimte Etten-Leur</a></li>
+        <li><a href="opslagruimte-oirschot.html">Opslagruimte Oirschot</a></li>
+        <li><a href="opslagruimte-breda.html">Opslagruimte Breda</a></li>
+        <li><a href="container-opslag.html">Container opslag</a></li>
+        <li><a href="verhuisbedrijf-eindhoven.html">Verhuisbedrijf Eindhoven</a></li>
+        <li><a href="verhuisbedrijf-den-bosch.html">Verhuisbedrijf Den Bosch</a></li>
+        <li><a href="verhuisbedrijf-waalwijk.html">Verhuisbedrijf Waalwijk</a></li>
+        <li><a href="verhuisbedrijf-etten-leur.html">Verhuisbedrijf Etten-Leur</a></li>
+        <li><a href="verhuisbedrijf-belgie.html">Verhuisbedrijf België</a></li>
+        <li><a href="verhuisbedrijf-oosterhout.html">Verhuisbedrijf Oosterhout</a></li>
+        <li><a href="verhuisbedrijf-sint-oedenrode.html">Verhuisbedrijf Sint-Oedenrode</a></li>
+        <li><a href="verhuisbedrijf-vught.html">Verhuisbedrijf Vught</a></li>
+        <li><a href="verhuisbedrijf-goirle.html">Verhuisbedrijf Goirle</a></li>
+        <li><a href="verhuisbedrijf-oisterwijk.html">Verhuisbedrijf Oisterwijk</a></li>
+        <li><a href="verhuisbedrijf-europa.html">Verhuisbedrijf Europa</a></li>
+        <li><a href="verhuisbedrijf-weert.html">Verhuisbedrijf Weert</a></li>
+        <li><a href="verhuisbedrijf-roermond.html">Verhuisbedrijf Roermond</a></li>
+        <li><a href="verhuisbedrijf-venlo.html">Verhuisbedrijf Venlo</a></li>
+        <li><a href="roosendaal.html">Verhuisbedrijf Roosendaal</a></li>
+        <li><a href="breda.html">Verhuisbedrijf Breda</a></li>
+        <li><a href="verhuisbedrijf-oss.html">Verhuisbedrijf Oss</a></li>
+        <li><a href="verhuisbedrijf-maastricht.html">Verhuisbedrijf Maastricht</a></li>
+        <li><a href="verhuisbedrijf-dordrecht.html">Verhuisbedrijf Dordrecht</a></li>
+        <li><a href="verhuisbedrijf-zevenbergen.html">Verhuisbedrijf Zevenbergen</a></li>
+      </ul>
+    </details>
+
     <div class="footer__bottom">
-      <p>Copyright © <span data-year>2026</span> De Bresser B.V. &nbsp;|&nbsp; KVK 18014730 &nbsp;|&nbsp; BTW NL0055.15.452.B.01</p>
+      <p>Copyright © 2025 De Bresser B.V. &nbsp;|&nbsp; KVK 18014730 &nbsp;|&nbsp; BTW NL0055.15.452.B.01</p>
       <nav aria-label="Service">
-        <a href="over-ons.html">Over ons</a>
-        <a href="vacatures.html">Vacatures</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="tel:+31135282372">T +31 (0)13 52 82 372</a>
+        <a href="tel:0031135282372">T +31 (0)13 52 82 372</a>
         <a href="mailto:info@debresser.nl">info@debresser.nl</a>
       </nav>
     </div>
@@ -682,7 +393,7 @@
 
 <!-- Mobiel: vaste actiebalk onderin -->
 <div class="mobilebar">
-  <a class="btn btn--light" href="tel:+31135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> Bellen</a>
+  <a class="btn btn--light" href="tel:0031135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> Bellen</a>
   <a class="btn btn--green" href="offerte.html">Offerte aanvragen</a>
 </div>
 
