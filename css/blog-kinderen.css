@@ -1,0 +1,231 @@
+/* =====================================================================
+   Blog: Verhuizen met kinderen (blog-verhuizen-met-kinderen.html)
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   Speels thema (tekeningetjes, schriftpapier, polaroids met plakband,
+   krijtbolletjes) in debresser.nl-logokleuren: Diepblauw #00498F,
+   Bresserblauw #007DC2, Bressergroen #6DB23F, accent Kroongeel #FFC400.
+   Teksten ongewijzigd; alle tekeningen zijn decoratief (aria-hidden).
+   ===================================================================== */
+.bk-sec, .bk-hero-deco {
+  --bk-diep: #00498f;
+  --bk-blauw: #007dc2;
+  --bk-groen: #6db23f;
+  --bk-geel: #ffc400;
+  --bk-lucht: #e4f1fb;
+  --bk-gras: #edf7e6;
+}
+.bk-sec { position: relative; isolation: isolate; overflow-x: clip; overflow-y: visible; }
+.bk-sec > .wrap { position: relative; z-index: 1; }
+.bk-sec.section--mist { overflow-x: clip; overflow-y: visible; }
+
+/* ---------- tekeningetjes ---------- */
+.bk-deco, .bk-hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bk-hero-deco { z-index: 1; }
+.bk-doodle { position: absolute; display: block; width: 46px; animation: bk-wiebel 6s ease-in-out infinite; }
+.bk-doodle svg { display: block; width: 100%; overflow: visible; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.bk-doodle--ster { color: var(--bk-geel); }
+.bk-doodle--ster svg { fill: rgba(255, 196, 0, .25); }
+.bk-doodle--hart { color: #e5547a; }
+.bk-doodle--hart svg { fill: rgba(229, 84, 122, .15); }
+.bk-doodle--wolk { color: var(--bk-blauw); width: 90px; }
+.bk-doodle--wolk svg { fill: rgba(255, 255, 255, .8); }
+.bk-doodle--huis { color: var(--bk-diep); width: 64px; }
+.bk-doodle--zon { color: var(--bk-geel); width: 70px; }
+.bk-doodle--zon svg { animation: bk-draai 20s linear infinite; }
+.bk-doodle--kalender { color: var(--bk-groen); width: 56px; }
+.bk-doodle--kwast { color: var(--bk-blauw); width: 60px; }
+.bk-doodle--ballon { color: var(--bk-groen); width: 34px; animation-name: bk-zweef; animation-duration: 7s; }
+.bk-doodle--ballon svg { fill: rgba(109, 178, 63, .25); }
+@keyframes bk-wiebel { 0%, 100% { transform: rotate(-8deg) translateY(0); } 50% { transform: rotate(8deg) translateY(-8px); } }
+@keyframes bk-zweef { 0%, 100% { transform: translate(0, 0) rotate(-4deg); } 50% { transform: translate(8px, -22px) rotate(5deg); } }
+@keyframes bk-draai { to { transform: rotate(360deg); } }
+
+/* hero */
+.bk-h1 { right: 12%; top: 26%; width: 54px; }
+.bk-h2 { right: 26%; top: 18%; width: 120px; opacity: .9; animation-duration: 9s; }
+.bk-h2 svg { fill: rgba(255, 255, 255, .25); stroke: #fff; }
+.bk-h3 { right: 8%; bottom: 22%; width: 42px; animation-delay: -2s; }
+.bk-h4 { right: 34%; bottom: 20%; width: 44px; }
+
+/* golvende bovenrand */
+.bk-golf { position: absolute; left: 0; top: -58px; z-index: 0; width: 100%; height: 60px; display: block; pointer-events: none; }
+
+/* ---------- krijtbolletjes voor de stapnummers ---------- */
+.bk-stapkop { display: flex; align-items: center; gap: 14px; }
+.bk-nr {
+  flex: none; display: inline-grid; place-items: center;
+  width: 58px; height: 58px;
+  border-radius: 46% 54% 50% 50% / 55% 45% 55% 45%;
+  font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -.02em;
+  background:
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, .12) 0 3px, transparent 3px 7px),
+    var(--bk-kleur, var(--bk-blauw));
+  box-shadow: 0 10px 18px -8px color-mix(in srgb, var(--bk-kleur, #007dc2) 80%, transparent), inset 0 -4px 0 rgba(0, 0, 0, .12);
+  transform: rotate(-6deg);
+  transition: transform 350ms cubic-bezier(.2, .8, .2, 1.3);
+}
+.bk-nr--1 { --bk-kleur: #007dc2; }
+.bk-nr--2 { --bk-kleur: #6db23f; transform: rotate(5deg); }
+.bk-nr--3 { --bk-kleur: #00498f; }
+.bk-nr--4 { --bk-kleur: #e5a800; transform: rotate(4deg); }
+.bk-stapkop:hover .bk-nr { transform: rotate(0) scale(1.1); }
+
+/* ---------- polaroids met plakband ---------- */
+.bk-sec .img-3d { transform: rotate(-2.5deg); transition: transform 400ms cubic-bezier(.2, .8, .2, 1.2); }
+.bk-sec--wit .img-3d, .bk-sec--start .img-3d { transform: rotate(2.5deg); }
+.bk-sec .img-3d:hover { transform: rotate(0) scale(1.02); }
+.bk-sec .img-3d::before {
+  inset: auto; top: -16px; left: 50%; z-index: 4;
+  width: 120px; height: 32px; margin-left: -60px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 6px, transparent 6px 12px), rgba(0, 125, 194, .55);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  transform: rotate(-5deg);
+  opacity: 1;
+}
+.bk-sec .img-3d:hover::before { transform: rotate(-2deg); }
+.bk-sec--wit .img-3d::before { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 6px, transparent 6px 12px), rgba(109, 178, 63, .6); transform: rotate(6deg); }
+.bk-sec--start .img-3d::before { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 6px, transparent 6px 12px), rgba(255, 196, 0, .7); }
+.bk-sec .img-3d__frame {
+  padding: 14px 14px 56px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 0 #e3e8ef, 0 30px 50px -26px rgba(0, 30, 70, .55);
+}
+.bk-sec .img-3d__frame img { border-radius: 3px; }
+
+/* ---------- 1. intro: schriftpapier ---------- */
+.page-hero--photo + .section.bk-sec--intro {
+  background:
+    linear-gradient(90deg, transparent calc(4% + 0px), rgba(109, 178, 63, .45) calc(4% + 0px), rgba(109, 178, 63, .45) calc(4% + 2px), transparent calc(4% + 2px)),
+    repeating-linear-gradient(180deg, transparent 0 35px, rgba(0, 125, 194, .12) 35px 36px),
+    #fff !important;
+}
+.bk-sec--intro .h2 { position: relative; padding-bottom: 18px; }
+.bk-sec--intro .h2::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: min(320px, 70%); height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 14' fill='none' stroke='%236db23f' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M4 9C40 3 70 12 110 7s80-4 120 1 60-3 86-2'/%3E%3C/svg%3E") left center / 100% 100% no-repeat;
+}
+.bk-i1 { left: 44%; top: 8%; }
+.bk-i2 { left: 6%; bottom: 8%; width: 36px; animation-delay: -2s; }
+.bk-i3 { left: 40%; bottom: 10%; animation-delay: -4s; }
+.bk-i4 { right: 3%; top: 12%; width: 30px; animation-delay: -1s; }
+
+/* ---------- 2. stap 1: lucht met wolken ---------- */
+.bk-sec--blauw { background: linear-gradient(180deg, var(--bk-lucht) 0%, #f3f9fe 100%) !important; }
+.bk-sec--blauw .bk-golf path { fill: var(--bk-lucht); }
+.bk-s1 { left: 4%; top: 10%; }
+.bk-s2 { right: 8%; bottom: 12%; width: 120px; animation-delay: -3s; }
+.bk-s3 { right: 4%; top: 8%; }
+
+/* ---------- 3. stap 2: route van huis naar huis ---------- */
+.bk-sec--wit { background: #fff; }
+.bk-pad { position: absolute; left: 2%; top: 50%; width: min(620px, 50%); translate: 0 -50%; fill: none; stroke: rgba(0, 125, 194, .35); stroke-width: 3; stroke-dasharray: 2 12; stroke-linecap: round; }
+.bk-p1 { left: 1%; bottom: 10%; }
+.bk-p2 { left: 42%; top: 10%; animation-delay: -2s; }
+.bk-p3 { right: 4%; bottom: 8%; width: 34px; }
+
+/* ---------- 4. stap 3 en 4: tekenpapier op het gras ---------- */
+.bk-sec--groen { background: linear-gradient(180deg, var(--bk-gras) 0%, #f6fbf2 100%) !important; }
+.bk-sec--groen .bk-golf path { fill: var(--bk-gras); }
+.bk-sec--groen .split { align-items: stretch; gap: clamp(24px, 3vw, 48px); }
+.bk-sec--groen .split__text {
+  position: relative;
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(0, 125, 194, .07) 1px, transparent 1px) 0 0 / 22px 22px,
+    linear-gradient(90deg, rgba(0, 125, 194, .07) 1px, transparent 1px) 0 0 / 22px 22px,
+    #fff;
+  box-shadow: 0 2px 0 #dfe7d6, 0 26px 44px -26px rgba(20, 60, 20, .45);
+  transform: rotate(-1.2deg);
+  transition: transform 400ms cubic-bezier(.2, .8, .2, 1.2);
+}
+.bk-sec--groen .split__text + .split__text { transform: rotate(1.4deg); }
+.bk-sec--groen .split__text:hover { transform: rotate(0) translateY(-6px); }
+.bk-sec--groen .split__text::before {
+  content: ""; position: absolute; top: -14px; left: 50%; width: 100px; height: 28px; margin-left: -50px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 6px, transparent 6px 12px), rgba(255, 196, 0, .7);
+  transform: rotate(-4deg); border-radius: 3px;
+}
+.bk-sec--groen .split__text + .split__text::before { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 6px, transparent 6px 12px), rgba(229, 84, 122, .55); transform: rotate(5deg); }
+.bk-g1 { left: 2%; top: 12%; }
+.bk-g2 { right: 3%; top: 16%; width: 38px; animation-delay: -3s; }
+.bk-g3 { left: 48%; bottom: 6%; width: 32px; }
+
+/* ---------- 5. zorgeloze start ---------- */
+.bk-sec--start { background: #fff; }
+.bk-z1 { right: 4%; top: 12%; width: 80px; }
+.bk-z2 { left: 46%; top: 14%; width: 34px; animation-delay: -2s; }
+.bk-z3 { right: 10%; bottom: 10%; }
+
+/* ---------- 6. contact: blauwe lucht met sterren ---------- */
+.bk-sec--contact {
+  color: #dcebf8;
+  background:
+    radial-gradient(40% 60% at 15% 60%, rgba(109, 178, 63, .35), transparent 70%),
+    linear-gradient(160deg, var(--bk-blauw) 0%, var(--bk-diep) 70%) !important;
+}
+.bk-sec--contact .bk-golf path { fill: var(--bk-blauw); }
+.bk-sec--contact > .bg-ruit { opacity: .25; }
+.bk-sec--contact .h2 { color: #fff; }
+.bk-sec--contact .img-3d { transform: none; }
+.bk-sec--contact .img-3d::before { display: none; }
+.bk-sec--contact .img-3d__frame {
+  padding: 0; background: none; box-shadow: none; overflow: visible;
+}
+.bk-sec--contact .img-3d__frame::before {
+  content: ""; position: absolute; left: 8%; right: 8%; bottom: 0; top: 18%; z-index: -1;
+  border-radius: 48% 52% 44% 56% / 52% 46% 54% 48%;
+  background: linear-gradient(145deg, #8fd15d, var(--bk-groen));
+  box-shadow: 0 30px 50px -24px rgba(0, 0, 0, .45);
+}
+.bk-sec--contact .img-3d__frame img { max-height: 420px; object-fit: contain; filter: drop-shadow(0 18px 20px rgba(0, 0, 0, .3)); }
+.bk-sec--contact .btn--navy { background: #fff; color: var(--bk-diep); }
+.bk-sec--contact .btn--navy .icon { stroke: var(--bk-groen); }
+.bk-c1 { right: 6%; top: 14%; width: 40px; }
+.bk-c2 { right: 18%; bottom: 16%; width: 26px; animation-delay: -3s; }
+.bk-c3 { left: 44%; top: 10%; width: 110px; opacity: .6; }
+.bk-c3 svg { fill: rgba(255, 255, 255, .15); stroke: #fff; }
+.bk-c4 { left: 4%; bottom: 12%; width: 34px; }
+
+/* ---------- correcties ---------- */
+/* stapkoppen: het krijtbolletje vervangt het groene streepje van de blogstijl */
+.page-blog-artikel .bk-sec .split__text > .bk-stapkop { padding-left: 0; }
+.page-blog-artikel .bk-sec .split__text > .bk-stapkop::before { display: none; }
+/* intro-kop: streepje weg, krijtlijn eronder blijft */
+.page-blog-artikel .bk-sec--intro .split__text > .h2 { padding-left: 0; }
+.page-blog-artikel .bk-sec--intro .split__text > .h2::before { display: none; }
+/* golven over de vorige sectie heen laten vallen */
+.bk-sec:not(.bk-sec--intro) { z-index: 5; }
+/* polaroid: diepte-rand vervangen */
+.bk-sec .img-3d__frame { border: 0; }
+.bk-sec .img-3d__frame::after { inset: 0; }
+.bk-sec--wit > .bg-ruit { opacity: .35; }
+/* contact: vrijstaande medewerker zonder lijst */
+.bk-sec--contact .img-3d__frame::after { display: none; }
+.bk-sec--contact .img-3d__frame { border: 0; box-shadow: none; }
+.bk-sec--contact .img-3d:hover { transform: none; }
+
+/* ---------- mobiel ---------- */
+@media (max-width: 767px) {
+  .bk-doodle { width: 32px; }
+  .bk-doodle--wolk { width: 64px; }
+  .bk-h2, .bk-h4, .bk-i1, .bk-i3, .bk-p2, .bk-g3, .bk-z2, .bk-c3 { display: none; }
+  .bk-nr { width: 46px; height: 46px; font-size: 1.2rem; }
+  .bk-golf { height: 36px; top: -35px; }
+  .bk-sec--groen .split__text, .bk-sec--groen .split__text + .split__text { transform: none; }
+  .bk-sec--groen .split__text + .split__text { margin-top: 18px; }
+}
+
+/* smalle schermen: tekeningen niet over de tekst */
+@media (max-width: 600px) {
+  .bk-deco .bk-doodle { display: none; }
+  .bk-pad { display: none; }
+}
+
+/* ---------- rustige beweging ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bk-doodle, .bk-doodle--zon svg { animation: none; }
+  .bk-sec .img-3d, .bk-sec--groen .split__text, .bk-nr { transition: none; }
+}

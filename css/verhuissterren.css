@@ -1,0 +1,284 @@
+/* =====================================================================
+   Blog "Verhuizers of Verhuis(sterren)?"
+   (blog-nieuw-qwiek-snooze-reinigingsservice.html, live-slug)
+   Thema sterren. Kleuren van debresser.nl: Diepblauw #00498F,
+   Bresserblauw #007DC2, Bressergroen #6DB23F; Kroongeel #FFC400 alleen
+   voor de sterren. Teksten ongewijzigd. Alleen op deze pagina gelinkt.
+   ===================================================================== */
+
+.vst-intro, .vst-duimen, .vst-eigen, .vst-cta {
+  --db-diep: #00498f;
+  --db-diep-d: #003468;
+  --db-blauw: #007dc2;
+  --db-groen: #6db23f;
+  --db-groen-d: #4f8f27;
+  --db-geel: #ffc400;
+}
+.vst-ster { display: block; fill: var(--db-geel); }
+
+/* ---------- 1 Intro: sterrenhemel ---------- */
+.vst-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse 50% 70% at 90% 10%, rgba(0, 125, 194, .6), transparent 70%),
+    radial-gradient(ellipse 40% 60% at 5% 100%, rgba(109, 178, 63, .28), transparent 70%),
+    linear-gradient(150deg, var(--db-diep), var(--db-diep-d)) !important; /* diepte.css zet de eerste sectie na de hero op papierwit */
+}
+.vst-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, .5) 1px, transparent 1.6px) 0 0 / 46px 46px,
+    radial-gradient(circle, rgba(255, 255, 255, .25) 1px, transparent 1.6px) 23px 23px / 46px 46px;
+  -webkit-mask-image: linear-gradient(90deg, #000, transparent 70%);
+  mask-image: linear-gradient(90deg, #000, transparent 70%);
+}
+.vst-intro .split { align-items: center; }
+.vst-intro .h3 {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  color: #fff;
+}
+.vst-accent {
+  position: relative;
+  color: var(--db-geel);
+  white-space: nowrap;
+}
+.vst-accent::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -.08em;
+  height: .12em;
+  border-radius: 1em;
+  background: linear-gradient(90deg, var(--db-groen), var(--db-blauw));
+}
+.vst-intro .rich p {
+  position: relative;
+  margin: 0;
+  padding: clamp(22px, 2.6vw, 32px) clamp(22px, 2.6vw, 32px) clamp(22px, 2.6vw, 32px) clamp(64px, 6vw, 84px);
+  border-radius: 22px;
+  font-size: clamp(1.05rem, 1rem + .3vw, 1.25rem);
+  line-height: 1.6;
+  color: #fff;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16), 0 30px 60px -30px rgba(0, 0, 0, .5);
+}
+.vst-intro .rich p strong { color: #fff; font-weight: 600; }
+/* groot aanhalingsteken */
+.vst-intro .rich p::before {
+  content: "\201C";
+  position: absolute;
+  left: clamp(16px, 2vw, 26px);
+  top: 4px;
+  font-size: clamp(4rem, 3rem + 3vw, 6rem);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--db-groen);
+}
+
+.vst-hemel { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.vst-hemel .vst-ster { position: absolute; animation: vst-twinkel 3.2s ease-in-out infinite; filter: drop-shadow(0 0 8px rgba(255, 196, 0, .6)); }
+.vst-ster--a { left: 4%; top: 18%; width: 22px; }
+.vst-ster--b { left: 36%; top: 12%; width: 14px; animation-delay: -.8s; }
+.vst-ster--c { left: 44%; bottom: 16%; width: 30px; animation-delay: -1.6s; }
+.vst-ster--d { right: 6%; top: 14%; width: 18px; animation-delay: -2.2s; }
+.vst-ster--e { right: 3%; bottom: 20%; width: 26px; animation-delay: -.4s; }
+.vst-ster--f { left: 18%; bottom: 10%; width: 12px; animation-delay: -1.2s; }
+.vst-ster--g { left: 52%; top: 40%; width: 10px; animation-delay: -2.8s; opacity: .7; }
+@keyframes vst-twinkel {
+  0%, 100% { transform: scale(.7) rotate(0deg); opacity: .55; }
+  50% { transform: scale(1.1) rotate(20deg); opacity: 1; }
+}
+
+/* ---------- 2 Duimen komen uit het kader ---------- */
+.vst-duimen {
+  background:
+    radial-gradient(ellipse 40% 50% at 0 0, rgba(0, 125, 194, .08), transparent 70%),
+    linear-gradient(180deg, #f4f8fc, #eaf1f8);
+}
+.vst-duimen .split { align-items: center; }
+.vst-pop {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  aspect-ratio: 640 / 426;
+}
+.vst-pop__kaart,
+.vst-pop__kader { position: absolute; inset: 30% 19% 0 19%; border-radius: 20px; }
+.vst-pop__kaart {
+  background: linear-gradient(145deg, var(--db-groen), var(--db-groen-d));
+  rotate: -5deg;
+  translate: -10px 10px;
+  box-shadow: 0 30px 50px -24px rgba(0, 52, 104, .5);
+}
+.vst-pop__kader {
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 52, 104, .12), 0 26px 50px -20px rgba(0, 52, 104, .45);
+}
+.vst-pop__kader img {
+  position: absolute;
+  /* kader = 62% breed en 70% hoog van het figuur */
+  left: -30.645%;
+  top: -42.857%;
+  width: 161.29%;
+  height: 142.857%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+}
+.vst-pop__kader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 7px #fff;
+}
+.vst-pop__uit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 16px rgba(0, 52, 104, .3));
+}
+.js .reveal .vst-pop__uit { opacity: 0; transform: translateY(5%) scale(.97); transform-origin: 50% 100%; }
+.js .reveal.is-visible .vst-pop__uit { opacity: 1; transform: none; transition: opacity 500ms ease 300ms, transform 900ms var(--spring, ease-out) 300ms; }
+.vst-pop__sterren { position: absolute; inset: 0; pointer-events: none; }
+.vst-pop__sterren .vst-ster { position: absolute; filter: drop-shadow(0 4px 6px rgba(0, 52, 104, .3)); animation: vst-twinkel 2.6s ease-in-out infinite; }
+.vst-ster--p1 { left: 18%; top: 6%; width: 34px; }
+.vst-ster--p2 { left: 10%; top: 26%; width: 18px; animation-delay: -.7s; }
+.vst-ster--p3 { right: 14%; top: 2%; width: 40px; animation-delay: -1.3s; }
+.vst-ster--p4 { right: 6%; top: 28%; width: 20px; animation-delay: -1.9s; }
+.vst-ster--p5 { left: 48%; top: 0; width: 16px; animation-delay: -.3s; }
+
+/* tip-kaarten met icoon */
+.vst-duimen .rich p:nth-child(n+2),
+.vst-eigen .rich p {
+  position: relative;
+  margin: 12px 0 0;
+  padding: 18px 20px 18px 78px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 52, 104, .06), 0 16px 30px -22px rgba(0, 52, 104, .45);
+}
+.vst-duimen .rich p:nth-child(n+2)::before,
+.vst-eigen .rich p::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: var(--ic) center / 24px no-repeat, linear-gradient(145deg, var(--c1, #007dc2), var(--c2, #00498f));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 8px 16px -8px var(--c1, #007dc2);
+}
+/* hersenen */
+.vst-duimen .rich p:nth-child(2) {
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.5 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5.2A3 3 0 0 0 7 17a2.5 2.5 0 0 0 5 .5V5.5A1.5 1.5 0 0 0 9.5 4z'/%3E%3Cpath d='M14.5 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5.2A3 3 0 0 1 17 17a2.5 2.5 0 0 1-5 .5V5.5A1.5 1.5 0 0 1 14.5 4z'/%3E%3Cpath d='M7 9.5h2M15 9.5h2M8 13.5h2M14 13.5h2'/%3E%3C/svg%3E");
+}
+/* dozen / vaker lopen */
+.vst-duimen .rich p:nth-child(3) {
+  --c1: #6db23f; --c2: #4f8f27;
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='11' width='9' height='9' rx='1'/%3E%3Cpath d='M8 11v3'/%3E%3Cpath d='M14.5 20.5 16 16l2 2v2.5M16.5 12.5l1.5-2 2 1.5-1 2.5'/%3E%3Ccircle cx='18' cy='7.5' r='1.6'/%3E%3C/svg%3E");
+}
+.vst-duimen .rich p:first-child { font-size: 1.08rem; color: var(--db-diep); font-weight: 500; }
+
+/* ---------- 3 Andere eigenschappen ---------- */
+.vst-eigen {
+  background:
+    radial-gradient(ellipse 35% 45% at 100% 100%, rgba(109, 178, 63, .08), transparent 70%);
+}
+.vst-eigen .h3,
+.vst-duimen .h3,
+.vst-cta .h3 { color: var(--db-diep); }
+.vst-eigen .rich p:nth-child(1) {
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8.5 3.5h7v3h-7z'/%3E%3Cpath d='M8.5 5H5.5v15.5h13V5h-3'/%3E%3Cpath d='m8.5 11 1.5 1.5 3-3M8.5 16l1.5 1.5 3-3'/%3E%3C/svg%3E");
+  --c1: #00498f; --c2: #003468;
+}
+.vst-eigen .rich p:nth-child(2) {
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='7' r='2.5'/%3E%3Ccircle cx='16' cy='7' r='2.5'/%3E%3Cpath d='M3.5 19v-2.5a4 4 0 0 1 4-4h1M20.5 19v-2.5a4 4 0 0 0-4-4h-1'/%3E%3Cpath d='m9 15 2 2 4-4'/%3E%3C/svg%3E");
+}
+.vst-eigen .rich p:nth-child(3) {
+  --ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffc400' stroke='%23ffc400' stroke-width='1.2' stroke-linejoin='round'%3E%3Cpath d='M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z'/%3E%3C/svg%3E");
+  --c1: #6db23f; --c2: #4f8f27;
+}
+.vst-eigen .rich p:nth-child(3) { box-shadow: inset 0 0 0 2px rgba(109, 178, 63, .35), 0 16px 30px -22px rgba(0, 52, 104, .45); font-weight: 600; color: var(--db-diep); }
+
+/* sterbadge op de foto's */
+.vst-foto { position: relative; }
+.vst-badge {
+  position: absolute;
+  z-index: 3;
+  top: -18px;
+  right: -14px;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #eef3f9);
+  box-shadow: 0 0 0 4px rgba(255, 196, 0, .45), 0 14px 26px -8px rgba(0, 52, 104, .45);
+  animation: vst-draai 10s linear infinite;
+}
+.vst-badge .vst-ster { width: 36px; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .15)); }
+.vst-badge--groot { width: 84px; height: 84px; top: -26px; right: -20px; }
+.vst-badge--groot .vst-ster { width: 48px; }
+@keyframes vst-draai { to { rotate: 360deg; } }
+
+/* ---------- 4 Benieuwd: Anne als ster van het team ---------- */
+.vst-cta {
+  position: relative;
+  background:
+    radial-gradient(ellipse 45% 55% at 0 50%, rgba(255, 196, 0, .1), transparent 70%),
+    linear-gradient(180deg, #f4f8fc, #eaf1f8);
+}
+.vst-cta .split { align-items: center; }
+.vst-rozet {
+  position: absolute;
+  z-index: -1;
+  inset: -16px;
+  border-radius: 28px;
+  border: 3px dashed rgba(0, 125, 194, .35);
+  pointer-events: none;
+}
+.vst-foto--anne { isolation: isolate; }
+.vst-cta .split__text {
+  position: relative;
+  padding: clamp(24px, 3vw, 38px);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 52, 104, .06), 0 26px 50px -30px rgba(0, 52, 104, .5);
+  overflow: hidden;
+}
+.vst-cta .split__text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--db-diep) 0 40%, var(--db-blauw) 40% 70%, var(--db-groen) 70%);
+}
+
+@media (max-width: 767px) {
+  .vst-duimen .rich p:nth-child(n+2),
+  .vst-eigen .rich p { padding: 16px 16px 16px 70px; }
+  .vst-badge { right: -4px; }
+  .vst-badge--groot { right: -6px; width: 70px; height: 70px; }
+  .vst-accent { white-space: normal; }
+  .vst-ster--a, .vst-ster--b, .vst-ster--c, .vst-ster--g { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vst-hemel .vst-ster, .vst-pop__sterren .vst-ster, .vst-badge { animation: none; }
+}

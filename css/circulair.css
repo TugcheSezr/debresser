@@ -356,3 +356,19 @@
   .cm-nieuw__loop svg, .cm-cyclus, .cm-cyclus__ring, .cm-paden__link svg, .cm-werk__pijl path:first-child { animation: none; }
   .cm-nieuw__media img, .cm-werk__back, .cm-pad__img img, .cm-rel__item { transition: none; }
 }
+
+/* werkplaats: de foto onder de muis komt naar voren */
+.cm-werk__back,
+.cm-werk__main { cursor: zoom-in; transition: transform 500ms var(--spring, ease), box-shadow 400ms ease, filter 300ms ease; }
+.cm-werk .cm-werk__back:hover {
+  z-index: 3;
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .06), 0 40px 70px -24px rgba(2, 13, 65, .7);
+}
+.cm-werk .cm-werk__back--a:hover { transform: rotate(0deg) translate(-14%, 18%) scale(1.45); }
+.cm-werk .cm-werk__back--b:hover { transform: rotate(0deg) translate(14%, -18%) scale(1.45); }
+/* de voor/na-foto zakt iets weg zolang een andere foto voor ligt */
+.cm-werk:has(.cm-werk__back:hover) .cm-werk__main { filter: brightness(.9) saturate(.9); transform: rotate(-1.5deg) scale(.98); }
+.cm-werk .cm-werk__main:hover { z-index: 2; transform: rotate(0deg) scale(1.02); }
+@media (prefers-reduced-motion: reduce) {
+  .cm-werk__back, .cm-werk__main { transition: none; }
+}

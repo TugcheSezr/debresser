@@ -1,0 +1,531 @@
+/* =====================================================================
+   Blog: Interne verhuizing (blog-interne-verhuizing.html)
+   Thema: een kantoor verhuist binnen het gebouw. Bouwtekening-raster,
+   liftpaneel, laptop waar het kantoor uit komt (js/interne-verhuizing-3d.js),
+   foto's met lagen in 3D en uitgesneden delen die uit het kader steken.
+   Kleuren: logokleuren debresser.nl (#00498F, #007DC2, #6DB23F) + site-navy.
+   Teksten = live; alle toevoegingen zijn aria-hidden.
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   ===================================================================== */
+.page-blog-artikel {
+  --ivb-diep: #00498f;
+  --ivb-blauw: #007dc2;
+  --ivb-groen: #6db23f;
+  --ivb-navy: #0f2c59;
+}
+.ivb-ruit { position: absolute; fill: none; stroke-width: 2; pointer-events: none; z-index: 0; }
+
+@keyframes ivb-zweef { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+
+/* ---------- 1. Intro + liftpaneel + laptop ---------- */
+.ivb-intro {
+  position: relative;
+  z-index: 3;
+  overflow: visible !important;
+  padding-bottom: clamp(24px, 4vw, 48px);
+}
+/* bouwtekening-raster */
+.ivb-plan {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 73, 143, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 73, 143, .07) 1px, transparent 1px),
+    linear-gradient(rgba(0, 73, 143, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 73, 143, .035) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  -webkit-mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+          mask-image: radial-gradient(80% 70% at 50% 40%, #000 30%, transparent 100%);
+}
+.ivb-intro .wrap { position: relative; z-index: 1; }
+.ivb-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+.ivb-intro__tekst {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 44px);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .82);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border: 1px solid #fff;
+  box-shadow: 0 2px 0 #e3eaf3, 0 4px 0 #d3dcea, 0 30px 60px -30px rgba(10, 31, 64, .45);
+}
+.ivb-intro__tekst .rich p { font-size: clamp(1.0625rem, 1rem + .35vw, 1.25rem) !important; line-height: 1.75 !important; color: #2f2f2f !important; margin: 0; }
+.ivb-intro__tekst .rich p::first-line { color: var(--ivb-navy); font-weight: 600; }
+/* maatlijn zoals op een bouwtekening */
+.ivb-maat {
+  position: absolute; left: clamp(28px, 3.5vw, 44px); right: clamp(28px, 3.5vw, 44px); top: -14px; height: 12px;
+  border-left: 2px solid var(--ivb-blauw); border-right: 2px solid var(--ivb-blauw);
+}
+.ivb-maat::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--ivb-blauw) 0 10px, transparent 10px 16px);
+}
+.ivb-maat i {
+  position: absolute; left: 50%; top: -3px; translate: -50% 0;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--ivb-groen); box-shadow: 0 0 0 4px rgba(109, 178, 63, .25);
+}
+
+/* liftpaneel */
+.ivb-lift {
+  --rx: 0deg; --ry: 0deg;
+  position: relative;
+  padding: 18px;
+  border-radius: 26px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 3px),
+    linear-gradient(135deg, #e9edf2 0%, #b9c1cc 45%, #dfe4ea 60%, #a9b2be 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, .9), inset 0 -3px 0 rgba(0, 0, 0, .15),
+    0 3px 0 #9aa4b1, 0 6px 0 #8a95a3, 0 10px 0 #7b8695,
+    0 40px 70px -26px rgba(10, 31, 64, .6);
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 300ms ease;
+}
+.ivb-lift__display {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 18px; margin-bottom: 16px;
+  border-radius: 14px;
+  background: radial-gradient(120% 140% at 30% 0%, #1a2230, #05070b);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, .8), 0 1px 0 rgba(255, 255, 255, .7);
+  transform: translateZ(20px);
+}
+.ivb-lift__pijl svg { width: 30px; height: 30px; fill: none; stroke: #9fe07a; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px rgba(109, 178, 63, .9)); animation: ivb-pijl 1.6s ease-in-out infinite; }
+@keyframes ivb-pijl { 0%, 100% { translate: 0 3px; opacity: .6; } 50% { translate: 0 -3px; opacity: 1; } }
+.ivb-lift__nr { display: block; height: 44px; overflow: hidden; }
+.ivb-lift__nr b {
+  display: block; height: 44px; line-height: 44px;
+  font: 700 40px/44px ui-monospace, "Consolas", monospace; color: #9fe07a;
+  text-shadow: 0 0 10px rgba(109, 178, 63, .9);
+  animation: ivb-verdieping 8s steps(1) infinite;
+}
+@keyframes ivb-verdieping {
+  0% { translate: 0 0; } 25% { translate: 0 -44px; } 50% { translate: 0 -88px; } 75% { translate: 0 -132px; }
+}
+.ivb-lift__body {
+  padding: 22px 22px 24px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e3eaf3, 0 10px 20px -12px rgba(10, 31, 64, .5);
+  transform: translateZ(34px);
+}
+.ivb-lift__body .h3 { margin: 0 0 8px; color: var(--ivb-navy); }
+.ivb-lift__body .rich p { margin: 0 0 16px; }
+.ivb-lift__body .actions { margin: 0; }
+.ivb-lift__knop { box-shadow: 0 0 0 4px rgba(109, 178, 63, .3), 0 10px 20px -8px rgba(15, 44, 89, .7); }
+.ivb-lift__knoppen { display: flex; justify-content: center; gap: 14px; margin-top: 16px; transform: translateZ(14px); }
+.ivb-lift__knoppen i {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, #c5ccd6 55%, #8e98a6);
+  box-shadow: inset 0 -2px 3px rgba(0, 0, 0, .25), 0 2px 0 #7b8695, 0 4px 6px rgba(0, 0, 0, .25);
+}
+.ivb-lift__knoppen i:nth-child(3) {
+  background: radial-gradient(circle at 35% 30%, #e6ffd6, #9fe07a 45%, var(--ivb-groen));
+  box-shadow: 0 0 0 3px rgba(109, 178, 63, .35), 0 0 16px rgba(109, 178, 63, .9), 0 2px 0 #4f9129;
+  animation: ivb-lampje 2.4s ease-in-out infinite;
+}
+@keyframes ivb-lampje { 50% { box-shadow: 0 0 0 5px rgba(109, 178, 63, .2), 0 0 26px rgba(109, 178, 63, 1), 0 2px 0 #4f9129; } }
+
+/* laptop-podium */
+.ivl-stage {
+  position: relative;
+  height: clamp(340px, 40vw, 560px);
+  margin-top: clamp(24px, 4vw, 56px);
+  pointer-events: none;
+}
+.ivl-stage::before {
+  content: ""; position: absolute; left: 10%; right: 10%; bottom: 4%; height: 38%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 125, 194, .18), transparent);
+}
+.ivl-stage__canvas {
+  position: absolute; z-index: 3;
+  inset: -22% -8% -12% -8%;
+  width: 116%; height: 134%;
+  pointer-events: none;
+}
+.ivl-stage__fallback {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+  width: min(70%, 620px); height: auto; max-height: none;
+  border-radius: 18px; border: 12px solid #151a22;
+  box-shadow: 0 30px 60px -30px rgba(10, 31, 64, .7);
+}
+.ivl-stage.is-3d .ivl-stage__fallback { display: none; }
+@media (max-width: 959px) {
+  .ivb-intro__grid { grid-template-columns: 1fr; }
+  .ivb-lift { max-width: 460px; }
+}
+@media (max-width: 640px) {
+  .ivl-stage { height: 78vw; }
+  .ivl-stage__canvas { inset: -16% -4% -8% -4%; width: 108%; height: 124%; }
+}
+
+/* ---------- gedeelde 3D-foto (print met tweede vel) ---------- */
+.ivb-print {
+  --rx: 0deg; --ry: 0deg;
+  position: relative; margin: 0;
+  aspect-ratio: 3 / 2;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 300ms ease;
+}
+.ivb-print__vel {
+  position: absolute; inset: 0;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--ivb-groen), #4f9129);
+  transform: translateZ(-50px) rotate(-6deg) translate(-4%, 4%);
+  box-shadow: 0 30px 50px -20px rgba(0, 8, 24, .6);
+}
+.ivb-print__foto {
+  position: absolute; inset: 0;
+  border-radius: 22px; overflow: hidden;
+  border: 10px solid #fff;
+  transform: translateZ(0);
+  box-shadow: 0 2px 0 #dfe7f2, 0 4px 0 #c9d6e8, 0 6px 0 #b8c7dc, 0 40px 70px -30px rgba(0, 8, 24, .75);
+}
+.ivb-print__foto img { width: 100%; height: 100%; max-height: none; object-fit: cover; display: block; }
+.ivb-print__foto::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, .28), transparent 38%);
+}
+.ivb-zweef {
+  position: absolute; display: grid; place-items: center;
+  width: 64px; height: 64px; border-radius: 20px;
+  background: linear-gradient(145deg, #fff, #e3eaf3);
+  box-shadow: 0 2px 0 #c9d6e8, 0 4px 0 #b1c0d4, 0 6px 0 #9fb1c9, 0 24px 34px -12px rgba(0, 8, 24, .6);
+  animation: ivb-zweef 5s ease-in-out infinite;
+}
+.ivb-zweef svg { width: 30px; height: 30px; fill: none; stroke: var(--ivb-diep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ivb-zweef--a { left: -22px; top: 12%; transform: translateZ(90px); }
+.ivb-zweef--b { right: -20px; top: -24px; transform: translateZ(120px); background: linear-gradient(145deg, #8ccf55, var(--ivb-groen)); box-shadow: 0 2px 0 #5c9c33, 0 4px 0 #4f9129, 0 6px 0 #437d22, 0 24px 34px -12px rgba(0, 8, 24, .6); animation-delay: -1.7s; }
+.ivb-zweef--b svg { stroke: #fff; }
+.ivb-zweef--c { right: 12%; bottom: -26px; transform: translateZ(70px); background: linear-gradient(145deg, #1a9be0, var(--ivb-blauw)); box-shadow: 0 2px 0 #0a6aa6, 0 4px 0 #075c91, 0 6px 0 #054e7c, 0 24px 34px -12px rgba(0, 8, 24, .6); animation-delay: -3.2s; }
+.ivb-zweef--c svg { stroke: #fff; }
+
+/* ---------- 2. Ervaring: Diepblauw band ---------- */
+.ivb-ervaring {
+  position: relative; overflow: hidden; isolation: isolate;
+  color: #fff;
+  padding: clamp(110px, 12vw, 170px) 0 !important;
+  background:
+    radial-gradient(55% 50% at 95% 5%, rgba(0, 125, 194, .55), transparent 70%),
+    radial-gradient(45% 50% at 0% 100%, rgba(109, 178, 63, .22), transparent 70%),
+    linear-gradient(160deg, var(--ivb-diep) 0%, #003a78 55%, #002656 100%) !important;
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+.ivb-ervaring::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(100deg, transparent 20%, #000 80%);
+          mask-image: linear-gradient(100deg, transparent 20%, #000 80%);
+}
+.ivb-ervaring::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(4vw + 10px); z-index: -1;
+  background: linear-gradient(90deg, var(--ivb-groen), var(--ivb-blauw));
+  clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%);
+}
+.ivb-ruit--a { width: 520px; right: -150px; bottom: -130px; stroke: rgba(109, 178, 63, .35); }
+.ivb-ervaring .wrap { position: relative; z-index: 1; }
+.ivb-ervaring__grid {
+  display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: clamp(48px, 7vw, 110px); align-items: center;
+}
+.ivb-ervaring__media { padding: 20px 20px 30px; }
+.ivb-ervaring .h3, .ivb-handy .h3, .ivb-erkend .h3, .ivb-bresser .h3 {
+  position: relative; padding-left: 20px;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem) !important; line-height: 1.2;
+}
+.ivb-ervaring .h3::before, .ivb-handy .h3::before, .ivb-erkend .h3::before, .ivb-bresser .h3::before {
+  content: ""; position: absolute; left: 0; top: .12em; bottom: .12em; width: 5px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--ivb-groen), var(--ivb-blauw));
+}
+.ivb-ervaring .h3 { color: #fff !important; margin-bottom: 26px; }
+.ivb-ervaring__tekst { position: relative; }
+.ivb-kaarten { display: grid; gap: 16px; }
+.ivb-kaart {
+  position: relative; margin: 0 !important;
+  padding: 24px 26px;
+  border-radius: 20px;
+  color: #e3ecf7 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .04));
+  border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 24px 40px -24px rgba(0, 10, 30, .6);
+  transition: transform 350ms var(--spring, ease), border-color 350ms ease;
+}
+.ivb-kaart:hover { transform: translateX(6px); border-color: rgba(109, 178, 63, .6); }
+.ivb-kaart--opslag { margin-left: clamp(0px, 3vw, 40px) !important; padding-right: 120px; }
+
+/* 3D-container (CSS-kubus) bij de opslagkaart */
+.ivb-container {
+  position: absolute; right: 18px; bottom: 24px;
+  width: 92px; height: 60px;
+  perspective: 600px;
+  pointer-events: none;
+}
+.ivb-container__doos {
+  --w: 92px; --h: 50px; --d: 50px;
+  position: absolute; left: 0; top: 0; width: var(--w); height: var(--h);
+  transform-style: preserve-3d;
+  animation: ivb-container 9s linear infinite;
+}
+.ivb-container__doos i {
+  position: absolute; display: block;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, .18) 0 3px, rgba(255, 255, 255, .12) 3px 5px, transparent 5px 9px),
+    linear-gradient(180deg, #7cc24b, #4f9129);
+  border: 2px solid #3f7a1f;
+}
+.ivb-container__doos .v, .ivb-container__doos .a { width: var(--w); height: var(--h); }
+.ivb-container__doos .v { transform: translateZ(calc(var(--d) / 2)); }
+.ivb-container__doos .a { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); }
+.ivb-container__doos .l, .ivb-container__doos .r { width: var(--d); height: var(--h); left: calc((var(--w) - var(--d)) / 2); background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .2) 0 2px, transparent 2px 10px), linear-gradient(180deg, #6db23f, #437d22); }
+.ivb-container__doos .l { transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
+.ivb-container__doos .r { transform: rotateY(90deg) translateZ(calc(var(--w) / 2)); }
+.ivb-container__doos .o, .ivb-container__doos .b { width: var(--w); height: var(--d); top: calc((var(--h) - var(--d)) / 2); background: linear-gradient(135deg, #a4dc7e, #6db23f); }
+.ivb-container__doos .o { transform: rotateX(90deg) translateZ(calc(var(--h) / 2)); }
+.ivb-container__doos .b { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2)); background: #2f5a18; box-shadow: 0 0 30px 10px rgba(0, 0, 0, .4); }
+@keyframes ivb-container { from { transform: rotateX(-22deg) rotateY(0deg); } to { transform: rotateX(-22deg) rotateY(360deg); } }
+
+@media (max-width: 959px) {
+  .ivb-ervaring__grid { grid-template-columns: 1fr; }
+  .ivb-ervaring__media { max-width: 560px; margin-inline: auto; width: 100%; }
+}
+@media (max-width: 520px) {
+  .ivb-kaart--opslag { padding-right: 26px; padding-bottom: 96px; }
+  .ivb-zweef { width: 50px; height: 50px; border-radius: 16px; }
+  .ivb-zweef svg { width: 24px; height: 24px; }
+  .ivb-zweef--a { left: -10px; }
+  .ivb-zweef--b { right: -8px; }
+}
+
+/* ---------- 3. Handyman service ---------- */
+.ivb-handy { position: relative; }
+.ivb-handy__grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px); align-items: center;
+}
+.ivb-handy .h3 { margin-bottom: 18px; }
+.ivb-handy .rich p { font-size: 1.0625rem; line-height: 1.8; }
+
+/* drie draaiende kubussen met gereedschap */
+.ivb-kubussen { display: flex; gap: clamp(26px, 4vw, 48px); margin-top: 44px; padding-left: 10px; perspective: 800px; }
+.ivb-kubus {
+  --s: 74px;
+  position: relative; width: var(--s); height: var(--s);
+  transform-style: preserve-3d;
+  animation: ivb-kubus 10s ease-in-out infinite;
+}
+.ivb-kubus:nth-child(2) { animation-delay: -3.3s; translate: 0 -14px; }
+.ivb-kubus:nth-child(3) { animation-delay: -6.6s; }
+.ivb-kubus i {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fff, #e3eaf3);
+  box-shadow: inset 0 0 0 1px rgba(15, 44, 89, .1), inset 0 0 18px rgba(15, 44, 89, .08);
+  backface-visibility: hidden;
+}
+.ivb-kubus svg { width: 56%; height: 56%; fill: none; stroke: var(--ivb-diep); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ivb-kubus .v { transform: translateZ(calc(var(--s) / 2)); }
+.ivb-kubus .a { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); background: linear-gradient(145deg, #1a9be0, var(--ivb-blauw)); }
+.ivb-kubus .r { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); background: linear-gradient(145deg, #8ccf55, var(--ivb-groen)); }
+.ivb-kubus .r svg { stroke: #fff; }
+.ivb-kubus .l { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); background: linear-gradient(145deg, #1a9be0, var(--ivb-diep)); }
+.ivb-kubus .o { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); background: linear-gradient(145deg, #fff, #cfd9e6); }
+.ivb-kubus .b { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); background: #9fb1c9; }
+@keyframes ivb-kubus {
+  0%, 12% { transform: rotateX(-18deg) rotateY(-30deg); }
+  38%, 50% { transform: rotateX(-18deg) rotateY(-120deg); }
+  76%, 88% { transform: rotateX(-18deg) rotateY(-210deg); }
+  100% { transform: rotateX(-18deg) rotateY(-390deg); }
+}
+
+/* foto met uitgesneden deel dat uit het kader steekt */
+.ivb-pop {
+  --rx: 0deg; --ry: 0deg; --top: 16%;
+  position: relative; margin: 0;
+  aspect-ratio: 1024 / 683;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 300ms ease;
+}
+.ivb-pop::before {
+  content: ""; position: absolute; left: -10px; right: -10px; bottom: -10px; top: calc(var(--top) - 10px);
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fff, #e3eaf3);
+  box-shadow: 0 2px 0 #dfe7f2, 0 4px 0 #c9d6e8, 0 6px 0 #b8c7dc, 0 44px 80px -30px rgba(10, 31, 64, .6);
+  transform: translateZ(-2px);
+}
+.ivb-pop__kader {
+  position: absolute; inset: 0;
+  clip-path: inset(var(--top) 0 0 0 round 20px);
+}
+.ivb-pop__kader img { width: 100%; height: 100%; max-height: none; object-fit: cover; display: block; }
+.ivb-pop__uit {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover;
+  transform: translateZ(26px);
+  filter: drop-shadow(0 14px 12px rgba(10, 31, 64, .35));
+  pointer-events: none;
+}
+.ivb-pop--inpakken .ivb-pop__uit {
+  clip-path: inset(0 62% 0 0);
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(var(--top) + 4%), transparent calc(var(--top) + 10%));
+          mask-image: linear-gradient(180deg, #000 calc(var(--top) + 4%), transparent calc(var(--top) + 10%));
+}
+/* een groene ruit achter het hoofd zodat het uitsteken opvalt */
+.ivb-pop--inpakken::after {
+  content: ""; position: absolute; left: 6%; top: -2%; width: 22%; aspect-ratio: 1;
+  border: 3px solid rgba(109, 178, 63, .6); border-radius: 14px;
+  transform: translateZ(-20px) rotate(45deg);
+}
+.ivb-pop--truck { --top: 38%; aspect-ratio: 494 / 440; }
+.ivb-pop--truck .ivb-pop__uit {
+  clip-path: polygon(3% 35%, 73.5% 29.5%, 73.5% 100%, 3% 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 calc(var(--top) + 4%), transparent calc(var(--top) + 12%));
+          mask-image: linear-gradient(180deg, #000 calc(var(--top) + 4%), transparent calc(var(--top) + 12%));
+  transform: translateZ(34px);
+}
+@media (max-width: 959px) {
+  .ivb-handy__grid { grid-template-columns: 1fr; }
+  .ivb-handy__media { max-width: 560px; margin-inline: auto; width: 100%; }
+}
+@media (max-width: 520px) {
+  .ivb-kubus { --s: 58px; }
+}
+
+/* ---------- 4. Erkend verhuisbedrijf: navy met weg ---------- */
+.ivb-erkend {
+  position: relative; overflow: hidden; isolation: isolate;
+  color: #fff;
+  padding: clamp(80px, 9vw, 130px) 0 clamp(120px, 12vw, 170px) !important;
+  background:
+    radial-gradient(60% 60% at 15% 20%, rgba(0, 125, 194, .45), transparent 70%),
+    linear-gradient(170deg, #0f2c59 0%, #0a1f40 100%) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+.ivb-erkend .h3 { color: #fff !important; margin-bottom: 18px; }
+.ivb-erkend .rich p { color: #d6e2f2 !important; font-size: 1.0625rem; line-height: 1.8; }
+.ivb-erkend__grid {
+  display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(40px, 6vw, 96px); align-items: center;
+}
+.ivb-erkend__media { max-width: 460px; width: 100%; justify-self: center; }
+.ivb-erkend__tekst {
+  padding: clamp(26px, 3vw, 40px);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .03));
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 30px 50px -30px rgba(0, 0, 0, .7);
+}
+.ivb-erkend .ivb-pop::before { background: linear-gradient(145deg, #ffffff, #cfe0f2); }
+/* weg onderaan met rijdende streepjes */
+.ivb-weg {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 74px; z-index: -1;
+  background: linear-gradient(180deg, #2b3340, #1b212b);
+  box-shadow: inset 0 3px 0 var(--ivb-groen);
+}
+.ivb-weg::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 5px; translate: 0 -50%;
+  background: repeating-linear-gradient(90deg, #fff 0 46px, transparent 46px 92px);
+  opacity: .8;
+  animation: ivb-weg 1.2s linear infinite;
+}
+@keyframes ivb-weg { from { background-position: 0 0; } to { background-position: -92px 0; } }
+@media (max-width: 959px) {
+  .ivb-erkend__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- 5. De Bresser + keurmerk-munt ---------- */
+.ivb-bresser__grid {
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(40px, 6vw, 96px); align-items: center;
+}
+.ivb-bresser .h3 { margin-bottom: 18px; }
+.ivb-bresser .rich p { font-size: 1.125rem; line-height: 1.8; }
+.ivb-bresser .rich a {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  background: rgba(109, 178, 63, .14); text-decoration: none !important;
+}
+.ivb-bresser__media { position: relative; padding: 20px 20px 50px; }
+.ivb-print--groep .ivb-print__vel { background: linear-gradient(135deg, #1a9be0, var(--ivb-diep)); transform: translateZ(-50px) rotate(5deg) translate(4%, 5%); }
+
+.ivb-munt {
+  position: absolute; left: -8px; bottom: -6px; width: 128px; height: 128px;
+  perspective: 700px; z-index: 2;
+  animation: ivb-zweef 5s ease-in-out infinite;
+}
+.ivb-munt::after {
+  content: ""; position: absolute; left: 10%; right: 10%; bottom: -18px; height: 16px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10, 31, 64, .35), transparent);
+}
+.ivb-munt__draai {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  animation: ivb-munt 7s cubic-bezier(.6, 0, .4, 1) infinite;
+}
+.ivb-munt__vlak {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  background: radial-gradient(circle at 35% 30%, #2f5f9e, var(--ivb-navy) 60%, #061430);
+  box-shadow: inset 0 0 0 6px #8ccf55, inset 0 0 0 9px #3f7a1f, inset 0 4px 10px rgba(255, 255, 255, .3);
+}
+.ivb-munt__vlak img { width: 70%; height: auto; max-height: 70%; object-fit: contain; }
+.ivb-munt__vlak--voor { transform: translateZ(7px); }
+.ivb-munt__vlak--achter { transform: rotateY(180deg) translateZ(7px); }
+.ivb-munt__vlak--achter img { width: 58%; }
+.ivb-munt__rand {
+  position: absolute; left: calc(50% - 7px); top: 4%; width: 14px; height: 92%;
+  border-radius: 7px;
+  background: repeating-linear-gradient(180deg, #6db23f 0 2px, #4f9129 2px 4px);
+  transform: rotateY(90deg);
+}
+@keyframes ivb-munt {
+  0%, 30% { transform: rotateY(-20deg); }
+  50%, 80% { transform: rotateY(160deg); }
+  100% { transform: rotateY(340deg); }
+}
+@media (max-width: 959px) {
+  .ivb-bresser__grid { grid-template-columns: 1fr; }
+  .ivb-bresser__media { max-width: 560px; margin-inline: auto; width: 100%; }
+}
+@media (max-width: 520px) {
+  .ivb-munt { width: 96px; height: 96px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ivb-lift__pijl svg, .ivb-lift__nr b, .ivb-lift__knoppen i, .ivb-zweef, .ivb-container__doos,
+  .ivb-kubus, .ivb-weg::before, .ivb-munt, .ivb-munt__draai { animation: none; }
+  .ivb-kubus { transform: rotateX(-18deg) rotateY(-30deg); }
+  .ivb-container__doos { transform: rotateX(-22deg) rotateY(-30deg); }
+  .ivb-munt__draai { transform: rotateY(-20deg); }
+}
+
+/* kubussen: strakke randen zodat ze als massief blok lezen */
+.ivb-kubus i { border-radius: 8px; border: 1px solid rgba(15, 44, 89, .14); }
+.ivb-kubus .o { background: linear-gradient(135deg, #f4f7fb, #d7e0ec); }
+.ivb-kubus .v { background: linear-gradient(160deg, #ffffff, #dfe7f1); }
+.ivb-kubussen { padding-bottom: 20px; }
+.ivb-kubussen { filter: none; }
+@keyframes ivb-kubus {
+  0%, 12% { transform: rotateX(-24deg) rotateY(-35deg); }
+  38%, 50% { transform: rotateX(-24deg) rotateY(-125deg); }
+  76%, 88% { transform: rotateX(-24deg) rotateY(-215deg); }
+  100% { transform: rotateX(-24deg) rotateY(-395deg); }
+}
+/* schaduwvlak onder de kubussen */
+.ivb-kubussen { position: relative; }
+.ivb-kubussen::after {
+  content: ""; position: absolute; left: 0; width: 290px; bottom: -6px; height: 26px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10, 31, 64, .18), transparent);
+  pointer-events: none;
+}

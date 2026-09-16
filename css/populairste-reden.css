@@ -1,0 +1,297 @@
+/* =====================================================================
+   Blog 'De populairste reden om te verhuizen' (blog-de-populairste-reden-om-te-verhuizen.html)
+   Kleuren van debresser.nl: Diepblauw #00498F, Blauw #007DC2, Bressergroen #6DB23F.
+   Intro met index van de vier redenen; daaronder een verhuisroute:
+   een weg door het midden met vier haltes en een vrachtwagen die bij
+   het scrollen meerijdt. Teksten en foto's zijn ongewijzigd.
+   ===================================================================== */
+.page-blog-artikel {
+  --pr-diep: #00498f;
+  --pr-diep-2: #003566;
+  --pr-blauw: #007dc2;
+  --pr-groen: #6db23f;
+  --pr-lucht: #eaf4fb;
+}
+
+/* ---------- Intro ---------- */
+.page-blog-artikel main > .pr-intro {
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(56px, 7vw, 100px);
+  background:
+    radial-gradient(40% 60% at 100% 0%, rgba(0, 125, 194, .12), transparent 70%),
+    linear-gradient(180deg, #fff 0%, #f4f9fd 100%);
+}
+.pr-intro__ruit {
+  position: absolute;
+  right: -60px;
+  bottom: -80px;
+  z-index: -1;
+  width: 360px;
+  fill: none;
+  stroke: rgba(109, 178, 63, .25);
+  stroke-width: 2;
+}
+.pr-intro__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.pr-intro__titel {
+  margin: 0 0 20px;
+  color: var(--pr-diep);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+.pr-intro__titel::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 18px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--pr-groen), var(--pr-blauw));
+}
+.pr-intro .rich p { font-size: 1.0625rem; line-height: 1.8; color: #3d4452; }
+.pr-vragen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin-top: 28px;
+  padding: 18px 18px 18px 24px;
+  border-radius: 20px;
+  background: var(--pr-lucht);
+  box-shadow: inset 0 0 0 1px rgba(0, 125, 194, .15);
+}
+.pr-vragen .rich p { margin: 0; color: var(--pr-diep) !important; font-weight: 700; font-size: 1.15rem !important; }
+.pr-vragen .actions { margin: 0; }
+.pr-vragen .btn--navy { background: linear-gradient(160deg, var(--pr-blauw), var(--pr-diep)); }
+
+/* index van de vier redenen */
+.pr-index {
+  position: relative;
+  padding: clamp(20px, 2.4vw, 30px);
+  border-radius: 30px;
+  background:
+    radial-gradient(70% 50% at 100% 0%, rgba(0, 125, 194, .6), transparent 70%),
+    radial-gradient(60% 50% at 0% 100%, rgba(109, 178, 63, .35), transparent 70%),
+    linear-gradient(160deg, var(--pr-diep), var(--pr-diep-2));
+  box-shadow: 0 40px 70px -36px rgba(0, 53, 102, .8), inset 0 1px 0 rgba(255, 255, 255, .15);
+  rotate: 1.5deg;
+}
+.pr-index ol { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.pr-index a {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px 12px 12px;
+  border-radius: 18px;
+  color: #fff;
+  background: rgba(255, 255, 255, .07);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1);
+  text-decoration: none;
+  transition: background 250ms ease, transform 350ms cubic-bezier(.34, 1.5, .6, 1);
+}
+.pr-index a:hover,
+.pr-index a:focus-visible { background: rgba(255, 255, 255, .16); transform: translateX(-6px); }
+.pr-index__nr { color: var(--pr-groen); font-size: .85rem; font-weight: 800; letter-spacing: .08em; }
+.pr-index__icoon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: #fff; }
+.pr-index__icoon svg { width: 28px; height: 28px; fill: none; stroke: var(--pr-diep); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.pr-index li:nth-child(even) .pr-index__icoon svg { stroke: var(--pr-groen); }
+.pr-index__txt { font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
+.pr-index__pijl { width: 20px; height: 20px; fill: none; stroke: rgba(255, 255, 255, .6); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Route met vier haltes ---------- */
+.page-blog-artikel main > .pr-route {
+  --pin: 112px;
+  padding-block: clamp(56px, 7vw, 110px);
+  background:
+    linear-gradient(180deg, #f4f9fd 0%, #eef6f2 100%);
+}
+.pr-route > .wrap { position: relative; display: grid; gap: clamp(48px, 7vw, 110px); }
+
+/* de weg */
+.pr-weg {
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  left: 50%;
+  width: 38px;
+  margin-left: -19px;
+  border-radius: 19px;
+  background: linear-gradient(90deg, #3a4150, #4b5363 50%, #3a4150);
+  box-shadow: inset 0 0 0 3px #fff, 0 10px 30px -12px rgba(2, 13, 65, .4);
+}
+.pr-weg__lijn {
+  position: absolute;
+  inset: 20px 50% 20px auto;
+  width: 3px;
+  margin-right: -1.5px;
+  background: repeating-linear-gradient(180deg, #fff 0 18px, transparent 18px 34px);
+  opacity: .85;
+}
+.pr-truck {
+  position: sticky;
+  top: 45vh;
+  display: block;
+  width: 64px;
+  height: 40px;
+  margin: 30px 0 0 -13px;
+  transform: rotate(90deg);
+  filter: drop-shadow(-4px 4px 5px rgba(0, 0, 0, .35));
+  z-index: 3;
+}
+.pr-truck svg { width: 100%; height: 100%; }
+
+/* halte */
+.pr-stop {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--pin) minmax(0, 1fr);
+  align-items: center;
+  scroll-margin-top: 140px;
+}
+.pr-stop__foto { grid-column: 1; grid-row: 1; }
+.pr-stop__pin { grid-column: 2; grid-row: 1; }
+.pr-stop__kaart { grid-column: 3; grid-row: 1; }
+.pr-stop--rechts .pr-stop__foto { grid-column: 3; }
+.pr-stop--rechts .pr-stop__kaart { grid-column: 1; }
+
+.pr-stop__pin { position: relative; z-index: 2; display: grid; place-items: center; }
+.pr-stop__icoon {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 6px var(--pr-groen), 0 0 0 12px rgba(109, 178, 63, .2), 0 18px 30px -10px rgba(2, 13, 65, .45);
+}
+.pr-stop--rechts .pr-stop__icoon { box-shadow: 0 0 0 6px var(--pr-blauw), 0 0 0 12px rgba(0, 125, 194, .2), 0 18px 30px -10px rgba(2, 13, 65, .45); }
+.pr-stop__icoon svg { width: 40px; height: 40px; fill: none; stroke: var(--pr-diep); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* foto als ansichtkaart die schuin ligt */
+.pr-stop__foto {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 44px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(2, 13, 65, .08), 0 30px 50px -26px rgba(2, 13, 65, .45);
+  rotate: -3deg;
+  transition: rotate 500ms cubic-bezier(.34, 1.4, .6, 1), scale 500ms cubic-bezier(.34, 1.4, .6, 1);
+}
+.pr-stop--rechts .pr-stop__foto { rotate: 3deg; }
+.pr-stop__foto:hover { rotate: 0deg; scale: 1.03; }
+.page-blog-artikel .pr-stop__foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+/* plakband */
+.pr-stop__foto::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 110px;
+  height: 26px;
+  margin-left: -55px;
+  background: rgba(109, 178, 63, .55);
+  transform: rotate(-4deg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+.pr-stop--rechts .pr-stop__foto::before { background: rgba(0, 125, 194, .45); transform: rotate(5deg); }
+.pr-stop__nr {
+  position: absolute;
+  right: 14px;
+  bottom: 4px;
+  color: var(--pr-diep);
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1;
+  opacity: .9;
+}
+
+/* tekstkaart met pijltje naar de weg */
+.pr-stop__kaart {
+  position: relative;
+  padding: clamp(24px, 2.8vw, 38px);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 73, 143, .06), 0 26px 50px -30px rgba(0, 73, 143, .45);
+}
+.pr-stop__kaart::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  margin-top: -9px;
+  background: #fff;
+  transform: rotate(45deg);
+  box-shadow: -3px 3px 6px -3px rgba(0, 73, 143, .2);
+}
+.pr-stop--rechts .pr-stop__kaart::before { left: auto; right: -9px; box-shadow: 3px -3px 6px -3px rgba(0, 73, 143, .2); }
+.pr-stop__titel {
+  margin: 0 0 12px;
+  color: var(--pr-diep);
+  font-size: clamp(1.4rem, 1.1rem + .9vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+.pr-stop__titel::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  background: var(--pr-groen);
+}
+.pr-stop--rechts .pr-stop__titel::before { background: var(--pr-blauw); }
+.pr-stop__kaart .rich p { margin: 0; font-size: 1rem; line-height: 1.8; color: #3d4452; }
+
+/* haltes schuiven vanaf de weg naar buiten */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .pr-stop__kaart, .pr-stop__foto { animation: pr-in linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+    .pr-stop__kaart { --pr-dx: -40px; }
+    .pr-stop__foto { --pr-dx: 40px; }
+    .pr-stop--rechts .pr-stop__kaart { --pr-dx: 40px; }
+    .pr-stop--rechts .pr-stop__foto { --pr-dx: -40px; }
+    .pr-stop__icoon { animation: pr-pin linear both; animation-timeline: view(); animation-range: entry 10% cover 35%; }
+  }
+}
+@keyframes pr-in { from { opacity: 0; translate: var(--pr-dx) 0; } }
+@keyframes pr-pin { from { scale: .4; opacity: 0; } }
+
+/* ---------- Kleine schermen: weg links ---------- */
+@media (max-width: 900px) {
+  .pr-intro__grid { grid-template-columns: 1fr; }
+  .pr-index { rotate: none; }
+  .page-blog-artikel main > .pr-route { --pin: 64px; }
+  .pr-weg { left: calc(var(--pin) / 2); width: 26px; margin-left: -13px; }
+  .pr-truck { width: 48px; height: 30px; margin-left: -11px; }
+  .pr-stop { grid-template-columns: var(--pin) minmax(0, 1fr); row-gap: 18px; }
+  .pr-stop__pin, .pr-stop--rechts .pr-stop__pin { grid-column: 1; grid-row: 1 / span 2; align-self: start; padding-top: 20px; }
+  .pr-stop__foto, .pr-stop--rechts .pr-stop__foto { grid-column: 2; grid-row: 1; rotate: -1.5deg; }
+  .pr-stop__kaart, .pr-stop--rechts .pr-stop__kaart { grid-column: 2; grid-row: 2; }
+  .pr-stop__kaart::before, .pr-stop--rechts .pr-stop__kaart::before { display: none; }
+  .pr-stop__icoon { width: 50px; height: 50px; box-shadow: 0 0 0 4px var(--pr-groen), 0 10px 20px -8px rgba(2, 13, 65, .45) !important; }
+  .pr-stop__icoon svg { width: 28px; height: 28px; }
+}
+@media (max-width: 480px) {
+  .pr-index a { grid-template-columns: auto 1fr auto; }
+  .pr-index__nr { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pr-index a, .pr-stop__foto { transition: none; }
+}

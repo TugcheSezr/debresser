@@ -1,0 +1,269 @@
+/* =====================================================================
+   Blog: Samen bouwen aan succes (blog-samen-bouwen-aan-succes.html)
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   Interview in magazinestijl, debresser.nl-logokleuren: Diepblauw #00498F,
+   Bresserblauw #007DC2, Bressergroen #6DB23F. De groene kubusjes verwijzen
+   naar de belettering op de De Bresser-vrachtwagens.
+   Teksten ongewijzigd; alle extra's zijn decoratief (aria-hidden).
+   ===================================================================== */
+.sb-sec {
+  --sb-diep: #00498f;
+  --sb-diep-2: #003a78;
+  --sb-diep-3: #00224f;
+  --sb-blauw: #007dc2;
+  --sb-groen: #6db23f;
+  --sb-groen-l: #9fd47a;
+  --sb-tekst: #0b2a4f;
+  --sb-veer: cubic-bezier(.2, .8, .2, 1.15);
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+.sb-sec > .wrap { position: relative; z-index: 1; }
+.sb-ruit { fill: none; stroke-width: 2; pointer-events: none; }
+@keyframes sb-draai { to { transform: rotate(360deg); } }
+@keyframes sb-tegendraai { to { transform: rotate(-360deg); } }
+
+/* ---------- 1. intro: magazine-opening ---------- */
+.page-hero--photo + .section.sb-sec--intro {
+  background:
+    radial-gradient(45% 55% at 100% 30%, rgba(0, 125, 194, .1), transparent 70%),
+    radial-gradient(35% 40% at 0% 100%, rgba(109, 178, 63, .12), transparent 70%),
+    #fff !important;
+}
+.sb-quoteglyph {
+  position: absolute; left: clamp(-20px, 1vw, 20px); top: clamp(30px, 4vw, 60px); z-index: 0;
+  font: 800 clamp(220px, 26vw, 380px) / .8 Georgia, "Times New Roman", serif;
+  color: transparent;
+  background: linear-gradient(160deg, rgba(0, 125, 194, .14), rgba(109, 178, 63, .12));
+  -webkit-background-clip: text; background-clip: text;
+  pointer-events: none;
+}
+.sb-quoteglyph::before { content: "\201C"; }
+.sb-ruit--intro { position: absolute; z-index: 0; right: -160px; bottom: -120px; width: 520px; stroke: rgba(0, 73, 143, .08); }
+
+.sb-sec--intro .split { align-items: center; }
+.sb-sec--intro .rich p:first-child {
+  font-size: clamp(1.125rem, 1rem + .4vw, 1.3rem);
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--sb-tekst);
+}
+.sb-sec--intro .rich p:first-child::first-letter {
+  font-size: 2.4em; line-height: 1; font-weight: 800;
+  color: var(--sb-blauw);
+}
+.sb-sec--intro .rich p + p { position: relative; padding-left: 18px; }
+.sb-sec--intro .rich p + p::before {
+  content: ""; position: absolute; left: 0; top: .5em; bottom: .5em; width: 3px; border-radius: 2px;
+  background: linear-gradient(180deg, var(--sb-groen), rgba(109, 178, 63, .15));
+}
+
+/* portret in een boog met projectbaan */
+.sb-portret { position: relative; padding: clamp(30px, 4vw, 56px); }
+.sb-portret__boog {
+  position: absolute; left: 10%; right: 10%; top: 4%; bottom: 14%; z-index: 0;
+  border-radius: 999px 999px 32px 32px;
+  background:
+    radial-gradient(60% 50% at 70% 10%, rgba(0, 125, 194, .8), transparent 70%),
+    linear-gradient(170deg, var(--sb-diep), var(--sb-diep-3));
+  box-shadow: 0 40px 70px -40px rgba(0, 20, 60, .8);
+}
+.sb-portret__boog::after {
+  content: ""; position: absolute; inset: 12px; border-radius: inherit;
+  border: 2px solid rgba(159, 212, 122, .6);
+}
+.page-blog-artikel .sb-portret .img-3d { position: relative; z-index: 1; margin: 0 auto; max-width: 440px; }
+.page-blog-artikel .sb-portret .img-3d::before { display: none; }
+.page-blog-artikel .sb-portret .img-3d__frame {
+  border: 0; padding: 0;
+  border-radius: 999px 999px 26px 26px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  transform: none !important;
+  box-shadow: 0 0 0 8px #fff, 0 40px 60px -30px rgba(0, 20, 60, .7);
+}
+.page-blog-artikel .sb-portret .img-3d__frame img {
+  width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: 55% 40%;
+  border-radius: 0;
+}
+.sb-baan {
+  position: absolute; z-index: 2; left: 50%; top: 46%;
+  width: min(118%, 560px); aspect-ratio: 1;
+  container-type: inline-size;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+.sb-baan__ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px dashed rgba(0, 125, 194, .35);
+  animation: sb-draai 60s linear infinite;
+}
+.sb-baan__draai { position: absolute; inset: 0; animation: sb-draai 36s linear infinite; }
+.sb-baan__draai i {
+  position: absolute; left: 50%; top: 50%;
+  width: 58px; height: 58px; margin: -29px 0 0 -29px;
+  transform: rotate(var(--h)) translateY(-50cqw) rotate(calc(var(--h) * -1));
+}
+.sb-baan__draai i svg {
+  display: block; width: 100%; height: 100%; padding: 14px; box-sizing: border-box;
+  border-radius: 18px;
+  fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  background: linear-gradient(145deg, var(--sb-blauw), var(--sb-diep));
+  box-shadow: 0 0 0 5px #fff, 0 14px 24px -10px rgba(0, 40, 90, .6);
+  animation: sb-tegendraai 36s linear infinite;
+}
+.sb-baan__draai i:nth-child(even) svg { background: linear-gradient(145deg, #8fd15d, var(--sb-groen)); box-shadow: 0 0 0 5px #fff, 0 14px 24px -10px rgba(79, 145, 41, .7); }
+.sb-blad {
+  position: absolute; z-index: 3; right: 12%; bottom: 10%;
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 16px 30px -12px rgba(0, 40, 90, .5);
+}
+.sb-blad svg { width: 30px; height: 30px; fill: none; stroke: var(--sb-groen); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- 2. vertrouwen: Diepblauwe band met ruiten die in elkaar grijpen ---------- */
+.sb-sec--vertrouwen {
+  color: #d6e4f3;
+  padding-block: clamp(120px, 13vw, 180px);
+  background:
+    radial-gradient(50% 45% at 90% 15%, rgba(0, 125, 194, .7), transparent 70%),
+    radial-gradient(45% 40% at 5% 90%, rgba(109, 178, 63, .35), transparent 70%),
+    linear-gradient(165deg, var(--sb-diep) 0%, var(--sb-diep-2) 50%, var(--sb-diep-3) 100%);
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 calc(100% - 4vw));
+}
+.sb-sec--vertrouwen::before,
+.sb-sec--vertrouwen::after {
+  content: ""; position: absolute; left: 0; right: 0; height: calc(4vw + 10px); z-index: 2; pointer-events: none;
+}
+.sb-sec--vertrouwen::before { top: 0; background: linear-gradient(90deg, var(--sb-blauw), var(--sb-groen)); clip-path: polygon(0 0, 100% calc(100% - 10px), 100% 100%, 0 10px); }
+.sb-sec--vertrouwen::after { bottom: 0; background: linear-gradient(90deg, var(--sb-groen), var(--sb-blauw)); clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%); }
+.sb-stippen {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .14) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(90deg, #000, transparent 55%);
+          mask-image: linear-gradient(90deg, #000, transparent 55%);
+}
+.sb-duo {
+  position: absolute; z-index: 0; right: -140px; bottom: -2%; opacity: .7;
+  width: clamp(280px, 34vw, 520px);
+  fill: none; stroke-width: 3; stroke-linejoin: round; pointer-events: none;
+}
+.sb-duo polygon { transform-box: fill-box; transform-origin: center; }
+.sb-duo__a polygon { stroke: rgba(255, 255, 255, .22); animation: sb-duo-a 7s ease-in-out infinite; }
+.sb-duo__b polygon { stroke: rgba(159, 212, 122, .7); fill: rgba(109, 178, 63, .08); }
+.sb-duo__c polygon { stroke: rgba(51, 188, 250, .5); animation: sb-duo-c 7s ease-in-out infinite; }
+@keyframes sb-duo-a { 0%, 100% { transform: translate(-26px, -14px); } 50% { transform: translate(0, 0); } }
+@keyframes sb-duo-c { 0%, 100% { transform: translate(26px, -14px); } 50% { transform: translate(0, 0); } }
+
+.sb-sec--vertrouwen .split { align-items: center; }
+.page-blog-artikel .sb-sec--vertrouwen .split__text > .h2 { color: #fff; }
+.sb-sec--vertrouwen .rich { display: grid; gap: 14px; }
+.sb-sec--vertrouwen .rich p {
+  position: relative; margin: 0;
+  padding: 20px 22px 20px 70px;
+  border-radius: 20px 20px 20px 6px;
+  color: #e3edf8;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .14);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: transform 350ms var(--sb-veer), background-color 250ms ease, border-color 250ms ease;
+}
+.sb-sec--vertrouwen .rich p:nth-child(even) { margin-left: clamp(0px, 3vw, 36px); border-radius: 20px 20px 6px 20px; }
+.sb-sec--vertrouwen .rich p:hover { transform: translateX(6px); background: rgba(255, 255, 255, .11); border-color: rgba(159, 212, 122, .5); }
+.sb-sec--vertrouwen .rich p::before {
+  content: "\201C";
+  position: absolute; left: 16px; top: 16px;
+  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px;
+  font: 800 34px / 1 Georgia, serif; padding-top: 12px; box-sizing: border-box;
+  color: #fff;
+  background: linear-gradient(145deg, #8fd15d, var(--sb-groen));
+  box-shadow: 0 8px 16px -8px rgba(109, 178, 63, .9);
+}
+.sb-sec--vertrouwen .rich p:nth-child(2)::before { background: linear-gradient(145deg, #1a9be0, var(--sb-blauw)); box-shadow: 0 8px 16px -8px rgba(0, 125, 194, .9); }
+.sb-sec--vertrouwen .rich p:last-child { border-color: rgba(159, 212, 122, .45); background: rgba(109, 178, 63, .12); }
+
+/* foto met groene tegelrand */
+.page-blog-artikel .sb-foto .img-3d { position: relative; }
+.page-blog-artikel .sb-foto .img-3d::before {
+  content: ""; display: block; position: absolute; inset: 0; z-index: -1;
+  border-radius: 26px; transform: translate(18px, 18px) rotate(2deg);
+  background: linear-gradient(145deg, #8fd15d, var(--sb-groen));
+  opacity: 1;
+}
+.page-blog-artikel .sb-foto .img-3d__frame { border-color: #fff; }
+
+/* ---------- 3. trots: grote citaatkaart ---------- */
+.sb-sec--trots { background: linear-gradient(180deg, #f3f8fd 0%, #fff 60%); }
+.sb-sec--trots > .bg-ruit { display: none; }
+.sb-sec--trots .wrap.flow-section {
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(120deg, var(--sb-groen), var(--sb-blauw), var(--sb-diep)) border-box !important;
+  border: 3px solid transparent;
+  box-shadow: 0 50px 90px -50px rgba(0, 40, 90, .55) !important;
+}
+.sb-sec--trots .wrap.flow-section::before {
+  content: "\201D";
+  position: absolute; right: clamp(20px, 3vw, 44px); bottom: clamp(-40px, -2vw, -20px); z-index: -1;
+  font: 800 clamp(160px, 18vw, 260px) / 1 Georgia, serif;
+  color: rgba(109, 178, 63, .14);
+  pointer-events: none;
+}
+.sb-sec--trots .wrap.flow-section > .rich p {
+  font-size: clamp(1.125rem, 1rem + .5vw, 1.4rem);
+  line-height: 1.65;
+  font-weight: 500;
+  color: var(--sb-tekst);
+}
+.page-blog-artikel .sb-sec--trots .flow-section > .h2 {
+  background: linear-gradient(120deg, var(--sb-diep), var(--sb-blauw) 60%, var(--sb-groen));
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+/* isometrische kubusjes zoals op de vrachtwagens */
+.sb-kubus { position: absolute; z-index: 0; width: clamp(150px, 16vw, 230px); pointer-events: none; }
+.sb-kubus--l { left: 2%; top: 4%; }
+.sb-kubus--r { right: 2%; bottom: 4%; transform: scaleX(-1); }
+.sb-kubus g { animation: sb-stapel 5s ease-in-out infinite; }
+.sb-kubus g:nth-child(2n) { animation-delay: -1.2s; }
+.sb-kubus g:nth-child(3n) { animation-delay: -2.4s; }
+.sb-kubus__top { fill: #9fd47a; }
+.sb-kubus__l { fill: #6db23f; }
+.sb-kubus__r { fill: #4f9129; }
+@keyframes sb-stapel { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+
+.sb-confetti { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sb-confetti i {
+  position: absolute; width: 12px; height: 16px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  animation: sb-val 9s ease-in-out infinite;
+}
+.sb-confetti i:nth-child(1) { left: 12%; top: 70%; background: var(--sb-blauw); }
+.sb-confetti i:nth-child(2) { left: 30%; top: 8%; background: var(--sb-groen); animation-delay: -2s; }
+.sb-confetti i:nth-child(3) { left: 55%; top: 90%; background: #ffc400; animation-delay: -4s; }
+.sb-confetti i:nth-child(4) { left: 72%; top: 6%; background: var(--sb-diep); animation-delay: -1s; }
+.sb-confetti i:nth-child(5) { left: 88%; top: 40%; background: var(--sb-groen); animation-delay: -6s; }
+.sb-confetti i:nth-child(6) { left: 5%; top: 35%; background: #ffc400; animation-delay: -3s; }
+.sb-confetti i:nth-child(7) { left: 46%; top: 3%; background: var(--sb-blauw); animation-delay: -5s; }
+.sb-confetti i:nth-child(8) { left: 94%; top: 80%; background: var(--sb-diep); animation-delay: -7s; }
+@keyframes sb-val { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-18px) rotate(40deg); } }
+
+/* ---------- mobiel ---------- */
+@media (max-width: 767px) {
+  .sb-baan { display: none; }
+  .sb-portret { padding: 20px 10px; }
+  .sb-sec--vertrouwen { padding-block: 96px; }
+  .sb-sec--vertrouwen .rich p { padding: 60px 18px 18px; }
+  .sb-sec--vertrouwen .rich p:nth-child(even) { margin-left: 0; }
+  .sb-kubus { width: 110px; opacity: .6; }
+  .sb-quoteglyph { font-size: 180px; }
+}
+
+/* ---------- rustige beweging ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .sb-baan__ring, .sb-baan__draai, .sb-baan__draai i svg, .sb-duo polygon, .sb-kubus g, .sb-confetti i { animation: none; }
+  .sb-sec--vertrouwen .rich p { transition: none; }
+}

@@ -1,0 +1,266 @@
+/* =====================================================================
+   Meubelprojecten (diensten-meubelprojecten.html)
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   3D: mensen komen uit het laptopscherm en uit de foto naar voren.
+   Kleuren = debresser.nl-logo: Diepblauw #00498F, Bresserblauw #007DC2,
+   Bressergroen #6DB23F. Teksten ongewijzigd; laptop, uitsneden en
+   deeltjes zijn decoratief (aria-hidden).
+   ===================================================================== */
+.mp-sec {
+  --mp-diep: #00498f;
+  --mp-diep-2: #003a78;
+  --mp-diep-3: #00224f;
+  --mp-blauw: #007dc2;
+  --mp-groen: #6db23f;
+  --mp-groen-l: #9fd47a;
+  --mp-veer: cubic-bezier(.2, .8, .2, 1.15);
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+.mp-sec > .wrap { position: relative; z-index: 1; }
+.mp-ruit { position: absolute; z-index: 0; fill: none; stroke-width: 2; pointer-events: none; }
+
+/* ---------- 1. intro ---------- */
+.page-hero--photo + .section.mp-sec--intro {
+  background:
+    radial-gradient(40% 50% at 0% 100%, rgba(109, 178, 63, .14), transparent 70%),
+    radial-gradient(45% 55% at 100% 0%, rgba(0, 125, 194, .12), transparent 70%),
+    #fff !important;
+}
+.mp-raster {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; border-radius: inherit;
+  background-image:
+    linear-gradient(rgba(0, 73, 143, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 73, 143, .05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(60% 70% at 30% 70%, #000, transparent 75%);
+          mask-image: radial-gradient(60% 70% at 30% 70%, #000, transparent 75%);
+}
+.mp-ruit--intro { right: -140px; bottom: -120px; width: 480px; stroke: rgba(0, 125, 194, .12); }
+.mp-sec--intro .split__text > p { font-size: 1.125rem; line-height: 1.8; }
+
+/* ---------- 2. de laptop ---------- */
+.mp-laptop {
+  --rx: 0deg; --ry: 0deg; --uit: 0;
+  position: relative;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+  width: min(100%, 560px);
+  padding: 0 4% 40px;
+  perspective: 1400px;
+}
+.mp-laptop__kantel {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(6deg + var(--rx))) rotateY(var(--ry));
+  transition: transform 500ms var(--mp-veer, ease);
+}
+.mp-laptop__deksel {
+  position: relative;
+  padding: 14px 14px 20px;
+  border-radius: 20px 20px 6px 6px;
+  background: linear-gradient(160deg, #2a3242, #121824);
+  box-shadow:
+    inset 0 0 0 1.5px #3b4558,
+    inset 0 2px 0 rgba(255, 255, 255, .12),
+    0 40px 60px -30px rgba(0, 20, 60, .6);
+  transform-style: preserve-3d;
+}
+.mp-laptop__cam { position: absolute; left: 50%; top: 5px; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #0c1018; box-shadow: 0 0 0 1px #3b4558; }
+.mp-laptop__vak { position: relative; transform-style: preserve-3d; }
+.mp-laptop__scherm {
+  position: relative; overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  background: #0b1222;
+}
+.mp-laptop__scherm img { display: block; width: 100%; height: 100%; max-height: none; object-fit: cover; transform: none !important; scale: 1 !important; translate: none !important; filter: brightness(calc(1 - var(--uit) * .3)) saturate(calc(1 - var(--uit) * .4)) blur(calc(var(--uit) * 1.2px)); }
+.mp-laptop__glans {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, .16) 0%, transparent 35%, transparent 70%, rgba(255, 255, 255, .06));
+}
+/* het scherm "licht op" als de mensen eruit komen */
+.mp-laptop__scherm::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(40% 55% at 56% 78%, rgba(159, 212, 122, .55), transparent 70%);
+  opacity: calc(var(--uit) * .9);
+  mix-blend-mode: screen;
+}
+
+/* de uitgesneden medewerkers: exact op hun plek in het scherm, dan naar voren */
+.mp-laptop__uit {
+  position: absolute; z-index: 3;
+  left: 39.58%;
+  top: 48.15%;
+  width: 32.29%;
+  height: auto; max-height: none;
+  transform-origin: 50% 60%;
+  transform:
+    translate3d(calc(var(--uit) * -4%), calc(var(--uit) * 22%), calc(var(--uit) * 160px))
+    scale(calc(1 + var(--uit) * .85));
+  filter:
+    drop-shadow(0 0 0 transparent)
+    drop-shadow(0 calc(var(--uit) * 22px) calc(var(--uit) * 26px) rgba(0, 20, 60, .55));
+  -webkit-mask-image: linear-gradient(to top, transparent 4%, #000 26%);
+          mask-image: linear-gradient(to top, transparent 4%, #000 26%);
+  pointer-events: none;
+}
+.mp-laptop__basis {
+  position: relative;
+  height: 20px;
+  margin: 0 -9%;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(180deg, #e6ebf2 0%, #c3ccd8 55%, #9aa6b6 100%);
+  clip-path: polygon(3% 0, 97% 0, 100% 100%, 0 100%);
+  box-shadow: inset 0 2px 0 #fff;
+}
+.mp-laptop__pad { position: absolute; left: 50%; top: 0; width: 18%; height: 7px; margin-left: -9%; border-radius: 0 0 8px 8px; background: #b4bfcd; }
+.mp-laptop__toetsen { display: none; }
+.mp-laptop__schaduw {
+  position: absolute; left: 6%; right: 6%; bottom: 18px; height: 30px; z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 30, 70, .45), transparent);
+  filter: blur(6px);
+}
+/* deeltjes (ruitjes in logokleuren) die uit het scherm vliegen */
+.mp-deeltje {
+  position: absolute; z-index: 4; left: 56%; top: 40%;
+  width: 14px; height: 18px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.mp-deeltje--1 { background: var(--mp-blauw); }
+.mp-deeltje--2 { background: var(--mp-groen); }
+.mp-deeltje--3 { background: var(--mp-diep); width: 10px; height: 13px; }
+.mp-deeltje--4 { background: #ffc400; width: 9px; height: 12px; }
+.mp-laptop.is-uit .mp-deeltje { animation: mp-vlieg 3.6s ease-out infinite; }
+.mp-laptop.is-uit .mp-deeltje--1 { --dx: -190px; --dy: -120px; }
+.mp-laptop.is-uit .mp-deeltje--2 { --dx: 200px; --dy: -150px; animation-delay: .9s; }
+.mp-laptop.is-uit .mp-deeltje--3 { --dx: -150px; --dy: 40px; animation-delay: 1.8s; }
+.mp-laptop.is-uit .mp-deeltje--4 { --dx: 170px; --dy: 30px; animation-delay: 2.7s; }
+@keyframes mp-vlieg {
+  0% { opacity: 0; transform: translate(0, 0) scale(.3) rotate(0); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.4) rotate(220deg); }
+}
+
+/* Aanbod-paneel: Diepblauw in logokleuren */
+.mp-sec .mp-aanbod {
+  color: #fff;
+  background:
+    radial-gradient(70% 50% at 100% 0%, rgba(0, 125, 194, .55), transparent 70%),
+    linear-gradient(160deg, var(--mp-diep), var(--mp-diep-3));
+  border: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 40px 70px -34px rgba(0, 20, 50, .75);
+}
+.mp-sec .mp-aanbod h3 { color: #fff; display: flex; align-items: center; gap: 12px; }
+.mp-sec .mp-aanbod h3::before { content: ""; width: 26px; height: 4px; border-radius: 2px; background: var(--mp-groen); }
+.mp-sec .mp-aanbod .mini-card {
+  color: #fff;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .14);
+  transition: transform 300ms var(--mp-veer), background-color 250ms ease, border-color 250ms ease;
+}
+.mp-sec .mp-aanbod .mini-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, .14); border-color: rgba(159, 212, 122, .7); }
+.mp-sec .mp-aanbod .mini-card .icon-tile { background: rgba(255, 255, 255, .12); box-shadow: none; }
+.mp-sec .mp-aanbod .mini-card .icon-tile .icon { stroke: var(--mp-groen-l); }
+.mp-sec .mp-aanbod .mini-card > .icon--arrow { stroke: #fff; }
+
+/* ---------- 3. complete service: Diepblauwe band ---------- */
+.mp-sec--service {
+  color: #d6e4f3;
+  padding-block: clamp(120px, 13vw, 190px);
+  background:
+    radial-gradient(45% 45% at 90% 10%, rgba(0, 125, 194, .7), transparent 70%),
+    radial-gradient(40% 40% at 0% 90%, rgba(109, 178, 63, .35), transparent 70%),
+    linear-gradient(165deg, var(--mp-diep) 0%, var(--mp-diep-2) 50%, var(--mp-diep-3) 100%);
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  overflow: hidden;
+}
+.mp-sec--service::before,
+.mp-sec--service::after {
+  content: ""; position: absolute; left: 0; right: 0; height: calc(4vw + 10px); z-index: 2; pointer-events: none;
+}
+.mp-sec--service::before { top: 0; background: linear-gradient(90deg, var(--mp-groen), var(--mp-blauw)); clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%); }
+.mp-sec--service::after { bottom: 0; background: linear-gradient(90deg, var(--mp-blauw), var(--mp-groen)); clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%); }
+.mp-sec--service > .bg-ruit { display: none; }
+.mp-stippen {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .14) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 40%, #000);
+          mask-image: linear-gradient(90deg, transparent 40%, #000);
+}
+.mp-ruit--service { left: -180px; top: 20%; width: 520px; stroke: rgba(109, 178, 63, .35); }
+.mp-sec--service .h2 { color: #fff; }
+.mp-sec--service .split__text > p { color: #d6e4f3; }
+.mp-sec--service .check-list li { color: #fff; }
+.mp-sec--service .btn--navy { background: #fff; color: var(--mp-diep); }
+.mp-sec--service .btn--navy .icon { stroke: var(--mp-groen); }
+.mp-sec--service .check-list--2 li {
+  padding: 12px 14px 12px 44px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .14);
+}
+
+/* foto waaruit de verhuizers met de kast naar voren stappen */
+.mp-pop {
+  --rx: 0deg; --ry: 0deg; --uit: 0;
+  position: relative; margin: 0;
+  padding: 7% 0 4%;
+  perspective: 1300px;
+}
+.mp-pop__kantel {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 500ms var(--mp-veer, ease);
+}
+.mp-pop__achter {
+  position: absolute; inset: 0; z-index: -1;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #8fd15d, var(--mp-groen));
+  transform: translate(20px, 20px) rotate(2.5deg) translateZ(-40px);
+}
+.mp-pop__lijst {
+  position: relative; overflow: hidden;
+  border: 10px solid #fff;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 50px 80px -40px rgba(0, 8, 30, .9);
+}
+.mp-pop__lijst img {
+  display: block; width: 100%; aspect-ratio: 3 / 2; height: auto; max-height: none;
+  object-fit: cover; border-radius: 16px;
+  transform: none !important; scale: 1 !important; translate: none !important;
+  filter: saturate(calc(1 - var(--uit) * .5)) brightness(calc(1 - var(--uit) * .22)) blur(calc(var(--uit) * 1.5px));
+}
+.mp-pop__uit {
+  position: absolute; z-index: 3;
+  left: calc(10px + (100% - 20px) * .30);
+  top: calc(10px + (100% - 20px) * .2099);
+  width: calc((100% - 20px) * .37);
+  height: auto; max-height: none;
+  transform-origin: 50% 100%;
+  transform: translate3d(0, 0, calc(var(--uit) * 90px)) scale(calc(1 + var(--uit) * .42));
+  filter: drop-shadow(0 calc(var(--uit) * 24px) calc(var(--uit) * 22px) rgba(0, 8, 30, .6));
+  pointer-events: none;
+}
+
+/* ---------- mobiel ---------- */
+@media (max-width: 767px) {
+  .mp-sec--service { padding-block: 96px; }
+  .mp-laptop { padding-bottom: 28px; }
+  .mp-laptop__deksel { padding: 8px 8px 12px; border-radius: 14px 14px 4px 4px; }
+  .mp-laptop__basis { height: 12px; }
+  .mp-deeltje { display: none; }
+}
+
+/* ---------- rustige beweging: meteen de eindstand ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .mp-laptop, .mp-pop { --uit: 1; }
+  .mp-laptop__kantel, .mp-pop__kantel { transition: none; }
+  .mp-laptop.is-uit .mp-deeltje { animation: none; }
+}
