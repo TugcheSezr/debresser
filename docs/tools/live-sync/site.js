@@ -107,6 +107,32 @@ const SNELMENU = [
   ['Verhuisbedrijf Zevenbergen', 'verhuisbedrijf-zevenbergen.html']
 ];
 
+/* Taalkeuze zoals de WPML-schakelaar op debresser.nl: alleen deze pagina's hebben
+   een Engelse versie, alle andere Nederlandse pagina's verwijzen naar de Engelse homepage. */
+const EN_PAIRS = {
+  'index.html': 'en.html',
+  'over-ons.html': 'en-about-us.html',
+  'contact.html': 'en-contact.html',
+  'vacatures.html': 'en-work-at-de-bresser.html'
+};
+function langSwitch(current) {
+  const nlOf = Object.fromEntries(Object.entries(EN_PAIRS).map(([nl, en]) => [en, nl]));
+  const isEn = current in nlOf;
+  const nl = isEn ? nlOf[current] : current;
+  const en = isEn ? current : (EN_PAIRS[current] || 'en.html');
+  const item = (code, href, label, on) => `            <li><a href="${href}" hreflang="${code}" lang="${code}"${on ? ' aria-current="page"' : ''}><span class="lang__flag lang__flag--${code}" aria-hidden="true"></span>${label}</a></li>`;
+  /* staat binnen .header__cta, dus 8 spaties inspringen */
+  return `<div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="${isEn ? 'English – language switcher' : 'Nederlands – taalschakelaar'}">
+            <span class="lang__flag lang__flag--${isEn ? 'en' : 'nl'}" aria-hidden="true"></span><span class="lang__code">${isEn ? 'EN' : 'NL'}</span>${svg(P.chevron)}
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+${item('nl', nl, 'Nederlands', !isEn)}
+${item('en', en, 'English', isEn)}
+          </ul>
+        </div>`;
+}
+
 function header(current) {
   const inGroup = (g) => g.href === current || g.items.some(([, h]) => h.split('#')[0] === current);
   const dienstenActive = MENU.some(inGroup) || current === 'duurzame-werkomgeving.html';
@@ -158,6 +184,7 @@ ${TOP.map(([t, h]) => `          <li><a class="menu__link" href="${h}"${cur(h)}>
       </nav>
 
       <div class="header__cta">
+        ${langSwitch(current)}
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green">${svg(P.phone)}</span>
           <span>+31 (0)13 52 82 372</span>
@@ -255,4 +282,57 @@ ${SNELMENU.map(([t, h]) => `        <li><a href="${h}">${t}</a></li>`).join('\n'
 </div>`;
 }
 
-module.exports = { LIVE, fileFor, localHref, svg, P, ruit, MENU, TOP, SNELMENU, header, footer };
+/* Engelse header zoals op debresser.nl/en/: zelfde opbouw, Engelse labels.
+   De dienstpagina's bestaan alleen in het Nederlands, dus die links blijven Nederlands. */
+const EN_LABELS = [
+  [/(<button class="menu__link"[^>]*>\s*)Diensten/, '$1Services'],
+  ['aria-label="De Bresser, naar de homepage"', 'aria-label="De Bresser, to the homepage"'],
+  ['aria-label="Hoofdmenu"', 'aria-label="Main menu"'],
+  ['aria-label="Menu openen"', 'aria-label="Open menu"'],
+  [/(\s)Verhuizen(\s*<\/a>)/, '$1Movings$2'],
+  [/(\s)Opslag(\s*<\/a>)/, '$1Storage$2'],
+  [/(\s)Meubelprojecten(\s*<\/a>)/, '$1Furniture projects$2'],
+  [/(\s)Gebouwbeheer(\s*<\/a>)/, '$1Building management$2'],
+  [/(\s)Assetmanagement(\s*<\/a>)/, '$1Asset management$2'],
+  ['zakelijke-verhuizing.html">Zakelijk<', 'zakelijke-verhuizing.html">Business<'],
+  ['particuliere-verhuizing.html">Particulier<', 'particuliere-verhuizing.html">Private<'],
+  ['>Internationaal<', '>International<'],
+  ['>Zorgverhuizing<', '>Elderly relocation<'],
+  ['>Duurzaam verhuizen<', '>Sustainable removals<'],
+  ['zakelijke-opslag.html">Zakelijk<', 'zakelijke-opslag.html">Business<'],
+  ['particuliere-opslag.html">Particulier<', 'particuliere-opslag.html">Private<'],
+  ['>DIY-opslag<', '>DIY-storage<'],
+  ['>Meubeltransport<', '>Furniture transport<'],
+  ['>Veilingen<', '>Auction<'],
+  ['>Montageservice<', '>Assembly service<'],
+  ['>Onderhoud<', '>Maintenance<'],
+  ['>Verduurzamen<', '>Increasing sustainability<'],
+  ['>Huismeester<', '>Caretaker<'],
+  ['>Inventarisatie<', '>Inventory<'],
+  ['>WMS en Meubelpaspoort<', '>WMS en Furniture Passport<'],
+  ['>Opslag assets<', '>Asset storage<'],
+  ['>Inkoop en verkoop assets<', '>Buying and selling assets<'],
+  ['>Circulair meubilair<', '>Circular furniture<'],
+  ['<span class="tag">Nieuw!</span>', '<span class="tag">New!</span>'],
+  ['<strong>Duurzame werkomgeving</strong>', '<strong>Sustainable work environment</strong>'],
+  ['Lees meer <svg', 'Read more <svg'],
+  [/Offerte aanvragen/g, 'Request quote']
+];
+const TOP_EN = [['About us', 'en-about-us.html'], ['Vacancies', 'en-work-at-de-bresser.html'], ['Contact', 'en-contact.html'], ['Quote', 'offerte.html']];
+
+function headerEn(current) {
+  let h = header(current);
+  for (const [nl, en] of EN_LABELS) {
+    const next = h.replace(nl, en);
+    if (next === h) throw new Error('headerEn: label niet gevonden: ' + nl);
+    h = next;
+  }
+  const cur = (href) => (href === current ? ' aria-current="page"' : '');
+  const item = ([t, href]) => `          <li><a class="menu__link" href="${href}"${cur(href)}>${t}</a></li>`;
+  h = h.replace('          <li class="has-mega">', item(['Home', 'en.html']) + '\n          <li class="has-mega">');
+  h = h.replace(/(<\/li>\n)((?:          <li><a class="menu__link"[^\n]*\n)+)(        <\/ul>)/, (m, a, b, c) => a + TOP_EN.map(item).join('\n') + '\n' + c);
+  if (!h.includes('>Vacancies<')) throw new Error('headerEn: topmenu niet vervangen');
+  return h.replace('<a class="logo" href="index.html"', '<a class="logo" href="en.html"');
+}
+
+module.exports = { LIVE, EN_PAIRS, langSwitch, headerEn, fileFor, localHref, svg, P, ruit, MENU, TOP, SNELMENU, header, footer };

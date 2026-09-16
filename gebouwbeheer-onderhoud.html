@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Duurzaam planmatig onderhoud voor kantoorpand | De Bresser</title>
   <meta name="description" content="Duurzaam onderhoud voor bedrijfspand en terrein. Van schilderwerk tot schoonmaak en groenonderhoud. Eén aanspreekpunt, snel geregeld.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/onderhoud.css">
+  <link rel="alternate" hreflang="nl" href="gebouwbeheer-onderhoud.html">
+  <link rel="alternate" hreflang="en" href="en-building-management-maintenance.html">
+  <link rel="alternate" hreflang="x-default" href="gebouwbeheer-onderhoud.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +121,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="gebouwbeheer-onderhoud.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-building-management-maintenance.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -182,14 +196,14 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section ond-sec">
     <div class="wrap split">
-      <div class="split__media reveal"><figure class="img-3d" data-tilt="6">
+      <div class="split__media reveal"><div class="ond-scene" data-ond-3d="assets/img/onderhoud/scherm.webp"><figure class="img-3d" data-tilt="6">
         <div class="img-3d__frame"><img src="assets/img/site/Handyman-De-Bresser-1.jpg" alt="Handyman werkzaamheden" loading="lazy"></div>
-      </figure></div>
-      <div class="info-panel card-3d reveal" data-tilt="4">
+      </figure></div></div>
+      <div class="info-panel card-3d reveal ond-lijst" data-tilt="4">
         <h3>Onderhoud op het gebied van:</h3>
-        <ul class="check-list check-list--2">
+        <ul class="check-list check-list--2" data-ond-list>
           <li>Onderhoud bedrijfsterrein</li>
           <li>Onderhoud bedrijfspand</li>
           <li>Klein-bouwkundig onderhoud</li>
@@ -337,5 +351,7 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
+<script src="js/onderhoud-3d.js" defer></script>
 </body>
 </html>

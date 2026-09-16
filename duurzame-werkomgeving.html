@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Duurzame werkomgeving | Gezond &amp; efficiënt | De Bresser</title>
   <meta name="description" content="Transformeer uw gebouwen naar een duurzame werkomgeving met innovatieve strategieën voor energie, welzijn en circulair beheer.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/site/De-Bresser-Verhuizingen-Oisterwijk-1024x683.jpg">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="alternate" hreflang="nl" href="duurzame-werkomgeving.html">
+  <link rel="alternate" hreflang="en" href="en-sustainable-work-environment.html">
+  <link rel="alternate" hreflang="x-default" href="duurzame-werkomgeving.html">
 </head>
 <body>
 
@@ -118,6 +122,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="duurzame-werkomgeving.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-sustainable-work-environment.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -152,17 +165,12 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="dwo-gb">
+  <section class="section gb-bijzonder" aria-labelledby="dwo-gb">
     <div class="wrap split split--top">
-      <div class="split__text reveal">
+      <div class="split__text gb-tekst reveal">
         <h2 class="h2" id="dwo-gb">Gebouwbeheer</h2>
         <p>Bij De Bresser maken we gebouwbeheer simpel en effectief. We zorgen niet alleen voor het onderhoud en de verduurzaming van uw pand, maar bieden ook een vertrouwde huismeester als uw vaste aanspreekpunt. Met onze aanpak streven we ernaar uw kantooromgeving niet alleen functioneel te houden, maar ook duurzaam en prettig om in te werken. Met onze maandelijkse quality-scans zorgen we ervoor dat uw gebouw optimaal blijft presteren. We zijn er om ervoor te zorgen dat alles soepel verloopt, met een focus op uw tevredenheid en het verminderen van onze impact op het milieu.</p>
-      </div>
-      <div class="gbam-media reveal">
-        <figure class="img-3d" data-tilt="6">
-          <div class="img-3d__frame"><img src="assets/img/site/De-Bresser-Verhuizingen-Oisterwijk-1024x683.jpg" alt="Foto kantoor Oisterwijk" loading="lazy"></div>
-        </figure>
-        <div class="info-panel card-3d" data-tilt="5">
+        <div class="info-panel gb-plan">
           <h3>Aanbod dienstverlening op gebied van:</h3>
           <ul class="gbam-lijst gbam-lijst--2">
             <li><span class="gbam-lijst__streep">-</span> Onderhoud bedrijfsterrein</li>
@@ -174,6 +182,17 @@
             <li><span class="gbam-lijst__streep">-</span> Groenonderhoud</li>
           </ul>
         </div>
+      </div>
+      <div class="gbam-media reveal">
+        <figure class="img-3d gb-foto" data-tilt="6">
+          <span class="gb-maat gb-maat--boven" aria-hidden="true"></span>
+          <span class="gb-maat gb-maat--rechts" aria-hidden="true"></span>
+          <div class="img-3d__frame"><img src="assets/img/site/De-Bresser-Verhuizingen-Oisterwijk-1024x683.jpg" alt="Foto kantoor Oisterwijk" loading="lazy">
+            <span class="gb-spot gb-spot--1" aria-hidden="true"></span>
+            <span class="gb-spot gb-spot--2" aria-hidden="true"></span>
+            <span class="gb-spot gb-spot--3" aria-hidden="true"></span>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
@@ -249,7 +268,7 @@
           <p>Als meubels niet meer in gebruik zijn, bieden we bij De Bresser ook de mogelijkheid om ze een nieuw leven te geven door ze aan te bieden via ons online platform voor circulaire meubels. Ons brede assortiment van gebruikte meubelstukken biedt een eenvoudige oplossing voor verkoop en inkoop van bestaand meubilair, met volledige ondersteuning bij transport, verhuizingen en opslag.</p>
         </li>
         <li class="info-panel card-3d card-3d--dark" data-tilt="6">
-          <h3 class="gbam-kop gbam-kop--rij"><span class="step__nr" style="width:56px;height:56px;font-size:22px;color:#061430;background:linear-gradient(145deg,#34d399,#10b981 55%,#0b8a60)">5.</span> Circulair meubilair</h3>
+          <h3 class="gbam-kop gbam-kop--rij"><span class="step__nr" style="width:56px;height:56px;font-size:22px;color:#020d41;background:linear-gradient(145deg,#7bd534,#7bd534 55%,#166909)">5.</span> Circulair meubilair</h3>
           <p>In samenwerking met lokale milieustraten en kringloopwinkels geven we overgebleven of defect meubilair een nieuwe kans door middel van reparaties, renovaties en upcycling. Zo dragen we actief bij aan het verminderen van afval en het bevorderen van een circulaire economie. Met ons revitalisatieprogramma streven we naar een duurzamere toekomst met behoud van waarde en minimalisatie van verspilling.</p>
         </li>
       </ol>
@@ -267,19 +286,91 @@
         </div>
         
       </div>
-      <div class="grid-3 reveal-group">
+      <div class="grid-3 reveal-group dwo-pops">
         <article class="info-panel card-3d" data-tilt="7">
-          <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13.5h6l-1 7.5 8-10.5h-6z"/></svg></span>
+          <span class="dwo-pop dwo-pop--energie" aria-hidden="true"><svg viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="pop-hole-g" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#020d41"/><stop offset=".7" stop-color="#020d41"/><stop offset="1" stop-color="#00498f"/></radialGradient>
+    <radialGradient id="en-glow"><stop offset="0" stop-color="#ffe27a" stop-opacity=".85"/><stop offset=".6" stop-color="#ffc400" stop-opacity=".25"/><stop offset="1" stop-color="#ffc400" stop-opacity="0"/></radialGradient>
+    <linearGradient id="en-front" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ebeff4"/><stop offset=".4" stop-color="#ffc400"/><stop offset="1" stop-color="#ffc400"/></linearGradient>
+    <linearGradient id="en-side" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d98a00"/><stop offset="1" stop-color="#8f5500"/></linearGradient>
+    <mask id="en-mask"><rect width="160" height="146" fill="#fff"/><ellipse cx="80" cy="146" rx="46" ry="12" fill="#fff"/></mask>
+  </defs>
+  <ellipse class="pop-hole" cx="80" cy="146" rx="46" ry="12" fill="url(#pop-hole-g)"/>
+  <circle class="pop-glow" cx="82" cy="76" r="66" fill="url(#en-glow)"/>
+  <g class="en-sparks" fill="none" stroke="#ffc400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 34l12 8-6 5 14 8"/><path d="M142 24l-12 12 8 4-14 12"/><path d="M146 104l-14-6 4-6-16-5"/><path d="M16 94l14-2-2 7 14-1"/>
+  </g>
+  <g mask="url(#en-mask)"><g class="pop-obj">
+    <path d="M92 14 52 84h26l-10 62 44-78H84z" fill="url(#en-side)" transform="translate(8 5)"/>
+    <path d="M92 14 52 84h26l-10 62 44-78H84z" fill="url(#en-side)" transform="translate(4 2.5)"/>
+    <path d="M92 14 52 84h26l-10 62 44-78H84z" fill="url(#en-front)" stroke="#fff3b8" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M87 24 62 76" stroke="#fff" stroke-width="3.5" stroke-linecap="round" opacity=".75"/>
+  </g></g>
+  <path class="pop-lip" d="M34 146a46 12 0 0 0 92 0" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"/>
+</svg></span>
           <h3>Dagelijkse efficiëntie</h3>
           <ul class="check-list"><li>Circulair meubilair</li><li>Natuurlijke hulpbronnen behouden</li><li>Verminderen van milieubelasting</li></ul>
         </article>
         <article class="info-panel card-3d" data-tilt="7">
-          <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.6 5.1 3.6 8.5s-1.2 6.2-3.6 8.5c-2.4-2.3-3.6-5.1-3.6-8.5s1.2-6.2 3.6-8.5z"/></svg></span>
+          <span class="dwo-pop dwo-pop--wereld" aria-hidden="true"><svg viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="gl-sea" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#c7c7c7"/><stop offset=".5" stop-color="#007ac0"/><stop offset="1" stop-color="#00498f"/></radialGradient>
+    <radialGradient id="gl-shade" cx=".32" cy=".28" r=".8"><stop offset=".5" stop-color="#020d41" stop-opacity="0"/><stop offset="1" stop-color="#020d41" stop-opacity=".6"/></radialGradient>
+    <radialGradient id="gl-glow"><stop offset=".6" stop-color="#7BD534" stop-opacity=".35"/><stop offset="1" stop-color="#7BD534" stop-opacity="0"/></radialGradient>
+    <clipPath id="gl-clip"><circle cx="80" cy="80" r="50"/></clipPath>
+    <mask id="gl-mask"><rect width="160" height="146" fill="#fff"/><ellipse cx="80" cy="146" rx="46" ry="12" fill="#fff"/></mask>
+  </defs>
+  <ellipse class="pop-hole" cx="80" cy="146" rx="46" ry="12" fill="url(#pop-hole-g)"/>
+  <circle class="pop-glow" cx="80" cy="80" r="72" fill="url(#gl-glow)"/>
+  <g mask="url(#gl-mask)"><g class="pop-obj">
+    <path d="M14 96a70 20 -18 0 1 132 -34" fill="none" stroke="#7BD534" stroke-width="3" opacity=".55"/>
+    <circle cx="80" cy="80" r="50" fill="url(#gl-sea)"/>
+    <g clip-path="url(#gl-clip)"><g class="gl-land" fill="#6DB23F" stroke="#166909" stroke-width="1"><path d="M38 50c8-6 20-4 22 4 2 8-6 10-4 18 2 8 8 12 4 22-4 8-12 4-12-4 0-8-8-10-10-18-2-8-6-16 0-22z"/><path d="M76 42c8-4 18 0 18 8 0 6-8 6-6 12 4 6 10 10 6 20-4 10-12 12-14 4-2-8 0-14-6-18-6-4-6-22 2-26z"/><path d="M104 60c6-2 12 2 10 8-2 6-10 6-12 0z"/><path d="M52 112c6-3 14-1 14 5-2 5-12 5-14-5z"/><g transform="translate(104 0)"><path d="M38 50c8-6 20-4 22 4 2 8-6 10-4 18 2 8 8 12 4 22-4 8-12 4-12-4 0-8-8-10-10-18-2-8-6-16 0-22z"/><path d="M76 42c8-4 18 0 18 8 0 6-8 6-6 12 4 6 10 10 6 20-4 10-12 12-14 4-2-8 0-14-6-18-6-4-6-22 2-26z"/><path d="M104 60c6-2 12 2 10 8-2 6-10 6-12 0z"/><path d="M52 112c6-3 14-1 14 5-2 5-12 5-14-5z"/></g></g></g>
+    <circle cx="80" cy="80" r="50" fill="url(#gl-shade)"/>
+    <ellipse cx="62" cy="56" rx="15" ry="9" transform="rotate(-30 62 56)" fill="#fff" opacity=".35"/>
+    <path d="M146 62a70 20 -18 0 1 -132 34" fill="none" stroke="#7BD534" stroke-width="3.5" stroke-linecap="round"/>
+    <circle class="gl-sat" cx="146" cy="62" r="6" fill="#7BD534" stroke="#fff" stroke-width="2"/>
+  </g></g>
+  <path class="pop-lip" d="M34 146a46 12 0 0 0 92 0" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"/>
+</svg></span>
           <h3>Bijdragen aan een duurzame wereld</h3>
           <ul class="check-list"><li>Verminderen van CO2-voetafdruk</li><li>Circulaire economie</li><li>Groener transport</li></ul>
         </article>
         <article class="info-panel card-3d" data-tilt="7">
-          <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><path d="M15.5 5.6a3 3 0 0 1 0 5.8M17.5 14.8c1.9.6 3.1 2.1 3.5 4.7"/></svg></span>
+          <span class="dwo-pop dwo-pop--mensen" aria-hidden="true"><svg viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="pp-skin" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#ffe0c4"/><stop offset=".7" stop-color="#e9b58e"/><stop offset="1" stop-color="#c98c63"/></radialGradient>
+    <linearGradient id="pp-navy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00498f"/><stop offset=".6" stop-color="#020d41"/><stop offset="1" stop-color="#020d41"/></linearGradient>
+    <linearGradient id="pp-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7bd534"/><stop offset=".55" stop-color="#6DB23F"/><stop offset="1" stop-color="#166909"/></linearGradient>
+    <linearGradient id="pp-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7c7c7"/><stop offset=".55" stop-color="#007DC2"/><stop offset="1" stop-color="#00498F"/></linearGradient>
+    <radialGradient id="pp-glow"><stop offset=".5" stop-color="#33bcfa" stop-opacity=".3"/><stop offset="1" stop-color="#33bcfa" stop-opacity="0"/></radialGradient>
+    <mask id="pp-mask"><rect width="160" height="146" fill="#fff"/><ellipse cx="80" cy="146" rx="46" ry="12" fill="#fff"/></mask>
+  </defs>
+  <ellipse class="pop-hole" cx="80" cy="146" rx="46" ry="12" fill="url(#pop-hole-g)"/>
+  <circle class="pop-glow" cx="80" cy="84" r="70" fill="url(#pp-glow)"/>
+  <g mask="url(#pp-mask)"><g class="pop-obj">
+    <g class="pp pp--1" transform="translate(46 82) scale(0.82)">
+      <path d="M-28 70c0-24 13-37 28-37s28 13 28 37z" fill="url(#pp-green)"/>
+      <path d="M-8 34l8 10 8-10" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="0" cy="14" r="15" fill="url(#pp-skin)"/>
+      <path d="M-15 11c1-11 8-16 15-16s14 5 15 16c-4-5-9-7-15-7s-11 2-15 7z" fill="#3b2a1e"/>
+    </g>
+    <g class="pp pp--3" transform="translate(114 82) scale(0.82)">
+      <path d="M-28 70c0-24 13-37 28-37s28 13 28 37z" fill="url(#pp-blue)"/>
+      <path d="M-8 34l8 10 8-10" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="0" cy="14" r="15" fill="url(#pp-skin)"/>
+      <path d="M-15 11c1-11 8-16 15-16s14 5 15 16c-4-5-9-7-15-7s-11 2-15 7z" fill="#3b2a1e"/>
+    </g>
+    <g class="pp pp--2" transform="translate(80 70) scale(1)">
+      <path d="M-28 70c0-24 13-37 28-37s28 13 28 37z" fill="url(#pp-navy)"/>
+      <path d="M-8 34l8 10 8-10" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="0" cy="14" r="15" fill="url(#pp-skin)"/>
+      <path d="M-15 11c1-11 8-16 15-16s14 5 15 16c-4-5-9-7-15-7s-11 2-15 7z" fill="#3b2a1e"/>
+    </g>
+  </g></g>
+  <path class="pop-lip" d="M34 146a46 12 0 0 0 92 0" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"/>
+</svg></span>
           <h3>De dienstverlener van morgen</h3>
           <ul class="check-list"><li>Betrouwbare ondersteuning</li><li>24/7 beschikbaarheid</li><li>Eén vast aanspreekpunt</li></ul>
         </article>
@@ -457,5 +548,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Veilingen: TBA Auctions transport wereldwijd | De Bresser</title>
   <meta name="description" content="Samenwerking met TBA Auctions voor veilingtransport in Europa. Wekelijks BeNeLux, FR, DE en CH, incl. verpakking, opslag en inklaring.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="alternate" hreflang="nl" href="veilingen.html">
+  <link rel="alternate" hreflang="en" href="en-auction.html">
+  <link rel="alternate" hreflang="x-default" href="veilingen.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +120,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="veilingen.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-auction.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -163,8 +176,10 @@
           </ul>
           <a class="btn btn--green" href="#form-veilingen">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-        <div class="split__media reveal"><figure class="img-3d" data-tilt="6">
-          <div class="img-3d__frame"><img src="assets/img/site/De-Bresser-De-duurzame-werkomgeving-1024x868.jpg" alt="Foto medewerker voor busje de Bresser" loading="lazy"></div>
+        <div class="split__media reveal"><figure class="veil-vrij" data-tilt="5">
+          <div class="veil-vrij__stage" aria-hidden="true"><svg class="veil-vrij__ruit" viewBox="0 0 460 450"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg></div>
+          <img class="veil-vrij__busje" src="assets/img/veilingen/busje-vrijstaand-1000.webp" srcset="assets/img/veilingen/busje-vrijstaand-640.webp 640w, assets/img/veilingen/busje-vrijstaand-1000.webp 1000w" sizes="(max-width: 1023px) 92vw, 600px" width="1000" height="496" alt="Foto medewerker voor busje de Bresser" loading="lazy" decoding="async">
+          <img class="veil-vrij__man" src="assets/img/veilingen/man-vrijstaand-1000.webp" srcset="assets/img/veilingen/man-vrijstaand-640.webp 640w, assets/img/veilingen/man-vrijstaand-1000.webp 1000w" sizes="(max-width: 1023px) 92vw, 600px" width="1000" height="496" alt="" aria-hidden="true" loading="lazy" decoding="async">
         </figure></div>
       </div>
 
@@ -390,5 +405,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

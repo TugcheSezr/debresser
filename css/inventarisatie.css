@@ -1,0 +1,340 @@
+/* =====================================================================
+   Inventarisatie (assetmanagement-inventarisatie.html)
+   Thema: assets in kaart brengen en scannen.
+   - Nieuw-kaart: foto + navy vlak (zelfde opbouw als huismeester)
+   - "Inventariseren" staat op een klembord, eronder een tablet die de
+     assets scant en afvinkt
+   - Foto "Inventaris beoordelen" in een scanner-zoeker met asset-label
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   Teksten = live debresser.nl; alle toevoegingen zijn aria-hidden.
+   Contactformulier en R-kaarten (.inv-r, style.css) blijven ongemoeid.
+   ===================================================================== */
+.page-live {
+  --ivt-diep: #00498f;
+  --ivt-blauw: #007dc2;
+  --ivt-groen: #6db23f;
+}
+.ivt-ruit { fill: none; stroke-width: 2; pointer-events: none; }
+
+/* ---------- 1. Nieuw: de duurzame werkomgeving ---------- */
+.ivt-nieuw__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  border-radius: 30px;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(150deg, var(--navy-700, #00498f) 0%, var(--navy, #020d41) 45%, var(--navy-950, #020d41) 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, .06),
+    0 30px 60px -30px rgba(2, 13, 65, .7),
+    0 60px 120px -60px rgba(2, 13, 65, .5);
+  transition: transform 450ms var(--spring, ease), box-shadow 450ms ease;
+}
+.ivt-nieuw__card:hover { transform: translateY(-6px); box-shadow: inset 0 2px 0 rgba(255, 255, 255, .06), 0 44px 80px -30px rgba(2, 13, 65, .75), 0 0 0 2px rgba(109, 178, 63, .55); }
+.ivt-nieuw__card:focus-visible { outline: 3px solid #33bcfa; outline-offset: 4px; }
+
+.ivt-nieuw__media { position: relative; min-height: 320px; overflow: hidden; }
+.ivt-nieuw__media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover;
+  transform: scale(1.02); transition: transform 1200ms cubic-bezier(.2, .7, .2, 1);
+}
+.ivt-nieuw__card:hover .ivt-nieuw__media img { transform: scale(1.08); }
+.ivt-nieuw__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 55%, rgba(2, 13, 65, .55) 80%, var(--navy, #020d41) 100%);
+}
+.ivt-nieuw__media::before {
+  content: ""; position: absolute; top: 0; bottom: 0; right: -1px; width: 90px; z-index: 1;
+  background: var(--navy, #020d41);
+  clip-path: polygon(70% 0, 100% 0, 100% 100%, 0 100%);
+}
+.ivt-nieuw__badge {
+  position: absolute; left: 24px; bottom: 24px; z-index: 2;
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 20px;
+  background: linear-gradient(145deg, #7bd534, var(--ivt-groen));
+  box-shadow: 0 14px 28px -10px rgba(109, 178, 63, .9), inset 0 1px 0 rgba(255, 255, 255, .45);
+  animation: ivt-bob 5s ease-in-out infinite;
+}
+.ivt-nieuw__badge svg { width: 32px; height: 32px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.ivt-nieuw__body {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  padding: clamp(32px, 4.5vw, 60px) clamp(28px, 4.5vw, 60px) clamp(32px, 4.5vw, 60px) clamp(20px, 2.5vw, 36px);
+}
+.ivt-nieuw__body .h2 { color: #fff; margin: 0; }
+.ivt-nieuw__body p { margin: 0; color: #ebeff4; line-height: 1.8; }
+.ivt-nieuw__body .tag { box-shadow: 0 0 0 6px rgba(123, 213, 52, .15); }
+.ivt-nieuw__body .link-arrow {
+  margin-top: 6px; color: #fff;
+  padding: 12px 20px; border-radius: 999px;
+  background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .2);
+  transition: background 250ms ease, border-color 250ms ease;
+}
+.ivt-nieuw__card:hover .link-arrow { background: var(--ivt-groen); border-color: var(--ivt-groen); }
+.ivt-nieuw__ruit { position: absolute; z-index: -1; width: 360px; right: -110px; bottom: -120px; stroke: rgba(109, 178, 63, .3); }
+@keyframes ivt-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+@media (max-width: 859px) {
+  .ivt-nieuw__card { grid-template-columns: 1fr; }
+  .ivt-nieuw__media { min-height: 0; aspect-ratio: 16 / 10; }
+  .ivt-nieuw__media::after { background: linear-gradient(180deg, transparent 55%, var(--navy, #020d41) 100%); }
+  .ivt-nieuw__media::before { display: none; }
+  .ivt-nieuw__body { padding: 8px 24px 32px; }
+}
+
+/* ---------- 2. Inventariseren: klembord ---------- */
+.ivt-links { display: flex; flex-direction: column; gap: clamp(40px, 5vw, 60px); min-width: 0; }
+.ivt-bord {
+  position: relative;
+  margin-top: 26px;
+  padding: clamp(44px, 4.5vw, 56px) clamp(24px, 3vw, 40px) clamp(28px, 3vw, 40px);
+  border-radius: 22px;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 31px, rgba(0, 73, 143, .06) 31px 32px),
+    #fff;
+  border: 1px solid #ebeff4;
+  box-shadow:
+    0 2px 0 #ebeff4, 0 4px 0 #ebeff4, 0 6px 0 #c7c7c7,
+    0 30px 60px -30px rgba(2, 13, 65, .45);
+  transform: rotate(-.6deg);
+}
+/* linkermarge zoals een inventarislijst */
+.ivt-bord::before {
+  content: ""; position: absolute; top: 18px; bottom: 18px; left: 12px; width: 2px;
+  background: linear-gradient(180deg, var(--ivt-groen), var(--ivt-blauw));
+  border-radius: 2px; opacity: .55;
+}
+.ivt-bord > * { position: relative; }
+.ivt-bord .h2 { margin-top: 0; }
+.ivt-bord p { line-height: 1.85; }
+/* klem */
+.ivt-bord__klem {
+  position: absolute !important; left: 50%; top: -24px; translate: -50% 0;
+  width: 130px; height: 44px; border-radius: 12px 12px 8px 8px;
+  background: linear-gradient(180deg, #c7c7c7, #c7c7c7);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -3px 0 rgba(0, 0, 0, .12), 0 8px 14px -6px rgba(2, 13, 65, .5);
+}
+.ivt-bord__klem::before {
+  content: ""; position: absolute; left: 50%; top: -12px; translate: -50% 0;
+  width: 46px; height: 26px; border-radius: 14px 14px 4px 4px;
+  border: 6px solid #c7c7c7; border-bottom: 0;
+}
+.ivt-bord__klem::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 9px; height: 5px; border-radius: 3px;
+  background: rgba(0, 0, 0, .12);
+}
+/* asset-label rechtsboven */
+.ivt-bord__label {
+  position: absolute !important; right: 18px; top: 16px;
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px; border-radius: 8px;
+  background: #fff; border: 1px dashed #c7c7c7;
+  transform: rotate(3deg);
+}
+.ivt-bord__label i {
+  width: 58px; height: 22px;
+  background: repeating-linear-gradient(90deg, var(--navy, #020d41) 0 2px, transparent 2px 4px, var(--navy, #020d41) 4px 5px, transparent 5px 8px);
+}
+.ivt-bord__label b {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--ivt-groen) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
+}
+
+/* ---------- tablet die assets scant ---------- */
+.ivt-tablet {
+  position: relative;
+  align-self: center;
+  width: min(100%, 480px);
+  padding: 14px;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #2f2f2f, #0d131d);
+  box-shadow:
+    inset 0 0 0 2px #2f2f2f, inset 0 2px 0 rgba(255, 255, 255, .18),
+    0 40px 70px -30px rgba(2, 13, 65, .7);
+  transform: perspective(1200px) rotateX(10deg) rotateZ(-2deg);
+}
+.ivt-tablet__scherm {
+  position: relative; overflow: hidden;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #ebeff4);
+  padding: 12px;
+}
+.ivt-tablet__bar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.ivt-tablet__bar span {
+  width: 26px; height: 26px; border-radius: 8px; flex: none;
+  background: var(--ivt-diep) url("../assets/img/favicon.png") center / 70% no-repeat;
+}
+.ivt-tablet__bar b { flex: 1; height: 9px; border-radius: 5px; background: #ebeff4; }
+.ivt-tablet__bar em {
+  font-style: normal; font-size: 11px; font-weight: 700; color: #fff;
+  padding: 3px 8px; border-radius: 999px; background: var(--ivt-groen);
+}
+.ivt-tablet__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ivt-tablet__grid li {
+  position: relative; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden;
+  background: #fff; box-shadow: 0 0 0 2px transparent;
+  animation: ivt-tegel 7.2s ease-in-out infinite;
+}
+.ivt-tablet__grid img { display: block; width: 100%; height: 100%; max-height: none; object-fit: cover; }
+.ivt-tablet__grid i {
+  position: absolute; right: 5px; bottom: 5px; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--ivt-groen) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, .35);
+  scale: 0;
+  animation: ivt-vink 7.2s ease-in-out infinite;
+}
+.ivt-tablet__grid li:nth-child(2), .ivt-tablet__grid li:nth-child(2) i { animation-delay: .35s; }
+.ivt-tablet__grid li:nth-child(3), .ivt-tablet__grid li:nth-child(3) i { animation-delay: .7s; }
+.ivt-tablet__grid li:nth-child(4), .ivt-tablet__grid li:nth-child(4) i { animation-delay: 1.9s; }
+.ivt-tablet__grid li:nth-child(5), .ivt-tablet__grid li:nth-child(5) i { animation-delay: 2.25s; }
+.ivt-tablet__grid li:nth-child(6), .ivt-tablet__grid li:nth-child(6) i { animation-delay: 2.6s; }
+@keyframes ivt-vink {
+  0%, 8% { scale: 0; }
+  12% { scale: 1.25; }
+  15%, 85% { scale: 1; }
+  92%, 100% { scale: 0; }
+}
+@keyframes ivt-tegel {
+  0%, 7% { box-shadow: 0 0 0 2px transparent; }
+  10% { box-shadow: 0 0 0 3px var(--ivt-groen); }
+  16%, 85% { box-shadow: 0 0 0 2px rgba(109, 178, 63, .6); }
+  92%, 100% { box-shadow: 0 0 0 2px transparent; }
+}
+/* scanlijn die over het scherm zakt */
+.ivt-tablet__scan {
+  position: absolute; left: 0; right: 0; top: 0; height: 60px; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(109, 178, 63, .28) 85%, rgba(109, 178, 63, .9) 97%, transparent);
+  animation: ivt-scan 7.2s linear infinite;
+}
+@keyframes ivt-scan {
+  0% { translate: 0 -60px; opacity: 0; }
+  4% { opacity: 1; }
+  48% { translate: 0 260px; opacity: 1; }
+  54%, 100% { translate: 0 260px; opacity: 0; }
+}
+.ivt-tablet__voortgang { margin-top: 10px; height: 8px; border-radius: 4px; background: #ebeff4; overflow: hidden; }
+.ivt-tablet__voortgang span {
+  display: block; height: 100%; width: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, var(--ivt-groen), var(--ivt-blauw));
+  transform-origin: left;
+  animation: ivt-balk 7.2s ease-in-out infinite;
+}
+@keyframes ivt-balk { 0% { scale: 0 1; } 45%, 85% { scale: 1 1; } 95%, 100% { scale: 0 1; } }
+
+.ivt-sticker {
+  position: absolute; display: grid; place-items: center;
+  box-shadow: 0 14px 24px -10px rgba(2, 13, 65, .55);
+  animation: ivt-bob 6s ease-in-out infinite;
+}
+.ivt-sticker--a {
+  left: -22px; top: 22%; padding: 8px 10px; border-radius: 10px;
+  background: #fff; border: 1px dashed #c7c7c7; transform: rotate(-8deg);
+}
+.ivt-sticker--a svg { width: 64px; height: 30px; fill: none; stroke: var(--navy, #020d41); stroke-width: 2; }
+.ivt-sticker--b {
+  right: -18px; bottom: 18%; width: 56px; height: 56px; border-radius: 18px;
+  background: linear-gradient(145deg, #007ac0, var(--ivt-blauw));
+  animation-delay: -2.5s;
+}
+.ivt-sticker--b svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 520px) {
+  .ivt-bord { transform: none; padding-inline: 22px; }
+  .ivt-bord__label { right: 12px; top: 12px; }
+  .ivt-bord__label i { width: 40px; }
+  .ivt-tablet { transform: none; padding: 10px; border-radius: 24px; }
+  .ivt-sticker--a { left: -6px; }
+  .ivt-sticker--b { right: -6px; width: 46px; height: 46px; }
+}
+
+/* ---------- 3. Inventaris beoordelen: scanner-zoeker ---------- */
+.ivt-beoordelen { position: relative; }
+.ivt-zoeker { position: relative; }
+.ivt-zoeker__hoek { position: absolute; inset: -18px; pointer-events: none; z-index: 2; }
+.ivt-zoeker__hoek i {
+  position: absolute; width: 46px; height: 46px;
+  border: 4px solid var(--ivt-groen);
+}
+.ivt-zoeker__hoek i:nth-child(1) { left: 0; top: 0; border-right: 0; border-bottom: 0; border-radius: 14px 0 0 0; }
+.ivt-zoeker__hoek i:nth-child(2) { right: 0; top: 0; border-left: 0; border-bottom: 0; border-radius: 0 14px 0 0; }
+.ivt-zoeker__hoek i:nth-child(3) { left: 0; bottom: 0; border-right: 0; border-top: 0; border-radius: 0 0 0 14px; }
+.ivt-zoeker__hoek i:nth-child(4) { right: 0; bottom: 0; border-left: 0; border-top: 0; border-radius: 0 0 14px 0; }
+.ivt-zoeker__hoek { animation: ivt-pols 3.2s ease-in-out infinite; }
+@keyframes ivt-pols { 0%, 100% { inset: -18px; } 50% { inset: -26px; } }
+.ivt-zoeker__lijn {
+  position: absolute; left: 4%; right: 4%; top: 8%; height: 3px; z-index: 2; pointer-events: none;
+  border-radius: 3px;
+  background: var(--ivt-groen);
+  box-shadow: 0 0 12px 2px rgba(109, 178, 63, .8), 0 -40px 40px -10px rgba(109, 178, 63, .25);
+  animation: ivt-lijn 4.2s ease-in-out infinite alternate;
+}
+@keyframes ivt-lijn { from { top: 8%; } to { top: 90%; } }
+.ivt-zoeker__tag {
+  position: absolute; right: -14px; bottom: -22px; z-index: 3;
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 0 #ebeff4, 0 4px 0 #c7c7c7, 0 24px 40px -16px rgba(2, 13, 65, .55);
+  transform: rotate(-4deg);
+  animation: ivt-bob 5.5s ease-in-out infinite;
+}
+.ivt-zoeker__tag svg:first-child {
+  width: 40px; height: 40px; padding: 8px; border-radius: 12px;
+  fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+  background: linear-gradient(145deg, #7bd534, var(--ivt-groen));
+}
+.ivt-zoeker__code { width: 70px; height: 32px; fill: none; stroke: var(--navy, #020d41); stroke-width: 2; }
+
+/* tekst met accentlijn zoals de andere dienstpagina's */
+.ivt-beoordelen__tekst .h2 { position: relative; padding-left: 22px; }
+.ivt-beoordelen__tekst .h2::before {
+  content: ""; position: absolute; left: 0; top: .15em; bottom: .15em; width: 5px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--ivt-groen), var(--ivt-blauw));
+}
+
+/* slotzin als Diepblauw balk */
+.ivt-slot {
+  position: relative; overflow: hidden;
+  max-width: none !important;
+  margin-top: clamp(40px, 5vw, 64px) !important;
+  padding: clamp(22px, 2.6vw, 30px) clamp(24px, 3vw, 40px) clamp(22px, 2.6vw, 30px) clamp(84px, 8vw, 104px) !important;
+  border-radius: 22px;
+  color: #fff !important;
+  font-size: 1.0625rem; line-height: 1.75; font-weight: 500;
+  background:
+    radial-gradient(60% 120% at 100% 0%, rgba(0, 125, 194, .55), transparent 70%),
+    linear-gradient(135deg, var(--ivt-diep), #020d41);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 30px 60px -30px rgba(2, 13, 65, .7);
+}
+.ivt-slot::before {
+  content: ""; position: absolute; left: clamp(22px, 2.6vw, 32px); top: 50%; translate: 0 -50%;
+  width: 46px; height: 46px; border-radius: 14px;
+  background: var(--ivt-groen) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 7h-6V1M4 17h6v6'/%3E%3Cpath d='M19.5 12A7.5 7.5 0 0 0 6 7.5M4.5 12A7.5 7.5 0 0 0 18 16.5'/%3E%3C/svg%3E") center / 26px no-repeat;
+  box-shadow: 0 10px 20px -8px rgba(109, 178, 63, .8), inset 0 1px 0 rgba(255, 255, 255, .35);
+}
+.ivt-slot::after {
+  content: ""; position: absolute; right: -40px; bottom: -60px; width: 200px; height: 200px;
+  border: 2px solid rgba(109, 178, 63, .35); transform: rotate(30deg) skew(-10deg);
+  pointer-events: none;
+}
+@media (max-width: 520px) {
+  .ivt-slot { padding: 78px 22px 24px !important; }
+  .ivt-slot::before { top: 22px; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ivt-nieuw__badge, .ivt-sticker, .ivt-zoeker__tag, .ivt-zoeker__hoek, .ivt-zoeker__lijn,
+  .ivt-tablet__scan, .ivt-tablet__grid li, .ivt-tablet__voortgang span { animation: none; }
+  .ivt-tablet__grid i { animation: none; scale: 1; }
+  .ivt-zoeker__lijn, .ivt-tablet__scan { display: none; }
+}
+
+/* fijnafstemming */
+.ivt-bord .h2 { margin-bottom: 16px; }
+.ivt-bord p { margin-bottom: 24px; }
+@media (max-width: 959px) {
+  .ivt-tablet { margin-bottom: 70px; }
+}

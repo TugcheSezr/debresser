@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Verduurzamen: energie-efficiënte werkomgeving | De Bresser</title>
   <meta name="description" content="Maak de werkomgeving energie-efficiënt en verleng de levensduur van uw gebouw. Experts met ervaring in kantoorpanden en werkplekken.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="alternate" hreflang="nl" href="gebouwbeheer-verduurzamen.html">
+  <link rel="alternate" hreflang="en" href="en-building-management-sustainability.html">
+  <link rel="alternate" hreflang="x-default" href="gebouwbeheer-verduurzamen.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +120,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="gebouwbeheer-verduurzamen.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-building-management-sustainability.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -149,27 +162,104 @@
 
 
   <!-- NIEUW: DE DUURZAME WERKOMGEVING -->
-  <section class="section gbam-nieuw">
+  <section class="section vdz-nieuw">
     <div class="wrap">
-      <a class="band-quote card-3d reveal" data-tilt="3" href="duurzame-werkomgeving.html" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:inherit">
-        <span class="tag tag--green">Nieuw</span>
-        <h2 class="h2">De duurzame werkomgeving</h2>
-        <p>Ontdek onze nieuwste dienstverlening en geniet van dagelijkse efficiëntie. Hieronder valt ook het verduurzamen van kantoorpanden en werkplekken. We dragen graag samen bij aan een duurzame toekomst, waar circulair meubilair en elektrische voertuigen de norm zijn. Bij De Bresser geloven we in totale ontzorging, zodat u zich kunt focussen op wat écht belangrijk is.</p>
-        <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="vdz-hero reveal" href="duurzame-werkomgeving.html">
+        <span class="vdz-hero__bladeren" aria-hidden="true"></span>
+        <span class="vdz-hero__tekst">
+          <span class="vdz-tag">Nieuw</span>
+          <h2 class="h2">De duurzame werkomgeving</h2>
+          <p>Ontdek onze nieuwste dienstverlening en geniet van dagelijkse efficiëntie. Hieronder valt ook het verduurzamen van kantoorpanden en werkplekken. We dragen graag samen bij aan een duurzame toekomst, waar circulair meubilair en elektrische voertuigen de norm zijn. Bij De Bresser geloven we in totale ontzorging, zodat u zich kunt focussen op wat écht belangrijk is.</p>
+          <span class="vdz-hero__link">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+        <span class="vdz-hero__beeld">
+          <svg class="vdz-scene" viewBox="0 0 560 380" aria-hidden="true" focusable="false">
+            <circle class="vdz-zon" cx="430" cy="70" r="34" fill="#ffc400"/>
+            <g class="vdz-zon__stralen" stroke="#ffc400" stroke-width="5" stroke-linecap="round">
+              <path d="M430 16v-10M430 134v-10M376 70h-10M494 70h-10M392 32l-7-7M475 115l-7-7M392 108l-7 7M475 25l-7 7"/>
+            </g>
+            <g class="vdz-wolk" fill="#fff" opacity=".85"><ellipse cx="120" cy="60" rx="38" ry="16"/><ellipse cx="146" cy="50" rx="26" ry="18"/><ellipse cx="96" cy="54" rx="20" ry="13"/></g>
+            <!-- heuvel -->
+            <path d="M0 330 C120 290 260 300 560 312 V380 H0z" fill="#166909"/>
+            <path d="M0 346 C140 318 300 326 560 332 V380 H0z" fill="#166909"/>
+            <!-- windmolen -->
+            <g class="vdz-molen">
+              <path d="M78 318 L84 150 L90 150 L96 318z" fill="#ffffff"/>
+              <g class="vdz-wieken" style="transform-origin:87px 148px">
+                <path d="M87 148 L83 72 Q87 64 91 72z" fill="#fff"/>
+                <path d="M87 148 L83 72 Q87 64 91 72z" fill="#fff" transform="rotate(120 87 148)"/>
+                <path d="M87 148 L83 72 Q87 64 91 72z" fill="#fff" transform="rotate(240 87 148)"/>
+              </g>
+              <circle cx="87" cy="148" r="7" fill="#ebeff4"/>
+            </g>
+            <!-- kantoor -->
+            <g>
+              <path d="M170 150 L330 124 L330 318 L170 318z" fill="#fff"/>
+              <path d="M330 124 L380 146 L380 318 L330 318z" fill="#ebeff4"/>
+              <g class="vdz-panelen">
+                <path d="M176 142 L326 118 L336 100 L186 124z" fill="#020d41"/>
+                <path d="M211 136 L221 118 M246 131 L256 113 M281 125 L291 107 M181 133 L331 109" stroke="#007ac0" stroke-width="2"/>
+                <path class="vdz-glans" d="M190 132 L215 128 L225 110 L200 114z" fill="#fff" opacity=".35"/>
+              </g>
+              <g fill="#ebeff4">
+                <rect x="186" y="170" width="30" height="26" rx="3"/><rect x="230" y="164" width="30" height="26" rx="3"/><rect x="274" y="158" width="30" height="26" rx="3"/>
+                <rect x="186" y="214" width="30" height="26" rx="3"/><rect x="230" y="208" width="30" height="26" rx="3"/><rect x="274" y="202" width="30" height="26" rx="3"/>
+              </g>
+              <g class="vdz-lampjes" fill="#ffc400"><rect x="230" y="164" width="30" height="26" rx="3"/><rect x="186" y="214" width="30" height="26" rx="3"/><rect x="274" y="202" width="30" height="26" rx="3"/></g>
+              <path d="M170 246 L330 246 L330 256 L170 256z" fill="#6db23f"/>
+              <path d="M178 250c10-10 22-10 30 0 8-10 22-10 30 0 8-10 22-10 30 0 8-10 22-10 30 0 8-10 18-10 26 0" fill="none" stroke="#166909" stroke-width="5" stroke-linecap="round"/>
+              <rect x="228" y="270" width="44" height="48" rx="3" fill="#020d41"/>
+              <g transform="translate(340 170) scale(.075)" fill="none" stroke-width="36" stroke-linejoin="round"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498f"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007dc2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6db23f"/></g>
+            </g>
+            <!-- bomen -->
+            <g class="vdz-boom"><rect x="146" y="286" width="6" height="34" fill="#7a5230"/><circle cx="149" cy="278" r="20" fill="#6db23f"/><circle cx="140" cy="286" r="12" fill="#6db23f"/></g>
+            <g class="vdz-boom vdz-boom--2"><rect x="496" y="276" width="6" height="42" fill="#7a5230"/><circle cx="499" cy="266" r="22" fill="#6db23f"/><circle cx="508" cy="276" r="13" fill="#6db23f"/></g>
+            <!-- laadpaal + elektrische bus -->
+            <g>
+              <rect x="396" y="258" width="16" height="60" rx="4" fill="#020d41"/>
+              <rect x="399" y="264" width="10" height="12" rx="2" fill="#6db23f" class="vdz-laad"/>
+              <path class="vdz-kabel" d="M404 290 C404 312 430 316 440 300" fill="none" stroke="#020d41" stroke-width="4" stroke-linecap="round"/>
+              <path d="M424 262 h78 c8 0 12 4 15 10 l10 22 v24 h-103z" fill="#fff"/>
+              <path d="M488 268 h14 c5 0 7 3 9 7 l8 17 h-31z" fill="#ebeff4"/>
+              <path d="M424 300 h103" stroke="#6db23f" stroke-width="6"/>
+              <g transform="translate(432 268) scale(.06)" fill="none" stroke-width="40" stroke-linejoin="round"><polygon points="190,114 340,34 340,234 190,316" stroke="#00498f"/><polygon points="58,294 208,214 346,297 186,378" stroke="#007dc2"/><polygon points="268,134 422,220 422,402 268,318" stroke="#6db23f"/></g>
+              <path class="vdz-bliksem" d="M466 272 l-8 14 h7 l-4 12 12-16 h-7 l5-10z" fill="#ffc400"/>
+              <circle cx="444" cy="320" r="9" fill="#020d41"/><circle cx="444" cy="320" r="3.5" fill="#ebeff4"/>
+              <circle cx="506" cy="320" r="9" fill="#020d41"/><circle cx="506" cy="320" r="3.5" fill="#ebeff4"/>
+            </g>
+            <!-- zwevende blaadjes -->
+            <g class="vdz-blad vdz-blad--1" fill="#7bd534"><path transform="translate(300 60) scale(1.2)" d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C8 12 14 8 20 4z"/></g>
+            <g class="vdz-blad vdz-blad--2" fill="#fff" opacity=".8"><path transform="translate(40 200) scale(.9)" d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C8 12 14 8 20 4z"/></g>
+          </svg>
+        </span>
       </a>
     </div>
   </section>
 
-  <section class="section section--mist">
-    <svg class="bg-ruit bg-ruit--bl" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+  <section class="section vdz-opl">
+    <svg class="vdz-blad-bg vdz-blad-bg--a" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/><path d="M5.3 20.5C8 14 12 10 16 8"/></svg>
+    <svg class="vdz-blad-bg vdz-blad-bg--b" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/><path d="M5.3 20.5C8 14 12 10 16 8"/></svg>
     <div class="wrap split split--top">
       <div class="split__text reveal">
-        <h2 class="h2">Duurzame oplossingen</h2>
-        <p class="lead">Maak de werkomgeving energie-efficiënt en verleng de levensduur van uw gebouw met De Bresser.</p>
-        <p>Bij De Bresser geloven we sterk in duurzaam ondernemen. Onze experts hebben jarenlange ervaring in het verduurzamen van kantoorpanden en werkplekken. Met onze innovatieve oplossingen kunnen we niet alleen energie besparen, maar ook de productiviteit van u en uw medewerkers verhogen.</p>
+        <h2 class="h2 vdz-kop"><span class="vdz-kop__icoon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/></svg></span>Duurzame oplossingen</h2>
+        <p class="lead vdz-lead">Maak de werkomgeving energie-efficiënt en verleng de levensduur van uw gebouw met De Bresser.</p>
+        <div class="vdz-opl__rij">
+          <p>Bij De Bresser geloven we sterk in duurzaam ondernemen. Onze experts hebben jarenlange ervaring in het verduurzamen van kantoorpanden en werkplekken. Met onze innovatieve oplossingen kunnen we niet alleen energie besparen, maar ook de productiviteit van u en uw medewerkers verhogen.</p>
+          <div class="vdz-label" aria-hidden="true">
+            <span class="vdz-label__kop"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <span class="vdz-label__rij" style="--i:0"><b>A</b></span><span class="vdz-label__rij" style="--i:1"><b>B</b></span><span class="vdz-label__rij" style="--i:2"><b>C</b></span><span class="vdz-label__rij" style="--i:3"><b>D</b></span><span class="vdz-label__rij" style="--i:4"><b>E</b></span><span class="vdz-label__rij" style="--i:5"><b>F</b></span><span class="vdz-label__rij" style="--i:6"><b>G</b></span>
+            <span class="vdz-label__pijl"></span>
+          </div>
+        </div>
+        <div class="vdz-meters" aria-hidden="true">
+          <span class="vdz-meter vdz-meter--zon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg><i></i></span>
+          <span class="vdz-meter vdz-meter--lamp"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><i></i></span>
+          <span class="vdz-meter vdz-meter--laad"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="10" height="18" rx="2"/><path d="M15 8h2.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 0 3 0v-5M10.5 7 8.5 11h3l-2 4"/></svg><i></i></span>
+          <span class="vdz-meter vdz-meter--blad"><svg viewBox="0 0 24 24"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/></svg><i></i></span>
+        </div>
         <a class="btn btn--navy" href="contact.html">Contact opnemen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <aside class="info-panel card-3d reveal" data-tilt="5">
+      <aside class="info-panel vdz-panel reveal">
         <h3>Gerelateerde diensten</h3>
         <div class="grid">
           <a class="mini-card glass" href="gebouwbeheer-onderhoud.html"><span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5l-8.8 8.8a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5 17 4a4 4 0 0 1 3 3l-2.5 2.5"/></svg></span>Onderhoud<svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -183,19 +273,24 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap split">
-      <div class="split__media reveal"><figure class="img-3d" data-tilt="6">
-        <div class="img-3d__frame"><img src="assets/img/site/Gebouwenbeheer-De-Bresser-1024x683.jpg" alt="Foto medewerker voor De Bresser busje" loading="lazy"></div>
-      </figure></div>
-      <div class="info-panel card-3d reveal" data-tilt="4">
-        <h3>Ga voor lagere energiekosten en verminder uw ecologische voetafdruk</h3>
-        <ul class="check-list">
-          <li>Voorsprong op de markt</li>
-          <li>Kostenbesparing</li>
-          <li>Sterkere reputatie</li>
-          <li>Uiteraard beter voor de planeet</li>
-        </ul>
+  <section class="section vdz-voordeel">
+    <div class="wrap">
+      <div class="vdz-voordeel__grid">
+        <figure class="vdz-foto reveal">
+          <img src="assets/img/site/Gebouwenbeheer-De-Bresser-1024x683.jpg" alt="Foto medewerker voor De Bresser busje" loading="lazy">
+          <span class="vdz-foto__stekker" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6.5 8h11v3a5.5 5.5 0 0 1-11 0zM12 16.5V21"/></svg></span>
+          <span class="vdz-foto__blad vdz-foto__blad--1" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/></svg></span>
+          <span class="vdz-foto__blad vdz-foto__blad--2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 4C10 4 4 9.5 4 16.5c0 1.3.2 2.4.5 3.5C6 13 11 9.5 16 8c-4.5 2.6-8.5 6.6-10.7 12 1.1.3 2.2.5 3.4.5C15.5 20.5 20 14 20 4z"/></svg></span>
+        </figure>
+        <div class="vdz-voordeel__tekst">
+          <h3 class="vdz-voordeel__kop reveal">Ga voor lagere energiekosten en verminder uw ecologische voetafdruk</h3>
+          <ul class="vdz-tegels reveal-group">
+            <li class="vdz-tegel vdz-tegel--1"><span class="vdz-tegel__icoon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span>Voorsprong op de markt</span></li>
+            <li class="vdz-tegel vdz-tegel--2"><span class="vdz-tegel__icoon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 10.5c0 4-3.1 6.5-7 6.5s-7-2.5-7-6.5S8.1 4 12 4s7 2.5 7 6.5z"/><path d="M8 20h8M12 17v3M14 8.2A2.7 2.7 0 0 0 12 7.5c-1.3 0-2.2.7-2.2 1.6 0 2.3 4.6 1.2 4.6 3.6 0 .9-1 1.7-2.4 1.7a3 3 0 0 1-2.2-.9M12 6.3v1.2M12 14.4v1.2"/></svg></span><span>Kostenbesparing</span></li>
+            <li class="vdz-tegel vdz-tegel--3"><span class="vdz-tegel__icoon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></span><span>Sterkere reputatie</span></li>
+            <li class="vdz-tegel vdz-tegel--4"><span class="vdz-tegel__icoon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5s-1.2 6.1-3.5 8.5c-2.3-2.4-3.5-5.2-3.5-8.5s1.2-6.1 3.5-8.5z"/></svg></span><span>Uiteraard beter voor de planeet</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -334,5 +429,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

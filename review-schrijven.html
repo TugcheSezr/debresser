@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schrijf een review | De Bresser</title>
+  <meta name="description" content="Beoordeel De Bresser Verhuizingen B.V.: geef een totaalscore, beschrijf uw ervaring en beoordeel de voorbereiding, uitvoering, afspraken en communicatie van uw verhuizing.">
+  <meta name="theme-color" content="#020d41">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/review-schrijven.css">
+  <link rel="alternate" hreflang="nl" href="review-schrijven.html">
+  <link rel="alternate" hreflang="en" href="en-write-a-review.html">
+  <link rel="alternate" hreflang="x-default" href="review-schrijven.html">
+</head>
+<body class="page-review">
+
+<a class="skip-link" href="#inhoud">Ga naar de inhoud</a>
+
+<!-- =====================================================================
+     HEADER + 3D MEGA MENU
+     ===================================================================== -->
+<header class="header header--overlay">
+  <div class="wrap">
+    <div class="header__bar">
+      <a class="logo" href="index.html" aria-label="De Bresser, naar de homepage">
+        <img class="logo__wit" src="assets/img/logo-de-bresser-compact-wit.png" alt="" width="768" height="592">
+        <img class="logo__kleur" src="assets/img/logo-de-bresser-compact.png" alt="" width="768" height="592">
+      </a>
+
+      <nav class="nav" id="hoofdmenu" aria-label="Hoofdmenu">
+        <ul class="menu">
+          <li class="has-mega">
+            <button class="menu__link" type="button" aria-expanded="false" aria-controls="mega-diensten">
+              Diensten
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="mega" id="mega-diensten">
+              <div class="mega__wrap">
+                <div class="mega__panel">
+                <div class="mega__col" data-tilt="6">
+                  <a class="mega__title" href="diensten-verhuizen.html">
+                    <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 6.5h11v9.5h-11z"/><path d="M13.5 9.5h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.9"/><circle cx="16.8" cy="17.5" r="1.9"/></svg></span>
+                    Verhuizen
+                  </a>
+                  <ul class="mega__list">
+                    <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
+                    <li><a href="particuliere-verhuizing.html">Particulier</a></li>
+                    <li><a href="internationale-verhuizing.html">Internationaal</a></li>
+                    <li><a href="zorg-verhuizing.html">Zorgverhuizing</a></li>
+                    <li><a href="duurzaam-verhuizen.html">Duurzaam verhuizen</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col" data-tilt="6">
+                  <a class="mega__title" href="diensten-opslag.html">
+                    <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></svg></span>
+                    Opslag
+                  </a>
+                  <ul class="mega__list">
+                    <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
+                    <li><a href="particuliere-opslag.html">Particulier</a></li>
+                    <li><a href="particuliere-opslag.html#diy-opslag">DIY-opslag</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col" data-tilt="6">
+                  <a class="mega__title" href="diensten-meubelprojecten.html">
+                    <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10.5V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2.5"/><path d="M3 11h3v3.5h12V11h3v5.5H3z"/><path d="M5 16.5v2M19 16.5v2"/></svg></span>
+                    Meubelprojecten
+                  </a>
+                  <ul class="mega__list">
+                    <li><a href="meubeltransport.html">Meubeltransport</a></li>
+                    <li><a href="veilingen.html">Veilingen</a></li>
+                    <li><a href="meubelmontage.html">Montageservice</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col" data-tilt="6">
+                  <a class="mega__title" href="diensten-gebouwbeheer.html">
+                    <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 20.5v-16h9.5v16M14 9.5h5.5v11M2.5 20.5h19"/><path d="M7.5 8h3M7.5 12h3M7.5 16h3M16.5 13h.5M16.5 16.5h.5"/></svg></span>
+                    Gebouwbeheer
+                  </a>
+                  <ul class="mega__list">
+                    <li><a href="gebouwbeheer-onderhoud.html">Onderhoud</a></li>
+                    <li><a href="gebouwbeheer-verduurzamen.html">Verduurzamen</a></li>
+                    <li><a href="gebouwbeheer-huismeester.html">Huismeester</a></li>
+                  </ul>
+                </div>
+                <div class="mega__col" data-tilt="6">
+                  <a class="mega__title" href="diensten-assetmanagement.html">
+                    <span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/></svg></span>
+                    Assetmanagement
+                  </a>
+                  <ul class="mega__list">
+                    <li><a href="assetmanagement-inventarisatie.html">Inventarisatie</a></li>
+                    <li><a href="assetmanagement-wms-en-meubelpaspoort.html">WMS en Meubelpaspoort</a></li>
+                    <li><a href="assetmanagement-opslag-assets.html">Opslag assets</a></li>
+                    <li><a href="assetmanagement-inkoop-en-verkoop-assets.html">Inkoop en verkoop assets</a></li>
+                    <li><a href="assetmanagement-circulair-meubilair.html">Circulair meubilair</a></li>
+                  </ul>
+                </div>
+                <a class="mega__promo" href="duurzame-werkomgeving.html">
+                  <svg class="bg-ruit " viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+                  <span class="tag">Nieuw!</span>
+                  <strong>Duurzame werkomgeving</strong>
+                  <span class="btn btn--green btn--sm">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a class="menu__link" href="over-ons.html">Over ons</a></li>
+          <li><a class="menu__link" href="vacatures.html">Vacatures</a></li>
+          <li><a class="menu__link" href="contact.html">Contact</a></li>
+          <li><a class="menu__link" href="offerte.html">Offerte</a></li>
+          <li><a class="menu__link" href="blog.html">Blog</a></li>
+        </ul>
+        <div class="drawer-foot">
+          <a class="btn btn--green btn--block" href="offerte.html">Offerte aanvragen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--light btn--block" href="tel:0031135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> +31 (0)13 52 82 372</a>
+        </div>
+      </nav>
+
+      <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="review-schrijven.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-write-a-review.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
+        <a class="header-tel" href="tel:0031135282372">
+          <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
+          <span>+31 (0)13 52 82 372</span>
+        </a>
+        <a class="btn btn--green btn--sm" href="offerte.html">Offerte aanvragen</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="inhoud">
+
+  <!-- =====================================================================
+       PAGINA-HERO: SCHRIJF EEN REVIEW
+       Inhoud gelijk aan het reviewformulier van KlantenVertellen
+       (klantenvertellen.nl/add-review/1038076), maar op onze eigen site.
+       ===================================================================== -->
+  <section class="page-hero page-hero--compact page-hero--photo rs-hero" aria-labelledby="page-title">
+    <div class="page-hero__bg" aria-hidden="true"><img src="assets/img/page-hero/review-schrijven.webp" srcset="assets/img/page-hero/review-schrijven-960.webp 960w, assets/img/page-hero/review-schrijven.webp 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+    <div class="wrap page-hero__grid">
+      <div class="page-hero__copy">
+        <nav class="crumbs" aria-label="Kruimelpad"><a href="index.html">Home</a><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><a href="reviews.html">Reviews</a><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><span aria-current="page">Schrijf een review</span></nav>
+        <h1 class="h1" id="page-title">Beoordeel De Bresser Verhuizingen B.V.</h1>
+        <span class="rs-hero__sterren" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       REVIEWFORMULIER + ZIJKOLOM (Diepblauwe band in logokleuren)
+       ===================================================================== -->
+  <section class="rs-sec">
+    <svg class="rs-ruit rs-ruit--a" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+    <svg class="rs-ruit rs-ruit--b" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+    <div class="wrap rs-grid">
+
+      <div class="rs-card">
+        <div class="rs-voortgang" aria-hidden="true">
+          <span class="rs-voortgang__balk"><i data-rs-balk></i></span>
+          <span class="rs-voortgang__pct" data-rs-pct>0%</span>
+        </div>
+
+        <form class="form rs-form" data-form="Review De Bresser Verhuizingen B.V." action="api/verzend.php" method="post">
+
+          <div class="rs-blok rs-blok--ervaring">
+            <div class="rs-totaal" data-rs-vraag data-rs-totaal>
+              <svg class="rs-ruit rs-totaal__ruit" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+              <div class="rs-totaal__gezicht" aria-hidden="true">
+                <svg viewBox="0 0 120 120"><circle class="rs-gezicht__hoofd" cx="60" cy="60" r="52"/><circle class="rs-gezicht__oog" cx="42" cy="50" r="6"/><circle class="rs-gezicht__oog" cx="78" cy="50" r="6"/><path class="rs-gezicht__mond" data-rs-mond d="M36 78 Q60 78 84 78"/></svg>
+                <span class="rs-totaal__cijfer"><b data-rs-getal>–</b><small>/10</small></span>
+              </div>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-totaal__titel">Totaal score<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-sterren rs-sterren--groot" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-totaalscore-1" name="q-totaalscore" value="Cijfer 1: Zeer slecht" data-label="Totaal score" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-totaalscore-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-2" name="q-totaalscore" value="Cijfer 2: Slecht" data-label="Totaal score" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-totaalscore-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-3" name="q-totaalscore" value="Cijfer 3: Ruim onvoldoende" data-label="Totaal score" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-totaalscore-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-4" name="q-totaalscore" value="Cijfer 4: Onvoldoende" data-label="Totaal score" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-totaalscore-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-5" name="q-totaalscore" value="Cijfer 5: Matig" data-label="Totaal score" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-totaalscore-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-6" name="q-totaalscore" value="Cijfer 6: Voldoende" data-label="Totaal score" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-totaalscore-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-7" name="q-totaalscore" value="Cijfer 7: Ruim voldoende" data-label="Totaal score" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-totaalscore-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-8" name="q-totaalscore" value="Cijfer 8: Goed" data-label="Totaal score" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-totaalscore-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-9" name="q-totaalscore" value="Cijfer 9: Zeer goed" data-label="Totaal score" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-totaalscore-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-totaalscore-10" name="q-totaalscore" value="Cijfer 10: Uitstekend" data-label="Totaal score" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-totaalscore-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  <p class="rs-cijfer" data-rs-cijfer aria-live="polite">Selecteer het aantal sterren voor de totale score</p>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+              <span class="rs-confetti" data-rs-confetti aria-hidden="true"></span>
+            </div>
+
+            <div class="field field--full rs-zin">
+              <label class="sr-only" for="rs-zin">Mijn ervaring in één zin</label>
+              <input class="input" id="rs-zin" name="ervaring_zin" data-label="Mijn ervaring in één zin" type="text" placeholder="Mijn ervaring in één zin*" maxlength="100" required data-rs-preview="zin">
+              <span class="rs-teller" aria-hidden="true" data-rs-teller="100"></span>
+              <span class="field__error">Vul uw ervaring in één zin in.</span>
+            </div>
+            <div class="field field--full">
+              <label class="sr-only" for="rs-omschrijving">Mijn ervaring omschrijf ik als volgt</label>
+              <textarea class="textarea" id="rs-omschrijving" name="ervaring" data-label="Mijn ervaring omschrijf ik als volgt" rows="6" placeholder="Mijn ervaring omschrijf ik als volgt*" maxlength="2000" required data-rs-preview="tekst"></textarea>
+              <span class="rs-teller" aria-hidden="true" data-rs-teller="2000"></span>
+              <span class="field__error">Beschrijf uw ervaring.</span>
+            </div>
+            <div class="field rs-aanbevelen">
+              <fieldset>
+                <legend class="rs-label">Aanbevelen?<span class="req" aria-hidden="true">*</span> <span class="rs-hint">Maak een keuze</span></legend>
+                <div class="rs-keuze">
+                  <label class="rs-keuze__optie rs-keuze__optie--ja"><input type="radio" name="aanbevelen" value="Ja" data-label="Aanbevelen?" required data-rs-preview="aanbevelen"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11v9H4.5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1zM7 11l4-7.5a2 2 0 0 1 2.6 2.4L12.8 9.5h5.7a2 2 0 0 1 2 2.3l-1.2 7a2 2 0 0 1-2 1.7H7"/></svg><span>Ja</span></label>
+                  <label class="rs-keuze__optie rs-keuze__optie--nee"><input type="radio" name="aanbevelen" value="Nee" data-label="Aanbevelen?" required data-rs-preview="aanbevelen"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 13V4H4.5a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1zM7 13l4 7.5a2 2 0 0 0 2.6-2.4l-.8-3.6h5.7a2 2 0 0 0 2-2.3l-1.2-7a2 2 0 0 0-2-1.7H7"/></svg><span>Nee</span></label>
+                </div>
+              </fieldset>
+              <span class="field__error">Maak een keuze.</span>
+            </div>
+          </div>
+
+          <div class="rs-blok rs-blok--punten">
+            <h3 class="rs-kop">Beoordeel de volgende punten</h3>
+            <ol class="rs-punten">
+            <li class="rs-vraag" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>01</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-1" name="q-voorbereiding" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-voorbereiding-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-2" name="q-voorbereiding" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-voorbereiding-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-3" name="q-voorbereiding" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-voorbereiding-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-4" name="q-voorbereiding" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-voorbereiding-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-5" name="q-voorbereiding" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-voorbereiding-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-6" name="q-voorbereiding" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-voorbereiding-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-7" name="q-voorbereiding" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-voorbereiding-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-8" name="q-voorbereiding" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-voorbereiding-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-9" name="q-voorbereiding" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-voorbereiding-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-voorbereiding-10" name="q-voorbereiding" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-voorbereiding-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+            </li>
+            <li class="rs-vraag" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>02</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-uitvoering-1" name="q-uitvoering" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-uitvoering-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-2" name="q-uitvoering" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-uitvoering-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-3" name="q-uitvoering" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-uitvoering-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-4" name="q-uitvoering" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-uitvoering-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-5" name="q-uitvoering" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-uitvoering-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-6" name="q-uitvoering" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-uitvoering-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-7" name="q-uitvoering" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-uitvoering-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-8" name="q-uitvoering" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-uitvoering-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-9" name="q-uitvoering" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-uitvoering-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-uitvoering-10" name="q-uitvoering" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-uitvoering-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+            </li>
+            <li class="rs-vraag" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>03</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-afspraken-1" name="q-afspraken" value="Cijfer 1: Zeer slecht" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-afspraken-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-2" name="q-afspraken" value="Cijfer 2: Slecht" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-afspraken-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-3" name="q-afspraken" value="Cijfer 3: Ruim onvoldoende" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-afspraken-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-4" name="q-afspraken" value="Cijfer 4: Onvoldoende" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-afspraken-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-5" name="q-afspraken" value="Cijfer 5: Matig" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-afspraken-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-6" name="q-afspraken" value="Cijfer 6: Voldoende" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-afspraken-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-7" name="q-afspraken" value="Cijfer 7: Ruim voldoende" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-afspraken-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-8" name="q-afspraken" value="Cijfer 8: Goed" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-afspraken-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-9" name="q-afspraken" value="Cijfer 9: Zeer goed" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-afspraken-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-afspraken-10" name="q-afspraken" value="Cijfer 10: Uitstekend" data-label="In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-afspraken-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+            </li>
+            <li class="rs-vraag rs-vraag--nvt" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>04</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-1" name="q-flexibiliteit" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-flexibiliteit-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-2" name="q-flexibiliteit" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-flexibiliteit-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-3" name="q-flexibiliteit" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-flexibiliteit-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-4" name="q-flexibiliteit" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-flexibiliteit-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-5" name="q-flexibiliteit" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-flexibiliteit-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-6" name="q-flexibiliteit" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-flexibiliteit-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-7" name="q-flexibiliteit" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-flexibiliteit-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-8" name="q-flexibiliteit" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-flexibiliteit-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-9" name="q-flexibiliteit" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-flexibiliteit-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-flexibiliteit-10" name="q-flexibiliteit" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-flexibiliteit-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                    <label class="rs-nvt"><input type="checkbox" name="q-flexibiliteit-nvt" value="N.v.t." data-label="Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?" data-rs-nvt><span class="rs-vak" aria-hidden="true"></span><span>N.v.t.</span></label>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren of vink N.v.t. aan.</span>
+              </div>
+            </li>
+            <li class="rs-vraag rs-vraag--nvt" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>05</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-nazorg-1" name="q-nazorg" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-nazorg-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-2" name="q-nazorg" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-nazorg-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-3" name="q-nazorg" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-nazorg-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-4" name="q-nazorg" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-nazorg-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-5" name="q-nazorg" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-nazorg-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-6" name="q-nazorg" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-nazorg-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-7" name="q-nazorg" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-nazorg-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-8" name="q-nazorg" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-nazorg-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-9" name="q-nazorg" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-nazorg-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-nazorg-10" name="q-nazorg" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-nazorg-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                    <label class="rs-nvt"><input type="checkbox" name="q-nazorg-nvt" value="N.v.t." data-label="Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?" data-rs-nvt><span class="rs-vak" aria-hidden="true"></span><span>N.v.t.</span></label>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren of vink N.v.t. aan.</span>
+              </div>
+            </li>
+            <li class="rs-vraag rs-vraag--nvt" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>06</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-factuur-1" name="q-factuur" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-factuur-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-2" name="q-factuur" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-factuur-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-3" name="q-factuur" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-factuur-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-4" name="q-factuur" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-factuur-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-5" name="q-factuur" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-factuur-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-6" name="q-factuur" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-factuur-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-7" name="q-factuur" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-factuur-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-8" name="q-factuur" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-factuur-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-9" name="q-factuur" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-factuur-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-factuur-10" name="q-factuur" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-factuur-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                    <label class="rs-nvt"><input type="checkbox" name="q-factuur-nvt" value="N.v.t." data-label="Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financiële afspraken?" data-rs-nvt><span class="rs-vak" aria-hidden="true"></span><span>N.v.t.</span></label>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren of vink N.v.t. aan.</span>
+              </div>
+            </li>
+            <li class="rs-vraag" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>07</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-communicatie-1" name="q-communicatie" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-communicatie-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-2" name="q-communicatie" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-communicatie-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-3" name="q-communicatie" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-communicatie-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-4" name="q-communicatie" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-communicatie-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-5" name="q-communicatie" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-communicatie-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-6" name="q-communicatie" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-communicatie-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-7" name="q-communicatie" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-communicatie-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-8" name="q-communicatie" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-communicatie-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-9" name="q-communicatie" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-communicatie-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-communicatie-10" name="q-communicatie" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-communicatie-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+            </li>
+            <li class="rs-vraag rs-vraag--nvt" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>08</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-prijs-1" name="q-prijs" value="Cijfer 1: Zeer slecht" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-prijs-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-2" name="q-prijs" value="Cijfer 2: Slecht" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-prijs-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-3" name="q-prijs" value="Cijfer 3: Ruim onvoldoende" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-prijs-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-4" name="q-prijs" value="Cijfer 4: Onvoldoende" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-prijs-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-5" name="q-prijs" value="Cijfer 5: Matig" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-prijs-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-6" name="q-prijs" value="Cijfer 6: Voldoende" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-prijs-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-7" name="q-prijs" value="Cijfer 7: Ruim voldoende" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-prijs-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-8" name="q-prijs" value="Cijfer 8: Goed" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-prijs-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-9" name="q-prijs" value="Cijfer 9: Zeer goed" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-prijs-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-prijs-10" name="q-prijs" value="Cijfer 10: Uitstekend" data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-prijs-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                    <label class="rs-nvt"><input type="checkbox" name="q-prijs-nvt" value="N.v.t." data-label="Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?" data-rs-nvt><span class="rs-vak" aria-hidden="true"></span><span>N.v.t.</span></label>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren of vink N.v.t. aan.</span>
+              </div>
+            </li>
+            <li class="rs-vraag" data-rs-vraag>
+              <span class="rs-vraag__nr" aria-hidden="true"><b>09</b><svg class="rs-vraag__vink" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <div class="field rs-vraag__veld">
+                <fieldset>
+                  <legend class="rs-vraag__tekst">Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?<span class="req" aria-hidden="true">*</span></legend>
+                  <div class="rs-vraag__rij">
+                    <div class="rs-sterren" data-rs-sterren><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-1" name="q-totaaloordeel" value="Cijfer 1: Zeer slecht" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="1" required><label class="rs-half rs-half--l" for="q-totaaloordeel-1" title="Cijfer 1: Zeer slecht"><span class="sr-only">Cijfer 1: Zeer slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-2" name="q-totaaloordeel" value="Cijfer 2: Slecht" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="2" required><label class="rs-half rs-half--r" for="q-totaaloordeel-2" title="Cijfer 2: Slecht"><span class="sr-only">Cijfer 2: Slecht</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-3" name="q-totaaloordeel" value="Cijfer 3: Ruim onvoldoende" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="3" required><label class="rs-half rs-half--l" for="q-totaaloordeel-3" title="Cijfer 3: Ruim onvoldoende"><span class="sr-only">Cijfer 3: Ruim onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-4" name="q-totaaloordeel" value="Cijfer 4: Onvoldoende" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="4" required><label class="rs-half rs-half--r" for="q-totaaloordeel-4" title="Cijfer 4: Onvoldoende"><span class="sr-only">Cijfer 4: Onvoldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-5" name="q-totaaloordeel" value="Cijfer 5: Matig" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="5" required><label class="rs-half rs-half--l" for="q-totaaloordeel-5" title="Cijfer 5: Matig"><span class="sr-only">Cijfer 5: Matig</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-6" name="q-totaaloordeel" value="Cijfer 6: Voldoende" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="6" required><label class="rs-half rs-half--r" for="q-totaaloordeel-6" title="Cijfer 6: Voldoende"><span class="sr-only">Cijfer 6: Voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-7" name="q-totaaloordeel" value="Cijfer 7: Ruim voldoende" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="7" required><label class="rs-half rs-half--l" for="q-totaaloordeel-7" title="Cijfer 7: Ruim voldoende"><span class="sr-only">Cijfer 7: Ruim voldoende</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-8" name="q-totaaloordeel" value="Cijfer 8: Goed" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="8" required><label class="rs-half rs-half--r" for="q-totaaloordeel-8" title="Cijfer 8: Goed"><span class="sr-only">Cijfer 8: Goed</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-9" name="q-totaaloordeel" value="Cijfer 9: Zeer goed" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="9" required><label class="rs-half rs-half--l" for="q-totaaloordeel-9" title="Cijfer 9: Zeer goed"><span class="sr-only">Cijfer 9: Zeer goed</span></label><input class="rs-sterren__radio" type="radio" id="q-totaaloordeel-10" name="q-totaaloordeel" value="Cijfer 10: Uitstekend" data-label="Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?" data-cijfer="10" required><label class="rs-half rs-half--r" for="q-totaaloordeel-10" title="Cijfer 10: Uitstekend"><span class="sr-only">Cijfer 10: Uitstekend</span></label></div>
+                  </div>
+                </fieldset>
+                <span class="field__error">Kies het aantal sterren.</span>
+              </div>
+            </li>
+            </ol>
+            <div class="field field--full rs-verbeter">
+              <label class="rs-label" for="rs-verbeter">Ziet u nog verbeterpunten in de dienstverlening van het verhuisbedrijf?<span class="req" aria-hidden="true">*</span></label>
+              <textarea class="textarea" id="rs-verbeter" name="verbeterpunten" data-label="Ziet u nog verbeterpunten in de dienstverlening van het verhuisbedrijf?" rows="3" maxlength="1000" required></textarea>
+              <span class="field__error">Vul dit veld in.</span>
+            </div>
+          </div>
+
+          <div class="rs-blok rs-blok--gegevens">
+            <h3 class="rs-kop">Persoonlijke gegevens</h3>
+            <div class="rs-velden">
+              <div class="field rs-ico">
+                <label class="rs-label" for="rs-naam">Voornaam<span class="req" aria-hidden="true">*</span></label>
+                <span class="rs-ico__wrap"><svg class="rs-ico__svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><input class="input" id="rs-naam" name="voornaam" data-label="Voornaam" type="text" maxlength="50" autocomplete="given-name" required data-rs-preview="naam"></span>
+                <span class="field__error">Vul uw voornaam in.</span>
+              </div>
+              <div class="field rs-ico">
+                <label class="rs-label" for="rs-plaats">Plaats<span class="req" aria-hidden="true">*</span></label>
+                <span class="rs-ico__wrap"><svg class="rs-ico__svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><input class="input" id="rs-plaats" name="plaats" data-label="Plaats" type="text" maxlength="100" autocomplete="address-level2" required data-rs-preview="plaats"></span>
+                <span class="field__error">Vul uw plaats in.</span>
+              </div>
+              <div class="field field--full rs-ico">
+                <label class="rs-label" for="rs-mail">E-mailadres<span class="req" aria-hidden="true">*</span></label>
+                <span class="rs-ico__wrap"><svg class="rs-ico__svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><input class="input" id="rs-mail" name="email" data-label="E-mailadres" type="email" maxlength="100" autocomplete="email" required></span>
+                <span class="field__error">Vul een geldig e-mailadres in, bijvoorbeeld naam@voorbeeld.nl.</span>
+              </div>
+            </div>
+            <p class="rs-uitleg">Velden met * zijn verplicht. Indien u een voornaam en woonplaats invult wordt deze zichtbaar op de reviewpagina. Het e-mailadres wordt <strong>niet</strong> gepubliceerd.</p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="rs-hp">Indien je een mens bent, laat dit veld leeg:</label>
+            <input class="hp-input" id="rs-hp" name="website_url" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="rs-akkoord">
+            <p>Ik ga bij verzenden akkoord met de <button class="rs-akkoord__link" type="button" aria-controls="rs-voorwaarden" data-rs-voorwaarden>gebruikersvoorwaarden en het privacybeleid</button></p>
+            <div class="rs-voorwaarden" id="rs-voorwaarden">
+              <p class="rs-voorwaarden__titel">Gebruikersvoorwaarden en privacy policy</p>
+              <div class="field field--full rs-check">
+                <label class="rs-check__label"><input type="checkbox" name="akkoord" value="Ja" data-label="Akkoord gebruikersvoorwaarden en privacy" required><span class="rs-vak" aria-hidden="true"></span><span>Ik ga akkoord met de verwerking van mijn persoonsgegevens (naam, e-mailadres, IP adres en eventueel overige informatie die ik vrijwillig invul in de review) in het kader van de privacy wetgeving (AVG). Tevens verklaar ik dat ik klant ben (geweest) bij dit bedrijf.</span></label>
+                <span class="field__error">Vink dit vakje aan om uw review te versturen.</span>
+              </div>
+            </div>
+            <button class="rs-verstuur" type="submit"><span>Verstuur</span><span class="rs-verstuur__vlieg"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 2.5 10 14M21.5 2.5 14.5 21.5 10 14 2.5 9.5z"/></svg></span></button>
+          </div>
+        </form>
+
+        <div class="form-success" role="status" aria-live="polite">
+          <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+          <h3 class="h3">Bedankt voor uw bericht!</h3>
+          <ul class="check-list" data-summary></ul>
+          <div class="actions">
+            <a class="btn btn--navy btn--sm" href="mailto:info@debresser.nl" data-mailto hidden>Open e-mail</a>
+            <a class="btn btn--glass btn--sm" href="reviews.html">Reviews <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="rs-zij">
+        <div class="rs-preview" aria-hidden="true" data-rs-previewkaart>
+          <div class="rs-preview__top">
+            <span class="rs-preview__avatar" data-rs-p="letter"></span>
+            <span class="rs-preview__wie"><b data-rs-p="naam"><i class="rs-streep"></i></b><small><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span data-rs-p="plaats"><i class="rs-streep rs-streep--kort"></i></span></small></span>
+            <span class="rs-preview__cijfer" data-rs-p="cijfer">–</span>
+          </div>
+          <span class="rs-preview__sterren"><i data-rs-p="sterren"></i></span>
+          <p class="rs-preview__zin" data-rs-p="zin"><i class="rs-streep"></i><i class="rs-streep rs-streep--kort"></i></p>
+          <p class="rs-preview__tekst" data-rs-p="tekst"><i class="rs-streep"></i><i class="rs-streep"></i><i class="rs-streep rs-streep--kort"></i></p>
+          <span class="rs-preview__duim" data-rs-p="aanbevelen"></span>
+        </div>
+
+        <div class="rs-bedrijf reveal">
+          <img class="rs-bedrijf__logo" src="assets/img/logo-de-bresser.png" alt="Logo De Bresser" loading="lazy">
+          <a class="rs-bedrijf__site" href="index.html">www.debresserverhuizingen.nl/ <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <div class="rs-info rs-info--ev reveal">
+          <span class="rs-info__logo"><img src="assets/img/keurmerk-erkende-verhuizers.png" alt="Logo Erkende verhuizers" loading="lazy"></span>
+          <h3>Over Erkende Verhuizers</h3>
+          <p>Een verhuizing is vaak een grote stap en een hectische periode. Met deskundig advies en een veelzijdige dienstverlening, kunnen Erkende Verhuizers deze gebeurtenis tot een succes maken. Zij kunnen u voorafgaand aan, tijdens en na de verhuizing met allerlei diensten helpen, zoals de- en montage van meubelstukken of het tijdelijk opslaan van uw bezittingen.</p>
+          <p>Alle Erkende Verhuizers zijn aangesloten bij de Organisatie voor Erkende Verhuizers en voldoen aan meerdere eisen op het gebied van kwaliteit, milieu en veiligheid. Hierop worden de bedrijven getoetst door een onafhankelijke instelling. Bovendien zijn Erkende Verhuizers opgeleid om discreet en zorgvuldig met bezittingen om te gaan.</p>
+          <a class="link-arrow" href="https://www.erkendeverhuizers.nl/" target="_blank" rel="noopener">www.erkendeverhuizers.nl <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+        </div>
+
+        <div class="rs-info rs-info--kv reveal">
+          <h3>Klantenvertellen Reviews</h3>
+          <ul class="rs-kv">
+            <li>Iedereen mag een review <a href="https://www.klantenvertellen.nl/hoe-schrijf-ik-een-review/" target="_blank" rel="noopener">schrijven</a> zolang er voldaan wordt aan <a href="https://www.klantenvertellen.nl/gebruiksvoorwaarden-klantbeoordelingssysteem/" target="_blank" rel="noopener">de gebruikersvoorwaarden</a>.</li>
+            <li>Kiyoh &amp; Klantenvertellen zijn onafhankelijke platformen en erkend <a href="https://support.google.com/google-ads/answer/2375474?hl=nl#Supported_review_partners" target="_blank" rel="noopener">Google</a> <a href="https://www.klantenvertellen.nl/google-review-partner/" target="_blank" rel="noopener">reviewpartner</a>. Of een review nu lovend is of juist kritisch – iedere stem telt.</li>
+            <li>We voeren geautomatiseerde en handmatige controles uit om valse reviews zoveel mogelijk tegen te gaan.</li>
+            <li>Reviews die op eigen initiatief zijn geschreven worden direct online getoond en binnen 72 uur <a href="https://www.klantenvertellen.nl/wat-is-een-geverifieerde-review/" target="_blank" rel="noopener">geverifieerd</a>.</li>
+            <li>Meer weten hoe deze reviewpagina tot stand komt? <a href="https://www.klantenvertellen.nl/hoe-word-je-klantenvertellen-score-berekend/" target="_blank" rel="noopener">Lees dan hier meer</a>.</li>
+            <li>Wil je meer weten? Bekijk ons <a href="https://www.klantenvertellen.nl/privacy/" target="_blank" rel="noopener">privacybeleid</a> en ontdek hoe we omgaan met gegevens en reviews.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer class="footer">
+  <div class="wrap">
+    <ul class="footer__logos glass-dark reveal">
+      <li><a href="https://www.erkendeverhuizers.nl/" rel="noopener"><img src="assets/img/keurmerk-erkende-verhuizers.png" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
+      <li><a href="https://www.erkendeprojectverhuizers.nl/" rel="noopener"><img src="assets/img/keurmerk-erkende-projectverhuizers.png" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
+      <li><a href="https://www.topmovers.nl/" rel="noopener"><img src="assets/img/keurmerk-top-movers.png" alt="Logo Top Movers" loading="lazy"></a></li>
+      <li><img src="assets/img/keurmerk-fedemac.png" alt="Logo Fedemac" loading="lazy"></li>
+      <li><img src="assets/img/keurmerk-iam.png" alt="Logo IAM" loading="lazy"></li>
+    </ul>
+
+    <nav class="footer__cols" aria-label="Footer">
+      <div>
+        <h2><a href="diensten-verhuizen.html">Verhuizen</a></h2>
+        <ul>
+          <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
+          <li><a href="particuliere-verhuizing.html">Particulier</a></li>
+          <li><a href="internationale-verhuizing.html">Internationaal</a></li>
+          <li><a href="zorg-verhuizing.html">Zorg verhuizing</a></li>
+          <li><a href="duurzaam-verhuizen.html">Duurzaam</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2><a href="diensten-opslag.html">Opslag</a></h2>
+        <ul>
+          <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
+          <li><a href="particuliere-opslag.html">Particulier</a></li>
+          <li><a href="particuliere-opslag.html#diy-opslag">DIY opslag</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2><a href="diensten-meubelprojecten.html">Meubelprojecten</a></h2>
+        <ul>
+          <li><a href="meubeltransport.html">Meubeltransport</a></li>
+          <li><a href="veilingen.html">Veilingen</a></li>
+          <li><a href="meubelmontage.html">Montageservice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2><a href="duurzame-werkomgeving.html">Duurzame Werkomgeving</a></h2>
+        <ul>
+          <li><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></li>
+          <li><a href="diensten-assetmanagement.html">Assetmanagement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Voorwaarden</h2>
+        <ul>
+          <li><a href="assets/docs/AVVV-PV05-AVBV-AVHD.pdf">Voorwaarden verhuizingen</a></li>
+          <li><a href="assets/docs/6010-Algemene-Vervoerscondities-A4-web-2.pdf">Algemene vervoerscondities</a></li>
+          <li><a href="assets/docs/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf">Voorwaarden bedrijfsverhuizing</a></li>
+          <li><a href="assets/docs/Logistieke-Services-Voorwaarden-LSV-2.pdf">Voorwaarden logistieke services</a></li>
+          <li><a href="assets/docs/CMR-Conditions-English-2.pdf" hreflang="en">CMR conditions</a></li>
+          <li><a href="assets/docs/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf">Opslagvoorwaarden</a></li>
+          <li><a href="privacyverklaring.html">Privacyverklaring</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <details class="footer__snel">
+      <summary>Snelmenu <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul>
+        <li><a href="kantoor-verhuizen.html">Kantoor verhuizen</a></li>
+        <li><a href="zakelijke-verhuizing.html">Zakelijk verhuizen</a></li>
+        <li><a href="winkelverhuizing.html">Winkelverhuizing</a></li>
+        <li><a href="verhuisservice-zakelijk.html">Verhuisservice zakelijk</a></li>
+        <li><a href="opslagruimte-goirle.html">Opslagruimte Goirle</a></li>
+        <li><a href="opslagruimte-den-bosch.html">Opslagruimte Den Bosch</a></li>
+        <li><a href="opslagruimte-roosendaal.html">Opslagruimte Roosendaal</a></li>
+        <li><a href="opslagruimte-etten-leur.html">Opslagruimte Etten-Leur</a></li>
+        <li><a href="opslagruimte-oirschot.html">Opslagruimte Oirschot</a></li>
+        <li><a href="opslagruimte-breda.html">Opslagruimte Breda</a></li>
+        <li><a href="container-opslag.html">Container opslag</a></li>
+        <li><a href="verhuisbedrijf-eindhoven.html">Verhuisbedrijf Eindhoven</a></li>
+        <li><a href="verhuisbedrijf-den-bosch.html">Verhuisbedrijf Den Bosch</a></li>
+        <li><a href="verhuisbedrijf-waalwijk.html">Verhuisbedrijf Waalwijk</a></li>
+        <li><a href="verhuisbedrijf-etten-leur.html">Verhuisbedrijf Etten-Leur</a></li>
+        <li><a href="verhuisbedrijf-belgie.html">Verhuisbedrijf België</a></li>
+        <li><a href="verhuisbedrijf-oosterhout.html">Verhuisbedrijf Oosterhout</a></li>
+        <li><a href="verhuisbedrijf-sint-oedenrode.html">Verhuisbedrijf Sint-Oedenrode</a></li>
+        <li><a href="verhuisbedrijf-vught.html">Verhuisbedrijf Vught</a></li>
+        <li><a href="verhuisbedrijf-goirle.html">Verhuisbedrijf Goirle</a></li>
+        <li><a href="verhuisbedrijf-oisterwijk.html">Verhuisbedrijf Oisterwijk</a></li>
+        <li><a href="verhuisbedrijf-europa.html">Verhuisbedrijf Europa</a></li>
+        <li><a href="verhuisbedrijf-weert.html">Verhuisbedrijf Weert</a></li>
+        <li><a href="verhuisbedrijf-roermond.html">Verhuisbedrijf Roermond</a></li>
+        <li><a href="verhuisbedrijf-venlo.html">Verhuisbedrijf Venlo</a></li>
+        <li><a href="roosendaal.html">Verhuisbedrijf Roosendaal</a></li>
+        <li><a href="breda.html">Verhuisbedrijf Breda</a></li>
+        <li><a href="verhuisbedrijf-oss.html">Verhuisbedrijf Oss</a></li>
+        <li><a href="verhuisbedrijf-maastricht.html">Verhuisbedrijf Maastricht</a></li>
+        <li><a href="verhuisbedrijf-dordrecht.html">Verhuisbedrijf Dordrecht</a></li>
+        <li><a href="verhuisbedrijf-zevenbergen.html">Verhuisbedrijf Zevenbergen</a></li>
+      </ul>
+    </details>
+
+    <div class="footer__bottom">
+      <p>Copyright © 2025 De Bresser B.V. &nbsp;|&nbsp; KVK 18014730 &nbsp;|&nbsp; BTW NL0055.15.452.B.01</p>
+      <nav aria-label="Service">
+        <a href="tel:0031135282372">T +31 (0)13 52 82 372</a>
+        <a href="mailto:info@debresser.nl">info@debresser.nl</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobiel: vaste actiebalk onderin -->
+<div class="mobilebar">
+  <a class="btn btn--light" href="tel:0031135282372"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg> Bellen</a>
+  <a class="btn btn--green" href="offerte.html">Offerte aanvragen</a>
+</div>
+
+<script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
+<script src="js/review-schrijven.js" defer></script>
+</body>
+</html>

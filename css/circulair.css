@@ -1,0 +1,358 @@
+/* =====================================================================
+   Circulair meubilair (assetmanagement-circulair-meubilair.html)
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   Thema: een tweede leven, de kringloop. Groen voorop, Diepblauw als basis.
+   Teksten = live debresser.nl; beelden, iconen, voor/na-labels en
+   nummers zijn decoratief (aria-hidden).
+   ===================================================================== */
+.page-live {
+  --cm-diep: #00498f;
+  --cm-blauw: #007dc2;
+  --cm-groen: #6db23f;
+  --cm-bos: #166909;
+  --cm-bos-2: #166909;
+}
+
+.cm-ruit { fill: none; stroke-width: 2; pointer-events: none; }
+@keyframes cm-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes cm-draai { to { rotate: 360deg; } }
+
+/* ---------- 1. Nieuw: de duurzame werkomgeving (bosgroen kaart) ---------- */
+.cm-nieuw__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  border-radius: 30px;
+  overflow: hidden;
+  isolation: isolate;
+  text-decoration: none;
+  color: #fff;
+  background:
+    radial-gradient(60% 70% at 100% 100%, rgba(0, 73, 143, .55), transparent 70%),
+    linear-gradient(150deg, #166909 0%, var(--cm-bos) 50%, var(--cm-bos-2) 100%);
+  box-shadow:
+    0 2px 0 rgba(255, 255, 255, .06) inset,
+    0 30px 60px -30px rgba(22, 105, 9, .75),
+    0 60px 120px -60px rgba(2, 13, 65, .5);
+  transition: transform 450ms var(--spring, cubic-bezier(.2, .8, .2, 1.1)), box-shadow 450ms ease;
+}
+.cm-nieuw__card:hover { transform: translateY(-6px); box-shadow: 0 2px 0 rgba(255, 255, 255, .06) inset, 0 44px 80px -30px rgba(22, 105, 9, .8), 0 0 0 2px rgba(109, 178, 63, .7); }
+.cm-nieuw__card:focus-visible { outline: 3px solid #33bcfa; outline-offset: 4px; }
+
+.cm-nieuw__media { position: relative; min-height: 340px; overflow: hidden; }
+.cm-nieuw__media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-height: none;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 1200ms cubic-bezier(.2, .7, .2, 1);
+}
+.cm-nieuw__card:hover .cm-nieuw__media img { transform: scale(1.08); }
+.cm-nieuw__media::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent 55%, rgba(22, 105, 9, .55) 80%, var(--cm-bos) 100%);
+}
+.cm-nieuw__loop {
+  position: absolute; left: 24px; bottom: 24px; z-index: 2;
+  display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(145deg, #7bd534, var(--cm-groen));
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, .18), 0 14px 28px -10px rgba(109, 178, 63, .9), inset 0 1px 0 rgba(255, 255, 255, .45);
+}
+.cm-nieuw__loop svg {
+  width: 32px; height: 32px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+  animation: cm-draai 9s linear infinite;
+}
+.cm-nieuw__body {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+  padding: clamp(32px, 4.5vw, 64px) clamp(28px, 4.5vw, 64px) clamp(32px, 4.5vw, 64px) clamp(20px, 2.5vw, 36px);
+}
+.cm-nieuw__body .h2 { color: #fff; margin: 0; }
+.cm-nieuw__body p { margin: 0; color: #ebeff4; line-height: 1.8; }
+.cm-nieuw__body .tag { box-shadow: 0 0 0 6px rgba(255, 255, 255, .12); }
+.cm-nieuw__body .link-arrow {
+  margin-top: 6px; color: #fff;
+  padding: 12px 20px; border-radius: 999px;
+  background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .25);
+  transition: background 250ms ease, border-color 250ms ease, color 250ms ease;
+}
+.cm-nieuw__card:hover .link-arrow { background: #fff; border-color: #fff; color: var(--cm-bos); }
+.cm-nieuw__card:hover .link-arrow .icon { stroke: var(--cm-bos); }
+.cm-nieuw__card:hover .link-arrow .icon--arrow { transform: translateX(4px); }
+.cm-nieuw__ruit { position: absolute; z-index: -1; width: 360px; right: -110px; bottom: -120px; stroke: rgba(255, 255, 255, .14); }
+
+@media (max-width: 859px) {
+  .cm-nieuw__card { grid-template-columns: 1fr; }
+  .cm-nieuw__media { min-height: 0; aspect-ratio: 16 / 10; }
+  .cm-nieuw__media::after { background: linear-gradient(180deg, transparent 55%, var(--cm-bos) 100%); }
+  .cm-nieuw__body { padding: 8px 24px 32px; }
+}
+
+/* ---------- 2. Een tweede leven ---------- */
+.cm-leven__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.cm-title { position: relative; padding-left: 22px; margin: 0 0 18px; }
+.cm-title::before {
+  content: ""; position: absolute; left: 0; top: .15em; bottom: .15em; width: 5px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--cm-groen), var(--cm-blauw));
+}
+.cm-leven__text p { font-size: 1.0625rem; line-height: 1.8; max-width: 62ch; margin: 0 0 22px; }
+
+/* reparaties, renovaties, upcycling als pijlketen */
+.cm-stappen {
+  list-style: none; margin: 0 0 28px; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 10px 28px;
+}
+.cm-stappen li {
+  position: relative;
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 16px 7px 7px; border-radius: 999px;
+  font-weight: 600; font-size: .95rem; color: var(--navy, #020d41);
+  background: #fff;
+  box-shadow: 0 1px 0 #ebeff4, 0 12px 22px -14px rgba(2, 13, 65, .45);
+}
+.cm-stappen li + li::before {
+  content: ""; position: absolute; left: -22px; top: 50%; width: 16px; height: 2px; margin-top: -1px;
+  background: var(--cm-groen);
+}
+.cm-stappen li + li::after {
+  content: ""; position: absolute; left: -10px; top: 50%; width: 6px; height: 6px; margin-top: -3px;
+  border-top: 2px solid var(--cm-groen); border-right: 2px solid var(--cm-groen);
+  transform: rotate(45deg);
+}
+.cm-stappen__icon {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(145deg, #7bd534, var(--cm-groen));
+}
+.cm-stappen li:nth-child(2) .cm-stappen__icon { background: linear-gradient(145deg, #007ac0, var(--cm-blauw)); }
+.cm-stappen li:nth-child(3) .cm-stappen__icon { background: linear-gradient(145deg, #007ac0, var(--cm-diep)); }
+.cm-stappen__icon svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+/* werkplaats: voor/na-foto met twee prints erachter en kringloopschijf */
+.cm-werk {
+  position: relative;
+  margin: clamp(44px, 5vw, 70px) 0 0;
+  padding: clamp(40px, 5vw, 64px) clamp(36px, 7%, 70px) clamp(60px, 7vw, 92px) clamp(24px, 4%, 40px);
+}
+.cm-werk img { display: block; width: 100%; height: 100%; max-height: none; object-fit: cover; }
+.cm-werk__back {
+  position: absolute; width: 42%; aspect-ratio: 4 / 3;
+  border-radius: 18px; overflow: hidden;
+  border: 6px solid #fff;
+  box-shadow: 0 24px 40px -22px rgba(2, 13, 65, .55);
+  transition: transform 500ms var(--spring, ease);
+}
+.cm-werk__back--a { right: 0; top: 0; transform: rotate(6deg); }
+.cm-werk__back--b { left: 0; bottom: 0; transform: rotate(-6deg); }
+.cm-werk:hover .cm-werk__back--a { transform: rotate(9deg) translate(10px, -8px); }
+.cm-werk:hover .cm-werk__back--b { transform: rotate(-9deg) translate(-10px, 8px); }
+
+.cm-werk__main {
+  position: relative; z-index: 1; display: block;
+  aspect-ratio: 1200 / 896; border-radius: 24px; overflow: hidden;
+  border: 8px solid #fff;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 2px 0 #ebeff4, 0 4px 0 #c7c7c7, 0 36px 70px -30px rgba(2, 13, 65, .6);
+}
+.cm-werk__main::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(125deg, rgba(255, 255, 255, .16), transparent 35%);
+}
+.cm-pil {
+  position: absolute; z-index: 1;
+  padding: 6px 14px; border-radius: 999px;
+  font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  box-shadow: 0 10px 18px -8px rgba(0, 0, 0, .5);
+}
+.cm-pil--voor { left: 6%; top: 8%; color: #fff; background: rgba(35, 31, 32, .82); }
+.cm-pil--na { right: 7%; top: 12%; color: var(--cm-bos-2); background: #7bd534; }
+.cm-werk__pijl {
+  position: absolute; z-index: 1; left: 30%; top: 3%; width: 36%;
+  overflow: visible; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .45));
+}
+.cm-werk__pijl path { fill: none; stroke: #7bd534; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.cm-werk__pijl path:first-child { stroke-dasharray: 10 10; animation: cm-stroom 1.4s linear infinite; }
+@keyframes cm-stroom { to { stroke-dashoffset: -20; } }
+
+.cm-cyclus {
+  position: absolute; z-index: 2; right: clamp(4px, 2%, 20px); bottom: 6px;
+  width: clamp(112px, 13vw, 150px); aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #166909, var(--cm-bos-2));
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, .9), 0 24px 44px -16px rgba(22, 105, 9, .8);
+  animation: cm-bob 6s ease-in-out infinite;
+}
+.cm-cyclus svg { display: block; width: 100%; height: 100%; }
+.cm-cyclus__ring { transform-origin: 80px 80px; animation: cm-draai 14s linear infinite; }
+.cm-cyclus__ring path { fill: none; stroke: #7bd534; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.cm-cyclus__ring .cm-cyclus__kop { stroke-width: 6; }
+.cm-cyclus__ring path:nth-child(2), .cm-cyclus__ring .cm-cyclus__kop:nth-child(5) { stroke: #33bcfa; }
+.cm-cyclus__ring path:nth-child(3), .cm-cyclus__ring .cm-cyclus__kop:nth-child(6) { stroke: #fff; }
+.cm-cyclus__blad { fill: #7bd534; }
+.cm-cyclus__nerf { fill: none; stroke: var(--cm-bos-2); stroke-width: 3; stroke-linecap: round; }
+
+/* gerelateerde diensten: Diepblauw paneel met fototegels */
+.cm-rel {
+  position: sticky; top: calc(var(--header-h, 104px) + 16px);
+  overflow: hidden; isolation: isolate;
+  padding: clamp(24px, 2.6vw, 34px);
+  border-radius: 28px;
+  color: #fff;
+  background:
+    radial-gradient(70% 50% at 100% 0%, rgba(109, 178, 63, .35), transparent 70%),
+    linear-gradient(160deg, var(--cm-diep) 0%, #020d41 55%, #020d41 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 40px 70px -34px rgba(2, 13, 65, .75);
+}
+.cm-rel__ruit { position: absolute; z-index: -1; width: 300px; right: -120px; top: -90px; stroke: rgba(255, 255, 255, .12); }
+.cm-rel h3 { color: #fff; margin: 0 0 18px; font-size: 1.25rem; display: flex; align-items: center; gap: 12px; }
+.cm-rel h3::before { content: ""; width: 26px; height: 4px; border-radius: 2px; background: var(--cm-groen); }
+.cm-rel__list { display: grid; gap: 10px; margin-bottom: 20px; }
+.cm-rel__item {
+  position: relative;
+  display: grid; grid-template-columns: 76px auto 1fr auto; align-items: center; gap: 12px;
+  padding: 7px 14px 7px 7px;
+  border-radius: 16px;
+  color: #fff; text-decoration: none; font-weight: 600;
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .12);
+  transition: transform 300ms var(--spring, ease), background 250ms ease, border-color 250ms ease;
+}
+.cm-rel__item:hover, .cm-rel__item:focus-visible { transform: translateX(6px); background: rgba(255, 255, 255, .14); border-color: rgba(109, 178, 63, .7); }
+.cm-rel__img { display: block; height: 52px; border-radius: 11px; overflow: hidden; }
+.cm-rel__img img { width: 100%; height: 100%; max-height: none; object-fit: cover; transition: transform 500ms ease; }
+.cm-rel__item:hover .cm-rel__img img { transform: scale(1.12); }
+.cm-rel__item .icon-tile {
+  width: 34px; height: 34px; border-radius: 10px; margin: 0;
+  background: rgba(255, 255, 255, .12); box-shadow: none;
+}
+.cm-rel__item .icon-tile .icon { width: 18px; height: 18px; stroke: #7bd534; }
+.cm-rel__label { min-width: 0; font-size: .95rem; }
+.cm-rel__item > .icon--arrow { width: 18px; height: 18px; stroke: #fff; opacity: .6; transition: opacity 200ms ease, transform 200ms ease; }
+.cm-rel__item:hover > .icon--arrow { opacity: 1; transform: translateX(3px); stroke: #7bd534; }
+
+@media (max-width: 959px) {
+  .cm-leven__grid { grid-template-columns: 1fr; }
+  .cm-rel { position: relative; top: auto; }
+  .cm-werk { max-width: 620px; }
+}
+@media (max-width: 480px) {
+  .cm-stappen { gap: 10px; }
+  .cm-stappen li + li::before, .cm-stappen li + li::after { display: none; }
+  .cm-werk { padding: 30px 22px 58px 12px; }
+  .cm-werk__back { border-width: 4px; }
+  .cm-werk__main { border-width: 6px; border-radius: 18px; }
+  .cm-pil { padding: 4px 10px; font-size: .6875rem; }
+  .cm-cyclus { width: 96px; box-shadow: 0 0 0 5px rgba(255, 255, 255, .9), 0 18px 30px -14px rgba(22, 105, 9, .8); }
+  .cm-rel__item { grid-template-columns: 60px 1fr auto; }
+  .cm-rel__item .icon-tile { display: none; }
+}
+
+/* ---------- 3. Verder in de kringloop: inkoop/verkoop en opslag ---------- */
+.cm-verder {
+  position: relative;
+  overflow: hidden; isolation: isolate;
+  padding: clamp(110px, 12vw, 170px) 0;
+  background:
+    radial-gradient(55% 55% at 95% 0%, rgba(0, 125, 194, .5), transparent 70%),
+    radial-gradient(50% 55% at 0% 100%, rgba(109, 178, 63, .4), transparent 70%),
+    linear-gradient(160deg, var(--cm-diep) 0%, #020d41 50%, #166909 100%);
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 calc(100% - 4vw));
+}
+.cm-verder::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .12) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(100deg, #000 10%, transparent 60%);
+          mask-image: linear-gradient(100deg, #000 10%, transparent 60%);
+}
+.cm-verder::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(4vw + 10px); z-index: -1;
+  background: linear-gradient(90deg, var(--cm-blauw), var(--cm-groen));
+  clip-path: polygon(0 0, 100% calc(100% - 10px), 100% 100%, 0 10px);
+}
+.cm-verder__ruit { position: absolute; z-index: -1; }
+.cm-verder__ruit--a { width: 520px; left: -170px; bottom: -150px; stroke: rgba(109, 178, 63, .35); }
+.cm-verder__ruit--b { width: 260px; right: -80px; top: 18%; stroke: rgba(255, 255, 255, .1); }
+
+.cm-paden {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 32px);
+  align-items: center;
+}
+.cm-paden__link {
+  display: grid; place-items: center;
+  width: 76px; height: 76px; border-radius: 50%;
+  background: linear-gradient(145deg, #7bd534, var(--cm-groen));
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, .08), 0 0 0 20px rgba(255, 255, 255, .04), 0 18px 34px -12px rgba(0, 0, 0, .55);
+}
+.cm-paden__link svg {
+  width: 38px; height: 38px; fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+  animation: cm-draai 9s linear infinite;
+}
+
+.cm-pad {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column;
+  border-radius: 26px; overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 0 #ebeff4, 0 4px 0 #c7c7c7, 0 40px 70px -30px rgba(2, 13, 65, .8);
+  transition: box-shadow 350ms ease;
+}
+.cm-pad:hover { box-shadow: 0 2px 0 #ebeff4, 0 4px 0 #c7c7c7, 0 50px 80px -30px rgba(2, 13, 65, .9), 0 0 0 3px var(--cm-groen); }
+.cm-pad__img { position: relative; aspect-ratio: 16 / 10; overflow: hidden; }
+.cm-pad__img img {
+  display: block; width: 100%; height: 100%; max-height: none; object-fit: cover;
+  transition: transform 900ms cubic-bezier(.2, .7, .2, 1);
+}
+.cm-pad:hover .cm-pad__img img { transform: scale(1.07); }
+.cm-pad__img::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(2, 13, 65, .55));
+}
+.cm-pad__badge {
+  position: absolute; left: 20px; bottom: 18px; z-index: 1;
+  display: grid; place-items: center; width: 60px; height: 60px; border-radius: 18px;
+  background: linear-gradient(145deg, #007ac0, var(--cm-blauw));
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, .85), 0 14px 24px -10px rgba(0, 0, 0, .6);
+}
+.cm-pad:nth-child(3) .cm-pad__badge { background: linear-gradient(145deg, #7bd534, var(--cm-groen)); }
+.cm-pad__badge svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.cm-pad__nr {
+  position: absolute; right: 18px; bottom: 10px; z-index: 1;
+  font-size: 3.2rem; font-weight: 700; line-height: 1; letter-spacing: -.04em;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .75);
+}
+.cm-pad__body {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  padding: clamp(24px, 2.4vw, 32px) clamp(22px, 2.4vw, 32px) clamp(24px, 2.4vw, 32px);
+}
+.cm-pad__body h3 { margin: 0; font-size: 1.375rem; }
+.cm-pad__body h3 a { color: var(--navy, #020d41); text-decoration: none; }
+.cm-pad__body h3 a::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.cm-pad__body h3 a:focus-visible { outline: none; }
+.cm-pad:has(h3 a:focus-visible) { outline: 3px solid #33bcfa; outline-offset: 4px; }
+.cm-pad__body p { margin: 0; line-height: 1.75; }
+.cm-pad__body .link-arrow { margin-top: auto; position: relative; z-index: 3; }
+
+@media (max-width: 859px) {
+  .cm-paden { grid-template-columns: 1fr; justify-items: center; }
+  .cm-pad { width: 100%; max-width: 560px; }
+  .cm-paden__link { width: 60px; height: 60px; margin: -6px 0; }
+  .cm-paden__link svg { width: 30px; height: 30px; }
+}
+@media (max-width: 520px) {
+  .cm-verder { padding: 96px 0; }
+}
+
+.cm-verder + .cta-band { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-nieuw__loop svg, .cm-cyclus, .cm-cyclus__ring, .cm-paden__link svg, .cm-werk__pijl path:first-child { animation: none; }
+  .cm-nieuw__media img, .cm-werk__back, .cm-pad__img img, .cm-rel__item { transition: none; }
+}

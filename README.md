@@ -40,6 +40,24 @@ css/tokens.css         Oude merkboek-tokens, niet meer gebruikt door de pagina's
 docs/                  Sitemap, blokkenbibliotheek, wireframes (PDF)
 ```
 
+## Engelse versie
+
+Elke NL-pagina heeft een Engelse tegenhanger (`en.html`, `en-*.html`). De taalschakelaar in de header
+wijst per pagina naar de andere taal. Bestandsnamen staan in `tools/en-map.json`, de vertalingen per pagina
+in `tools/i18n/en/*.json` (header en footer: `_chrome.json`).
+
+Na een tekstwijziging op een NL-pagina:
+
+```
+node tools/i18n.cjs extract   # toont welke teksten nog geen vertaling hebben
+node tools/i18n.cjs build     # bouwt alle EN-pagina's opnieuw (overschrijft en*.html)
+node tools/i18n.cjs check     # zoekt Nederlandse resten en NL-links in de EN-pagina's
+```
+
+Pas EN-pagina's dus niet met de hand aan: `build` overschrijft ze. Vertaalregels: `tools/i18n/VERTAALREGELS.md`.
+Veldwaarden in formulieren (`value`, `data-form`) blijven Nederlands, zodat de formulierlogica en de e-mails aan
+De Bresser gelijk blijven.
+
 ## Formulieren
 
 - **Lokaal (bestand geopend):** validatie, bevestiging met samenvatting, en het e-mailprogramma opent een

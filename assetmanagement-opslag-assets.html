@@ -5,10 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Opslag assets | Veilig &amp; georganiseerd bewaren | De Bresser</title>
   <meta name="description" content="Veilige opslag van bedrijfsassets met overzichtelijke registratie, efficiënte toegang en professioneel beheer.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/opslag-assets.css">
+  <link rel="alternate" hreflang="nl" href="assetmanagement-opslag-assets.html">
+  <link rel="alternate" hreflang="en" href="en-asset-management-asset-storage.html">
+  <link rel="alternate" hreflang="x-default" href="assetmanagement-opslag-assets.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +121,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="assetmanagement-opslag-assets.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-asset-management-asset-storage.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -160,15 +174,32 @@
     </div>
   </section>
 
-  <section class="section section--mist">
+  <section class="section section--mist oa-sec">
     <svg class="bg-ruit bg-ruit--bl" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
-    <div class="wrap split split--top">
-      <div class="split__text reveal">
+    <div class="wrap split oa-split">
+      <div class="oa-unit reveal" data-oa-unit>
+        <div class="oa-unit__kast" aria-hidden="true"><span class="oa-unit__nr">A-07</span><span class="oa-unit__led"></span></div>
+        <div class="oa-unit__binnen">
+          <span class="oa-unit__tl" aria-hidden="true"></span>
+          <div class="split__text oa-unit__tekst">
         <h2 class="h2">Regionale opslag</h2>
         <p>Onze regionale opslagfaciliteiten bieden een veilige en gecontroleerde omgeving voor uw assets, terwijl ons klantportaal u volledige controle en inzicht geeft in het beheer van uw opgeslagen goederen. Samen met u kijken we naar de houdbaarheid en looptijd van de opslag, zodat we altijd de meest effectieve oplossing kunnen bieden. Bovendien maken we gebruik van elektrische voertuigen voor een milieuvriendelijk transport van en naar onze opslaglocaties, waarmee we onze inzet voor duurzaamheid versterken.</p>
         <a class="btn btn--navy" href="contact.html">Contact opnemen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <aside class="info-panel card-3d reveal" data-tilt="5">
+          <div class="oa-unit__vloer" aria-hidden="true">
+            <span class="oa-doos oa-doos--1"></span><span class="oa-doos oa-doos--2"></span><span class="oa-doos oa-doos--3"></span>
+            <span class="oa-stoel"></span>
+            <span class="oa-doos oa-doos--4"></span><span class="oa-doos oa-doos--5"></span>
+          </div>
+          <div class="oa-deur" aria-hidden="true">
+            <img class="oa-deur__logo" src="assets/img/logo-de-bresser-compact.png" alt="" width="768" height="592" loading="lazy">
+            <span class="oa-deur__bord">A-07</span>
+            <span class="oa-deur__onder"><span class="oa-deur__greep"></span><span class="oa-deur__slot"></span></span>
+          </div>
+        </div>
+        <button class="oa-unit__knop" type="button" aria-label="Rolluik openen of sluiten" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9.5" rx="2"/><path d="M8.5 11V7.5a3.5 3.5 0 0 1 6.8-1.2"/></svg></button>
+      </div>
+      <aside class="info-panel oa-rek reveal">
         <h3>Gerelateerde diensten</h3>
         <div class="grid">
           <a class="mini-card glass" href="assetmanagement-inventarisatie.html"><span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/></svg></span>Inventarisatie<svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -184,7 +215,7 @@
 
   <section class="section">
     <div class="wrap">
-      <ul class="grid-2 ibox-grid reveal-group">
+      <ul class="grid-2 ibox-grid oa-pallets reveal-group">
         <li class="ibox card-3d" data-tilt="5">
           <div class="ibox__img"><img src="assets/img/site/WMS-en-meubelpaspoort-De-Bresser.jpg" alt="medewerkers aan het werk" loading="lazy"></div>
           <div class="ibox__body">
@@ -339,5 +370,7 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
+<script src="js/opslag-assets.js" defer></script>
 </body>
 </html>

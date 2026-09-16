@@ -1,0 +1,53 @@
+/* =====================================================================
+   Blog "Hulp bij verhuizen: stressniveau": trap met verhuizers
+   (blog-inhuren-professionals-kan-stressniveau-verminderen.html)
+   De foto is vrijstaand (assets/img/blog-stress/trap-vrijstaand.webp):
+   geen kader, geen achtergrond. Reliëf via gestapelde drop-shadows,
+   vloerschaduw onder de trap. Alleen op deze pagina gelinkt.
+   ===================================================================== */
+.page-blog-artikel .trap-vrij,
+.trap-vrij {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+  padding-bottom: 18px;
+  transform-style: preserve-3d;
+}
+.trap-vrij img {
+  position: relative; z-index: 1;
+  display: block; width: 100%; height: auto; max-height: none;
+  border-radius: 0;
+  aspect-ratio: 652 / 941;
+  /* kabartma: dikte naar rechtsonder + zachte slagschaduw op de sectie */
+  filter:
+    contrast(1.08) saturate(1.05)
+    drop-shadow(1px 1px 0 #d5deea)
+    drop-shadow(1px 1px 0 #c3cfdf)
+    drop-shadow(1px 1px 0 #b1c0d4)
+    drop-shadow(1px 1px 0 #9fb1c9)
+    drop-shadow(-1px -1px 0 rgba(255, 255, 255, .9))
+    drop-shadow(10px 16px 14px rgba(10, 31, 64, .28));
+  transition: transform 500ms var(--spring, ease), filter 500ms ease;
+}
+.trap-vrij:hover img { transform: translateY(-6px); }
+
+/* vloerschaduw waar trap en verhuizer op de grond staan */
+.trap-vrij__vloer {
+  position: absolute; z-index: 0;
+  left: -4%; width: 72%; bottom: 6px; height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10, 31, 64, .38), rgba(10, 31, 64, .14) 60%, transparent);
+  filter: blur(2px);
+}
+/* dunne vloerlijn in het merkgroen */
+.trap-vrij::after {
+  content: ""; position: absolute; z-index: 0;
+  left: -8%; width: 82%; bottom: 17px; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, transparent, var(--green, #10b981) 20%, var(--green, #10b981) 80%, transparent);
+  opacity: .5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trap-vrij img { transition: none; }
+  .trap-vrij:hover img { transform: none; }
+}

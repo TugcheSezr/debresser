@@ -68,14 +68,14 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
     this.envelope = function () {
       var g = new THREE.Group();
       var map = tex(600, 400, function (c, w, h) {
-        c.fillStyle = '#f7f9fc'; c.fillRect(0, 0, w, h);
+        c.fillStyle = '#ffffff'; c.fillRect(0, 0, w, h);
         c.fillStyle = 'rgba(15,44,89,.045)';
         c.beginPath(); c.moveTo(0, h); c.lineTo(w / 2, h * 0.5); c.lineTo(w, h); c.closePath(); c.fill();
         c.strokeStyle = 'rgba(15,44,89,.16)'; c.lineWidth = 3;
         c.beginPath(); c.moveTo(4, h - 4); c.lineTo(w * 0.43, h * 0.58); c.moveTo(w - 4, h - 4); c.lineTo(w * 0.57, h * 0.58); c.stroke();
-        c.fillStyle = '#0f2c59'; c.font = '600 30px ' + FONT; c.textAlign = 'right';
+        c.fillStyle = '#020d41'; c.font = '600 30px ' + FONT; c.textAlign = 'right';
         c.fillText('De Bresser', w - 40, h - 44);
-        c.fillStyle = '#10b981'; c.fillRect(w - 190, h - 34, 150, 5);
+        c.fillStyle = '#7bd534'; c.fillRect(w - 190, h - 34, 150, 5);
       });
       var paper = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.75, sheen: 0.5, sheenColor: new THREE.Color(0xffffff) });
       var front = new THREE.MeshPhysicalMaterial({ map: map, roughness: 0.75, sheen: 0.5, sheenColor: new THREE.Color(0xffffff) });
@@ -90,7 +90,7 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
       g.add(flap);
       var sealMap = tex(128, 128, function (c, w) {
         var gr = c.createRadialGradient(w * 0.4, w * 0.35, 4, w / 2, w / 2, w / 2);
-        gr.addColorStop(0, '#6ee7b7'); gr.addColorStop(0.5, '#10b981'); gr.addColorStop(1, '#047857');
+        gr.addColorStop(0, '#7bd534'); gr.addColorStop(0.5, '#7bd534'); gr.addColorStop(1, '#166909');
         c.fillStyle = gr; c.fillRect(0, 0, w, w);
         c.strokeStyle = '#fff'; c.lineWidth = 12; c.lineCap = 'round'; c.lineJoin = 'round';
         c.beginPath(); c.moveTo(38, 66); c.lineTo(56, 84); c.lineTo(90, 46); c.stroke();
@@ -110,30 +110,30 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
       g.add(new THREE.Mesh(new RoundedBoxGeometry(80, 164, 10, 4, 11), new THREE.MeshPhysicalMaterial({ color: 0x1c2436, metalness: 0.85, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.08 })));
       var map = tex(360, 740, function (c, w, h) {
         var gr = c.createLinearGradient(0, 0, 0, h);
-        gr.addColorStop(0, '#1b4580'); gr.addColorStop(0.55, '#0f2c59'); gr.addColorStop(1, '#061430');
+        gr.addColorStop(0, '#00498f'); gr.addColorStop(0.55, '#020d41'); gr.addColorStop(1, '#020d41');
         c.fillStyle = gr; c.fillRect(0, 0, w, h);
         c.fillStyle = 'rgba(255,255,255,.9)'; c.font = '600 22px ' + FONT; c.textAlign = 'left';
         c.fillText('09:41', 34, 52);
         c.textAlign = 'center';
-        c.fillStyle = '#c9d5ea'; c.font = '400 22px ' + FONT;
+        c.fillStyle = '#c7c7c7'; c.font = '400 22px ' + FONT;
         c.fillText('Inkomende oproep', w / 2, 168);
         [100, 80].forEach(function (r, i) {
           c.strokeStyle = 'rgba(16,185,129,' + (0.25 + i * 0.2) + ')'; c.lineWidth = 3;
           c.beginPath(); c.arc(w / 2, 292, r, 0, Math.PI * 2); c.stroke();
         });
         var av = c.createLinearGradient(w / 2 - 62, 230, w / 2 + 62, 354);
-        av.addColorStop(0, '#34d399'); av.addColorStop(1, '#047857');
+        av.addColorStop(0, '#7bd534'); av.addColorStop(1, '#166909');
         c.fillStyle = av; c.beginPath(); c.arc(w / 2, 292, 62, 0, Math.PI * 2); c.fill();
         c.fillStyle = '#fff'; c.font = '700 46px ' + FONT; c.fillText('DB', w / 2, 309);
         c.font = '600 36px ' + FONT; c.fillText('De Bresser', w / 2, 438);
-        c.fillStyle = '#c9d5ea'; c.font = '400 25px ' + FONT; c.fillText('013 52 82 372', w / 2, 480);
+        c.fillStyle = '#c7c7c7'; c.font = '400 25px ' + FONT; c.fillText('013 52 82 372', w / 2, 480);
         function btn(x, col, angle) {
           c.fillStyle = col; c.beginPath(); c.arc(x, 626, 44, 0, Math.PI * 2); c.fill();
           c.save(); c.translate(x, 626); c.rotate(angle); c.scale(2.1, 2.1); c.translate(-12, -12);
           c.fillStyle = '#fff'; c.fill(HANDSET); c.restore();
         }
-        btn(w * 0.27, '#ef4444', Math.PI * 0.75);
-        btn(w * 0.73, '#10b981', 0);
+        btn(w * 0.27, '#c4302b', Math.PI * 0.75);
+        btn(w * 0.73, '#7bd534', 0);
       });
       var screen = new THREE.Mesh(new THREE.PlaneGeometry(72, 150), new THREE.MeshPhysicalMaterial({ map: map, emissiveMap: map, emissive: 0xffffff, emissiveIntensity: 0.8, roughness: 0.06, clearcoat: 1, clearcoatRoughness: 0.02 }));
       screen.position.z = 5.05;
@@ -158,7 +158,7 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
       s.quadraticCurveTo(-w / 2 + 12, -h / 2 - 16, -w / 2 + r, -h / 2);
       var geo = new THREE.ExtrudeGeometry(s, { depth: 14, bevelEnabled: true, bevelThickness: 7, bevelSize: 6, bevelSegments: 6, curveSegments: 20 });
       geo.center();
-      g.add(new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ color: 0x10b981, roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.05 })));
+      g.add(new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({ color: 0x7bd534, roughness: 0.22, clearcoat: 1, clearcoatRoughness: 0.05 })));
       var white = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.3, clearcoat: 1 });
       g.userData.dots = [-30, 0, 30].map(function (x) {
         var d = new THREE.Mesh(new THREE.SphereGeometry(9, 28, 18), white);
@@ -201,30 +201,30 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
       var g = new THREE.Group();
       var face = tex(512, 512, function (c, w) {
         var gr = c.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2);
-        gr.addColorStop(0, '#ffffff'); gr.addColorStop(0.85, '#f1f5fa'); gr.addColorStop(1, '#dfe7f1');
+        gr.addColorStop(0, '#ffffff'); gr.addColorStop(0.85, '#ebeff4'); gr.addColorStop(1, '#ebeff4');
         c.fillStyle = gr; c.fillRect(0, 0, w, w);
         c.translate(w / 2, w / 2);
         for (var i = 0; i < 60; i++) {
           var big = i % 5 === 0;
           c.save(); c.rotate(i * Math.PI / 30);
-          c.fillStyle = big ? '#0f2c59' : '#9fb0c6';
+          c.fillStyle = big ? '#020d41' : '#c7c7c7';
           c.fillRect(big ? -5 : -2, -228, big ? 10 : 4, big ? 36 : 16);
           c.restore();
         }
         c.textAlign = 'center';
-        c.fillStyle = '#10b981'; c.font = '700 54px ' + FONT; c.fillText('24 uur', 0, 118);
-        c.fillStyle = '#0f2c59'; c.font = '600 28px ' + FONT; c.fillText('De Bresser', 0, -92);
+        c.fillStyle = '#7bd534'; c.font = '700 54px ' + FONT; c.fillText('24 uur', 0, 118);
+        c.fillStyle = '#020d41'; c.font = '600 28px ' + FONT; c.fillText('De Bresser', 0, -92);
       });
       face.center.set(0.5, 0.5);
       face.rotation = Math.PI / 2;
-      var side = new THREE.MeshPhysicalMaterial({ color: 0x10b981, metalness: 0.4, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.1 });
+      var side = new THREE.MeshPhysicalMaterial({ color: 0x7bd534, metalness: 0.4, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.1 });
       var body = new THREE.Mesh(new THREE.CylinderGeometry(52, 52, 16, 64), [side, new THREE.MeshPhysicalMaterial({ map: face, roughness: 0.35, clearcoat: 1, clearcoatRoughness: 0.03 }), side]);
       body.rotation.x = Math.PI / 2;
       g.add(body);
       var rim = new THREE.Mesh(new THREE.TorusGeometry(52, 4.5, 20, 72), new THREE.MeshPhysicalMaterial({ color: 0xe4eaf1, metalness: 1, roughness: 0.14 }));
       rim.position.z = 8;
       g.add(rim);
-      var navy = new THREE.MeshStandardMaterial({ color: 0x0f2c59, roughness: 0.4 });
+      var navy = new THREE.MeshStandardMaterial({ color: 0x020d41, roughness: 0.4 });
       function hand(w, l, z, mat) {
         var geo = new THREE.BoxGeometry(w, l, 1.6);
         geo.translate(0, l / 2 - 6, 0);
@@ -235,7 +235,7 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
       }
       g.userData.hour = hand(6, 30, 9.2, navy);
       g.userData.minute = hand(4, 42, 10.4, navy);
-      g.userData.second = hand(1.8, 46, 11.6, new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.4 }));
+      g.userData.second = hand(1.8, 46, 11.6, new THREE.MeshStandardMaterial({ color: 0x7bd534, roughness: 0.4 }));
       var cap = new THREE.Mesh(new THREE.CylinderGeometry(4, 4, 2, 24), navy);
       cap.rotation.x = Math.PI / 2; cap.position.z = 12.6;
       g.add(cap);
@@ -313,7 +313,7 @@ import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeom
     var key = new THREE.DirectionalLight(0xffffff, 1.8);
     key.position.set(-0.6, 1, 1.3);
     scene.add(key);
-    scene.add(new THREE.HemisphereLight(0xe6f4ff, 0x0f2c59, 0.5));
+    scene.add(new THREE.HemisphereLight(0xe6f4ff, 0x020d41, 0.5));
     var camera = new THREE.PerspectiveCamera(30, 1, 5, DIST + 3000);
 
     var kit = new Kit(renderer);

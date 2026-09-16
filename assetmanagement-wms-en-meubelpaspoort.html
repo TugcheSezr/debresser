@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WMS en meubelpaspoort | Efficiënt assetbeheer | De Bresser</title>
   <meta name="description" content="Ontdek WMS en het meubelpaspoort voor beter assetbeheer, compleet overzicht en efficiënte logistiek voor uw bedrijf.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="alternate" hreflang="nl" href="assetmanagement-wms-en-meubelpaspoort.html">
+  <link rel="alternate" hreflang="en" href="en-asset-management-wms-and-furniture-passport.html">
+  <link rel="alternate" hreflang="x-default" href="assetmanagement-wms-en-meubelpaspoort.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +120,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="assetmanagement-wms-en-meubelpaspoort.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-asset-management-wms-and-furniture-passport.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -167,6 +180,26 @@
         <h2 class="h2">WMS</h2>
         <p>Met ons geavanceerde Warehouse Management System (WMS) worden al uw assets digitaal geregistreerd en beheerd voor realtime bewaking en beheer. Ons systeem biedt gedetailleerde rapportage inclusief CO2-data, waardoor u inzicht krijgt in de milieuprestaties van uw assets. Daarnaast faciliteert het WMS inkoop en/of aanbod binnen de circulaire markt, waardoor we actief bijdragen aan een duurzamere toekomst met efficiëntie en minimalisatie van verspilling.</p>
         <a class="btn btn--navy" href="contact.html">Contact opnemen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <figure class="wms-demo reveal" aria-hidden="true">
+          <div class="wms-demo__foto">
+            <img src="assets/img/wms/scan-1000.webp" srcset="assets/img/wms/scan-640.webp 640w, assets/img/wms/scan-1000.webp 1000w" sizes="(max-width: 1023px) 80vw, 460px" width="1000" height="747" alt="" loading="lazy" decoding="async">
+            <span class="wms-demo__straal"></span>
+            <span class="wms-demo__qr"></span>
+          </div>
+          <div class="wms-app">
+            <div class="wms-app__bar"><i></i><i></i><i></i><b>WMS</b><span class="wms-app__live">Realtime</span></div>
+            <ul class="wms-app__lijst">
+              <li class="wms-rij wms-rij--nieuw"><img src="assets/img/wms/tafel.webp" width="120" height="120" alt="" loading="lazy"><span><b>Tafel, eiken</b><small>Gescand · Stelling A-03</small></span><em class="wms-pil wms-pil--groen">Nieuw</em></li>
+              <li class="wms-rij"><img src="assets/img/wms/stoel.webp" width="120" height="120" alt="" loading="lazy"><span><b>Bureaustoel</b><small>Opslag · Stelling B-12</small></span><em class="wms-pil">Opgeslagen</em></li>
+              <li class="wms-rij"><img src="assets/img/wms/fauteuil.webp" width="120" height="120" alt="" loading="lazy"><span><b>Bureau en stoel</b><small>Circulaire markt</small></span><em class="wms-pil wms-pil--blauw">Aanbod</em></li>
+              <li class="wms-rij"><img src="assets/img/wms/verpakt.webp" width="120" height="120" alt="" loading="lazy"><span><b>Bureaustoelen</b><small>Verpakt · Stelling D-02</small></span><em class="wms-pil">Inkoop</em></li>
+            </ul>
+            <div class="wms-app__rapport">
+              <span>CO₂-data</span>
+              <div class="wms-bars"><i style="--h:.42"></i><i style="--h:.58"></i><i style="--h:.5"></i><i style="--h:.72"></i><i style="--h:.64"></i><i style="--h:.86"></i><i style="--h:.94"></i></div>
+            </div>
+          </div>
+        </figure>
       </div>
       <aside class="info-panel card-3d reveal" data-tilt="5">
         <h3>Gerelateerde diensten</h3>
@@ -328,5 +361,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

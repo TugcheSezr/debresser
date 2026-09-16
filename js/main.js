@@ -17,6 +17,7 @@
   'use strict';
 
   var root = document.documentElement;
+  var IS_EN = /^en/.test(root.lang);
   root.classList.add('js');
 
   var desktop = window.matchMedia('(min-width: 1024px)');
@@ -79,7 +80,8 @@
     header.classList.toggle('is-menu-open', open);
     root.classList.toggle('no-scroll', open);
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+    var en = /^en/.test(root.lang);
+    burger.setAttribute('aria-label', open ? (en ? 'Close menu' : 'Menu sluiten') : (en ? 'Open menu' : 'Menu openen'));
     if (!open) setMega(false);
   }
   if (burger) {
@@ -219,6 +221,9 @@
       if ((el.type === 'checkbox' || el.type === 'radio') && !el.checked) return;
       var label = el.getAttribute('data-label') || el.name;
       var value = el.type === 'file' ? (el.files[0] ? el.files[0].name : '') : el.value.trim();
+      /* zichtbare tekst tonen (ook op de Engelse pagina's); de waarde zelf blijft gelijk */
+      if (el.tagName === 'SELECT' && el.value && el.selectedIndex > -1) value = el.options[el.selectedIndex].text.trim();
+      else if ((el.type === 'checkbox' || el.type === 'radio') && el.closest('label')) value = el.closest('label').textContent.trim() || value;
       if (!value) return;
       if (seen[label] !== undefined) { data[seen[label]].value += ', ' + value; return; }
       seen[label] = data.length;
@@ -229,7 +234,7 @@
 
   function mailtoLink(subject, data, page) {
     var body = data.map(function (d) { return d.label + ': ' + d.value; }).join('\n');
-    body += '\n\nVerzonden via: ' + page;
+    body += (IS_EN ? '\n\nSent via: ' : '\n\nVerzonden via: ') + page;
     return 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
 
@@ -311,7 +316,7 @@
 
       var data = collect(form);
       var btn = form.querySelector('[type="submit"]');
-      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Bezig met verzenden…'; }
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = IS_EN ? 'Sending…' : 'Bezig met verzenden…'; }
       store(subject, data);
 
       var finish = function (viaMail) {
@@ -364,7 +369,7 @@
   document.querySelectorAll('[data-vacature]').forEach(function (link) {
     link.addEventListener('click', function () {
       var msg = document.querySelector('#sollicitatie textarea');
-      if (msg && !msg.value) msg.value = 'Ik solliciteer op de vacature: ' + link.getAttribute('data-vacature') + '\n\n';
+      if (msg && !msg.value) msg.value = (IS_EN ? 'I am applying for the vacancy: ' : 'Ik solliciteer op de vacature: ') + link.getAttribute('data-vacature') + '\n\n';
     });
   });
 
@@ -415,7 +420,7 @@
       var li = document.createElement('li');
       var b = document.createElement('button');
       b.type = 'button';
-      b.setAttribute('aria-label', 'Film ' + (i + 1) + ': ' + clip.label);
+      b.setAttribute('aria-label', (IS_EN ? 'Video ' : 'Film ') + (i + 1) + ': ' + clip.label);
       b.addEventListener('click', function () { show(i); });
       li.appendChild(b);
       dotsEl.appendChild(li);
@@ -458,7 +463,7 @@
       var v = videos[front];
       if (p) v.pause(); else v.play().catch(function () {});
       pauseBtn.setAttribute('aria-pressed', String(p));
-      pauseBtn.querySelector('.vhero__pause-label').textContent = p ? 'Film afspelen' : 'Film pauzeren';
+      pauseBtn.querySelector('.vhero__pause-label').textContent = p ? (IS_EN ? 'Play video' : 'Film afspelen') : (IS_EN ? 'Pause video' : 'Film pauzeren');
       pauseBtn.querySelector('svg').innerHTML = p
         ? '<path d="M2 1l10 6-10 6z"/>'
         : '<rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/>';
@@ -783,102 +788,307 @@
     activate('oisterwijk');
   })();
 
-  /* ---------- 17 Locaties: echte kaart (Leaflet + Esri-straatkaart, werkt zonder sleutel) over de 3D-kaart ----------
-     Laadt Leaflet pas als er een locatiebord op de pagina staat. Lukt dat niet
-     (offline), dan blijft de getekende 3D-kaart gewoon staan. Kaarten en pinnen
-     volgen de actieve locatie uit blok 16; klikken op een kaart vliegt ernaartoe. */
+  /* ---------- 17 Locaties: echte kaart over de 3D-kaart ----------
+     Eerst een draaiende wereldbol (MapLibre GL, globe-projectie) die bij het in beeld
+     komen naar de vestigingen vliegt. Zonder WebGL of als MapLibre niet laadt: platte
+     Leaflet-kaart. Lukt ook dat niet (offline), dan blijft de getekende 3D-kaart staan.
+     Kaarten en pinnen volgen de actieve locatie uit blok 16; klikken op een kaart vliegt ernaartoe.
+     Esri-tegels werken zonder sleutel. */
   (function () {
     var board = document.querySelector('[data-loc-board]');
     var panel = board && board.querySelector('.loc-map');
     if (!panel) return;
     var PLACES = {
       tilburg: [51.58918, 5.01356], oisterwijk: [51.58260, 5.19253], breda: [51.60675, 4.75461],
-      venlo: [51.38918, 6.18544], reeuwijk: [52.04074, 4.71758], brussel: [50.87354, 4.41736]
+      venlo: [51.38918, 6.18544], reeuwijk: [52.04074, 4.71758], alphen: [52.14023, 4.64329], brussel: [50.87354, 4.41736]
     };
-    var CDN = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/';
+    var EN = /^en/.test(root.lang);
+    var T = {
+      aria: EN ? 'Map with the De Bresser locations' : 'Kaart met de vestigingen van De Bresser',
+      all: EN ? 'All locations' : 'Alle locaties',
+      world: EN ? 'World view' : 'Wereldbeeld',
+      attr: EN ? 'Map &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors' : 'Kaart &copy; Esri, HERE, Garmin, &copy; OpenStreetMap-bijdragers'
+    };
+    var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
+    var LEAFLET = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/';
+    var MAPLIBRE = 'https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.0/dist/';
+    var ICONS = {
+      all: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
+      world: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.6 5.1 3.6 8.5s-1.2 6.2-3.6 8.5c-2.4-2.3-3.6-5.1-3.6-8.5S9.6 5.8 12 3.5z"/></svg>'
+    };
 
     function loadCss(href) { var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; document.head.appendChild(l); }
     function loadJs(src, done, fail) { var s = document.createElement('script'); s.src = src; s.onload = done; s.onerror = fail; document.head.appendChild(s); }
 
-    function build() {
-      var L = window.L;
-      var cards = Array.prototype.slice.call(board.querySelectorAll('.loc-card[data-loc]'));
+    /* gedeeld: kaartjes, pinnen, knoppen */
+    var cards = Array.prototype.slice.call(board.querySelectorAll('.loc-card[data-loc]'));
+    function makeBox() {
       var box = document.createElement('div');
       box.className = 'loc-real';
-      box.setAttribute('aria-label', 'Kaart met de vestigingen van De Bresser');
+      box.setAttribute('aria-label', T.aria);
       panel.appendChild(box);
+      return box;
+    }
+    function pin(card) {
+      var id = card.getAttribute('data-loc');
+      var nr = (card.querySelector('.loc-card__nr') || {}).textContent || '';
+      var naam = (card.querySelector('h3') || {}).textContent || id;
+      return { naam: naam, html: '<span class="lr-pin"><span class="lr-pin__label">' + naam + '</span><span class="lr-pin__head"><b>' + nr + '</b></span><span class="lr-pin__pulse"></span></span>' };
+    }
+    function addTools(list) {
+      var tools = document.createElement('div');
+      tools.className = 'loc-real__tools';
+      list.forEach(function (t) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'loc-real__all';
+        b.innerHTML = t[0] + t[1];
+        b.addEventListener('click', t[2]);
+        tools.appendChild(b);
+      });
+      panel.appendChild(tools);
+    }
+    /* api: fly(id), getEl(id), setTop(id, on); geeft sync() terug */
+    function wire(api) {
+      function sync() {
+        cards.forEach(function (card) {
+          var id = card.getAttribute('data-loc');
+          var el = api.getEl(id);
+          if (!el) return;
+          var on = card.classList.contains('is-active');
+          el.classList.toggle('is-active', on);
+          api.setTop(id, on);
+        });
+      }
+      cards.forEach(function (card) {
+        new MutationObserver(sync).observe(card, { attributes: true, attributeFilter: ['class'] });
+        card.addEventListener('click', function (e) { if (!e.target.closest('a')) api.fly(card.getAttribute('data-loc')); });
+      });
+      return sync;
+    }
 
+    /* ---- 17a wereldbol (MapLibre) ---- */
+    function buildGlobe() {
+      var ml = window.maplibregl;
+      var box = makeBox();
+      box.classList.add('loc-real--globe', 'is-globe');
+      var bbox = [[180, 90], [-180, -90]];
+      cards.forEach(function (card) {
+        var p = PLACES[card.getAttribute('data-loc')];
+        if (!p) return;
+        bbox[0][0] = Math.min(bbox[0][0], p[1]); bbox[0][1] = Math.min(bbox[0][1], p[0]);
+        bbox[1][0] = Math.max(bbox[1][0], p[1]); bbox[1][1] = Math.max(bbox[1][1], p[0]);
+      });
+      function pad() { return Math.round(Math.max(48, Math.min(box.clientWidth, box.clientHeight) * 0.12)); }
+      var coarse = window.matchMedia('(pointer: coarse)').matches;
+      var START = { center: [-40, 30], zoom: 0.9 };
+
+      var map;
+      try {
+        map = new ml.Map({
+          container: box,
+          style: {
+            version: 8,
+            projection: { type: 'globe' },
+            sky: {
+              'sky-color': '#020d41',
+              'horizon-color': '#33bcfa',
+              'fog-color': '#ebeff4',
+              'sky-horizon-blend': 0.6,
+              'horizon-fog-blend': 0.6,
+              'fog-ground-blend': 0.8,
+              'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 0, 1, 4, 0.8, 6, 0]
+            },
+            sources: {
+              beeld: { type: 'raster', tileSize: 256, maxzoom: 19, tiles: [ESRI + 'World_Imagery/MapServer/tile/{z}/{y}/{x}'], attribution: T.attr },
+              straat: { type: 'raster', tileSize: 256, maxzoom: 19, tiles: [ESRI + 'World_Street_Map/MapServer/tile/{z}/{y}/{x}'] }
+            },
+            layers: [
+              { id: 'ruimte', type: 'background', paint: { 'background-color': '#020d41' } },
+              /* van ver: satellietbeeld; dichterbij gaat het over in de straatkaart */
+              { id: 'beeld', type: 'raster', source: 'beeld', maxzoom: 8, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 5, 1, 7, 0] } },
+              { id: 'straat', type: 'raster', source: 'straat', minzoom: 4.5, paint: { 'raster-opacity': ['interpolate', ['linear'], ['zoom'], 5, 0, 7, 1] } }
+            ]
+          },
+          center: START.center,
+          zoom: START.zoom,
+          attributionControl: { compact: true },
+          scrollZoom: false,
+          dragPan: !coarse,
+          dragRotate: false,
+          pitchWithRotate: false,
+          touchPitch: false,
+          fadeDuration: 0
+        });
+      } catch (err) {
+        box.remove();
+        startLeaflet();
+        return;
+      }
+      map.touchZoomRotate.disableRotation();
+      map.addControl(new ml.NavigationControl({ showCompass: false }), 'top-right');
+
+      var markers = {};
+      cards.forEach(function (card) {
+        var id = card.getAttribute('data-loc');
+        if (!PLACES[id]) return;
+        var p = pin(card);
+        var el = document.createElement('div');
+        el.className = 'loc-real__icon';
+        el.title = p.naam;
+        el.innerHTML = p.html;
+        el.addEventListener('click', function (e) {
+          e.stopPropagation();
+          card.click();
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+        new ml.Marker({ element: el, anchor: 'center' }).setLngLat([PLACES[id][1], PLACES[id][0]]).addTo(map);
+        markers[id] = el;
+      });
+
+      /* van ver alleen stippen zonder labels, anders liggen de pinnen op elkaar */
+      function onZoom() { box.classList.toggle('is-globe', map.getZoom() < 5); }
+      map.on('zoom', onZoom);
+
+      var spin = null, run = 0;
+      function stop() { run++; if (spin) { cancelAnimationFrame(spin); spin = null; } }
+      function toAll(duration) {
+        map.fitBounds(bbox, { padding: pad(), maxZoom: 9, curve: 1.5, duration: reduceMotion.matches ? 0 : duration, essential: false });
+      }
+      /* bol draait een stukje, draait naar Europa en vliegt dan naar Brabant */
+      function tour() {
+        stop();
+        var me = run;
+        map.jumpTo(START);
+        onZoom();
+        if (reduceMotion.matches) {
+          setTimeout(function () { if (me === run) toAll(0); }, 1200);
+          return;
+        }
+        var t0 = performance.now(), last = t0;
+        (function step(now) {
+          if (me !== run) return;
+          var c = map.getCenter();
+          map.setCenter([c.lng + (now - last) * 0.035, c.lat]);
+          last = now;
+          if (now - t0 < 1600) { spin = requestAnimationFrame(step); return; }
+          spin = null;
+          map.flyTo({ center: [5, 51.2], zoom: 2.4, duration: 1800, essential: false });
+          map.once('moveend', function () { if (me === run) toAll(3000); });
+        })(t0);
+      }
+      function fly(id) {
+        if (!PLACES[id]) return;
+        stop();
+        map.flyTo({ center: [PLACES[id][1], PLACES[id][0]], zoom: 13, duration: reduceMotion.matches ? 0 : 1800, essential: false });
+      }
+      ['mousedown', 'touchstart'].forEach(function (ev) { box.addEventListener(ev, stop, { passive: true }); });
+
+      var sync = wire({
+        fly: fly,
+        getEl: function (id) { return markers[id]; },
+        setTop: function (id, on) { if (markers[id]) markers[id].style.zIndex = on ? 2 : 1; }
+      });
+      addTools([
+        [ICONS.all, T.all, function () { stop(); toAll(1600); }],
+        [ICONS.world, T.world, tour]
+      ]);
+      panel.classList.add('has-real');
+      sync();
+
+      map.once('load', function () {
+        map.resize();
+        /* pas starten als de kaart echt in beeld is, zodat je de vlucht ziet */
+        if (!('IntersectionObserver' in window)) return toAll(0);
+        var seen = new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting) return;
+          seen.disconnect();
+          tour();
+        }, { threshold: 0.45 });
+        seen.observe(box);
+      });
+      window.addEventListener('resize', function () { map.resize(); });
+    }
+
+    function hasWebGL() {
+      try { return !!(window.WebGL2RenderingContext && document.createElement('canvas').getContext('webgl2')); }
+      catch (e) { return false; }
+    }
+
+    /* ---- 17b platte kaart (Leaflet) ---- */
+    function buildLeaflet() {
+      var L = window.L;
+      var box = makeBox();
       var map = L.map(box, { scrollWheelZoom: false, zoomControl: false, attributionControl: true, dragging: !L.Browser.mobile, tap: false });
       L.control.zoom({ position: 'topright' }).addTo(map);
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19,
-        attribution: 'Kaart &copy; Esri, HERE, Garmin, &copy; OpenStreetMap-bijdragers'
-      }).addTo(map);
+      L.tileLayer(ESRI + 'World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: T.attr }).addTo(map);
 
       var markers = {}, bounds = [];
       cards.forEach(function (card) {
         var id = card.getAttribute('data-loc');
         if (!PLACES[id]) return;
-        var nr = (card.querySelector('.loc-card__nr') || {}).textContent || '';
-        var naam = (card.querySelector('h3') || {}).textContent || id;
-        var icon = L.divIcon({
-          className: 'loc-real__icon',
-          html: '<span class="lr-pin"><span class="lr-pin__label">' + naam + '</span><span class="lr-pin__head"><b>' + nr + '</b></span><span class="lr-pin__pulse"></span></span>',
-          iconSize: [0, 0]
-        });
-        var m = L.marker(PLACES[id], { icon: icon, keyboard: false, title: naam, riseOnHover: true }).addTo(map);
-        m.on('click', function () { card.click(); fly(id); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
+        var p = pin(card);
+        var icon = L.divIcon({ className: 'loc-real__icon', html: p.html, iconSize: [0, 0] });
+        var m = L.marker(PLACES[id], { icon: icon, keyboard: false, title: p.naam, riseOnHover: true }).addTo(map);
+        m.on('click', function () { card.click(); card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
         markers[id] = m;
         bounds.push(PLACES[id]);
       });
       var all = L.latLngBounds(bounds);
       map.fitBounds(all, { padding: [48, 48] });
 
-      function fly(id) {
-        if (!PLACES[id]) return;
-        map.flyTo(PLACES[id], 13, { duration: reduceMotion.matches ? 0 : 0.9 });
-      }
-      function sync() {
-        cards.forEach(function (card) {
-          var m = markers[card.getAttribute('data-loc')];
-          if (!m || !m.getElement()) return;
-          var on = card.classList.contains('is-active');
-          m.getElement().classList.toggle('is-active', on);
-          m.setZIndexOffset(on ? 1000 : 0);
-        });
-      }
-      cards.forEach(function (card) {
-        new MutationObserver(sync).observe(card, { attributes: true, attributeFilter: ['class'] });
-        card.addEventListener('click', function (e) { if (!e.target.closest('a')) fly(card.getAttribute('data-loc')); });
+      var sync = wire({
+        fly: function (id) { if (PLACES[id]) map.flyTo(PLACES[id], 13, { duration: reduceMotion.matches ? 0 : 0.9 }); },
+        getEl: function (id) { return markers[id] && markers[id].getElement(); },
+        setTop: function (id, on) { if (markers[id]) markers[id].setZIndexOffset(on ? 1000 : 0); }
       });
-
-      /* knop om weer alles te tonen */
-      var reset = document.createElement('button');
-      reset.type = 'button';
-      reset.className = 'loc-real__all';
-      reset.innerHTML = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Alle locaties';
-      reset.addEventListener('click', function () { map.flyToBounds(all, { padding: [48, 48], duration: reduceMotion.matches ? 0 : 0.9 }); });
-      panel.appendChild(reset);
+      addTools([[ICONS.all, T.all, function () { map.flyToBounds(all, { padding: [48, 48], duration: reduceMotion.matches ? 0 : 0.9 }); }]]);
 
       panel.classList.add('has-real');
       setTimeout(function () { map.invalidateSize(); map.fitBounds(all, { padding: [48, 48] }); sync(); }, 60);
       window.addEventListener('resize', function () { map.invalidateSize(); });
     }
+    function startLeaflet() {
+      if (window.L && window.L.map) return buildLeaflet();
+      loadCss(LEAFLET + 'leaflet.min.css');
+      loadJs(LEAFLET + 'leaflet.min.js', buildLeaflet, function () {});
+    }
 
     function start() {
-      if (window.L && window.L.map) return build();
-      loadCss(CDN + 'leaflet.min.css');
-      loadJs(CDN + 'leaflet.min.js', build, function () {});
+      if (!hasWebGL()) return startLeaflet();
+      if (window.maplibregl) return buildGlobe();
+      loadCss(MAPLIBRE + 'maplibre-gl.css');
+      loadJs(MAPLIBRE + 'maplibre-gl.js', buildGlobe, startLeaflet);
     }
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         if (!entries[0].isIntersecting) return;
         io.disconnect();
         start();
-      }, { rootMargin: '400px 0px' });
+      }, { rootMargin: '600px 0px' });
       io.observe(panel);
     } else start();
   })();
+
+  /* ---------- 18 Taalkeuze NL / EN ---------- */
+  document.querySelectorAll('[data-lang]').forEach(function (box) {
+    var btn = box.querySelector('.lang__btn');
+    if (!btn) return;
+    function set(open) {
+      box.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    }
+    btn.addEventListener('click', function () {
+      var open = !box.classList.contains('is-open');
+      set(open);
+      if (open) { var first = box.querySelector('.lang__menu a:not([aria-current])'); if (first) first.focus(); }
+    });
+    document.addEventListener('click', function (e) { if (!box.contains(e.target)) set(false); });
+    box.addEventListener('focusout', function (e) { if (!box.contains(e.relatedTarget)) set(false); });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && box.classList.contains('is-open')) { e.stopPropagation(); set(false); btn.focus(); }
+    });
+  });
 
   /* ---------- 09 Jaartal ---------- */
   var year = String(new Date().getFullYear());

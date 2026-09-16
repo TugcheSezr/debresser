@@ -12,14 +12,15 @@
   if (!list || !form) return;
 
   var PAGE = 12;
+  var EN = /^en/.test(document.documentElement.lang);
   var THEMES = {
-    'vriendelijk': 'vriendelijk|aardig|behulpzaam|beleefd|gezellig|humeur',
-    'afspraken': 'afspra',
-    'snel': 'snel|effici|vlot|voortvarend',
-    'zorgvuldig': 'zorgvuldig|voorzichtig|netjes|keurig|zorg ',
-    'op-tijd': 'op tijd|tijdstip|afgesproken tijd|punctueel|stipt',
-    'communicatie': 'communicatie|gebeld|bereikbaar|contact',
-    'professioneel': 'professioneel|vakkundig|vakmanschap|deskundig|ervaren',
+    'vriendelijk': 'vriendelijk|aardig|behulpzaam|beleefd|gezellig|humeur|friendly|kind|helpful|polite|pleasant|cheerful|mood',
+    'afspraken': 'afspra|agreement|agreed|arrangement',
+    'snel': 'snel|effici|vlot|voortvarend|quick|fast|swift|prompt',
+    'zorgvuldig': 'zorgvuldig|voorzichtig|netjes|keurig|zorg |careful|neat|tidy|with care',
+    'op-tijd': 'op tijd|tijdstip|afgesproken tijd|punctueel|stipt|on time|punctual|agreed time',
+    'communicatie': 'communicatie|gebeld|bereikbaar|contact|communication|called|reachable',
+    'professioneel': 'professioneel|vakkundig|vakmanschap|deskundig|ervaren|professional|skilled|expert|experienced|craftsmanship',
     'lift': 'lift'
   };
   var SVC_LABEL = { 'De- en montage meubelstukken': 'De- en montage', 'In- uitpakservice': 'In- en uitpakservice', 'Handymanservice': 'Handyman' };
@@ -164,17 +165,17 @@
   function renderActive() {
     var items = [];
     if (state.q) items.push(['q', '"' + state.q + '"']);
-    if (state.score) items.push(['score', state.score === 'low' ? 'Cijfer 7 en lager' : 'Cijfer ' + state.score]);
+    if (state.score) items.push(['score', state.score === 'low' ? (EN ? 'Score 7 or lower' : 'Cijfer 7 en lager') : (EN ? 'Score ' : 'Cijfer ') + state.score]);
     if (state.theme) {
       var btn = document.querySelector('.rv-theme[data-theme="' + state.theme + '"]');
       items.push(['theme', btn ? btn.firstChild.textContent.trim() : state.theme]);
     }
     if (state.city) items.push(['city', state.city]);
-    if (state.svc) items.push(['svc', SVC_LABEL[state.svc] || state.svc]);
-    if (state.tip) items.push(['tip', 'Met verbeterpunt']);
+    if (state.svc) items.push(['svc', EN && els.svc.selectedIndex > -1 ? els.svc.options[els.svc.selectedIndex].text.trim() : (SVC_LABEL[state.svc] || state.svc)]);
+    if (state.tip) items.push(['tip', EN ? 'With a point for improvement' : 'Met verbeterpunt']);
 
     els.active.innerHTML = items.map(function (it) {
-      return '<button type="button" data-clear="' + it[0] + '" aria-label="Filter ' + escapeHtml(it[1]) + ' verwijderen">' + escapeHtml(it[1]) + X + '</button>';
+      return '<button type="button" data-clear="' + it[0] + '" aria-label="' + (EN ? 'Remove filter ' + escapeHtml(it[1]) : 'Filter ' + escapeHtml(it[1]) + ' verwijderen') + '">' + escapeHtml(it[1]) + X + '</button>';
     }).join('');
     document.querySelectorAll('[data-reset]').forEach(function (b) {
       if (b.classList.contains('rv-reset')) b.hidden = items.length === 0;
@@ -274,7 +275,7 @@
       var open = read.getAttribute('aria-expanded') === 'true';
       body.classList.toggle('is-clamped', open);
       read.setAttribute('aria-expanded', String(!open));
-      read.firstChild.textContent = open ? 'Lees verder ' : 'Minder tonen ';
+      read.firstChild.textContent = open ? (EN ? 'Read more ' : 'Lees verder ') : (EN ? 'Show less ' : 'Minder tonen ');
     }
   });
 

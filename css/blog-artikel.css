@@ -1,0 +1,417 @@
+/* =====================================================================
+   Blogartikel als rustig leesartikel
+   Alleen gekoppeld op blog-inhuren-professionals-kan-stressniveau-verminderen.html,
+   na style.css en diepte.css. Kleinere hero en titel, smallere leeskolom,
+   minder witruimte, foto's recht en compacter, checklist als vinkjesvlak,
+   (videochat-stappen staan in videochat-stappen.css). Teksten blijven gelijk.
+   ===================================================================== */
+
+.page-blog-artikel {
+  --art-max: 1200px;
+  --art-pad: clamp(48px, 6vw, 92px);
+}
+
+/* ---------- Hero: lager, titel kleiner en smaller ---------- */
+.page-blog-artikel .page-hero--photo {
+  min-height: clamp(440px, 64vh, 620px);
+  padding-top: calc(var(--header-h) + clamp(28px, 4vw, 56px));
+  padding-bottom: calc(clamp(40px, 5vw, 64px) + 56px);
+  align-items: flex-end;
+}
+.page-blog-artikel .page-hero--photo::after { display: none; }
+.page-blog-artikel .page-hero--photo.page-hero--compact .page-hero__copy { max-width: 860px; gap: 16px; }
+.page-blog-artikel .page-hero--photo .h1 {
+  font-size: clamp(2.2rem, 1.4rem + 2.6vw, 3.6rem);
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.page-blog-artikel .page-hero--photo .h1::after { width: 56px; height: 4px; margin-top: 18px; }
+.page-blog-artikel .page-hero--photo .lead { font-size: clamp(1.0625rem, 1rem + .35vw, 1.25rem); }
+
+/* ---------- Secties: één doorlopend artikel ---------- */
+.page-blog-artikel main > .section { padding-block: var(--art-pad); }
+.page-blog-artikel main > .section > .wrap { max-width: var(--art-max); }
+.page-blog-artikel main > .section + .section { padding-top: calc(var(--art-pad) * .6); }
+.page-blog-artikel main > .section--mist { background: linear-gradient(180deg, #f5f8fb, #eef3f8); }
+.page-blog-artikel main > .section .bg-ruit { opacity: .35; width: 240px; }
+.page-blog-artikel .flow-section { gap: clamp(20px, 2.4vw, 32px); }
+
+.page-blog-artikel .split { gap: clamp(28px, 4vw, 64px); align-items: center; }
+.page-blog-artikel .split--top { align-items: start; }
+/* tekst + foto: tekst breder dan de foto */
+.page-blog-artikel .split:has(> .split__media) { grid-template-columns: minmax(0, 1.15fr) minmax(0, .95fr); }
+.page-blog-artikel .split:has(> .split__media:first-child) { grid-template-columns: minmax(0, .95fr) minmax(0, 1.15fr); }
+
+/* leestekst */
+.page-blog-artikel .split__text { display: flex; flex-direction: column; gap: 16px; }
+.page-blog-artikel .rich p { font-size: 1.0625rem; line-height: 1.8; color: #3d4452; }
+.page-blog-artikel .rich p + p { margin-top: 14px; }
+.page-blog-artikel .rich p > br:first-child { display: none; }
+.page-blog-artikel .rich a { color: var(--navy); font-weight: 600; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.page-blog-artikel .rich a:hover { color: var(--green-700, #047857); }
+
+/* tussenkoppen */
+.page-blog-artikel .split__text > .h3,
+.page-blog-artikel .flow-section > .h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 1.2rem + .9vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -.02em;
+  color: var(--navy);
+}
+
+/* 'Vragen of offerte?' + knop als klein kader */
+.page-blog-artikel .split__text > .rich:has(+ .actions) {
+  margin-top: 8px;
+  padding: 16px 20px 0;
+  border-top: 1px solid var(--line);
+}
+.page-blog-artikel .split__text > .rich:has(+ .actions) p { font-weight: 600; color: var(--navy); }
+.page-blog-artikel .split__text > .actions { padding-left: 20px; }
+
+/* twee tekstkolommen zonder foto: als vel papier naast elkaar */
+.page-blog-artikel .split:not(:has(.split__media, .split__form)) { align-items: stretch; }
+.page-blog-artikel .split:not(:has(.split__media, .split__form)) > .split__text {
+  padding: clamp(22px, 2.6vw, 34px);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .05), 0 12px 30px -18px rgba(2, 13, 65, .25);
+}
+
+/* ---------- Foto's: recht, compacter, dunne witte rand ---------- */
+.page-blog-artikel .split__media { padding: 0; }
+.page-blog-artikel .img-3d { max-width: 540px; margin-inline: auto; transform: none !important; }
+.page-blog-artikel .img-3d__frame,
+.page-blog-artikel .section:nth-of-type(odd) .img-3d__frame {
+  padding: 8px;
+  border-radius: 20px;
+  transform: none;
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .05), 0 18px 40px -20px rgba(2, 13, 65, .35);
+}
+.page-blog-artikel .img-3d img { aspect-ratio: 4 / 3.4; border-radius: 13px; }
+.page-blog-artikel .img-3d:hover .img-3d__frame {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .05), 0 26px 50px -22px rgba(2, 13, 65, .42);
+}
+
+/* ---------- Checklist overlevingspakket ---------- */
+.page-blog-artikel .rich ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+  padding: 14px;
+  list-style: none;
+  border-radius: 18px;
+  background: #f1f6f2;
+  box-shadow: inset 0 0 0 1px rgba(16, 120, 60, .08);
+}
+.page-blog-artikel .rich ul li {
+  position: relative;
+  margin: 0;
+  padding: 10px 12px 10px 42px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(2, 13, 65, .06);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--navy);
+}
+.page-blog-artikel .rich ul li::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 13px no-repeat,
+    var(--green);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- Formulier naast de eerste tekst iets compacter ---------- */
+.page-blog-artikel .split__form .form-card { padding: clamp(22px, 2.6vw, 34px); }
+.page-blog-artikel .split__form .form-card > .h3 { font-size: clamp(1.5rem, 1.2rem + .9vw, 2rem); }
+
+/* ---------- Kleine schermen ---------- */
+@media (max-width: 1023px) {
+  .page-blog-artikel .split:has(> .split__media),
+  .page-blog-artikel .split:has(> .split__media:first-child) { grid-template-columns: 1fr; }
+  .page-blog-artikel .split > .split__media:first-child { order: 2; }
+}
+@media (max-width: 767px) {
+  .page-blog-artikel .page-hero--photo { min-height: clamp(360px, 62vh, 480px); }
+  .page-blog-artikel .page-hero--photo .h1 { font-size: clamp(1.85rem, 1.2rem + 3.4vw, 2.4rem); }
+  .page-blog-artikel .img-3d { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .page-blog-artikel .rich ul { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   'Stressvrij verhuizen doe je zo!' als rustig ademend vlak
+   Kleuren van debresser.nl: Diepblauw #00498F, Blauw #007DC2,
+   Bressergroen #6DB23F. Zachte lucht, golflijnen, ademende cirkels.
+   ===================================================================== */
+.page-blog-artikel main > .stressvrij {
+  --sv-diep: #00498f;
+  --sv-blauw: #007dc2;
+  --sv-groen: #6db23f;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(64px, 8vw, 112px);
+  background:
+    radial-gradient(50% 70% at 0% 0%, rgba(0, 125, 194, .14), transparent 70%),
+    radial-gradient(45% 60% at 100% 100%, rgba(109, 178, 63, .16), transparent 70%),
+    linear-gradient(180deg, #f2f8fc 0%, #eef6f3 100%);
+}
+.page-blog-artikel main > .stressvrij + .section { padding-top: var(--art-pad); }
+
+/* ademende cirkels */
+.sv-adem {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sv-adem 7s ease-in-out infinite;
+}
+.sv-adem--1 {
+  left: -120px; top: -80px; width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(0, 125, 194, .16) 0 40%, transparent 41%), radial-gradient(circle, transparent 0 58%, rgba(0, 125, 194, .12) 58.5% 59.5%, transparent 60%), radial-gradient(circle, transparent 0 78%, rgba(0, 125, 194, .08) 78.5% 79.5%, transparent 80%);
+}
+.sv-adem--2 {
+  right: -90px; bottom: -110px; width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(109, 178, 63, .18) 0 38%, transparent 39%), radial-gradient(circle, transparent 0 60%, rgba(109, 178, 63, .14) 60.5% 61.5%, transparent 62%);
+  animation-delay: -3.5s;
+}
+@keyframes sv-adem { 0%, 100% { transform: scale(.94); opacity: .75; } 50% { transform: scale(1.06); opacity: 1; } }
+
+/* golflijnen door het vlak */
+.sv-golf { position: absolute; left: 0; top: 46%; z-index: -1; width: 100%; height: 120px; fill: none; pointer-events: none; }
+.sv-golf path { stroke: rgba(0, 125, 194, .18); stroke-width: 2; }
+.sv-golf path + path { stroke: rgba(109, 178, 63, .22); stroke-dasharray: 6 10; }
+
+.sv-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(20px, 2.6vw, 36px); align-items: center; }
+
+.sv-kaart {
+  position: relative;
+  padding: clamp(28px, 3.4vw, 48px);
+  border-radius: 28px;
+}
+.sv-kaart .rich p { margin: 0; }
+
+/* intro: Diepblauw */
+.page-blog-artikel .sv-kaart--intro {
+  color: #dbe8f5;
+  background:
+    radial-gradient(80% 60% at 100% 0%, rgba(0, 125, 194, .55), transparent 70%),
+    linear-gradient(160deg, var(--sv-diep) 0%, #003a73 100%);
+  box-shadow: 0 30px 60px -30px rgba(0, 73, 143, .7), inset 0 1px 0 rgba(255, 255, 255, .14);
+}
+.page-blog-artikel .sv-kaart--intro .h3 { margin: 18px 0 16px; padding: 0; color: #fff; font-size: clamp(1.7rem, 1.3rem + 1.2vw, 2.35rem); }
+.page-blog-artikel .sv-kaart--intro .h3::before { display: none; }
+.page-blog-artikel .sv-kaart--intro .rich p { color: #dbe8f5; }
+
+/* de drie grote lijnen als markeringen */
+.sv-mark {
+  display: inline;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.sv-mark--1 { background: rgba(109, 178, 63, .9); }
+.sv-mark--2 { background: rgba(0, 125, 194, .95); }
+.sv-mark--3 { background: #fff; color: var(--sv-diep); }
+
+/* iconen */
+.sv-icoon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2);
+}
+.sv-icoon svg { width: 38px; height: 38px; fill: none; stroke: #fff; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.sv-kaart--intro .sv-icoon::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 26px;
+  border: 2px solid rgba(109, 178, 63, .6);
+  animation: sv-adem 5s ease-in-out infinite;
+}
+.sv-kaart--intro .sv-icoon { position: relative; }
+
+/* tekstkaart: wit met blauwe rand links */
+.page-blog-artikel .sv-kaart--tekst {
+  padding-top: clamp(40px, 4vw, 56px);
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 73, 143, .06), 0 24px 50px -28px rgba(0, 73, 143, .35);
+}
+.page-blog-artikel .sv-kaart--tekst::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 28px; bottom: 28px;
+  width: 5px;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(180deg, var(--sv-blauw), var(--sv-groen));
+}
+.sv-icoon--doos {
+  position: absolute;
+  top: -28px;
+  right: clamp(24px, 3vw, 40px);
+  background: linear-gradient(150deg, var(--sv-groen), #4f9a27);
+  box-shadow: 0 14px 28px -12px rgba(79, 154, 39, .8), inset 0 1px 0 rgba(255, 255, 255, .35);
+  transform: rotate(6deg);
+}
+.sv-kaart--tekst strong { color: var(--sv-diep); font-weight: 700; }
+.page-blog-artikel .sv-kaart--tekst .rich a { color: var(--sv-blauw); text-decoration-color: var(--sv-groen); }
+
+/* tip */
+.page-blog-artikel .sv-tip {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 20px !important;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #eef7e8;
+  box-shadow: inset 0 0 0 1px rgba(109, 178, 63, .25);
+  color: #2f4a1f !important;
+  font-weight: 500;
+}
+.sv-tip__icoon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sv-groen);
+}
+.sv-tip__icoon svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 1023px) {
+  .sv-grid { grid-template-columns: 1fr; gap: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sv-adem, .sv-kaart--intro .sv-icoon::after { animation: none; }
+}
+
+/* =====================================================================
+   Trapfoto stapt uit het scherm ('Naast het praktische regel-gedeelte ...')
+   Een verzonken 'gat' in de pagina (binnenschaduw = diepte achter het
+   scherm) met de vrijstaande verhuizers ervoor: hoofd boven en voorste
+   verhuizer links/onder steken buiten het gat, richting de kijker.
+   Diepte bij muisbeweging via --rx/--ry (data-tilt, main.js) met
+   translateZ per laag; bij scrollen komen ze van binnen naar buiten.
+   ===================================================================== */
+.page-blog-artikel .trap-uit {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  perspective: 1100px;
+}
+.trap-uit__stage {
+  position: relative;
+  aspect-ratio: 652 / 941;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 600ms cubic-bezier(.2, .8, .2, 1);
+}
+/* het gat: de ruimte 'achter' je scherm */
+.trap-uit__gat {
+  position: absolute;
+  left: 15%;
+  right: 3%;
+  top: 17%;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  transform: translateZ(-60px) scale(1.055);
+  background:
+    radial-gradient(90% 70% at 25% 20%, #ffffff 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, #e3e8ee 0%, #cfd7e0 100%);
+  box-shadow:
+    inset 0 22px 30px -12px rgba(2, 13, 65, .45),
+    inset 14px 0 24px -14px rgba(2, 13, 65, .35),
+    inset -10px 0 20px -14px rgba(2, 13, 65, .25),
+    inset 0 -6px 14px -8px rgba(2, 13, 65, .2),
+    0 0 0 1px rgba(255, 255, 255, .9),
+    0 0 0 7px #fff,
+    0 0 0 8px rgba(2, 13, 65, .08),
+    0 26px 50px -24px rgba(2, 13, 65, .45);
+}
+/* zacht lichtvlak op de achterwand */
+.trap-uit__licht {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(0, 125, 194, .10), transparent 40%, rgba(109, 178, 63, .10));
+}
+/* slagschaduw van de uitstappende verhuizers op de pagina */
+.trap-uit__schaduw {
+  position: absolute;
+  left: -4%;
+  right: 62%;
+  bottom: -2%;
+  height: 7%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(2, 13, 65, .45), transparent);
+  filter: blur(8px);
+  transform: translateZ(-10px);
+}
+.page-blog-artikel .trap-uit__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: auto;
+  border-radius: 0;
+  object-fit: contain;
+  transform: translateZ(70px) scale(.94);
+  transform-origin: 50% 70%;
+  filter:
+    contrast(1.06) saturate(1.05)
+    drop-shadow(0 2px 2px rgba(2, 13, 65, .25))
+    drop-shadow(14px 26px 22px rgba(2, 13, 65, .38));
+}
+
+/* bij scrollen: van binnen het scherm naar buiten stappen */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .page-blog-artikel .trap-uit__img {
+      animation: trap-uit-stap linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 50%;
+    }
+    .page-blog-artikel .trap-uit__schaduw {
+      animation: trap-uit-schaduw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 50%;
+    }
+  }
+}
+@keyframes trap-uit-stap {
+  from { transform: translateZ(-40px) translateY(6%) scale(.8); filter: contrast(1.02) saturate(.9) brightness(.92) drop-shadow(0 2px 2px rgba(2, 13, 65, .15)) drop-shadow(4px 8px 8px rgba(2, 13, 65, .2)); }
+  to   { transform: translateZ(70px) scale(.94); }
+}
+@keyframes trap-uit-schaduw {
+  from { opacity: 0; transform: translateZ(-10px) scale(.6); }
+  to   { opacity: 1; transform: translateZ(-10px) scale(1); }
+}
+@media (max-width: 1023px) {
+  .page-blog-artikel .trap-uit { max-width: 400px; }
+}

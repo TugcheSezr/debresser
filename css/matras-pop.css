@@ -1,0 +1,89 @@
+/* =====================================================================
+   Blog stressvrij verhuizen: matras komt uit het fotoblok ("Laatste tip")
+   Het kader toont de foto zonder bovenste 22% en rechter 18%;
+   de vrijstaande man + matras ligt er pixel-precies overheen en steekt
+   daardoor boven en rechts uit het kader.
+   ===================================================================== */
+
+.matras-pop {
+  --top: 22%;
+  --rechts: 18%;
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  aspect-ratio: 1000 / 667;
+}
+
+/* gekantelde navy kaart achter het kader */
+.matras-pop__schaduw {
+  position: absolute;
+  inset: var(--top) var(--rechts) 0 0;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--navy-700, #1b4580), var(--navy, #0f2c59));
+  rotate: -4deg;
+  translate: -10px 12px;
+  box-shadow: 0 30px 60px -24px rgba(6, 20, 48, .5);
+}
+.matras-pop__schaduw::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 2px solid rgba(16, 185, 129, .35);
+  border-radius: 12px;
+}
+
+.matras-pop__kader {
+  position: absolute;
+  inset: var(--top) var(--rechts) 0 0;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 2px 4px rgba(6, 20, 48, .12), 0 24px 50px -20px rgba(6, 20, 48, .45);
+}
+.matras-pop__kader img {
+  position: absolute;
+  /* kaderhoogte = 78%, kaderbreedte = 82% van het figuur */
+  top: -28.205%;
+  left: 0;
+  width: 121.951%;
+  height: 128.205%;
+  max-height: none;
+  max-width: none;
+  object-fit: cover;
+}
+/* witte fotorand; de matras valt eroverheen */
+.matras-pop__kader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 7px #fff, inset 0 0 0 8px rgba(15, 44, 89, .08);
+  pointer-events: none;
+}
+
+.matras-pop__uit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  pointer-events: none;
+  filter: drop-shadow(0 16px 14px rgba(6, 20, 48, .3)) drop-shadow(0 2px 2px rgba(6, 20, 48, .2));
+  transition: filter 500ms var(--ease);
+}
+.matras-pop:hover .matras-pop__uit {
+  filter: drop-shadow(0 26px 22px rgba(6, 20, 48, .38)) drop-shadow(0 3px 3px rgba(6, 20, 48, .22));
+}
+.matras-pop__schaduw { transition: rotate 600ms var(--spring, ease-out), translate 600ms var(--spring, ease-out); }
+.matras-pop:hover .matras-pop__schaduw { rotate: -6deg; translate: -16px 16px; }
+
+/* bij binnenkomen komt de matras uit het kader omhoog */
+.js .reveal .matras-pop__uit { opacity: 0; transform: translateY(6%); }
+.js .reveal.is-visible .matras-pop__uit {
+  opacity: 1;
+  transform: none;
+  transition: opacity 500ms var(--ease) 350ms, transform 900ms var(--spring, ease-out) 350ms, filter 500ms var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal .matras-pop__uit { opacity: 1; transform: none; }
+}

@@ -1,0 +1,149 @@
+/* ==========================================================
+   Particuliere opslag: "Bekijk ook eens" als echte verhuisdozen
+   (tekst op een wit verzendlabel, karton eromheen)
+   Eigen bestand, geladen na diepte.css.
+   ========================================================== */
+section .koli-grid { padding-top: 46px; row-gap: 78px; column-gap: 34px; }
+section .koli-grid > li.koli {
+  --kraft: #c99a5f;
+  --kraft-licht: #dcb47b;
+  --kraft-donker: #a57640;
+  overflow: visible;
+  border-radius: 3px;
+  padding: 50px 18px 58px;
+  background:
+    repeating-linear-gradient(90deg, rgba(90, 55, 20, .035) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(0deg, rgba(255, 240, 210, .05) 0 2px, transparent 2px 5px),
+    radial-gradient(120% 70% at 30% 10%, rgba(255, 230, 190, .35), transparent 60%),
+    linear-gradient(180deg, var(--kraft-licht), var(--kraft) 45%, #bd8d52);
+  box-shadow:
+    inset 0 0 0 1px rgba(110, 70, 30, .35),
+    inset 0 10px 0 -4px rgba(60, 35, 12, .55),
+    inset 0 -14px 24px -14px rgba(80, 50, 20, .35),
+    0 2px 3px rgba(40, 25, 10, .25),
+    0 26px 40px -18px rgba(30, 20, 10, .45);
+}
+section .koli-grid > li.koli:hover,
+section .koli-grid > li.koli:focus-within {
+  box-shadow:
+    inset 0 0 0 1px rgba(110, 70, 30, .35),
+    inset 0 10px 0 -4px rgba(60, 35, 12, .55),
+    inset 0 -14px 24px -14px rgba(80, 50, 20, .35),
+    0 4px 6px rgba(40, 25, 10, .2),
+    0 50px 60px -28px rgba(30, 20, 10, .5) !important;
+}
+section .koli-grid > li.koli::before { background: radial-gradient(300px circle at var(--mx) var(--my), rgba(255, 240, 215, .22), transparent 55%); }
+
+/* grondschaduw */
+section .koli-grid > li.koli::after {
+  content: "";
+  position: absolute;
+  left: 4%; right: -6%; bottom: -18px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(20, 14, 8, .35), transparent);
+  filter: blur(4px);
+  z-index: -1;
+  transition: transform 420ms var(--ease), opacity 420ms var(--ease);
+}
+section .koli-grid > li.koli:hover::after { transform: scale(.9); opacity: .7; }
+
+/* alle decoratie-lagen */
+.koli > .koli__flap, .koli > .koli__zij, .koli > .koli__greep,
+.koli > .koli__tape, .koli > .koli__stempel, .koli > .koli__pijlen { position: absolute; pointer-events: none; }
+
+/* open kapjes: binnenkant is lichter karton */
+.koli > .koli__flap {
+  top: -40px;
+  width: 52%;
+  height: 44px;
+  z-index: 0;
+  background:
+    repeating-linear-gradient(90deg, rgba(90, 55, 20, .04) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #e6c998, #cfa56a);
+  transition: transform 520ms var(--spring);
+}
+.koli > .koli__flap--l { left: -3%; clip-path: polygon(0 0, 88% 18%, 96% 100%, 12% 100%); transform-origin: 90% 100%; transform: rotate(-4deg); }
+.koli > .koli__flap--r { right: -4%; clip-path: polygon(12% 18%, 100% 0, 88% 100%, 4% 100%); transform-origin: 10% 100%; transform: rotate(5deg); background: linear-gradient(180deg, #d9b682, #bf925a); }
+.koli:hover > .koli__flap--l { transform: rotate(-12deg); }
+.koli:hover > .koli__flap--r { transform: rotate(13deg); }
+
+/* zijkant voor diepte */
+.koli > .koli__zij {
+  top: -9px; bottom: 0; right: -16px;
+  width: 16px;
+  clip-path: polygon(0 9px, 100% 0, 100% calc(100% - 9px), 0 100%);
+  background:
+    repeating-linear-gradient(0deg, rgba(60, 35, 12, .05) 0 1px, transparent 1px 4px),
+    linear-gradient(90deg, var(--kraft-donker), #8c6232);
+}
+
+/* handgreep */
+.koli > .koli__greep {
+  top: 16px; left: 50%;
+  width: 74px; height: 16px;
+  translate: -50% 0;
+  border-radius: 9px;
+  background: radial-gradient(120% 140% at 50% 110%, #3a2610, #1d1207 70%);
+  box-shadow: 0 1px 0 rgba(255, 235, 200, .45), inset 0 3px 3px rgba(0, 0, 0, .5);
+}
+
+/* tape over de onderste naad */
+.koli > .koli__tape {
+  bottom: -2px; left: 50%;
+  width: 58px; height: 46px;
+  translate: -50% 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .35) 30%, rgba(255, 255, 255, .05) 60%, rgba(255, 255, 255, .25)),
+    rgba(215, 175, 110, .75);
+  border-left: 1px solid rgba(120, 80, 30, .25);
+  border-right: 1px solid rgba(120, 80, 30, .25);
+  clip-path: polygon(0 3px, 8% 0, 16% 4px, 26% 1px, 36% 4px, 48% 0, 58% 3px, 70% 0, 82% 4px, 92% 1px, 100% 3px, 100% 100%, 0 100%);
+}
+
+/* inktstempel met het beeldmerk + "deze kant boven" pijlen */
+.koli > .koli__stempel {
+  left: 16px; bottom: 12px;
+  width: 58px; height: 36px;
+  background: url("../assets/img/logo-de-bresser-compact.png") left center / contain no-repeat;
+  filter: grayscale(1) brightness(.35) sepia(.6);
+  mix-blend-mode: multiply;
+  opacity: .55;
+  rotate: -4deg;
+}
+.koli > .koli__pijlen {
+  right: 16px; bottom: 14px;
+  width: 44px; height: 30px;
+  opacity: .55;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 30'%3E%3Cg fill='%233b2410'%3E%3Cpath d='M11 2 3 12h5v10h6V12h5z'/%3E%3Cpath d='M33 2l-8 10h5v10h6V12h5z'/%3E%3Crect x='2' y='25' width='40' height='3'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* het verzendlabel met foto en tekst */
+.koli > .koli__label {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  z-index: 1;
+  background: linear-gradient(180deg, #ffffff, #ebeff4);
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 1px 1px rgba(60, 35, 12, .2), 0 6px 12px -6px rgba(60, 35, 12, .45);
+  rotate: -1deg;
+  transition: rotate 420ms var(--spring), translate 420ms var(--spring);
+}
+.koli-grid > li:nth-child(even) > .koli__label { rotate: 1.2deg; }
+.koli:hover > .koli__label { rotate: 0deg; translate: 0 -3px; }
+/* streepjescode onderaan het label */
+.koli > .koli__label::after {
+  content: "";
+  display: block;
+  height: 14px;
+  margin: 0 18px 12px;
+  background: repeating-linear-gradient(90deg, #2f2f2f 0 2px, transparent 2px 4px, #2f2f2f 4px 5px, transparent 5px 8px, #2f2f2f 8px 11px, transparent 11px 12px);
+  opacity: .75;
+}
+.koli .photo-card__img { margin: 8px 8px 0; border-radius: 2px; }
+.koli .photo-card__body { flex: 1; padding: 16px 18px 14px; }
+
+@media (max-width: 640px) {
+  section .koli-grid { row-gap: 70px; padding-right: 16px; }
+}

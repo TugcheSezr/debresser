@@ -33,14 +33,14 @@
 
   /* Achtergrond-pills */
   .bgp { display: inline-flex; align-items: center; gap: 4px; font-size: 6.8pt; font-weight: 600; color: var(--db-nachtblauw); white-space: nowrap; }
-  .bgp i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; border: 1px solid #C9D1DD; }
+  .bgp i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; border: 1px solid #C7C7C7; }
   .c-N { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw) !important; }
   .c-W { background: #fff; }
   .c-M { background: var(--db-mist); }
   .c-G { background: var(--db-signaalgroen); border-color: var(--db-signaalgroen) !important; }
 
   /* ---------- Omslag ---------- */
-  .cover { background: var(--db-nachtblauw); color: #C9D1E8; padding: 16mm; display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; }
+  .cover { background: var(--db-nachtblauw); color: #C7C7C7; padding: 16mm; display: grid; grid-template-columns: 1fr 1fr; gap: 14mm; }
   .cover .ruit { position: absolute; left: 32%; bottom: -130px; width: 420px; opacity: .26; }
   .cover .ruit polygon { fill: none; stroke-width: 34; }
   .cover-l { position: relative; display: flex; flex-direction: column; }
@@ -48,8 +48,8 @@
   .cover-l .eyebrow { color: var(--db-hemelsblauw); margin-top: 14mm; }
   .cover h1 { color: #fff; font-size: 32pt; line-height: 1.05; letter-spacing: -.02em; margin-top: 10px; }
   .cover h1 span { color: var(--db-signaalgroen); }
-  .cover .lead { margin-top: 12px; font-size: 11pt; line-height: 1.55; font-weight: 300; color: #DDE3F2; max-width: 38ch; }
-  .cover-meta { margin-top: auto; font-size: 7.5pt; color: #AEB8D6; }
+  .cover .lead { margin-top: 12px; font-size: 11pt; line-height: 1.55; font-weight: 300; color: #EBEFF4; max-width: 38ch; }
+  .cover-meta { margin-top: auto; font-size: 7.5pt; color: #C7C7C7; }
   .cover-r { position: relative; display: flex; flex-direction: column; gap: 12px; }
   .flow { display: grid; grid-template-columns: 1fr 18px 1fr 18px 1fr; align-items: stretch; gap: 4px; }
   .flow .st { background: #fff; border-radius: 10px; padding: 12px; color: var(--db-antraciet); display: flex; flex-direction: column; gap: 4px; }
@@ -60,16 +60,16 @@
   .flow .ar { color: var(--db-signaalgroen); display: grid; place-items: center; font-size: 14px; }
   .why { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 12px 14px; }
   .why h3 { color: #fff; font-size: 10pt; margin-bottom: 6px; }
-  .why li { position: relative; padding: 3px 0 3px 16px; font-size: 8.6pt; color: #DDE3F2; }
+  .why li { position: relative; padding: 3px 0 3px 16px; font-size: 8.6pt; color: #EBEFF4; }
   .why li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 5px; border-left: 2px solid var(--db-signaalgroen); border-bottom: 2px solid var(--db-signaalgroen); transform: rotate(-45deg); }
   .toc { background: #fff; border-radius: 10px; padding: 10px 14px; }
-  .toc li { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted #D5DBE5; font-size: 8.4pt; color: var(--db-nachtblauw); }
+  .toc li { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dotted #C7C7C7; font-size: 8.4pt; color: var(--db-nachtblauw); }
   .toc li:last-child { border-bottom: 0; }
   .toc .pg { font-family: "IBM Plex Mono", monospace; font-size: 7.6pt; color: var(--db-grijs); }
 
   /* ---------- Blokkaarten ---------- */
   .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 9px; flex: 1; min-height: 0; }
-  .card { display: flex; flex-direction: column; gap: 6px; padding: 9px 10px; border: 1px solid #DDE3EC; border-radius: 10px; background: #fff; min-height: 0; }
+  .card { display: flex; flex-direction: column; gap: 6px; padding: 9px 10px; border: 1px solid #EBEFF4; border-radius: 10px; background: #fff; min-height: 0; }
   .card-h { display: flex; align-items: center; gap: 7px; }
   .id { font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; font-weight: 500; background: var(--db-nachtblauw); color: #fff; padding: 1px 6px; border-radius: 4px; }
   .card-h h3 { font-size: 9.8pt; line-height: 1.2; }
@@ -80,31 +80,31 @@
   .inh li::before { content: ""; position: absolute; left: 0; top: 5px; width: 4px; height: 4px; background: var(--db-webblauw); transform: skewX(-20deg); }
   .regel { font-size: 7pt; line-height: 1.35; padding-left: 7px; border-left: 2px solid var(--db-signaalgroen); color: var(--db-nachtblauw); }
   .use { margin-top: auto; display: flex; align-items: center; flex-wrap: wrap; gap: 3px; font-size: 6.6pt; color: var(--db-grijs); }
-  .tp { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; padding: 0 5px; border-radius: 3px; border: 1px solid #D5DBE5; color: #9AA3B5; }
+  .tp { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; padding: 0 5px; border-radius: 3px; border: 1px solid #C7C7C7; color: #C7C7C7; }
   .tp.on { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw); color: #fff; }
 
   /* Mini-wireframes */
-  .wf { position: relative; height: 70px; border-radius: 6px; border: 1px solid #D5DBE5; overflow: hidden; padding: 6px; display: flex; gap: 5px; flex: none; }
+  .wf { position: relative; height: 70px; border-radius: 6px; border: 1px solid #C7C7C7; overflow: hidden; padding: 6px; display: flex; gap: 5px; flex: none; }
   .wf.N { background: var(--db-nachtblauw); border-color: var(--db-nachtblauw); }
   .wf.M { background: var(--db-mist); }
   .wf.W, .wf.G { background: #fff; }
   .wf .col { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
   .wf .row { display: flex; gap: 3px; align-items: center; }
-  .wf .l { display: block; height: 3px; border-radius: 2px; background: #C4CCD9; }
-  .wf .l.t { height: 6px; background: #8E9AB0; }
+  .wf .l { display: block; height: 3px; border-radius: 2px; background: #C7C7C7; }
+  .wf .l.t { height: 6px; background: #676767; }
   .wf .l.bl { background: var(--db-webblauw); }
   .wf.N .l { background: rgba(255,255,255,.4); }
   .wf.N .l.t { background: #fff; }
   .wf.N .l.bl { background: var(--db-hemelsblauw); }
-  .wf .p { display: block; border-radius: 4px; background: linear-gradient(150deg, #7FA7CF, #2D5E93); }
+  .wf .p { display: block; border-radius: 4px; background: linear-gradient(150deg, #007AC0, #007AC0); }
   .wf .k { display: block; width: 22px; height: 7px; border-radius: 2px; background: var(--db-signaalgroen); }
-  .wf .o { display: block; width: 22px; height: 7px; border-radius: 2px; border: 1px solid #8E9AB0; }
+  .wf .o { display: block; width: 22px; height: 7px; border-radius: 2px; border: 1px solid #676767; }
   .wf.N .o { border-color: rgba(255,255,255,.6); }
   .wf .nb { display: block; width: 22px; height: 7px; border-radius: 2px; background: var(--db-nachtblauw); }
-  .wf .b { display: block; border-radius: 4px; background: #fff; border: 1px solid #DDE3EC; box-shadow: 0 1px 2px rgba(2,13,65,.08); padding: 3px; }
-  .wf .ic { display: block; width: 8px; height: 8px; border-radius: 2px; background: var(--db-mist); border: 1px solid #C4CCD9; }
+  .wf .b { display: block; border-radius: 4px; background: #fff; border: 1px solid #EBEFF4; box-shadow: 0 1px 2px rgba(2,13,65,.08); padding: 3px; }
+  .wf .ic { display: block; width: 8px; height: 8px; border-radius: 2px; background: var(--db-mist); border: 1px solid #C7C7C7; }
   .wf .y { display: block; width: 14px; height: 4px; border-radius: 2px; background: var(--db-kroongeel); }
-  .wf .gr { display: block; height: 4px; width: 60%; border-radius: 2px; background: #B8C0CC; }
+  .wf .gr { display: block; height: 4px; width: 60%; border-radius: 2px; background: #C7C7C7; }
   .wf .step { display: block; width: 14px; height: 9px; background: var(--db-nachtblauw); clip-path: polygon(22% 0, 100% 0, 78% 100%, 0 100%); }
   .wf .step.g { background: var(--db-signaalgroen); }
   .wf .gp { position: absolute; inset: 7px; border-radius: 6px; background: var(--db-signaalgroen); padding: 7px; display: flex; gap: 6px; }
@@ -119,7 +119,7 @@
   .tpl-h h3 { font-size: 11pt; }
   .tpl-meta { font-size: 7.4pt; line-height: 1.35; color: var(--db-antraciet); min-height: 30px; }
   .tpl-meta b { color: var(--db-nachtblauw); }
-  .stack { display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; border: 1px solid #D5DBE5; }
+  .stack { display: flex; flex-direction: column; border-radius: 8px; overflow: hidden; border: 1px solid #C7C7C7; }
   .strip { display: flex; align-items: center; gap: 6px; padding: 0 8px; font-size: 7.3pt; color: var(--db-nachtblauw); border-top: 1px solid rgba(2,13,65,.07); }
   .strip:first-child { border-top: 0; }
   .strip .sid { font-family: "IBM Plex Mono", monospace; font-size: 6.6pt; opacity: .75; width: 22px; flex: none; }
@@ -133,9 +133,9 @@
 
   /* ---------- Regels ---------- */
   .rules-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 12px; flex: 1; min-height: 0; }
-  .panel { border: 1px solid #DDE3EC; border-radius: 10px; padding: 12px 14px; }
+  .panel { border: 1px solid #EBEFF4; border-radius: 10px; padding: 12px 14px; }
   .panel h3 { font-size: 10.5pt; margin-bottom: 7px; }
-  .rules li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px dotted #DDE3EC; font-size: 8.2pt; line-height: 1.4; }
+  .rules li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px dotted #EBEFF4; font-size: 8.2pt; line-height: 1.4; }
   .rules li:last-child { border-bottom: 0; }
   .rules .n { width: 20px; height: 20px; border-radius: 6px; background: var(--db-nachtblauw); color: #fff; display: grid; place-items: center; font-size: 8pt; font-weight: 600; }
   .rules b { color: var(--db-nachtblauw); }
@@ -163,7 +163,7 @@ const WF = {
   util: `<div class="col" style="justify-content:center"><div class="row">${L(18)}${L(16)}${L(22)}<span style="flex:1"></span>${L(14)}${L(18)}</div></div>`,
   header: `<div class="row" style="width:100%"><i class="ic" style="width:14px;height:14px"></i><span style="flex:1"></span>${L(8)}${L(8)}${L(8)}${L(8)}${L(8)}<i class="k" style="width:28px"></i></div>`,
   footer: `<div class="col" style="flex:.7"><i class="ic" style="width:14px;height:14px;background:#fff"></i>${L(80)}${L(60)}${L(70)}</div>${[1,2,3,4].map(() => `<div class="col">${L(60,'t')}${L(80)}${L(70)}${L(75)}${L(60)}</div>`).join('')}`,
-  mobile: `<div class="col" style="align-items:center;justify-content:flex-end"><div style="width:52px;height:100%;border:1px solid #C4CCD9;border-radius:6px;display:flex;flex-direction:column;justify-content:flex-end;padding:3px;gap:2px"><div class="row"><i class="o" style="width:14px"></i><i class="k" style="width:26px"></i></div></div></div>`,
+  mobile: `<div class="col" style="align-items:center;justify-content:flex-end"><div style="width:52px;height:100%;border:1px solid #C7C7C7;border-radius:6px;display:flex;flex-direction:column;justify-content:flex-end;padding:3px;gap:2px"><div class="row"><i class="o" style="width:14px"></i><i class="k" style="width:26px"></i></div></div></div>`,
   herohome: `<div class="col" style="justify-content:center"><i class="y"></i>${L(70,'t')}${L(55,'t')}${L(80)}<div class="row" style="margin-top:2px"><i class="k"></i><i class="o"></i></div></div><i class="p" style="flex:1"></i>`,
   heropage: `<div class="col" style="justify-content:center">${L(30)}${L(25,'bl')}${L(75,'t')}${L(85)}${L(60)}<div class="row" style="margin-top:2px"><i class="k"></i><i class="o"></i></div></div><i class="p" style="flex:.8"></i>`,
   logos: `<div class="row" style="width:100%;justify-content:space-around">${'<i class="gr" style="width:14%"></i>'.repeat(5)}</div>`,
@@ -175,12 +175,12 @@ const WF = {
   cards3w: [1,2,3].map(() => `<i class="b col" style="box-shadow:none"><i class="ic"></i>${L(60,'t')}${L(90)}<span style="flex:1"></span>${L(35,'bl')}</i>`).join(''),
   textimg: `<div class="col" style="justify-content:center">${L(25,'bl')}${L(70,'t')}${L(95)}${L(90)}${L(92)}${L(70)}</div><i class="p" style="flex:.85"></i>`,
   steps: [0,1,2,3].map(i => `<div class="col" style="justify-content:center"><i class="step ${i === 3 ? 'g' : ''}"></i>${L(60,'t')}${L(90)}${L(70)}</div>`).join(''),
-  green: `${RUIT('ruit', 40)}<div class="col" style="justify-content:center">${L(30,'bl')}${L(70,'t')}${L(90)}${L(85)}<i class="o"></i></div><div class="col" style="justify-content:center"><i class="b" style="background:#0B1650;border-color:rgba(255,255,255,.15);box-shadow:none;height:80%;display:flex;flex-direction:column;gap:3px"><i class="l" style="width:60%;height:8px;background:var(--db-signaalgroen)"></i>${L(80)}${L(70)}</i></div>`,
+  green: `${RUIT('ruit', 40)}<div class="col" style="justify-content:center">${L(30,'bl')}${L(70,'t')}${L(90)}${L(85)}<i class="o"></i></div><div class="col" style="justify-content:center"><i class="b" style="background:#020D41;border-color:rgba(255,255,255,.15);box-shadow:none;height:80%;display:flex;flex-direction:column;gap:3px"><i class="l" style="width:60%;height:8px;background:var(--db-signaalgroen)"></i>${L(80)}${L(70)}</i></div>`,
   about: `<div style="flex:.9;position:relative"><i class="p" style="height:100%"></i><i class="b" style="position:absolute;left:4px;bottom:4px;width:40%;height:14px"></i></div><div class="col" style="justify-content:center">${L(25,'bl')}${L(80,'t')}${L(95)}${L(90)}<div class="row">${L(20,'t')}${L(20,'t')}${L(20,'t')}</div><i class="nb"></i></div>`,
   blog: [1,2,3].map(() => `<i class="b col" style="padding:0;overflow:hidden"><i class="p" style="height:26px;border-radius:0"></i><span class="col" style="padding:3px">${L(40)}${L(80,'t')}${L(90)}</span></i>`).join(''),
-  faq: `<div class="col" style="justify-content:center">${[1,2,3,4].map(() => `<div class="row" style="border-bottom:1px solid #DDE3EC;padding:2px 0">${L(70,'t')}<span style="flex:1"></span><i class="l" style="width:6px;height:6px;border-radius:50%;background:var(--db-webblauw)"></i></div>`).join('')}</div>`,
-  area: `<div class="col" style="flex:.8;justify-content:center">${L(30,'bl')}${L(80,'t')}${[1,2,3,4].map(() => `<div class="row"><i class="l" style="width:5px;height:5px;border-radius:50%;background:var(--db-signaalgroen)"></i>${L(50)}</div>`).join('')}</div><div class="col" style="flex:1.2;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;align-content:center">${'<i class="l" style="width:100%;height:7px;border-radius:2px;background:var(--db-mist);border:1px solid #C4CCD9"></i>'.repeat(16)}</div>`,
-  form: `<div class="col" style="flex:.7;justify-content:center">${L(30,'bl')}${L(80,'t')}${L(90)}${L(70)}</div><i class="b" style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-content:center">${'<i class="l" style="width:100%;height:8px;border-radius:2px;background:#fff;border:1px solid #B8C0CC"></i>'.repeat(4)}<i class="k" style="grid-column:1/-1"></i></i>`,
+  faq: `<div class="col" style="justify-content:center">${[1,2,3,4].map(() => `<div class="row" style="border-bottom:1px solid #EBEFF4;padding:2px 0">${L(70,'t')}<span style="flex:1"></span><i class="l" style="width:6px;height:6px;border-radius:50%;background:var(--db-webblauw)"></i></div>`).join('')}</div>`,
+  area: `<div class="col" style="flex:.8;justify-content:center">${L(30,'bl')}${L(80,'t')}${[1,2,3,4].map(() => `<div class="row"><i class="l" style="width:5px;height:5px;border-radius:50%;background:var(--db-signaalgroen)"></i>${L(50)}</div>`).join('')}</div><div class="col" style="flex:1.2;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;align-content:center">${'<i class="l" style="width:100%;height:7px;border-radius:2px;background:var(--db-mist);border:1px solid #C7C7C7"></i>'.repeat(16)}</div>`,
+  form: `<div class="col" style="flex:.7;justify-content:center">${L(30,'bl')}${L(80,'t')}${L(90)}${L(70)}</div><i class="b" style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:3px;align-content:center">${'<i class="l" style="width:100%;height:8px;border-radius:2px;background:#fff;border:1px solid #C7C7C7"></i>'.repeat(4)}<i class="k" style="grid-column:1/-1"></i></i>`,
   cta: `<div class="gp">${RUIT('ruit', 40).replace('opacity', 'o')}<div class="col" style="justify-content:center">${'<i class="l" style="width:75%;height:6px;background:var(--db-nachtblauw)"></i>'}${'<i class="l" style="width:55%;height:6px;background:var(--db-nachtblauw)"></i>'}<i class="l" style="width:80%;background:rgba(2,13,65,.45)"></i></div><div class="col" style="flex:.6;justify-content:center;align-items:flex-end"><i class="nb"></i><i class="o" style="border-color:var(--db-nachtblauw)"></i></div></div>`,
 };
 
@@ -350,7 +350,7 @@ const titles = [
 chunks.forEach((ch, i) => {
   let extra = '';
   if (i === 2) {
-    extra = `<article class="card" style="background:#F6F8FB">
+    extra = `<article class="card" style="background:#FFFFFF">
         <div class="card-h"><span class="id" style="background:var(--db-webblauw)">i</span><div><h3>Zo lees je een blokkaart</h3><span class="cat">Legenda</span></div></div>
         <ul class="inh" style="margin-top:4px">
           <li><b>ID</b> · vaste code, gebruikt in Elementor-namen: “DB · B11 Dienstkaarten”.</li>
@@ -359,9 +359,9 @@ chunks.forEach((ch, i) => {
           <li><b>Groene lijn</b> · de belangrijkste regel uit het merkboek.</li>
           <li><b>T1–T4</b> · templates waarin het blok standaard staat.</li>
         </ul></article>
-      <article class="card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C9D1E8">
-        <div class="card-h"><span class="id" style="background:var(--db-signaalgroen);color:var(--db-nachtblauw)">T</span><div><h3 style="color:#fff">De vier templates</h3><span class="cat" style="color:#AEB8D6">Zie pagina 5</span></div></div>
-        <ul class="inh" style="margin-top:4px;color:#DDE3F2">
+      <article class="card" style="background:var(--db-nachtblauw);border-color:var(--db-nachtblauw);color:#C7C7C7">
+        <div class="card-h"><span class="id" style="background:var(--db-signaalgroen);color:var(--db-nachtblauw)">T</span><div><h3 style="color:#fff">De vier templates</h3><span class="cat" style="color:#C7C7C7">Zie pagina 5</span></div></div>
+        <ul class="inh" style="margin-top:4px;color:#EBEFF4">
           ${T.map(t => `<li><b style="color:#fff">${t.id} ${t.name}</b> · ${t.n} ${t.n === 1 ? 'pagina' : 'pagina’s'}</li>`).join('')}
           <li>Overige 10 pagina’s (Over ons, Vacatures, Blog, Contact, Offerte, FAQ …) worden vrij samengesteld uit dezelfde blokken.</li>
         </ul></article>`;

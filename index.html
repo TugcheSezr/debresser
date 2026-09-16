@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>De Bresser | Erkende verhuizer | Verhuisbedrijf Tilburg</title>
   <meta name="description" content="De Bresser: Vanuit Oisterwijk, Tilburg en Breda staan wij al meer dan 100 jaar voor u klaar op het gebied van verhuizingen, transport, logistiek en meer.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/video/hero-compleet-poster.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/home-over.css">
+  <link rel="stylesheet" href="css/nieuws-pop.css">
+  <link rel="alternate" hreflang="nl" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="x-default" href="index.html">
   <!-- Schema van de live homepage (MovingCompany) -->
   <script type="application/ld+json">
   {
@@ -328,6 +334,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="index.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -439,6 +454,11 @@
       <div class="split__text reveal">
         <p class="eyebrow">Over ons</p>
         <h2 class="h2" id="over-title">De oplossing van vandaag is het succes van morgen.</h2>
+        <figure class="oh-tijd" aria-hidden="true">
+          <span class="oh-tijd__foto oh-tijd__foto--toen"><img src="assets/img/geschiedenis/1923-paard-en-wagen-oisterwijk.webp" alt="" width="960" height="600" loading="lazy" decoding="async"><b>1923</b></span>
+          <svg class="oh-tijd__pijl" viewBox="0 0 120 60"><path d="M8 44C36 8 80 6 108 30"/><path d="m94 32 14-1-3-14"/></svg>
+          <span class="oh-tijd__foto oh-tijd__foto--nu"><img src="assets/img/geschiedenis/vandaag-schijfstraat-13-oisterwijk.webp" alt="" width="960" height="600" loading="lazy" decoding="async"><b>Vandaag</b></span>
+        </figure>
       </div>
       <div class="split__text reveal">
         <p><strong>Bij De Bresser zijn we meer dan alleen een verhuis- en opslagbedrijf; al ruim 100 jaar staan wij klaar voor al uw logistieke behoeften. Wij zijn uw betrouwbare partner voor alles omtrent verhuizen, opslag, meubelprojecten, gebouwbeheer en assetmanagement. Ons doel is om uw bedrijfs- en leefomgeving te optimaliseren met onze uitgebreide dienstverlening.</strong></p>
@@ -536,69 +556,70 @@
           <p class="eyebrow">Blog</p>
           <h2 class="h2" id="blog-title">Nieuws &amp; Tips</h2>
           
-        </div>      </div>
-      <ul class="posts reveal-group">
-        <li class="post-card card-3d" data-tilt="7">
+        </div>
+        <a class="btn btn--light btn--sm" href="blog.html">Alle nieuws &amp; tips <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>      </div>
+      <div class="nieuws reveal-group">
+        <article class="nieuws-top nieuws-top--pop post-card card-3d" data-tilt="5">
           <div class="post-card__img">
             <img src="assets/img/site/Sander-Uphus.jpg" alt="" loading="lazy">
+            <span class="nieuws-label nieuws-label--nieuws">Nieuws</span>
           </div>
+          <img class="nieuws-pop" src="assets/img/nieuws-pop/sander-vrijstaand.webp" alt="" width="735" height="749" loading="lazy" decoding="async" aria-hidden="true">
           <div class="post-card__body">
+            <p class="nieuws-meta"><time datetime="2026-06-11">11 juni 2026</time></p>
             <h3><a href="blog-samen-bouwen-aan-succes.html">Samen bouwen aan succes</a></h3>
             <p>Satelliet hospitality furniture en De Bresser al jaren een sterk team</p>
             <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
-        </li>
-        <li class="post-card card-3d" data-tilt="7">
-          <div class="post-card__img">
-            <img src="assets/img/site/De-Bresser-Brocken-verhuizingen.jpg" alt="Verhuiswagens De bresser en Brocken verhuizingen" loading="lazy">
-          </div>
-          <div class="post-card__body">
-            <h3><a href="blog-de-bresser-verwelkomt-brocken-verhuizingen.html">De Bresser verwelkomt Brocken Verhuizingen</a></h3>
-            <p>Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </li>
-        <li class="post-card card-3d" data-tilt="7">
-          <div class="post-card__img">
-            <img src="assets/img/site/De-Bresser-intervieuw-klant-1.jpg" alt="twee kinderen aan het tekenen" loading="lazy">
-          </div>
-          <div class="post-card__body">
-            <h3><a href="blog-verhuizen-met-kinderen.html">Verhuizen met kinderen</a></h3>
-            <p>Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </li>
-        <li class="post-card card-3d" data-tilt="7">
-          <div class="post-card__img">
-            <img src="assets/img/site/Particuliere-verhuizing-De-Bresser-Nieuwbouw-1.jpg" alt="Verhuiswagen die uitgeladen wordt" loading="lazy">
-          </div>
-          <div class="post-card__body">
-            <h3><a href="blog-de-populairste-reden-om-te-verhuizen.html">De populairste reden om te verhuizen!</a></h3>
-            <p>De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </li>
-        <li class="post-card card-3d" data-tilt="7">
-          <div class="post-card__img">
-            <img src="assets/img/site/42191532-0ad7-4e06-a297-bf29f214d68d.jpg" alt="" loading="lazy">
-          </div>
-          <div class="post-card__body">
-            <h3><a href="blog-nieuw-qwiek-snooze-reinigingsservice.html">Nieuw! Qwiek.snooze reinigingsservice</a></h3>
-            <p>Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team!</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </li>
-        <li class="post-card card-3d" data-tilt="7">
-          <div class="post-card__img">
-            <img src="assets/img/site/De-bresser-zakelijk-verhuizen-1.jpg" alt="zakelijke spullen inpakken" loading="lazy">
-          </div>
-          <div class="post-card__body">
-            <h3><a href="blog-interne-verhuizing.html">Interne verhuizing</a></h3>
-            <p>Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven.</p>
-            <span class="link-arrow" aria-hidden="true">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </li>
-      </ul>
+        </article>
+        <ol class="nieuws-lijst">
+          <li class="nieuws-item card-3d" data-tilt="4">
+            <div class="nieuws-item__img"><img src="assets/img/site/De-Bresser-Brocken-verhuizingen.jpg" alt="Verhuiswagens De bresser en Brocken verhuizingen" loading="lazy"></div>
+            <div class="nieuws-item__body">
+              <p class="nieuws-meta"><span class="nieuws-label nieuws-label--nieuws">Nieuws</span><time datetime="2025-11-19">19 november 2025</time></p>
+              <h3><a href="blog-de-bresser-verwelkomt-brocken-verhuizingen.html">De Bresser verwelkomt Brocken Verhuizingen</a></h3>
+              <p class="nieuws-item__tekst">Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p>
+            </div>
+            <svg class="icon nieuws-item__pijl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </li>
+          <li class="nieuws-item card-3d" data-tilt="4">
+            <div class="nieuws-item__img"><img src="assets/img/site/De-Bresser-intervieuw-klant-1.jpg" alt="twee kinderen aan het tekenen" loading="lazy"></div>
+            <div class="nieuws-item__body">
+              <p class="nieuws-meta"><span class="nieuws-label nieuws-label--tip">Tip</span><time datetime="2025-11-06">6 november 2025</time></p>
+              <h3><a href="blog-verhuizen-met-kinderen.html">Verhuizen met kinderen</a></h3>
+              <p class="nieuws-item__tekst">Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p>
+            </div>
+            <svg class="icon nieuws-item__pijl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </li>
+          <li class="nieuws-item card-3d" data-tilt="4">
+            <div class="nieuws-item__img"><img src="assets/img/site/Particuliere-verhuizing-De-Bresser-Nieuwbouw-1.jpg" alt="Verhuiswagen die uitgeladen wordt" loading="lazy"></div>
+            <div class="nieuws-item__body">
+              <p class="nieuws-meta"><span class="nieuws-label nieuws-label--tip">Tip</span><time datetime="2024-03-29">29 maart 2024</time></p>
+              <h3><a href="blog-de-populairste-reden-om-te-verhuizen.html">De populairste reden om te verhuizen!</a></h3>
+              <p class="nieuws-item__tekst">De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk.</p>
+            </div>
+            <svg class="icon nieuws-item__pijl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </li>
+          <li class="nieuws-item card-3d" data-tilt="4">
+            <div class="nieuws-item__img"><img src="assets/img/site/42191532-0ad7-4e06-a297-bf29f214d68d.jpg" alt="" loading="lazy"></div>
+            <div class="nieuws-item__body">
+              <p class="nieuws-meta"><span class="nieuws-label nieuws-label--nieuws">Nieuws</span><time datetime="2024-03-29">29 maart 2024</time></p>
+              <h3><a href="blog-nieuw-qwiek-snooze-reinigingsservice.html">Nieuw! Qwiek.snooze reinigingsservice</a></h3>
+              <p class="nieuws-item__tekst">Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team!</p>
+            </div>
+            <svg class="icon nieuws-item__pijl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </li>
+          <li class="nieuws-item card-3d" data-tilt="4">
+            <div class="nieuws-item__img"><img src="assets/img/site/De-bresser-zakelijk-verhuizen-1.jpg" alt="zakelijke spullen inpakken" loading="lazy"></div>
+            <div class="nieuws-item__body">
+              <p class="nieuws-meta"><span class="nieuws-label nieuws-label--tip">Tip</span><time datetime="2024-03-29">29 maart 2024</time></p>
+              <h3><a href="blog-interne-verhuizing.html">Interne verhuizing</a></h3>
+              <p class="nieuws-item__tekst">Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven.</p>
+            </div>
+            <svg class="icon nieuws-item__pijl" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -661,9 +682,9 @@
     </div>
     <div class="oogmorgen__lijn" aria-hidden="true"></div>
     <svg class="oogmorgen__huis" viewBox="0 0 110 80" aria-hidden="true">
-      <path d="M4 34 26 14l22 20v24H4z" fill="#bfe6fb"/><path d="M19 58V44h14v14" fill="#fff"/>
+      <path d="M4 34 26 14l22 20v24H4z" fill="#ebeff4"/><path d="M19 58V44h14v14" fill="#fff"/>
       <path d="M58 34 80 14l22 20v24H58z" fill="#007ac0"/><path d="M73 58V44h14v14" fill="#fff"/>
-      <path d="M34 72h32" stroke="#10b981" stroke-width="6" stroke-linecap="round"/><path d="m60 64 9 8-9 8" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M34 72h32" stroke="#7bd534" stroke-width="6" stroke-linecap="round"/><path d="m60 64 9 8-9 8" fill="none" stroke="#7bd534" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="wrap oogmorgen__in">
       <div class="oogmorgen__kaart reveal">
@@ -823,5 +844,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

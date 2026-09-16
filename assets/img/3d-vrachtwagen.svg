@@ -3,48 +3,48 @@
   <defs>
     <linearGradient id="side" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#dfe7f1"/>
+      <stop offset="1" stop-color="#ebeff4"/>
     </linearGradient>
     <linearGradient id="top" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#f7f9fc"/>
-      <stop offset="1" stop-color="#e3eaf3"/>
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ebeff4"/>
     </linearGradient>
     <linearGradient id="end" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c5d1e0"/>
-      <stop offset="1" stop-color="#9fb0c6"/>
+      <stop offset="0" stop-color="#ebeff4"/>
+      <stop offset="1" stop-color="#c7c7c7"/>
     </linearGradient>
     <linearGradient id="cabSide" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1b4580"/>
-      <stop offset="1" stop-color="#0f2c59"/>
+      <stop offset="0" stop-color="#00498f"/>
+      <stop offset="1" stop-color="#020d41"/>
     </linearGradient>
     <linearGradient id="cabTop" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#2a5596"/>
-      <stop offset="1" stop-color="#1b4580"/>
+      <stop offset="0" stop-color="#007ac0"/>
+      <stop offset="1" stop-color="#00498f"/>
     </linearGradient>
     <linearGradient id="cabFront" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f2c59"/>
-      <stop offset="1" stop-color="#081a38"/>
+      <stop offset="0" stop-color="#020d41"/>
+      <stop offset="1" stop-color="#020d41"/>
     </linearGradient>
     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c9ecff"/>
-      <stop offset=".55" stop-color="#5fb2e8"/>
-      <stop offset="1" stop-color="#2a6fb0"/>
+      <stop offset="0" stop-color="#ebeff4"/>
+      <stop offset=".55" stop-color="#33bcfa"/>
+      <stop offset="1" stop-color="#007ac0"/>
     </linearGradient>
     <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#10b981"/>
-      <stop offset="1" stop-color="#34d399"/>
+      <stop offset="0" stop-color="#7bd534"/>
+      <stop offset="1" stop-color="#7bd534"/>
     </linearGradient>
     <radialGradient id="shadow" cx=".5" cy=".5" r=".5">
-      <stop offset="0" stop-color="#0f2c59" stop-opacity=".38"/>
-      <stop offset="1" stop-color="#0f2c59" stop-opacity="0"/>
+      <stop offset="0" stop-color="#020d41" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#020d41" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="tyre" cx=".42" cy=".38" r=".7">
-      <stop offset="0" stop-color="#3a4150"/>
+      <stop offset="0" stop-color="#2f2f2f"/>
       <stop offset="1" stop-color="#11141b"/>
     </radialGradient>
     <radialGradient id="hub" cx=".4" cy=".35" r=".7">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#aab6c6"/>
+      <stop offset="1" stop-color="#c7c7c7"/>
     </radialGradient>
   </defs>
 
@@ -57,12 +57,12 @@
   <polygon points="40,78 452,78 452,292 40,292" fill="url(#side)"/>
   <!-- Glanslijn en naden -->
   <polyline points="40,79 452,79 532,33" fill="none" stroke="#ffffff" stroke-width="3" opacity=".9"/>
-  <path d="M40 292h412" stroke="#b9c6d6" stroke-width="2"/>
-  <path d="M178 84v202M316 84v202" stroke="#e6ecf3" stroke-width="2"/>
+  <path d="M40 292h412" stroke="#c7c7c7" stroke-width="2"/>
+  <path d="M178 84v202M316 84v202" stroke="#ebeff4" stroke-width="2"/>
 
   <!-- Groene band -->
   <polygon points="40,236 452,236 452,262 40,262" fill="url(#band)"/>
-  <polygon points="452,236 532,190 532,216 452,262" fill="#0b9870"/>
+  <polygon points="452,236 532,190 532,216 452,262" fill="#166909"/>
 
   <!-- Beeldmerk: drie ruiten als lijn -->
   <g fill="none" stroke-width="9" stroke-linejoin="miter" transform="translate(70 104) scale(.3)">
@@ -70,42 +70,42 @@
     <polygon points="58,294 208,214 346,297 186,378" stroke="#007DC2"/>
     <polygon points="268,134 422,220 422,402 268,318" stroke="#6DB23F"/>
   </g>
-  <text x="196" y="166" font-family="Sora, Arial, sans-serif" font-size="33" font-weight="700" font-style="italic" fill="#0f2c59" letter-spacing="1">DE BRESSER</text>
-  <text x="198" y="194" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="600" font-style="italic" fill="#059669" letter-spacing="1.5">FULL SERVICE IN LOGISTIEK</text>
-  <text x="198" y="214" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="600" font-style="italic" fill="#1d6fb8" letter-spacing="1.5">GEWELDIG IN VERHUIZEN</text>
+  <text x="196" y="166" font-family="Sora, Arial, sans-serif" font-size="33" font-weight="700" font-style="italic" fill="#020d41" letter-spacing="1">DE BRESSER</text>
+  <text x="198" y="194" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="600" font-style="italic" fill="#166909" letter-spacing="1.5">FULL SERVICE IN LOGISTIEK</text>
+  <text x="198" y="214" font-family="Sora, Arial, sans-serif" font-size="13.5" font-weight="600" font-style="italic" fill="#007ac0" letter-spacing="1.5">GEWELDIG IN VERHUIZEN</text>
 
   <!-- Chassis -->
-  <polygon points="36,288 612,288 612,306 36,306" fill="#1d2330"/>
+  <polygon points="36,288 612,288 612,306 36,306" fill="#2f2f2f"/>
 
   <!-- Cabine -->
   <polygon points="462,124 566,124 646,78 542,78" fill="url(#cabTop)"/>
   <polygon points="566,124 646,78 700,158 620,204" fill="url(#glass)"/>
-  <polygon points="566,124 646,78 700,158 620,204" fill="none" stroke="#0a1f40" stroke-width="6" stroke-linejoin="round"/>
+  <polygon points="566,124 646,78 700,158 620,204" fill="none" stroke="#020d41" stroke-width="6" stroke-linejoin="round"/>
   <polygon points="620,204 700,158 700,258 620,304" fill="url(#cabFront)"/>
   <polygon points="462,124 566,124 620,204 620,304 462,304" fill="url(#cabSide)"/>
   <!-- Zijraam -->
   <polygon points="480,140 556,140 596,200 480,200" fill="url(#glass)" opacity=".95"/>
   <polyline points="484,144 552,144" stroke="#ffffff" stroke-width="3" opacity=".7"/>
   <!-- Deurnaad, handgreep, spiegel -->
-  <path d="M600 214v86M476 214h120" stroke="#0a1f40" stroke-width="3" opacity=".6"/>
-  <rect x="566" y="222" width="22" height="6" rx="3" fill="#cfd8e4"/>
-  <rect x="452" y="150" width="10" height="36" rx="4" fill="#0a1f40"/>
+  <path d="M600 214v86M476 214h120" stroke="#020d41" stroke-width="3" opacity=".6"/>
+  <rect x="566" y="222" width="22" height="6" rx="3" fill="#c7c7c7"/>
+  <rect x="452" y="150" width="10" height="36" rx="4" fill="#020d41"/>
   <!-- Koplamp en groene streep -->
-  <polygon points="626,238 694,198 694,212 626,252" fill="#10b981"/>
-  <polygon points="650,262 690,239 690,254 650,277" fill="#fff6c7"/>
+  <polygon points="626,238 694,198 694,212 626,252" fill="#7bd534"/>
+  <polygon points="650,262 690,239 690,254 650,277" fill="#ebeff4"/>
   <!-- Opstap -->
-  <polygon points="470,300 612,300 612,312 470,312" fill="#0a1f40"/>
+  <polygon points="470,300 612,300 612,312 470,312" fill="#020d41"/>
 
   <!-- Wielen -->
   <g>
     <ellipse cx="136" cy="304" rx="40" ry="40" fill="url(#tyre)"/>
     <circle cx="136" cy="304" r="17" fill="url(#hub)"/>
-    <circle cx="136" cy="304" r="5" fill="#3a4150"/>
+    <circle cx="136" cy="304" r="5" fill="#2f2f2f"/>
     <ellipse cx="366" cy="304" rx="40" ry="40" fill="url(#tyre)"/>
     <circle cx="366" cy="304" r="17" fill="url(#hub)"/>
-    <circle cx="366" cy="304" r="5" fill="#3a4150"/>
+    <circle cx="366" cy="304" r="5" fill="#2f2f2f"/>
     <ellipse cx="548" cy="304" rx="40" ry="40" fill="url(#tyre)"/>
     <circle cx="548" cy="304" r="17" fill="url(#hub)"/>
-    <circle cx="548" cy="304" r="5" fill="#3a4150"/>
+    <circle cx="548" cy="304" r="5" fill="#2f2f2f"/>
   </g>
 </svg>

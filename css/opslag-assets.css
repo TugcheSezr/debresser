@@ -1,0 +1,516 @@
+/* =====================================================================
+   Opslag assets (assetmanagement-opslag-assets.html)
+   - "Regionale opslag" staat in een opslagbox met rolluik dat opengaat
+   - Gerelateerde diensten = dozen in een palletstelling
+   - Ibox-kaarten staan op een pallet
+   Eigen bestand, alleen op deze pagina gelinkt.
+   ===================================================================== */
+
+.oa-sec { overflow-x: clip; }
+.oa-split { align-items: stretch; }
+
+/* ---------- Opslagbox ---------- */
+.oa-unit {
+  --oa-staal: #676767;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px 12px;
+  border-radius: 14px 14px 8px 8px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .25), transparent 12px, transparent calc(100% - 12px), rgba(0, 0, 0, .25)),
+    linear-gradient(180deg, #676767, #676767);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .35),
+    0 2px 3px rgba(2, 13, 65, .25),
+    0 40px 70px -34px rgba(2, 13, 65, .6);
+}
+/* schaduw van de box op de vloer */
+.oa-unit::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -18px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(2, 13, 65, .35), transparent);
+  z-index: -1;
+}
+
+/* rolluikkast bovenaan */
+.oa-unit__kast {
+  position: relative;
+  height: 58px;
+  margin: 0 -12px;
+  border-radius: 14px 14px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  background:
+    radial-gradient(circle at 10px 50%, #ebeff4 1.6px, #676767 2.2px, transparent 2.8px) 0 0 / calc(100% - 0px) 100% no-repeat,
+    radial-gradient(circle at calc(100% - 10px) 50%, #ebeff4 1.6px, #676767 2.2px, transparent 2.8px),
+    linear-gradient(180deg, #c7c7c7 0, #c7c7c7 45%, #676767 80%, #676767 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), inset 0 -3px 0 rgba(0, 0, 0, .25), 0 6px 10px -4px rgba(0, 0, 0, .45);
+  z-index: 6;
+}
+.oa-unit__nr {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .08em;
+  color: var(--navy);
+  background: linear-gradient(180deg, #fff, #ebeff4);
+  border-left: 4px solid var(--green);
+  padding: 5px 10px 4px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 2px 4px rgba(0, 0, 0, .3);
+}
+.oa-unit__led {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c4302b;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .25), 0 0 10px 2px rgba(196, 48, 43, .75);
+  transition: background-color 200ms, box-shadow 200ms;
+}
+.oa-unit.is-los .oa-unit__led {
+  background: #6db23f;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .25), 0 0 12px 3px rgba(109, 178, 63, .8);
+}
+
+/* knop rechtsboven in de kast */
+.oa-unit__knop {
+  position: absolute;
+  top: 11px;
+  right: 16px;
+  z-index: 7;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(180deg, var(--navy-700), var(--navy));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 3px 6px rgba(0, 0, 0, .35);
+  transition: transform 200ms var(--ease);
+}
+.oa-unit__knop:hover { transform: scale(1.08); }
+.oa-unit__knop:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+.oa-unit__knop .icon { width: 18px; height: 18px; }
+
+/* binnenkant */
+.oa-unit__binnen {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0 0 4px 4px;
+  padding: clamp(28px, 3.4vw, 44px) clamp(22px, 3vw, 40px) 170px;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0, rgba(255, 255, 255, .95), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(2, 13, 65, .035) 0 2px, transparent 2px 46px),
+    linear-gradient(180deg, #ebeff4, #ebeff4 80%);
+  box-shadow:
+    inset 0 22px 30px -16px rgba(0, 0, 0, .4),
+    inset 16px 0 22px -16px rgba(0, 0, 0, .3),
+    inset -16px 0 22px -16px rgba(0, 0, 0, .3);
+}
+/* donker zolang het licht uit is */
+.oa-unit__binnen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 70% at 50% 100%, rgba(2, 13, 65, .55), rgba(2, 13, 65, .85));
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.oa-js .oa-unit__binnen::before { opacity: 1; }
+.oa-js.is-licht .oa-unit__binnen::before { opacity: 0; animation: oa-flikker 900ms steps(1, end); }
+@keyframes oa-flikker {
+  0% { opacity: 1; }
+  12% { opacity: .2; }
+  22% { opacity: .9; }
+  34% { opacity: .1; }
+  42% { opacity: .6; }
+  56% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* tl-buis aan het plafond */
+.oa-unit__tl {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: min(60%, 260px);
+  height: 7px;
+  translate: -50% 0;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #ffffff, #ebeff4);
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .15), 0 0 18px 6px rgba(255, 255, 255, .9), 0 10px 40px 10px rgba(235, 239, 244, .7);
+  z-index: 4;
+}
+
+.oa-unit__tekst { position: relative; z-index: 2; }
+
+/* vloer met spullen */
+.oa-unit__vloer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  z-index: 1;
+  pointer-events: none;
+}
+.oa-unit__vloer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 48px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .18), transparent 10px),
+    radial-gradient(circle at 20% 60%, rgba(0, 0, 0, .05) 0 2px, transparent 3px) 0 0 / 23px 17px,
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, .25) 0 1px, transparent 2px) 0 0 / 31px 13px,
+    linear-gradient(180deg, #c7c7c7, #c7c7c7);
+}
+/* gele markering op de vloer */
+.oa-unit__vloer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 5px;
+  background: repeating-linear-gradient(-45deg, #ffc400 0 10px, #2f2f2f 10px 20px);
+  opacity: .8;
+}
+
+.oa-doos {
+  position: absolute;
+  z-index: 1;
+  border-radius: 2px;
+  background:
+    linear-gradient(90deg, transparent 43%, rgba(236, 219, 186, .9) 43% 57%, transparent 57%) top / 100% 38% no-repeat,
+    linear-gradient(180deg, rgba(0, 0, 0, .12), transparent 3px) 0 38% / 100% 3px no-repeat,
+    linear-gradient(180deg, #dcae71, #bb8849);
+  box-shadow:
+    inset -12px 0 0 rgba(0, 0, 0, .09),
+    inset 0 2px 0 rgba(255, 255, 255, .3),
+    0 5px 6px -3px rgba(0, 0, 0, .45);
+}
+/* etiket + beeldmerk-ruitjes */
+.oa-doos::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  bottom: 16%;
+  width: 34%;
+  height: 26%;
+  border-radius: 1px;
+  background:
+    repeating-linear-gradient(180deg, rgba(2, 13, 65, .5) 0 1.5px, transparent 1.5px 4px) 4px 4px / calc(100% - 8px) calc(100% - 8px) no-repeat,
+    #ffffff;
+}
+.oa-doos::before {
+  content: "";
+  position: absolute;
+  right: 22%;
+  bottom: 22%;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #00498f 0 48%, transparent 48%), linear-gradient(-45deg, #6db23f 0 48%, transparent 48%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  opacity: .85;
+}
+.oa-doos--1 { right: 26px; bottom: 26px; width: 118px; height: 80px; }
+.oa-doos--2 { right: 44px; bottom: 106px; width: 88px; height: 44px; }
+.oa-doos--3 { right: 156px; bottom: 26px; width: 82px; height: 58px; }
+.oa-doos--4 { left: 26px; bottom: 26px; width: 74px; height: 56px; }
+.oa-doos--5 { left: 36px; bottom: 82px; width: 56px; height: 38px; }
+.oa-doos--2::after, .oa-doos--5::after { display: none; }
+
+/* bureaustoel in folie */
+.oa-stoel {
+  position: absolute;
+  right: 252px;
+  bottom: 22px;
+  width: 64px;
+  height: 104px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 104'%3E%3Cg fill='%230f2c59'%3E%3Crect x='14' y='4' width='36' height='42' rx='9'/%3E%3Crect x='10' y='50' width='44' height='12' rx='5'/%3E%3Crect x='29' y='44' width='6' height='8'/%3E%3Crect x='29' y='62' width='6' height='24'/%3E%3Cpath d='M8 92 32 84l24 8v3l-24-6-24 6z'/%3E%3C/g%3E%3Cg fill='%23222'%3E%3Ccircle cx='9' cy='99' r='4'/%3E%3Ccircle cx='32' cy='97' r='4'/%3E%3Ccircle cx='55' cy='99' r='4'/%3E%3C/g%3E%3Cpath d='M9 2c10-3 36-3 46 0 4 8 4 44 0 52 3 2 5 6 3 11-14 4-38 4-52 0-2-5 0-9 3-11-4-8-4-44 0-52z' fill='%23dfeaf5' fill-opacity='.45' stroke='%23fff' stroke-opacity='.8'/%3E%3Cpath d='M14 8c2 14 1 30-2 42M48 10c-3 12-2 28 1 40' stroke='%23fff' stroke-opacity='.7' fill='none'/%3E%3C/svg%3E") center / contain no-repeat;
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, .3));
+}
+
+/* rolluik */
+.oa-deur {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .16), rgba(255, 255, 255, .22) 16%, rgba(255, 255, 255, 0) 38%, rgba(0, 0, 0, .05) 55%, rgba(255, 255, 255, .16) 74%, rgba(0, 0, 0, .18)),
+    repeating-linear-gradient(180deg, #ebeff4 0 2px, #ebeff4 2px 7px, #c7c7c7 7px 13px, #676767 13px 15px, #c7c7c7 15px 16px, #ebeff4 16px 18px);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .2);
+  transform: translateY(-101%);
+  transition: transform 1700ms cubic-bezier(.6, .02, .25, 1);
+}
+.oa-js .oa-deur { transform: translateY(0); }
+.oa-js.is-open .oa-deur { transform: translateY(-101%); }
+/* schaduwrand die meeloopt als het luik omhoog gaat */
+.oa-deur::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 26px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .35), transparent);
+}
+.oa-deur__logo {
+  width: clamp(110px, 30%, 170px);
+  height: auto;
+  max-height: none;
+  mix-blend-mode: multiply;
+  opacity: .92;
+  filter: contrast(1.05);
+}
+.oa-deur__bord {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: #fff;
+  background: var(--navy);
+  padding: 6px 10px 5px;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+}
+.oa-deur__onder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38px;
+  background:
+    linear-gradient(180deg, transparent calc(100% - 6px), #2f2f2f calc(100% - 6px)),
+    linear-gradient(180deg, #c7c7c7, #676767);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 -2px 3px rgba(0, 0, 0, .15);
+}
+.oa-deur__greep {
+  position: absolute;
+  left: 50%;
+  top: 9px;
+  width: 70px;
+  height: 14px;
+  translate: -50% 0;
+  border: 4px solid #2f2f2f;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .3);
+}
+.oa-deur__slot {
+  position: absolute;
+  left: calc(50% + 58px);
+  top: 12px;
+  width: 22px;
+  height: 18px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #e9c46a, #b98d2a);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6), 0 3px 4px rgba(0, 0, 0, .4);
+  z-index: 1;
+}
+.oa-deur__slot::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  bottom: 100%;
+  width: 14px;
+  height: 12px;
+  margin-bottom: -2px;
+  border: 3px solid #c7c7c7;
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  transition: transform 300ms var(--spring, ease);
+  transform-origin: 100% 100%;
+}
+.oa-deur__slot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  width: 4px;
+  height: 7px;
+  translate: -50% 0;
+  border-radius: 2px;
+  background: #5b4210;
+}
+.oa-unit.is-los .oa-deur__slot::before { transform: translateY(-5px) rotate(-18deg); }
+
+/* ---------- Palletstelling met dozen ---------- */
+.info-panel.oa-rek {
+  position: relative;
+  overflow: hidden;
+  gap: 22px;
+  border-radius: var(--r-lg);
+  color: #fff;
+  padding-bottom: clamp(28px, 3vw, 38px);
+  background:
+    radial-gradient(ellipse 60% 30% at 50% 0, rgba(255, 255, 255, .16), transparent 70%),
+    linear-gradient(180deg, #00498f, #020d41 85%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 2px 4px rgba(2, 13, 65, .25), 0 40px 70px -34px rgba(2, 13, 65, .6);
+}
+/* vloer met gele lijn */
+.info-panel.oa-rek::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22px;
+  background:
+    linear-gradient(180deg, #ffc400 0 3px, transparent 3px),
+    linear-gradient(180deg, #2f2f2f, #2f2f2f);
+}
+.oa-rek > * { position: relative; z-index: 1; }
+.oa-rek h3 {
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 16px 7px 14px;
+  font-size: 1.05rem;
+  color: var(--navy);
+  background: linear-gradient(180deg, #fff, #ebeff4);
+  border-left: 5px solid var(--green);
+  border-radius: 3px;
+  box-shadow: 0 6px 12px -4px rgba(0, 0, 0, .5);
+}
+/* ophangdraadjes */
+.oa-rek h3::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: -18px;
+  height: 18px;
+  border-left: 2px solid rgba(255, 255, 255, .45);
+  border-right: 2px solid rgba(255, 255, 255, .45);
+}
+
+.oa-rek .grid {
+  position: relative;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 1;
+  align-content: space-evenly;
+  column-gap: 18px;
+  row-gap: 30px;
+  padding: 8px 24px 14px;
+}
+/* staanders met gaatjes */
+.oa-rek .grid::before,
+.oa-rek .grid::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  bottom: -30px;
+  width: 15px;
+  border-radius: 2px;
+  background:
+    radial-gradient(circle, #020d41 1.7px, transparent 2.3px) 50% 0 / 15px 16px repeat-y,
+    linear-gradient(90deg, #007ac0, #33bcfa 45%, #007ac0);
+  box-shadow: 2px 0 4px rgba(0, 0, 0, .35);
+}
+.oa-rek .grid::before { left: 0; }
+.oa-rek .grid::after { right: 0; }
+
+.oa-rek .mini-card {
+  position: relative;
+  min-height: 84px;
+  padding: 26px 24px 16px 14px;
+  gap: 8px;
+  font-size: .88rem;
+  line-height: 1.3;
+  color: var(--navy);
+  border: 0;
+  border-radius: 3px;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background:
+    linear-gradient(90deg, transparent calc(50% - 16px), rgba(236, 219, 186, .95) calc(50% - 16px) calc(50% + 16px), transparent calc(50% + 16px)) top / 100% 16px no-repeat,
+    linear-gradient(180deg, #ffffff, #ebeff4) 7px 20px / calc(100% - 21px) calc(100% - 30px) no-repeat,
+    linear-gradient(180deg, #dcae71, #bb8849);
+  box-shadow:
+    inset -12px 0 0 rgba(0, 0, 0, .1),
+    inset 0 2px 0 rgba(255, 255, 255, .3),
+    0 3px 0 rgba(0, 0, 0, .2);
+  transition: transform 300ms var(--ease), box-shadow 300ms var(--ease);
+}
+.oa-rek .mini-card:last-child { grid-column: 1 / -1; }
+.oa-rek .mini-card .icon-tile { width: 32px; height: 32px; border-radius: 8px; flex: none; }
+.oa-rek .mini-card .icon-tile .icon { width: 17px; height: 17px; }
+.oa-rek .mini-card .icon--arrow { width: 16px; height: 16px; }
+.oa-rek .mini-card .icon--arrow { flex: none; }
+/* ligger onder elke doos */
+.oa-rek .mini-card::after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  right: -9px;
+  bottom: -14px;
+  height: 11px;
+  border-radius: 1px;
+  background: linear-gradient(180deg, #ffc400, #ffc400 70%, #b85a06);
+  box-shadow: 0 5px 6px -1px rgba(0, 0, 0, .45);
+  transition: transform 300ms var(--ease);
+}
+.oa-rek .mini-card:hover,
+.oa-rek .mini-card:focus-visible {
+  transform: translateY(-7px);
+  box-shadow: inset -12px 0 0 rgba(0, 0, 0, .1), inset 0 2px 0 rgba(255, 255, 255, .3), 0 14px 14px -6px rgba(0, 0, 0, .5);
+}
+.oa-rek .mini-card:hover::after,
+.oa-rek .mini-card:focus-visible::after { transform: translateY(7px); }
+.oa-rek .mini-card:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.oa-rek .btn { margin-top: 30px; }
+
+/* ---------- Kaarten op een pallet ---------- */
+.oa-pallets { row-gap: 64px; padding-bottom: 28px; }
+.oa-pallets > .ibox { overflow: visible; }
+.oa-pallets > .ibox::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: -24px;
+  height: 24px;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, #d5ab73, #b58a52) top / 100% 7px no-repeat,
+    linear-gradient(90deg, #9a7040 0 8%, transparent 8% 46%, #9a7040 46% 54%, transparent 54% 92%, #9a7040 92%) 0 7px / 100% 12px no-repeat,
+    linear-gradient(180deg, #b58a52, #8a6436) bottom / 100% 5px no-repeat;
+  filter: drop-shadow(0 10px 8px rgba(2, 13, 65, .28));
+}
+
+/* ---------- Mobiel ---------- */
+/* smalle kolom: één doos per plank, anders past "Meubelpaspoort" niet op het etiket */
+@media (max-width: 1339px) {
+  .oa-rek .grid { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+}
+@media (max-width: 1023px) {
+  .oa-split { align-items: start; }
+  .oa-rek .grid { flex: none; row-gap: 30px; }
+}
+@media (max-width: 600px) {
+  .oa-unit__binnen { padding-bottom: 150px; }
+  .oa-stoel, .oa-doos--3 { display: none; }
+  .oa-deur__slot { left: calc(50% + 50px); }
+  .oa-rek .grid { padding-inline: 22px; }
+}

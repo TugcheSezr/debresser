@@ -1,0 +1,133 @@
+/* =====================================================================
+   Videochat in 3 stappen (blog-inhuren-professionals-kan-stressniveau-verminderen.html)
+   Elke stap is een lopend videogesprek met foto, eigen camerabeeld (pip),
+   geluidsgolf en knoppen. Basis .vc-* staat in style.css.
+   ===================================================================== */
+
+.vcs {
+  position: relative;
+  gap: clamp(28px, 3vw, 40px);
+  margin-top: 36px;
+  perspective: 1400px;
+}
+/* stippellijn die de drie gesprekken verbindt */
+.vcs::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 38%;
+  height: 0;
+  border-top: 3px dashed rgba(16, 185, 129, .45);
+  z-index: 0;
+}
+.vcs-stap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 14px 26px;
+  text-align: center;
+  border-radius: var(--r-lg, 20px);
+  background: linear-gradient(180deg, #ffffff, #f4f7fb);
+  border: 1px solid rgba(15, 44, 89, .08);
+  box-shadow: 0 1px 2px rgba(6, 20, 48, .06), 0 20px 44px -26px rgba(6, 20, 48, .4);
+  transform-style: preserve-3d;
+  transition: transform 500ms var(--spring, ease-out), box-shadow 500ms var(--ease);
+}
+.vcs-stap:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 2px 4px rgba(6, 20, 48, .08), 0 34px 60px -30px rgba(6, 20, 48, .5);
+}
+.vcs-stap h3 { margin-top: 20px; font-size: 1.15rem; color: var(--navy); }
+
+.vcs-scherm { transform: none; }
+.vcs-stap:hover .vcs-scherm {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 26px 50px rgba(2, 13, 65, .3), 0 30px 60px -16px rgba(16, 185, 129, .35);
+}
+.vcs-scherm .vc-view > img:first-child { display: block; max-height: none; }
+.vcs-stap:hover .vc-view > img:first-child { transform: scale(1.06); }
+.vcs-scherm .vc-pip { max-height: none; }
+/* de persoon in het kleine beeld "praat": groene rand pulseert */
+.vcs-scherm .vc-pip { animation: vcs-praat 2.4s ease-in-out infinite; }
+.vcs-stap:nth-child(2) .vc-pip { animation-delay: .8s; }
+.vcs-stap:nth-child(3) .vc-pip { animation-delay: 1.6s; }
+@keyframes vcs-praat {
+  0%, 100% { box-shadow: 0 10px 22px rgba(0, 0, 0, .4), 0 0 0 0 rgba(16, 185, 129, 0); border-color: rgba(255, 255, 255, .9); }
+  50% { box-shadow: 0 10px 22px rgba(0, 0, 0, .4), 0 0 0 4px rgba(16, 185, 129, .55); border-color: #10b981; }
+}
+.vcs-stap:hover .vc-pip { transform: scale(1.1) translate(-4px, 4px); }
+
+/* gesprekstijd-balkje in de titelbalk */
+.vcs-tijd {
+  margin-left: 10px;
+  width: 38px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, .5) var(--p, 30%), rgba(255, 255, 255, .15) 0);
+  animation: vcs-tijd 6s linear infinite;
+}
+@property --p { syntax: "<percentage>"; inherits: false; initial-value: 30%; }
+@keyframes vcs-tijd { from { --p: 10%; } to { --p: 100%; } }
+
+/* geluidsgolf linksonder */
+.vcs-golf {
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 11px;
+  background: rgba(2, 13, 65, .55);
+}
+.vcs-golf i {
+  width: 3px;
+  height: 12px;
+  border-radius: 2px;
+  background: #10b981;
+  animation: vcs-golf 900ms ease-in-out infinite;
+}
+.vcs-golf i:nth-child(2) { animation-delay: -.2s; }
+.vcs-golf i:nth-child(3) { animation-delay: -.5s; }
+.vcs-golf i:nth-child(4) { animation-delay: -.1s; }
+.vcs-golf i:nth-child(5) { animation-delay: -.7s; }
+@keyframes vcs-golf {
+  0%, 100% { transform: scaleY(.3); }
+  50% { transform: scaleY(1); }
+}
+
+/* origineel nummericoon als badge op de hoek */
+.vcs-nr {
+  position: absolute;
+  z-index: 3;
+  top: -20px;
+  left: -16px;
+  width: 72px;
+  height: 72px;
+  max-height: none;
+  padding: 7px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff, #ebeff4 70%);
+  box-shadow: inset 0 2px 0 #fff, 0 2px 0 #c7c7c7, 0 14px 26px rgba(2, 13, 65, .28), 0 0 0 5px rgba(255, 255, 255, .6);
+  rotate: -8deg;
+  transition: transform 500ms var(--spring, ease-out);
+}
+.vcs-stap:hover .vcs-nr { transform: translateY(-6px) rotate(-8deg) scale(1.08); }
+
+@media (max-width: 1023px) {
+  .vcs::before { display: none; }
+}
+@media (max-width: 767px) {
+  .vcs { grid-template-columns: minmax(0, 1fr); row-gap: 44px; }
+  .vcs-nr { left: -6px; width: 62px; height: 62px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vcs-scherm .vc-pip, .vcs-golf i, .vcs-tijd { animation: none !important; }
+}

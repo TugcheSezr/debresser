@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inventarisatie | Efficiënt overzicht &amp; duurzaam beheer | De Bresser</title>
   <meta name="description" content="Optimaliseer uw assetmanagement met een grondige inventarisatie van alle assets door onze ervaren specialisten.">
-  <meta name="theme-color" content="#0f2c59">
+  <meta name="theme-color" content="#020d41">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/inventarisatie-r.css">
+  <link rel="stylesheet" href="css/inventarisatie.css">
+  <link rel="alternate" hreflang="nl" href="assetmanagement-inventarisatie.html">
+  <link rel="alternate" hreflang="en" href="en-asset-management-inventory.html">
+  <link rel="alternate" hreflang="x-default" href="assetmanagement-inventarisatie.html">
 
 </head>
 <body class="page-live">
@@ -116,6 +122,15 @@
       </nav>
 
       <div class="header__cta">
+        <div class="lang" data-lang>
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="taalkeuze" aria-haspopup="true" aria-label="Nederlands – taalschakelaar">
+            <span class="lang__flag lang__flag--nl" aria-hidden="true"></span><span class="lang__code">NL</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <ul class="lang__menu" id="taalkeuze">
+            <li><a href="assetmanagement-inventarisatie.html" hreflang="nl" lang="nl" aria-current="page"><span class="lang__flag lang__flag--nl" aria-hidden="true"></span>Nederlands</a></li>
+            <li><a href="en-asset-management-inventory.html" hreflang="en" lang="en"><span class="lang__flag lang__flag--en" aria-hidden="true"></span>English</a></li>
+          </ul>
+        </div>
         <a class="header-tel" href="tel:0031135282372">
           <span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3.5h3.5l1.5 4-2 1.5a11 11 0 0 0 7 7l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5C10.6 20.5 3.5 13.4 3.5 5A1.5 1.5 0 0 1 5 3.5z"/></svg></span>
           <span>+31 (0)13 52 82 372</span>
@@ -149,13 +164,20 @@
 
 
   <!-- NIEUW: DE DUURZAME WERKOMGEVING -->
-  <section class="section gbam-nieuw">
+  <section class="section gbam-nieuw ivt-nieuw">
     <div class="wrap">
-      <a class="band-quote card-3d reveal" data-tilt="3" href="duurzame-werkomgeving.html" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:inherit">
-        <span class="tag tag--green">Nieuw</span>
-        <h2 class="h2">De duurzame werkomgeving</h2>
-        <p>Ontdek onze nieuwste dienstverlening en geniet van dagelijkse efficiëntie en complete ontzorging, dankzij één aanspreekpunt die altijd bereikbaar is. Dit begint natuurlijk bij een grondige inventarisatie, maar daar stopt het niet. Bij De Bresser geloven we in totale ontzorging, zodat u zich kunt focussen op wat écht belangrijk is.</p>
-        <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <a class="ivt-nieuw__card reveal" href="duurzame-werkomgeving.html">
+        <span class="ivt-nieuw__media" aria-hidden="true">
+          <img src="assets/img/inventarisatie/nieuw-werkomgeving.webp" srcset="assets/img/inventarisatie/nieuw-werkomgeving-640.webp 640w, assets/img/inventarisatie/nieuw-werkomgeving.webp 1200w" sizes="(max-width: 859px) 100vw, 50vw" alt="" width="1200" height="860" loading="lazy" decoding="async">
+          <span class="ivt-nieuw__badge"><svg viewBox="0 0 24 24"><path d="M8.5 3.5h7v3h-7z"/><path d="M8.5 5H5.5v15.5h13V5h-3"/><path d="m8.8 13.2 2.4 2.4 4.3-4.6"/></svg></span>
+        </span>
+        <span class="ivt-nieuw__body">
+          <svg class="ivt-ruit ivt-nieuw__ruit" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
+          <span class="tag tag--green">Nieuw</span>
+          <h2 class="h2">De duurzame werkomgeving</h2>
+          <p>Ontdek onze nieuwste dienstverlening en geniet van dagelijkse efficiëntie en complete ontzorging, dankzij één aanspreekpunt die altijd bereikbaar is. Dit begint natuurlijk bij een grondige inventarisatie, maar daar stopt het niet. Bij De Bresser geloven we in totale ontzorging, zodat u zich kunt focussen op wat écht belangrijk is.</p>
+          <span class="link-arrow">Lees meer <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
       </a>
     </div>
   </section>
@@ -163,10 +185,31 @@
   <section class="section section--mist">
     <svg class="bg-ruit bg-ruit--bl" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
     <div class="wrap split split--top">
-      <div class="split__text reveal">
-        <h2 class="h2">Inventariseren</h2>
-        <p>Goede assetmanagement begint bij een grondige inventarisatie. Met een toegewijde en ervaren assetmanager aan uw zijde brengen we al uw assets nauwkeurig in kaart. Hierbij streven we ernaar om niet alleen uw operationele efficiëntie te verbeteren, maar ook om de CO2-voetafdruk te minimaliseren en actief bij te dragen aan een efficiëntere circulaire economie. Met De Bresser kiest u voor een betrouwbare partner die zich richt op lange termijn samenwerking, waarbij onze expertise en toewijding garant staan voor een succesvolle en duurzame toekomst voor uw bedrijf.</p>
-        <a class="btn btn--navy" href="contact.html">Contact opnemen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="split__text ivt-links">
+        <div class="ivt-bord reveal">
+          <span class="ivt-bord__klem" aria-hidden="true"></span>
+          <span class="ivt-bord__label" aria-hidden="true"><i></i><b></b></span>
+          <h2 class="h2">Inventariseren</h2>
+          <p>Goede assetmanagement begint bij een grondige inventarisatie. Met een toegewijde en ervaren assetmanager aan uw zijde brengen we al uw assets nauwkeurig in kaart. Hierbij streven we ernaar om niet alleen uw operationele efficiëntie te verbeteren, maar ook om de CO2-voetafdruk te minimaliseren en actief bij te dragen aan een efficiëntere circulaire economie. Met De Bresser kiest u voor een betrouwbare partner die zich richt op lange termijn samenwerking, waarbij onze expertise en toewijding garant staan voor een succesvolle en duurzame toekomst voor uw bedrijf.</p>
+          <a class="btn btn--navy" href="contact.html">Contact opnemen <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="ivt-tablet reveal" aria-hidden="true">
+          <div class="ivt-tablet__scherm">
+            <div class="ivt-tablet__bar"><span></span><b></b><em>6/6</em></div>
+            <ul class="ivt-tablet__grid">
+              <li><img src="assets/img/inventarisatie-r/refurbished.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+              <li><img src="assets/img/inventarisatie-r/reuse.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+              <li><img src="assets/img/inventarisatie-r/repair.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+              <li><img src="assets/img/inventarisatie-r/repurpose.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+              <li><img src="assets/img/inventarisatie-r/recycling.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+              <li><img src="assets/img/inventarisatie-r/recover.webp" alt="" width="400" height="300" loading="lazy"><i></i></li>
+            </ul>
+            <span class="ivt-tablet__scan"></span>
+            <div class="ivt-tablet__voortgang"><span></span></div>
+          </div>
+          <span class="ivt-sticker ivt-sticker--a"><svg viewBox="0 0 60 30"><path d="M4 3v24M8 3v24M11 3v24M16 3v24M19 3v24M23 3v24M28 3v24M31 3v24M35 3v24M40 3v24M43 3v24M47 3v24M52 3v24M56 3v24"/></svg></span>
+          <span class="ivt-sticker ivt-sticker--b"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+        </div>
       </div>
       <div class="split__form"><div class="form-card form-3d reveal" data-form3d>
           <h3 class="h3">Neem contact op</h3>
@@ -212,26 +255,152 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section ivt-beoordelen">
     <div class="wrap">
       <div class="split">
-        <div class="split__media reveal"><figure class="img-3d" data-tilt="6">
+        <div class="split__media reveal ivt-zoeker"><figure class="img-3d" data-tilt="6">
         <div class="img-3d__frame"><img src="assets/img/site/Asset-management-De-Bresser.jpg" alt="asset management werkzaamheden" loading="lazy"></div>
-      </figure></div>
-        <div class="split__text reveal">
+      </figure>
+          <span class="ivt-zoeker__hoek" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          <span class="ivt-zoeker__lijn" aria-hidden="true"></span>
+          <span class="ivt-zoeker__tag" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1.4 1.4 0 0 1 0 2l-6.7 6.7a1.4 1.4 0 0 1-2 0z"/><circle cx="8" cy="8" r="1.6"/></svg><svg class="ivt-zoeker__code" viewBox="0 0 60 30"><path d="M4 3v24M8 3v24M11 3v24M16 3v24M19 3v24M23 3v24M28 3v24M31 3v24M35 3v24M40 3v24M43 3v24M47 3v24M52 3v24M56 3v24"/></svg></span>
+        </div>
+        <div class="split__text reveal ivt-beoordelen__tekst">
           <h3 class="h2">Inventaris beoordelen</h3>
           <p>Bij De Bresser gaan we verder dan alleen het inventariseren van assets; we beoordelen ze op diverse criteria om een duurzame aanpak te waarborgen. Ons proces omvat een zorgvuldige evaluatie van elke asset op verschillende niveaus:</p>
         </div>
       </div>
-      <ul class="grid-3 mt-l reveal-group">
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></span><p><strong>Refurbished: </strong>We vernieuwen assets om hun levensduur te verlengen.</p></li>
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 9.5 10 5.2a2.3 2.3 0 0 1 4 0l1.2 2"/><path d="m16.6 5.5-.2 3-3-.3"/><path d="M18.3 12.3 20.5 16a2.3 2.3 0 0 1-2 3.5H16"/><path d="m17.8 21.5-1.9-2.2 2.2-2"/><path d="M8 19.5H5.5a2.3 2.3 0 0 1-2-3.5l1.3-2.2"/><path d="m3.2 12.8 2.8-.6.7 2.9"/></svg></span><p><strong>Reuse:</strong> Geschikte assets worden hergebruikt om verspilling te verminderen.</p></li>
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5l-8.8 8.8a2.1 2.1 0 0 1-3-3z"/><path d="M14.5 6.5 17 4a4 4 0 0 1 3 3l-2.5 2.5"/></svg></span><p><strong>Repair:</strong> Defecte assets worden gerepareerd om waarde te behouden.</p></li>
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10.5V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2.5"/><path d="M3 11h3v3.5h12V11h3v5.5H3z"/><path d="M5 16.5v2M19 16.5v2"/></svg></span><p><strong>Repurpose:</strong> We zoeken naar nieuwe toepassingen voor assets die niet meer voor hun oorspronkelijke doel kunnen worden gebruikt.</p></li>
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4z"/><path d="M3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></svg></span><p><strong>Recycling:</strong> Onbruikbare assets worden gerecycled om grondstoffen terug te winnen.</p></li>
-        <li class="feature glass gbam-feature"><span class="icon-tile icon-tile--green"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 5 13.5h6l-1 7.5 8-10.5h-6z"/></svg></span><p><strong>Recover:</strong> Restmaterialen worden geëvalueerd voor energieterugwinning of waardeherwinning.</p></li>
+      <ul class="grid-3 mt-l reveal-group ivr">
+        <li class="ivr__kaart ivr__kaart--refurbished">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160"><defs><clipPath id="ivr-veeg-clip"><rect class="ivr-veeg" x="70" y="20" width="96" height="92"/></clipPath></defs>
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g class="ivr-stoel-oud">
+      <rect x="92" y="28" width="56" height="60" rx="13" fill="#c7c7c7"/>
+      <path d="M100 42l14 9M126 36l10 14M104 70l18-6M132 66l8 10" stroke="#676767" stroke-width="2" stroke-linecap="round"/>
+      <rect x="82" y="90" width="76" height="14" rx="7" fill="#c7c7c7"/>
+      <path d="M92 97h22" stroke="#676767" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g clip-path="url(#ivr-veeg-clip)">
+      <rect x="92" y="28" width="56" height="60" rx="13" fill="#020d41"/>
+      <rect x="98" y="34" width="14" height="48" rx="7" fill="#fff" opacity=".12"/>
+      <rect x="82" y="90" width="76" height="14" rx="7" fill="#00498f"/>
+    </g>
+    <rect x="117" y="104" width="6" height="20" fill="#676767"/>
+    <path d="M86 134l34-10 34 10" stroke="#676767" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="86" cy="136" r="4.5" fill="#020d41"/><circle cx="120" cy="131" r="4.5" fill="#020d41"/><circle cx="154" cy="136" r="4.5" fill="#020d41"/>
+    <g class="ivr-roller">
+      <path d="M78 32V20h-6" stroke="#676767" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M72 20V6" stroke="#020d41" stroke-width="5" stroke-linecap="round"/>
+      <rect x="70" y="32" width="16" height="58" rx="8" fill="#7bd534"/>
+      <rect x="73" y="36" width="4" height="50" rx="2" fill="#fff" opacity=".35"/>
+    </g>
+    <path class="ivr-ster ivr-s1" d="M170 31q1.6199999999999999 7.38 9 9q-7.38 1.6199999999999999-9 9q-1.6199999999999999-7.38-9-9q7.38-1.6199999999999999 9-9z" fill="#7bd534"/><path class="ivr-ster ivr-s2" d="M62 58q1.08 4.92 6 6q-4.92 1.08-6 6q-1.08-4.92-6-6q4.92-1.08 6-6z" fill="#33bcfa"/><path class="ivr-ster ivr-s3" d="M166 90q1.08 4.92 6 6q-4.92 1.08-6 6q-1.08-4.92-6-6q4.92-1.08 6-6z" fill="#ffc400"/>
+          </svg></figure>
+          <p><strong>Refurbished: </strong>We vernieuwen assets om hun levensduur te verlengen.</p>
+        </li>
+        <li class="ivr__kaart ivr__kaart--reuse">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160">
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g class="ivr-draai">
+      <path d="M62 78a58 58 0 0 1 106-32" stroke="#7bd534" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M174 32l-3 20-18-8z" fill="#7bd534"/>
+      <path d="M178 94a58 58 0 0 1-106 32" stroke="#007dc2" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M66 140l3-20 18 8z" fill="#007dc2"/>
+    </g>
+    <g class="ivr-hup">
+      <rect x="84" y="72" width="72" height="9" rx="2" fill="#c69a5f"/>
+      <rect x="84" y="72" width="72" height="3" rx="1.5" fill="#fff" opacity=".3"/>
+      <rect x="89" y="81" width="6" height="42" fill="#9a7040"/>
+      <rect x="145" y="81" width="6" height="42" fill="#9a7040"/>
+      <rect x="112" y="81" width="30" height="22" rx="2" fill="#ebeff4" stroke="#020d41" stroke-width="2"/>
+      <rect x="121" y="90" width="12" height="3" rx="1.5" fill="#020d41"/>
+      <rect x="98" y="58" width="22" height="14" rx="2" fill="#020d41"/>
+      <rect x="106" y="68" width="6" height="4" fill="#00498f"/>
+      <path d="M130 72V62m-4 0h8" stroke="#166909" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+          </svg></figure>
+          <p><strong>Reuse:</strong> Geschikte assets worden hergebruikt om verspilling te verminderen.</p>
+        </li>
+        <li class="ivr__kaart ivr__kaart--repair">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160">
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g class="ivr-tafel">
+      <rect x="70" y="68" width="100" height="10" rx="2" fill="#c69a5f"/>
+      <rect x="70" y="68" width="100" height="3" rx="1.5" fill="#fff" opacity=".3"/>
+      <rect x="77" y="78" width="7" height="56" fill="#9a7040"/>
+      <rect x="156" y="78" width="7" height="46" fill="#9a7040"/>
+      <rect class="ivr-poot" x="156" y="122" width="7" height="12" fill="#7bd534"/>
+    </g>
+    <g class="ivr-sleutel">
+      <path d="M178 120l30-30" stroke="#020d41" stroke-width="8" stroke-linecap="round"/>
+      <path d="M204 80a12 12 0 1 0 14 14l-8-2-4-4z" fill="#020d41"/>
+    </g>
+    <g class="ivr-vink"><circle cx="64" cy="40" r="15" fill="#7bd534"/><path d="m56.5 40 5 5 9.5-10" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </svg></figure>
+          <p><strong>Repair:</strong> Defecte assets worden gerepareerd om waarde te behouden.</p>
+        </li>
+        <li class="ivr__kaart ivr__kaart--repurpose">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160">
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g>
+      <rect x="30" y="86" width="62" height="48" rx="3" fill="#c69a5f"/>
+      <path d="M30 102h62M30 118h62" stroke="#9a7040" stroke-width="3"/>
+      <path d="M40 86v48M82 86v48" stroke="#9a7040" stroke-width="3" opacity=".5"/>
+    </g>
+    <path class="ivr-pijl" d="M100 108h34" stroke="#7bd534" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 6"/>
+    <path d="M132 100l10 8-10 8" stroke="#7bd534" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+      <rect x="152" y="70" width="52" height="64" rx="3" fill="none" stroke="#c69a5f" stroke-width="6"/>
+      <path d="M152 102h52" stroke="#c69a5f" stroke-width="5"/>
+      <rect x="160" y="80" width="7" height="20" rx="1" fill="#020d41"/>
+      <rect x="168" y="83" width="7" height="17" rx="1" fill="#007dc2"/>
+      <rect x="176" y="86" width="12" height="14" rx="1" fill="#00498f" transform="rotate(-14 182 100)"/>
+      <path d="M186 132v-10h14v10z" fill="#020d41"/>
+      <g class="ivr-plant">
+        <path d="M193 122v-14" stroke="#166909" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M193 112c-8 0-12-5-12-10 7 0 12 4 12 10zM193 108c0-8 5-12 11-12 0 7-4 12-11 12z" fill="#7bd534"/>
+      </g>
+    </g>
+          </svg></figure>
+          <p><strong>Repurpose:</strong> We zoeken naar nieuwe toepassingen voor assets die niet meer voor hun oorspronkelijke doel kunnen worden gebruikt.</p>
+        </li>
+        <li class="ivr__kaart ivr__kaart--recycling">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160">
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g class="ivr-val ivr-v1"><rect x="96" y="-6" width="26" height="6" rx="2" fill="#c69a5f"/></g>
+    <g class="ivr-val ivr-v2"><circle cx="138" cy="-6" r="5" fill="#676767"/><path d="M138 -6v10" stroke="#676767" stroke-width="2.5"/></g>
+    <g class="ivr-val ivr-v3"><path d="M110 -12h14l-3 10h-11z" fill="#007dc2"/></g>
+    <path d="M78 64h84l-8 72a6 6 0 0 1-6 5H92a6 6 0 0 1-6-5z" fill="#7bd534"/>
+    <path d="M78 64h84l-1 9H79z" fill="#166909"/>
+    <rect x="72" y="54" width="96" height="12" rx="4" fill="#020d41"/>
+    <path d="M86 78l6 58" stroke="#fff" stroke-width="2" opacity=".2"/>
+    <g class="ivr-symbool" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M112 102l5-8.5a3.5 3.5 0 0 1 6 0l2.5 4.3"/><path d="m128 94-1 4.3-4.3-.8"/>
+      <path d="M130 106l3 5.2a3.5 3.5 0 0 1-3 5.3h-5"/><path d="m127.5 120-3-3.3 3-3.2"/>
+      <path d="M115 116.5h-5a3.5 3.5 0 0 1-3-5.3l2-3.4"/><path d="m105 106 4.3-1.3 1.2 4.4"/>
+    </g>
+          </svg></figure>
+          <p><strong>Recycling:</strong> Onbruikbare assets worden gerecycled om grondstoffen terug te winnen.</p>
+        </li>
+        <li class="ivr__kaart ivr__kaart--recover">
+          <figure class="ivr__fig" aria-hidden="true"><svg viewBox="0 0 240 160">
+    <ellipse cx="120" cy="140" rx="74" ry="7" fill="#020d41" opacity=".09"/>
+    <g class="ivr-rook"><circle cx="160" cy="34" r="7" fill="#c7c7c7"/><circle cx="168" cy="24" r="9" fill="#ebeff4"/></g>
+    <path d="M100 136V84l24 14V84l24 14V62h20v74z" fill="#020d41"/>
+    <rect x="152" y="46" width="12" height="20" fill="#00498f"/>
+    <rect x="110" y="108" width="10" height="10" rx="1" fill="#ffc400" opacity=".8"/><rect x="132" y="108" width="10" height="10" rx="1" fill="#ffc400" opacity=".8"/>
+    <rect x="30" y="128" width="72" height="6" rx="3" fill="#676767"/>
+    <g class="ivr-rit ivr-r1"><rect x="34" y="118" width="16" height="10" rx="1.5" fill="#c69a5f"/></g>
+    <g class="ivr-rit ivr-r2"><path d="M34 128l8-12 8 12z" fill="#676767"/></g>
+    <g class="ivr-bliksem">
+      <circle cx="194" cy="84" r="22" fill="#ffc400" opacity=".18"/>
+      <path d="M198 64l-16 24h11l-5 18 16-26h-11z" fill="#ffc400" stroke="#e0a800" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+          </svg></figure>
+          <p><strong>Recover:</strong> Restmaterialen worden geëvalueerd voor energieterugwinning of waardeherwinning.</p>
+        </li>
       </ul>
-      <p class="gbam-slot reveal">Met deze grondige benadering van assetbeoordeling streven we ernaar om uw bedrijf te helpen bij het realiseren van duurzame doelstellingen en bij te dragen aan een circulaire economie.</p>
+      <p class="gbam-slot reveal ivt-slot">Met deze grondige benadering van assetbeoordeling streven we ernaar om uw bedrijf te helpen bij het realiseren van duurzame doelstellingen en bij te dragen aan een circulaire economie.</p>
     </div>
   </section>
 
@@ -369,5 +538,6 @@
 </div>
 
 <script src="js/main.js" defer></script>
+<script src="js/diepte.js" defer></script>
 </body>
 </html>

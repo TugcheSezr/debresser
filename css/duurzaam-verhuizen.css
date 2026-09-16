@@ -1,0 +1,219 @@
+/* =====================================================================
+   Duurzaam verhuizen (duurzaam-verhuizen.html)
+   Eigen bestand, alleen op deze pagina geladen na diepte.css.
+   Achtergronden in debresser.nl-logokleuren: Diepblauw #00498F,
+   Bresserblauw #007DC2, Bressergroen #6DB23F. Teksten ongewijzigd;
+   bladeren, ruiten, hoogtelijnen en landschap zijn decoratief (aria-hidden).
+   ===================================================================== */
+.dv-bg {
+  --dv-diep: #00498f;
+  --dv-blauw: #007dc2;
+  --dv-groen: #6db23f;
+  --dv-groen-l: #9fd47a;
+  --dv-groen-xl: #eef7e7;
+  position: relative;
+  isolation: isolate;
+}
+.dv-bg > .wrap { position: relative; z-index: 1; }
+@keyframes dv-zweef {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(18px, -26px) rotate(18deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* ---------- 1. Duurzame missie: licht groen vel met bladeren ---------- */
+.page-hero--photo + .section.dv-bg--missie {
+  background:
+    radial-gradient(40% 55% at 0% 100%, rgba(109, 178, 63, .2), transparent 70%),
+    radial-gradient(35% 45% at 100% 0%, rgba(0, 125, 194, .12), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, #f6fbf2 55%, var(--dv-groen-xl) 100%);
+}
+.dv-bg--missie::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; border-radius: inherit;
+  background-image: radial-gradient(rgba(109, 178, 63, .28) 1.2px, transparent 1.6px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(120deg, #000 0%, transparent 45%);
+          mask-image: linear-gradient(120deg, #000 0%, transparent 45%);
+}
+.dv-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; border-radius: inherit; }
+.dv-deco svg { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.dv-deco__blad-groot {
+  position: absolute; left: -70px; bottom: -60px; width: 380px;
+  stroke: rgba(109, 178, 63, .28); stroke-width: 1.2;
+  transform: rotate(-12deg);
+}
+.dv-deco__ruit {
+  position: absolute; right: -120px; top: 40px; width: 520px;
+  stroke: rgba(0, 125, 194, .12); stroke-width: 2;
+}
+.dv-zweef { position: absolute; width: 30px; animation: dv-zweef 9s ease-in-out infinite; }
+.dv-zweef svg { display: block; width: 100%; fill: rgba(109, 178, 63, .55); stroke: #fff; stroke-width: 2.5; }
+.dv-zweef--1 { left: 42%; top: 16%; }
+.dv-zweef--2 { left: 6%; top: 20%; width: 22px; animation-duration: 11s; animation-delay: -3s; }
+.dv-zweef--3 { left: 38%; bottom: 14%; width: 38px; animation-duration: 13s; animation-delay: -6s; }
+.dv-zweef--3 svg { fill: rgba(0, 125, 194, .35); }
+.dv-zweef--4 { right: 4%; bottom: 10%; width: 26px; animation-duration: 10s; animation-delay: -2s; }
+/* kop met blad-tegel */
+.dv-bg--missie .h2 { display: flex; align-items: center; gap: 14px; }
+.dv-bg--missie .h2::before {
+  content: ""; flex: none; width: 46px; height: 46px; border-radius: 14px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 19c0-8 5-13.5 14.5-14.5C18.5 14 13 19 5 19z'/%3E%3Cpath d='M5 19 13 11'/%3E%3C/svg%3E") center / 26px no-repeat,
+    linear-gradient(145deg, #8fd15d, var(--dv-groen));
+  box-shadow: 0 12px 22px -10px rgba(109, 178, 63, .9), inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+/* ---------- 2. Samen werken aan een betere wereld: Diepblauwe band ---------- */
+.dv-bg--wereld {
+  color: #d6e4f3;
+  padding-block: clamp(120px, 13vw, 190px);
+  background:
+    radial-gradient(45% 40% at 85% 12%, rgba(0, 125, 194, .75), transparent 70%),
+    radial-gradient(40% 35% at 10% 55%, rgba(109, 178, 63, .35), transparent 70%),
+    radial-gradient(50% 40% at 70% 100%, rgba(109, 178, 63, .25), transparent 70%),
+    linear-gradient(170deg, var(--dv-diep) 0%, #003a78 45%, #00224f 100%);
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  overflow: hidden;
+}
+/* groen-blauwe lijnen langs de schuine randen */
+.dv-bg--wereld::before,
+.dv-bg--wereld::after {
+  content: ""; position: absolute; left: 0; right: 0; height: calc(4vw + 10px); z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, var(--dv-groen), var(--dv-blauw));
+}
+.dv-bg--wereld::before { top: 0; clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%); }
+.dv-bg--wereld::after { bottom: 0; background: linear-gradient(90deg, var(--dv-blauw), var(--dv-groen)); clip-path: polygon(0 calc(100% - 10px), 100% 0, 100% 10px, 0 100%); }
+.dv-sterren {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(255, 255, 255, .8), transparent 60%),
+    radial-gradient(1px 1px at 28% 42%, rgba(255, 255, 255, .6), transparent 60%),
+    radial-gradient(1.5px 1.5px at 47% 12%, rgba(255, 255, 255, .7), transparent 60%),
+    radial-gradient(1px 1px at 63% 30%, rgba(255, 255, 255, .5), transparent 60%),
+    radial-gradient(2px 2px at 78% 58%, rgba(159, 212, 122, .8), transparent 60%),
+    radial-gradient(1px 1px at 88% 22%, rgba(255, 255, 255, .6), transparent 60%),
+    radial-gradient(1.5px 1.5px at 8% 76%, rgba(255, 255, 255, .6), transparent 60%),
+    radial-gradient(1px 1px at 36% 88%, rgba(255, 255, 255, .5), transparent 60%),
+    radial-gradient(2px 2px at 55% 70%, rgba(51, 188, 250, .7), transparent 60%),
+    radial-gradient(1px 1px at 94% 84%, rgba(255, 255, 255, .6), transparent 60%);
+  background-size: 620px 620px;
+  animation: dv-twinkel 6s ease-in-out infinite alternate;
+}
+@keyframes dv-twinkel { from { opacity: .55; } to { opacity: 1; } }
+.dv-bg--wereld::selection { background: var(--dv-groen); }
+.dv-wereld__ruit { position: absolute; z-index: 0; fill: none; stroke-width: 2; pointer-events: none; }
+.dv-wereld__ruit--a { width: 560px; left: -200px; top: 30%; stroke: rgba(109, 178, 63, .35); }
+.dv-wereld__ruit--b { width: 380px; right: -120px; bottom: 8%; stroke: rgba(255, 255, 255, .1); }
+/* grote bg-ruit uit de oude mist-sectie niet dubbel tonen */
+.dv-bg--wereld > .bg-ruit { display: none; }
+
+.dv-bg--wereld .eyebrow { color: var(--dv-groen-l); }
+.dv-bg--wereld .section-head .h2,
+.dv-bg--wereld .split__text .h2 { color: #fff; }
+.dv-bg--wereld .section-head .lead { color: #c9dbef; }
+.dv-bg--wereld .split__text p { color: #d6e4f3; }
+.dv-bg--wereld .globe-3d__glow { opacity: 1; filter: saturate(1.3) brightness(1.2); }
+
+/* initiatiefkaarten: wit papier met groene bovenrand op de blauwe band */
+.dv-bg--wereld .feature {
+  position: relative; overflow: hidden;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 2px 0 #cfdbea, 0 30px 60px -30px rgba(0, 10, 35, .8);
+}
+.dv-bg--wereld .feature::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px;
+  background: linear-gradient(90deg, var(--dv-groen), var(--dv-blauw));
+}
+.dv-bg--wereld .feature__img {
+  padding: 8px; border-radius: 16px;
+  background: var(--dv-groen-xl);
+  box-shadow: inset 0 0 0 1px rgba(109, 178, 63, .25);
+}
+.dv-bg--wereld .feature h3 { color: #0b2a4f; }
+
+/* 2e hands-logo: groene gloed erachter */
+.dv-bg--wereld .pop-3d::before {
+  content: ""; position: absolute; inset: 8%; z-index: -1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 196, 0, .35), rgba(109, 178, 63, .2) 45%, transparent 70%);
+  filter: blur(10px);
+}
+
+/* ---------- 3. Maatschappelijke betrokkenheid: hoogtelijnen + landschap ---------- */
+.dv-bg--mens {
+  padding-bottom: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faf1 50%, #e9f5df 100%);
+  overflow: hidden;
+}
+.dv-hoogtelijnen {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none' stroke='%236db23f' stroke-width='1.2'%3E%3Cpath d='M300 120c90 0 170 60 170 150s-60 190-170 190-190-70-190-170 100-170 190-170z'/%3E%3Cpath d='M300 160c70 0 130 50 130 115s-45 145-130 145-150-55-150-130 80-130 150-130z'/%3E%3Cpath d='M300 200c50 0 90 35 90 80s-30 100-90 100-110-40-110-90 60-90 110-90z'/%3E%3Cpath d='M300 240c30 0 52 20 52 45s-18 55-52 55-66-22-66-50 36-50 66-50z'/%3E%3Cpath d='M300 70c120 0 220 80 220 200s-80 240-220 240S60 420 60 290 180 70 300 70z'/%3E%3Cpath d='M300 20c150 0 270 100 270 250S470 560 300 560 10 460 10 300 150 20 300 20z'/%3E%3C/svg%3E") -120px 40px / 720px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none' stroke='%23007dc2' stroke-width='1.2'%3E%3Cpath d='M300 120c90 0 170 60 170 150s-60 190-170 190-190-70-190-170 100-170 190-170z'/%3E%3Cpath d='M300 170c60 0 120 45 120 105s-40 130-120 130-140-50-140-115 80-120 140-120z'/%3E%3Cpath d='M300 220c35 0 65 25 65 55s-20 70-65 70-80-28-80-62 45-63 80-63z'/%3E%3Cpath d='M300 60c130 0 230 90 230 210s-90 250-230 250S50 430 50 290 170 60 300 60z'/%3E%3C/svg%3E") calc(100% + 160px) 55% / 640px no-repeat;
+  opacity: .16;
+}
+.dv-bg--mens .split__text > .h2 { position: relative; padding-left: 22px; }
+.dv-bg--mens .split__text > .h2::before {
+  content: ""; position: absolute; left: 0; top: .12em; bottom: .12em; width: 5px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--dv-groen), var(--dv-blauw));
+}
+.dv-bg--mens .info-panel {
+  background: #fff;
+  border-top: 5px solid var(--dv-groen);
+  box-shadow: 0 2px 0 #dfe8d6, 0 40px 70px -40px rgba(20, 60, 20, .45);
+}
+
+/* landschap onderaan */
+.dv-landschap {
+  position: relative; z-index: 0;
+  height: clamp(170px, 22vw, 300px);
+  margin-top: clamp(40px, 5vw, 80px);
+}
+.dv-landschap svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.dv-zon { fill: #ffe38a; opacity: .7; filter: drop-shadow(0 0 30px rgba(255, 196, 0, .8)); }
+.dv-heuvel--1 { fill: #cfe8bd; }
+.dv-heuvel--2 { fill: #9fd07a; }
+.dv-heuvel--3 { fill: var(--dv-groen); }
+.dv-molen__mast { fill: #fff; stroke: #cfdae6; stroke-width: 1; }
+.dv-molen__rotor { fill: #fff; stroke: #cfdae6; stroke-width: 1; transform-box: view-box; transform-origin: 0 -120px; animation: dv-draai var(--d, 8s) linear infinite; }
+.dv-molen__rotor circle { fill: var(--dv-blauw); stroke: none; }
+@keyframes dv-draai { to { transform: rotate(360deg); } }
+.dv-boom rect { fill: #5b4632; }
+.dv-boom circle { fill: #4f9129; }
+.dv-boom circle:nth-of-type(2) { fill: #5da334; }
+.dv-boom circle:nth-of-type(3) { fill: #3f7a1f; }
+.dv-weg { fill: #2f3b4c; }
+.dv-weg__streep { stroke: #fff; stroke-width: 2.5; stroke-dasharray: 26 22; animation: dv-weg 1.4s linear infinite; }
+@keyframes dv-weg { to { stroke-dashoffset: -48; } }
+.dv-bus { animation: dv-rijden 22s linear infinite; }
+@keyframes dv-rijden { from { transform: translateX(-160px); } to { transform: translateX(1600px); } }
+.dv-bus__body { fill: #fff; stroke: #c9d6e6; stroke-width: 1.2; }
+.dv-bus__raam { fill: #1f3b5c; }
+.dv-bus__streep { fill: var(--dv-groen); }
+.dv-bus__logo polygon { fill: none; stroke-width: 34; }
+.dv-bus__logo polygon:nth-child(1) { stroke: var(--dv-diep); }
+.dv-bus__logo polygon:nth-child(2) { stroke: var(--dv-blauw); }
+.dv-bus__logo polygon:nth-child(3) { stroke: var(--dv-groen); }
+.dv-bus__stekker circle { fill: var(--dv-groen); }
+.dv-bus__stekker path { fill: #fff; }
+.dv-wiel circle { fill: #1c2633; }
+.dv-wiel .dv-wiel__naaf { fill: #c9d6e6; }
+.dv-bus > g { animation: dv-hobbel .5s ease-in-out infinite alternate; }
+@keyframes dv-hobbel { to { transform: translate(0, 221px); } }
+
+/* de CTA-kaart komt onder het landschap, zodat weg en busje zichtbaar blijven */
+.dv-bg--mens + .cta-band { padding-top: clamp(48px, 6vw, 90px); }
+
+/* ---------- mobiel ---------- */
+@media (max-width: 767px) {
+  .dv-bg--wereld { padding-block: 96px; }
+  .dv-deco__blad-groot { width: 240px; }
+  .dv-deco__ruit { width: 320px; right: -140px; }
+  .dv-zweef--1, .dv-zweef--3 { display: none; }
+  .dv-landschap { height: 150px; }
+}
+
+/* ---------- rustige beweging ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .dv-zweef, .dv-sterren, .dv-molen__rotor, .dv-weg__streep, .dv-bus, .dv-bus > g { animation: none; }
+  .dv-bus { transform: translateX(640px); }
+}

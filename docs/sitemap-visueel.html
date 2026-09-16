@@ -17,13 +17,13 @@
   .mono { font-family: "IBM Plex Mono", Consolas, monospace; }
   svg.i { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
-  :root { --lijn: #B9C3D3; }
+  :root { --lijn: #C7C7C7; }
 
   .page {
     width: 420mm; height: 297mm;
     padding: 10mm 11mm 8mm;
     display: flex; flex-direction: column; gap: 12px;
-    background: #F6F8FB;
+    background: #FFFFFF;
     overflow: hidden;
   }
 
@@ -32,7 +32,7 @@
     position: relative; overflow: hidden;
     display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px;
     padding: 14px 22px; border-radius: 12px;
-    background: var(--db-nachtblauw); color: #C9D1E8;
+    background: var(--db-nachtblauw); color: #C7C7C7;
   }
   .top img { width: 64px; filter: brightness(0) invert(1); }
   .top h1 { color: #fff; font-size: 26px; line-height: 1.1; letter-spacing: -.02em; }
@@ -42,7 +42,7 @@
   .stats { display: flex; gap: 20px; position: relative; }
   .stats div { display: flex; flex-direction: column; }
   .stats b { color: var(--db-signaalgroen); font-size: 22px; line-height: 1.1; font-weight: 600; }
-  .stats span { font-size: 9.5px; color: #AEB8D6; }
+  .stats span { font-size: 9.5px; color: #C7C7C7; }
 
   /* ---------- Home ---------- */
   .home-wrap { display: flex; justify-content: center; position: relative; padding-bottom: 16px; }
@@ -74,9 +74,9 @@
   }
   .l1-top { display: flex; align-items: center; justify-content: space-between; }
   .l1-top .i { color: var(--db-hemelsblauw); }
-  .count { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.12); color: #DDE3F2; }
+  .count { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.12); color: #EBEFF4; }
   .l1 h2 { color: #fff; font-size: 14px; line-height: 1.2; }
-  .l1 .path { font-family: "IBM Plex Mono", monospace; font-size: 9px; color: #AEB8D6; }
+  .l1 .path { font-family: "IBM Plex Mono", monospace; font-size: 9px; color: #C7C7C7; }
   .tag { display: inline-block; font-size: 7.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 1px 5px; border-radius: 3px; background: var(--db-kroongeel); color: var(--db-nachtblauw); vertical-align: 1px; }
 
   /* ---------- Boom (niveau 2 en 3) ---------- */
@@ -93,7 +93,7 @@
   .n2 {
     display: block;
     padding: 7px 10px; border-radius: 6px;
-    background: #fff; border: 1px solid #D5DBE5;
+    background: #fff; border: 1px solid #C7C7C7;
     color: var(--db-nachtblauw); font-size: 12px; line-height: 16px; font-weight: 500;
     box-shadow: 0 1px 2px rgba(2,13,65,.05);
   }
@@ -104,15 +104,15 @@
 
   /* ---------- Onderste blokken ---------- */
   .bottom { margin-top: auto; display: grid; grid-template-columns: 2.15fr 1fr 1fr; gap: 10px; }
-  .band { padding: 10px 12px 12px; border-radius: 10px; background: #fff; border: 1px solid #D5DBE5; }
+  .band { padding: 10px 12px 12px; border-radius: 10px; background: #fff; border: 1px solid #C7C7C7; }
   .band h3 { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11.5px; margin-bottom: 4px; }
   .band h3 .count { background: var(--db-mist); color: var(--db-nachtblauw); }
   .band p { margin: 0 0 7px; font-size: 9px; color: var(--db-grijs); }
   .band p code { font-family: "IBM Plex Mono", monospace; color: var(--db-nachtblauw); font-size: 8.5px; }
   .regio { display: flex; flex-wrap: wrap; gap: 4px; }
-  .regio span { font-size: 9px; line-height: 14px; padding: 1px 7px; border-radius: 4px; border: 1px solid #D5DBE5; color: var(--db-nachtblauw); background: #fff; }
+  .regio span { font-size: 9px; line-height: 14px; padding: 1px 7px; border-radius: 4px; border: 1px solid #C7C7C7; color: var(--db-nachtblauw); background: #fff; }
   .regio span.dup { border-style: dashed; border-color: var(--db-webblauw); }
-  .list li { display: flex; justify-content: space-between; gap: 8px; padding: 3.5px 0; border-bottom: 1px dotted #D5DBE5; font-size: 10px; color: var(--db-nachtblauw); }
+  .list li { display: flex; justify-content: space-between; gap: 8px; padding: 3.5px 0; border-bottom: 1px dotted #C7C7C7; font-size: 10px; color: var(--db-nachtblauw); }
   .list li:last-child { border-bottom: 0; }
   .list .mono { font-size: 8.5px; color: var(--db-grijs); }
 
@@ -325,7 +325,7 @@
     <div class="legend">
       <span><i style="background:var(--db-signaalgroen)"></i>Homepage</span>
       <span><i style="background:var(--db-nachtblauw)"></i>Hoofdmenu</span>
-      <span><i style="background:#fff;border:1px solid #D5DBE5"></i>Subpagina</span>
+      <span><i style="background:#fff;border:1px solid #C7C7C7"></i>Subpagina</span>
       <span><i style="background:var(--db-mist)"></i>Onderliggende pagina</span>
       <span><i style="background:var(--db-kroongeel)"></i>Nieuw</span>
     </div>

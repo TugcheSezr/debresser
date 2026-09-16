@@ -1,0 +1,81 @@
+/* =====================================================================
+   Onderhoud: gereedschap komt uit de laptop (gebouwbeheer-onderhoud.html)
+   Canvas uit js/onderhoud-3d.js steekt buiten het vak uit zodat de
+   objecten "uit het scherm" kunnen komen. Zonder WebGL blijft de foto staan.
+   ===================================================================== */
+.ond-sec { overflow-x: clip; }
+.ond-sec .split { align-items: center; }
+
+.ond-scene { position: relative; }
+.ond-scene.is-3d {
+  width: 100%;
+  aspect-ratio: 5 / 4;
+}
+/* foto blijft voor schermlezers in de pagina, maar staat nu op het laptopscherm */
+.ond-scene.is-3d > .img-3d {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.ond-scene__canvas {
+  position: absolute;
+  inset: -16% -18% -10% -18%;
+  width: 136%;
+  height: 126%;
+  display: block;
+  pointer-events: none;
+  z-index: 3;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent);
+          mask-composite: intersect;
+}
+/* zachte groene gloed achter de laptop */
+.ond-scene.is-3d::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6% 14%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(123, 213, 52, .16), rgba(51, 188, 250, .08) 55%, transparent);
+  filter: blur(10px);
+}
+
+/* lijstpunten als tegels die oplichten met het object dat naar voren komt */
+.ond-lijst { position: relative; z-index: 4; }
+.ond-lijst .check-list--2 { gap: 8px 12px; }
+.ond-lijst .check-list--2 { grid-template-columns: 1fr; }
+.ond-lijst .check-list li { font-size: 15px; }
+@media (min-width: 1200px) {
+  /* rechterkolom iets breder voor "Schoonmaakdienstverlening" */
+  .ond-lijst .check-list--2 { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+}
+.ond-lijst h3 { position: relative; }
+.ond-lijst .check-list li {
+  padding: 10px 10px 10px 46px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .55);
+  box-shadow: inset 0 0 0 1px rgba(2, 13, 65, .07);
+  cursor: default;
+  transition: background 260ms var(--ease), box-shadow 260ms var(--ease), transform 360ms var(--spring), color 260ms var(--ease);
+}
+.ond-lijst .check-list li::before { left: 12px; top: 50%; translate: 0 -50%; transition: transform 360ms var(--spring), box-shadow 260ms var(--ease); }
+.ond-lijst .check-list li.is-live {
+  background: linear-gradient(135deg, rgba(123, 213, 52, .16), rgba(51, 188, 250, .10));
+  box-shadow: inset 0 0 0 1.5px rgba(123, 213, 52, .55), 0 10px 22px -12px rgba(123, 213, 52, .7);
+  color: var(--navy);
+  transform: translateY(-2px) scale(1.02);
+}
+.ond-lijst .check-list li.is-live::before {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 0 0 5px rgba(123, 213, 52, .18), 0 8px 16px -4px rgba(123, 213, 52, .8);
+}
+
+@media (max-width: 1023px) {
+  .ond-scene.is-3d { max-width: 640px; margin-inline: auto; }
+  .ond-scene__canvas { inset: -12% -8% -8% -8%; width: 116%; height: 120%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ond-lijst .check-list li { transition: none; }
+}
