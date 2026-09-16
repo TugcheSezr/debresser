@@ -3335,6 +3335,24 @@ a.qq-mark:hover { opacity: .85; }
   transform: none;
   box-shadow: 0 0 0 4px rgba(123, 213, 52, .18), 0 22px 36px -16px rgba(2, 13, 65, .4);
 }
+/* Velden blijven plat op de kaart: met translateZ werden ze bij kantelen op
+   sommige videokaarten achter het witte kaartvlak gesorteerd (leeg/wit). */
+.form-3d .form { transform-style: flat; }
+/* Alles wat op de kaart ligt staat altijd iets vóór het kaartvlak: op z = 0
+   vielen kop, tekst en velden na het kantelen soms weg achter de kaart. */
+.form-3d > h2, .form-3d > h3, .form-3d > p, .form-3d .form { transform: translateZ(2px); }
+.form-3d.is-tilting .field,
+.form-3d.is-tilting .form__foot { transform: none; }
+.form-3d .input, .form-3d .textarea, .form-3d .select,
+.form-3d .input:hover, .form-3d .textarea:hover, .form-3d .select:hover {
+  background-color: #f1f5f9;
+  background-image: linear-gradient(180deg, #e6ecf3, #f4f7fa 60%);
+}
+.form-3d .select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f2c59' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"), linear-gradient(180deg, #e6ecf3, #f4f7fa 60%); background-repeat: no-repeat; background-position: right 14px center, 0 0; background-size: 18px, auto; }
+.form-3d .input, .form-3d .textarea, .form-3d .select { border-color: rgba(2, 13, 65, .2); }
+.form-3d .input:hover, .form-3d .textarea:hover, .form-3d .select:hover { border-color: rgba(0, 73, 143, .45); }
+.form-3d .input:focus, .form-3d .textarea:focus { background: #fff; border-color: var(--green); }
+.form-3d .select:focus { background-color: #fff; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f2c59' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); border-color: var(--green); }
 .form-3d .form__foot .btn--green {
   padding-inline: 30px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 6px 0 #166909, 0 18px 28px -10px rgba(123, 213, 52, .7);

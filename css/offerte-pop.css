@@ -1,0 +1,61 @@
+/* =====================================================================
+   Offerte: beide verhuizers en de vrachtwagencabine komen een stukje uit de foto
+   De vrijstaande versies (assets/img/offerte-pop/verhuizer-vrijstaand.webp
+   en verhuizer-links-vrijstaand.webp, zelfde maat als
+   De-Bresser-Verhuizingen-Brabant.jpg, 621 × 900) liggen exact over de foto. De lijst is vierkant en toont de onderkant van de
+   foto, zodat zijn hoofd net boven de lijst uitkomt. Alleen vanaf 1024px.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  .off-pop { transform-style: preserve-3d; margin-top: 40px; }
+
+  /* foto: vierkant, onderkant zichtbaar, zonder parallax/zoom (anders past hij niet meer) */
+  .off-pop .img-3d__frame img,
+  .off-pop:hover .img-3d__frame img {
+    aspect-ratio: 1 / 1;
+    object-position: 50% 100%;
+    transform: none;
+    translate: none;
+    scale: 1;
+  }
+
+  /* de verhuizers: 900/621 = 1,4493, dus de foto steekt 44,93% van zijn breedte boven de lijst uit */
+  .off-pop .off-pop__man {
+    display: block;
+    position: absolute;
+    /* de foto zit binnen een witte rand van 8px (diepte.css); lijst is vierkant, dus 100% hoogte = breedte */
+    top: calc(8px - (100% - 16px) * .4493);
+    left: 8px;
+    z-index: 2;
+    width: calc(100% - 16px);
+    height: auto;
+    aspect-ratio: 621 / 900;
+    object-fit: fill;
+    pointer-events: none;
+    translate: none;
+    scale: none;
+    transform-origin: 70% 93.9%;             /* rechts: tussen zijn voeten */
+    transform: scale(1.05);
+    filter:
+      drop-shadow(0 2px 2px rgba(2, 13, 65, .25))
+      drop-shadow(0 14px 18px rgba(2, 13, 65, .3));
+    transition: transform 600ms var(--spring);
+  }
+  .off-pop:hover .off-pop__man { scale: none; transform: scale(1.07); }
+  /* vrachtwagen: cabine loopt boven de lijst door, op ware grootte (achter de verhuizers).
+     Het dak is in de foto afgesneden, daarom vervaagt de bovenkant. */
+  .off-pop .off-pop__truck,
+  .off-pop:hover .off-pop__truck {
+    z-index: 1;
+    transform: none;
+    filter: drop-shadow(0 8px 16px rgba(2, 13, 65, .16));
+    -webkit-mask-image: linear-gradient(to bottom, transparent 13%, #000 20%);
+    mask-image: linear-gradient(to bottom, transparent 13%, #000 20%);
+  }
+  /* links: hij houdt de deur vast, dus minder vergroten zodat zijn hand bij de klink blijft */
+  .off-pop .off-pop__man--l { transform-origin: 17% 85%; transform: scale(1.03); }
+  .off-pop:hover .off-pop__man--l { transform: scale(1.04); }
+}
+.off-pop__man { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .off-pop .off-pop__man { transition: none; }
+}
