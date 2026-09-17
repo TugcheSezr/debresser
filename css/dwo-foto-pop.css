@@ -1,0 +1,75 @@
+/* =====================================================================
+   Duurzame werkomgeving (duurzame-werkomgeving.html + EN): mensen stappen
+   uit de foto. Zelfde techniek als .gb-pop (gebouwbeheer-pop.css), maar op
+   de "afdruk" van .img-3d uit diepte.css, zodat alle foto's op deze pagina
+   hetzelfde kader houden.
+
+   .img-3d--pop: de gewone foto blijft in het witte kader; .dwo-foto-pop__cut is
+   de vrijstaande versie (zelfde maat en verhouding) en ligt er precies
+   overheen. Vanuit --ox/--oy wordt hij met --s vergroot; alleen boven --T
+   mag hij buiten de zijranden, lager blijft hij binnen L/R. Parallax en
+   hover-zoom staan uit op deze foto's, anders schuiven de lagen uit elkaar.
+   ===================================================================== */
+.img-3d.img-3d--pop {
+  --s: 1.22;
+  --ox: 50%;
+  --oy: 100%;
+  --ar: 4 / 3;
+  --rand: 8px;                           /* dikte witte rand van .img-3d__frame */
+  --L: calc(var(--ox) - var(--ox) / var(--s));
+  --R: calc(var(--ox) + (100% - var(--ox)) / var(--s));
+  --T: calc(var(--oy) - var(--oy) / var(--s));
+}
+
+/* beide lagen: zelfde verhouding, geen parallax of zoom */
+.img-3d.img-3d--pop .img-3d__frame img,
+.img-3d.img-3d--pop .dwo-foto-pop__cut {
+  aspect-ratio: var(--ar);
+  object-fit: cover;
+  scale: 1;
+  translate: none;
+}
+.img-3d.img-3d--pop:hover .img-3d__frame img { scale: 1; transform: none; }
+
+.img-3d.img-3d--pop .dwo-foto-pop__cut {
+  position: absolute;
+  top: var(--rand);
+  left: var(--rand);
+  z-index: 2;
+  width: calc(100% - 2 * var(--rand));
+  height: auto;
+  pointer-events: none;
+  transform-origin: var(--ox) var(--oy);
+  transform: scale(var(--s));
+  clip-path: polygon(-40% -80%, 140% -80%, 140% var(--T), var(--R) var(--T), var(--R) 100%, var(--L) 100%, var(--L) var(--T), -40% var(--T));
+  filter:
+    drop-shadow(0 1px 1px rgba(2, 13, 65, .3))
+    drop-shadow(0 16px 16px rgba(2, 13, 65, .3))
+    drop-shadow(0 34px 36px rgba(2, 13, 65, .2));
+  transition: transform 700ms var(--dp-ease, ease), scale 700ms var(--dp-ease, ease);
+}
+/* bij hover stappen ze nog een stukje verder naar voren (los van transform, die gebruikt de scroll-animatie) */
+.img-3d.img-3d--pop:hover .dwo-foto-pop__cut { scale: 1.02; }
+
+/* bij scrollen stappen ze uit de foto */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .img-3d.img-3d--pop .dwo-foto-pop__cut {
+      animation: dwo-stap linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 45%;
+    }
+  }
+}
+@keyframes dwo-stap { from { transform: scale(1); } }
+
+/* per foto: verhouding van de bron, vergroting en oorsprong (voeten/laadklep blijven staan) */
+.img-3d.img-3d--pop-dozen { --ar: 982 / 715; --s: 1.2; --ox: 78%; }
+.img-3d.img-3d--pop-wagen { --ar: 3 / 2; --s: 1.2; --ox: 51%; --oy: 87%; }
+
+@media (max-width: 767px) {
+  .img-3d.img-3d--pop { --rand: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .img-3d.img-3d--pop .dwo-foto-pop__cut { transition: none; }
+}

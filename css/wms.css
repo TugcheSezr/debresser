@@ -1,0 +1,591 @@
+/* =====================================================================
+   WMS en Meubelpaspoort (assetmanagement-wms-en-meubelpaspoort.html + EN)
+   Kleuren van debresser.nl: Diepblauw #00498F, Bresserblauw #007DC2,
+   Bressergroen #6DB23F. Teksten zijn ongewijzigd; alles hier is decor.
+
+   .wp-pop = foto in een kader + vrijstaande versie van dezelfde foto
+   erover, die vanuit (--ox, --oy) vergroot en zo "uit het scherm" stapt.
+   Uitsnede van de foto in het kader: --cx/--cy/--cw/--ch (fracties).
+   js/wms.js zet --p (0..1) op basis van de scrollpositie.
+   ===================================================================== */
+.page-wms {
+  --wp-diep: #00498f;
+  --wp-diep-2: #00315f;
+  --wp-diep-3: #002447;
+  --wp-blauw: #007dc2;
+  --wp-groen: #6db23f;
+  --wp-groen-2: #4f8f27;
+}
+
+/* ---------- pop-component ---------- */
+.page-wms .wp-pop {
+  --cx: 0; --cy: 0; --cw: 1; --ch: 1;
+  --ox: .5; --oy: 1;
+  --sd: .14;
+  --p: 1;
+  --s: calc(1 + var(--p) * var(--sd));
+  --lx: calc(var(--cx) + var(--ox) * var(--cw));
+  --ly: calc(var(--cy) + var(--oy) * var(--ch));
+  --kl: calc((var(--lx) + (var(--cx) - var(--lx)) / var(--s)) * 100%);
+  --kr: calc((var(--lx) + (var(--cx) + var(--cw) - var(--lx)) / var(--s)) * 100%);
+  --kt: calc((var(--ly) + (var(--cy) - var(--ly)) / var(--s)) * 100%);
+  --kb: calc((var(--ly) + (var(--cy) + var(--ch) - var(--ly)) / var(--s)) * 100%);
+  --r: 22px;
+  position: relative;
+  display: block;
+  margin: 0;
+  aspect-ratio: var(--ar);
+  isolation: isolate;
+}
+.page-wms .wp-pop__frame {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: var(--r);
+  background: #dfe8f1;
+  box-shadow:
+    0 0 0 6px #fff,
+    0 2px 4px 6px rgba(0, 36, 71, .08),
+    0 34px 60px -26px rgba(0, 36, 71, .6);
+}
+.page-wms .wp-pop__frame::after {            /* het kader ligt iets verzonken: de mensen staan ervoor */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 26px 34px -22px rgba(0, 36, 71, .6), inset 0 -18px 30px -20px rgba(0, 36, 71, .45);
+  pointer-events: none;
+}
+.page-wms .wp-pop img.wp-pop__bg,
+.page-wms .wp-pop img.wp-pop__cut {
+  position: absolute;
+  left: calc(var(--cx) / var(--cw) * -100%);
+  top: calc(var(--cy) / var(--ch) * -100%);
+  width: calc(100% / var(--cw));
+  height: calc(100% / var(--ch));
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: fill;
+  box-shadow: none;
+}
+.page-wms .wp-pop img.wp-pop__bg {
+  filter: blur(calc(var(--p) * 1.6px)) brightness(calc(1 - var(--p) * .14)) saturate(.95);
+}
+.page-wms .wp-pop img.wp-pop__cut {
+  z-index: 3;
+  pointer-events: none;
+  transform-origin: calc(var(--lx) * 100%) calc(var(--ly) * 100%);
+  transform: scale(var(--s));
+  clip-path: polygon(var(--kl) var(--kt), var(--kr) var(--kt), var(--kr) var(--kb), var(--kl) var(--kb));
+  filter:
+    drop-shadow(0 1px 1px rgba(0, 36, 71, .35))
+    drop-shadow(0 calc(var(--p) * 18px) calc(var(--p) * 16px) rgba(0, 36, 71, .34))
+    drop-shadow(0 calc(var(--p) * 40px) calc(var(--p) * 40px) rgba(0, 36, 71, .22));
+}
+
+/* team met tablet (Nieuw-kaart): hoofden komen boven het kader uit */
+.page-wms .wp-pop--team {
+  --ar: 1080 / 520;
+  --cx: .08; --cy: .42; --cw: .9; --ch: .58;
+  --ox: .5; --oy: 1;
+  --sd: .14;
+  --kt: -100%;
+}
+/* handen met telefoon (WMS): armen komen onder het kader uit */
+.page-wms .wp-pop--scan {
+  --ar: 1000 / 747;
+  --ox: .5; --oy: .45;
+  --sd: .2;
+  --kb: 200%;
+}
+.page-wms .wp-pop--scan img.wp-pop__cut {        /* onderrand van de foto loopt zacht uit */
+  -webkit-mask: linear-gradient(180deg, #000 84%, transparent 99%);
+  mask: linear-gradient(180deg, #000 84%, transparent 99%);
+}
+/* medewerkers aan het werk (Meubelpaspoort): de wijzende hand steekt links uit het kader */
+.page-wms .wp-pop--pas {
+  --ar: 740 / 667;
+  --cx: .26; --cw: .74;
+  --ox: .75; --oy: 1;
+  --sd: .12;
+  --kl: -100%;
+}
+
+/* ---------- 1. Nieuw: De duurzame werkomgeving ---------- */
+.page-wms .wp-nieuw { padding-block: clamp(48px, 6vw, 88px) clamp(40px, 5vw, 72px); }
+.page-wms .wp-kaart.card-3d {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(24px, 4vw, 56px);
+  max-width: none;
+  padding: clamp(26px, 3.4vw, 48px);
+  padding-top: clamp(34px, 4vw, 56px);
+  overflow: visible;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  background:
+    radial-gradient(60% 90% at 88% 100%, rgba(109, 178, 63, .38), transparent 60%),
+    radial-gradient(50% 80% at 0% 0%, rgba(0, 125, 194, .55), transparent 65%),
+    linear-gradient(135deg, var(--wp-diep) 0%, var(--wp-diep-2) 60%, var(--wp-diep-3) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    inset 0 -3px 0 rgba(0, 0, 0, .25),
+    0 10px 0 -2px var(--wp-diep-3),
+    0 14px 0 -2px var(--wp-groen),
+    0 40px 70px -30px rgba(0, 36, 71, .7);
+}
+.page-wms .wp-kaart.card-3d:hover,
+.page-wms .wp-kaart.card-3d:focus-within {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    inset 0 -3px 0 rgba(0, 0, 0, .25),
+    0 10px 0 -2px var(--wp-diep-3),
+    0 14px 0 -2px var(--wp-groen),
+    0 54px 90px -30px rgba(0, 36, 71, .8) !important;
+}
+.page-wms .wp-kaart.card-3d::before {
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255, 255, 255, .12), transparent 55%);
+}
+.page-wms .wp-kaart__tekst {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding-bottom: 6px;
+}
+.page-wms .wp-kaart .tag { background: var(--wp-groen); color: #fff; box-shadow: 0 6px 14px -6px rgba(109, 178, 63, .9); }
+.page-wms .wp-kaart .h2 {
+  color: #fff;
+  font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, .18);
+}
+.page-wms .wp-kaart p { color: rgba(255, 255, 255, .86); max-width: 56ch; }
+.page-wms .wp-kaart .link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: rgba(255, 255, 255, .1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .28);
+  transition: background .3s, box-shadow .3s;
+}
+.page-wms .wp-kaart .link-arrow .icon { color: var(--wp-groen); }
+.page-wms .wp-kaart:hover .link-arrow { background: var(--wp-groen); box-shadow: 0 10px 20px -8px rgba(109, 178, 63, .9); }
+.page-wms .wp-kaart:hover .link-arrow .icon { color: #fff; }
+.page-wms .wp-kaart__beeld {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding-top: clamp(40px, 6vw, 90px);
+}
+.page-wms .wp-kaart__beeld .wp-pop { transform: translateZ(40px); }
+.page-wms .wp-ruit {
+  position: absolute;
+  z-index: -1;
+  fill: none;
+  stroke: var(--wp-groen);
+  stroke-width: 14;
+  pointer-events: none;
+}
+.page-wms .wp-kaart .wp-ruit { right: -6%; bottom: -12%; width: 70%; opacity: .35; }
+
+/* ---------- 2. WMS: schuine Diepblauwe band ---------- */
+.page-wms .wp-wms {
+  --schuin: clamp(36px, 5vw, 80px);
+  position: relative;
+  z-index: 1;
+  overflow: clip;
+  padding-block: calc(var(--section) + var(--schuin)) calc(var(--section) + var(--schuin) + 30px);
+  color: #fff;
+  background:
+    radial-gradient(1.4px 1.4px at 50% 50%, rgba(255, 255, 255, .16) 98%, transparent) 0 0 / 26px 26px,
+    radial-gradient(40% 50% at 12% 88%, rgba(109, 178, 63, .35), transparent 70%),
+    radial-gradient(45% 60% at 100% 10%, rgba(0, 125, 194, .6), transparent 70%),
+    linear-gradient(160deg, var(--wp-diep) 0%, var(--wp-diep-2) 55%, var(--wp-diep-3) 100%);
+  clip-path: polygon(0 var(--schuin), 100% 0, 100% calc(100% - var(--schuin)), 0 100%);
+  box-shadow: none;
+}
+.page-wms .wp-wms::before,
+.page-wms .wp-wms::after {                    /* groene en blauwe randlijn langs de schuine kanten */
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 8px;
+  pointer-events: none;
+}
+.page-wms .wp-wms::before {
+  top: 0;
+  height: calc(var(--schuin) + 8px);
+  background: linear-gradient(90deg, var(--wp-groen), var(--wp-blauw));
+  clip-path: polygon(0 var(--schuin), 100% 0, 100% 8px, 0 calc(var(--schuin) + 8px));
+}
+.page-wms .wp-wms::after {
+  bottom: 0;
+  height: calc(var(--schuin) + 8px);
+  background: linear-gradient(90deg, var(--wp-blauw), var(--wp-groen));
+  clip-path: polygon(0 calc(100% - 8px), 100% 0, 100% 8px, 0 100%);
+}
+.page-wms .wp-wms .bg-ruit--bl { color: #fff; opacity: .07; }
+.page-wms .wp-wms .split__text .h2 {
+  color: #fff;
+  font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.03em;
+  background: linear-gradient(180deg, #ffffff 30%, #bfe3a4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .25)) drop-shadow(0 12px 18px rgba(0, 0, 0, .3));
+}
+.page-wms .wp-wms .split__text > p { color: #dfe8f1; font-size: 1.05rem; line-height: 1.8; }
+.page-wms .wp-wms .split__text > .btn--navy {
+  color: #fff;
+  background: linear-gradient(180deg, #7cc24c, var(--wp-groen));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 5px 0 var(--wp-groen-2), 0 18px 28px -10px rgba(0, 0, 0, .5);
+}
+.page-wms .wp-wms .split__text > .btn--navy:hover { transform: translateY(-2px); }
+
+/* zwevende QR-codes met scanlijn */
+.page-wms .wp-wms__qr {
+  --q: 64px;
+  position: absolute;
+  z-index: 0;
+  width: var(--q);
+  aspect-ratio: 1;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .2), 0 16px 30px -12px rgba(0, 0, 0, .5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  animation: wp-zweef 7s ease-in-out infinite;
+}
+.page-wms .wp-wms__qr::before {                /* QR-patroon */
+  content: "";
+  position: absolute;
+  inset: 8px;
+  opacity: .75;
+  background:
+    linear-gradient(#fff, #fff) 0 0 / 30% 30% no-repeat,
+    linear-gradient(#fff, #fff) 100% 0 / 30% 30% no-repeat,
+    linear-gradient(#fff, #fff) 0 100% / 30% 30% no-repeat,
+    repeating-conic-gradient(#fff 0 25%, transparent 0 50%) 50% 50% / 20% 20%;
+  -webkit-mask: radial-gradient(circle at 15% 15%, transparent 7%, #000 7.5%);
+  mask: radial-gradient(circle at 15% 15%, transparent 7%, #000 7.5%);
+}
+.page-wms .wp-wms__qr::after {                 /* scanlijn */
+  content: "";
+  position: absolute;
+  left: -4px; right: -4px;
+  top: 10%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--wp-groen);
+  box-shadow: 0 0 10px 2px rgba(109, 178, 63, .9);
+  animation: wp-scan 2.8s ease-in-out infinite;
+}
+.page-wms .wp-wms__qr--a { right: 6%; top: 16%; --q: 74px; rotate: 10deg; }
+.page-wms .wp-wms__qr--b { left: 3%; top: 44%; --q: 54px; rotate: -12deg; animation-delay: -2s; }
+.page-wms .wp-wms__qr--c { right: 44%; bottom: 10%; --q: 46px; rotate: 6deg; animation-delay: -4s; opacity: .8; }
+.page-wms .wp-wms__qr--b::after { animation-delay: -1s; }
+.page-wms .wp-wms__qr--c::after { animation-delay: -2s; }
+@keyframes wp-zweef { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+@keyframes wp-scan { 0%, 100% { top: 8%; } 50% { top: 90%; } }
+
+/* WMS-demo: foto met handen die eruit komen + zwevend venster */
+.page-wms .wms-demo { perspective: 1100px; }
+.page-wms .wms-demo__foto.wp-pop {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  aspect-ratio: var(--ar);
+}
+.page-wms .wms-demo__foto.wp-pop::after { display: none; }
+.page-wms .wms-demo__foto .wp-pop__frame::before {    /* vignet */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(120% 90% at 60% 40%, transparent 55%, rgba(0, 36, 71, .45));
+  pointer-events: none;
+}
+.page-wms .wms-demo__straal,
+.page-wms .wms-demo__qr { z-index: 2; }
+.page-wms .wms-app {
+  z-index: 4;
+  border-color: rgba(255, 255, 255, .6);
+  transform: translateZ(70px) rotateY(9deg) rotateX(3deg);
+  box-shadow:
+    0 1px 0 #fff inset,
+    -10px 10px 0 -4px rgba(0, 125, 194, .55),
+    0 50px 80px -30px rgba(0, 0, 0, .75);
+  animation: wp-app 6s ease-in-out infinite;
+}
+.page-wms .wms-app__bar { background: linear-gradient(90deg, var(--wp-diep-3), var(--wp-diep), var(--wp-blauw)); }
+.page-wms .wms-pil--groen { color: #fff; background: var(--wp-groen); }
+.page-wms .wms-pil--blauw { color: #fff; background: var(--wp-blauw); }
+.page-wms .wms-bars i { background: linear-gradient(180deg, #8fd05f, var(--wp-groen-2)); }
+.page-wms .wms-bars i:nth-child(7) { background: linear-gradient(180deg, var(--wp-blauw), var(--wp-diep)); }
+@keyframes wp-app {
+  0%, 100% { transform: translateZ(70px) rotateY(9deg) rotateX(3deg) translateY(0); }
+  50% { transform: translateZ(90px) rotateY(6deg) rotateX(2deg) translateY(-10px); }
+}
+
+/* Gerelateerde diensten: witte plaat met dikke rand, tegels om en om blauw/groen */
+.page-wms .wp-rel.card-3d {
+  position: relative;
+  z-index: 2;
+  color: var(--navy);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff, #f1f5fa);
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 8px 0 -1px #c9d6e6,
+    0 12px 0 -1px var(--wp-groen),
+    0 40px 70px -24px rgba(0, 0, 0, .6);
+}
+.page-wms .wp-rel.card-3d:hover,
+.page-wms .wp-rel.card-3d:focus-within {
+  box-shadow:
+    inset 0 1px 0 #fff,
+    0 8px 0 -1px #c9d6e6,
+    0 12px 0 -1px var(--wp-groen),
+    0 54px 90px -24px rgba(0, 0, 0, .7) !important;
+}
+.page-wms .wp-rel h3 { position: relative; padding-bottom: 14px; }
+.page-wms .wp-rel h3::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 64px; height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--wp-groen), var(--wp-blauw));
+}
+.page-wms .wp-rel .mini-card { transition: transform .3s, box-shadow .3s; }
+.page-wms .wp-rel .mini-card:hover { transform: translateX(6px) translateZ(20px); }
+.page-wms .wp-rel .mini-card .icon-tile {
+  color: #fff;
+  background: linear-gradient(145deg, var(--wp-blauw), var(--wp-diep));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 4px 0 var(--wp-diep-3), 0 10px 16px -6px rgba(0, 73, 143, .6);
+  transform: rotate(-6deg);
+  transition: transform .3s;
+}
+.page-wms .wp-rel .mini-card:nth-child(even) .icon-tile {
+  background: linear-gradient(145deg, #8fd05f, var(--wp-groen));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 4px 0 var(--wp-groen-2), 0 10px 16px -6px rgba(109, 178, 63, .7);
+}
+.page-wms .wp-rel .mini-card:hover .icon-tile { transform: rotate(0deg) scale(1.08); }
+.page-wms .wp-rel .mini-card .icon--arrow { color: var(--wp-blauw); }
+
+/* ---------- 3. Meubelpaspoort ---------- */
+.page-wms .wp-pas-sec {
+  position: relative;
+  overflow: clip;
+  padding-top: calc(var(--section) + 10px);
+  background:
+    repeating-radial-gradient(circle at 12% 20%, rgba(0, 125, 194, .07) 0 1px, transparent 1px 16px),
+    repeating-radial-gradient(circle at 92% 88%, rgba(109, 178, 63, .08) 0 1px, transparent 1px 18px),
+    var(--page, #fff);
+}
+.page-wms .wp-ruit--pas { left: -4%; top: 8%; width: clamp(260px, 30vw, 440px); opacity: .12; stroke: var(--wp-blauw); }
+.page-wms .wp-pas-sec .split { align-items: center; }
+.page-wms .wp-pas-media { padding: 0; perspective: 1000px; }
+.page-wms .wp-pop--pas {
+  width: min(100%, 520px);
+  margin-left: auto;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.page-wms .wp-pop--pas::before {              /* gekantelde Diepblauwe plaat erachter */
+  content: "";
+  position: absolute;
+  inset: 8% -6% -7% 12%;
+  z-index: -1;
+  border-radius: 26px;
+  background: linear-gradient(145deg, var(--wp-blauw), var(--wp-diep) 60%, var(--wp-diep-3));
+  box-shadow: 0 30px 60px -24px rgba(0, 36, 71, .6);
+  rotate: 4deg;
+}
+.page-wms .wp-pop--pas::after {               /* groene ruit-lijn */
+  content: "";
+  position: absolute;
+  right: -9%;
+  top: -7%;
+  z-index: -1;
+  width: 90px;
+  aspect-ratio: 1;
+  border: 10px solid var(--wp-groen);
+  border-radius: 14px;
+  rotate: 45deg;
+  opacity: .9;
+}
+
+/* paspoortpagina */
+.page-wms .wp-pas.card-3d {
+  position: relative;
+  padding: clamp(28px, 3.4vw, 44px);
+  padding-bottom: 96px;
+  border-radius: 10px 26px 26px 10px;
+  color: #22324a;
+  background:
+    repeating-radial-gradient(ellipse at 100% 0%, rgba(0, 125, 194, .06) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(135deg, rgba(109, 178, 63, .04) 0 2px, transparent 2px 12px),
+    linear-gradient(180deg, #fbfdff, #eef4fa);
+  box-shadow:
+    inset 14px 0 18px -14px rgba(0, 36, 71, .35),
+    inset 0 0 0 1px rgba(0, 73, 143, .08),
+    4px 4px 0 -1px #fff,
+    6px 6px 0 -1px #dfe7f0,
+    9px 9px 0 -1px #fff,
+    11px 11px 0 -1px #dfe7f0,
+    0 40px 70px -26px rgba(0, 36, 71, .55);
+  transform-style: preserve-3d;
+}
+.page-wms .wp-pas.card-3d:hover,
+.page-wms .wp-pas.card-3d:focus-within {
+  box-shadow:
+    inset 14px 0 18px -14px rgba(0, 36, 71, .35),
+    inset 0 0 0 1px rgba(0, 73, 143, .08),
+    4px 4px 0 -1px #fff,
+    6px 6px 0 -1px #dfe7f0,
+    9px 9px 0 -1px #fff,
+    11px 11px 0 -1px #dfe7f0,
+    0 54px 90px -26px rgba(0, 36, 71, .65) !important;
+}
+.page-wms .wp-pas h3 {
+  position: relative;
+  padding-right: 90px;
+  color: var(--wp-diep);
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.25rem);
+  letter-spacing: -.01em;
+}
+.page-wms .wp-pas h3::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--wp-groen), var(--wp-blauw));
+}
+.page-wms .wp-pas p { position: relative; z-index: 1; line-height: 1.8; }
+
+/* open kaft links naast de pagina */
+.page-wms .wp-pas__kaft {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: clamp(80px, 9vw, 130px);
+  border-radius: 22px 6px 6px 22px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, .06), transparent 30%, rgba(0, 0, 0, .25)),
+    linear-gradient(160deg, var(--wp-diep), var(--wp-diep-3));
+  box-shadow: inset 0 0 0 5px var(--wp-diep-2), inset 0 0 0 6px rgba(109, 178, 63, .6), -18px 30px 40px -20px rgba(0, 36, 71, .6);
+  transform-origin: 100% 50%;
+  transform: rotateY(-38deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-wms .wp-pas__kaft svg { width: 62%; height: auto; }
+.page-wms .wp-pas__kaft polygon { fill: none; stroke: var(--wp-groen); stroke-width: 26; }
+.page-wms .wp-pas__kaft polygon:nth-child(2) { stroke: #33a0dc; }
+
+/* pasfoto: een stoel */
+.page-wms .wp-pas__foto {
+  position: absolute;
+  top: clamp(24px, 3vw, 38px);
+  right: clamp(24px, 3vw, 38px);
+  width: 66px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #e6eef7, #cddbeb);
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 1px rgba(0, 73, 143, .2), 0 10px 18px -8px rgba(0, 36, 71, .5);
+  rotate: 4deg;
+  transform: translateZ(30px);
+}
+.page-wms .wp-pas__foto svg { width: 44px; height: 44px; fill: none; stroke: var(--wp-diep); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* stempel + code onderaan */
+.page-wms .wp-pas__stempel {
+  position: absolute;
+  right: clamp(22px, 3vw, 40px);
+  bottom: 22px;
+  width: 92px;
+  aspect-ratio: 1;
+  rotate: -14deg;
+  opacity: .9;
+  mix-blend-mode: multiply;
+}
+.page-wms .wp-pas__stempel svg { width: 100%; height: 100%; fill: none; stroke: var(--wp-groen); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.page-wms .wp-pas__stempel circle:nth-child(2) { stroke-dasharray: 3 5; }
+.page-wms .wp-pas__stempel path { stroke-width: 8; }
+.page-wms .wp-pas__code {
+  position: absolute;
+  left: clamp(28px, 3.4vw, 44px);
+  right: 150px;
+  bottom: 30px;
+  height: 34px;
+  opacity: .55;
+  background:
+    repeating-linear-gradient(90deg, var(--wp-diep) 0 2px, transparent 2px 4px, var(--wp-diep) 4px 5px, transparent 5px 9px, var(--wp-diep) 9px 12px, transparent 12px 14px);
+  -webkit-mask: linear-gradient(90deg, #000 0 70%, transparent);
+  mask: linear-gradient(90deg, #000 0 70%, transparent);
+}
+
+/* ---------- beweging ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .page-wms .wp-pas.reveal .wp-pas__kaft { transition: transform 1.2s cubic-bezier(.2, .7, .2, 1) .2s; }
+  .js .page-wms .wp-pas.reveal:not(.is-visible) .wp-pas__kaft { transform: rotateY(-170deg); }
+  .page-wms .wp-pas.reveal .wp-pas__stempel { transition: scale .5s cubic-bezier(.3, 1.6, .5, 1) 1s, opacity .3s 1s; }
+  .js .page-wms .wp-pas.reveal:not(.is-visible) .wp-pas__stempel { scale: 2.4; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-wms .wp-wms__qr, .page-wms .wp-wms__qr::after, .page-wms .wms-app { animation: none; }
+}
+
+/* ---------- responsief ---------- */
+@media (min-width: 1024px) {
+  .page-wms .wms-demo { padding-left: 0; padding-right: 10%; margin-bottom: 110px; }
+  .page-wms .wms-app { left: auto; right: -6%; bottom: -96px; width: 52%; }
+}
+@media (max-width: 1023px) {
+  .page-wms .wp-kaart.card-3d { grid-template-columns: 1fr; }
+  .page-wms .wp-kaart__beeld { padding-top: 70px; }
+  .page-wms .wp-wms__qr--c { display: none; }
+  .page-wms .wms-app { transform: none; animation: none; margin-top: -10%; }
+  .page-wms .wp-pas-media { padding: 0 8% 0 16%; }
+  .page-wms .wp-pop--pas { margin-inline: auto; }
+  .page-wms .wp-pas.card-3d { margin-left: 56px; }
+  .page-wms .wp-pas__kaft { width: 64px; }
+}
+@media (max-width: 560px) {
+  .page-wms .wp-wms__qr { display: none; }
+  .page-wms .wp-pas.card-3d { margin-left: 34px; padding-bottom: 110px; }
+  .page-wms .wp-pas__kaft { width: 40px; }
+  .page-wms .wp-pas__foto { width: 52px; height: 64px; }
+  .page-wms .wp-pas__foto svg { width: 34px; height: 34px; }
+  .page-wms .wp-pas h3 { padding-right: 64px; }
+  .page-wms .wp-pas__code { right: 120px; }
+}

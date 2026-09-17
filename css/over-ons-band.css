@@ -8,6 +8,12 @@
   --tmb-onder: 70px;                     /* ruimte onder de band (lijn + vloer) */
   padding-bottom: calc(var(--tmb-h) + var(--tmb-onder) + 90px);
 }
+/* diepte.css zet de eerste sectie na de hero op overflow-y: visible;
+   dan valt de witte vloer over de geschiedenis-sectie heen. Hier weer knippen. */
+.oo-vrij.oo-vrij--tmb,
+.page-hero--photo + .section.oo-vrij--tmb {
+  overflow: clip;
+}
 .oo-tmb__band {
   position: absolute;
   left: 0; right: 0;
@@ -68,7 +74,9 @@
 
 @media (max-width: 1023px) {
   .oo-vrij--tmb { --tmb-h: 200px; --tmb-onder: 40px; }
-  .oo-vrij--tmb .oo-vrij__media { margin-top: 28px; margin-bottom: calc(var(--tmb-h) * -.6 - 90px); }
+  .oo-vrij--tmb .oo-vrij__media { margin-top: 28px; margin-bottom: calc(var(--tmb-h) * -.35 - 90px); }
+  .oo-tmb__mark,
+  .oo-tmb__script { top: 72%; }        /* onder de foto zichtbaar */
   .oo-tmb__mark { height: 26%; }
   .oo-tmb__script { height: 34%; }
   .oo-tmb__lijn { height: 12px; bottom: calc(var(--tmb-onder) - 12px); }

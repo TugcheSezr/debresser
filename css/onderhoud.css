@@ -79,3 +79,206 @@
 @media (prefers-reduced-motion: reduce) {
   .ond-lijst .check-list li { transition: none; }
 }
+
+/* =====================================================================
+   Duurzaam en planmatig onderhoud (section.dpo)
+   Diepblauwe schuine band in debresser.nl-kleuren met een geanimeerd
+   pand: binnen wordt geschilderd, buiten zakt een gevelgondel, kalender
+   vinkt de seizoenen af. Teksten ongewijzigd.
+   ===================================================================== */
+.dpo {
+  --dpo-diep: #00498f;
+  --dpo-blauw: #007dc2;
+  --dpo-groen: #6db23f;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  padding: clamp(96px, 11vw, 150px) 0;
+  margin: clamp(24px, 3vw, 48px) 0;
+  background:
+    radial-gradient(55% 50% at 88% 8%, rgba(0, 125, 194, .55), transparent 70%),
+    radial-gradient(45% 55% at 4% 96%, rgba(109, 178, 63, .25), transparent 70%),
+    linear-gradient(160deg, #00498f 0%, #020d41 58%, #020d41 100%) !important;
+  clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+}
+.dpo::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .13) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(100deg, transparent 25%, #000 80%);
+          mask-image: linear-gradient(100deg, transparent 25%, #000 80%);
+}
+/* groen-blauwe lijn langs de schuine bovenrand */
+.dpo::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(4vw + 8px); z-index: -1; pointer-events: none;
+  background: linear-gradient(90deg, var(--dpo-groen), var(--dpo-blauw) 55%, transparent);
+  clip-path: polygon(0 calc(100% - 8px), 100% 0, 100% 8px, 0 100%);
+}
+.dpo-deco { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.dpo-deco__ruit {
+  position: absolute;
+  width: var(--s); aspect-ratio: 1;
+  border: 2px solid rgba(109, 178, 63, .35);
+  border-radius: 14%;
+  rotate: 45deg;
+  animation: dpo-zweef 9s ease-in-out infinite alternate;
+}
+.dpo-deco__ruit--1 { --s: 260px; right: -80px; bottom: 6%; }
+.dpo-deco__ruit--2 { --s: 140px; right: 120px; bottom: 2%; border-color: rgba(0, 125, 194, .45); animation-delay: -3s; }
+.dpo-deco__ruit--3 { --s: 70px; left: 46%; top: 14%; border-color: rgba(255, 255, 255, .16); animation-delay: -6s; }
+@keyframes dpo-zweef { to { translate: 0 -18px; rotate: 60deg; } }
+
+.dpo .dpo-grid { align-items: start; gap: clamp(32px, 5vw, 72px); }
+.dpo-tekst { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.dpo .dpo-kop {
+  display: flex; align-items: center; gap: 16px; margin: 0;
+  color: #fff;
+}
+.dpo .dpo-kop__tekst {
+  background: linear-gradient(90deg, #fff 30%, #bfe6fb 70%, #b9e59a);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dpo-kop__icoon {
+  flex: none;
+  display: grid; place-items: center;
+  width: 58px; height: 58px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #7fc94e, var(--dpo-groen) 55%, #4f8f2a);
+  box-shadow: 0 6px 0 #3d7420, 0 16px 26px -8px rgba(109, 178, 63, .7), inset 0 1px 0 rgba(255, 255, 255, .5);
+  rotate: -6deg;
+}
+.dpo-kop__icoon .icon { width: 30px; height: 30px; color: #020d41; stroke-width: 2.1; }
+.dpo-tekst > p {
+  position: relative;
+  margin: 0;
+  padding: 22px 26px 22px 30px;
+  color: rgba(255, 255, 255, .88);
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .14);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.dpo-tekst > p::before {
+  content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 4px;
+  background: linear-gradient(180deg, var(--dpo-groen), var(--dpo-blauw));
+}
+
+/* scène */
+.dpo-scene {
+  position: relative;
+  width: 100%;
+  margin: 6px 0 0;
+  padding: 10px;
+  border-radius: var(--r-xl);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .04));
+  border: 1px solid rgba(255, 255, 255, .18);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .18), 0 40px 70px -30px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .25);
+  transform: perspective(1200px) rotateX(6deg) rotateY(-5deg);
+  transition: transform 600ms var(--ease);
+}
+.dpo-scene:hover { transform: perspective(1200px) rotateX(0) rotateY(0); }
+.dpo-scene svg { display: block; width: 100%; height: auto; border-radius: calc(var(--r-xl) - 10px); background: #0b2466; }
+.dpo-scene [class*="dpo-"] { transform-box: fill-box; }
+
+.dpo-zon { transform-origin: center; animation: dpo-draai 24s linear infinite; }
+.dpo-tandwiel { transform-origin: center; animation: dpo-draai 8s linear infinite; }
+.dpo-tandwiel--klein { animation-direction: reverse; animation-duration: 5s; }
+@keyframes dpo-draai { to { rotate: 360deg; } }
+
+.dpo-vink { transform-origin: center; animation: dpo-vink 8s var(--spring) infinite; scale: 0; }
+.dpo-vink--2 { animation-delay: 1s; }
+.dpo-vink--3 { animation-delay: 2s; }
+.dpo-vink--4 { animation-delay: 3s; }
+@keyframes dpo-vink {
+  0%, 4% { scale: 0; }
+  10%, 80% { scale: 1; }
+  88%, 100% { scale: 0; }
+}
+
+.dpo-verf { transform-origin: bottom; animation: dpo-verf 6s ease-in-out infinite; }
+@keyframes dpo-verf { 0% { scale: 1 0; } 70%, 88% { scale: 1 1; } 100% { scale: 1 0; } }
+.dpo-roller { animation: dpo-roller 6s ease-in-out infinite; }
+@keyframes dpo-roller {
+  0% { translate: 0 52px; }
+  10% { translate: 0 44px; } 20% { translate: 0 52px; }
+  30% { translate: 0 34px; } 40% { translate: 0 42px; }
+  50% { translate: 0 20px; } 60% { translate: 0 28px; }
+  70%, 88% { translate: 0 6px; }
+  100% { translate: 0 52px; }
+}
+.dpo-lampgloed { animation: dpo-lamp 4s ease-in-out infinite; }
+@keyframes dpo-lamp { 0%, 20% { opacity: .15; } 24% { opacity: 1; } 26% { opacity: .4; } 30%, 100% { opacity: 1; } }
+.dpo-plant { transform-origin: bottom center; animation: dpo-wiebel 3.4s ease-in-out infinite alternate; }
+@keyframes dpo-wiebel { from { rotate: -5deg; } to { rotate: 5deg; } }
+.dpo-sleutel { transform-origin: 100% 0; animation: dpo-sleutel 2.4s ease-in-out infinite; }
+@keyframes dpo-sleutel { 0%, 100% { rotate: 0deg; } 50% { rotate: -28deg; } }
+
+.dpo-gondel { animation: dpo-gondel 10s ease-in-out infinite; }
+@keyframes dpo-gondel {
+  0%, 8% { translate: 0 -46px; }
+  40%, 52% { translate: 0 30px; }
+  84%, 100% { translate: 0 -46px; }
+}
+.dpo-wisser { transform-origin: 0% 100%; animation: dpo-wis 1s ease-in-out infinite alternate; }
+@keyframes dpo-wis { from { rotate: -14deg; } to { rotate: 16deg; } }
+.dpo-glans { animation: dpo-glans 10s ease-in-out infinite; }
+@keyframes dpo-glans { 0%, 20% { opacity: 0; } 30%, 70% { opacity: .85; } 80%, 100% { opacity: 0; } }
+.dpo-paneelglans { animation: dpo-paneel 3.5s ease-in-out infinite; }
+@keyframes dpo-paneel { 0%, 100% { opacity: .15; } 50% { opacity: .8; } }
+
+.dpo-schaar { transform-origin: 0% 100%; animation: dpo-knip .6s ease-in-out infinite alternate; }
+@keyframes dpo-knip { from { rotate: -8deg; } to { rotate: 10deg; } }
+.dpo-blad { animation: dpo-blad 2.4s ease-in infinite; opacity: 0; }
+.dpo-blad--2 { animation-delay: 1.2s; }
+@keyframes dpo-blad { 0% { opacity: 0; translate: 0 0; } 15% { opacity: 1; } 100% { opacity: 0; translate: 18px 30px; rotate: 160deg; } }
+.dpo-boom { transform-origin: bottom center; animation: dpo-wiebel 4.5s ease-in-out infinite alternate; }
+
+/* knop */
+.dpo .dpo-btn { box-shadow: 0 6px 0 #3d7420, var(--glow-green); }
+.dpo .dpo-btn:hover { translate: 0 -2px; box-shadow: 0 8px 0 #3d7420, 0 18px 34px -10px rgba(123, 213, 52, .75); }
+
+/* gerelateerde diensten: wit paneel met gekleurde tegels */
+.dpo .dpo-rel {
+  position: relative;
+  overflow: hidden;
+  background: #fff !important;
+  color: var(--navy);
+  border: 0;
+  border-radius: var(--r-xl);
+  box-shadow: 0 14px 0 #c9d6e6, 0 50px 80px -30px rgba(0, 0, 0, .75);
+}
+.dpo .dpo-rel::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 7px;
+  background: linear-gradient(90deg, var(--dpo-diep), var(--dpo-blauw), var(--dpo-groen));
+}
+.dpo .dpo-rel h3 { color: var(--navy); }
+.dpo .dpo-rel .mini-card {
+  background: #f3f7fb;
+  border: 1px solid #e1e9f2;
+  box-shadow: 0 4px 0 #dbe4ee;
+  transition: transform var(--t) var(--spring), box-shadow var(--t) var(--ease), background var(--t) var(--ease);
+}
+.dpo .dpo-rel .mini-card:hover { transform: translateX(6px); background: #fff; box-shadow: 0 6px 0 var(--dpo-groen), 0 16px 26px -14px rgba(2, 13, 65, .35); }
+.dpo .dpo-rel .mini-card .icon-tile { box-shadow: 0 4px 0 rgba(2, 13, 65, .25); border: 0; }
+.dpo .dpo-rel .mini-card .icon-tile .icon { color: #fff; }
+.dpo .dpo-rel .mini-card:nth-child(3n+1) .icon-tile { background: var(--dpo-groen); }
+.dpo .dpo-rel .mini-card:nth-child(3n+2) .icon-tile { background: var(--dpo-blauw); }
+.dpo .dpo-rel .mini-card:nth-child(3n) .icon-tile { background: var(--dpo-diep); }
+
+@media (max-width: 700px) {
+  .dpo { clip-path: polygon(0 24px, 100% 0, 100% calc(100% - 24px), 0 100%); }
+  .dpo::after { height: 32px; }
+  .dpo-kop__icoon { width: 48px; height: 48px; border-radius: 15px; }
+  .dpo-tekst > p { padding: 18px 18px 18px 22px; }
+  .dpo-scene { transform: none; padding: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dpo-deco__ruit, .dpo-scene [class*="dpo-"] { animation: none; }
+  .dpo-vink { scale: 1; }
+  .dpo-verf { scale: 1 1; }
+  .dpo-glans { opacity: .85; }
+}

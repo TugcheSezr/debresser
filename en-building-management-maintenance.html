@@ -174,15 +174,177 @@
     </div>
   </section>
 
-  <section class="section section--mist">
-    <svg class="bg-ruit bg-ruit--bl" viewBox="0 0 460 450" aria-hidden="true"><polygon points="190,114 340,34 340,234 190,316"/><polygon points="58,294 208,214 346,297 186,378"/><polygon points="268,134 422,220 422,402 268,318"/></svg>
-    <div class="wrap split split--top">
-      <div class="split__text reveal">
-        <h2 class="h2">Sustainable, planned maintenance</h2>
+  <section class="section dpo">
+    <div class="dpo-deco" aria-hidden="true"><span class="dpo-deco__ruit dpo-deco__ruit--1"></span><span class="dpo-deco__ruit dpo-deco__ruit--2"></span><span class="dpo-deco__ruit dpo-deco__ruit--3"></span></div>
+    <div class="wrap split split--top dpo-grid">
+      <div class="split__text reveal dpo-tekst">
+        <h2 class="h2 dpo-kop"><span class="dpo-kop__icoon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5.3 5L4 15.7a1.8 1.8 0 0 0 2.5 2.5l5.2-5.2a4 4 0 0 0 5-5.3l-2.4 2.4-2-.5-.5-2z"/><path d="M19.5 13.5c0 4-2.6 6.5-6 6.5 0-3.6 2.4-6.3 6-6.5z"/></svg></span><span class="dpo-kop__tekst">Sustainable, planned maintenance</span></h2>
         <p>At De Bresser, we understand that maintaining your office building is essential for an optimal working environment. Our expertise lies in delivering sustainable, planned maintenance. Whether it concerns interior or exterior maintenance, we make sure your workplace always looks its best.</p>
-        <a class="btn btn--navy" href="en-contact.html">Get in touch <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <figure class="dpo-scene" aria-hidden="true">
+          <svg viewBox="0 0 560 360" focusable="false">
+            <defs>
+              <linearGradient id="dpo-lucht" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#007dc2" stop-opacity=".35"/><stop offset="1" stop-color="#007dc2" stop-opacity="0"/></linearGradient>
+              <linearGradient id="dpo-glas" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe6fb"/><stop offset=".55" stop-color="#6fc3ee"/><stop offset="1" stop-color="#2b8fd0"/></linearGradient>
+              <linearGradient id="dpo-binnen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f8fc"/><stop offset="1" stop-color="#dfe9f3"/></linearGradient>
+              <linearGradient id="dpo-zonnepaneel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f5fa8"/><stop offset="1" stop-color="#0b2f66"/></linearGradient>
+              <radialGradient id="dpo-lampgloed"><stop offset="0" stop-color="#ffe27a" stop-opacity=".9"/><stop offset="1" stop-color="#ffe27a" stop-opacity="0"/></radialGradient>
+              <clipPath id="dpo-verfvlak"><rect x="170" y="104" width="44" height="54" rx="2"/></clipPath>
+            </defs>
+
+            <!-- zon + lucht -->
+            <rect x="0" y="0" width="560" height="320" fill="url(#dpo-lucht)"/>
+            <g class="dpo-zon"><circle cx="486" cy="58" r="20" fill="#ffc400"/><circle cx="486" cy="58" r="30" fill="none" stroke="#ffc400" stroke-opacity=".4" stroke-width="2" stroke-dasharray="4 7"/></g>
+
+            <!-- planning: kalender met vinkjes -->
+            <g transform="translate(22 34)">
+              <rect width="108" height="96" rx="12" fill="#fff" class="dpo-kaart"/>
+              <rect width="108" height="24" rx="12" fill="#6db23f"/><rect y="12" width="108" height="12" fill="#6db23f"/>
+              <circle cx="26" cy="4" r="4" fill="#020d41"/><circle cx="82" cy="4" r="4" fill="#020d41"/>
+              <g fill="#ebeff4">
+                <rect x="10" y="34" width="40" height="24" rx="6"/><rect x="58" y="34" width="40" height="24" rx="6"/>
+                <rect x="10" y="64" width="40" height="24" rx="6"/><rect x="58" y="64" width="40" height="24" rx="6"/>
+              </g>
+              <!-- seizoenen -->
+              <g fill="none" stroke="#00498f" stroke-width="2" stroke-linecap="round">
+                <path d="M30 39v14M24 42l12 8M36 42l-12 8"/>
+                <path d="M78 52c0-7 5-12 11-12-1 7-5 12-11 12zM78 52c0-5-3-9-8-9 0 5 3 9 8 9z"/>
+                <circle cx="30" cy="76" r="4"/><path d="M30 67v2M30 83v2M21 76h2M37 76h2M24 70l1.5 1.5M34.5 80.5 36 82M24 82l1.5-1.5M34.5 71.5 36 70"/>
+                <path d="M72 82c4-10 12-12 18-12-2 8-8 12-18 12zM72 82l10-7"/>
+              </g>
+              <g class="dpo-vinkjes" fill="#6db23f" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <g class="dpo-vink dpo-vink--1"><circle cx="46" cy="36" r="8"/><path d="m42.5 36 2.5 2.5 4.5-5" fill="none"/></g>
+                <g class="dpo-vink dpo-vink--2"><circle cx="94" cy="36" r="8"/><path d="m90.5 36 2.5 2.5 4.5-5" fill="none"/></g>
+                <g class="dpo-vink dpo-vink--3"><circle cx="46" cy="66" r="8"/><path d="m42.5 66 2.5 2.5 4.5-5" fill="none"/></g>
+                <g class="dpo-vink dpo-vink--4"><circle cx="94" cy="66" r="8"/><path d="m90.5 66 2.5 2.5 4.5-5" fill="none"/></g>
+              </g>
+            </g>
+
+            <!-- tandwiel (planmatig) -->
+            <g transform="translate(496 250)">
+              <g class="dpo-tandwiel">
+                <path fill="#6db23f" d="M-4-26h8l2 7 6 2.5 6.5-3.5 5.5 5.5-3.5 6.5 2.5 6 7 2v8l-7 2-2.5 6 3.5 6.5-5.5 5.5-6.5-3.5-6 2.5-2 7h-8l-2-7-6-2.5-6.5 3.5-5.5-5.5 3.5-6.5-2.5-6-7-2v-8l7-2 2.5-6-3.5-6.5 5.5-5.5 6.5 3.5 6-2.5z"/>
+                <circle r="9" fill="#020d41"/>
+              </g>
+              <g transform="translate(-34 -38)"><g class="dpo-tandwiel dpo-tandwiel--klein">
+                <path fill="#33bcfa" d="M-2.5-15h5l1 4 3.5 1.5 3.5-2 3.5 3.5-2 3.5 1.5 3.5 4 1v5l-4 1-1.5 3.5 2 3.5-3.5 3.5-3.5-2-3.5 1.5-1 4h-5l-1-4-3.5-1.5-3.5 2-3.5-3.5 2-3.5-1.5-3.5-4-1v-5l4-1 1.5-3.5-2-3.5 3.5-3.5 3.5 2 3.5-1.5z"/>
+                <circle r="5" fill="#020d41"/>
+              </g></g>
+            </g>
+
+            <!-- grond -->
+            <path d="M0 320h560v40H0z" fill="#0a1a52"/>
+            <path d="M0 320h560" stroke="#6db23f" stroke-width="3"/>
+
+            <!-- pand -->
+            <g class="dpo-pand">
+              <!-- schaduw -->
+              <ellipse cx="280" cy="322" rx="170" ry="10" fill="#000" opacity=".35"/>
+              <!-- binnenkant (links, opengewerkt) -->
+              <rect x="150" y="90" width="130" height="230" fill="url(#dpo-binnen)"/>
+              <!-- verdieping 1: wand wordt geverfd -->
+              <rect x="170" y="104" width="44" height="54" rx="2" fill="#c9d6e3"/>
+              <g clip-path="url(#dpo-verfvlak)"><rect class="dpo-verf" x="170" y="104" width="44" height="54" fill="#6db23f"/></g>
+              <g class="dpo-roller">
+                <rect x="186" y="98" width="12" height="4" rx="2" fill="#020d41"/>
+                <rect x="180" y="100" width="24" height="9" rx="4.5" fill="#6db23f" stroke="#020d41" stroke-width="2"/>
+                <path d="M204 104h6v14h-12v18" fill="none" stroke="#020d41" stroke-width="2.4" stroke-linecap="round"/>
+              </g>
+              <!-- led-lamp -->
+              <path d="M250 90v14" stroke="#020d41" stroke-width="2"/>
+              <circle class="dpo-lampgloed" cx="250" cy="112" r="24" fill="url(#dpo-lampgloed)"/>
+              <path d="M240 104h20l-4 8h-12z" fill="#020d41"/>
+              <!-- verdieping 2: bureau, stoel, plant -->
+              <path d="M150 167h130" stroke="#9fb3c8" stroke-width="4"/>
+              <rect x="176" y="208" width="54" height="5" rx="2" fill="#00498f"/>
+              <path d="M182 213v28M224 213v28" stroke="#00498f" stroke-width="3"/>
+              <rect x="192" y="188" width="24" height="17" rx="2" fill="#020d41"/><path d="M204 205v3" stroke="#020d41" stroke-width="3"/>
+              <rect x="195" y="191" width="18" height="11" fill="#33bcfa"/>
+              <g transform="translate(252 244)"><g class="dpo-plant">
+                <path d="M0 0v-26" stroke="#166909" stroke-width="2.4"/>
+                <path d="M0-12c-10-2-14-10-12-16 8 1 12 8 12 16zM0-18c9-3 13-11 11-17-8 2-11 9-11 17zM0-26c-4-6-2-12 3-14 3 5 1 11-3 14z" fill="#6db23f"/>
+              </g></g>
+              <path d="M244 230h16l-2 14h-12z" fill="#b8793e"/>
+              <!-- verdieping 3: deur + gereedschapskist -->
+              <path d="M150 244h130" stroke="#9fb3c8" stroke-width="4"/>
+              <rect x="226" y="262" width="36" height="58" rx="2" fill="#00498f"/><circle cx="254" cy="292" r="2.4" fill="#fff"/>
+              <g class="dpo-kist">
+                <rect x="170" y="298" width="36" height="22" rx="3" fill="#e0301e"/>
+                <path d="M180 298v-6h16v6" fill="none" stroke="#020d41" stroke-width="3"/>
+                <path d="M170 306h36" stroke="#020d41" stroke-width="2"/>
+                <g class="dpo-sleutel"><path d="M200 280l-14 14" stroke="#9aa8b8" stroke-width="4" stroke-linecap="round"/><circle cx="202" cy="278" r="5" fill="none" stroke="#9aa8b8" stroke-width="3"/></g>
+              </g>
+
+              <!-- gevel (rechts) -->
+              <rect x="280" y="90" width="130" height="230" fill="#ffffff"/>
+              <rect x="280" y="90" width="130" height="230" fill="none" stroke="#dbe3ec" stroke-width="2"/>
+              <g fill="url(#dpo-glas)">
+                <rect x="294" y="104" width="30" height="42" rx="3"/><rect x="330" y="104" width="30" height="42" rx="3"/><rect x="366" y="104" width="30" height="42" rx="3"/>
+                <rect x="294" y="180" width="30" height="42" rx="3"/><rect x="330" y="180" width="30" height="42" rx="3"/><rect x="366" y="180" width="30" height="42" rx="3"/>
+                <rect x="294" y="256" width="30" height="42" rx="3"/><rect x="366" y="256" width="30" height="42" rx="3"/>
+              </g>
+              <rect x="330" y="256" width="30" height="64" rx="3" fill="#020d41"/>
+              <!-- glans op ramen -->
+              <g class="dpo-glans" fill="#fff" opacity=".0">
+                <path d="M300 112l8-6 3 2-8 6zM336 112l8-6 3 2-8 6zM372 112l8-6 3 2-8 6z"/>
+                <path d="M300 188l8-6 3 2-8 6zM336 188l8-6 3 2-8 6zM372 188l8-6 3 2-8 6z"/>
+              </g>
+              <!-- logo op gevel -->
+              <g transform="translate(345 166) scale(.55)" fill="none" stroke-width="3.2">
+                <path d="M-14 0l8-8 8 8-8 8z" stroke="#00498f"/><path d="M-6 0l8-8 8 8-8 8z" stroke="#007dc2"/><path d="M2 0l8-8 8 8-8 8z" stroke="#6db23f"/>
+              </g>
+              <!-- snijvlak binnen/buiten -->
+              <path d="M280 90v230" stroke="#020d41" stroke-width="3"/>
+              <!-- dak -->
+              <rect x="142" y="80" width="276" height="12" rx="3" fill="#020d41"/>
+              <!-- groen dak links -->
+              <path d="M152 80c6-10 12-10 18 0 6-10 12-10 18 0 6-10 12-10 18 0 6-10 12-10 18 0 6-10 12-10 18 0 6-10 12-10 18 0 6-10 12-10 16 0z" fill="#6db23f"/>
+              <!-- zonnepanelen rechts -->
+              <g fill="url(#dpo-zonnepaneel)" stroke="#fff" stroke-width="1">
+                <path d="M292 80l8-18h30l-8 18z"/><path d="M334 80l8-18h30l-8 18z"/><path d="M376 80l8-18h28l-6 18z"/>
+              </g>
+              <g class="dpo-paneelglans" fill="#fff" opacity=".55"><path d="M304 76l5-11h4l-5 11zM346 76l5-11h4l-5 11zM388 76l5-11h4l-5 11z"/></g>
+
+              <!-- gevelonderhoud: gondel zakt langs de gevel -->
+              <path d="M300 92v220M390 92v220" stroke="#020d41" stroke-width="1.4" opacity=".55"/>
+              <path d="M292 92h10M382 92h16" stroke="#020d41" stroke-width="4"/>
+              <g class="dpo-gondel">
+                                <g transform="translate(0 150)">
+                  <rect x="292" y="0" width="106" height="12" rx="2" fill="#6db23f" stroke="#020d41" stroke-width="2"/>
+                  <path d="M292 0v-10h106v10" fill="none" stroke="#020d41" stroke-width="2"/>
+                  <!-- werker -->
+                  <circle cx="330" cy="-20" r="6" fill="#f1c7a3"/>
+                  <path d="M330 -26a6 6 0 0 1 6 6h-12a6 6 0 0 1 6-6z" fill="#ffc400"/>
+                  <rect x="324" y="-14" width="12" height="14" rx="3" fill="#020d41"/>
+                  <g class="dpo-wisser"><path d="M336 -10l12 -14" stroke="#020d41" stroke-width="3" stroke-linecap="round"/><path d="M342 -30l12 10" stroke="#33bcfa" stroke-width="4" stroke-linecap="round"/></g>
+                  <rect x="364" y="-8" width="12" height="8" rx="2" fill="#33bcfa"/>
+                </g>
+              </g>
+            </g>
+
+            <!-- buiten: heg met snoeischaar, boom -->
+            <g transform="translate(96 320)">
+              <path d="M-40 0c0-18 10-26 20-26s12 6 20 6 20-4 26 6c4 6 4 10 4 14z" fill="#166909"/>
+              <path d="M-40 0c0-12 8-18 16-18" fill="none" stroke="#6db23f" stroke-width="3" stroke-linecap="round"/>
+              <g class="dpo-schaar">
+                <path d="M16-32l14-14M20-28l14-10" stroke="#9aa8b8" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="12" cy="-30" r="4" fill="#e0301e"/><circle cx="16" cy="-24" r="4" fill="#e0301e"/>
+              </g>
+              <g class="dpo-blaadjes" fill="#6db23f">
+                <path class="dpo-blad dpo-blad--1" d="M26-30c3-2 6-1 6 2-3 2-6 1-6-2z"/>
+                <path class="dpo-blad dpo-blad--2" d="M30-26c3-2 6-1 6 2-3 2-6 1-6-2z"/>
+              </g>
+            </g>
+            <g transform="translate(458 320)">
+              <path d="M0 0v-40" stroke="#6b4a2b" stroke-width="6"/>
+              <g class="dpo-boom"><circle cx="0" cy="-58" r="26" fill="#166909"/><circle cx="-14" cy="-48" r="16" fill="#1f7f10"/><circle cx="14" cy="-66" r="14" fill="#6db23f"/></g>
+            </g>
+            <!-- pion -->
+            <g transform="translate(430 320)"><path d="M-9 0l6-24h6l6 24z" fill="#ff7a1a"/><path d="M-6-10h12M-4-18h8" stroke="#fff" stroke-width="3"/><rect x="-12" y="-2" width="24" height="3" rx="1" fill="#ff7a1a"/></g>
+          </svg>
+        </figure>
+        <a class="btn btn--green dpo-btn" href="en-contact.html">Get in touch <svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <aside class="info-panel card-3d reveal" data-tilt="5">
+      <aside class="info-panel card-3d reveal dpo-rel" data-tilt="5">
         <h3>Related services</h3>
         <div class="grid">
           <a class="mini-card glass" href="en-building-management-sustainability.html"><span class="icon-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-8 5-13.5 14.5-14.5C18.5 14 13 19 5 19z"/><path d="M5 19 13 11"/></svg></span>Sustainability upgrades<svg class="icon icon--arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>

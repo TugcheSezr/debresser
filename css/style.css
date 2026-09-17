@@ -7310,6 +7310,27 @@ select.input { appearance: none; background-image: url("data:image/svg+xml,%3Csv
   .zorg-intake { margin: clamp(24px, 4vw, 40px) auto 0; }
 }
 
+/* Zakelijke verhuizing: uitgesneden team met kratten naast "Complete service" (bron is klein: max 420px) */
+.bv__row--media-links .split__media.zakelijk-team { align-self: center; justify-self: center; width: 100%; max-width: 420px; }
+/* de sectie is navy: lichte plaat, anders vallen de donkere jassen weg */
+.img-pop--licht.img-pop--relief .img-pop__stage {
+  height: 78%;
+  background:
+    radial-gradient(70% 80% at 30% 15%, rgba(51, 188, 250, .18), transparent 70%),
+    linear-gradient(160deg, var(--white), var(--mist) 70%, #d9e1ec);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 -4px 0 rgba(2, 13, 65, .14),
+    inset 0 -20px 40px -20px rgba(2, 13, 65, .18),
+    0 2px 4px rgba(0, 0, 0, .25),
+    0 24px 48px -16px rgba(0, 0, 0, .5),
+    0 60px 100px -40px rgba(0, 0, 0, .55);
+}
+.img-pop--licht .img-pop__ruit { color: var(--navy); opacity: .07; }
+@media (max-width: 1023px) {
+  .bv__row--media-links .split__media.zakelijk-team { margin: 0 auto 24px; max-width: 340px; }
+}
+
 /* GROEP GEBOUWBEHEER + ASSETMANAGEMENT: Nieuw-label en Lees meer niet uitrekken in het Nieuw-blok */
 .gbam-nieuw .band-quote > .tag,
 .gbam-nieuw .band-quote > .link-arrow { align-self: flex-start; }
@@ -10073,4 +10094,34 @@ a.blog-pager__item:hover { transform: translateY(-4px) rotate(-3deg); box-shadow
   .nieuws-item { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; padding-right: 14px; }
   .nieuws-item__img { min-height: 84px; }
   .nieuws-item__tekst, .nieuws-item__pijl { display: none; }
+}
+
+/* Vacatures-tickets: bij hover groeien de mensen, niet de foto */
+.vac-card__photo img { transition: transform 700ms var(--ease), filter 700ms var(--ease); }
+.vac-card:hover .vac-card__photo img { transform: none; }
+.vac-card__photo .vac-card__leeg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 400ms var(--ease), filter 700ms var(--ease);
+}
+.vac-card__photo .vac-card__mensen {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0 rgba(2, 13, 65, 0));
+  transition: transform 520ms cubic-bezier(.34, 1.45, .6, 1), filter 520ms var(--ease);
+}
+.vac-card__photo::after { z-index: 3; }
+.vac-card__no, .vac-card__go { z-index: 4; }
+.vac-card:hover .vac-card__photo .vac-card__leeg { opacity: 1; }
+.vac-card:hover .vac-card__photo img:not(.vac-card__mensen) { filter: saturate(.75) brightness(.86) blur(1.5px); }
+.vac-card:hover .vac-card__photo .vac-card__mensen {
+  transform: scale(1.12);
+  filter: drop-shadow(0 14px 18px rgba(2, 13, 65, .45));
+}
+@media (prefers-reduced-motion: reduce) {
+  .vac-card__photo .vac-card__mensen, .vac-card__photo .vac-card__leeg { transition: none; }
 }
