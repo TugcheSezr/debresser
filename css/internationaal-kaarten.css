@@ -1,0 +1,231 @@
+/* =====================================================================
+   Internationale verhuizing (NL + EN): de drie info-kaarten
+   Kleuren van debresser.nl: Diepblauw #00498F, Blauw #007DC2, Bressergroen #6DB23F.
+
+   De teksten zijn heel verschillend van lengte; daarom geen drie gelijke
+   kolommen maar drie brede kaarten onder elkaar (desktop), foto afwisselend
+   links en rechts over de volle hoogte van de kaart:
+   - .iv-kaart--groot  (Binnen Europa): tweede alinea (groupage) als kader.
+   - .iv-kaart--navy   (Buiten Europa): diepblauw, foto rechts, groene knop.
+   - .iv-kaart--licht  (Waarom De Bresser?): licht met groene onderrand.
+   Onder 1024px staat de foto boven de tekst. Teksten ongewijzigd.
+   ===================================================================== */
+.iv-kaarten {
+  --iv-diep: #00498f;
+  --iv-diep-2: #002f5e;
+  --iv-blauw: #007dc2;
+  --iv-groen: #6db23f;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+/* ---------- basis voor alle drie ---------- */
+.iv-kaarten > .iv-kaart {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: clamp(22px, 2.6vw, 36px);
+  row-gap: 14px;
+  align-content: start;
+  padding: 12px clamp(22px, 2.6vw, 34px) 12px 12px;
+  border-radius: 26px;
+  overflow: hidden;
+}
+.iv-kaarten .iv-kaart > * { grid-column: 2; }
+.iv-kaarten .iv-kaart > h2 { margin-top: clamp(14px, 2vw, 24px); }
+.iv-kaarten .iv-kaart > :last-child { margin-bottom: clamp(14px, 2vw, 24px); }
+
+/* foto: linkerkolom over de volle hoogte */
+.iv-kaarten .iv-kaart > .info-panel__img {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  position: relative;
+  margin: 0;
+  min-height: 260px;
+  aspect-ratio: auto;
+  border-radius: 18px;
+  transform: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 16px 30px -18px rgba(0, 36, 71, .55);
+}
+.iv-kaarten .iv-kaart > .info-panel__img img {
+  position: absolute;
+  inset: 0;
+  scale: 1.04;
+  translate: none;
+}
+.iv-kaarten .iv-kaart:hover > .info-panel__img img { scale: 1.09; }
+/* dun lijntje in de huisstijl onderin de foto */
+.iv-kaarten .iv-kaart > .info-panel__img::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--iv-groen), var(--iv-blauw) 60%, var(--iv-diep));
+}
+
+.iv-kaarten .iv-kaart h2 {
+  position: relative;
+  padding-bottom: 14px;
+  line-height: 1.2;
+}
+.iv-kaarten .iv-kaart h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 46px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--iv-groen), var(--iv-blauw));
+}
+.iv-kaarten .iv-kaart p { margin: 0; line-height: 1.75; }
+
+/* ---------- 1 Binnen Europa: breed ---------- */
+.iv-kaarten > .iv-kaart--groot {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  padding-right: clamp(26px, 3.4vw, 48px);
+}
+.iv-kaarten .iv-kaart--groot > .info-panel__img { min-height: 420px; }
+.iv-kaarten .iv-kaart--groot h2 { font-size: clamp(1.5rem, 1.15rem + 1vw, 2rem); }
+/* tweede alinea als kader: groupage */
+.iv-kaarten .iv-kaart--groot p + p {
+  position: relative;
+  padding: 18px 20px 18px 66px;
+  border-radius: 16px;
+  color: var(--iv-diep-2);
+  background:
+    linear-gradient(135deg, rgba(0, 125, 194, .08), rgba(109, 178, 63, .1));
+  box-shadow: inset 0 0 0 1px rgba(0, 125, 194, .14), inset 0 1px 0 #fff;
+}
+.iv-kaarten .iv-kaart--groot p + p::before {
+  content: "";
+  position: absolute;
+  left: 16px; top: 18px;
+  width: 36px; height: 36px;
+  border-radius: 11px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 8 12 3 3 8v8l9 5 9-5z'/%3E%3Cpath d='m3 8 9 5 9-5M12 13v8M7.5 5.5l9 5'/%3E%3C/svg%3E") center / 20px no-repeat,
+    linear-gradient(145deg, #86c95a, var(--iv-groen) 50%, #4e8a26);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 6px 12px -6px rgba(78, 138, 38, .7);
+}
+
+/* ---------- 2 Buiten Europa: diepblauw ---------- */
+.iv-kaarten > .iv-kaart--navy {
+  color: #dfe9f3;
+  background:
+    radial-gradient(70% 60% at 100% 0%, rgba(0, 125, 194, .45), transparent 65%),
+    linear-gradient(160deg, var(--iv-diep) 0%, var(--iv-diep-2) 70%, #001d3d 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .16),
+    0 2px 4px rgba(0, 36, 71, .15),
+    0 30px 60px -28px rgba(0, 36, 71, .7) !important;
+}
+.iv-kaarten .iv-kaart--navy::before { display: none; }
+.iv-kaarten .iv-kaart--navy h2 { color: #fff; }
+.iv-kaarten .iv-kaart--navy p { color: #dfe9f3; }
+.iv-kaarten .iv-kaart--navy .link-arrow {
+  justify-self: start;
+  align-self: end;
+  padding: 11px 18px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(180deg, #7cc24c, var(--iv-groen) 60%, #5a9a31);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 3px 0 #4a8026, 0 12px 20px -10px rgba(0, 0, 0, .5);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.iv-kaarten .iv-kaart--navy .link-arrow:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 5px 0 #4a8026, 0 16px 24px -10px rgba(0, 0, 0, .5);
+}
+.iv-kaarten .iv-kaart--navy .link-arrow .icon { color: #fff; }
+
+/* ---------- 3 Waarom De Bresser?: licht met groene rand ---------- */
+.iv-kaarten > .iv-kaart--licht {
+  position: relative;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 450' fill='none' stroke='%2300498f' stroke-width='10' stroke-opacity='.06'%3E%3Cpolygon points='190,114 340,34 340,234 190,316'/%3E%3Cpolygon points='58,294 208,214 346,297 186,378'/%3E%3Cpolygon points='268,134 422,220 422,402 268,318'/%3E%3C/svg%3E") right -40px bottom -50px / 230px no-repeat,
+    linear-gradient(170deg, #ffffff, #f1f6fa) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 73, 143, .08),
+    inset 0 -4px 0 var(--iv-groen),
+    0 2px 4px rgba(0, 36, 71, .06),
+    0 26px 50px -26px rgba(0, 36, 71, .4) !important;
+}
+.iv-kaarten .iv-kaart--licht h2 { color: var(--iv-diep-2); }
+
+/* ---------- tablet en mobiel: foto boven ---------- */
+@media (max-width: 1023px) {
+  .iv-kaarten { grid-template-columns: minmax(0, 1fr); }
+  .iv-kaarten > .iv-kaart,
+  .iv-kaarten > .iv-kaart--groot {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+    padding: 12px 12px 4px;
+  }
+  .iv-kaarten .iv-kaart > *,
+  .iv-kaarten .iv-kaart > p { grid-column: 1; margin-left: clamp(10px, 3vw, 20px); margin-right: clamp(10px, 3vw, 20px); }
+  .iv-kaarten .iv-kaart > .info-panel__img,
+  .iv-kaarten .iv-kaart--groot > .info-panel__img {
+    grid-row: auto;
+    margin: 0;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+  .iv-kaarten .iv-kaart > h2 { margin-top: 8px; }
+  .iv-kaarten .iv-kaart > :last-child { margin-bottom: 22px; }
+}
+@media (max-width: 480px) {
+  .iv-kaarten .iv-kaart--groot p + p { padding: 64px 16px 16px; }
+}
+
+/* ---------- desktop: drie brede kaarten, foto afwisselend links/rechts ---------- */
+@media (min-width: 1024px) {
+  .iv-kaarten { grid-template-columns: minmax(0, 1fr); }
+  .iv-kaarten > .iv-kaart {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    padding-right: clamp(26px, 3.4vw, 48px);
+  }
+  .iv-kaarten .iv-kaart > .info-panel__img { min-height: 300px; }
+  .iv-kaarten .iv-kaart h2 { font-size: clamp(1.5rem, 1.15rem + 1vw, 2rem); }
+  .iv-kaarten .iv-kaart > h2 br { display: none; }
+
+  /* Buiten Europa: foto rechts */
+  .iv-kaarten > .iv-kaart--navy {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    padding: 12px 12px 12px clamp(26px, 3.4vw, 48px);
+  }
+  .iv-kaarten .iv-kaart--navy > * { grid-column: 1; }
+  .iv-kaarten .iv-kaart--navy > .info-panel__img { grid-column: 2; }
+}
+
+/* ---------- compacter (kaarten waren te groot) ---------- */
+.iv-kaarten { gap: 18px; }
+.iv-kaarten .iv-kaart p { font-size: 15px; line-height: 1.65; }
+.iv-kaarten .iv-kaart h2 { padding-bottom: 10px; }
+.iv-kaarten .iv-kaart h2::after { width: 36px; height: 3px; }
+.iv-kaarten .iv-kaart--groot p + p { padding: 12px 16px 12px 56px; }
+.iv-kaarten .iv-kaart--groot p + p::before { left: 12px; top: 12px; width: 30px; height: 30px; border-radius: 9px; background-size: 17px, auto; }
+.iv-kaarten .iv-kaart--navy .link-arrow { padding: 8px 15px; font-size: 14.5px; }
+@media (min-width: 1024px) {
+  .iv-kaarten > .iv-kaart {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    row-gap: 10px;
+    border-radius: 22px;
+    padding: 10px clamp(22px, 2.6vw, 36px) 10px 10px;
+  }
+  .iv-kaarten > .iv-kaart--navy {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    padding: 10px 10px 10px clamp(22px, 2.6vw, 36px);
+  }
+  .iv-kaarten .iv-kaart > .info-panel__img,
+  .iv-kaarten .iv-kaart--groot > .info-panel__img { min-height: 200px; border-radius: 15px; }
+  .iv-kaarten .iv-kaart h2 { font-size: clamp(1.2rem, 1rem + .6vw, 1.5rem); }
+  .iv-kaarten .iv-kaart > h2 { margin-top: 16px; }
+  .iv-kaarten .iv-kaart > :last-child { margin-bottom: 16px; }
+}
+@media (max-width: 480px) {
+  .iv-kaarten .iv-kaart--groot p + p { padding: 52px 14px 14px; }
+  .iv-kaarten .iv-kaart h2 { font-size: 1.2rem; }
+}

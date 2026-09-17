@@ -9090,11 +9090,12 @@ a.blog-pager__item:hover { transform: translateY(-4px) rotate(-3deg); box-shadow
 .mt-sec { overflow-x: clip; }
 .mt-sec .mt-aanbod { position: relative; z-index: 1; }
 .mt-sec .mt-scene svg { overflow: visible; }
-/* vlakke weg (Nederland en België zijn vlak): weg recht, vrachtwagen rechtgezet */
-.iv-truck .truck-go__ground { transform: none; }
-.iv-truck .truck-go__wind { transform: none; }
-.iv-truck .truck-go__bump { rotate: 3.4deg; transform-origin: 50% 90%; }
-.iv-truck .truck-go__body::after { transform: none; }
+/* Internationale verhuizing: weg loopt licht omhoog naar rechts, met dezelfde
+   helling als de wielen van de vrachtwagenfoto (--tilt), wagen niet rechtgezet */
+.iv-truck .truck-go__ground { transform: rotate(var(--tilt, -3.4deg)); transform-origin: 50% 50%; }
+.iv-truck .truck-go__wind { transform: rotate(var(--tilt, -3.4deg)); }
+.iv-truck .truck-go__bump { rotate: none; }
+.iv-truck .truck-go__body::after { transform: rotate(var(--tilt, -3.4deg)); }
 
 /* Veilingen: busje met medewerker zonder achtergrond op een 3D-plaat;
    de medewerker staat als losse laag naar voren (reliëf) */
