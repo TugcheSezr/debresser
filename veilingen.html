@@ -10,6 +10,7 @@
   <link rel="preload" href="assets/fonts/sora-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/diepte.css">
+  <link rel="stylesheet" href="css/veilingen-relief.css">
   <link rel="alternate" hreflang="nl" href="veilingen.html">
   <link rel="alternate" hreflang="en" href="en-auction.html">
   <link rel="alternate" hreflang="x-default" href="veilingen.html">
@@ -219,9 +220,7 @@
       </div>
 
       <div class="split split--top mt-l" id="form-veilingen">
-        <div class="split__media reveal"><figure class="img-3d img-3d--navy" data-tilt="6">
-          <div class="img-3d__frame"><img src="assets/img/site/Logistiek-transport-meubels-internationaal.jpg" alt="Meubeltransport" loading="lazy"></div>
-        </figure></div>
+        <div class="split__media reveal vrl-media"><figure class="vrl-foto" data-foto-pop data-tilt="7"><span class="vrl-foto__vlak"><span class="vrl-foto__frame"><img class="vrl-foto__bg" src="assets/img/site/Logistiek-transport-meubels-internationaal.jpg" alt="Meubeltransport" width="1000" height="667" loading="lazy" decoding="async"></span><span class="vrl-foto__schaduw" aria-hidden="true"></span><img class="vrl-foto__cut" src="assets/img/veilingen-relief/man-kast-vrij.webp" alt="" aria-hidden="true" width="1000" height="667" loading="lazy" decoding="async"></span></figure></div>
         <div class="split__form mm-formkol"><div class="form-card form-3d reveal" data-form3d>
           <h3 class="h3">Neem contact op</h3>
           <form class="form" data-form="Offerte Veilingen" action="api/verzend.php" method="post">
@@ -406,5 +405,6 @@
 
 <script src="js/main.js" defer></script>
 <script src="js/diepte.js" defer></script>
+<script src="js/foto-pop.js" defer></script>
 </body>
 </html>

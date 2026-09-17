@@ -1,0 +1,31 @@
+/* =====================================================================
+   Duurzame werkomgeving (NL + EN): blok Assetmanagement
+   Links: kop + hoge foto (mensen stappen eruit). Rechts: kringloop
+   "Aanbod strategieën circulaire toepassingen" boven de tekst
+   Inventarisatie. Onderkanten lopen gelijk; teksten ongewijzigd.
+   ===================================================================== */
+@media (min-width: 1024px) {
+  .dwo-am .split { align-items: stretch; }
+  .dwo-am .gbam-media { justify-content: flex-start; }
+
+  /* hoge foto: vult de kolom tot onderaan; staande uitsnede aan de rechterkant,
+     beide lagen (foto + vrijstaand) exact hetzelfde vlak */
+  .dwo-am .img-3d.img-3d--pop-dozen { --ox: 76%; --s: 1.18; flex: 1; display: flex; min-height: 560px; margin-top: 8px; }
+  .dwo-am .img-3d.img-3d--pop-dozen .img-3d__frame { flex: 1; }
+  .dwo-am .img-3d.img-3d--pop-dozen .img-3d__frame img {
+    position: absolute; inset: 0; width: 100%; height: 100%; max-height: none;
+    aspect-ratio: auto; object-position: 83% 50%;
+  }
+  .dwo-am .img-3d.img-3d--pop-dozen .dwo-foto-pop__cut {
+    height: calc(100% - 2 * var(--rand)); max-height: none;
+    aspect-ratio: auto; object-position: 83% 50%;
+  }
+
+  /* tekstkaart vult de rest van de kolom, iets groter */
+  .dwo-am__tekst { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+}
+
+.dwo-am__tekst { padding: clamp(26px, 3vw, 38px); }
+.dwo-am__tekst .gbam-kop { font-size: clamp(1.35rem, 1.1rem + .8vw, 1.7rem); }
+.dwo-am__tekst p { font-size: 1.06rem; line-height: 1.75; }
+.dwo-am__rechts .dwo-cirkel .gbam-lijst { max-width: 400px; }

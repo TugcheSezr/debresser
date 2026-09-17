@@ -73,3 +73,6 @@
 @media (prefers-reduced-motion: reduce) {
   .img-3d.img-3d--pop .dwo-foto-pop__cut { transition: none; }
 }
+
+/* geen scheve tweede afdruk achter de pop-foto's: oogde als twee gestapelde foto's */
+.img-3d.img-3d--pop::before { display: none; }

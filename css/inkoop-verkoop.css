@@ -333,6 +333,85 @@
   50% { rotate: -6deg; }
 }
 
+/* ---------- Circulair meubilair: de meubels springen uit de foto ----------
+   Twee lagen: .ivk-pop__frame is de gewone foto in het 16:10-kader (onderkant
+   vast, bovenkant weggesneden); .ivk-pop__cut is de vrijstaande versie op
+   volle hoogte, onderkant gelijk met het kader, zodat de "2e hands"-steel al
+   boven het kader uitsteekt. Vanuit --ox en de onderrand wordt hij met --s
+   vergroot; boven --T mag hij buiten de zijranden, lager blijft hij binnen
+   L/R. Op de plek van de meubels is de achtergrond (stoel-bg.webp) vervaagd,
+   anders staat er bij het uitstappen een tweede stoel achter. */
+.ivk-kaarten > .ivk-pop { overflow: visible; }
+.ivk-kaarten .ivk-pop__foto {
+  --s: 1.22;
+  --ox: 36%;
+  --crop: 14.3%;                          /* deel van de foto boven het 16:10-kader */
+  --T: calc(100% - (100% - var(--crop)) / var(--s));
+  --L: calc(var(--ox) - var(--ox) / var(--s));
+  --R: calc(var(--ox) + (100% - var(--ox)) / var(--s));
+  overflow: visible;
+}
+.ivk-kaarten .ivk-pop__foto::after { z-index: 0; }
+.ivk-pop__frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.ivk-kaarten .ivk-pop .ivk-pop__frame img,
+.ivk-kaarten .ivk-pop:hover .ivk-pop__frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+  scale: 1;
+  translate: none;
+  transform: none;
+}
+.ivk-kaarten .ivk-pop .ivk-pop__foto .ivk-pop__cut {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 761 / 555;
+  pointer-events: none;
+  scale: 1;
+  translate: none;
+  transform-origin: var(--ox) 100%;
+  transform: scale(var(--s));
+  clip-path: polygon(-40% -80%, 140% -80%, 140% var(--T), var(--R) var(--T), var(--R) 100%, var(--L) 100%, var(--L) var(--T), -40% var(--T));
+  filter:
+    drop-shadow(0 1px 1px rgba(2, 13, 65, .3))
+    drop-shadow(0 14px 14px rgba(2, 13, 65, .3))
+    drop-shadow(0 30px 30px rgba(2, 13, 65, .2));
+  transition: transform 700ms var(--dp-ease, ease), scale 700ms var(--dp-ease, ease);
+}
+/* hover: nog een stukje verder naar voren (los van transform, die gebruikt de scroll-animatie) */
+.ivk-kaarten .ivk-pop:hover .ivk-pop__foto .ivk-pop__cut { scale: 1.02; }
+.ivk-kaarten .ivk-pop .ivk-pop__foto::before { z-index: 2; }   /* bungelend kaartje blijft vooraan */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .ivk-kaarten .ivk-pop .ivk-pop__foto .ivk-pop__cut {
+      animation: ivk-stap linear both;
+      animation-timeline: view();
+      animation-range: entry 15% cover 45%;
+    }
+  }
+}
+@keyframes ivk-stap { from { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .ivk-kaarten .ivk-pop .ivk-pop__foto .ivk-pop__cut { transition: none; }
+}
+/* kaarten onder elkaar (style.css, 900px): ruimte voor de steel, die steekt ~26% van de breedte boven de foto uit */
+@media (max-width: 900px) {
+  .ivk-kaarten > .ivk-pop { margin-top: 24%; }
+}
+
 /* ---------- Mobiel ---------- */
 @media (max-width: 1023px) {
   .ivk-links { margin-bottom: 8px; }

@@ -1,0 +1,105 @@
+/* =====================================================================
+   Veilingen (veilingen.html + en-auction.html): foto naast "Neem contact op".
+   De medewerker met de kast staat in reliëf op de foto: de foto zelf blijft
+   heel (met achtergrond), de vrijstaande versie (BiRefNet, zelfde maat)
+   ligt er in 3D boven (translateZ), met een dikke rand, lichtrand en
+   slagschaduw. Bij kantelen (data-tilt) beweegt hij los van de foto.
+   js/foto-pop.js zet --p: bij het scrollen komt hij verder naar voren.
+   ===================================================================== */
+.vrl-media { padding: 0 24px 24px 0; }
+.vrl-foto {
+  --p: 1;
+  --z: calc(30px + var(--p) * 60px);
+  position: relative;
+  margin: 0;
+  transform-style: preserve-3d;
+  transform-origin: 55% 83%;                 /* ter hoogte van wielen en voeten */
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+/* Diepblauwe plaat achter de foto, zoals de oude img-3d--navy */
+.vrl-foto::before {
+  content: "";
+  position: absolute;
+  inset: 22px -22px -22px 22px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #00498f, #002447);
+  box-shadow: 0 30px 60px -26px rgba(0, 36, 71, .6);
+  transform: translateZ(-8px);
+}
+.vrl-foto__vlak {
+  position: relative;
+  display: block;
+  aspect-ratio: 1000 / 667;
+  transform-style: preserve-3d;
+}
+.vrl-foto__frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #dfe8f1;
+  box-shadow: 0 0 0 7px #fff, 0 2px 4px 7px rgba(0, 36, 71, .08), 0 26px 50px -20px rgba(0, 36, 71, .5);
+}
+.vrl-foto__frame::after {                     /* foto ligt verzonken: licht valt van linksboven */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(90% 80% at 55% 55%, transparent 55%, rgba(0, 36, 71, .35));
+  box-shadow: inset 0 18px 26px -18px rgba(0, 36, 71, .55), inset 14px 0 22px -18px rgba(0, 36, 71, .4);
+  pointer-events: none;
+}
+.vrl-foto img.vrl-foto__bg,
+.vrl-foto img.vrl-foto__cut {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: none;
+}
+.vrl-foto img.vrl-foto__bg {
+  filter: blur(calc(var(--p) * .8px)) brightness(calc(1 - var(--p) * .2)) saturate(.88);
+  transition: filter .4s;
+}
+/* de man + kast: los boven de foto */
+.vrl-foto img.vrl-foto__cut {
+  pointer-events: none;
+  transform-origin: 55% 83%;
+  transform: translateZ(var(--z));
+  filter:
+    drop-shadow(-1px -1px 0 rgba(255, 255, 255, .55))        /* lichtrand */
+    drop-shadow(1px 1px 0 rgba(40, 32, 22, .55))            /* dikte */
+    drop-shadow(1px 1px 0 rgba(30, 24, 16, .5))
+    drop-shadow(1px 2px 0 rgba(20, 16, 10, .45))
+    drop-shadow(2px 2px 0 rgba(10, 8, 5, .35))
+    drop-shadow(calc(8px + var(--p) * 14px) calc(10px + var(--p) * 18px) calc(8px + var(--p) * 12px) rgba(0, 15, 35, .6));
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+/* contactschaduw op de vloer onder wielen en voeten */
+.vrl-foto__schaduw {
+  position: absolute;
+  left: 32%;
+  width: 46%;
+  top: 76%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 20, 45, .6), transparent);
+  transform: translateZ(1px);
+  opacity: calc(.5 + var(--p) * .5);
+  pointer-events: none;
+}
+/* bij aanwijzen komt hij nog iets verder naar voren */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .vrl-foto:hover { --z: 110px; }
+  .vrl-foto:hover img.vrl-foto__bg { filter: blur(1px) brightness(.74) saturate(.85); }
+}
+@media (max-width: 1023px) {
+  .vrl-media { padding: 0 20px 24px 0; }
+}
