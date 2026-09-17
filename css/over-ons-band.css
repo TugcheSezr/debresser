@@ -1,0 +1,76 @@
+/* =====================================================================
+   Over ons (over-ons.html / en-about-us.html): schuine lichtblauwe
+   Top Movers-band onderaan de sectie "Over ons", zelfde band als de
+   homepage (.oogmorgen). De kantoorfoto staat op de band als op een weg.
+   ===================================================================== */
+.oo-vrij--tmb {
+  --tmb-h: clamp(230px, 17vw, 340px);   /* hoogte band */
+  --tmb-onder: 70px;                     /* ruimte onder de band (lijn + vloer) */
+  padding-bottom: calc(var(--tmb-h) + var(--tmb-onder) + 90px);
+}
+.oo-tmb__band {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: var(--tmb-onder);
+  height: var(--tmb-h);
+  background: linear-gradient(90deg, var(--sky), #007ac0);
+  transform: skewY(-5deg);
+  transform-origin: 50% 100%;
+  z-index: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+.oo-tmb__mark,
+.oo-tmb__script {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  max-width: none;
+  transform: translateY(-50%);
+  opacity: .97;
+}
+.oo-tmb__mark { left: 2%; height: 30%; }
+.oo-tmb__script { right: 2.5%; height: 44%; }
+.oo-tmb__lijn,
+.oo-tmb__vloer {
+  position: absolute;
+  left: 0; right: 0;
+  transform: skewY(-5deg);
+  transform-origin: 50% 0;
+  backface-visibility: hidden;
+}
+.oo-tmb__lijn {
+  bottom: calc(var(--tmb-onder) - 16px);
+  height: 16px;
+  background: var(--navy-950, #020d41);
+  z-index: 3;
+}
+/* onder de lijn loopt de pagina door, zodat de band netjes schuin afsluit */
+.oo-tmb__vloer {
+  top: calc(100% - var(--tmb-onder) + 16px);
+  height: 400px;
+  background: var(--page, #fff);
+  z-index: 1;
+}
+/* tekst en foto boven de band; de foto zakt met zijn onderkant op de band */
+.oo-vrij--tmb .split { position: relative; z-index: 2; }
+.oo-vrij--tmb .oo-vrij__ruit { z-index: -1; }
+.oo-vrij--tmb .oo-vrij__media { z-index: 4; }
+.oo-vrij--tmb .oo-vrij__media::before { display: none; }
+
+@media (min-width: 1024px) {
+  .oo-vrij--tmb .split { align-items: end; }
+  .oo-vrij--tmb .oo-vrij__media {
+    align-self: end;
+    margin-bottom: calc(var(--tmb-h) * -.65 - 90px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .oo-vrij--tmb { --tmb-h: 200px; --tmb-onder: 40px; }
+  .oo-vrij--tmb .oo-vrij__media { margin-top: 28px; margin-bottom: calc(var(--tmb-h) * -.6 - 90px); }
+  .oo-tmb__mark { height: 26%; }
+  .oo-tmb__script { height: 34%; }
+  .oo-tmb__lijn { height: 12px; bottom: calc(var(--tmb-onder) - 12px); }
+  .oo-tmb__vloer { top: calc(100% - var(--tmb-onder) + 12px); }
+}

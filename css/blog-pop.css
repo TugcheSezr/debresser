@@ -1,0 +1,93 @@
+/* =====================================================================
+   Blog (blog.html): rustige hover, alleen de mensen/wagens komen naar voren
+   Per kaart ligt een vrijstaande versie van de foto (assets/img/blog-pop/,
+   zelfde verhouding als de bron) exact over de foto. Bij hover wordt die
+   vanaf de onderkant van het onderwerp vergroot (--ox/--oy in %, doel-
+   schaal --pop-s). De clip-path houdt hem binnen de zij- en onderrand van
+   de foto; alleen boven de fotorand mag hij naar buiten
+   (.post-card__pop--binnen: ook daar niet, voor onderwerpen die de
+   bovenrand al raken). De foto zelf zakt iets terug.
+   ===================================================================== */
+@property --bp-s {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+/* kaart: geen grote sprong meer */
+.page-blog .posts--3d > .post-card.card-3d:hover,
+.page-blog .posts--3d > .post-card.card-3d:focus-within {
+  transform: perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-4px) !important;
+  box-shadow:
+    var(--inner-light),
+    0 4px 8px rgba(2, 13, 65, .06), 0 16px 32px rgba(2, 13, 65, .1),
+    0 34px 64px -20px rgba(2, 13, 65, .22) !important;
+}
+.page-blog .posts--3d > .post-card:hover .post-card__img {
+  transform: translateZ(30px);
+  box-shadow: 0 12px 24px -12px rgba(2, 13, 65, .45);
+}
+.page-blog .posts--3d > .post-card:hover .post-card__body { transform: translateZ(18px); }
+.page-blog .posts--3d > .post-card:hover .post-card__body::before { transform: translateZ(48px) translateY(-3px) rotate(-11deg); }
+
+/* foto: niet meer inzoomen, bij een kaart met vrijstaand onderwerp iets dieper */
+.page-blog .posts--3d .post-card__img img { transition: transform 600ms var(--ease), filter 600ms var(--ease); }
+.page-blog .posts--3d > .post-card:hover .post-card__img img { transform: none; }
+.page-blog .posts--3d > .post-card:hover .post-card__img:has(+ .post-card__pop) img {
+  filter: brightness(.78) saturate(.85) blur(1.5px);
+}
+
+/* het vrijstaande onderwerp */
+.page-blog .posts--3d .post-card__pop {
+  --ox: 50;
+  --oy: 100;
+  --pop-s: 1.15;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  width: calc(100% - 24px);
+  height: auto;
+  max-height: none;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: calc(var(--ox) * 1%) calc(var(--oy) * 1%);
+  transform: translateZ(30px) scale(var(--bp-s));
+  clip-path: polygon(
+    -40% -80%, 140% -80%,
+    140% calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%),
+    calc((var(--ox) + (100 - var(--ox)) / var(--bp-s)) * 1%) calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%),
+    calc((var(--ox) + (100 - var(--ox)) / var(--bp-s)) * 1%) calc((var(--oy) + (100 - var(--oy)) / var(--bp-s)) * 1%),
+    calc((var(--ox) - var(--ox) / var(--bp-s)) * 1%) calc((var(--oy) + (100 - var(--oy)) / var(--bp-s)) * 1%),
+    calc((var(--ox) - var(--ox) / var(--bp-s)) * 1%) calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%),
+    -40% calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%)
+  );
+  filter: drop-shadow(0 0 0 rgba(2, 13, 65, 0));
+  transition: --bp-s 650ms var(--spring), opacity 200ms var(--ease), filter 500ms var(--ease);
+}
+.page-blog .posts--3d .post-card__pop--binnen {
+  clip-path: polygon(
+    calc((var(--ox) - var(--ox) / var(--bp-s)) * 1%) calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%),
+    calc((var(--ox) + (100 - var(--ox)) / var(--bp-s)) * 1%) calc((var(--oy) - var(--oy) / var(--bp-s)) * 1%),
+    calc((var(--ox) + (100 - var(--ox)) / var(--bp-s)) * 1%) calc((var(--oy) + (100 - var(--oy)) / var(--bp-s)) * 1%),
+    calc((var(--ox) - var(--ox) / var(--bp-s)) * 1%) calc((var(--oy) + (100 - var(--oy)) / var(--bp-s)) * 1%)
+  );
+}
+.page-blog .posts--3d > .post-card:hover .post-card__pop,
+.page-blog .posts--3d > .post-card:focus-within .post-card__pop {
+  --bp-s: var(--pop-s);
+  opacity: 1;
+  filter:
+    drop-shadow(0 1px 1px rgba(2, 13, 65, .3))
+    drop-shadow(0 14px 16px rgba(2, 13, 65, .35));
+}
+
+/* touch: geen hover-effect nodig */
+@media (hover: none) {
+  .page-blog .posts--3d .post-card__pop { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-blog .posts--3d .post-card__pop { transition: opacity 200ms linear; }
+}

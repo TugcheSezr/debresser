@@ -771,9 +771,11 @@ body::after {
 .ct-team__p--2 { left: 9%; z-index: 3; }
 .ct-team__p--3 { left: 31%; z-index: 3; }
 .ct-team__p--4 { left: 53%; z-index: 1; transform: scale(.88); filter: drop-shadow(0 14px 18px rgba(2, 13, 65, .25)) brightness(.97); }
-.ct-team__p--1:hover, .ct-team__p--4:hover { transform: scale(.91) translateY(-6px); }
-.ct-team__p--2:hover, .ct-team__p--3:hover { transform: translateY(-8px); }
-.ct-team__p:hover { z-index: 4; }
+/* hover volgt de zichtbare persoon, niet de doorzichtige fotorand (js/diepte.js sectie 05 zet .is-hover) */
+.ct-team__p { pointer-events: none; }
+.ct-team__p--1.is-hover, .ct-team__p--4.is-hover { transform: scale(.91) translateY(-6px); }
+.ct-team__p--2.is-hover, .ct-team__p--3.is-hover { transform: translateY(-8px); }
+.ct-team__p.is-hover { z-index: 4; }
 
 /* namenbalk ligt over de onderkant van de foto's */
 .ct-team__names {
@@ -801,8 +803,8 @@ body::after {
   .ct-team__names span:nth-child(3) { border-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ct-team__p--1:hover, .ct-team__p--4:hover { transform: scale(.88); }
-  .ct-team__p--2:hover, .ct-team__p--3:hover { transform: none; }
+  .ct-team__p--1.is-hover, .ct-team__p--4.is-hover { transform: scale(.88); }
+  .ct-team__p--2.is-hover, .ct-team__p--3.is-hover { transform: none; }
 }
 .ct-team__stage { overflow: hidden; border-radius: 0 0 var(--r-md) var(--r-md); padding-top: 20px; margin-top: -20px; box-sizing: content-box; }
 @media (max-width: 1023px) {

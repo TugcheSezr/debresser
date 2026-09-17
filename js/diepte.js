@@ -163,3 +163,66 @@
   markeer();
   window.addEventListener('hashchange', markeer);
 })();
+
+/* ---------- 05 Contact-team: hover op de persoon zelf ----------
+   De vier foto's zijn overlappende rechthoeken met doorzichtige randen.
+   We kijken naar de pixel onder de muis en kiezen de bovenste foto
+   waar daar echt iemand staat. */
+(function () {
+  'use strict';
+
+  document.querySelectorAll('.ct-team__stage').forEach(function (stage) {
+    var fotos = Array.prototype.slice.call(stage.querySelectorAll('.ct-team__p'));
+    if (!fotos.length) return;
+    var maskers = new Map();
+    var actief = null;
+
+    function masker(img) {
+      if (maskers.has(img)) return maskers.get(img);
+      if (!img.complete || !img.naturalWidth) return null;
+      var w = 190, h = Math.round(w * img.naturalHeight / img.naturalWidth);
+      var c = document.createElement('canvas');
+      c.width = w; c.height = h;
+      var ctx = c.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(img, 0, 0, w, h);
+      var m;
+      try { m = { w: w, h: h, a: ctx.getImageData(0, 0, w, h).data }; } catch (e) { m = false; }
+      maskers.set(img, m);
+      return m;
+    }
+
+    function raak(img, x, y) {
+      var r = img.getBoundingClientRect();
+      if (x < r.left || x >= r.right || y < r.top || y >= r.bottom) return false;
+      var m = masker(img);
+      if (m === false) return true; // canvas geblokkeerd: val terug op de rechthoek
+      if (!m) return false;
+      var px = Math.floor((x - r.left) / r.width * m.w);
+      var py = Math.floor((y - r.top) / r.height * m.h);
+      return m.a[(py * m.w + px) * 4 + 3] > 60;
+    }
+
+    function zIndex(img) { return parseInt(getComputedStyle(img).zIndex, 10) || 0; }
+
+    function zet(img) {
+      if (img === actief) return;
+      if (actief) actief.classList.remove('is-hover');
+      actief = img;
+      if (actief) actief.classList.add('is-hover');
+    }
+
+    stage.addEventListener('pointermove', function (e) {
+      // de huidige blijft actief zolang de muis op die persoon staat (geen geflikker)
+      if (actief && raak(actief, e.clientX, e.clientY)) return;
+      var volgorde = fotos.slice().sort(function (a, b) {
+        return zIndex(b) - zIndex(a) || fotos.indexOf(b) - fotos.indexOf(a);
+      });
+      var gevonden = null;
+      for (var i = 0; i < volgorde.length; i++) {
+        if (raak(volgorde[i], e.clientX, e.clientY)) { gevonden = volgorde[i]; break; }
+      }
+      zet(gevonden);
+    });
+    stage.addEventListener('pointerleave', function () { zet(null); });
+  });
+})();

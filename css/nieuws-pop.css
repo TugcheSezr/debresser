@@ -71,3 +71,12 @@
 @media (prefers-reduced-motion: reduce) {
   .nieuws-pop { transition: none; }
 }
+
+/* director: het blok zelf blijft bij hover staan (niet groter, niet kantelen),
+   alleen Sander stapt uit de foto. Rusttransform van .card-3d aanhouden zodat
+   de 3D-stapeling (translateZ van de man) gelijk blijft. */
+.nieuws-top--pop.card-3d,
+.nieuws-top--pop.card-3d:hover,
+.nieuws-top--pop.card-3d:focus-within {
+  transform: perspective(1000px) translateZ(0) !important;
+}
