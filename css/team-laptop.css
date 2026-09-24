@@ -1,0 +1,270 @@
+/* =====================================================================
+   Ons team (over-ons.html): laptopkaarten, overgenomen uit de repo
+   OranjeLift-Tech/debresser (css/style.css, blok "Ons team").
+   Elke medewerker zit in een laptop-videogesprek en komt met het hoofd
+   boven de schermrand uit. Losse file zodat style.css ongemoeid blijft;
+   de HTML komt uit de NABEWERKING voor over-ons.html in tools/sitebouw/bouw.cjs.
+   ===================================================================== */
+.tm-grid {
+  --navy: #020d41;
+  --navy-950: #020d41;
+  --green: #7bd534;
+  --green-700: #166909;
+  --muted: #676767;
+  --mist-2: #ebeff4;
+  --inner-light: inset 0 1px 0 rgba(255, 255, 255, .85), inset 0 -1px 0 rgba(2, 13, 65, .05);
+  --r-lg: 26px;
+  --gap: clamp(16px, 2.2vw, 32px);
+  --t: 320ms;
+  --spring: cubic-bezier(.34, 1.56, .64, 1);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+/* zelfde lichte band als de kop "Ons team" erboven */
+.sectie.tm-section { overflow: hidden; background: var(--creme-2, #ebeff4); padding-top: clamp(8px, 2vw, 24px); }
+
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(48px, 5vw, 72px) var(--gap);
+  margin-top: clamp(24px, 4vw, 48px);
+  padding: 0;
+  list-style: none;
+}
+.tm {
+  --rise: 0cqw;
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 clamp(18px, 2vw, 26px) 28px;
+  text-align: center;
+}
+/* witte kaart begint halverwege het scherm; hoofd en scherm steken erboven uit */
+.tm::before {
+  content: "";
+  position: absolute;
+  inset: 44cqw 0 0;
+  z-index: -1;
+  border-radius: var(--r-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .78));
+  border: 1px solid rgba(255, 255, 255, .9);
+  box-shadow: var(--inner-light), 0 1px 2px rgba(2, 13, 65, .06), 0 24px 48px -26px rgba(2, 13, 65, .35);
+  transition: box-shadow var(--t) var(--ease), transform var(--t) var(--ease);
+}
+.tm__laptop {
+  position: relative;
+  width: 100%;
+  margin: 34cqw 0 18px;
+  transition: transform 520ms var(--spring);
+}
+.tm__lid {
+  position: relative;
+  padding: 2.6cqw 2.6cqw 3.4cqw;
+  border-radius: 16px 16px 6px 6px;
+  background: linear-gradient(160deg, #00498f 0%, var(--navy-950) 55%, #020d41 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    inset 0 0 0 1px rgba(255, 255, 255, .05),
+    0 22px 40px -18px rgba(2, 13, 65, .6);
+  transition: box-shadow var(--t) var(--ease);
+}
+/* webcam in de bovenrand */
+.tm__lid::before {
+  content: "";
+  position: absolute;
+  top: 1.05cqw; left: 50%;
+  width: 6px; height: 6px;
+  margin-left: -3px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #007ac0, #020d41 70%);
+}
+.tm__screen {
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: 16 / 10;
+}
+.tm__view {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--mist-2);
+}
+.tm__photo,
+.tm__pop {
+  position: absolute;
+  left: 0;
+  width: 100cqw;
+  max-width: none;
+  max-height: none;
+  transform: translateY(var(--rise));
+  transition: transform 900ms var(--spring);
+  will-change: transform;
+}
+.tm__photo { top: -59.375cqw; height: 131.25cqw; object-fit: cover; }
+/* lichtval op het glas en een donkere onderrand voor de knoppen */
+.tm__view::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(0deg, rgba(2, 13, 65, .55) 0%, rgba(2, 13, 65, 0) 32%),
+    linear-gradient(118deg, rgba(255, 255, 255, .16) 0%, rgba(255, 255, 255, 0) 38%);
+}
+.tm__popwrap {
+  position: absolute;
+  left: -8cqw; right: -8cqw;
+  bottom: 100%;
+  height: 74cqw;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.tm__pop {
+  left: 8cqw;
+  top: 14.625cqw;
+  height: 71.875cqw;
+  filter: drop-shadow(0 -2px 10px rgba(2, 13, 65, .18));
+}
+/* live-signaal linksboven */
+.tm__live {
+  position: absolute;
+  top: 3.2cqw; left: 3.2cqw;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 5px 8px 5px 20px;
+  border-radius: 999px;
+  background: rgba(2, 13, 65, .45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.tm__live::before {
+  content: "";
+  position: absolute;
+  left: 8px; top: 50%;
+  width: 7px; height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(123, 213, 52, .7);
+  animation: tm-live 2s ease-out infinite;
+}
+.tm__live i { width: 3px; border-radius: 2px; background: #fff; }
+.tm__live i:nth-child(1) { height: 4px; }
+.tm__live i:nth-child(2) { height: 7px; }
+.tm__live i:nth-child(3) { height: 10px; }
+@keyframes tm-live { 70% { box-shadow: 0 0 0 7px rgba(123, 213, 52, 0); } 100% { box-shadow: 0 0 0 0 rgba(123, 213, 52, 0); } }
+/* gespreksknoppen onderin */
+.tm__bar {
+  position: absolute;
+  left: 50%; bottom: 3cqw;
+  z-index: 1;
+  display: flex;
+  gap: 1.6cqw;
+  padding: 1.2cqw;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateX(-50%);
+}
+.tm__bar i {
+  display: grid;
+  place-items: center;
+  width: max(24px, 7.5cqw); height: max(24px, 7.5cqw);
+  border-radius: 50%;
+  background: rgba(2, 13, 65, .55);
+  transition: transform var(--t) var(--spring), background var(--t) var(--ease);
+}
+.tm__bar svg { width: 55%; height: 55%; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tm__bar .tm__call { background: var(--green); box-shadow: 0 4px 12px -2px rgba(123, 213, 52, .7); }
+.tm__bar .tm__call svg { fill: #fff; stroke: none; }
+/* onderkant van de laptop */
+.tm__base {
+  position: relative;
+  width: 114%;
+  height: max(12px, 3.6cqw);
+  margin: 0 -7%;
+  border-radius: 2px 2px 14px 14px / 2px 2px 10px 10px;
+  background: linear-gradient(180deg, #ebeff4 0%, #c7c7c7 55%, #c7c7c7 100%);
+  box-shadow: inset 0 1px 0 #fff, 0 16px 22px -12px rgba(2, 13, 65, .55);
+}
+.tm__base::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  width: 18%; height: 45%;
+  transform: translateX(-50%);
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #c7c7c7, #c7c7c7);
+}
+.tm__base::after {
+  content: "";
+  position: absolute;
+  left: 6%; right: 6%; top: 100%;
+  height: 16px;
+  background: radial-gradient(50% 100% at 50% 0%, rgba(2, 13, 65, .28), transparent 70%);
+}
+.tm h3 { margin-top: 10px; font-size: 1.15rem; line-height: 1.3; color: var(--navy); }
+.tm__role {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(123, 213, 52, .1);
+  color: var(--green-700);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.tm__role::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.tm p { max-width: 36ch; margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+/* hover: laptop komt omhoog, persoon leunt verder naar voren */
+.tm:hover { --rise: -3cqw; }
+.tm:hover::before { box-shadow: var(--inner-light), 0 1px 2px rgba(2, 13, 65, .06), 0 40px 70px -30px rgba(2, 13, 65, .45); }
+.tm:hover .tm__laptop { transform: translateY(-6px); }
+.tm:hover .tm__lid {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    inset 0 0 0 1px rgba(123, 213, 52, .35),
+    0 0 0 4px rgba(123, 213, 52, .12),
+    0 30px 50px -18px rgba(2, 13, 65, .65);
+}
+.tm:hover .tm__bar i { transform: translateY(-2px); }
+
+/* binnenkomst: persoon komt uit het scherm omhoog (main.js zet .in op elk kind van [data-reveal-groep]) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .tm-grid > .tm:not(.in) { --rise: 22cqw; }
+  .js .tm-grid > .tm.in .tm__photo,
+  .js .tm-grid > .tm.in .tm__pop { transition-delay: 260ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tm__live::before { animation: none; }
+  .tm__photo, .tm__pop, .tm__laptop { transition: none; }
+}
+
+@media (max-width: 1079px) {
+  .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 639px) {
+  .tm-grid { grid-template-columns: minmax(0, 400px); justify-content: center; }
+}
+
+/* ---------- aanpassingen voor deze site ----------
+   style.css geeft losse <li>'s een witte achtergrond; hier tekent alleen
+   .tm::before de kaart. De kop "Ons team" staat in de sectie erboven
+   en wordt gecentreerd zoals in de repo. */
+.tm-grid > .tm { background: none; border: 0; box-shadow: none; border-radius: 0; }
+.sectie--creme2:has(+ .tm-section) { display: flow-root; text-align: center; padding-bottom: 0; }
+.sectie--creme2:has(+ .tm-section) .db-tekst { max-width: 62ch; margin-inline: auto; }
+.sectie--creme2:has(+ .tm-section) .kop { color: #00498f; }

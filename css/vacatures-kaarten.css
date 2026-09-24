@@ -1,0 +1,507 @@
+/* =====================================================================
+   Vacatures (vacatures.html): vacaturekaarten, overgenomen uit de repo
+   OranjeLift-Tech/debresser (css/style.css blok "Vacatures ... als 'ticket'"
+   + css/vacatures-pop.css vanaf "Open sollicitatie"). Witte plaat, foto in
+   een lijst die over de bovenrand hangt, de mensen (-vrij.webp) steken
+   boven de lijst uit. Open sollicitatie als Nachtblauwe band eronder.
+   Losse file zodat style.css ongemoeid blijft; de HTML komt uit de
+   NABEWERKING voor vacatures.html in tools/sitebouw/bouw.cjs.
+   ===================================================================== */
+.vac-list__grid,
+.vac-mail {
+  --r-xl: 34px;
+  --inner-light: inset 0 1px 0 rgba(255, 255, 255, .85), inset 0 -1px 0 rgba(2, 13, 65, .05);
+  --white: #ffffff;
+  --mist: #ebeff4;
+  --navy: #020d41;
+  --navy-950: #020d41;
+  --green: #7bd534;
+  --green-600: #166909;
+  --green-700: #166909;
+  --green-300: #7bd534;
+  --sky: #33bcfa;
+  --muted: #676767;
+  --line: rgba(2, 13, 65, .1);
+  --on-navy: #c7c7c7;
+  --t: 320ms;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+.vac-list__grid { display: grid; margin: 0; padding: 0; list-style: none; }
+.vac-card .icon,
+.vac-mail .icon { width: 24px; height: 24px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.vac-card__photo { margin: 0; }
+
+.vac-card {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(2, 13, 65, .08);
+  border-radius: var(--r-xl);
+  background: var(--white);
+  box-shadow: var(--inner-light), 0 30px 60px -30px rgba(2, 13, 65, .3), 0 8px 20px -12px rgba(2, 13, 65, .12);
+  transition: transform 420ms cubic-bezier(.34, 1.4, .6, 1), box-shadow var(--t) var(--ease);
+}
+.vac-card:hover { transform: translateY(-8px); box-shadow: var(--inner-light), 0 46px 80px -34px rgba(2, 13, 65, .4), 0 12px 26px -12px rgba(2, 13, 65, .16); }
+.vac-card__photo {
+  position: relative;
+  margin: 10px 10px 0;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  border-radius: calc(var(--r-xl) - 8px);
+  background: var(--mist);
+}
+.vac-card__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+.vac-card:hover .vac-card__photo img { transform: scale(1.06); }
+.vac-card__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(200deg, rgba(2, 13, 65, .35) 0%, rgba(2, 13, 65, 0) 40%, rgba(2, 13, 65, 0) 70%, rgba(2, 13, 65, .3) 100%);
+}
+.vac-card__no {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 999px;
+  color: var(--white);
+  background: rgba(2, 13, 65, .62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.vac-card__go {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--green);
+  box-shadow: 0 10px 24px -8px rgba(123, 213, 52, .8), inset 0 1px 0 rgba(255, 255, 255, .35);
+  transition: transform 420ms cubic-bezier(.34, 1.5, .6, 1), background var(--t) var(--ease);
+}
+.vac-card__go .icon { width: 22px; height: 22px; stroke-width: 2.4; }
+.vac-card:hover .vac-card__go { transform: rotate(45deg) scale(1.08); background: var(--green-600); }
+
+/* perforatie tussen foto en tekst, met uitsparingen aan de zijkanten */
+.vac-card__body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 22px;
+  padding: 26px clamp(22px, 3vw, 34px) clamp(22px, 2.6vw, 30px);
+  border-top: 2px dashed rgba(2, 13, 65, .12);
+}
+.vac-card__body::before,
+.vac-card__body::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--mist);
+  box-shadow: inset 0 2px 4px rgba(2, 13, 65, .08);
+}
+.vac-card__body::before { left: -13px; }
+.vac-card__body::after { right: -13px; }
+
+.vac-card__title { margin: 0; color: var(--navy); font-size: clamp(1.3rem, 1.05rem + .8vw, 1.7rem); line-height: 1.18; letter-spacing: -.02em; }
+.vac-card__title a { color: inherit; text-decoration: none; }
+.vac-card__title a::after { content: ""; position: absolute; inset: 0; z-index: 2; border-radius: var(--r-xl); }
+.vac-card__title a:focus-visible { outline: none; }
+.vac-card:has(.vac-card__title a:focus-visible) { outline: 3px solid var(--sky); outline-offset: 4px; }
+.vac-card:hover .vac-card__title a { color: var(--green-700); }
+
+.vac-card__places { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; }
+.vac-card__places .icon { width: 20px; height: 20px; margin-right: 2px; color: var(--green-600); }
+.vac-card__places span {
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: var(--navy);
+  background: var(--mist);
+  box-shadow: inset 0 0 0 1px rgba(2, 13, 65, .07);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.vac-card__places i { display: none; }
+.vac-card__dash { display: none; }
+.vac-card__lead { margin: 0; color: var(--navy); font-weight: 600; }
+.vac-card__intro { margin: 0; color: var(--muted); }
+
+.vac-card__foot { display: flex; margin-top: 6px; padding-top: 16px; border-top: 1px solid var(--line); }
+.vac-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+.vac-card__chev {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--green-700);
+  background: rgba(123, 213, 52, .14);
+  font-weight: 700;
+  transition: transform var(--t) var(--ease), background var(--t) var(--ease), color var(--t) var(--ease);
+}
+.vac-card:hover .vac-card__chev { transform: translateX(4px); color: var(--navy); background: var(--green); }
+
+/* open sollicitatie */
+.vac-mail {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 20px 24px;
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: var(--r-xl);
+  color: var(--on-navy);
+  background:
+    radial-gradient(70% 120% at 100% 0%, rgba(123, 213, 52, .3), transparent 60%),
+    linear-gradient(160deg, var(--navy) 0%, var(--navy-950) 100%);
+  box-shadow: 0 30px 60px -30px rgba(2, 13, 65, .6);
+}
+.vac-mail::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  bottom: -50px;
+  z-index: -1;
+  width: 170px;
+  height: 170px;
+  border: 2px solid rgba(123, 213, 52, .25);
+  transform: rotate(45deg);
+}
+.vac-mail__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  color: var(--white);
+  background: linear-gradient(160deg, #7bd534, var(--green-600));
+  box-shadow: 0 14px 30px -10px rgba(123, 213, 52, .9), inset 0 1px 0 rgba(255, 255, 255, .4);
+  transform: rotate(-6deg);
+}
+.vac-mail__icon .icon { width: 30px; height: 30px; }
+.vac-mail p { margin: 0; font-size: 1.02rem; line-height: 1.7; }
+.vac-mail a { color: var(--white); font-weight: 600; text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.vac-mail a:hover { color: var(--green-300); }
+
+@media (max-width: 560px) {
+  .vac-card__photo { aspect-ratio: 16 / 10; }
+  .vac-mail { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vac-card, .vac-card__photo img, .vac-card__go, .vac-card__chev { transition: none; }
+  .vac-card:hover, .vac-card:hover .vac-card__photo img { transform: none; }
+}
+
+/* Vacatures-tickets: bij hover groeien de mensen, niet de foto */
+.vac-card__photo img { transition: transform 700ms var(--ease), filter 700ms var(--ease); }
+.vac-card:hover .vac-card__photo img { transform: none; }
+.vac-card__photo .vac-card__leeg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 400ms var(--ease), filter 700ms var(--ease);
+}
+.vac-card__photo .vac-card__mensen {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0 rgba(2, 13, 65, 0));
+  transition: transform 520ms cubic-bezier(.34, 1.45, .6, 1), filter 520ms var(--ease);
+}
+.vac-card__photo::after { z-index: 3; }
+.vac-card__no, .vac-card__go { z-index: 4; }
+.vac-card:hover .vac-card__photo .vac-card__leeg { opacity: 1; }
+.vac-card:hover .vac-card__photo img:not(.vac-card__mensen) { filter: saturate(.75) brightness(.86) blur(1.5px); }
+.vac-card:hover .vac-card__photo .vac-card__mensen {
+  transform: scale(1.12);
+  filter: drop-shadow(0 14px 18px rgba(2, 13, 65, .45));
+}
+
+/* ---------------------------------------------------------------------
+   Open sollicitatie · brede band onder de twee kolommen
+
+   Het blok stond in de linkerkolom onder de vacaturekaarten, met icoon en
+   tekst links en rechts een lege hoek. Het staat nu in de HTML buiten de
+   .split, dus direct in de .wrap: een liggende balk over de volle breedte,
+   die rechts gelijk uitkomt met het formulier en de teamfoto erboven.
+   Icoon en tekst staan als groep in het midden; de tekst blijft binnen
+   62ch zodat de twee regels ongeveer even lang zijn.
+
+   Staat in dit bestand en niet in css/style.css, want dat bestand is van
+   alle pagina's. Zelfde blok op vacatures.html en en-work-at-de-bresser.html.
+   --------------------------------------------------------------------- */
+.vac-mail {
+  justify-content: center;
+  gap: 18px 24px;
+  margin-top: clamp(22px, 2.6vw, 34px);
+  text-align: center;
+}
+.vac-mail p { max-width: 62ch; }
+/* op een smal scherm past het envelopje niet meer naast de tekst */
+@media (max-width: 560px) {
+  .vac-mail { align-items: center; }
+}
+
+/* ---------------------------------------------------------------------
+   Vacaturekaarten als plaat (2026-09-23)
+
+   De 'ticket'-kaart (perforatielijn, halve rondjes, liggende uitsnede,
+   alles wiebelt bij hover) viel niet goed. Nu een stille witte plaat met
+   Diepblauwe dikte. De foto is een afdruk met eigen dikte die over de
+   bovenrand van de kaart hangt, licht scheef, per kaart een andere kant op.
+   Zelfde foto's, niets beweegt. Alleen titel en knop zijn klikbaar.
+   Overschrijft de .vac-card-regels uit css/style.css (die zijn van alle
+   pagina's, daarom staat dit hier). NL en EN hebben dezelfde opmaak.
+   --------------------------------------------------------------------- */
+.vac-list__grid { gap: clamp(46px, 5vw, 64px); padding-top: 14px; }
+
+.vac-card {
+  border: 0;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 0 0 1px rgba(2, 13, 65, .07),
+    0 8px 0 #00498f, 0 14px 0 #00346a,
+    0 40px 60px -26px rgba(2, 13, 65, .45);
+  transition: none;
+}
+.vac-card:hover {
+  transform: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 0 0 1px rgba(2, 13, 65, .07),
+    0 8px 0 #00498f, 0 14px 0 #00346a,
+    0 40px 60px -26px rgba(2, 13, 65, .45);
+}
+
+/* de foto: afdruk met eigen dikte die over de bovenrand van de kaart hangt */
+.vac-card__photo {
+  margin: -22px 16px 0;
+  aspect-ratio: 16 / 9;
+  border: 6px solid #fff;
+  border-radius: 22px;
+  background: var(--mist);
+  box-shadow:
+    0 1px 0 rgba(2, 13, 65, .08),
+    0 7px 0 #d6dde6, 0 12px 0 #b9c4d1,
+    0 34px 44px -18px rgba(2, 13, 65, .55);
+  rotate: -1.5deg;
+}
+.vac-card__photo img,
+.vac-card:hover .vac-card__photo img { transform: none; filter: none; transition: none; }
+.vac-card__photo .vac-card__leeg,
+.vac-card__photo .vac-card__mensen { display: none; }
+.vac-card__photo::after { background: linear-gradient(180deg, rgba(2, 13, 65, 0) 60%, rgba(2, 13, 65, .45) 100%); }
+
+/* nummer als groene plaat onderaan de foto, pijlrondje weg */
+.vac-card__no {
+  top: auto;
+  bottom: 14px;
+  left: 14px;
+  padding: 7px 13px;
+  border: 0;
+  border-radius: 12px;
+  color: var(--navy);
+  background: var(--green);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 4px 0 #3f7420;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.vac-card__go { display: none; }
+
+/* tekstkant: geen perforatie meer */
+.vac-card__body {
+  gap: 12px;
+  margin: 0;
+  padding: clamp(26px, 3vw, 36px) clamp(22px, 2.6vw, 34px);
+  border: 0;
+}
+.vac-card__body::before,
+.vac-card__body::after { content: none; }
+.vac-card__title { font-size: clamp(1.2rem, 1rem + .6vw, 1.5rem); }
+.vac-card:hover .vac-card__title a { color: inherit; }
+.vac-card__title a:hover { color: var(--green-700); }
+/* alleen titel en knop openen de vacature, niet de hele kaart */
+.vac-card__title a::after { content: none; }
+.vac-card:has(.vac-card__title a:focus-visible) { outline: none; }
+.vac-card__title a:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+
+.vac-card__places { gap: 6px; }
+.vac-card__places .icon { width: 18px; height: 18px; }
+.vac-card__places span {
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #e6f0f8;
+  box-shadow: inset 0 0 0 1px rgba(0, 73, 143, .12), 0 2px 0 rgba(0, 73, 143, .18);
+  font-size: 13px;
+}
+.vac-card__lead { font-size: .98rem; line-height: 1.5; }
+.vac-card__intro { font-size: .95rem; line-height: 1.6; }
+
+/* 'Lees verder' wordt een echte knop */
+.vac-card__foot { margin-top: 4px; padding-top: 0; border: 0; }
+.vac-card__more {
+  gap: 10px;
+  padding: 11px 20px 11px 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: #00498f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 4px 0 #002a55;
+  font-size: .95rem;
+  transition: background var(--t) var(--ease);
+}
+.vac-card__more:hover { background: #007dc2; }
+.vac-card__more:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.vac-card__chev,
+.vac-card:hover .vac-card__chev {
+  width: 26px;
+  height: 26px;
+  color: var(--navy);
+  background: var(--green);
+  transform: none;
+  transition: none;
+}
+
+/* smal: foto boven, hangt over de bovenrand */
+@media (max-width: 560px) {
+  .vac-list__grid { gap: 52px; padding-top: 18px; }
+  .vac-card,
+  .vac-card:nth-child(2n) { grid-template-columns: minmax(0, 1fr); }
+  .vac-card__photo,
+  .vac-card:nth-child(2n) .vac-card__photo {
+    order: 0;
+    min-height: 0;
+    margin: -18px 12px 0;
+    aspect-ratio: 4 / 3;
+  }
+}
+/* tweede afdruk de andere kant op, zodat het geen stapel klonen wordt */
+.vac-card:nth-child(2n) .vac-card__photo { rotate: 1.5deg; }
+
+/* ---------------------------------------------------------------------
+   Mensen uit de foto (2026-09-23)
+   De foto staat rechtop in een lijst met dikte. Foto en uitsnede
+   (-vrij.webp) liggen precies op elkaar, met de onderkant op de onderrand
+   van de lijst en de rest van de afbeelding erboven. De foto wordt op de
+   lijst afgeknipt, de uitsnede niet: zo steken hoofd en schouders boven
+   de lijst en de kaartrand uit. Geen vergroting, geen kanteling, stil.
+   --vk-s schuift beide lagen omhoog (+) of omlaag (-), in fracties van de
+   fotobreedte; daarmee kies je waar de bovenrand door de mensen snijdt.
+   --------------------------------------------------------------------- */
+.vac-card { container-type: inline-size; }
+.vac-list__grid { gap: 110px; padding-top: 70px; }
+
+.vac-card__photo {
+  --vk-w: calc(100cqw - 32px);                 /* breedte van de lijst */
+  --vk-h: calc(var(--vk-w) * 860 / 760);        /* hoogte van de afbeelding */
+  --vk-s: 0;
+  overflow: visible;
+  margin: 0 16px;
+  margin-top: -18px;
+  aspect-ratio: 16 / 10;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  rotate: none;
+}
+.vac-card:nth-child(2n) .vac-card__photo { rotate: none; }
+/* de lijst: witte rand met grijze dikte en slagschaduw */
+.vac-card__photo::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: 0;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow:
+    0 7px 0 #d6dde6, 0 12px 0 #b9c4d1,
+    0 34px 44px -18px rgba(2, 13, 65, .55);
+}
+.vac-card__photo img,
+.vac-card:hover .vac-card__photo img {
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: calc(var(--vk-s) * var(--vk-w) * -1);
+  width: 100%;
+  height: var(--vk-h);
+  object-fit: fill;
+  object-position: 50% 50% !important;
+  transform: none;
+  filter: none;
+  transition: none;
+  visibility: visible;
+}
+/* de foto, afgeknipt op de lijst */
+.vac-card__photo img:first-child {
+  z-index: 1;
+  clip-path: inset(calc(var(--vk-h) - var(--vk-w) * 10 / 16 - var(--vk-s) * var(--vk-w) * -1) 0 calc(var(--vk-s) * var(--vk-w) * -1) 0 round 16px);
+}
+.vac-card__photo .vac-card__leeg { display: none; }
+/* de mensen: boven vrij, onder en opzij op de lijst */
+.vac-card__photo .vac-card__mensen,
+.vac-card:hover .vac-card__photo .vac-card__mensen {
+  display: block;
+  z-index: 2;
+  inset: auto 0 calc(var(--vk-s) * var(--vk-w) * -1) 0;
+  clip-path: inset(0 0 calc(var(--vk-s) * var(--vk-w) * -1) 0);
+  filter: drop-shadow(0 10px 12px rgba(2, 13, 65, .4));
+  -webkit-mask-image: none;
+          mask-image: none;
+}
+.vac-card__no { z-index: 3; }
+
+@media (max-width: 560px) {
+  .vac-list__grid { gap: 80px; padding-top: 44px; }
+}
+
+/* Hover stil (2026-09-23): de oude regels in css/style.css maakten de foto
+   wazig en vergrootten de mensen, waardoor ze van hun plek schoven. Hier
+   met genoeg gewicht uitgezet; bij hover verandert alleen de knopkleur. */
+.vac-card:hover .vac-card__photo img:not(.vac-card__mensen) { filter: none; }
+.vac-card:hover .vac-card__photo .vac-card__mensen { transform: none; }
+.vac-card__title a:hover { color: inherit; }
+.vac-card__more { transition: none; }
+
+/* Plat (2026-09-24): de kaarten zelf niet meer in 3D, "de foto is dat al".
+   Geen Diepblauwe dikte onder de kaart, geen grijze dikte onder de lijst,
+   geen harde onderrand aan nummer, plaatsen en knop. Alleen een zachte
+   schaduw; de mensen blijven wel boven de foto uitsteken. */
+.vac-card,
+.vac-card:hover {
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .07), 0 18px 40px -24px rgba(2, 13, 65, .35);
+}
+.vac-card__photo::after {
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, .06);
+}
+.vac-card__no { box-shadow: none; }
+.vac-card__places span { box-shadow: inset 0 0 0 1px rgba(0, 73, 143, .12); }
+.vac-card__more { box-shadow: none; }
