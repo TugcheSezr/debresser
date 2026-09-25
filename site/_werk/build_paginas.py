@@ -59,8 +59,10 @@ BERICHT = (WERK / "blok-bericht.html").read_text(encoding="utf-8")
 BERICHT_OP = {"/verhuizen/", "/assetmanagement/", "/duurzame-werkomgeving/", "/breda/", "/roosendaal/", "/bergen-op-zoom/"}
 
 
-def bericht_op(href):
-    return href in BERICHT_OP or href.startswith("/verhuisbedrijf-") or href in nav.BLOG
+def bericht_op(href, inhoud=""):
+    # subcategoriepagina's (25-09-2026 avond) ook, tenzij ze een eigen aanvraagformulier hebben (data-w3f)
+    return (href in BERICHT_OP or href.startswith("/verhuisbedrijf-") or href in nav.BLOG
+            or (href in nav.SUB_OUDER and "data-w3f" not in inhoud))
 
 
 REVEAL_JS = """// Reveal zodra een blok in beeld komt.
@@ -129,7 +131,7 @@ def og_beeld(naam):
 
 
 def standaard_hero(href):
-    if href in nav.OUDERS and nav.OUDERS[href][0] == "Diensten":
+    if nav.is_dienst(href):
         return "hero/team-wagens"
     if href in (nav.OFFERTE, "/contact/", "/faq/"):
         return "hero/breda-team"
@@ -199,11 +201,12 @@ def esc(t):
 
 # ---------------------------------------------------------------- stukken van de pagina
 def kruimels(href, titel):
-    uit = [("Home", "/")]
-    if href in nav.OUDERS:
-        uit.append(nav.OUDERS[href])
-    uit.append((titel, None))
-    return uit
+    """Home, dan de hele keten van menuouders (een subcategorie: Diensten, dan haar dienst), dan de pagina zelf."""
+    keten, h = [], href
+    while h in nav.OUDERS:
+        keten.insert(0, nav.OUDERS[h])
+        h = nav.OUDERS[h][1]
+    return [("Home", "/")] + keten + [(titel, None)]
 
 
 # Hero-video, alleen op de homepage (zoals de-kievit.nl): echte beelden van De Bresser uit de eigen YouTube-films
@@ -337,8 +340,8 @@ def schema(href, titel, beschrijving, beeld=None, faq=None):
                       "datePublished": "-".join(d.groups()), "mainEntityOfPage": {"@id": u + "#pagina"},
                       "author": {"@id": nav.DOMEIN + "/#bedrijf"}, "publisher": {"@id": nav.DOMEIN + "/#bedrijf"},
                       "inLanguage": "nl-NL", **({"image": nav.DOMEIN + beeld} if beeld else {})})
-        # Dienstpagina's (ouder Diensten in het menu): de dienst zelf, geleverd door De Bresser.
-        if nav.OUDERS.get(href, ("",))[0] == "Diensten":
+        # Dienstpagina's en hun subcategorieën: de dienst zelf, geleverd door De Bresser.
+        if nav.is_dienst(href):
             dienst = {"@type": "Service", "@id": u + "#dienst", "name": titel, "serviceType": titel, "url": u,
                       "provider": {"@type": "MovingCompany", "@id": nav.DOMEIN + "/#bedrijf", "name": "De Bresser",
                                    "url": nav.DOMEIN + "/"},
@@ -571,6 +574,44 @@ def blog_html(aantal=3):
 </section>'''
 
 
+def zusters_html(href):
+    """{{ZUSTERS}} op een subcategoriepagina (d1, 25-09-2026 avond): #meer "Meer over <dienst>", de andere
+    subcategorieën van dezelfde dienst als witte kaarten, met dezelfde klassen als home "Waarmee wij u helpen"
+    (blok-dienstkaarten-wit.html, zonder de uitsnedes). Kaartfoto = de hero van die pagina, tekst = haar LEAD."""
+    dienst = nav.SUB_OUDER[href]
+    label = dict(nav.DIENSTEN)[dienst]
+    kaarten = []
+    for h, l in nav.SUBDIENSTEN[dienst]:
+        if h == href or not nav.live(h):
+            continue
+        meta = bron_meta(h)[0]
+        beeld = kaartbeeld(hero_naam(h, meta), "(max-width:860px) 92vw, 400px", "", meta.get("HERO_FOCUS"), klasse="sb-dienst__foto")
+        lead = f'\n          <p>{meta["LEAD"]}</p>' if meta.get("LEAD") else ""
+        kaarten.append(f'''      <li class="sb-dienst">
+        <div class="sb-dienst__beeld">{beeld}</div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="{h}">{meta.get("TITEL") or l}</a></h3>{lead}
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>''')
+    if not kaarten:
+        return ""
+    # vier kaarten op een rij (het gewone raster), twee of drie in het raster van drie
+    raster = "sb-diensten__grid sb-diensten__grid--wit" if len(kaarten) == 4 else "sb-diensten__grid sb-diensten__grid--3 sb-diensten__grid--wit"
+    return f'''<section class="sectie sb-diensten" id="meer" aria-labelledby="meer-kop">
+  <div class="wrap">
+    <div class="sectiekop" data-reveal>
+      <p class="label">{label}</p>
+      <h2 class="kop" id="meer-kop">Meer over {label.lower()}</h2>
+      <p class="intro">Of bekijk <a href="{dienst}">alles over {label.lower()}</a> op een pagina.</p>
+    </div>
+    <ul class="{raster}" data-reveal-groep>
+{chr(10).join(kaarten)}
+    </ul>
+  </div>
+</section>'''
+
+
 def kaart_van(m):
     """{{KAARTBEELD /route/ | sizes}}: de hero van die pagina als kaartfoto (de kaarten op /blog/ tonen de hero
     van hun eigen bericht, wens gebruiker 25-09: elke header een eigen foto, de kaart volgt)."""
@@ -588,6 +629,7 @@ def pagina(href):
               .replace("{{VESTIGINGEN_PERSONEN}}", vestigingen_html(personen=True))
               .replace("{{VESTIGINGEN}}", vestigingen_html()).replace("{{WERKGEBIED}}", werkgebied_html())
               .replace("{{BLOG}}", blog_html())
+              .replace("{{ZUSTERS}}", zusters_html(href) if "{{ZUSTERS}}" in inhoud else "")
               .replace("{{DIENSTEN_WIT}}", (WERK / "blok-dienstkaarten-wit.html").read_text(encoding="utf-8").strip())
               .replace("{{DIENSTEN}}", (WERK / "blok-dienstkaarten.html").read_text(encoding="utf-8").strip())
               .replace("{{KV_URL}}", nav.KV_URL).replace("{{KV_CIJFER}}", nav.KV_CIJFER)
@@ -601,7 +643,7 @@ def pagina(href):
     # Onder de inhoud: de /offerte/-tekst zegt "met het formulier onderaan deze pagina".
     if href == nav.OFFERTE:
         delen.append(FORMULIER)
-    if bericht_op(href):
+    if bericht_op(href, inhoud):
         # andere achtergrond dan de laatste sectie, anders lopen ze in elkaar over
         laatste = re.findall(r'<section class="([^"]*)"', inhoud)
         creme = not laatste or "sectie--creme2" not in laatste[-1]

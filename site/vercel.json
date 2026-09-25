@@ -14,173 +14,73 @@
       "permanent": true
     },
     {
-      "source": "/zakelijke-verhuizing/",
-      "destination": "/verhuizen/#zakelijk",
-      "statusCode": 301
-    },
-    {
       "source": "/kantoor-verhuizen/",
-      "destination": "/verhuizen/#zakelijk",
+      "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/winkelverhuizing/",
-      "destination": "/verhuizen/#zakelijk",
+      "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/verhuisservice-zakelijk/",
-      "destination": "/verhuizen/#zakelijk",
-      "statusCode": 301
-    },
-    {
-      "source": "/particuliere-verhuizing/",
-      "destination": "/verhuizen/#particulier",
+      "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/full-service-verhuizing/",
-      "destination": "/verhuizen/#particulier",
+      "destination": "/particuliere-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/internationale-verhuizing/engeland/",
-      "destination": "/verhuizen/#internationaal",
-      "statusCode": 301
-    },
-    {
-      "source": "/internationale-verhuizing/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/duitsland/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/frankrijk/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/zwitserland/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/benelux-verhuizing/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/verhuisbedrijf-belgie/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/verhuisbedrijf-europa/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/groupage-transport/",
-      "destination": "/verhuizen/#internationaal",
-      "statusCode": 301
-    },
-    {
-      "source": "/zorg-verhuizing/",
-      "destination": "/verhuizen/#zorg",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/senioren-verhuizen/",
-      "destination": "/verhuizen/#zorg",
-      "statusCode": 301
-    },
-    {
-      "source": "/duurzaam-verhuizen/",
-      "destination": "/verhuizen/#duurzaam",
-      "statusCode": 301
-    },
-    {
-      "source": "/zakelijke-opslag/",
-      "destination": "/opslag/#zakelijk",
-      "statusCode": 301
-    },
-    {
-      "source": "/particuliere-opslag/",
-      "destination": "/opslag/#particulier",
-      "statusCode": 301
-    },
-    {
-      "source": "/container-opslag/",
-      "destination": "/opslag/#container",
-      "statusCode": 301
-    },
-    {
-      "source": "/meubeltransport/",
-      "destination": "/meubelprojecten/#transport",
-      "statusCode": 301
-    },
-    {
-      "source": "/veilingen/",
-      "destination": "/meubelprojecten/#veilingen",
-      "statusCode": 301
-    },
-    {
-      "source": "/meubelmontage/",
-      "destination": "/meubelprojecten/#montage",
-      "statusCode": 301
-    },
-    {
-      "source": "/gebouwbeheer/onderhoud/",
-      "destination": "/gebouwbeheer/#onderhoud",
-      "statusCode": 301
-    },
-    {
-      "source": "/gebouwbeheer/verduurzamen/",
-      "destination": "/gebouwbeheer/#verduurzamen",
-      "statusCode": 301
-    },
-    {
-      "source": "/gebouwbeheer/huismeester/",
-      "destination": "/gebouwbeheer/#huismeester",
-      "statusCode": 301
-    },
-    {
-      "source": "/handyman-services/",
-      "destination": "/gebouwbeheer/#handyman",
+      "destination": "/zorg-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/quick-scan/",
       "destination": "/gebouwbeheer/#quick-scan",
-      "statusCode": 301
-    },
-    {
-      "source": "/assetmanagement/inventarisatie/",
-      "destination": "/assetmanagement/#inventarisatie",
-      "statusCode": 301
-    },
-    {
-      "source": "/assetmanagement/wms-en-meubelpaspoort/",
-      "destination": "/assetmanagement/#wms",
-      "statusCode": 301
-    },
-    {
-      "source": "/assetmanagement/opslag-assets/",
-      "destination": "/assetmanagement/#opslag",
-      "statusCode": 301
-    },
-    {
-      "source": "/assetmanagement/inkoop-en-verkoop-assets/",
-      "destination": "/assetmanagement/#inkoop-verkoop",
-      "statusCode": 301
-    },
-    {
-      "source": "/assetmanagement/circulair-meubilair/",
-      "destination": "/assetmanagement/#circulair",
       "statusCode": 301
     },
     {
@@ -235,22 +135,22 @@
     },
     {
       "source": "/zakelijk-verhuizen/",
-      "destination": "/verhuizen/#zakelijk",
+      "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
     },
     {
       "source": "/opslag-zakelijk/",
-      "destination": "/opslag/#zakelijk",
+      "destination": "/zakelijke-opslag/",
       "statusCode": 301
     },
     {
       "source": "/opslag-particulier/",
-      "destination": "/opslag/#particulier",
+      "destination": "/particuliere-opslag/",
       "statusCode": 301
     },
     {
       "source": "/montage-service/",
-      "destination": "/meubelprojecten/#montage",
+      "destination": "/meubelmontage/",
       "statusCode": 301
     },
     {
@@ -295,7 +195,7 @@
     },
     {
       "source": "/en/auction/",
-      "destination": "/meubelprojecten/#veilingen",
+      "destination": "/veilingen/",
       "statusCode": 301
     },
     {
@@ -305,7 +205,7 @@
     },
     {
       "source": "/en/england/",
-      "destination": "/verhuizen/#internationaal",
+      "destination": "/internationale-verhuizing/",
       "statusCode": 301
     },
     {
@@ -330,7 +230,7 @@
     },
     {
       "source": "/2019/09/06/handyman-services/",
-      "destination": "/gebouwbeheer/#handyman",
+      "destination": "/handyman-services/",
       "statusCode": 301
     }
   ],

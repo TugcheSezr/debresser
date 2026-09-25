@@ -2348,13 +2348,15 @@ a.ev-btn[href$="#offerte"]:focus-visible,#lfForm button[type=submit]:focus-visib
 .topbar.is-stuck{box-shadow:0 4px 18px rgba(2,13,65,.28)}
 .topbar::before{display:none}
 .topbar .wrap{min-height:78px;align-items:center}
-.topbar .topbar__logo{align-self:flex-start;flex:none;background:#fff;border-radius:0 0 20px 20px;padding:.55rem .8rem .7rem;margin-bottom:-46px;box-shadow:0 12px 26px -14px rgba(2,13,65,.55);transition:margin .3s var(--ease),padding .3s var(--ease)}
-/* Gescrold krimpt de balk (logo 104 -> 70px, knop en telefoon kleiner): de gebruiker wil dat
+.topbar .topbar__logo{align-self:flex-start;flex:none;background:#fff;border-radius:0 0 20px 20px;padding:.55rem .8rem .7rem;margin-bottom:-62px;box-shadow:0 12px 26px -14px rgba(2,13,65,.55);transition:margin .3s var(--ease),padding .3s var(--ease)}
+/* Gescrold krimpt de balk (logo 120 -> 80px, knop en telefoon kleiner): de gebruiker wil dat
    "uitzoomen" houden (25-09). Het logo blijft zichtbaar: de oude De Kievit-wissel tussen twee
    logo's (.is-stuck img{opacity:0}) is weg, er is maar een img. */
-.topbar .topbar__logo img{position:static;transform:none;opacity:1;height:104px;width:auto}
-.topbar.is-stuck .topbar__logo{margin-bottom:-14px;padding:.35rem .55rem .45rem}
-.topbar.is-stuck .topbar__logo img{height:70px}
+/* 25-09 wens gebruiker "make the header logo 15% larger": 104 -> 120, 70 -> 80, 88 -> 101, 60 -> 69; de overhang
+   (negatieve marge) groeit even hard mee, zodat de balk zelf niet hoger wordt. */
+.topbar .topbar__logo img{position:static;transform:none;opacity:1;height:120px;width:auto}
+.topbar.is-stuck .topbar__logo{margin-bottom:-24px;padding:.35rem .55rem .45rem}
+.topbar.is-stuck .topbar__logo img{height:80px}
 .topbar .nav,.topbar.is-stuck .nav{margin-top:0;align-self:center}
 .nav__trigger{background:none;border:0;font:700 .9rem/1 var(--font-kop)}
 .nav__links>li>a,.nav__trigger,.topbar.is-stuck .nav__links>li>a,.topbar.is-stuck .nav__trigger{color:#fff;font-weight:600}
@@ -2364,11 +2366,11 @@ a.ev-btn[href$="#offerte"]:focus-visible,#lfForm button[type=submit]:focus-visib
 .topbar__tel,.topbar.is-stuck .topbar__tel{color:#fff}
 .topbar__tel:hover{color:var(--goud)}
 .topbar .nav-toggle,.topbar.is-stuck .nav-toggle{color:#fff}
-@media(max-width:1200px){.topbar .topbar__logo img{height:88px}.topbar .topbar__logo{margin-bottom:-38px}}
+@media(max-width:1200px){.topbar .topbar__logo img{height:101px}.topbar .topbar__logo{margin-bottom:-51px}}
 @media(max-width:620px){
   .topbar .wrap{min-height:64px}
-  .topbar .topbar__logo,.topbar.is-stuck .topbar__logo{padding:.35rem .5rem .45rem;margin-bottom:-18px;border-radius:0 0 14px 14px}
-  .topbar .topbar__logo img,.topbar.is-stuck .topbar__logo img{height:60px}
+  .topbar .topbar__logo,.topbar.is-stuck .topbar__logo{padding:.35rem .5rem .45rem;margin-bottom:-27px;border-radius:0 0 14px 14px}
+  .topbar .topbar__logo img,.topbar.is-stuck .topbar__logo img{height:69px}
 }
 /* ---------- topbalk bovenaan transparant (d5 25-09) ---------- */
 /* Helemaal bovenaan (geen .is-stuck, scrollY <= 40) valt de navy balk weg zoals op de-kievit.nl; vanaf 40px
@@ -2388,10 +2390,29 @@ a.ev-btn[href$="#offerte"]:focus-visible,#lfForm button[type=submit]:focus-visib
 body:not(:has(.hero)) .topbar{background-color:var(--bruin)}
 body:not(:has(.hero)) .topbar::before{display:none}
 
-/* ---------- mega-menu: enkele kolom (Diensten toont alleen de zes diensten sinds 25-09) ---------- */
+/* ---------- mega-menu: enkele kolom (Vacatures; kop, links en voet zoals het Diensten-paneel hieronder) ---------- */
 .mega__col ul{gap:.5rem}
 .mega__col a{font-size:.9rem}
 .mega--1 .mega__grid{min-width:15rem}
+/* ---------- Diensten-paneel met subcategorieën, in de stijl van de-kievit.nl (79, 25-09 avond) ----------
+   Drie kolommen; elke dienst is een kop in kapitalen (zoals .mega__label bij De Kievit) die naar zijn pagina linkt,
+   met een pijltje dat bij hover opschuift; de subcategorieën staan eronder als gewone links. Navy kop, zwarte links,
+   hover en huidige pagina --goud-diep. Voet: creme met "Bekijk alle diensten". Maten uit de meting van de-kievit.nl. */
+.mega--diensten .mega__grid{grid-template-columns:repeat(3,max-content);gap:0 2.8rem}
+.mega--diensten .mega__col{display:grid;align-content:start;gap:1.5rem}
+.mega__col a.mega__kop{display:inline-flex;align-items:center;gap:.4rem;margin:0 0 .8rem;
+  font:700 .74rem/1.2 var(--font-kop);letter-spacing:.12em;text-transform:uppercase;color:var(--bruin)}
+.mega__col a.mega__kop:only-child{margin-bottom:0}
+.mega__kop svg{width:12px;height:12px;flex:none;opacity:.5;transition:transform .2s var(--ease),opacity .2s var(--ease)}
+.mega__col a.mega__kop:hover{color:var(--goud-diep);transform:none}
+.mega__kop:hover svg{opacity:1;transform:translateX(3px)}
+.mega__col a[aria-current="page"],.mega__foot a[aria-current="page"]{color:var(--goud-diep);font-weight:600}
+.mega__foot{background:var(--creme)}
+/* mobiel: in de Diensten-groep staat elke dienst als kop met zijn subcategorieën ingesprongen eronder; Vacatures idem */
+.drawer__group a.drawer__dienst{padding-top:.8rem;font:600 .96rem/1.3 var(--font-kop);color:var(--ant)}
+.drawer__group a.drawer__sub{padding:.42rem 1.25rem .42rem 3rem;font-size:.9rem}
+.drawer__group--koppen a:last-child{padding-bottom:1rem}
+.drawer__group a[aria-current="page"]{color:var(--goud-diep);font-weight:600}
 
 /* ---------- hero ---------- */
 .hero__veil{background:linear-gradient(180deg,rgba(2,13,65,.62) 0%,rgba(2,13,65,.38) 45%,rgba(2,13,65,.72) 100%)}
@@ -3242,6 +3263,14 @@ section>.wrap>.sectiekop:last-child{margin-bottom:0}
 .sb-reviews .sb-review__wie b{color:var(--bruin)}
 .sb-reviews .sb-review__wie small{color:var(--ant-zacht)}
 .sb-reviews .sb-review:nth-child(3) .sb-review__letter{background:var(--bruin);color:var(--wit)}
+/* ---------- Teaser "Lees meer" op de ouderpagina's van de diensten (d1 25-09) ---------- */
+/* Keuze A van de gebruiker: de ouder houdt per subcategorie 2-3 regels + deze link naar de subpagina, in
+   .sb-verhaal__acties naast de groene offerteknop. Kleur uit .sb-verhaal__tekst a (--vh-link), dus goed op
+   elke variant (wit, blauw, donker). */
+.sb-verhaal__meer{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none}
+.sb-verhaal__meer svg{width:14px;height:14px;flex:none;transition:transform .2s var(--ease)}
+.sb-verhaal__meer:hover,.sb-verhaal__meer:focus-visible{text-decoration:underline}
+.sb-verhaal__meer:hover svg{transform:translateX(3px)}
 /* ==== sectiebibliotheek d1 25-09: end ==== */
 
 /* ---------- sb-stappen: donkerblauwe stapkaarten (dc, 25-09-2026; d1's blok blijft ongewijzigd). Wens gebruiker:
@@ -4088,3 +4117,33 @@ main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--go
   .sb-diensten__grid--wit>li:last-child:nth-child(odd) .sb-dpop{--fa:4}
 }
 /* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: end ==== */
+
+/* ==== e0 25-09: home #offerte-manieren, de lichtblauwe band loopt door: start ====
+   Wens gebruiker 25-09: "Kies hoe wij uw verhuizing bekijken - the bright blue line should not stop." Vanaf 901 loopt
+   de band van links onder (via de onderrand de sectie uit) onder de stapkaarten door tot de rechterrand. Het draaipunt
+   ligt op de linkerkant van de beeldkolom, zodat de band op elke breedte onder de belregel blijft (5.3rem boven de voet). */
+@media(min-width:901px){
+  #offerte-manieren .sb-stappen__band{left:-100vw;height:44%;bottom:calc(5.3rem - 44%);border-radius:0;transform:skewY(-17.5deg);transform-origin:100vw 100%}
+  #offerte-manieren .sb-stappen__tekst{position:relative;z-index:1}
+}
+/* ==== e0 25-09: home #offerte-manieren, de lichtblauwe band loopt door: end ==== */
+
+/* ==== e0 25-09: uitsnedes van drie foto's op /verhuizen/: start ====
+   Aan de foto gekoppeld (src), niet aan de pagina: dezelfde sectie draagt op andere pagina's andere foto's.
+   - "Verhuizen met De Bresser" (sb-werkwijze): wens gebruiker "the image should have the view lower and a bit to the
+     right to fit the truck and workers". De foto schuift omhoog en iets naar rechts (vast op de rechterbovenhoek);
+     wat onderaan vrijkomt valt onder de witte stappenband, die op elke breedte de onderste ruim 20% afdekt.
+   - "Zorg- en seniorenverhuizing" (sb-verhaal): "the text is covering face, shift the image a bit as its taken at a
+     tilted angle". Beeld van de bovenkant en 4 graden rechtgezet, zodat beide gezichten onder het label staan.
+   - "Zo maken wij verhuizen duurzamer" (sb-impact): "make the big image a bit larger in height, adjust the position so
+     the truck is seen better". Vanaf 901 een hoger kader (405 in plaats van 381px op 1440), de werker even groot, de
+     foto op de onderkant en iets omhoog zodat wagens en oplegger boven het lint staan. */
+.sb-werkwijze__foto img[src*="/de-bresser-verhuizingen-"]{object-position:100% 0;transform-origin:100% 0;transform:translateY(-34%) scale(1.14)}
+.sb-verhaal__foto img[src*="samenwerking-ontzorgdverhuizen"]{object-position:50% 2%;transform-origin:50% 40%;transform:rotate(-4deg) scale(1.07)}
+@media(min-width:901px){
+  .sb-impact:has(img[src*="/warehouse-tilburg-"]){--im-hoog:111%}
+  .sb-impact__foto:has(img[src*="/warehouse-tilburg-"]){aspect-ratio:1220/405}
+  .sb-impact__foto img[src*="/warehouse-tilburg-"]{object-position:50% 100%;transform:translateY(-6%)}
+  .sectie.sb-impact:has(img[src*="/warehouse-tilburg-"]){padding-bottom:1.75rem}
+}
+/* ==== e0 25-09: uitsnedes van drie foto's op /verhuizen/: end ==== */

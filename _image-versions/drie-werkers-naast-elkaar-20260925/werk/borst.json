@@ -1,0 +1,27 @@
+{
+ "1": {"schouder": 375, "mannen": [
+   {"wie": "04 links (doos op de heup)", "knoop": [621, 516], "draai": 8},
+   {"wie": "09 midden", "knoop": [1247, 564], "draai": -3},
+   {"wie": "02 rechts", "knoop": [1592, 530], "draai": -8}
+ ]},
+ "2": {"schouder": 354, "mannen": [
+   {"wie": "04 links", "knoop": [866, 641], "draai": 5},
+   {"wie": "09 midden", "knoop": [1259, 658], "draai": 0},
+   {"wie": "02 rechts", "knoop": [1642, 650], "draai": -5}
+ ]},
+ "3": {"schouder": 395, "mannen": [
+   {"wie": "04 links (handen in de zij)", "knoop": [814, 579], "draai": 4},
+   {"wie": "09 midden", "knoop": [1265, 596], "draai": 0},
+   {"wie": "02 rechts (deken over de arm)", "knoop": [1675, 553], "draai": -5}
+ ]},
+ "4": {"schouder": 440, "mannen": [
+   {"wie": "04 links", "knoop": [755, 522], "draai": 0},
+   {"wie": "09 midden", "knoop": [1264, 553], "draai": 0},
+   {"wie": "02 rechts", "knoop": [1794, 513], "draai": 0}
+ ]},
+ "5": {"schouder": 340, "mannen": [
+   {"wie": "04 links", "knoop": [846, 650], "draai": 0},
+   {"wie": "09 midden", "knoop": [1259, 694], "draai": 0},
+   {"wie": "02 rechts", "knoop": [1634, 662], "draai": 0}
+ ]}
+}

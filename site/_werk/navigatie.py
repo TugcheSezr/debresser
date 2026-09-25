@@ -14,7 +14,7 @@ sitemap zodra hij in VRIJGEGEVEN staat EN er een bronbestand voor is (_werk/pagi
 import pathlib
 from urllib.parse import quote_plus
 
-BUSTER = "20260925-2145"
+BUSTER = "20260925-2210"
 
 # Het voorkeursdomein, met www. canonical, sitemap.xml, robots.txt en de schema-@id's voeren
 # allemaal dit domein; de apex redirect in vercel.json naar www.
@@ -60,6 +60,51 @@ DIENSTEN = [
     ("/assetmanagement/", "Assetmanagement"),
     ("/duurzame-werkomgeving/", "Duurzame werkomgeving"),
 ]
+
+# De subcategorieën per dienst (de ankers uit sitemap-de-bresser.md §2), elk met een eigen pagina op de oude URL
+# van debresser.nl. Wens gebruiker 25-09-2026 avond: "the list should be larger, it should contains the sub
+# categories and the sub categories should have their own pages". De URL's blijven hooguit twee niveaus diep.
+# DIY-opslag is een sectie (#diy) op /particuliere-opslag/, zoals op debresser.nl; "Opslag in de regio" en de quick
+# scan blijven secties op hun dienstpagina. Duurzame werkomgeving heeft geen subcategorieën.
+SUBDIENSTEN = {
+    "/verhuizen/": [
+        ("/zakelijke-verhuizing/", "Zakelijke verhuizing"),
+        ("/particuliere-verhuizing/", "Particuliere verhuizing"),
+        ("/internationale-verhuizing/", "Internationale verhuizing"),
+        ("/zorg-verhuizing/", "Zorg- en seniorenverhuizing"),
+        ("/duurzaam-verhuizen/", "Duurzaam verhuizen"),
+    ],
+    "/opslag/": [
+        ("/zakelijke-opslag/", "Zakelijke opslag"),
+        ("/particuliere-opslag/", "Particuliere opslag"),
+        ("/container-opslag/", "Containeropslag"),
+    ],
+    "/meubelprojecten/": [
+        ("/meubeltransport/", "Meubeltransport"),
+        ("/veilingen/", "Veilingen"),
+        ("/meubelmontage/", "Montageservice"),
+    ],
+    "/gebouwbeheer/": [
+        ("/gebouwbeheer/onderhoud/", "Onderhoud"),
+        ("/gebouwbeheer/verduurzamen/", "Verduurzamen"),
+        ("/gebouwbeheer/huismeester/", "Huismeester"),
+        ("/handyman-services/", "Handyman"),
+    ],
+    "/assetmanagement/": [
+        ("/assetmanagement/inventarisatie/", "Inventarisatie"),
+        ("/assetmanagement/wms-en-meubelpaspoort/", "WMS en Meubelpaspoort"),
+        ("/assetmanagement/opslag-assets/", "Opslag assets"),
+        ("/assetmanagement/inkoop-en-verkoop-assets/", "Inkoop en verkoop assets"),
+        ("/assetmanagement/circulair-meubilair/", "Circulair meubilair"),
+    ],
+    "/duurzame-werkomgeving/": [],
+}
+SUB_OUDER = {sub: dienst for dienst, subs in SUBDIENSTEN.items() for sub, _ in subs}
+
+
+def is_dienst(href):
+    """Een dienstpagina of een subcategorie daarvan (voor de Service-schema en de standaardhero)."""
+    return href in dict(DIENSTEN) or href in SUB_OUDER
 
 VACATURES = [("/vacature/verhuizer/", "Verhuizer"),
              ("/vacature/chauffeur-verhuizingen-c-ce/", "Chauffeur verhuizingen (C/CE)")]
@@ -181,6 +226,7 @@ FOOTER_WAGEN = "wagen-groen"
 # Labels voor routes die in het menu een andere naam dragen dan hun paginatitel; de echte titel komt
 # uit de TITEL-regel van het bronbestand (build_paginas.bron_meta).
 LABELS = dict(DIENSTEN)
+LABELS.update({h: l for subs in SUBDIENSTEN.values() for h, l in subs})
 LABELS.update({h: l for h, l in VACATURES})
 LABELS.update({h: l for h, l in PLAATSEN})
 LABELS.update({m["href"]: m["label"] for m in MENU if m["href"]})
@@ -189,15 +235,18 @@ LABELS.update({OFFERTE: "Offerte", "/faq/": "Veelgestelde vragen"})
 
 # Menuouder voor het kruimelpad: (label, href of None).
 OUDERS = {h: ("Diensten", "/diensten/") for h, _ in DIENSTEN}
+OUDERS.update({sub: (dict(DIENSTEN)[dienst], dienst) for sub, dienst in SUB_OUDER.items()})
 OUDERS.update({h: ("Vacatures", "/overzicht-vacatures/") for h, _ in VACATURES})
 OUDERS.update({h: ("Blog", "/blog/") for h in BLOG})
 
 
 def paginas():
     """Alle routes van de boom (zonder de homepage), in menuvolgorde, dan footer en plaatsen."""
-    uit = ["/diensten/"] + [h for h, _ in DIENSTEN] + ["/over-ons/", "/overzicht-vacatures/"] + [h for h, _ in VACATURES]
+    uit = ["/diensten/"] + [x for h, _ in DIENSTEN for x in [h] + [s for s, _ in SUBDIENSTEN[h]]]
+    uit += ["/over-ons/", "/overzicht-vacatures/"] + [h for h, _ in VACATURES]
     uit += ["/blog/"] + BLOG + ["/contact/", OFFERTE] + [h for h, _ in FOOTER_LINKS] + [h for h, _ in PLAATSEN]
-    assert len(uit) == len(set(uit)) == 68, f"{len(uit)} routes, plan zegt 68 plus de homepage"
+    # 68 uit het plan plus de 20 subcategorieën (25-09-2026 avond)
+    assert len(uit) == len(set(uit)) == 88, f"{len(uit)} routes, plan zegt 88 plus de homepage"
     return uit
 
 
@@ -207,6 +256,7 @@ def paginas():
 VRIJGEGEVEN = {"/over-ons/", "/contact/", "/diensten/"}                     # /diensten/: 25-09-2026
 # Batches van debresser-8f, vrijgegeven zodra die sessie een batch klaar meldde (24-09-2026).
 VRIJGEGEVEN |= {h for h, _ in DIENSTEN}                                       # 1: diensten
+VRIJGEGEVEN |= set(SUB_OUDER)                                                  # subcategorieën, 25-09-2026 avond
 VRIJGEGEVEN |= {OFFERTE}                                                       # 2: offerte
 VRIJGEGEVEN |= {"/overzicht-vacatures/"} | {h for h, _ in VACATURES}           # 3: vacatures
 VRIJGEGEVEN |= {"/faq/", "/privacyverklaring/"}                                # 4
@@ -274,31 +324,110 @@ def _diensten_links():
     return ([("/diensten/", "Alle diensten")] if live("/diensten/") else []) + _diensten_live()
 
 
+PIJL = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" '
+        'stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>')
+
+
+# De sectie op de dienstpagina waar een subcategorie over gaat. Is de subpagina (nog) niet live, dan linkt het menu
+# daarheen in plaats van de subcategorie weg te laten (debresser-d8 25-09 avond: alle sublinks altijd zichtbaar).
+SUB_ANKER = {
+    "/zakelijke-verhuizing/": "zakelijk", "/particuliere-verhuizing/": "particulier",
+    "/internationale-verhuizing/": "internationaal", "/zorg-verhuizing/": "zorg", "/duurzaam-verhuizen/": "duurzaam",
+    "/zakelijke-opslag/": "zakelijk", "/particuliere-opslag/": "particulier", "/container-opslag/": "container",
+    "/meubeltransport/": "transport", "/veilingen/": "veilingen", "/meubelmontage/": "montage",
+    "/gebouwbeheer/onderhoud/": "onderhoud", "/gebouwbeheer/verduurzamen/": "verduurzamen",
+    "/gebouwbeheer/huismeester/": "huismeester", "/handyman-services/": "handyman",
+    "/assetmanagement/inventarisatie/": "inventarisatie", "/assetmanagement/wms-en-meubelpaspoort/": "wms",
+    "/assetmanagement/opslag-assets/": "opslag", "/assetmanagement/inkoop-en-verkoop-assets/": "inkoop-verkoop",
+    "/assetmanagement/circulair-meubilair/": "circulair",
+}
+
+
+def _sub_links(dienst):
+    """De subcategorieën van een dienst als (href, label): de eigen pagina als die live is, anders de sectie op de
+    dienstpagina (alleen als dat id daar echt staat), anders de dienstpagina zelf."""
+    uit = []
+    for s, t in SUBDIENSTEN.get(dienst, []):
+        if live(s):
+            uit.append((s, t))
+            continue
+        anker = SUB_ANKER.get(s)
+        tekst = bron(dienst).read_text(encoding="utf-8") if bron(dienst).exists() else ""
+        uit.append((f"{dienst}#{anker}" if anker and f'id="{anker}"' in tekst else dienst, t))
+    return uit
+
+
+def _kolommen(groepen, n=3):
+    """Verdeelt de groepen (gewicht, html) in volgorde over n kolommen, zo dat de langste kolom zo kort mogelijk is."""
+    if len(groepen) <= n:
+        return [[g] for g in groepen]
+    beste = None
+    for i in range(1, len(groepen) - 1):
+        for j in range(i + 1, len(groepen)):
+            delen = [groepen[:i], groepen[i:j], groepen[j:]]
+            hoogste = max(sum(w for w, _ in d) for d in delen)
+            if beste is None or hoogste < beste[0]:
+                beste = (hoogste, delen)
+    return beste[1]
+
+
 def _mega_diensten(huidig):
-    lis = "\n".join(f'                  <li><a href="{h}"{_huidig(h, huidig)}>{l}</a></li>' for h, l in _diensten_links())
+    """Het Diensten-paneel in de stijl van de-kievit.nl. Wens gebruiker 25-09-2026 avond: "the list should be larger, it
+    should contains the sub categories" en "use the de-kievit.nl for the navigation style with the subcategories".
+    Elke dienst is een kolomkop die naar zijn eigen pagina linkt, met zijn subcategorieën eronder als gewone links;
+    zolang een subpagina niet live is, linkt ze naar haar sectie op de dienstpagina (_sub_links). De zes diensten staan in volgorde in drie kolommen van
+    ongeveer gelijke lengte, en de cremekleurige voet linkt naar /diensten/, zoals "Bekijk alle diensten" bij De Kievit."""
+    groepen = []
+    for h, l in _diensten_live():
+        subs = _sub_links(h)
+        lis = "".join(f'\n                    <li><a href="{s}"{_huidig(s, huidig)}>{t}</a></li>' for s, t in subs)
+        lijst = f'\n                  <ul>{lis}\n                  </ul>' if subs else ""
+        groepen.append((1.4 + len(subs), f'''                <div class="mega__groep">
+                  <a class="mega__kop" href="{h}"{_huidig(h, huidig)}>{l}{PIJL}</a>{lijst}
+                </div>'''))
+    kolommen = "\n".join(f'''              <div class="mega__col">
+{chr(10).join(html for _, html in kol)}
+              </div>''' for kol in _kolommen(groepen))
+    voet = (f'''
+            <div class="mega__foot">
+              <a href="/diensten/"{_huidig("/diensten/", huidig)}>Bekijk alle diensten{PIJL}</a>
+            </div>''' if live("/diensten/") else "")
     return f'''
-          <div class="mega mega--1">
+          <div class="mega mega--3 mega--diensten">
             <div class="mega__grid">
-              <div class="mega__col">
-                <ul>
-{lis}
-                </ul>
-              </div>
-            </div>
+{kolommen}
+            </div>{voet}
           </div>'''
 
 
+# De kop boven de kinderen van een menu-item met een eigen paneel (Vacatures): (label, href), een sectie van de
+# overzichtspagina, zodat kop en voet ("Bekijk alle ...") niet naar dezelfde plek wijzen.
+KINDEREN_KOP = {"/overzicht-vacatures/": ("Openstaande vacatures", "/overzicht-vacatures/#vacatures")}
+
+
+def _kinderen_kop(item):
+    return KINDEREN_KOP.get(item["href"], (item["label"], item["href"]))
+
+
 def _mega_kinderen(item, huidig):
-    links = [(f"Alle {item['label'].lower()}", item["href"])] + [(t, h) for h, t in item["kinderen"] if live(h)]
-    lis = "\n".join(f'                  <li><a href="{h}"{_huidig(h, huidig)}>{t}</a></li>' for t, h in links)
+    """Het paneel van een menu-item met kinderen (Vacatures), in dezelfde stijl als het Diensten-paneel (wens gebruiker
+    25-09-2026 avond: "make sure vacatures has the same style for the navigation"): een kop in kapitalen met pijltje,
+    de kinderen als gewone links eronder, en de cremekleurige voet "Bekijk alle ..." naar de overzichtspagina."""
+    kop, kop_href = _kinderen_kop(item)
+    lis = "".join(f'\n                    <li><a href="{h}"{_huidig(h, huidig)}>{t}</a></li>' for h, t in item["kinderen"] if live(h))
     return f'''
           <div class="mega mega--1">
             <div class="mega__grid">
               <div class="mega__col">
-                <ul>
-{lis}
-                </ul>
+                <div class="mega__groep">
+                  <a class="mega__kop" href="{kop_href}">{kop}{PIJL}</a>
+                  <ul>{lis}
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div class="mega__foot">
+              <a href="{item["href"]}"{_huidig(item["href"], huidig)}>Bekijk alle {item["label"].lower()}{PIJL}</a>
             </div>
           </div>'''
 
@@ -380,18 +509,26 @@ def drawer_html(huidig=None):
             d = _diensten_live()
             if not d:
                 continue
-            links = "\n".join(f'          <a href="{h}"{_huidig(h, huidig)}>{l}</a>' for h, l in _diensten_links())
-            groepen.append(f'''        <details class="drawer__group">
+            # zoals het paneel op desktop: elke dienst met zijn subcategorieën ingesprongen eronder
+            links = [f'          <a href="/diensten/"{_huidig("/diensten/", huidig)}>Alle diensten</a>'] if live("/diensten/") else []
+            for h, l in d:
+                links.append(f'          <a class="drawer__dienst" href="{h}"{_huidig(h, huidig)}>{l}</a>')
+                links += [f'          <a class="drawer__sub" href="{s}"{_huidig(s, huidig)}>{t}</a>' for s, t in _sub_links(h)]
+            links = "\n".join(links)
+            groepen.append(f'''        <details class="drawer__group drawer__group--koppen drawer__group--diensten">
           <summary>{item["label"]}</summary>
 {links}
         </details>''')
         elif not live(item["href"]):
             continue
         elif item.get("kinderen") and any(live(h) for h, _ in item["kinderen"]):
-            links = "\n".join(f'          <a href="{h}"{_huidig(h, huidig)}>{t}</a>'
-                              for t, h in [(f"Alle {item['label'].lower()}", item["href"])]
-                              + [(t, h) for h, t in item["kinderen"] if live(h)])
-            groepen.append(f'''        <details class="drawer__group">
+            # zoals de Diensten-groep: "Alle ...", dan de kop met de kinderen ingesprongen eronder
+            kop, kop_href = _kinderen_kop(item)
+            links = "\n".join([f'          <a href="{item["href"]}"{_huidig(item["href"], huidig)}>Alle {item["label"].lower()}</a>',
+                               f'          <a class="drawer__dienst" href="{kop_href}">{kop}</a>']
+                              + [f'          <a class="drawer__sub" href="{h}"{_huidig(h, huidig)}>{t}</a>'
+                                 for h, t in item["kinderen"] if live(h)])
+            groepen.append(f'''        <details class="drawer__group drawer__group--koppen">
           <summary>{item["label"]}</summary>
 {links}
         </details>''')

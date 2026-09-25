@@ -1,0 +1,76 @@
+{
+  "naam": "drie-werkers-naast-elkaar",
+  "titel": "Drie De Bresser-medewerkers naast elkaar (nieuwe versies)",
+  "plek": "Vervanging of aanvulling van de goedgekeurde trio-foto's (beeldronde-debresser/drie-werkers/): liggend 3:2, hele figuur, geschikt om uit te snijden",
+  "lead": "Vijf nieuwe versies van drie mannen naast elkaar in een rij. Dezelfde drie als in de oude trio-foto's (gezicht 4 links, 9 midden, 2 rechts), zodat de keuze over het beeld gaat. Polo's effen in de prompt; het Top Movers-borstlogo komt er daarna op, meegedraaid met de borst.",
+  "ratio": "3:2",
+  "grootte": "2K",
+  "basis": false,
+  "regels": [
+    "skill:sites/de-bresser/tekst.txt",
+    "skill:sites/de-bresser/kleur.txt",
+    "skill:sites/de-bresser/vak.txt",
+    "skill:sites/de-bresser/uniform.txt",
+    "drie-werkers-naast-elkaar-blokken/rij.txt"
+  ],
+  "regels_na": [
+    "drie-werkers-naast-elkaar-blokken/pose.txt",
+    "drie-werkers-naast-elkaar-blokken/kader.txt",
+    "drie-werkers-naast-elkaar-blokken/camera.txt",
+    "skill:sites/de-bresser/afwerking.txt",
+    "skill:sites/de-bresser/neg.txt"
+  ],
+  "cast": [
+    {
+      "pad": "../beeldronde-debresser/gezichten/gezicht-09-grijze-strepen-achterover.jpg",
+      "wie": "a wiry Indo-Dutch man of 52 to 58 with black hair with grey streaks combed back, clean-shaven, warm light-brown skin, deep smile lines"
+    },
+    {
+      "pad": "../beeldronde-debresser/gezichten/gezicht-04-twists-snor.jpg",
+      "wie": "an Afro-Surinamese Dutch man of 29 to 35 with a slim athletic build, deep brown skin, short twists in his hair and a thin moustache"
+    },
+    {
+      "pad": "../beeldronde-debresser/gezichten/gezicht-02-rood-haar-sproeten.jpg",
+      "wie": "a lean young Dutch man of 21 to 25 with messy copper-red hair, pale freckled skin and light patchy stubble"
+    }
+  ],
+  "versies": [
+    {
+      "nr": 1,
+      "naam": "Lichtgrijs doek, klaar om uit te snijden",
+      "regels": [
+        "skill:sites/de-bresser/doos.txt"
+      ],
+      "scene": "A plain seamless light grey studio backdrop (#DADADA) behind and under the three men, with no visible floor line and no props, only a soft contact shadow under each pair of shoes. Person B, on the left, holds one closed white moving box against his right hip with his right arm, the box well below his chest. Person A, in the middle, has his hands loosely clasped low in front of his belt. Person C, on the right, has both thumbs hooked into his trouser pockets. The whole row is seen from head to shoes. Light: one large soft key light from the front left and a gentle fill from the right, so each face has a soft shadow side; not flat, no harsh shadows on the backdrop."
+    },
+    {
+      "nr": 2,
+      "naam": "Langs de wagen op het terrein",
+      "regels": [
+        "skill:sites/de-bresser/wagen.txt"
+      ],
+      "scene": "The depot yard on grey brick pavers. Behind the three men, about four metres back and parallel to the frame, stands the company's white moving truck seen from the side, its tall white box body with the green band filling the background behind their shoulders, softly out of focus. Person B, on the left, has his arms loosely folded low at the waist, below the chest. Person A, in the middle, stands with both hands in his trouser pockets. Person C, on the right, lets his arms hang loosely, one thumb hooked in a pocket. The whole row is seen from head to shoes. Light: a bright, friendly day, the sun out in a clear blue sky with a few white clouds, coming from the left with soft-edged but visible shadows; each face sits partly on its own shadow side.",
+      "extra": "MOUTHS, CHECKED FIRST: every one of the three men, including Person A in the middle, has his lips closed and touching each other; not a single tooth is visible on anyone. Their expression is calm and content, the corners of the mouth only slightly raised, like a man who is pleased with his work, not a man smiling for a photographer.\n\nTRUCK CHECK: the truck behind them is a big white Renault T with a high cab and a tall box body; on the box body the bright green band ends in a scattered cluster of glossy green 3D cubes, exactly as described above. There is no number, no model name and no letter anywhere on the cab or the box body.\n\nPOSE CHECK: the three men stand three different ways: Person B with his arms loosely folded low at the waist, Person A with both hands in his trouser pockets, Person C with his arms hanging loosely and one thumb hooked in a pocket. Nobody clasps his hands in front of him."
+    },
+    {
+      "nr": 3,
+      "naam": "Voor de open roldeur van de opslaghal",
+      "scene": "The three men stand in a row on the light concrete apron just outside the large open roller door of the company's storage hall. Behind them, through the tall door opening, the hall with steel pallet racking and closed wooden storage crates, darker and softly out of focus; the dark grey corrugated steel wall of the hall on both sides of the door. Person B, on the left, rests his hands loosely on his hips at belt height, elbows out to the side. Person A, in the middle, has his arms loosely folded low at the waist. Person C, on the right, holds one neatly folded plain grey moving blanket over his right forearm, low at his side. The whole row is seen from head to shoes. Light: bright daylight from the open sky in front of them and a little to the right, soft-edged shadows, the faces modelled with a shadow side; the hall behind them is darker.",
+      "extra": "MOUTHS, CHECKED FIRST: every one of the three men, including Person A in the middle, has his lips closed and touching each other; not a single tooth is visible on anyone. Their expression is calm and content, the corners of the mouth only slightly raised, like a man who is pleased with his work, not a man smiling for a photographer."
+    },
+    {
+      "nr": 4,
+      "naam": "Verhuisdag in de woonstraat",
+      "regels": [
+        "skill:sites/de-bresser/doos.txt"
+      ],
+      "scene": "Moving day on the brick pavement of a quiet Dutch residential street; behind the men, softly out of focus, a row of red-brick terraced houses with white window frames and small front gardens. The three men stand in a row side by side on the pavement, each holding one closed white moving box low in front of his thighs with both hands, arms nearly straight, so the top of every box is below his belt and the whole polo stays in view. The whole row is seen from head to shoes. Light: morning sun from the left in a clear blue sky, soft-edged shadows on the pavement, each face sitting partly on its own shadow side."
+    },
+    {
+      "nr": 5,
+      "naam": "Laag standpunt voor de hal",
+      "scene": "The depot yard in front of the long dark grey corrugated steel wall of the company's hall. The camera is low, at hip height, and looks slightly up, so the three men stand tall in a straight row against the wall, with a strip of clear blue sky with a few white clouds above the roofline. Person B, on the left, stands with both hands in his trouser pockets. Person A, in the middle, has his arms loosely folded low at the waist, below the chest. Person C, on the right, has his hands loosely clasped in front of him at belt height. The whole row is seen from head to shoes, with grey brick pavers under their shoes. Light: afternoon sun from the right, soft-edged but visible shadows, each face with a shadow side.",
+      "extra": "MOUTHS, CHECKED FIRST: every one of the three men, including Person A in the middle, has his lips closed and touching each other; not a single tooth is visible on anyone. Their expression is calm and content, the corners of the mouth only slightly raised, like a man who is pleased with his work, not a man smiling for a photographer."
+    }
+  ]
+}
