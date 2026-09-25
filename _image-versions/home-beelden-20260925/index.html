@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Home: beeld voor #reviews en #opslag, en een teamfoto in de hero &middot; beeldkeuze</title>
+<style>
+:root { --verhouding:1866/840; }
+
+:root {
+  --grond:#EEF0F3; --vlak:#FFFFFF; --inkt:#151922; --zacht:#596273; --lijn:#D5DAE2;
+  --accent:#2457C5; --goed:#17804A; --goed-zacht:#E3F4EA; --aanp:#B56A00; --aanp-zacht:#FCEFD9;
+  --podium:#15181E; --let:#B0402A;
+  --gutter:clamp(16px,4vw,40px);
+  --sans:"Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --grond:#0F1217; --vlak:#181C23; --inkt:#E6E9EF; --zacht:#9AA3B4; --lijn:#2A303B;
+    --accent:#7FA4F0; --goed:#52C184; --goed-zacht:#15291E; --aanp:#E9A445; --aanp-zacht:#2E2413; --let:#E6866E;
+  }
+}
+:root[data-theme="dark"] {
+  --grond:#0F1217; --vlak:#181C23; --inkt:#E6E9EF; --zacht:#9AA3B4; --lijn:#2A303B;
+  --accent:#7FA4F0; --goed:#52C184; --goed-zacht:#15291E; --aanp:#E9A445; --aanp-zacht:#2E2413; --let:#E6866E;
+}
+*,*::before,*::after { box-sizing:border-box; }
+body { margin:0; background:var(--grond); color:var(--inkt); overflow-x:hidden;
+  font:400 15.5px/1.55 var(--sans); -webkit-font-smoothing:antialiased; }
+.wrap { max-width:1560px; margin-inline:auto; padding-inline:var(--gutter); padding-block:clamp(22px,4vw,40px) 64px; }
+.eyebrow { font:500 12px/1.3 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--zacht);
+  margin:0 0 12px; overflow-wrap:anywhere; }
+h1 { font:700 clamp(24px,3vw,36px)/1.12 var(--sans); letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance; }
+.plek { margin:0 0 8px; max-width:80ch; }
+.plek b, .hoe b { font-weight:600; }
+.lead { margin:0 0 8px; max-width:80ch; color:var(--zacht); }
+.hoe { margin:12px 0 0; max-width:80ch; color:var(--zacht); font-size:14.5px; }
+.balk { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin-top:20px;
+  padding-bottom:14px; border-bottom:1px solid var(--lijn); }
+.stand { font:500 13px/1.4 var(--mono); color:var(--zacht); flex:1 1 16rem; min-width:0; margin:0; }
+.groepje { display:flex; align-items:center; gap:6px; }
+.groepje .kop { font:500 12px/1 var(--mono); text-transform:uppercase; letter-spacing:.08em; color:var(--zacht); margin-right:2px; }
+.mini { font:500 13px/1 var(--mono); padding:8px 11px; border-radius:4px; cursor:pointer;
+  border:1px solid var(--lijn); background:var(--vlak); color:var(--zacht); }
+.mini:hover { border-color:var(--accent); color:var(--accent); }
+.mini[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#FFF; }
+.waarschuwing { margin:14px 0 0; padding:10px 12px; border:1px solid var(--let); border-radius:4px; color:var(--let); max-width:80ch; }
+
+.rooster { display:grid; gap:14px; margin-top:18px; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.rooster[data-kol="1"] { grid-template-columns:minmax(0,1fr); }
+.rooster[data-kol="5"] { grid-template-columns:repeat(5,minmax(0,1fr)); }
+@media (max-width:1100px) { .rooster[data-kol="3"], .rooster[data-kol="5"] { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:680px)  { .rooster[data-kol] { grid-template-columns:minmax(0,1fr); } .groepje { display:none; } }
+
+.kaart { min-width:0; background:var(--vlak); border:1px solid var(--lijn); border-radius:6px; padding:12px;
+  display:flex; flex-direction:column; gap:10px; }
+.kaart[data-status="goed"] { border-color:var(--goed); box-shadow:0 0 0 2px color-mix(in srgb, var(--goed) 35%, transparent); }
+.kaart[data-status="aanpassen"] { border-color:var(--aanp); box-shadow:0 0 0 2px color-mix(in srgb, var(--aanp) 35%, transparent); }
+.kaartkop { display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+.kaartkop .nr { font:650 15px/1.25 var(--sans); min-width:0; overflow-wrap:anywhere; }
+.kaartkop .bron { font:500 11px/1.3 var(--mono); letter-spacing:.04em; text-transform:uppercase; color:var(--zacht);
+  text-align:right; flex:none; }
+.kaartkop .bron.klaar { color:var(--goed); }
+.vak { position:relative; display:block; background:var(--podium); border-radius:4px; overflow:hidden; }
+.vak img { display:block; width:100%; height:auto; max-height:78vh; object-fit:contain; }
+.vak .volle { position:absolute; right:8px; bottom:8px; font:400 11px/1 var(--mono); color:#D0D5DF;
+  background:rgb(10 12 16 / .7); padding:5px 8px; border-radius:3px; opacity:0; transition:opacity .15s; }
+.vak:hover .volle, .vak:focus-visible .volle { opacity:1; }
+.vak.leeg { aspect-ratio:var(--verhouding,3/2); display:grid; place-items:center; padding:16px; text-align:center; }
+.vak.leeg span { font:400 13px/1.5 var(--mono); color:#9098A8; max-width:32ch; overflow-wrap:anywhere; }
+.croprij { display:grid; gap:5px; }
+.croprij p { margin:0; font:500 11px/1.2 var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--zacht); }
+.croprij a { display:block; background:var(--podium); border-radius:4px; overflow:hidden; }
+.croprij img { display:block; width:100%; height:auto; max-height:280px; object-fit:contain; }
+.meta { margin:0; font:400 12px/1.4 var(--mono); color:var(--zacht); }
+details { font-size:13.5px; color:var(--zacht); }
+details summary { cursor:pointer; font-weight:600; }
+details p { margin:6px 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.keus { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.knop { font:600 14px/1.2 var(--sans); padding:11px 10px; border-radius:4px; cursor:pointer; min-height:44px;
+  border:1px solid var(--lijn); background:transparent; color:var(--inkt); }
+.knop:hover:not(:disabled) { border-color:var(--accent); }
+.knop:disabled { opacity:.45; cursor:default; }
+.knop.goed[aria-pressed="true"] { background:var(--goed); border-color:var(--goed); color:#FFF; }
+.knop.aanp[aria-pressed="true"] { background:var(--aanp); border-color:var(--aanp); color:#FFF; }
+.knop:focus-visible, .mini:focus-visible, textarea:focus-visible, .vak:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+textarea { width:100%; max-width:100%; min-height:76px; resize:vertical; padding:9px 10px;
+  font:400 14px/1.5 var(--sans); color:var(--inkt); background:var(--grond); border:1px solid var(--lijn); border-radius:4px; }
+.regel { margin:-4px 0 0; min-height:1.2em; font:400 12px/1.4 var(--mono); color:var(--goed); }
+.regel.let { color:var(--let); }
+
+.uitkomst { margin-top:32px; padding-top:20px; border-top:1px solid var(--lijn); }
+.uitkomst h2 { margin:0 0 6px; font:700 20px/1.2 var(--sans); }
+.uitkomst .uitleg { margin:0 0 12px; max-width:80ch; color:var(--zacht); }
+pre#blok { margin:0 0 12px; padding:14px 16px; background:var(--vlak); border:1px solid var(--lijn); border-radius:4px;
+  font:400 13.5px/1.55 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; max-width:100ch; }
+.kopieer { display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; }
+.kopieer .knop { width:auto; padding-inline:18px; background:var(--accent); border-color:var(--accent); color:#FFF; }
+#kopieermelding { font-size:14px; color:var(--zacht); }
+footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--lijn); font-size:13px; color:var(--zacht); }
+footer p { margin:0 0 6px; overflow-wrap:anywhere; }
+footer code { font:400 12.5px/1.5 var(--mono); }
+@media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Beeldkeuze &middot; home-beelden-20260925</p>
+  <h1>Home: beeld voor #reviews en #opslag, en een teamfoto in de hero</h1>
+  <p class="plek"><b>Plek op de site:</b> Home: sectie #reviews (&quot;Klanten zijn blij met ons&quot;), sectie #opslag (&quot;Even geen plek? Wij slaan uw spullen op&quot;) en de hero bovenaan (nu de video met het trio)</p>
+  <p class="lead">Kies per onderdeel één optie. #reviews: opties 1 en 2. #opslag: opties 3, 4 en 5. Hero: opties 6 tot en met 9. Elke mock toont de echte homepage op 1440×900, met 390×844 ernaast; de kleinere foto eronder is het beeld zelf. Opties 1, 2 en 7 zijn nieuwe uitsnedes en komen pas op de site na uw goedkeuring. De opties 3 tot en met 5, 8 en 9 zijn eigen foto&#x27;s van debresser.nl, zonder bewerking. Bij optie 2 is één punt nog open: op de doos staat &quot;FULL SERVICE IN LOGISTIEK&quot;. Hero, eerlijk oordeel: geen enkele teamfoto van debresser.nl is duidelijk beter dan het trio (optie 6). Optie 7 is de enige echte kanshebber: het echte team van 7, en de video blijft. Maar de gezichten zijn ongeveer half zo groot als die van het trio en de voorste mannen verdwijnen deels achter het formulier. Afgevallen: De-Bresser-Verhuizingen (4 mensen, piepklein; nu de hero van /diensten/); Stoof-De-Bresser-Breda (Stoof-wagen, mensen verspreid en klein; nu de hero van Breda); verhuizen-opslag-logistiek-1/-2 (800 px, mensen klein); Full-service-Logistiek (dezelfde foto als optie 8, maar kleiner); Verhuizen-Opslag-Logistiek (groep voor een huis, klein); Foto-voor-duurzaamheidsverslag (klanten, niet het team; 900 px); Afbeelding-2 / Verhuizingen-Brabant (maar twee man, en &quot;FULL SERVICE IN LOGISTIEK&quot; op de doos). Vergelijkbare opties voor #offerte-per-mail, #werken-bij en /contact/ volgen later.</p>
+  <p class="hoe"><b>Goedkeuren</b> = mag zo op de site. <b>Houden, aanpassen</b> = goede richting, maar
+    er moet iets anders; zet in de notitie wat. Niets aangeklikt = valt af. Klaar? Onderaan
+    <b>Uitkomst kopi&euml;ren</b> en in het gesprek plakken.</p>
+
+  <div class="balk">
+    <p class="stand" id="stand"></p>
+    <div class="groepje">
+      <span class="kop">kolommen</span>
+      <button class="mini" type="button" data-kol="1" aria-pressed="false">1</button>
+      <button class="mini" type="button" data-kol="3" aria-pressed="true">3</button>
+      <button class="mini" type="button" data-kol="5" aria-pressed="false">5</button>
+    </div>
+    <button class="mini" type="button" id="ververs">Pagina verversen</button>
+  </div>
+  <p class="waarschuwing" id="opslag" hidden>Deze browser bewaart je keuzes niet (priv&eacute;venster of
+    geblokkeerde opslag). Kiezen werkt wel, maar kopieer het blok onderaan voordat je de pagina sluit.</p>
+
+  <div class="rooster" id="rooster" data-kol="3"></div>
+
+  <section class="uitkomst" aria-labelledby="uitkomstkop">
+    <h2 id="uitkomstkop">Uitkomst</h2>
+    <p class="uitleg">Dit blok gaat letterlijk naar Claude. Alleen wat hier als goedgekeurd staat, mag op de site.</p>
+    <pre id="blok"></pre>
+    <div class="kopieer">
+      <button class="knop" type="button" id="kopieer">Uitkomst kopi&euml;ren</button>
+      <span id="kopieermelding" role="status"></span>
+    </div>
+  </section>
+
+  <footer>
+    <p>Map: <code>C:/Users/arnas/Git_Repos/debresser/_image-versions/home-beelden-20260925</code></p>
+    <p>Wat er precies gevraagd is, staat per versie in <code>prompts.md</code> in dezelfde map.</p>
+    <p>Je keuze staat alleen in deze browser en gaat pas naar Claude als je het blok plakt. Wordt een versie
+       opnieuw gemaakt, dan vervalt je keuze voor die versie en vraagt de pagina je opnieuw te kiezen.</p>
+    <p>Pagina gebouwd 25-09-2026 14:00.</p>
+  </footer>
+</div>
+<script type="application/json" id="data">{"titel": "Home: beeld voor #reviews en #opslag, en een teamfoto in de hero", "map": "home-beelden-20260925", "sleutel": "image-versions:C:/Users/arnas/Git_Repos/debresser/_image-versions/home-beelden-20260925", "eenheid": "Optie", "versies": [{"nr": 1, "naam": "#reviews: werker met tablet, uitsnede", "scene": "Nieuwe uitsnede van de goedgekeurde werker 4 (tablet). Hij staat rechts naast de drie reviewkaarten, onderaan de sectie. De sectie is 756px hoog op 1440, dus past ze in één scherm. Op de telefoon staat hij onder de kaarten.", "bestand": "mock-1.jpg", "stempel": "88a948757ae3", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1866, "hoogte": 836, "crop": {"bestand": "versie-1.png", "stempel": "9e597d18ca6d", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 2, "naam": "#reviews: twee werkers met doos, uitsnede", "scene": "Nieuwe uitsnede van de goedgekeurde foto werkers-aan-het-werk-2: twee werkers geven een doos door. Ze staan rechts naast de kaarten; de sectie is 796px hoog op 1440 en past. Open punt: op de doos staat \"FULL SERVICE IN LOGISTIEK\". Kiest u deze, dan kan werkers-aan-het-werk-2 niet ook in #werken-bij.", "bestand": "mock-2.jpg", "stempel": "35f68dc33889", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1882, "hoogte": 877, "crop": {"bestand": "versie-2.png", "stempel": "ad165964eb7f", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 3, "naam": "#opslag: medewerker rijdt een ingepakt paneel door het warehouse", "scene": "Eigen foto van debresser.nl (Logistiek-transport-meubels-internationaal, 1000×667): een medewerker rijdt met een steekwagen een ingepakt paneel tussen de pallets door. Hetzelfde schuine kader, 755px hoog op 1440. De bron is maar 1000px, dus op een retinascherm is hij iets zacht. Deze vervangt de eerdere optie 3 (heftruck met container): die foto staat al in #diensten op home, in de kaart Opslag, en zou dus twee keer op de pagina staan.", "bestand": "mock-3.jpg", "stempel": "e2900c664cf0", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1904, "hoogte": 837, "crop": {"bestand": "versie-3.jpg", "stempel": "3dfd4391c5b0", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 4, "naam": "#opslag: de opslaghal met containers", "scene": "Eigen foto van debresser.nl (Inboedel-opslag-lossen): een overzicht van de hal met containers, trappen en heftruck. Zelfde schuine kader, 755px hoog op 1440. Laat het meest van de opslag zelf zien.", "bestand": "mock-4.jpg", "stempel": "27a27909a014", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1904, "hoogte": 837, "crop": {"bestand": "versie-4.jpg", "stempel": "b7cfb32799b7", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 5, "naam": "#opslag: medewerker rijdt ingepakte meubels", "scene": "Eigen foto van debresser.nl (Meubeltransport-Warehouse-B2B): een medewerker in het warehouse met ingepakte meubels op een pallet. Zelfde schuine kader, 755px hoog op 1440. De enige opslagoptie met beweging en een mens erin.", "bestand": "mock-5.jpg", "stempel": "492b43e7af94", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1904, "hoogte": 837, "crop": {"bestand": "versie-5.jpg", "stempel": "eee7ef394323", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 6, "naam": "Hero: huidig trio (ter vergelijking)", "scene": "Zo staat het nu: de video met de goedgekeurde uitsnede van drie werkers, tussen de kop en het formulier. Het beeld is 1600 px breed, getoond op 436 px, dus scherp. Keurt u deze goed, dan blijft de hero zoals hij is.", "bestand": "mock-6.jpg", "stempel": "fa96c525c23d", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1950, "hoogte": 980, "crop": {"bestand": "versie-6.png", "stempel": "88d423188810", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 7, "naam": "Hero: uitsnede van het team op de laadklep (7 man)", "scene": "Nieuwe uitsnede van De-Bresser-Uw-verhuis-partner.jpg: zeven medewerkers op de laadklep, op de plek van het trio; de video blijft. Nadelen: de bron is 1200 px, de uitsnede 769 px breed en getoond op 450 px (op een retinascherm iets zacht). De gezichten zijn ongeveer half zo groot als bij het trio, en de voorste drie verdwijnen deels achter het formulier. Oordeel: meer 'echt team', minder rustig dan het trio.", "bestand": "mock-7.jpg", "stempel": "af6bfc62266f", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1950, "hoogte": 980, "crop": {"bestand": "versie-7.png", "stempel": "3c1bb9d305b6", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 8, "naam": "Hero: teamfoto Tilburg als hele achtergrond (zonder video)", "scene": "De-Bresser-Verhuisbedrijf-Tilburg.jpg (1600×1040) als volle achtergrond, in plaats van de video en het trio. Op de telefoon is dit nu al de achtergrond. Nadelen: de kop staat over de wagenbelettering heen, die de open punten bevat (Breda-nummer, \"FULL SERVICE IN LOGISTIEK\"), en de drie mannen staan klein aan de randen. Oordeel: slechter dan het trio.", "bestand": "mock-8.jpg", "stempel": "f788a3e8187e", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1950, "hoogte": 980, "crop": {"bestand": "versie-8.jpg", "stempel": "6e77584204c8", "label": "het beeld zelf"}, "leeg": ""}, {"nr": 9, "naam": "Hero: team op de laadklep als hele achtergrond (zonder video)", "scene": "De-Bresser-Uw-verhuis-partner.jpg als volle achtergrond, in plaats van de video en het trio. Nadelen: de kop loopt dwars over de gezichten, en de foto is maar 1200 px breed, dus op 1440 opgerekt en onscherp. De video verdwijnt. Oordeel: slechter dan het trio.", "bestand": "mock-9.jpg", "stempel": "cf67eaeef233", "label": "mock 1440 + 390", "klasse": "klaar", "breedte": 1950, "hoogte": 980, "crop": {"bestand": "versie-9.jpg", "stempel": "058e87e2b9cb", "label": "het beeld zelf"}, "leeg": ""}]}</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+const E = D.eenheid;
+const e = E.toLowerCase();
+const STATUS = ["goed", "aanpassen"];
+let staat = { versies: {} };
+let opslagOk = true;
+
+try {
+  const rauw = localStorage.getItem(D.sleutel);
+  if (rauw) {
+    const g = JSON.parse(rauw);
+    if (g && g.versies && typeof g.versies === "object") {
+      for (const [nr, s] of Object.entries(g.versies)) {
+        if (!s || typeof s !== "object") continue;
+        staat.versies[nr] = {
+          status: STATUS.includes(s.status) ? s.status : null,
+          notitie: typeof s.notitie === "string" ? s.notitie : "",
+          stempel: typeof s.stempel === "string" ? s.stempel : null,
+          vorige: STATUS.includes(s.vorige) ? s.vorige : null,
+        };
+      }
+    }
+  }
+} catch (err) { opslagOk = false; }
+
+function bewaar() {
+  try { localStorage.setItem(D.sleutel, JSON.stringify(staat)); return true; }
+  catch (err) { return false; }
+}
+function van(nr) {
+  const k = String(nr);
+  if (!staat.versies[k]) staat.versies[k] = { status: null, notitie: "", stempel: null, vorige: null };
+  return staat.versies[k];
+}
+
+// Een keuze hoort bij het beeld waarop hij gemaakt is. Is het bestand sindsdien vervangen (nieuwe
+// generatie, merklaag erop), dan vervalt de keuze; de notitie blijft staan.
+let vervallen = false;
+for (const v of D.versies) {
+  const s = staat.versies[String(v.nr)];
+  if (s && s.status && s.stempel !== v.stempel) {
+    s.vorige = s.status; s.status = null; s.stempel = v.stempel; vervallen = true;
+  }
+}
+if (vervallen) bewaar();
+
+const NAAM = { goed: "goedgekeurd", aanpassen: "houden, aanpassen" };
+const rooster = document.getElementById("rooster");
+const kaarten = new Map();
+
+// Bestand relatief aan de rondemap (kan in een submap staan, zoals controle/), met de stempel erachter
+// zodat de browser na een nieuwe versie niet het oude beeld uit zijn cache toont.
+function adres(pad, st) {
+  return pad.split("/").map(encodeURIComponent).join("/") + "?v=" + st;
+}
+
+function el(tag, klasse, tekst) {
+  const n = document.createElement(tag);
+  if (klasse) n.className = klasse;
+  if (tekst !== undefined) n.textContent = tekst;
+  return n;
+}
+
+for (const v of D.versies) {
+  const s = van(v.nr);
+  const kaart = el("article", "kaart");
+  kaart.id = e + "-" + v.nr;
+
+  const kop = el("div", "kaartkop");
+  kop.append(el("span", "nr", E + " " + v.nr + (v.naam ? " · " + v.naam : "")));
+  kop.append(el("span", "bron" + (v.klasse ? " " + v.klasse : ""), v.bestand ? v.label : "geen beeld"));
+  kaart.append(kop);
+
+  if (v.bestand) {
+    const a = el("a", "vak");
+    a.href = adres(v.bestand, v.stempel);
+    a.target = "_blank"; a.rel = "noopener";
+    const im = el("img");
+    im.src = adres(v.bestand, v.stempel);
+    im.alt = E + " " + v.nr + (v.naam ? ", " + v.naam : "");
+    im.decoding = "async";
+    a.append(im, el("span", "volle", "volle resolutie"));
+    kaart.append(a);
+  } else {
+    const leeg = el("div", "vak leeg");
+    leeg.append(el("span", "", v.leeg));
+    kaart.append(leeg);
+  }
+
+  if (v.crop) {
+    const rij = el("div", "croprij");
+    rij.append(el("p", "", v.crop.label));
+    const a = el("a");
+    a.href = adres(v.crop.bestand, v.crop.stempel); a.target = "_blank"; a.rel = "noopener";
+    const im = el("img");
+    im.src = adres(v.crop.bestand, v.crop.stempel); im.alt = v.crop.label + ", " + e + " " + v.nr;
+    a.append(im); rij.append(a); kaart.append(rij);
+  }
+
+  if (v.bestand) {
+    kaart.append(el("p", "meta", v.bestand + (v.breedte ? " · " + v.breedte + "×" + v.hoogte + " px" : "")));
+  }
+  if (v.scene) {
+    const d = el("details");
+    d.append(el("summary", "", "Wat is er gevraagd"), el("p", "", v.scene));
+    kaart.append(d);
+  }
+
+  const keus = el("div", "keus");
+  const goed = el("button", "knop goed", "Goedkeuren");
+  const aanp = el("button", "knop aanp", "Houden, aanpassen");
+  for (const [knop, st] of [[goed, "goed"], [aanp, "aanpassen"]]) {
+    knop.type = "button";
+    knop.disabled = !v.bestand;
+    knop.addEventListener("click", () => {
+      const x = van(v.nr);
+      x.status = x.status === st ? null : st;
+      x.stempel = v.stempel;
+      x.vorige = null;
+      const ok = bewaar();
+      teken(v.nr);
+      tekenAlles();
+      meld(v.nr, ok ? "" : "Deze browser bewaart niets. De keuze staat wel in het blok onderaan.", !ok);
+    });
+  }
+  keus.append(goed, aanp);
+  kaart.append(keus);
+
+  const veld = el("textarea");
+  veld.placeholder = "Notitie bij " + e + " " + v.nr + " (wat moet er anders, of waarom niet)";
+  veld.setAttribute("aria-label", "Notitie bij " + e + " " + v.nr);
+  veld.value = s.notitie;
+  let klok;
+  veld.addEventListener("input", () => {
+    van(v.nr).notitie = veld.value;
+    tekenAlles();
+    clearTimeout(klok);
+    klok = setTimeout(() => {
+      const ok = bewaar();
+      meld(v.nr, ok ? "notitie bewaard" : "Niet bewaard: deze browser blokkeert opslag. Kopieer het blok onderaan.", !ok);
+      if (ok) setTimeout(() => meld(v.nr, ""), 1800);
+    }, 400);
+  });
+  kaart.append(veld);
+  kaart.append(el("p", "regel"));
+
+  rooster.append(kaart);
+  kaarten.set(v.nr, { kaart, goed, aanp });
+  teken(v.nr);
+}
+
+function meld(nr, tekst, let_) {
+  const r = kaarten.get(nr).kaart.querySelector(".regel");
+  r.textContent = tekst;
+  r.classList.toggle("let", !!let_);
+}
+
+function teken(nr) {
+  const { kaart, goed, aanp } = kaarten.get(nr);
+  const s = van(nr);
+  kaart.dataset.status = s.status || "";
+  goed.setAttribute("aria-pressed", String(s.status === "goed"));
+  aanp.setAttribute("aria-pressed", String(s.status === "aanpassen"));
+  goed.textContent = s.status === "goed" ? "Goedgekeurd ✓" : "Goedkeuren";
+  if (s.vorige && !s.status) {
+    meld(nr, "Dit beeld is vervangen na je keuze (je had: " + NAAM[s.vorige] + "). Kies opnieuw.", true);
+  }
+}
+
+function opsomming(nrs) {
+  if (!nrs.length) return "geen";
+  if (nrs.length === 1) return e + " " + nrs[0];
+  return e + " " + nrs.slice(0, -1).join(", ") + " en " + nrs[nrs.length - 1];
+}
+
+function blok() {
+  const goed = [], aanp = [], af = [], opnieuw = [], weg = [];
+  for (const v of D.versies) {
+    const s = van(v.nr);
+    if (!v.bestand) weg.push(v.nr);
+    else if (s.status === "goed") goed.push(v.nr);
+    else if (s.status === "aanpassen") aanp.push(v.nr);
+    else if (s.vorige) opnieuw.push(v.nr);
+    else af.push(v.nr);
+  }
+  const r = ["Beeldkeuze: " + D.titel + " (" + D.map + ")",
+    "Goedgekeurd voor de site: " + opsomming(goed),
+    "Houden, aanpassen: " + opsomming(aanp),
+    "Valt af: " + opsomming(af)];
+  if (opnieuw.length) r.push("Nog opnieuw kiezen (beeld vervangen): " + opsomming(opnieuw));
+  if (weg.length) r.push("Geen beeld: " + opsomming(weg));
+  for (const v of D.versies) {
+    const n = (van(v.nr).notitie || "").trim();
+    if (n) r.push(E + " " + v.nr + ": " + n.replace(/\r\n?/g, "\n").split("\n").join("\n  "));
+  }
+  return { tekst: r.join("\n"), goed, aanp, af, opnieuw, weg };
+}
+
+function tekenAlles() {
+  const b = blok();
+  document.getElementById("blok").textContent = b.tekst;
+  const er = D.versies.filter((v) => v.bestand).length;
+  document.getElementById("stand").textContent =
+    er + " van de " + D.versies.length + " beelden · " + b.goed.length + " goedgekeurd · " +
+    b.aanp.length + " houden, aanpassen";
+}
+
+document.getElementById("kopieer").addEventListener("click", () => {
+  const tekst = blok().tekst;
+  const melding = document.getElementById("kopieermelding");
+  const selecteer = () => {
+    const r = document.createRange();
+    r.selectNodeContents(document.getElementById("blok"));
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    melding.textContent = "Kopiëren lukte niet vanzelf. Het blok is geselecteerd: druk Ctrl+C.";
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(tekst).then(
+      () => { melding.textContent = "Gekopieerd ✓ Plak het in het gesprek met Claude."; },
+      selecteer);
+  } else {
+    selecteer();
+  }
+});
+
+const kolKnoppen = document.querySelectorAll("[data-kol]");
+function zetKol(k) {
+  rooster.dataset.kol = k;
+  kolKnoppen.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.kol === k)));
+}
+kolKnoppen.forEach((b) => b.addEventListener("click", () => {
+  zetKol(b.dataset.kol);
+  try { localStorage.setItem(D.sleutel + ":kolommen", b.dataset.kol); } catch (err) {}
+}));
+try {
+  const k = localStorage.getItem(D.sleutel + ":kolommen");
+  if (k === "1" || k === "3" || k === "5") zetKol(k);
+} catch (err) {}
+
+document.getElementById("ververs").addEventListener("click", () => location.reload());
+if (!opslagOk || !bewaar()) document.getElementById("opslag").hidden = false;
+tekenAlles();
+</script>
+</body>
+</html>

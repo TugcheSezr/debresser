@@ -113,3 +113,77 @@ en `-700.webp` (hoogte in px).
 Zo gemaakt: uitsnede 300,0-1600,1696 van de bron, dan `python site/_werk/cutout_mat.py <uitsnede>.png <uit>.png --margin 30`,
 daarna met de hand schoongemaakt: de gatenvorm tussen de figuren weggehaald, een donkere wig (lum < 115, y 676-691,
 x 258-280) weg, en veegsporen bij de schoenen (alpha < 200 naar 0, onder y 1130, x >= 560).
+
+# Goedgekeurd: verhuizers aan het werk 3, kratten door de gang
+
+Kantoorverhuizing in een lichte gang met glazen deuren: de oudere man (gezicht 11) duwt een lage rolplank met vier
+effen grijze kratten, de jonge man (gezicht 04) houdt de glazen deur voor hem open. Goedgekeurd voor de site op
+25-09-2026: "Goedgekeurd voor de site: versie 5" (ronde `werkers-aan-het-werk-r5-20260925`; versie 1 tot en met 4
+vielen af, de ronde is daarna verwijderd). Nog niet op de site: de gebruiker heeft nog niet gezegd waar het komt.
+
+Liggend 3:2, 2528x1696. Het enige gegenereerde beeld is `werk/versie-3.jpg` (ronde r5, versie 5; die versie is een
+keer opnieuw gegenereerd omdat 11 er eerst te jong uitzag). Daarna alleen het Top Movers-borstlogo op 04, met
+`werk/merk_borst.py` en sleutel "3" in `werk/borst.json`. 11 staat en profil met zijn arm voor de linkerborst en
+krijgt geen logo. Geen wagen en geen bedrukte doos in beeld, dus geen andere lagen en geen open tekstpunten.
+
+Opnieuw maken (op 25-09-2026 nagerekend, byte voor byte gelijk):
+
+```
+cd werk
+python merk_borst.py 3            # versie-3.jpg -> versie-3-merk.png (47af9a32...) = werkers-aan-het-werk-3-kratten-door-de-gang.png
+```
+
+| bestand | md5 |
+|---|---|
+| `werkers-aan-het-werk-3-kratten-door-de-gang.png` | 47af9a328c7f0589e0eca8bf791ebb87 |
+| `werk/versie-3.jpg` (ruw, zonder logo) | dfecea8c77b7a5c16e883695f6a737c6 |
+
+Het prompt van het ruwe beeld, woordelijk zoals het verstuurd is:
+
+## Versie 3 (ronde r5, versie 5): Kratten door de gang (`werk/versie-3.jpg`)
+
+Model gemini-3-pro-image-preview, verhouding 3:2, 2K, verstuurd 25-09-2026 14:03.
+
+Beelden, in deze volgorde voor het prompt:
+1. `C:\Users\arnas\Git_Repos\debresser\beeldronde-debresser\gezichten\gezicht-11-snor-kalend.jpg` (gezicht)
+2. `C:\Users\arnas\Git_Repos\debresser\beeldronde-debresser\gezichten\gezicht-04-twists-snor.jpg` (gezicht)
+
+```
+NO TEXT AND NO LOGOS: no logo of any kind anywhere in the frame, not on clothing, boxes, vehicles, buildings or equipment; the company's own logos are added to the photograph later. No certification logo, no seal, no membership badge, no company name, no sustainability claim, no street sign with readable words. Any sign, poster, screen, phone display, newspaper, printed sheet, drawing, list or document is seen at a shallow angle or slightly out of focus, so that it reads as a page with lines on it and no single word can be made out. Licence plates are plain, turned away or out of focus. No text is added over the photograph.
+
+COLOURS: the colours that belong to the company are the charcoal grey of the workwear, the clean white of the trucks, vans and boxes, and the bright green of the band on the trucks. White is truly white, not grey and not cream. Nobody wears orange, yellow or fluorescent safety colours, a hi-vis vest, or blue work clothes.
+
+Trade rules that must hold. Anyone carrying something carries it with the belly TOWARD the load and both arms in FRONT of the body; never with the back to the load, never a box or a piece of furniture on a shoulder or on the back. A box is set down upright on its bottom, never slid in lying on its side. Furniture travels wrapped in plain grey moving blankets held by hand, never with straps, ropes, cords, film or tape. A hand truck, dolly or rolling container is exactly the plain UNBRANDED one of the attached equipment reference when one is attached, used properly: the hand truck with its plate under the load and the user behind it, the dolly UNDER the furniture, the rolling container upright on its four wheels, nobody standing on any of them. Nobody is measuring anything with a tape measure. Tools, drills and equipment carry no maker's name. Buildings, stairwells and rooms are clean and well kept. No earbuds in anyone's ears.
+
+THE WORKWEAR of a Dutch moving company, as its crew really wear it: every mover wears a charcoal-grey (#4B484F) cotton pique polo shirt with short sleeves, a two-button placket and a flat knit collar; black work trousers with knee pockets and a leg pocket; dark grey safety work shoes. The polo is COMPLETELY PLAIN charcoal: no logo, no emblem, no embroidery, no print, no badge and no lettering on the chest, the sleeves or the back, AND it has had a morning of work in it: the fabric is soft and hangs naturally, gentle creases at the waist and the elbows, the collar a little relaxed, faded a touch at the shoulder seams. Neat and clean, not ironed crisp, not new out of the packet. The left chest (the wearer's left, the right side of the picture when he faces the camera) is a clean, unobstructed area of plain fabric. No cap, no hi-vis, no gloves, no name tag, no watch with a brand, no earbuds. Every mover in the picture wears this.
+
+- BOTH MOVERS ARE MEN, and they are the only two people in the picture. There is no woman and no third person.
+- Person A is about 44, medium build with a bit of a belly; Person B is about 32, broad-shouldered and a little taller. Their builds differ, as with real people. Both wear the same workwear.
+- CHECK THE SHIRTS: both men wear the charcoal POLO shirt with a flat knit collar and a two-button placket, completely plain: no small emblem, badge, patch or embroidery anywhere on the chest. Neither of them wears a crew-neck T-shirt.
+- Both men keep their mouths closed; no teeth are visible.
+- There are no cardboard boxes and no trucks or vans in this picture.
+
+- CHECK PERSON A'S FACE: Person A is the man of about 44 from the FIRST attached image: thinning short dark-brown hair that recedes at the temples, a big dark moustache, the lines of a man in his forties and a bit of a belly under the polo. He is NOT a young man and he does NOT have a full head of thick hair.
+
+Person A (the older mover, a man of about 44 from Limburg, medium build with a bit of a belly, thinning short dark-brown hair and a big dark moustache): use the FIRST attached image for face identity, age, skin and expression only; ignore its clothing, headwear and background.
+Person B (the younger mover, an Afro-Surinamese Dutch man of about 32 with deep brown skin, short twists, a thin moustache and broad shoulders): use the SECOND attached image for face identity, age, skin and expression only; ignore its clothing, headwear and background.
+The people must look clearly like different individuals.
+
+SCENE: An office move in a light corridor of a modern office building with a light grey floor and glass doors. Person A pushes a small low four-wheeled dolly carrying a stack of four closed plain dark-grey plastic moving crates with attached lids, his hands on the top crate and his belly toward the stack. Person B walks one step ahead and holds a glass door open with his back against it and one arm stretched to the door, watching the stack pass the door frame. Seen from the far side of the doorway, so both men come toward the camera at an angle, faces turned to the crates. The crates are completely plain: no text, no label, no logo, no numbers. Daylight comes through the glass door and a window at the end of the corridor behind the camera.
+
+Mood: positive and calm. The people are relaxed and content in their work: a light natural smile with the lips touching each other, or a friendly focused face; the mouth stays closed and no teeth are visible on anyone, never a wide grin, never laughing, no posed cheerfulness, no thumbs up, nobody looking at the camera.
+
+Composition for a wide LANDSCAPE photo on a website: a horizontal frame that may later be cropped to a wider banner, so keep the subject and every face inside the middle band of the height, and leave room at the left and right. Nobody is cut off at a hand or a foot by the border. People who are small in the frame are seen from behind, in profile or turned to their work; a mover who faces the camera with the left chest of his polo in view is close to the camera, so that his chest is large in the frame.
+
+Light: bright, friendly daylight falling in through a window on one side as the one dominant source with a clear direction, mixed white balance with warm 3000K interior light against cool 5800K daylight, soft-edged shadows with real falloff into the corners of the room, a few specular highlights allowed to clip. Faces are never evenly lit: the face sits on its own shadow side or just beside the pool of light. Not flat, not studio, no burning lamps in daylight.
+
+Camera: documentary photograph at 35mm from standing chest height, aperture f/5.6 so the room or the street stays legible, 1/125s, natural handheld framing with a slight tilt, perspective from normal standing distance. No drone view, no fisheye, no tripod-perfect symmetry.
+
+Imperfect framing on purpose: something ordinary is half in the way, a door frame darkening one edge, a chair or a bicycle cut off by the border, a coat over a bannister, a folded blanket on the floor. Lived in and in use, not tidied up for the photograph, not symmetrical, not a magazine interior, but clean and well kept.
+
+A real photograph, not an illustration, not 3D, not a render, not a painting. Visible sensor noise, skin with pores and fine lines, healthy even skin without red patches, true-to-life colour in clear daylight with whites that are truly white, no HDR, no teal-and-orange grading, no glossy plastic skin, no magazine perfection, no vignette, no film border or frame around the picture. The people are ordinary working men of different builds, not models. Each hand has exactly four fingers and one thumb, every visible fingertip belongs to a hand that is itself in the frame, and the grip matches the weight of what it holds: under a heavy load the forearms show the effort. The Netherlands, not America: Dutch brick houses and window frames, Dutch power sockets, Dutch street furniture, yellow licence plates out of focus.
+
+Avoid: text, letters, numbers, a logo, a watermark, a brand name, licence plate characters, stickers, garbled signage; a print, patch, badge or embroidery on any clothing; a hi-vis vest, orange or yellow safety colours, blue work clothes; tape, straps, ropes, cords or film on or around any box or piece of furniture; a box lying on its side; handwriting, marker words or paper labels on a box; certification seals; a wide grin or laughter; thumbs up; identical faces; distorted hands or extra fingers; relaxed hands under a heavy load; hands pressed against empty air; waxy or plastic skin; red blotches on cheeks; a burning table lamp in daylight; American houses, sockets or road signs; snow; rain; harsh glare; cartoon or CGI look.
+
+Photorealistic editorial photograph, aspect ratio 3:2, full-frame camera, natural colours, realistic depth of field. An original scene with original people, not a real recognisable individual.
+```

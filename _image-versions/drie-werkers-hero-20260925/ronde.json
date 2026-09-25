@@ -1,0 +1,25 @@
+{
+  "titel": "Drie werkers in de homehero",
+  "plek": "Homepage, de hero boven het offerteformulier. Vanaf 761px staat het trio tussen de kop en het formulier, voor de video; de onderrand zit achter het formulier (zoals de-kievit.nl). Op de telefoon staat het onder de kop.",
+  "lead": "Keuze 25-09-2026: uitsnede 1 (terrein, met dekens) is goedgekeurd en staat in de homehero als site/assets/img/hero/drie-werkers-900/1600.webp; de vrijstaande uitsnede staat in beeldronde-debresser/drie-werkers/ naast de groepsfoto (drie-werkers-1-terrein-dekens-uitsnede.png). Uitsnede 2 viel af en is met de mock verwijderd; de goedgekeurde groepsfoto 2 blijft staan. Het trio staat op desktop en telefoon zoals de mock het laat zien; de vraag 'alleen op desktop?' staat nog open. Uitsneden van de goedgekeurde groepsfoto's met drie werkers (gezichten 09, 04 en 02, met het Top Movers-borstlogo), tot de borst, zodat de gezichten groot genoeg zijn in de ruimte onder de kop. Het beeld zelf is niet veranderd, alleen de achtergrond is weg. Onder elke uitsnede een mock in de echte homepage: links 1440 x 900 (hero 664px, het trio 252px hoog, 172px zichtbaar boven het formulier), rechts 390 x 844. Let op de telefoon: met het trio schuift het formulier 111px omlaag (onderkant 835 in plaats van 724). Wil je het trio alleen op desktop, zeg dat bij je keuze.",
+  "eenheid": "Uitsnede",
+  "ratio": "16:9",
+  "versies": [
+    {
+      "nr": 1,
+      "naam": "terrein, met dekens",
+      "scene": "Uit drie-werkers-1-terrein-dekens.png (goedgekeurd 24-09) met site/_werk/cutout_mat.py (BiRefNet + closed-form matting, marge 40), afgesneden onder de handen: 1317 x 760, verhouding 1,73 (De Kievit: 1,75). Rechts houdt 02 de stapel verhuisdekens vast."
+    }
+  ],
+  "lagen": [
+    {
+      "patroon": "versie-{nr}",
+      "label": "uitsnede op donkerblauw #020D41",
+      "klasse": ""
+    }
+  ],
+  "crop": {
+    "patroon": "mock-{nr}",
+    "label": "Mock in de homehero: 1440 x 900 en 390 x 844"
+  }
+}

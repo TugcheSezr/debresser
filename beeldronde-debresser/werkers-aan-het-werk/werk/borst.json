@@ -1,5 +1,8 @@
 {
  "2": {"schouder": 323, "uit": "versie-2-merk.png", "crop": "versie-2-merkcrop.png", "mannen": [
    {"wie": "09 (op de laadklep)", "knoop": [1128, 512], "draai": -11, "dx": -26}
+ ]},
+ "3": {"schouder": 360, "uit": "versie-3-merk.png", "crop": "versie-3-merkcrop.png", "mannen": [
+   {"wie": "04 (houdt de glazen deur open, bijna recht naar de camera)", "knoop": [808, 478], "draai": 5, "dx": -4}
  ]}
 }

@@ -14,7 +14,7 @@ sitemap zodra hij in VRIJGEGEVEN staat EN er een bronbestand voor is (_werk/pagi
 import pathlib
 from urllib.parse import quote_plus
 
-BUSTER = "20260925-2010"
+BUSTER = "20260925-2050"
 
 # Het voorkeursdomein, met www. canonical, sitemap.xml, robots.txt en de schema-@id's voeren
 # allemaal dit domein; de apex redirect in vercel.json naar www.
@@ -411,7 +411,7 @@ def drawer_html(huidig=None):
 {chr(10).join(groepen)}
     </nav>
     <div class="drawer__foot">
-      <a class="btn btn--offerte drawer__cta" href="{offerte_href()}">Vrijblijvende offerte</a>
+      <a class="btn btn--offerte drawer__cta" href="{offerte_href()}"><svg aria-hidden="true"><use href="#i-caret"/></svg>Vrijblijvende offerte</a>
       <a class="drawer__tel" href="{TELHREF}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{TEL}</a>
       <a class="drawer__tel" href="mailto:{MAIL}"><svg aria-hidden="true"><use href="#i-mail"/></svg>{MAIL}</a>
     </div>

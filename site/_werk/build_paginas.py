@@ -256,6 +256,7 @@ def hero(href, titel, meta, home=False, formulier=False):
         # Tugches poster (een beeld uit haar film) in plaats van de gewone homefoto; alleen hier gebruikt.
         src = "/assets/img/hero/home-compleet-1920.webp"
         srcset = ", ".join(f"/assets/img/hero/home-compleet-{w}.webp {w}w" for w in (900, 1280, 1920))
+        alt = "Vrachtwagens van De Bresser aan de laaddocks van een bedrijfshal, van bovenaf gezien"
     kop = (f'<h1 class="hero__title hero__title--merk" id="hero-titel">'
            '<span class="sb-verborgen">Geweldig in verhuizen, opslag en logistiek. </span>'
            '<span aria-hidden="true">Geweldig in <span class="hero__wissel" data-woorden="verhuizen|opslag|logistiek">verhuizen</span></span>'
@@ -494,7 +495,7 @@ def werkgebied_html():
             + "\n        ".join(items) + '\n      </ul>\n    </div>')
 
 
-def kaartbeeld(naam, sizes, alt="", focus=None):
+def kaartbeeld(naam, sizes, alt="", focus=None, klasse="bl-kaart__foto"):
     """<img> voor een kaart uit de webp's van een hero: srcset met de echte breedtes (naam en breedte
     verschillen soms: een -1600 kan 1500 breed zijn), src de kleinste, width/height van dat bestand."""
     from PIL import Image
@@ -509,42 +510,43 @@ def kaartbeeld(naam, sizes, alt="", focus=None):
     srcset = (f' srcset="{", ".join(f"{pad(per_maat[m])} {m[0]}w" for m in maten)}" sizes="{sizes}"') if len(maten) > 1 else ""
     w, h = maten[0]
     stijl = f' style="object-position:50% {focus}%"' if focus else ""
-    return f'<img class="bl-kaart__foto" src="{pad(per_maat[maten[0]])}"{srcset} width="{w}" height="{h}" alt="{alt}"{stijl} loading="lazy" decoding="async">'
+    return f'<img class="{klasse}" src="{pad(per_maat[maten[0]])}"{srcset} width="{w}" height="{h}" alt="{alt}"{stijl} loading="lazy" decoding="async">'
 
 
 def blog_html(aantal=3):
-    """De nieuwste vrijgegeven blogberichten als kaarten; leeg als er nog geen live staan. Zelfde kaart als
-    /blog/ (.bl-kaart), met de hero van het bericht als foto (wens gebruiker 25-09: "use blogpost images for
-    this section"). Alt alleen als het bericht er een heeft; anders decoratief, de titel staat ernaast."""
+    """Home #blog: "Nieuws & Tips" uit de repository van Tugche (debresser-github, index.html #nieuws), wens
+    gebruiker 25-09: "keep it 3 only with read more button". Haar kaart: foto van rand tot rand bovenin, titel,
+    korte tekst en "Lees meer". De foto is de hero van het bericht zelf (wens gebruiker 25-09: "use blogpost images
+    for this section"), de tekst de LEAD van het bericht; de knop gaat naar /blog/. Leeg als er nog geen berichten
+    live staan. Alt alleen als het bericht er een heeft; anders decoratief, de titel staat ernaast."""
     berichten = [h for h in nav.BLOG if nav.live(h)][:aantal]
     if not berichten:
         return ""
     kaarten = []
     for h in berichten:
-        j, m, d = re.match(r"^/(\d{4})/(\d{2})/(\d{2})/", h).groups()
         meta = bron_meta(h)[0]
         naam = hero_naam(h, meta)
-        beeld = kaartbeeld(naam, "(max-width:700px) 92vw, (max-width:1300px) 31vw, 400px", meta.get("HERO_ALT") or HEROS.get(naam, ""), meta.get("HERO_FOCUS"))
-        kaarten.append(f'''      <li class="bl-kaart">
-        {beeld}
-        <div class="bl-kaart__tekst">
-          <time class="sb-tag" datetime="{j}-{m}-{d}">{int(d)} {MAANDEN[int(m) - 1]} {j}</time>
-          <h3><a href="{h}">{meta.get("TITEL") or h}</a></h3>
-          <span class="sb-pijllink" aria-hidden="true">Lees verder<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        beeld = kaartbeeld(naam, "(max-width:560px) 92vw, (max-width:900px) 42vw, (max-width:1300px) 31vw, 400px",
+                           esc(meta.get("HERO_ALT") or HEROS.get(naam, "")), meta.get("HERO_FOCUS"), klasse="bh-nieuws__foto")
+        lead = f'\n          <p>{meta["LEAD"]}</p>' if meta.get("LEAD") else ""
+        kaarten.append(f'''      <li class="bh-nieuws__kaart">
+        <div class="bh-nieuws__beeld">{beeld}</div>
+        <div class="bh-nieuws__tekst">
+          <h3><a href="{h}">{meta.get("TITEL") or h}</a></h3>{lead}
+          <span class="bh-nieuws__meer" aria-hidden="true">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
         </div>
       </li>''')
-    meer = f'\n      <a class="sb-pijllink" href="/blog/">Alle berichten<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>' if nav.live("/blog/") else ""
-    return f'''<section class="sectie bh-blog" id="blog" aria-labelledby="blog-kop">
+    meer = ('\n    <p class="bh-nieuws__voet" data-reveal><a class="btn" href="/blog/">Bekijk alle berichten</a></p>'
+            if nav.live("/blog/") else "")
+    return f'''<section class="sectie bh-nieuws" id="blog" aria-labelledby="blog-kop">
   <div class="wrap">
-    <div class="bh-blog__kop">
-      <div class="sectiekop" data-reveal>
-        <p class="label">Blog</p>
-        <h2 class="kop" id="blog-kop">Nieuws en tips</h2>
-      </div>{meer}
+    <div class="sectiekop" data-reveal>
+      <p class="label">Blog</p>
+      <h2 class="kop" id="blog-kop">Nieuws &amp; Tips</h2>
     </div>
-    <ul class="bl-raster" data-reveal-groep>
+    <ul class="bh-nieuws__raster" data-reveal-groep>
 {chr(10).join(kaarten)}
-    </ul>
+    </ul>{meer}
   </div>
 </section>'''
 

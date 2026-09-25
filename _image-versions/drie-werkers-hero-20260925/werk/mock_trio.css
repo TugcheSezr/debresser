@@ -1,0 +1,14 @@
+/* mock: drie werkers in de homehero (vanaf 761px tussen tekst en formulier, zoals de-kievit.nl) */
+@media(min-width:761px){
+  .hero--home.hf1-hero{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch}
+  .hero--home.hf1-hero .wrap{order:1;flex:none}
+  .hero--home.hf1-hero .hero__content{padding-bottom:.4rem}
+  .hero--home .hero__pic{position:relative;inset:auto;order:2;flex:1 1 auto;min-height:0;z-index:0;pointer-events:none}
+  .hero--home .hero__person{position:absolute;left:50%;top:auto;transform:translateX(-50%);bottom:calc(clamp(56px,7.5vw,104px) - 80px);
+    height:calc(100% - clamp(56px,7.5vw,104px) + 80px);width:auto;max-width:none;max-height:none;margin:0;filter:drop-shadow(0 12px 22px rgba(0,0,0,.3))}
+}
+@media(max-width:760px){
+  .hero--home.hf1-hero .hero__content{padding-bottom:.4rem}
+  .hero--home .hero__pic{position:relative;order:2;min-height:0;display:block;z-index:0}
+  .hero--home .hero__person{position:static;transform:none;display:block;height:clamp(150px,44vw,190px);width:auto;max-width:96%;max-height:none;object-fit:contain;object-position:bottom;margin:0 auto}
+}

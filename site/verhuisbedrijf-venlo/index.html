@@ -24,8 +24,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2010">
-<script src="/assets/js/site.js?v=20260925-2010" defer></script>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2050">
+<script src="/assets/js/site.js?v=20260925-2050" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -124,7 +124,7 @@
         <a class="drawer__link" href="/contact/">Contact</a>
     </nav>
     <div class="drawer__foot">
-      <a class="btn btn--offerte drawer__cta" href="/offerte/">Vrijblijvende offerte</a>
+      <a class="btn btn--offerte drawer__cta" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Vrijblijvende offerte</a>
       <a class="drawer__tel" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg>+31 (0)13 52 82 372</a>
       <a class="drawer__tel" href="mailto:info@debresser.nl"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@debresser.nl</a>
     </div>
@@ -157,7 +157,7 @@
   <div class="of-wrap">
     <div class="of-box">
       <div class="of-trust keurmerken" role="group" aria-label="Beoordelingen en keurmerk">
-        <a class="keurmerk keurmerk--kv" href="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv" target="_blank" rel="noopener" aria-label="Beoordeeld met een 9 uit 10 op Klantenvertellen (opent in een nieuw tabblad)"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="" width="322" height="159"><span class="keurmerk__cijfer">9</span></a>
+        <a class="keurmerk keurmerk--kv keurmerk--score" href="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv" target="_blank" rel="noopener" aria-label="Beoordeeld met een 9 uit 10 op Klantenvertellen (opent in een nieuw tabblad)"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="" width="322" height="159"><span class="keurmerk__cijfer">9</span></a>
         <a class="keurmerk keurmerk--ev" href="https://www.erkendeverhuizers.nl/lid/de-bresser-verhuizingen-b-v-2/" target="_blank" rel="noopener"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers (opent in een nieuw tabblad)" width="165" height="80"></a>
         <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">1.538</span><span class="keurmerk__sub">beoordelingen,<br> 97% beveelt aan</span></span>
       </div>
@@ -219,19 +219,12 @@
 
 <section class="sectie" id="contact" aria-labelledby="contact-kop">
   <div class="wrap">
-    <div class="blok blok--stapel blok--navy">
-      <div class="blok__boven">
-        <div class="blok__tekst" data-reveal>
-          <p class="label">Contact</p>
-          <h2 class="kop" id="contact-kop">Offerte voor uw verhuizing in Venlo</h2>
-          <p class="intro">Wilt u meer informatie, of bent u benieuwd wat De Bresser voor u kan betekenen? Neem vrijblijvend contact met ons op. We helpen u binnen 24 uur.</p>
-          <p><strong>De Bresser Venlo</strong>, Coehoornstraat 11, 5916 PH Venlo<br>Telefoon <a href="tel:+31773232100">+31 (0)77 32 32 100</a> · E-mail <a href="mailto:info@debresser.nl">info@debresser.nl</a><br>Algemeen nummer <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
-          <a class="btn" href="/offerte/">Offerte aanvragen</a>
-        </div>
-        <figure class="blok__foto" data-reveal>
-          <img src="/assets/img/bresser/particuliere-verhuizing-de-bresser-nieuwbouw-1-1600.webp" srcset="/assets/img/bresser/particuliere-verhuizing-de-bresser-nieuwbouw-1-1600.webp 960w" sizes="(max-width:860px) 90vw, 560px" alt="Vrachtwagen van De Bresser bij nieuwbouwwoningen" width="960" height="720" loading="lazy" decoding="async">
-        </figure>
-      </div>
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Contact</p>
+      <h2 class="kop" id="contact-kop">Offerte voor uw verhuizing in Venlo</h2>
+      <p class="intro">Wilt u meer informatie, of bent u benieuwd wat De Bresser voor u kan betekenen? Neem vrijblijvend contact met ons op. We helpen u binnen 24 uur.</p>
+      <p><strong>De Bresser Venlo</strong>, Coehoornstraat 11, 5916 PH Venlo<br>Telefoon <a href="tel:+31773232100">+31 (0)77 32 32 100</a> · E-mail <a href="mailto:info@debresser.nl">info@debresser.nl</a><br>Algemeen nummer <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
+      <a class="btn" href="/offerte/">Offerte aanvragen</a>
     </div>
   </div>
 </section>
@@ -255,7 +248,7 @@
           <div class="sbf__rij"><p class="sb-veld"><label for="sbf-bericht-naam">Naam</label><input id="sbf-bericht-naam" type="text" name="Naam" required data-leeg="Vul uw naam in." autocomplete="name"></p><p class="sb-veld"><label for="sbf-bericht-telefoonnummer">Telefoonnummer</label><input id="sbf-bericht-telefoonnummer" type="tel" name="Telefoonnummer" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></p></div>
           <p class="sb-veld"><label for="sbf-bericht-e-mailadres">E-mailadres</label><input id="sbf-bericht-e-mailadres" type="email" name="E-mailadres" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></p>
           <p class="sb-veld"><label for="sbf-bericht-bericht">Bericht <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sbf-bericht-bericht" name="Bericht" placeholder="Vragen of opmerkingen?" rows="2"></textarea></p>
-          <div class="sbf__verstuur"><button class="btn btn--offerte" type="submit">Bericht versturen</button><p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p></div>
+          <div class="sbf__verstuur"><button class="btn btn--offerte" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Bericht versturen</button><p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p></div>
           <p class="sbf__melding" id="sbf-bericht-melding" role="status" aria-live="polite"></p>
         </form>
       </div>

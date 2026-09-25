@@ -1,0 +1,65 @@
+{
+ "titel": "Home: beeld voor #reviews en #opslag, en een teamfoto in de hero",
+ "plek": "Home: sectie #reviews (\"Klanten zijn blij met ons\"), sectie #opslag (\"Even geen plek? Wij slaan uw spullen op\") en de hero bovenaan (nu de video met het trio)",
+ "lead": "Kies per onderdeel één optie. #reviews: opties 1 en 2. #opslag: opties 3, 4 en 5. Hero: opties 6 tot en met 9. Elke mock toont de echte homepage op 1440×900, met 390×844 ernaast; de kleinere foto eronder is het beeld zelf. Opties 1, 2 en 7 zijn nieuwe uitsnedes en komen pas op de site na uw goedkeuring. De opties 3 tot en met 5, 8 en 9 zijn eigen foto's van debresser.nl, zonder bewerking. Bij optie 2 is één punt nog open: op de doos staat \"FULL SERVICE IN LOGISTIEK\". Hero, eerlijk oordeel: geen enkele teamfoto van debresser.nl is duidelijk beter dan het trio (optie 6). Optie 7 is de enige echte kanshebber: het echte team van 7, en de video blijft. Maar de gezichten zijn ongeveer half zo groot als die van het trio en de voorste mannen verdwijnen deels achter het formulier. Afgevallen: De-Bresser-Verhuizingen (4 mensen, piepklein; nu de hero van /diensten/); Stoof-De-Bresser-Breda (Stoof-wagen, mensen verspreid en klein; nu de hero van Breda); verhuizen-opslag-logistiek-1/-2 (800 px, mensen klein); Full-service-Logistiek (dezelfde foto als optie 8, maar kleiner); Verhuizen-Opslag-Logistiek (groep voor een huis, klein); Foto-voor-duurzaamheidsverslag (klanten, niet het team; 900 px); Afbeelding-2 / Verhuizingen-Brabant (maar twee man, en \"FULL SERVICE IN LOGISTIEK\" op de doos). Vergelijkbare opties voor #offerte-per-mail, #werken-bij en /contact/ volgen later.",
+ "eenheid": "Optie",
+ "ratio": "1866:840",
+ "versies": [
+  {
+   "nr": 1,
+   "naam": "#reviews: werker met tablet, uitsnede",
+   "scene": "Nieuwe uitsnede van de goedgekeurde werker 4 (tablet). Hij staat rechts naast de drie reviewkaarten, onderaan de sectie. De sectie is 756px hoog op 1440, dus past ze in één scherm. Op de telefoon staat hij onder de kaarten."
+  },
+  {
+   "nr": 2,
+   "naam": "#reviews: twee werkers met doos, uitsnede",
+   "scene": "Nieuwe uitsnede van de goedgekeurde foto werkers-aan-het-werk-2: twee werkers geven een doos door. Ze staan rechts naast de kaarten; de sectie is 796px hoog op 1440 en past. Open punt: op de doos staat \"FULL SERVICE IN LOGISTIEK\". Kiest u deze, dan kan werkers-aan-het-werk-2 niet ook in #werken-bij."
+  },
+  {
+   "nr": 3,
+   "naam": "#opslag: medewerker rijdt een ingepakt paneel door het warehouse",
+   "scene": "Eigen foto van debresser.nl (Logistiek-transport-meubels-internationaal, 1000×667): een medewerker rijdt met een steekwagen een ingepakt paneel tussen de pallets door. Hetzelfde schuine kader, 755px hoog op 1440. De bron is maar 1000px, dus op een retinascherm is hij iets zacht. Deze vervangt de eerdere optie 3 (heftruck met container): die foto staat al in #diensten op home, in de kaart Opslag, en zou dus twee keer op de pagina staan."
+  },
+  {
+   "nr": 4,
+   "naam": "#opslag: de opslaghal met containers",
+   "scene": "Eigen foto van debresser.nl (Inboedel-opslag-lossen): een overzicht van de hal met containers, trappen en heftruck. Zelfde schuine kader, 755px hoog op 1440. Laat het meest van de opslag zelf zien."
+  },
+  {
+   "nr": 5,
+   "naam": "#opslag: medewerker rijdt ingepakte meubels",
+   "scene": "Eigen foto van debresser.nl (Meubeltransport-Warehouse-B2B): een medewerker in het warehouse met ingepakte meubels op een pallet. Zelfde schuine kader, 755px hoog op 1440. De enige opslagoptie met beweging en een mens erin."
+  },
+  {
+   "nr": 6,
+   "naam": "Hero: huidig trio (ter vergelijking)",
+   "scene": "Zo staat het nu: de video met de goedgekeurde uitsnede van drie werkers, tussen de kop en het formulier. Het beeld is 1600 px breed, getoond op 436 px, dus scherp. Keurt u deze goed, dan blijft de hero zoals hij is."
+  },
+  {
+   "nr": 7,
+   "naam": "Hero: uitsnede van het team op de laadklep (7 man)",
+   "scene": "Nieuwe uitsnede van De-Bresser-Uw-verhuis-partner.jpg: zeven medewerkers op de laadklep, op de plek van het trio; de video blijft. Nadelen: de bron is 1200 px, de uitsnede 769 px breed en getoond op 450 px (op een retinascherm iets zacht). De gezichten zijn ongeveer half zo groot als bij het trio, en de voorste drie verdwijnen deels achter het formulier. Oordeel: meer 'echt team', minder rustig dan het trio."
+  },
+  {
+   "nr": 8,
+   "naam": "Hero: teamfoto Tilburg als hele achtergrond (zonder video)",
+   "scene": "De-Bresser-Verhuisbedrijf-Tilburg.jpg (1600×1040) als volle achtergrond, in plaats van de video en het trio. Op de telefoon is dit nu al de achtergrond. Nadelen: de kop staat over de wagenbelettering heen, die de open punten bevat (Breda-nummer, \"FULL SERVICE IN LOGISTIEK\"), en de drie mannen staan klein aan de randen. Oordeel: slechter dan het trio."
+  },
+  {
+   "nr": 9,
+   "naam": "Hero: team op de laadklep als hele achtergrond (zonder video)",
+   "scene": "De-Bresser-Uw-verhuis-partner.jpg als volle achtergrond, in plaats van de video en het trio. Nadelen: de kop loopt dwars over de gezichten, en de foto is maar 1200 px breed, dus op 1440 opgerekt en onscherp. De video verdwijnt. Oordeel: slechter dan het trio."
+  }
+ ],
+ "lagen": [
+  {
+   "patroon": "mock-{nr}",
+   "label": "mock 1440 + 390",
+   "klasse": "klaar"
+  }
+ ],
+ "crop": {
+  "patroon": "versie-{nr}",
+  "label": "het beeld zelf"
+ }
+}

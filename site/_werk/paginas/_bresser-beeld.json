@@ -295,16 +295,14 @@
    "bresser/de-bresser-kantoor-906.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_De-Bresser-Kantoor.png",
-  "hero": true,
+  "hero": false,
   "maten": {
    "906": [
     906,
     604
    ]
   },
-  "paginas": [
-   "/faq/"
-  ]
+  "paginas": []
  },
  "de-bresser-meubeltransport-montage-service": {
   "bestanden": [
@@ -389,7 +387,7 @@
    "bresser/de-bresser-transport-kopie-1135.webp"
   ],
   "bron": "de-kievit-nl/fotos/2024-05_De-Bresser-Transport-kopie.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -400,9 +398,7 @@
     798
    ]
   },
-  "paginas": [
-   "/offerte/"
-  ]
+  "paginas": []
  },
  "de-bresser-uw-verhuis-partner": {
   "bestanden": [
@@ -472,16 +468,14 @@
    "bresser/de-bresser-verhuizen-frankrijk-1000.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_De-Bresser-verhuizen-frankrijk.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
     667
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-hilvarenbeek/"
-  ]
+  "paginas": []
  },
  "de-bresser-verhuizen-opslag-logistiek-2": {
   "bestanden": [
@@ -661,7 +655,7 @@
    "bresser/de-bresser-zorg-verhuizing-zakelijk-1200.webp"
   ],
   "bron": "debresser-nl/fotos/2024-04_De-Bresser-Zorg-verhuizing-Zakelijk.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -672,9 +666,7 @@
     800
    ]
   },
-  "paginas": [
-   "/bergen-op-zoom/"
-  ]
+  "paginas": []
  },
  "duurzaam-afvalscheiden-de-bresser": {
   "bestanden": [
@@ -699,7 +691,7 @@
    "bresser/duurzaamheidsverslag-2022-tm-dubbel40-1920.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Duurzaamheidsverslag-2022-TM-dubbel40.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -714,9 +706,7 @@
     1359
    ]
   },
-  "paginas": [
-   "/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/"
-  ]
+  "paginas": []
  },
  "erkende-verhuizer-bedrijf-de-bresser": {
   "bestanden": [
@@ -756,16 +746,14 @@
    "bresser/foto-voor-duurzaamheidsverslag-website-900.webp"
   ],
   "bron": "debresser-nl/fotos/2026-01_Foto-voor-duurzaamheidsverslag-website.webp",
-  "hero": true,
+  "hero": false,
   "maten": {
    "900": [
     900,
     675
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-boxtel/"
-  ]
+  "paginas": []
  },
  "frankrijk-verhuizen-transport-bedrijf": {
   "bestanden": [
@@ -773,7 +761,7 @@
    "bresser/frankrijk-verhuizen-transport-bedrijf-1468.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Frankrijk-Verhuizen-Transport-bedrijf.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -784,9 +772,7 @@
     1152
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-maastricht/"
-  ]
+  "paginas": []
  },
  "gebouwenbeheer-de-bresser": {
   "bestanden": [
@@ -896,7 +882,7 @@
    "bresser/gen-wagen-2-bij-de-loods-1920.webp"
   ],
   "bron": "beeldronde-debresser/wagens/wagen-2-bij-de-loods.png",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -911,9 +897,7 @@
     1288
    ]
   },
-  "paginas": [
-   "/2024/03/29/waarom-verhuizen-met-een-erkende-verhuizer/"
-  ]
+  "paginas": []
  },
  "gen-wagen-3-onderweg-in-brabant": {
   "bestanden": [
@@ -922,7 +906,7 @@
    "bresser/gen-wagen-3-onderweg-in-brabant-1920.webp"
   ],
   "bron": "beeldronde-debresser/wagens/wagen-3-onderweg-in-brabant.png",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -937,9 +921,7 @@
     1288
    ]
   },
-  "paginas": [
-   "/vacature/chauffeur-verhuizingen-c-ce/"
-  ]
+  "paginas": []
  },
  "gen-werker-4-tablet": {
   "bestanden": [
@@ -1079,7 +1061,7 @@
    "bresser/gen-werkers-aan-het-werk-2-dozen-op-het-platform-1920.webp"
   ],
   "bron": "beeldronde-debresser/werkers-aan-het-werk/werkers-aan-het-werk-2-dozen-op-het-platform.png",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1094,9 +1076,7 @@
     1288
    ]
   },
-  "paginas": [
-   "/overzicht-vacatures/"
-  ]
+  "paginas": []
  },
  "handyman-de-bresser-1": {
   "bestanden": [
@@ -1183,7 +1163,7 @@
    "bresser/internationaal-verhuizen-1238.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Internationaal-verhuizen.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1194,9 +1174,7 @@
     1043
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-oosterhout/"
-  ]
+  "paginas": []
  },
  "internationaal-verhuizen-frankrijk-de-bresser": {
   "bestanden": [
@@ -1205,7 +1183,7 @@
    "bresser/internationaal-verhuizen-frankrijk-de-bresser-1920.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Internationaal-verhuizen-Frankrijk-De-Bresser.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1220,9 +1198,7 @@
     1080
    ]
   },
-  "paginas": [
-   "/blog/"
-  ]
+  "paginas": []
  },
  "logistiek-transport-meubels-internationaal-1": {
   "bestanden": [
@@ -1294,7 +1270,7 @@
    "bresser/nationaal-en-internationaal-transport-1600.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Nationaal-en-internationaal-transport.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1305,9 +1281,7 @@
     1200
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-baarle-nassau/"
-  ]
+  "paginas": []
  },
  "particuliere-verhuizing-de-bresser-nieuwbouw-1": {
   "bestanden": [
@@ -1374,7 +1348,7 @@
    "bresser/senioren-brocken-verhuizing-1536.webp"
   ],
   "bron": "debresser-nl/fotos/2025-11_senioren-brocken-verhuizing-1536x1152-1.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1385,9 +1359,7 @@
     1152
    ]
   },
-  "paginas": [
-   "/2025/11/19/de-bresser-verwelkomt-brocken-verhuizingen/"
-  ]
+  "paginas": []
  },
  "stoof-de-bresser-breda-verhuizen": {
   "bestanden": [
@@ -1420,16 +1392,14 @@
    "bresser/top-movers-de-bresser-bedrijfsverhuizing-960.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Top-Movers-De-Bresser-Bedrijfsverhuizing.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "960": [
     960,
     720
    ]
   },
-  "paginas": [
-   "/2024/03/29/verhuislift-maakt-alles-makkelijker/"
-  ]
+  "paginas": []
  },
  "verhuisdozen-de-bresser": {
   "bestanden": [
@@ -1458,32 +1428,28 @@
    "bresser/verhuislift-de-bresser-720.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_verhuislift.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "720": [
     720,
     960
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-roermond/"
-  ]
+  "paginas": []
  },
  "verhuizen-amsterdam-de-bresser": {
   "bestanden": [
    "bresser/verhuizen-amsterdam-de-bresser-960.webp"
   ],
   "bron": "debresser-nl/fotos/2024-03_Verhuizen-Amsterdam-De-Bresser.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "960": [
     960,
     720
    ]
   },
-  "paginas": [
-   "/2024/03/29/de-drie-grootste-verhuisblunders/"
-  ]
+  "paginas": []
  },
  "verhuizen-breda-tilburg": {
   "bestanden": [
@@ -1618,7 +1584,7 @@
    "bresser/zakelijk-verhuizing-de-bresser-1200.webp"
   ],
   "bron": "debresser-nl/fotos/2024-04_Zakelijk-verhuizing-De-Bresser.jpg",
-  "hero": true,
+  "hero": false,
   "maten": {
    "1000": [
     1000,
@@ -1629,9 +1595,7 @@
     800
    ]
   },
-  "paginas": [
-   "/verhuisbedrijf-eindhoven/"
-  ]
+  "paginas": []
  },
  "zorg-verhuizing-de-bresser": {
   "bestanden": [
