@@ -513,6 +513,17 @@ def kaartbeeld(naam, sizes, alt="", focus=None, klasse="bl-kaart__foto"):
     return f'<img class="{klasse}" src="{pad(per_maat[maten[0]])}"{srcset} width="{w}" height="{h}" alt="{alt}"{stijl} loading="lazy" decoding="async">'
 
 
+# Home #blog, uitstappers (79, 25-09-2026). Wens gebruiker: "Nieuws & Tips section - the images should have the coming out
+# of the border look"; eigen uitsnedes uit de heroes zelf ("Straight to page"). Per hero: uitsnede (beeld/bh-uit-*) en de laag
+# in cqw van de fotobreedte: breedte, links, boven (negatief = boven de fotorand), verhouding. Foto en uitsnede liggen even groot
+# op dezelfde plek; het raam knipt de foto, de uitsnede toont alleen wat boven de rand steekt (zie .bh-nieuws__beeld--pop).
+BLOG_POP = {
+    "bresser/montage-service-zakelijk-meubeltransport-2-naast-elkaar": ("beeld/bh-uit-montage", 130, -30, -23.3, 1.5),
+    "bresser/de-bresser-verhuisbedrijf-tilburg": ("beeld/bh-uit-wagen", 130, -30, -20.6, 1.5385),
+    "bresser/verhuizen-planning": ("beeld/bh-uit-spiegel", 200, -60, -61.8, 1.5),
+}
+
+
 def blog_html(aantal=3):
     """Home #blog: "Nieuws & Tips" uit de repository van Tugche (debresser-github, index.html #nieuws), wens
     gebruiker 25-09: "keep it 3 only with read more button". Haar kaart: foto van rand tot rand bovenin, titel,
@@ -526,11 +537,20 @@ def blog_html(aantal=3):
     for h in berichten:
         meta = bron_meta(h)[0]
         naam = hero_naam(h, meta)
-        beeld = kaartbeeld(naam, "(max-width:560px) 92vw, (max-width:900px) 42vw, (max-width:1300px) 31vw, 400px",
-                           esc(meta.get("HERO_ALT") or HEROS.get(naam, "")), meta.get("HERO_FOCUS"), klasse="bh-nieuws__foto")
+        pop = BLOG_POP.get(naam)
+        f = pop[1] / 100 if pop else 1
+        sizes = f"(max-width:560px) {92 * f:.0f}vw, (max-width:900px) {42 * f:.0f}vw, (max-width:1300px) {31 * f:.0f}vw, {400 * f:.0f}px"
+        beeld = kaartbeeld(naam, sizes, esc(meta.get("HERO_ALT") or HEROS.get(naam, "")), None if pop else meta.get("HERO_FOCUS"),
+                           klasse="bh-nieuws__foto")
+        if pop:
+            uit = kaartbeeld(pop[0], sizes, "", klasse="bh-nieuws__uit").replace("<img ", '<img aria-hidden="true" ', 1)
+            beeld = (f'<div class="bh-nieuws__beeld bh-nieuws__beeld--pop" style="--pw:{pop[1]};--pl:{pop[2]};--pt:{pop[3]};--par:{pop[4]}">'
+                     f'<span class="bh-nieuws__raam">{beeld}</span>{uit}</div>')
+        else:
+            beeld = f'<div class="bh-nieuws__beeld">{beeld}</div>'
         lead = f'\n          <p>{meta["LEAD"]}</p>' if meta.get("LEAD") else ""
         kaarten.append(f'''      <li class="bh-nieuws__kaart">
-        <div class="bh-nieuws__beeld">{beeld}</div>
+        {beeld}
         <div class="bh-nieuws__tekst">
           <h3><a href="{h}">{meta.get("TITEL") or h}</a></h3>{lead}
           <span class="bh-nieuws__meer" aria-hidden="true">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span>

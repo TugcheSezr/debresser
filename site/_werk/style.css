@@ -2290,6 +2290,8 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-venster .venster__mark{height:auto}
 .sb-opslag .opslag__persoon{clip-path:none;bottom:123px}
 @media(min-width:901px){.sb-venster .venster__fig{width:100%;max-width:440px;justify-self:center}}
+/* home: de verhuizer met de De Bresser-doos heeft weinig ruimte boven het haar; iets lager zodat de sectierand het niet afsnijdt (8d 25-09) */
+@media(min-width:901px){.sb-venster .venster__persoon--doos{height:clamp(400px,40vw,536px)}}
 @media(max-width:900px){
   .sb-opslag{padding-top:2rem}
   .sb-opslag .opslag__kaart{margin-bottom:0}
@@ -2631,6 +2633,24 @@ body:not(:has(.hero)) .topbar::before{display:none}
 /* Tablet: drie kaarten onder elkaar, foto links. Telefoon: foto weer boven. */
 @media(max-width:900px){.bh-nieuws__raster{grid-template-columns:1fr}.bh-nieuws__kaart{flex-direction:row}.bh-nieuws__beeld{flex:0 0 42%;aspect-ratio:auto;min-height:180px}}
 @media(max-width:560px){.bh-nieuws__kaart{flex-direction:column}.bh-nieuws__beeld{flex:none;aspect-ratio:16/10;min-height:0}}
+/* home #blog: uitstappers (79, 25-09-2026). Wens gebruiker: "the images should have the coming out of the border look".
+   Foto en uitsnede (beeld/bh-uit-*) even groot op dezelfde plek, maten in cqw van de fotobreedte (--pw breed, --pl links,
+   --pt boven, --par verhouding; per kaart uit BLOG_POP in de bouwer). Het raam knipt de foto op het kader; de uitsnede toont
+   alleen wat boven de fotorand uitsteekt (~11cqw, bij 1440 ~43px). Zijwaarts knipt overflow-x:clip, dus geen horizontale
+   scroll. De hoverzoom schaalt beide lagen vanaf de fotorand, zodat de naad blijft liggen. */
+.bh-nieuws__kaart:has(.bh-nieuws__beeld--pop){overflow:visible}
+.bh-nieuws__beeld--pop{position:relative;overflow:clip visible;background:none;container-type:inline-size}
+.bh-nieuws__raam{position:absolute;inset:0;overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:var(--goud-diep)}
+.bh-nieuws__beeld--pop img{position:absolute;left:calc(var(--pl)*1cqw);top:calc(var(--pt)*1cqw);width:calc(var(--pw)*1cqw);max-width:none;height:auto;
+  aspect-ratio:var(--par);object-fit:fill;transform-origin:50% calc(var(--pt)*-1cqw)}
+.bh-nieuws__uit{pointer-events:none;
+  clip-path:inset(0 calc((var(--pw) + var(--pl) - 100)*1cqw) calc((var(--pw)/var(--par) + var(--pt))*1cqw - 1px) calc(var(--pl)*-1cqw))}
+.bh-nieuws .sectiekop{margin-bottom:clamp(2.6rem,4vw,3.4rem)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .bh-nieuws__uit{transition:transform .3s var(--ease)}
+  .bh-nieuws__kaart:hover .bh-nieuws__uit{transform:scale(1.05)}
+}
+@media(max-width:900px){.bh-nieuws__raster{row-gap:3.25rem}.bh-nieuws__beeld--pop{align-self:flex-start;aspect-ratio:16/10;min-height:0}}
 
 /* ---------- footer (rework 25-09-2026) ----------
    Wens gebruiker: geen regio-blok meer, de merken van debresser.nl terug, geen kolom langer dan de rest
@@ -4003,8 +4023,9 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
    Waarmee wij u helpen section, make it be white blocks back". Daarna: "focus only on homepage", dus alleen waar de
    kaarten .sb-diensten__grid--wit hebben (blok-dienstkaarten-wit.html, plaatshouder DIENSTEN_WIT, nu alleen home).
    Uitbreiden naar een andere pagina: daar de plaatshouder DIENSTEN vervangen door DIENSTEN_WIT (een regel).
-   - Witte kaarten met de kleine hoek van Tugches #diensten (4px) op een diepblauwe band: wit op een lichte band steekt
-     niet af (dc, blokcontrast). De band wijkt af van de lichte buren; de randen tekent dc's tab (background inherit).
+   - Witte kaarten met de kleine hoek van Tugches #diensten (4px) op de lichte band van de afwisseling (dc). Geen
+     donkere band: wens gebruiker 25-09 "keep the white background, ignore and remove the contrast rule". Een zachte
+     schaduw met een haarlijnring houdt de kaarten los van de band.
    - Foto-pop als bij Tugche (js/main.js "Mensen en wagens uit de foto"), maar zonder JS: de foto in een raam dat op het
      kader afsnijdt, de uitsnede (zelfde maat en plek) in een strook boven het kader, zodat alleen de kruin erboven
      uitsteekt. De maten rekent de CSS met containereenheden (100cqw = breedte van het fotovak):
@@ -4013,17 +4034,10 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
      Uitsnedes: beeld/dienst-<naam>-uit.webp (Tugches uitsnedes op onze foto gelegd; verhuizen zelf gemaakt).
    - De hele kaart blijft klikbaar (::after van de titellink, d5): de strook heeft pointer-events:none en er komt geen
      position op de tekst. */
-main > .sectie.sb-diensten:has(.sb-diensten__grid--wit){background-color:var(--goud-diep)}
-main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label{color:var(--goud-hover)}
-main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label::before{background:var(--goud-hover)}
-main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .kop{color:var(--wit)}
-main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .intro{color:var(--licht-hover)}
-main > .sb-diensten:has(.sb-diensten__grid--wit) .sb-diensten__kop .sb-pijllink{color:var(--wit);border-bottom-color:rgba(255,255,255,.35)}
 /* ruimte voor wat uitsteekt: boven de eerste rij en tussen de rijen de uitsteek (30px) plus lucht */
 .sb-diensten__grid--wit{--dk-r:4px;row-gap:calc(30px + .35rem);margin-top:calc(30px + .35rem)}
 main > .sb-diensten .sb-diensten__grid--wit .sb-dienst{background:var(--wit);border-radius:var(--dk-r);overflow:visible;
-  box-shadow:0 1px 2px rgba(2,13,65,.25),0 18px 34px -18px rgba(2,13,65,.75)}
-main > .sb-diensten .sb-diensten__grid--wit .sb-dienst:focus-within{outline-color:var(--wit)}
+  box-shadow:0 0 0 1px rgba(2,13,65,.07),0 1px 2px rgba(2,13,65,.08),0 16px 32px -20px rgba(2,13,65,.4)}
 main > .sb-diensten .sb-diensten__grid--wit .sb-dienst h3{color:var(--bruin)}
 main > .sb-diensten .sb-diensten__grid--wit .sb-dienst p{color:var(--ant-zacht)}
 main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--goud-licht);color:var(--goud-diep)}
