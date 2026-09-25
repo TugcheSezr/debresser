@@ -2177,6 +2177,17 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-toennu__rechts .btn{margin-top:.6rem;width:auto}
 @media(max-width:860px){.sb-toennu__paneel{grid-template-columns:1fr}}
 @media(max-width:520px){.sb-toennu__rechts .btn{width:100%}}
+/* Vandaag: het kantoor steekt uit de lijst (8d 25-09). Effect "pand-uit" van Tugches Over ons (debresser-github,
+   css/over-ons-pand.css), wens gebruiker 25-09: "use the out of the border effect on the vandaag image like in tugche
+   Over ons section". In het fotovak (16:10) staat oisterwijk-1000 vanaf rij 212 van 667 (net onder de dakrand van het
+   kantoor), kolommen 25-655. Daarover ligt de uitsnede van het kantoorblok uit dezelfde foto (oisterwijk-kantoor-uit-1000
+   = de bovenste 240 rijen, zelfde uitlijning), alleen zichtbaar boven het fotovak en over de witte rand. Alle maten in %
+   van het fotovak, dus het klopt op elke breedte. Er beweegt niets. De marge boven de foto's geeft het dak ruimte. */
+.sb-toennu__fotos{margin-top:clamp(2.4rem,4.6vw,3.6rem)}
+.sb-toennu__beeld{position:relative}
+.sb-toennu__raam{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:8px}
+.sb-toennu__nu :is(.sb-toennu__foto,.sb-toennu__uit){position:absolute;left:-3.968%;top:-53.84%;width:158.73%;max-width:none;height:auto;aspect-ratio:auto;border-radius:0;object-fit:fill}
+.sb-toennu__nu .sb-toennu__uit{z-index:2;pointer-events:none;clip-path:inset(0 0 10.8% 0);filter:drop-shadow(8px 6px 7px rgba(2,13,65,.45)) drop-shadow(1px 1px 2px rgba(2,13,65,.3))}
 
 /* ---- split-contact-cta: wit, figuur, navy (/klantervaringen/) ---- */
 .sb-kennis__kaart{position:relative;display:grid;grid-template-columns:1.15fr .9fr;margin-top:3rem;border-radius:var(--r);background:#fff;box-shadow:var(--schaduw)}
@@ -3945,3 +3956,28 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
   .sb-kerncijfer b{font-size:1rem}
 }
 /* ==== home-header Tugche d5 25-09: end ==== */
+/* ---- home #reviews: twee werkers op het Klantenvertellen-blok en de schuine band uit Tugches #reviews (7a 25-09) ----
+   De uitsnede (werkers-aan-het-werk-2, goedgekeurd) is afgesneden onder de doos en staat met die snijlijn precies op
+   de bovenrand van het cijferblok. De band komt uit Tugches css/style.css (.reviews .rgrid--3::before/::after): vlak
+   #00498F dat naar rechts oploopt, 5px Signaalgroen erboven en 14px Nachtblauw eronder, een witte en een groene ruit.
+   De sectie zelf krijgt geen clip-path of z-index (randen zijn van dc); de band ligt in .wrap, die isoleert. */
+.sb-reviews{--duo-h:clamp(190px,16.5vw,240px);--band-ruit-wit:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");--band-ruit-groen:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%237bd534' stroke-width='2.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.sb-reviews .wrap{position:relative;isolation:isolate}
+.sb-reviews__score{position:relative}
+.sb-reviews__werkers{position:absolute;left:50%;bottom:calc(100% - 1px);transform:translateX(-50%);height:var(--duo-h);width:auto;max-width:none;pointer-events:none;filter:drop-shadow(0 10px 14px rgba(2,13,65,.3))}
+.sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:"";position:absolute;left:50%;width:100vw;margin-left:-50vw;pointer-events:none;
+  top:var(--band-top);height:var(--band-h);clip-path:polygon(0 var(--band-schuin),100% 0,100% calc(100% - var(--band-schuin)),0 100%)}
+.sb-reviews__kaarten::before{z-index:-2;margin-top:-5px;height:calc(var(--band-h) + 19px);background:linear-gradient(#7bd534 0 50%,#020d41 50% 100%)}
+.sb-reviews__kaarten::after{z-index:-1;background:var(--band-ruit-wit) right max(3vw,calc(50% - 700px)) top 8% / 150px auto no-repeat,var(--band-ruit-groen) left max(3vw,calc(50% - 700px)) top 62% / 52px auto no-repeat,#00498f}
+@media(min-width:901px){
+  .sb-reviews{padding-top:calc(clamp(3.5rem,7vw,6rem) + var(--duo-h) - 170px)}
+  .sb-reviews__kaarten{--band-top:-110px;--band-h:410px;--band-schuin:180px}
+}
+@media(max-width:900px){
+  .sb-reviews{--duo-h:170px}
+  .sb-reviews__score{margin-top:calc(var(--duo-h) - 1.2rem)}
+  .sb-reviews .wrap::after{content:"";position:absolute;z-index:-1;left:50%;width:100vw;margin-left:-50vw;bottom:-1.5rem;height:62%;pointer-events:none;
+    background:#00498f;clip-path:polygon(0 70px,100% 0,100% calc(100% - 70px),0 100%);}
+  .sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:none}
+}
+/* ==== home #reviews werkers 7a 25-09: end ==== */
