@@ -14,7 +14,7 @@ sitemap zodra hij in VRIJGEGEVEN staat EN er een bronbestand voor is (_werk/pagi
 import pathlib
 from urllib.parse import quote_plus
 
-BUSTER = "20260925-2130"
+BUSTER = "20260925-2145"
 
 # Het voorkeursdomein, met www. canonical, sitemap.xml, robots.txt en de schema-@id's voeren
 # allemaal dit domein; de apex redirect in vercel.json naar www.

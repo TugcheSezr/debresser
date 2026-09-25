@@ -2092,12 +2092,14 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 /* home #waarom: foto met uitstapper (79, 25-09-2026). Wens gebruiker: "change the image to be of workers working ...
    make it have the effect of prop or body sticking out of the image border". Twee lagen met dezelfde maat en plek, alles in
    cqw (breedte van de figure) en onderaan verankerd: de foto geknipt op het kader (onderste 65cqw van de figure), de uitsnede
-   alleen erboven, dus het hoofd en de rug van de bukkende verhuizer steken boven de fotorand uit (bij 1440 ~80px).
-   Laag: 134cqw breed (1000:708 -> 94.87cqw hoog), 34cqw naar links, 1cqw onder de figure. */
+   alleen erboven, dus het hoofd en de rug van de bukkende verhuizer steken boven de fotorand uit.
+   25-09 21:40, wens gebruiker: "adjust the image to be larger by making the top border be higher": fotorand van 90px naar
+   28px onder de bovenkant van de rij (bij 1440), laag 149cqw breed (105.5cqw hoog), 49cqw naar links; het hoofd steekt
+   ~40px boven de rij uit, vrij van de intro (ook de rug loopt pas rechts van de tweede introregel omhoog). */
 .sb-voordelen__foto.sb-pop{position:relative;container-type:inline-size;overflow:visible;border-radius:0;min-height:0}
-.sb-voordelen__foto.sb-pop img{position:absolute;inset:auto auto -1cqw -34cqw;width:134cqw;max-width:none;height:auto;aspect-ratio:1000/708;object-fit:fill}
-.sb-pop__foto{clip-path:inset(28.87cqw 0 1cqw 34cqw round var(--r))}
-.sb-pop__uit{clip-path:inset(0 0 calc(66cqw - 1px) 0);pointer-events:none}
+.sb-voordelen__foto.sb-pop img{position:absolute;inset:auto auto -1cqw -49cqw;width:149cqw;max-width:none;height:auto;aspect-ratio:1000/708;object-fit:fill}
+.sb-pop__foto{clip-path:inset(26.84cqw 0 1cqw 49cqw round var(--r))}
+.sb-pop__uit{clip-path:inset(0 0 calc(78.66cqw - 1px) 0);pointer-events:none}
 @media(max-width:860px){.sb-voordelen__foto.sb-pop{aspect-ratio:505/420}}
 
 /* ---- contact-map-form: gegevens, kaart en berichtformulier (/contact/) ---- */
@@ -2290,8 +2292,10 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-venster .venster__mark{height:auto}
 .sb-opslag .opslag__persoon{clip-path:none;bottom:123px}
 @media(min-width:901px){.sb-venster .venster__fig{width:100%;max-width:440px;justify-self:center}}
-/* home: de verhuizer met de De Bresser-doos heeft weinig ruimte boven het haar; iets lager zodat de sectierand het niet afsnijdt (8d 25-09) */
-@media(min-width:901px){.sb-venster .venster__persoon--doos{height:clamp(400px,40vw,536px)}}
+/* home: de verhuizer met de De Bresser-doos, groter en afgesneden halverwege de dijen; de snede valt op de onderrand
+   van de boog (= onderrand sectie), het hoofd steekt boven de boog uit. clip-path knipt de schaduw onder de snede weg (8d 25-09) */
+.sb-venster .venster__persoon--doos{clip-path:inset(-80px -80px 0 -80px)}
+@media(min-width:901px){.sb-venster .venster__persoon--doos{height:calc(clamp(415px,44vw,530px) + clamp(40px,4.5vw,65px))}}
 @media(max-width:900px){
   .sb-opslag{padding-top:2rem}
   .sb-opslag .opslag__kaart{margin-bottom:0}
@@ -4016,6 +4020,17 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
     background:#00498f;clip-path:polygon(0 70px,100% 0,100% calc(100% - 70px),0 100%);}
   .sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:none}
 }
+/* Klantenvertellen-blok wit (gebruiker 25-09: "make the klantenvertellen block white too"), zoals de witte kaarten;
+   gaat voor dc's navy regels. Sterren in dezelfde donkerder kleuren als op de kaarten, leesbaar op wit. */
+.sb-reviews .sb-reviews__score{background:#fff;border-color:#fff;box-shadow:0 1px 2px rgba(2,13,65,.06),0 20px 38px -22px rgba(2,13,65,.5)}
+.sb-reviews .sb-reviews__score:hover{border-color:var(--goud-diep)}
+.sb-reviews .sb-reviews__cijfer{background:var(--bruin);color:#fff}
+.sb-reviews .sb-reviews__uitleg{color:var(--ant-zacht)}
+.sb-reviews .sb-reviews__uitleg b{color:var(--bruin)}
+.sb-reviews .sb-reviews__score .sb-sterren{background:linear-gradient(90deg,#B98200 var(--vul),#8A94A6 0)}
+.sb-reviews .sb-reviews__alle{background:var(--bruin);color:#fff}
+.sb-reviews .sb-reviews__alle svg{color:var(--goud)}
+.sb-reviews .sb-reviews__score:hover .sb-reviews__alle{background:var(--goud-diep);color:#fff}
 /* ==== home #reviews werkers 7a 25-09: end ==== */
 
 /* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: start ====

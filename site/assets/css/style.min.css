@@ -1431,9 +1431,9 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-voordelen__actie{margin-top:1.25rem}
 }
 .sb-voordelen__foto.sb-pop{position:relative;container-type:inline-size;overflow:visible;border-radius:0;min-height:0}
-.sb-voordelen__foto.sb-pop img{position:absolute;inset:auto auto -1cqw -34cqw;width:134cqw;max-width:none;height:auto;aspect-ratio:1000/708;object-fit:fill}
-.sb-pop__foto{clip-path:inset(28.87cqw 0 1cqw 34cqw round var(--r))}
-.sb-pop__uit{clip-path:inset(0 0 calc(66cqw - 1px) 0);pointer-events:none}
+.sb-voordelen__foto.sb-pop img{position:absolute;inset:auto auto -1cqw -49cqw;width:149cqw;max-width:none;height:auto;aspect-ratio:1000/708;object-fit:fill}
+.sb-pop__foto{clip-path:inset(26.84cqw 0 1cqw 49cqw round var(--r))}
+.sb-pop__uit{clip-path:inset(0 0 calc(78.66cqw - 1px) 0);pointer-events:none}
 @media(max-width:860px){.sb-voordelen__foto.sb-pop{aspect-ratio:505/420}}
 .sb-contact__rij{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.2rem,3vw,2rem);align-items:start}
 .sb-contact__links{display:grid;gap:1.2rem;min-width:0}
@@ -1584,7 +1584,8 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-venster .venster__mark{height:auto}
 .sb-opslag .opslag__persoon{clip-path:none;bottom:123px}
 @media(min-width:901px){.sb-venster .venster__fig{width:100%;max-width:440px;justify-self:center}}
-@media(min-width:901px){.sb-venster .venster__persoon--doos{height:clamp(400px,40vw,536px)}}
+.sb-venster .venster__persoon--doos{clip-path:inset(-80px -80px 0 -80px)}
+@media(min-width:901px){.sb-venster .venster__persoon--doos{height:calc(clamp(415px,44vw,530px) + clamp(40px,4.5vw,65px))}}
 @media(max-width:900px){
 .sb-opslag{padding-top:2rem}
 .sb-opslag .opslag__kaart{margin-bottom:0}
@@ -2884,6 +2885,15 @@ top:var(--band-top);height:var(--band-h);clip-path:polygon(0 var(--band-schuin),
 background:#00498f;clip-path:polygon(0 70px,100% 0,100% calc(100% - 70px),0 100%);}
 .sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:none}
 }
+.sb-reviews .sb-reviews__score{background:#fff;border-color:#fff;box-shadow:0 1px 2px rgba(2,13,65,.06),0 20px 38px -22px rgba(2,13,65,.5)}
+.sb-reviews .sb-reviews__score:hover{border-color:var(--goud-diep)}
+.sb-reviews .sb-reviews__cijfer{background:var(--bruin);color:#fff}
+.sb-reviews .sb-reviews__uitleg{color:var(--ant-zacht)}
+.sb-reviews .sb-reviews__uitleg b{color:var(--bruin)}
+.sb-reviews .sb-reviews__score .sb-sterren{background:linear-gradient(90deg,#B98200 var(--vul),#8A94A6 0)}
+.sb-reviews .sb-reviews__alle{background:var(--bruin);color:#fff}
+.sb-reviews .sb-reviews__alle svg{color:var(--goud)}
+.sb-reviews .sb-reviews__score:hover .sb-reviews__alle{background:var(--goud-diep);color:#fff}
 .sb-diensten__grid--wit{--dk-r:4px;row-gap:calc(30px + .35rem);margin-top:calc(30px + .35rem)}
 main > .sb-diensten .sb-diensten__grid--wit .sb-dienst{background:var(--wit);border-radius:var(--dk-r);overflow:visible;
 box-shadow:0 0 0 1px rgba(2,13,65,.07),0 1px 2px rgba(2,13,65,.08),0 16px 32px -20px rgba(2,13,65,.4)}
