@@ -265,6 +265,9 @@
    .tm::before de kaart. De kop "Ons team" staat in de sectie erboven
    en wordt gecentreerd zoals in de repo. */
 .tm-grid > .tm { background: none; border: 0; box-shadow: none; border-radius: 0; }
+/* .tm is in style.css ook de Top Movers-band met overflow:hidden; die knipte
+   de hoofden boven de kaart af. Hier moet alles uit de kaart kunnen steken. */
+.tm-grid > .tm { overflow: visible; }
 .sectie--creme2:has(+ .tm-section) { display: flow-root; text-align: center; padding-bottom: 0; }
 .sectie--creme2:has(+ .tm-section) .db-tekst { max-width: 62ch; margin-inline: auto; }
 .sectie--creme2:has(+ .tm-section) .kop { color: #00498f; }

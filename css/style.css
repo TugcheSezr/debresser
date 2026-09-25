@@ -21,7 +21,7 @@
     U+A720-A7FF;
 }
 
-/* Kleuren volgens Merkboek De Bresser v1.1. De namen zijn die van het Kievit-sjabloon gebleven:
+/* Kleuren volgens Merkboek De Bresser v1.1. De tokennamen zijn uit de eerste opzet gebleven:
    --goud = Diepblauw (hoofdkleur), --geel/--oranje = Signaalgroen (knoppen), --bruin = Nachtblauw. */
 :root {
   --creme: #f4f7fa;
@@ -3231,14 +3231,15 @@ a.keurmerk:hover {
 }
 .venster__fig {
   position: relative;
-  height: clamp(415px, 44vw, 530px);
+  height: clamp(420px, 46vw, 570px);
   z-index: 2;
 }
+/* Boog iets lager dan de foto: het hoofd van de staande verhuizer steekt erboven uit */
 .venster__boog {
   position: absolute;
-  left: 2%;
-  right: 2%;
-  top: -6%;
+  left: -3%;
+  right: -3%;
+  top: -4%;
   bottom: 0;
   background: var(--creme, #f4f7fa);
   border-radius: 999px 999px 0 0;
@@ -3257,7 +3258,7 @@ a.keurmerk:hover {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: clamp(400px, 42vw, 564px);
+  height: 116%;
   width: auto;
   max-width: none;
   z-index: 2;
@@ -3873,9 +3874,9 @@ a.keurmerk:hover {
     padding-top: 2.4rem;
   }
   .venster__boog {
-    top: 0;
-    bottom: auto;
-    height: 100%;
+    top: 5rem;
+    bottom: 0;
+    height: auto;
   }
   .split__fig {
     padding-top: 2.4rem;
@@ -6600,7 +6601,7 @@ main[tabindex="-1"]:focus {
 }
 
 /* ===============================================================
-   De Bresser: onderdelen die het Kievit-sjabloon niet had.
+   De Bresser: onderdelen die de basisopmaak nog niet had.
    Kleuren en regels uit Merkboek De Bresser v1.1.
    =============================================================== */
 
@@ -6941,7 +6942,7 @@ main[tabindex="-1"]:focus {
   }
 }
 
-/* Speelt de hero-video, dan de oorspronkelijke Kievit-sluier (de video blijft zoals hij was) */
+/* Speelt de hero-video, dan de oorspronkelijke sluier (de video blijft zoals hij was) */
 .hero:has(.hero__video[src]) .hero__veil {
   background:
     radial-gradient(120% 90% at 70% 18%, rgba(2, 13, 65, 0) 30%, rgba(2, 13, 65, 0.55) 100%),
@@ -7733,7 +7734,7 @@ main[tabindex="-1"]:focus {
 
 /* ===============================================================
    Subpagina's: bouwstenen voor de inhoud van debresser.nl
-   (tekst, kaarten, formulierkaart, video). Rest komt uit het Kievit-sjabloon.
+   (tekst, kaarten, formulierkaart, video). Rest komt uit de basisopmaak in dit bestand.
    =============================================================== */
 
 /* Pagina-hero: intro en knoppen onder de titel */
@@ -8416,3 +8417,1076 @@ article.db-kaart + article.db-kaart {
     transition: none;
   }
 }
+
+/* Keurmerkpil in de offertebox op de homepage (25-09):
+   Klantenvertellen-score, Erkende Verhuizers en het aantal beoordelingen van De Bresser.
+   Cijfers van klantenvertellen.nl/reviews/1038076 op 25-09-2026: 9,0, 1.538 beoordelingen, 93% beveelt aan. */
+.of-trust .keurmerk--ev {
+  width: 112px;
+  padding-inline: 12px;
+}
+.of-trust .keurmerk--tekst {
+  width: auto;
+  padding-inline: 16px;
+}
+.of-trust .keurmerk__sub {
+  color: #fff;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .of-trust .keurmerk--ev {
+    width: auto;
+    padding-inline: 6px;
+  }
+  .of-trust .keurmerk--tekst {
+    flex-grow: 1.3;
+    padding-inline: 6px;
+  }
+}
+
+/* ==========================================================================
+   Mensen en wagens uit de foto (foto-pop), homepage #diensten + #nieuws
+   — js/main.js blok "Mensen en wagens uit de foto"
+   Mensen en vrachtwagens steken boven de fotorand van de kaart uit. De echte foto zit in
+   .foto-pop__raam (snijdt af op het kader), de uitsnede in .foto-pop__boven (alleen de strook
+   boven het kader). Meer ruimte tussen de rijen, zodat niets over de kaart erboven valt.
+   Uitsnedes: assets/img/dienst-pop/ en assets/img/bericht-pop/. Stil: alleen diepte en schaduw.
+   ========================================================================== */
+.diensten.is-foto-pop,
+.nieuws.is-foto-pop { row-gap: 3.4rem; padding-top: 1.25rem; }
+.dienst.is-foto-pop,
+.dienst.is-foto-pop .dienst__nis,
+.bericht.is-foto-pop,
+.bericht.is-foto-pop .bericht__foto { overflow: visible; }
+/* met overflow: visible groeit een aspect-ratio-vak mee met de inhoud; zo blijft het 16:10 */
+.bericht.is-foto-pop .bericht__foto { position: relative; min-height: 0; border-radius: var(--r) var(--r) 0 0; }
+.foto-pop__raam { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; }
+.foto-pop__boven { position: absolute; left: 0; right: 0; bottom: 100%; overflow: hidden; pointer-events: none; }
+.foto-pop__raam > img,
+.foto-pop__boven > img { position: absolute; right: auto; bottom: auto; max-width: none; object-fit: fill; }
+.foto-pop__boven > img { filter: drop-shadow(0 10px 12px rgba(2, 13, 65, 0.3)) drop-shadow(0 2px 3px rgba(2, 13, 65, 0.22)); }
+
+/* ==========================================================================
+   Verhuizers boven de reviews (review-mensen), versie 3 (sessie ca4e, 25-09)
+   "Succesverhalen / Klanten zijn blij met ons": boven elke reviewkaart staat een
+   duo echte verhuizers, voor een schuine Diepblauwe band van rand tot rand (zoals
+   het inboedelopslag-blok op de-kievit.nl). Onder de band een Nachtblauwe rand,
+   boven een Signaalgroene streep, rechts twee ruiten als lijn (geen Top Movers-logo:
+   dat is op dienstpagina's afgewezen). Bronnen, uitgesneden met imgly op 2x:
+   1 = site/De-Bresser-Verhuisbedrijf-Tilburg.jpg (hurkend + staand, allebei met doos)
+   2 = site/image.jpeg (kast in deken)
+   3 = site/De-Bresser-Verhuizingen-Brabant.jpg (zelfde fotoshoot als 1)
+   Breed (3 kolommen): één band via .rgrid--3::before (randen) en ::after (vlak).
+   Tot 900px: per kaart een schuin Diepblauw vlak achter het duo (.review::after).
+   De onderkant van elk duo valt achter de bovenrand van de kaart. Er beweegt niets.
+   ========================================================================== */
+.reviews {
+  isolation: isolate;
+  overflow-x: clip;
+}
+.reviews .rgrid--3 {
+  --rm-s: 1;
+  /* 284px = hoogste duo (nr. 1) bij --rm-s 1, plus lucht onder de kop */
+  --rm-ruimte: calc(284px * var(--rm-s) + 1.25rem);
+  --rm-schuin: calc(110px * var(--rm-s));
+  --rm-ruit-wit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --rm-ruit-groen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%237bd534' stroke-width='2.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  position: relative;
+  margin-top: var(--rm-ruimte);
+}
+.reviews .rgrid--3::before,
+.reviews .rgrid--3::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  top: calc(var(--rm-ruimte) * -0.7);
+  height: calc(var(--rm-ruimte) * 0.7 + 150px * var(--rm-s));
+  /* loopt naar rechts op, net als de band op de-kievit.nl */
+  clip-path: polygon(0 var(--rm-schuin), 100% 0, 100% calc(100% - var(--rm-schuin)), 0 100%);
+  pointer-events: none;
+}
+/* 5px hoger en 14px lager dan het vlak: groen blijft boven zichtbaar, Nachtblauw onder */
+.reviews .rgrid--3::before {
+  margin-top: -5px;
+  height: calc(var(--rm-ruimte) * 0.7 + 150px * var(--rm-s) + 19px);
+  background: linear-gradient(#7bd534 0 50%, #020d41 50% 100%);
+}
+.reviews .rgrid--3::after {
+  background:
+    var(--rm-ruit-wit) right max(3vw, calc(50% - 700px)) top 12% / calc(170px * var(--rm-s)) auto no-repeat,
+    var(--rm-ruit-groen) left max(3vw, calc(50% - 700px)) top 50% / calc(58px * var(--rm-s)) auto no-repeat,
+    #00498f;
+}
+/* kaarten liggen op de band: iets meer diepte */
+.reviews .rgrid--3 > .review {
+  box-shadow:
+    0 1px 2px rgba(2, 13, 65, 0.06),
+    0 20px 38px -22px rgba(2, 13, 65, 0.5);
+}
+/* het huisje met hart stond op de plek van de verhuizers: nu rechtsonder */
+#reviews .art-3 {
+  top: auto;
+  left: auto;
+  right: max(24px, calc(50% - 560px));
+  bottom: 28px;
+  width: 104px;
+}
+.reviews .rgrid--3 > .review::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: calc(20px * var(--rm-s));
+  z-index: -1;
+  width: calc(var(--rm-b) * var(--rm-s));
+  aspect-ratio: var(--rm-v);
+  margin-bottom: -2px;
+  background: var(--rm-foto) center bottom / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 14px rgba(2, 13, 65, 0.34)) drop-shadow(0 1px 2px rgba(2, 13, 65, 0.25));
+  pointer-events: none;
+}
+.reviews .rgrid--3 > .review:nth-child(1) {
+  --rm-foto: url("../assets/img/review-mensen/verhuizers-1.webp?v=3");
+  --rm-b: 264px;
+  --rm-h: 284px;
+  --rm-v: 448 / 482;
+}
+.reviews .rgrid--3 > .review:nth-child(2) {
+  --rm-foto: url("../assets/img/review-mensen/verhuizers-2.webp?v=3");
+  --rm-b: 291px;
+  --rm-h: 183px;
+  --rm-v: 494 / 310;
+}
+.reviews .rgrid--3 > .review:nth-child(2)::before {
+  left: calc(50% - var(--rm-b) * var(--rm-s) / 2);
+}
+.reviews .rgrid--3 > .review:nth-child(3) {
+  --rm-foto: url("../assets/img/review-mensen/verhuizers-3.webp?v=3");
+  --rm-b: 171px;
+  --rm-h: 256px;
+  --rm-v: 290 / 434;
+}
+.reviews .rgrid--3 > .review:nth-child(3)::before {
+  left: auto;
+  right: calc(34px * var(--rm-s));
+}
+.reviews .rgrid--3 > .review:nth-child(n + 4)::before {
+  content: none;
+}
+@media (max-width: 1279.98px) {
+  .reviews .rgrid--3 {
+    --rm-s: 0.88;
+  }
+}
+@media (max-width: 1099.98px) {
+  .reviews .rgrid--3 {
+    --rm-s: 0.78;
+  }
+}
+/* smal: geen doorlopende band, maar per kaart een schuin Diepblauw vlak achter het duo */
+@media (max-width: 900px) {
+  .reviews .rgrid--3 {
+    --rm-s: 0.8;
+    row-gap: var(--rm-ruimte);
+  }
+  .reviews .rgrid--3::before,
+  .reviews .rgrid--3::after {
+    content: none;
+  }
+  .reviews .rgrid--3 > .review:nth-child(-n + 3)::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    bottom: calc(100% - 24px);
+    height: calc(var(--rm-h) * var(--rm-s) * 0.64 + 24px);
+    border-radius: 12px 12px 0 0;
+    background:
+      var(--rm-ruit-groen) right 16px bottom 38px / 30px auto no-repeat,
+      #00498f;
+    clip-path: polygon(0 calc(var(--rm-schuin) * 0.5), 100% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+  }
+  /* duo 3 staat rechts: de groene ruit gaat naar links */
+  .reviews .rgrid--3 > .review:nth-child(3)::after {
+    background-position: left 16px bottom 38px, 0 0;
+  }
+}
+/* één kolom: elke kaart krijgt precies de ruimte van zijn eigen duo */
+@media (max-width: 600px) {
+  .reviews .rgrid--3 {
+    --rm-s: 0.74;
+    row-gap: 1.5rem;
+    margin-top: calc(var(--rm-h-1) * var(--rm-s) + 1.25rem);
+    --rm-h-1: 284px;
+  }
+  .reviews .rgrid--3 > .review:nth-child(-n + 3):not(:first-child) {
+    margin-top: calc(var(--rm-h) * var(--rm-s) + 0.5rem);
+  }
+}
+
+/* Beoordeling in de header (verschijnt na scrollen): op smalle telefoons past hij niet naast
+   "Offerte aanvragen" en het menuknopje, daar blijft hij weg. */
+@media (max-width: 479px) {
+  .topbar.is-stuck .topbar__reviews {
+    display: none;
+  }
+}
+
+/* "Bekijk ook eens": dienstkaarten in één rij, "Lees meer" onderaan elke kaart (sessie tugce-7e, 25 september 2026) */
+.diensten--vier .dienst,
+.diensten--paar .dienst {
+  display: flex;
+  flex-direction: column;
+}
+.diensten--vier .dienst__tekst,
+.diensten--paar .dienst__tekst {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.diensten--vier .dienst__meer,
+.diensten--paar .dienst__meer {
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+@media (min-width: 1101px) {
+  .diensten--vier {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .diensten--vier .dienst__tekst {
+    padding: 1.15rem 1.25rem 1.4rem;
+  }
+  .diensten--vier .dienst h3 {
+    font-size: 1.15rem;
+  }
+  .diensten--vier .dienst p {
+    font-size: 0.98rem;
+  }
+}
+@media (min-width: 561px) and (max-width: 1100px) {
+  .diensten--vier {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   Offertebox + kerncijfers onder de hero van elke subpagina (25-09)
+   Dezelfde box met keurmerkpil als op de homepage (Klantenvertellen 9,0, Erkende Verhuizers,
+   1.538 beoordelingen), met daaronder de vier kaarten (.trust: 9,0, Erkende Verhuizer, sinds 1923,
+   Top Movers), op alle subpagina's behalve offerte.html. De html komt letterlijk uit index.html
+   via OFFERTEBOX in tools/sitebouw/bouw.cjs. De ruimte voor de overlap onder de hero stond al in
+   .hero--pagina .hero__content; band en kaarten gebruiken de opmaak van de homepage.
+   Iconen i-medaille, i-huis en i-team staan in de svg-sprite, na i-beoordeling.
+   De kaarten lopen even breed als de box erboven (.of-wrap heeft geen binnenmarge, .wrap wel).
+   ========================================================================== */
+.offerte-overlay + .trust .trust__in {
+  max-width: calc(var(--maxw) + 2 * var(--pad));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.offerte-overlay + .trust .trust__item {
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+}
+.offerte-overlay + .trust .trust__item span:not(.trust__ico) {
+  text-wrap: pretty;
+}
+@media (max-width: 1100px) {
+  .offerte-overlay + .trust .trust__in {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .offerte-overlay + .trust .trust__in {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .offerte-overlay + .trust .trust__item {
+    padding: 0.8rem 0.9rem;
+  }
+}
+
+/* ==========================================================================
+   Over ons: "De Bresser bestaat 100 jaar!" met de jubileumfoto erachter
+   De hero-foto van 100-jarig-jubileum.html (paard en wagen naast de nieuwe
+   wagen) ligt half doorzichtig achter de kop en de knop; een crème laag
+   maakt hem licht, links iets sterker voor de leesbaarheid. Alleen CSS,
+   want de html komt uit tools/sitebouw/bouw.cjs. Er beweegt niets.
+   ========================================================================== */
+.subpagina .sectie:has(> .wrap > .knoprij > a[href="100-jarig-jubileum.html"]) {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(96px, 10vw, 144px);
+  background: #f4f7fa url("../assets/img/page-hero/100-jarig-jubileum.webp") center 42% / cover no-repeat;
+}
+.subpagina .sectie:has(> .wrap > .knoprij > a[href="100-jarig-jubileum.html"])::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(244, 247, 250, 0.9) 0%, rgba(244, 247, 250, 0.82) 38%, rgba(244, 247, 250, 0.62) 72%, rgba(244, 247, 250, 0.56) 100%);
+  pointer-events: none;
+}
+.subpagina .sectie:has(> .wrap > .knoprij > a[href="100-jarig-jubileum.html"]) .kop {
+  text-shadow: 0 1px 14px rgba(244, 247, 250, 0.95), 0 0 2px rgba(244, 247, 250, 0.8);
+}
+@media (max-width: 700px) {
+  .subpagina .sectie:has(> .wrap > .knoprij > a[href="100-jarig-jubileum.html"]) {
+    background-image: url("../assets/img/page-hero/100-jarig-jubileum-960.webp");
+  }
+  .subpagina .sectie:has(> .wrap > .knoprij > a[href="100-jarig-jubileum.html"])::before {
+    background: rgba(244, 247, 250, 0.82);
+  }
+}
+
+/* ==========================================================================
+   Homepage "Onze diensten" als fotoafdruk (25-09, variant 05 uit
+   _ontwerpen/home-pop-varianten). De kaarten blijven zoals ze zijn; de foto krijgt een witte rand
+   en dikte als een afdruk, licht scheef, en de mensen uit foto-pop stappen over die rand.
+   Foto's: assets/img/home-pop/foto/. Niets beweegt behalve de bestaande hover.
+   "Nieuws & Tips" (#nieuws) doet sinds 25-09 niet meer mee: klantwens, geen blok om de foto.
+   Daar staat de foto weer van rand tot rand bovenin de kaart en stappen de mensen over de kaartrand.
+   ========================================================================== */
+#diensten .dienst { padding: 14px 14px 0; border-radius: 4px; }
+#diensten .dienst__nis {
+  border: 8px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 1px 0 #d6dde6, 0 2px 0 #cbd3de, 0 3px 0 #c0c9d5, 0 4px 0 #b6c0cd, 0 18px 26px -12px rgba(2, 13, 65, 0.55);
+}
+#diensten .diensten > .dienst:nth-child(odd) .dienst__nis { transform: rotate(-1.2deg); }
+#diensten .diensten > .dienst:nth-child(even) .dienst__nis { transform: rotate(1deg); }
+#diensten .dienst__tekst { padding: 1.3rem 0.4rem 1.6rem; }
+#diensten .foto-pop__raam { border-radius: 0; }
+/* de strook met uitstappers 1px over de fotorand, anders geeft de scheve afdruk een haarlijn */
+#diensten .foto-pop__boven { bottom: calc(100% - 1px); }
+
+/* =====================================================================
+   Formulierblok als één kaart (Neem contact op)
+   Alleen stijl: tekst, velden en volgorde in de html blijven zoals ze zijn.
+   - .db-twee--form (tekst + formulier): één witte kaart. Links de verhuizer
+     op Mist met de ruit uit het logo als lijn, daaronder een paneel van
+     Diepblauw naar Nachtblauw met een schuine, Signaalgroen omrande
+     bovenrand; rechts het formulier op wit.
+   - Losse formulierkaart (vacatures, veilingen): dezelfde opbouw onder
+     elkaar, de kop staat dan in de blauwe band.
+   Het offerteformulier (offerte.html) doet niet mee. Er beweegt niets.
+   ===================================================================== */
+.db-twee--form:has(> .db-twee__kol > .db-formkaart),
+.db-formkaart:not(:has([data-form="Offerteformulier"])) {
+  --fk-nacht: #020d41;
+  --fk-diep: #00498f;
+  --fk-web: #007ac0;
+  --fk-groen: #7bd534;
+  --fk-mist: #ebeff4;
+  --fk-foto: clamp(210px, 18vw, 250px);
+  --fk-schuin: 36px;
+  --fk-streep: 5px;
+  --fk-pad: clamp(1.5rem, 2.8vw, 2.4rem);
+  --fk-grijs: #676767;
+  --fk-rand: #c9d8e8;
+  --fk-verhuizer: url("../assets/img/db/duurzaam-verhuizer.webp");
+  /* ruit uit het logo, alleen als lijn (merkboek: beeldtaal) */
+  --fk-ruit-diep: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%2300498f' stroke-opacity='.28' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --fk-ruit-groen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%2366b82e' stroke-width='2.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --fk-ruit-wit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%23ffffff' stroke-opacity='.13' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --fk-ruit-licht: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%2300498f' stroke-opacity='.09' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* ---- Tekst + formulier: één kaart ---- */
+.db-twee--form:has(> .db-twee__kol > .db-formkaart):not(:has(.vac-list__grid)) {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: 0;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 20px;
+  overflow: clip;
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.06), 0 34px 70px -36px rgba(2, 13, 65, 0.45);
+}
+/* formulier links (blog Brocken): paneel rechts */
+.db-twee--form:has(> .db-twee__kol:first-child > .db-formkaart):not(:has(.vac-list__grid)) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+}
+
+/* paneel: verhuizer + ruiten op Mist, daaronder blauw met schuine rand */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) {
+  position: relative;
+  isolation: isolate;
+  padding: calc(var(--fk-foto) + var(--fk-schuin) + 0.9rem) var(--fk-pad) var(--fk-pad);
+  color: rgba(255, 255, 255, 0.82);
+  /* onderrand van de foto valt net onder de schuine rand, de doos met logo blijft heel */
+  background:
+    var(--fk-verhuizer) no-repeat 42% 12px / auto calc(var(--fk-foto) + var(--fk-schuin) * 0.72 - 12px),
+    var(--fk-ruit-groen) no-repeat right 11% top 34px / 108px 108px,
+    var(--fk-ruit-diep) no-repeat 42% -34px / 340px 340px,
+    var(--fk-mist);
+}
+/* Signaalgroene streep langs de schuine rand */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart))::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: calc(var(--fk-foto) - var(--fk-streep)) 0 0;
+  background: var(--fk-groen);
+  clip-path: polygon(0 var(--fk-schuin), 100% 0, 100% 100%, 0 100%);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart))::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: var(--fk-foto) 0 0;
+  background:
+    var(--fk-ruit-wit) no-repeat right -96px bottom -118px / 360px 360px,
+    linear-gradient(180deg, var(--fk-diep) 0%, var(--fk-nacht) 62%);
+  clip-path: polygon(0 var(--fk-schuin), 100% 0, 100% 100%, 0 100%);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) > :is(h2, h3) {
+  margin: 0 0 0.9rem;
+  color: #fff;
+  font-size: clamp(1.55rem, 2.3vw, 2.05rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+/* korte groene lijn onder de eerste kop */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) > :is(h2, h3):first-child::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin-top: 0.85rem;
+  border-radius: 2px;
+  background: var(--fk-groen);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-tekst {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-tekst :is(strong, b, h3, h4) {
+  color: #fff;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) :is(.db-tekst, .db-vinklijst) a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: var(--fk-groen);
+  text-underline-offset: 3px;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) :is(.db-tekst, .db-vinklijst) a:hover {
+  color: #33bcfa;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-tekst ul li::marker {
+  color: var(--fk-groen);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .knoprij {
+  margin-top: 1.4rem;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .btn--goud:not(.btn--groen),
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .btn--goud:not(.btn--groen):hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--fk-nacht);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .btn--goud:not(.btn--groen) svg {
+  color: var(--fk-nacht);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .btn--lijn {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+/* genummerde stappen (videogesprek) */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-stappen {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0.4rem 0 0;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-stappen > .db-kaart {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-stappen .db-stap-nr {
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  color: var(--fk-groen);
+  font: 700 1.3rem/1 var(--font-kop);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .db-stappen h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* vraag-en-antwoord (duurzame werkomgeving) */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq details {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq summary {
+  grid-template-columns: 2.4rem 1fr 1.2rem;
+  gap: 0 1rem;
+  padding: 1.05rem 0;
+  color: #fff;
+  font-size: 1.05rem;
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq summary::before {
+  color: var(--fk-groen);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq__tk::before,
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq__tk::after {
+  background: var(--fk-groen);
+}
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:not(:has(> .db-formkaart)) .faq__a {
+  padding: 0 0 1rem 3.4rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+}
+
+/* formulierkolom op wit met een grote lichte ruit in de hoek, kop als pil */
+.db-twee--form:not(:has(.vac-list__grid)) > .db-twee__kol:has(> .db-formkaart) {
+  display: flex;
+  flex-direction: column;
+}
+.db-twee--form:not(:has(.vac-list__grid)) .db-formkaart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--fk-pad);
+  border-radius: 0;
+  background: var(--fk-ruit-licht) no-repeat right -175px bottom -205px / 400px 400px;
+  box-shadow: none;
+  color: var(--ant);
+}
+.db-twee--form:not(:has(.vac-list__grid)) .db-formkaart__kop {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  padding: 0.45rem 1rem 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--fk-nacht);
+  color: #fff;
+  font: 700 0.7rem/1.2 var(--font-kop);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.db-twee--form:not(:has(.vac-list__grid)) .db-formkaart__kop::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--fk-groen);
+  box-shadow: 0 0 0 3px rgba(123, 213, 52, 0.28);
+}
+.db-twee--form:not(:has(.vac-list__grid)) .db-formkaart__intro {
+  margin: 0 0 1.4rem;
+  color: var(--fk-grijs);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ---- Losse formulierkaart: verhuizer, blauwe band met kop, formulier ---- */
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) {
+  position: relative;
+  isolation: isolate;
+  padding: calc(var(--fk-foto) + var(--fk-schuin)) var(--fk-pad) var(--fk-pad);
+  border-radius: 20px;
+  background:
+    var(--fk-verhuizer) no-repeat 42% 12px / auto calc(var(--fk-foto) + var(--fk-schuin) * 0.72 - 12px),
+    var(--fk-ruit-groen) no-repeat right 11% top 34px / 108px 108px,
+    var(--fk-ruit-diep) no-repeat 42% -34px / 340px 340px,
+    var(--fk-ruit-licht) no-repeat right -175px bottom -205px / 400px 400px,
+    linear-gradient(var(--fk-mist), var(--fk-mist)) no-repeat 0 0 / 100% calc(var(--fk-foto) + var(--fk-schuin)),
+    #fff;
+  color: var(--ant);
+  overflow: clip;
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.06), 0 34px 70px -36px rgba(2, 13, 65, 0.45);
+}
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__kop {
+  position: relative;
+  margin: 0 calc(var(--fk-pad) * -1);
+  padding: 0.3rem var(--fk-pad) 0.7rem;
+  background: linear-gradient(180deg, var(--fk-diep), #013268);
+  color: #fff;
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+  line-height: 1.15;
+}
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__kop::before,
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__kop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% - 1px);
+  height: var(--fk-schuin);
+  background: var(--fk-diep);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+/* Signaalgroene streep langs de schuine rand */
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__kop::after {
+  z-index: -1;
+  bottom: calc(100% - 1px + var(--fk-streep));
+  background: var(--fk-groen);
+}
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__kop:not(:has(+ .db-formkaart__intro)) {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(180deg, var(--fk-diep), var(--fk-nacht));
+}
+:is(.blok__tekst, .db-twee--form:has(.vac-list__grid) > .db-twee__kol) > .db-formkaart:not(:has([data-form="Offerteformulier"])) .db-formkaart__intro {
+  margin: 0 calc(var(--fk-pad) * -1) 1.5rem;
+  padding: 0 var(--fk-pad) 1.6rem;
+  background: linear-gradient(180deg, #013268, var(--fk-nacht));
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ---- Velden, zelfde in beide opzetten ---- */
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form {
+  gap: 1rem;
+}
+/* een los half veld (bv. E-mailadres na Naam + Telefoon) pakt de hele rij */
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form > :is(:not(.lf__field), .lf__field--breed, .lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel):not(:has(+ .lf__field:not(.lf__field--breed):not(.lf__field--sel))),
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form > :is(:not(.lf__field), .lf__field--breed, .lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel)
+  + .lf__field:not(.lf__field--breed):not(.lf__field--sel):not(:has(+ .lf__field:not(.lf__field--breed):not(.lf__field--sel))) {
+  grid-column: 1 / -1;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__field > label,
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__keuze legend {
+  margin-bottom: 0.4rem;
+  color: var(--fk-nacht);
+  font: 600 0.8rem/1.3 var(--font-kop);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__ster {
+  color: #166909;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form input:not([type="checkbox"]):not([type="radio"]),
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form select,
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form textarea {
+  padding: 0.78rem 0.95rem;
+  border: 1.5px solid var(--fk-rand);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ant);
+  font: 400 0.95rem/1.4 var(--font-tekst);
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form :is(input, textarea)::placeholder {
+  color: #8a94a3;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea):hover {
+  border-color: #8fb0d2;
+}
+/* focus: Hemelsblauwe ring (merkboek) */
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form :is(input, select, textarea):focus-visible {
+  outline: 0;
+  border-color: var(--fk-diep);
+  box-shadow: 0 0 0 3px #33bcfa;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form textarea {
+  min-height: 6.5rem;
+  resize: vertical;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__hint {
+  color: var(--fk-grijs);
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__optie {
+  background: var(--fk-mist);
+  border-color: var(--fk-rand);
+  color: var(--fk-nacht);
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__optie input {
+  accent-color: var(--fk-diep);
+}
+/* knop direct onder de velden, privacyregel eronder */
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__actions {
+  order: 1;
+  margin-top: 0.3rem;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__html {
+  order: 2;
+  color: var(--fk-grijs);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__html p {
+  margin: 0;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__html a {
+  color: var(--fk-web);
+  font-weight: 600;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form__melding {
+  order: 3;
+  background: rgba(123, 213, 52, 0.16);
+  color: #0f4d07;
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form__melding.is-fout {
+  background: #fdecea;
+  color: var(--fout);
+}
+.db-formkaart:not(:has([data-form="Offerteformulier"])) .db-form .lf__actions .btn {
+  padding: 0.95rem 1.7rem;
+  font: 600 0.92rem/1.2 var(--font-kop);
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: 0 12px 24px -14px rgba(22, 105, 9, 0.7);
+}
+
+@media (max-width: 860px) {
+  .db-twee--form:has(> .db-twee__kol > .db-formkaart):not(:has(.vac-list__grid)) {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .db-twee--form:has(> .db-twee__kol > .db-formkaart),
+  .db-formkaart:not(:has([data-form="Offerteformulier"])) {
+    --fk-foto: 190px;
+    --fk-schuin: 26px;
+    --fk-streep: 4px;
+  }
+  .db-twee--form:has(> .db-twee__kol > .db-formkaart):not(:has(.vac-list__grid)) {
+    margin-inline: calc(var(--pad) * -0.5);
+    border-radius: 16px;
+  }
+}
+/* einde Formulierblok als één kaart */
+
+/* ==========================================================================
+   Offertebox + kerncijfers: witte band, kaarten in De Bresser-kleuren (sessie tugce-7f, 25-09)
+   Een band in Bresserblauw was de gebruiker te zwaar. Nu is de band wit en krijgen de vier
+   kaarten van links naar rechts Nachtblauw, Diepblauw, Webblauw en Bressergroen: de drie
+   ruitkleuren van het logo plus Nachtblauw, van donker naar licht. Webblauw (#007AC0) in plaats
+   van Bresserblauw omdat wit daarop net AA haalt; op groen staat de tekst in Nachtblauw.
+   De icoontegels zijn wit, zodat de iconen hun eigen kleuren houden.
+   Geldt voor index.html en de 113 subpagina's met de offertebox.
+   ========================================================================== */
+.offerte-overlay,
+.offerte-overlay + .trust {
+  background: var(--wit);
+}
+.offerte-overlay + .trust {
+  padding-bottom: clamp(2.5rem, 4.5vw, 3.75rem);
+}
+.offerte-overlay .of-box {
+  box-shadow: 0 24px 60px -18px rgba(0, 73, 143, 0.45);
+}
+.offerte-overlay + .trust .trust__item {
+  --kaart: #020d41;
+  background: var(--kaart);
+  border-color: var(--kaart);
+  color: var(--wit);
+  box-shadow: 0 18px 38px -22px rgba(2, 13, 65, 0.55);
+}
+.offerte-overlay + .trust .trust__item:nth-child(2) {
+  --kaart: #00498f;
+}
+.offerte-overlay + .trust .trust__item:nth-child(3) {
+  --kaart: #007ac0;
+}
+.offerte-overlay + .trust .trust__item:nth-child(4) {
+  --kaart: #6db23f;
+  color: #020d41;
+}
+.offerte-overlay + .trust .trust__item b {
+  color: inherit;
+}
+.offerte-overlay + .trust .trust__ico {
+  background: var(--wit);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   Banden per sectie op de subpagina's (sessie tugce-84, 25-09)
+   Klantwens: de secties hadden bijna allemaal dezelfde achtergrond (#f4f7fa of Mist).
+   Nu wisselt elke sectie van kleur, zoals op het voorbeeld dat de klant gaf,
+   met alleen merkboekkleuren:
+   - lichte secties om en om: oneven Mist #EBEFF4, even Wit #FFFFFF (S1 is dus Mist,
+     onder de witte band met offertebox en kerncijfers);
+   - S2 wordt een Diepblauwe band (#00498F) en S5 een Nachtblauwe (#020D41), maar alleen
+     als er foto, tekst of kaarten in staan. Met een formulier, FAQ, .diensten, .nieuws,
+     een logo of een plaatje in de tekst blijft de sectie licht;
+   - de bovenkant van de CTA-band krijgt de lichte kleur die niet boven hem staat.
+   S1, S2 enz. tellen alle secties met de klasse .sectie in main.
+   Het blok geldt alleen voor secties waarvan de class precies "sectie", "sectie sectie--creme2"
+   of "sectie reviews" is. Maatwerksecties (dov-*, ckb, vst, zo-buurt, eeuw, tm-section, ring,
+   de 100-jaar-sectie op over-ons) houden hun eigen achtergrond. Alleen CSS, want de html komt
+   uit tools/sitebouw/bouw.cjs. Er beweegt niets.
+   ========================================================================== */
+.subpagina main > :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]):not(:has(+ .tm-section, > .wrap > .knoprij > a[href="100-jarig-jubileum.html"])) {
+  isolation: isolate;
+  background: var(--db-band, #fff);
+}
+.subpagina main > :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]):nth-child(odd of .sectie) {
+  --db-band: #ebeff4;
+}
+/* Na een maatwerksectie de andere lichte kleur: na Mist (bijv. Locaties op contact) Wit,
+   na de witte tijdlijn op 100-jarig-jubileum Mist */
+.subpagina main > .sectie.sectie--creme2:not([class="sectie sectie--creme2"]) + :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]) {
+  --db-band: #fff;
+}
+.subpagina main > .eeuw + :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]) {
+  --db-band: #ebeff4;
+}
+/* Buren hebben nu altijd een andere kleur, dus overal de volle ruimte boven de sectie */
+.subpagina main > .sectie:not(.sectie--creme2) + :is([class="sectie"], [class="sectie reviews"]) {
+  padding-top: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* Donkere banden: S2 Diepblauw, S5 Nachtblauw */
+.subpagina main > :is([class="sectie"], [class="sectie sectie--creme2"]):is(:nth-child(2 of .sectie), :nth-child(5 of .sectie)):not(:has(.db-formkaart, .faq, .diensten, .nieuws, .vac-list__grid, form, .db-logo, .tm-grid, .db-tekst img, + .tm-section, > .wrap > .knoprij > a[href="100-jarig-jubileum.html"])) {
+  --db-band: #00498f;
+  --db-band-link: #fff;
+  --db-band-label: #fff;
+  --db-band-plaat: #007dc2;
+  position: relative;
+  overflow: clip;
+
+  /* Nachtblauw op S5, en ook vlak boven de tijdlijn op 100-jarig-jubileum (die is zelf Diepblauw) */
+  &:nth-child(5 of .sectie),
+  &:has(+ .eeuw) {
+    --db-band: #020d41;
+    --db-band-link: #33bcfa;
+    --db-band-label: #33bcfa;
+    --db-band-plaat: #00498f;
+  }
+
+  /* Eén ruit uit het logo als lijn, groot en afgesneden in de hoek */
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: clamp(380px, 46vw, 700px);
+    aspect-ratio: 1;
+    border: 2px solid rgba(255, 255, 255, 0.13);
+    border-radius: 7%;
+    translate: 42% -50%;
+    rotate: 45deg;
+    pointer-events: none;
+  }
+
+  & > .wrap,
+  & :is(.db-tekst, .intro, .db-vinklijst, .blok__tekst, .db-twee__kol):not(.db-kaart *) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  & :is(.kop, .db-h3, .db-tekst :is(h2, h3, h4)):not(.db-kaart *) {
+    color: #fff;
+  }
+  & :is(.label, .eyebrow):not(.db-kaart *) {
+    color: var(--db-band-label);
+  }
+  & :is(.label, .eyebrow):not(.db-kaart *)::before {
+    background: #7bd534;
+  }
+  & :is(.db-tekst, .db-vinklijst) a:not(.btn):not(.db-kaart *) {
+    color: var(--db-band-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  & .db-tekst :is(td, th) {
+    border-bottom-color: rgba(255, 255, 255, 0.22);
+  }
+  /* Witte kaarten houden donkere tekst */
+  & .db-kaart {
+    color: var(--ant);
+  }
+  /* De Diepblauwe knop wordt wit; de groene knop blijft groen */
+  & .btn--goud:not(.btn--groen) {
+    background: #fff;
+    border-color: #fff;
+    color: #020d41;
+  }
+  & .btn--goud:not(.btn--groen):hover {
+    background: #ebeff4;
+    border-color: #ebeff4;
+    color: #020d41;
+  }
+  & .btn--goud:not(.btn--groen) svg {
+    color: #020d41;
+  }
+  & .btn:focus-visible {
+    outline: 3px solid #33bcfa;
+    outline-offset: 3px;
+  }
+  /* De plaat achter de foto is Diepblauw; op een Diepblauwe band wordt hij Bresserblauw */
+  & .blok--vlak .blok__foto::before {
+    background: var(--db-band-plaat);
+  }
+}
+
+/* Bovenkant van de CTA-band: Wit, of Mist als de sectie erboven wit is.
+   Onderaan schuift de band 120px over de footer; dat stuk blijft doorzichtig. */
+.subpagina main > .sectie + .cta-band {
+  background: linear-gradient(var(--db-cta, #fff), var(--db-cta, #fff)) top / 100% calc(100% - 120px) no-repeat;
+}
+/* Wit erboven: een even plek (behalve na de tijdlijn), of vlak na een Mist-maatwerksectie */
+.subpagina main > :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]):nth-child(even of .sectie):not(.eeuw + *) + .cta-band,
+.subpagina main > .sectie.sectie--creme2:not([class="sectie sectie--creme2"]) + :is([class="sectie"], [class="sectie sectie--creme2"], [class="sectie reviews"]) + .cta-band {
+  --db-cta: #ebeff4;
+}
+/* Staat er een donkere band boven, dan blijft de CTA-band wit */
+.subpagina main > :is([class="sectie"], [class="sectie sectie--creme2"]):is(:nth-child(2 of .sectie), :nth-child(5 of .sectie)):not(:has(.db-formkaart, .faq, .diensten, .nieuws, .vac-list__grid, form, .db-logo, .tm-grid, .db-tekst img, + .tm-section, > .wrap > .knoprij > a[href="100-jarig-jubileum.html"])) + .cta-band {
+  --db-cta: #fff;
+}
+/* einde Banden per sectie */
+
+/* ==========================================================================
+   Veilingen "Hoe we te werk gaan / Het proces" (klantwens 25-09)
+   De vier stapkaarten op de Diepblauwe band krijgen een doorzichtig verloop in plaats van wit,
+   net als het stappenpaneel van Werkwijze op diensten-verhuizen. De tekst wordt daardoor wit.
+   Alleen deze pagina (via canonical), alleen CSS. Er beweegt niets.
+   ========================================================================== */
+html:has(link[rel="canonical"][href$="/veilingen/"]) .subpagina main > .sectie:has(> .wrap > .sectiekop + .db-kaarten) .db-kaarten > .db-kaart {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 45%, rgba(2, 13, 65, 0.22) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-top: 4px solid #7bd534;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.9);
+
+  & h3 {
+    color: #fff;
+  }
+  & .db-tekst {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+/* einde Veilingen Het proces */
+
+/* ==========================================================================
+   Veilingen fotoplaat (klantwens 25-09: de foto "meer 3D")
+   De foto naast "Veilingen" (medewerker voor de bus) wordt een echte plaat: witte lijst
+   waar de foto in verzonken ligt, dikte aan de rechter- en onderkant, lange slagschaduw,
+   en licht naar de tekst gedraaid. De medewerker steekt met hoofd en schouders boven de
+   lijst uit (mens-pop in js/main.js, uitsnede assets/img/mens-pop/De-Bresser-De-duurzame-werkomgeving-1024x868.webp).
+   Alleen deze pagina (via canonical), alleen CSS. Er beweegt niets.
+   Draaien via de losse property `rotate`, zodat de reveal (transform) gewoon blijft werken.
+   ========================================================================== */
+html:has(link[rel="canonical"][href$="/veilingen/"]) .blok--vlak:has(a[href="#form-veilingen"]) {
+  perspective: 1700px;
+  perspective-origin: 35% 45%;
+
+  & > .blok__foto {
+    rotate: y -12deg;
+    transform-origin: 30% 50%;
+  }
+  /* plaat: dikte (gestapelde harde schaduw) + slagschaduw; op het raam van mens-pop, of op de foto zelf zonder js */
+  & > .blok__foto > :is(.mens-pop__raam, img) {
+    box-shadow:
+      1px 1px 0 #e6eaf0, 2px 2px 0 #dde2e9, 3px 3px 0 #d4dae2, 4px 4px 0 #cbd2dc,
+      5px 5px 0 #c3cad5, 6px 6px 0 #bbc3cf, 7px 7px 0 #b3bcc9, 8px 8px 0 #abb5c3,
+      9px 9px 1px #a3adbc,
+      22px 26px 30px -8px rgba(2, 13, 65, 0.32),
+      52px 64px 80px -26px rgba(2, 13, 65, 0.3);
+  }
+  /* witte lijst, de foto ligt er een paar millimeter in verzonken */
+  & > .blok__foto > .mens-pop__raam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 11px solid #fff;
+    border-radius: inherit;
+    box-shadow:
+      inset 0 0 0 1px rgba(2, 13, 65, 0.08),
+      inset 3px 4px 7px rgba(2, 13, 65, 0.28);
+    pointer-events: none;
+  }
+}
+@media (max-width: 860px) {
+  html:has(link[rel="canonical"][href$="/veilingen/"]) .blok--vlak:has(a[href="#form-veilingen"]) {
+    perspective: none;
+
+    & > .blok__foto {
+      rotate: none;
+    }
+    & > .blok__foto > .mens-pop__raam::after {
+      border-width: 8px;
+    }
+  }
+}
+/* einde Veilingen fotoplaat */
+
+/* ==========================================================================
+   FAQ stadspagina's in Bresserblauw (klantwens 25-09)
+   "Veelgestelde vragen over verhuizen in <plaats>" op breda + negen verhuisbedrijf-pagina's:
+   de sectie wordt Bresserblauw #007dc2, het lichte blauw uit het logo. Elke vraag wordt een
+   kaart met een doorzichtig verloop, net als het Werkwijze-paneel op diensten-verhuizen:
+   een witte glans in de hoek linksboven, daarna Nachtblauw 12% → 26%. Wit op kaal #007dc2 is 4,45:1,
+   net onder AA. Daarom stopt de glans vóór de tekst (stops in rem) en staan de vragen en antwoorden
+   op het donkere deel (≥ 5:1). De buren (Mist/Wit en de CTA-band) blijven licht.
+   Alleen CSS via canonical, want de html komt uit bouw.cjs. Er beweegt niets.
+   ========================================================================== */
+html:has(link[rel="canonical"]:is([href$="/breda/"], [href$="/verhuisbedrijf-best/"], [href$="/verhuisbedrijf-den-bosch/"], [href$="/verhuisbedrijf-dongen/"], [href$="/verhuisbedrijf-eindhoven/"], [href$="/verhuisbedrijf-etten-leur/"], [href$="/verhuisbedrijf-maastricht/"], [href$="/verhuisbedrijf-oisterwijk/"], [href$="/verhuisbedrijf-waalwijk/"], [href$="/verhuisbedrijf-weert/"])) .subpagina main > .sectie:has(> .wrap > .faq) {
+  background: #007dc2;
+
+  & .kop {
+    color: #fff;
+  }
+  & .faq {
+    display: grid;
+    gap: 0.75rem;
+  }
+  & .faq details,
+  & .faq details:first-of-type {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0) 1.25rem, rgba(2, 13, 65, 0.12) 2.75rem, rgba(2, 13, 65, 0.26) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    padding-inline: clamp(1rem, 2.5vw, 1.75rem);
+  }
+  & .faq details:hover,
+  & .faq details[open] {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  & .faq summary,
+  & .faq summary:hover,
+  & .faq details[open] summary {
+    color: #fff;
+  }
+  & .faq summary::before {
+    color: #fff;
+  }
+  & .faq summary:focus-visible {
+    outline-color: #fff;
+  }
+  & .faq__tk::before,
+  & .faq__tk::after {
+    background: #fff;
+  }
+  & .faq details p {
+    color: #fff;
+  }
+  & .faq__a a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+}
+/* einde FAQ stadspagina's in Bresserblauw */

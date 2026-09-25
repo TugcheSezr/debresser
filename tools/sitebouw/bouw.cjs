@@ -1,4 +1,4 @@
-/* Bouwt alle subpagina's van de De Bresser-site in de opmaak van het project (Kievit-componenten, merkboekkleuren).
+/* Bouwt alle subpagina's van de De Bresser-site in de opmaak van het project (componenten uit css/style.css, merkboekkleuren).
    Inhoud: 1-op-1 van debresser.nl (live HTML in ../live, gedownload uit de sitemap).
    Header, footer, CTA en mobiele balk komen letterlijk uit index.html van het project, zodat alle pagina's gelijk lopen.
 
@@ -27,6 +27,18 @@ const ctaVoorToon = (html) => {
   const u = (tekst.match(/\b(u|uw)\b/gi) || []).length;
   return CTA.trimEnd().split('voor u kunnen betekenen?').join(je && je >= u ? 'voor je kunnen betekenen?' : 'voor u kunnen betekenen?');
 };
+// Offertebox met keurmerkpil + de vier kerncijferkaarten (.trust) onder de hero van elke subpagina behalve offerte.html
+// (wens gebruiker, 25 september 2026). Letterlijk uit index.html, zodat de cijfers overal gelijk lopen; zonder de regel
+// Nieuw!/telefoon/mail, die staat al in de hero.
+const OFFERTEBOX = (() => {
+  const b = INDEX.indexOf('<section class="offerte-overlay"');
+  const t = INDEX.indexOf('<section class="trust"', b);
+  const e = INDEX.indexOf('</section>', t);
+  if (b < 0 || t < 0 || e < 0) throw new Error('niet gevonden: offertebox of kerncijfers in index.html');
+  return INDEX.slice(b, e + '</section>'.length)
+    .replace(/\n      <div class="of-extra">[\s\S]*?\n      <\/div>/, '')
+    .replace('class="offerte-overlay"', 'class="offerte-overlay offerte-overlay--pagina"');
+})();
 const CHROME_BOTTOM = INDEX.slice(INDEX.indexOf('<footer class="footer">'), INDEX.indexOf('</body>')); // footer + mobiele balk
 
 /* ---------- kleine helpers ---------- */
@@ -49,7 +61,7 @@ function knop(b) {
   return `<a class="btn btn--goud" href="${esc(href)}"${ext}>${t}${PIJL}</a>`;
 }
 
-/* ---------- formulier in Kievit-opmaak (lf) ---------- */
+/* ---------- formulier in de lf-opmaak ---------- */
 const slugName = (s) => tidy(s).toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'veld';
 function formulier(f, kop) {
   const n = nextId('f');
@@ -94,14 +106,15 @@ function figuur(b) {
   return `<figure class="blok__foto" data-reveal>${b.href ? `<a href="${esc(b.href)}">${img}</a>` : img}${b.caption ? `<figcaption>${esc(b.caption)}</figcaption>` : ''}</figure>`;
 }
 
-function dienstKaarten(run) {
+// Zonder eigen klasse: 4 kaarten in één rij, 2 als paar, anders 3 per rij (4 op een raster van 3 gaf 3 + 1, sessie tugce-26, 25 september 2026)
+function dienstKaarten(run, klasse = { 2: ' diensten--paar', 4: ' diensten--vier' }[run.length] || '') {
   // Stappen met een genummerd plaatje (videochat: 1, 2, 3): nummer als badge in plaats van het plaatje
   if (run.every((r) => /\d-plan-video-chat/.test(r.src))) {
     return `<ol class="db-kaarten db-stappen">
 ${run.map((r) => `      <li class="db-kaart" data-reveal><span class="db-stap-nr" aria-hidden="true">${(r.src.match(/(\d)-plan-video-chat/) || [])[1]}</span><h3>${r.href ? `<a href="${esc(r.href)}">${esc(r.title)}</a>` : esc(r.title)}</h3>${r.desc}</li>`).join('\n')}
     </ol>`;
   }
-  return `<div class="diensten">
+  return `<div class="diensten${klasse}">
 ${run.map((r, k) => {
     const inner = `<div class="dienst__nis">${r.src ? `<img src="${esc(r.src)}" alt="${esc(r.alt)}" loading="lazy" decoding="async">` : ''}<span class="dienst__nr" aria-hidden="true">${String(k + 1).padStart(2, '0')}</span></div><div class="dienst__tekst"><h3>${esc(r.title)}</h3>${r.desc}${r.href ? '<span class="dienst__meer">Lees meer</span>' : ''}</div>`;
     return r.href ? `      <a class="dienst" href="${esc(r.href)}" data-reveal>${inner}</a>` : `      <div class="dienst" data-reveal>${inner}</div>`;
@@ -207,6 +220,13 @@ function inner(g, ctx = {}) {
   const voorCols = widgets.filter((w) => kids.indexOf(w) < kids.indexOf(cols[0]));
   const naCols = widgets.filter((w) => kids.indexOf(w) > kids.indexOf(cols[cols.length - 1]));
   if (cols.length >= 2 && cols.every((c) => flatBlocks(c).every((b) => b.type === 'imagebox'))) return flow(voorCols, ctx) + dienstKaarten(cols.flatMap(flatBlocks)) + flow(naCols, ctx);
+  // "Bekijk ook eens": per kolom een fotokaart met daaronder een losse "Lees meer" (iconbox zonder tekst).
+  // Samen één rij dienstkaarten; de kaart linkt zelf al, dus de losse knop vervalt (sessie tugce-7e, 25 september 2026).
+  const kaartMetKnop = (c) => { const f = flatBlocks(c); return f.filter((b) => b.type === 'imagebox').length === 1 && f.every((b) => b.type === 'imagebox' || (b.type === 'iconbox' && !b.desc)); };
+  if (cols.length >= 2 && cols.every(kaartMetKnop)) {
+    const kaarten = cols.flatMap(flatBlocks).filter((b) => b.type === 'imagebox');
+    return flow(voorCols, ctx) + dienstKaarten(kaarten, { 2: ' diensten--paar', 4: ' diensten--vier' }[kaarten.length] || '') + flow(naCols, ctx);
+  }
   if (cols.length >= 2 && cols.every((c) => flatBlocks(c).every((b) => b.type === 'button'))) return flow([...voorCols, ...cols.flatMap(flatBlocks), ...naCols], ctx);
   if (cols.length === 2 && widgets.length === 0) {
     const a = kolom(cols[0], ctx), b = kolom(cols[1], ctx);
@@ -299,6 +319,34 @@ function ouder(bestand) {
 /* ---------- nabewerking per pagina ----------
    Handwerk van andere sessies dat bij opnieuw genereren moet blijven staan. */
 const NABEWERKING = {
+  // 100-jarig-jubileum.html, "De Bresser een eeuw in ontwikkeling": Diepblauwe band met schuine bovenrand, per jaar
+  // een fotokaart waar het onderwerp boven de rand uitstapt (sessie tugce-09, 25 september 2026, ontwerp 08).
+  // Markup: eeuw-tijdlijn.cjs; CSS: css/eeuw-tijdlijn.css; uitsnedes: assets/img/eeuw-uit/<jaar>.webp.
+  '100-jarig-jubileum.html': (h) => require('./eeuw-tijdlijn.cjs')(h),
+  // internationale-verhuizing.html, "Internationale verhuizing binnen Europa": tekst links, rechts een eigen wagen in
+  // een bergdorp die links onder uit het kader komt, plus een kaartje met de vlaggen NL/BE/LU (sessie tugce-15, 25 september 2026).
+  // Markup: internationaal-europa.cjs; CSS: css/internationaal-europa.css; uitsnede: assets/img/internationaal/wagen-bergdorp-vrij.webp.
+  'internationale-verhuizing.html': (h) => require('./internationaal-europa.cjs')(h),
+  // zakelijke-opslag.html, blok "Zakelijk opslag nodig in de buurt?": magazijnfoto als achtergrond van het hele blok,
+  // kop en knop op een kaart (sessie tugce-97, 25 september 2026). De oude foto (medewerker met doos) stond ook al in de CTA-band.
+  // CSS: css/zakelijk-buurt.css; foto: assets/img/zakelijk-buurt/opslag-kantoormeubilair(-960).webp (beeldbank 03-opslag/zakelijke-opslag-2).
+  'zakelijke-opslag.html': (h) => {
+    const moet = (oud, nieuw) => { if (!h.includes(oud)) throw new Error('zakelijke-opslag.html nabewerking: niet gevonden: ' + oud.slice(0, 80)); h = h.split(oud).join(nieuw); };
+    moet('</head>', '<link rel="stylesheet" href="css/zakelijk-buurt.css">\n</head>');
+    const blok = h.match(/<section class="sectie sectie--creme2">\s*<div class="wrap">\s*<div class="blok blok--vlak db-foto-links">\s*<div class="blok__tekst" data-reveal>\s*(<h2 class="kop">Zakelijk opslag nodig in de buurt\?<\/h2>)\s*(<div class="knoprij">.*?<\/div>)\s*<\/div>\s*<figure class="blok__foto"[^>]*>[\s\S]*?<\/figure>\s*<\/div>\s*<\/div>\s*<\/section>/);
+    if (!blok) throw new Error('zakelijke-opslag.html nabewerking: blok "Zakelijk opslag nodig in de buurt?" niet gevonden');
+    const foto = 'assets/img/zakelijk-buurt/opslag-kantoormeubilair';
+    moet(blok[0], `<section class="sectie sectie--creme2 zo-buurt">
+  <figure class="zo-buurt__foto" aria-hidden="true"><img src="${foto}.webp" srcset="${foto}-960.webp 960w, ${foto}.webp 1920w" sizes="100vw" width="1920" height="1434" alt="" loading="lazy" decoding="async"></figure>
+  <div class="wrap">
+    <div class="zo-buurt__kaart" data-reveal>
+      ${blok[1]}
+      ${blok[2]}
+    </div>
+  </div>
+</section>`);
+    return h;
+  },
   // contact.html, Locaties: vlaggen bij de landkoppen en de wereldbol (sessie tugce-85, 24 september 2026).
   // CSS: blok "Contact, Locaties: vlaggen bij de landkoppen + wereldbol" in style.css; JS: "// Contact, Locaties: wereldbol (MapLibre" in main.js.
   'contact.html': (h) => {
@@ -308,7 +356,12 @@ const NABEWERKING = {
     for (const plaats of ['Oisterwijk', 'Tilburg', 'Breda', 'Venlo', 'Reeuwijk']) moet(`<article class="db-kaart" data-reveal><h3 class="db-h3">${plaats}</h3>`, `<article class="db-kaart" data-loc="${plaats.toLowerCase()}" data-reveal><h3 class="db-h3">${plaats}</h3>`);
     moet('<h3 class="db-h3">België</h3>', '<h3 class="kop kop--sub db-land"><span class="db-vlag db-vlag--be" aria-hidden="true"></span>België</h3>');
     moet('<h3 class="db-h3">Brussel</h3>', '<h3 class="db-h3" data-loc="brussel">Brussel</h3>');
-    return h;
+    // Eerste blok in de opzet van De Reus: info-kaart + kaart links, formulier met foto rechts (25 september 2026).
+    // Markup: contact-kop.cjs; CSS: css/contact-kop.css; JS: "// Contact, eerste blok" in main.js.
+    h = require('./contact-kop.cjs')(h);
+    // Locaties: tweede lijst onder de bol weg, vestigingen rechts als genummerde kaarten (25 september 2026).
+    // Markup: contact-locaties.cjs; CSS: css/contact-locaties.css.
+    return require('./contact-locaties.cjs')(h);
   },
   // over-ons.html, Ons team: laptopkaarten waar het hoofd boven het scherm uitkomt, zoals in de repo
   // OranjeLift-Tech/debresser (sessie tugce, 24 september 2026). CSS: css/team-laptop.css; foto's:
@@ -346,6 +399,13 @@ const NABEWERKING = {
       </li>`;
     }).join('');
     moet(lijst[0], `<section class="sectie tm-section">${lijst[1]}<ul class="tm-grid" data-reveal-groep>${kaarten}\n    </ul>`);
+    // Eerste blok "De Bresser / Over ons": het pand komt uit de lijst (sessie tugce, 25 september 2026).
+    // CSS: css/over-ons-pand.css; beelden: assets/img/pand-uit/ (foto 1200x800 + uitsnedes van de bovenste
+    // 440 rijen: pand-kantoor.webp alleen het kantoor, pand-geheel.webp met de loods, voor smalle schermen).
+    moet('</head>', '<link rel="stylesheet" href="css/over-ons-pand.css">\n</head>');
+    moet('<figure class="blok__foto" data-reveal><img src="assets/img/site/De-Bresser-Verhuizingen-Oisterwijk-1024x683.jpg" alt="Foto kantoor Oisterwijk" loading="lazy" decoding="async"></figure>',
+      '<figure class="blok__foto pand-uit" data-reveal><div class="pand-uit__lijst"><img class="pand-uit__foto" src="assets/img/pand-uit/pand-oisterwijk.webp" width="1200" height="800" alt="Foto kantoor Oisterwijk" loading="lazy" decoding="async"></div>'
+      + '<picture class="pand-uit__pand-bron"><source media="(max-width: 860px)" srcset="assets/img/pand-uit/pand-geheel.webp"><img class="pand-uit__pand" src="assets/img/pand-uit/pand-kantoor.webp" width="1200" height="440" alt="" aria-hidden="true" loading="lazy" decoding="async"></picture></figure>');
     return h;
   },
   // vacatures.html: vacaturekaarten met foto in een lijst waar de mensen bovenuit steken, en de open
@@ -400,8 +460,23 @@ const NABEWERKING = {
     const eind = h.indexOf('\n  </div>\n</section>', start);
     if (start < 0 || eind < 0) throw new Error('vacatures.html nabewerking: einde van db-twee niet gevonden');
     h = h.slice(0, eind) + band + h.slice(eind);
+    // "Staat jouw droombaan hier niet tussen?": teamfoto op de laadklep in plaats van de uitgeknipte
+    // medewerker met doos, die ook al in de CTA-band staat (sessie tugce, 25 september 2026)
+    moet('<figure class="blok__foto" data-reveal><img src="assets/img/site/De-Bresser-Transport-Contact-e1711724004960.png" alt="Foto medewerker met doos" loading="lazy" decoding="async"></figure>',
+      '<figure class="blok__foto" data-reveal><img src="assets/img/site/De-Bresser-Uw-verhuis-partner-1024x683.jpg" alt="Het verhuisteam van De Bresser op de laadklep van de verhuiswagen" loading="lazy" decoding="async"></figure>');
     return h;
   },
+  // Dienstoverzichten: aanbod als fotokaarten, werkwijze als genummerde stappen, formulier als leadblock
+  // (sessie tugce-b0, 25 september 2026). Markup: diensten-overzicht.cjs; CSS: css/diensten-overzicht.css.
+  'diensten-verhuizen.html': (h) => require('./diensten-overzicht.cjs')('diensten-verhuizen.html', h),
+  'diensten-opslag.html': (h) => require('./diensten-overzicht.cjs')('diensten-opslag.html', h),
+  'diensten-meubelprojecten.html': (h) => require('./diensten-overzicht.cjs')('diensten-meubelprojecten.html', h),
+  'diensten-gebouwbeheer.html': (h) => require('./diensten-overzicht.cjs')('diensten-gebouwbeheer.html', h),
+  'diensten-assetmanagement.html': (h) => require('./diensten-overzicht.cjs')('diensten-assetmanagement.html', h),
+  // duurzaam-verhuizen.html, "Samen werken aan een betere wereld": kop + zeven initiatieven als één sectie met
+  // fotokaarten in plaats van drie secties met icoontjes (sessie tugce-14, 25 september 2026).
+  // Markup: duurzaam-initiatieven.cjs; CSS: css/duurzaam-initiatieven.css; foto's: assets/img/duurzaam-initiatieven/.
+  'duurzaam-verhuizen.html': (h) => require('./duurzaam-initiatieven.cjs')(h),
 };
 
 /* ---------- pagina ---------- */
@@ -519,7 +594,7 @@ ${CHROME_TOP}<main id="top" tabindex="-1">
 
 ${heroHtml}
 
-${secties.join('\n\n')}
+${hero && bestand !== 'offerte.html' ? OFFERTEBOX + '\n\n' : ''}${secties.join('\n\n')}
 
 </main>
 

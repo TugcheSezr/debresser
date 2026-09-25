@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Duurzaam verhuizen, "Samen werken aan een betere wereld" (sessie tugce-14, 25 september 2026)
+   Eén sectie in plaats van drie: sectiekop in het midden en zeven initiatiefkaarten met een echte
+   foto, in de opzet van de dienstkaarten (foto boven, Diepblauw vlak, groen nummer).
+   Klantwens: blokken niet te groot, dus lagere foto's en compactere tekst dan de gewone dienstkaart.
+   Desktop 4 + 3 kaarten, waarvan de laatste (langste tekst) twee kolommen breed is.
+   De kaarten zijn geen link, dus ze bewegen niet bij hover.
+   Markup: tools/sitebouw/duurzaam-initiatieven.cjs. Wit, want erboven staat de Mist-sectie
+   "Duurzame missie" en eronder "Maatschappelijke betrokkenheid" in Mist.
+   ========================================================================== */
+.subpagina main > .sectie.dzi:not(.sectie--creme2) {
+  background: #fff;
+  padding-block: clamp(3.25rem, 6vw, 5rem);
+}
+.dzi .sectiekop {
+  max-width: 920px;
+  margin-bottom: clamp(1.6rem, 3vw, 2.25rem);
+}
+.dzi .sectiekop .kop {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.dzi .sectiekop .intro {
+  font-size: 1.08rem;
+}
+.dzi__kaarten {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+.dzi .dienst {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+}
+.dzi .dienst:hover {
+  background: var(--teal-paneel);
+  transform: none;
+}
+.dzi .dienst:hover .dienst__nis img {
+  transform: none;
+}
+.dzi .dienst__nis {
+  aspect-ratio: auto;
+  height: clamp(140px, 11vw, 158px);
+}
+.dzi .dienst__nr {
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+}
+.dzi .dienst__tekst {
+  flex: 1;
+  padding: 1.05rem 1.2rem 1.3rem;
+}
+.dzi .dienst h3 {
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+.dzi .dienst p {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+}
+.dzi__breed {
+  grid-column: span 2;
+}
+@media (max-width: 1100px) {
+  .dzi__kaarten {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Twee kolommen: de brede kaart ligt, foto links over de hele hoogte, anders wordt de foto een smalle strook */
+@media (min-width: 561px) and (max-width: 1100px) {
+  .dzi .dienst.dzi__breed {
+    flex-direction: row;
+  }
+  .dzi .dzi__breed .dienst__nis {
+    flex: 0 0 38%;
+    height: auto;
+  }
+}
+@media (max-width: 560px) {
+  .dzi__kaarten {
+    grid-template-columns: 1fr;
+  }
+  .dzi__breed {
+    grid-column: auto;
+  }
+  .dzi .dienst__nis {
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+}

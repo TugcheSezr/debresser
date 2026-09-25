@@ -1,0 +1,321 @@
+/* ==========================================================================
+   Contact, eerste blok (contact.html, 25 september 2026)
+   Opzet naar het contactblok van De Reus: links een witte kaart met telefoon en e-mail en
+   daaronder de kaart van Oisterwijk met adres en route, rechts het formulier met een
+   kantoorfoto erboven. Markup: tools/sitebouw/contact-kop.cjs (nabewerking van bouw.cjs).
+   "Bekijk interactieve kaart": js/main.js blok "Contact, eerste blok".
+   Compact: kop links boven, zodat kop, telefoon, e-mail, kaart en formulier samen op één
+   scherm passen (1536x864 op 125% = ongeveer 1536x730 in de browser, header 80px).
+   ========================================================================== */
+.ckb { padding-top: clamp(2rem, 3.2vw, 2.75rem); }
+
+.ckb__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1.25rem, 2.6vw, 2.25rem);
+  align-items: stretch;
+}
+.ckb__links { display: flex; flex-direction: column; gap: 1rem; }
+
+.ckb__kop .label { margin: 0 0 0.5rem; }
+.ckb__kop .kop { margin: 0 0 0.6rem; font-size: clamp(1.8rem, 2.4vw, 2.3rem); line-height: 1.12; }
+.ckb__kop .intro { font-size: 1rem; line-height: 1.6; }
+.ckb__kop .intro p { margin: 0; }
+
+.ckb-info,
+.ckb-kaart,
+.ckb-form {
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, 0.07), var(--schaduw-kaart);
+}
+
+/* ---------- info-kaart: telefoon en e-mail ---------- */
+.ckb-info__rij {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.75rem 1.2rem;
+}
+.ckb-info__rij + .ckb-info__rij { border-top: 1px solid var(--creme-2); }
+.ckb-info__ico {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--creme-2);
+  color: var(--goud);
+}
+.ckb-info__ico svg { width: 1.15rem; height: 1.15rem; }
+.ckb-info__label {
+  margin: 0.1rem 0 0.25rem;
+  font: 700 0.72rem/1.3 var(--font-kop);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ant-zacht);
+}
+.ckb-info__groot {
+  color: var(--bruin);
+  font: 700 clamp(1.15rem, 0.95rem + 0.9vw, 1.45rem)/1.3 var(--font-kop);
+  text-decoration: none;
+}
+.ckb-info__groot:hover { color: var(--goud); }
+.ckb-info__link {
+  color: var(--goud-donker);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.ckb-info__link:hover { color: var(--goud); }
+
+/* ---------- kaart van Oisterwijk ---------- */
+.ckb-kaart { position: relative; flex: 1 1 auto; display: flex; flex-direction: column; margin: 0; overflow: hidden; }
+/* kaart-oisterwijk.webp: OSM z16, 720x640, precies gecentreerd op Schijfstraat 13 (51.58260, 5.19253).
+   Op desktop groeit het kaartvak mee tot de onderkant van het formulier; object-fit cover houdt het
+   midden van de afbeelding in het midden, dus de pin op 50% / 50% blijft op het adres staan. */
+.ckb-kaart__beeld { position: relative; flex: 1 1 auto; min-height: 22rem; aspect-ratio: 720 / 640; background: var(--creme-2); }
+.ckb-kaart__beeld > img { position: absolute; inset: 0; }
+@media (min-width: 901px) { .ckb-kaart__beeld { aspect-ratio: auto; min-height: 11rem; } }
+.ckb-kaart__beeld > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* pin: de punt staat op het adres; gedeeld met de pin op de interactieve kaart */
+.ckb-pin { position: absolute; width: 0; height: 0; }
+.ckb-pin::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: -44px;
+  width: 36px;
+  height: 36px;
+  border: 2.5px solid #fff;
+  border-radius: 50% 50% 50% 4px;
+  transform: rotate(-45deg);
+  background:
+    radial-gradient(circle, #fff 0 4.5px, transparent 5px),
+    linear-gradient(160deg, #00498f, #020d41 70%);
+  box-shadow: 0 8px 16px -4px rgba(2, 13, 65, 0.55);
+}
+.ckb-pin::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: -4px;
+  width: 16px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(2, 13, 65, 0.3);
+  filter: blur(1.5px);
+  z-index: -1;
+}
+.ckb-pin b {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  translate: -50% 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--bruin);
+  font: 700 0.75rem/1.2 var(--font-kop);
+  white-space: nowrap;
+  box-shadow: 0 6px 14px -8px rgba(2, 13, 65, 0.55);
+}
+.ckb-kaart__pin { left: 50%; top: 50%; z-index: 1; pointer-events: none; }
+
+.ckb-kaart__knop {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--bruin);
+  font: 600 0.8rem/1 var(--font-kop);
+  text-decoration: none;
+  box-shadow: 0 8px 20px -6px rgba(2, 13, 65, 0.35);
+  cursor: pointer;
+  transition: background 0.2s var(--ease);
+}
+.ckb-kaart__knop:hover { background: var(--creme-2); }
+.ckb-kaart__knop:focus-visible { outline: 3px solid #33bcfa; outline-offset: 2px; }
+.ckb-kaart__knop svg {
+  width: 1rem;
+  height: 1rem;
+  stroke: var(--geel-rand-aa);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ckb-kaart__adres {
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 26px -12px rgba(2, 13, 65, 0.45);
+}
+.ckb-kaart__ico {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 10px;
+  background: var(--geel);
+  color: var(--bruin);
+}
+.ckb-kaart__ico svg { width: 1.2rem; height: 1.2rem; }
+.ckb-kaart__adres address { font-style: normal; color: var(--ant); font-size: 0.92rem; line-height: 1.5; }
+.ckb-kaart__route {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+  color: var(--goud);
+  font: 700 0.85rem/1.3 var(--font-kop);
+  text-decoration: none;
+}
+.ckb-kaart__route svg { width: 0.95rem; height: 0.95rem; transition: transform 0.2s var(--ease); }
+.ckb-kaart__route:hover svg { transform: translateX(3px); }
+/* adres en route naast elkaar: lager kaartje, zodat de pin op de kaart zichtbaar blijft */
+.ckb-kaart__adres { align-items: center; padding: 0.6rem 0.9rem 0.6rem 0.7rem; bottom: 0.7rem; left: 0.7rem; right: 0.7rem; }
+.ckb-kaart__adres > span:last-child { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.2rem 1rem; }
+.ckb-kaart__adres address { font-size: 0.88rem; line-height: 1.45; }
+.ckb-kaart__adres .ckb-kaart__route { margin-top: 0; }
+.ckb-kaart__bron { margin: -0.6rem 0 0 0.3rem; color: var(--ant-zacht); font-size: 0.72rem; line-height: 1.4; }
+.ckb-kaart__bron a { color: inherit; }
+
+/* interactieve kaart (MapLibre) ligt over de vaste kaart; knop en adres blijven erboven */
+.ckb-kaart__live {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at 50% 45%, #00498f 0%, #020d41 55%);
+  font: inherit;
+}
+.ckb-kaart__live.maplibregl-map { position: absolute; }     /* maplibre-gl.css zet hem op relative */
+.ckb-kaart__live .maplibregl-canvas { outline: none; }
+.ckb-kaart__live .maplibregl-ctrl-top-right .maplibregl-ctrl { margin: 0.9rem 0.9rem 0 0; }
+.ckb-kaart__live .maplibregl-ctrl-group { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px -6px rgba(2, 13, 65, 0.35); }
+.ckb-kaart__live .maplibregl-ctrl-attrib { font-size: 10px; }
+.ckb-kaart__live .ckb-pin b { top: 10px; }
+/* naam rechts naast de pin, niet eronder: daar ligt het adreskaartje */
+.ckb-kaart__beeld .ckb-pin b,
+.ckb-kaart__live .ckb-pin b { left: 24px; top: -36px; translate: 0 0; }
+
+/* ---------- formulier met kantoorfoto ---------- */
+/* Hoofd uit de foto. medewerker-uit.webp is dezelfde foto op dezelfde breedte (1200) zonder achtergrond,
+   rij 300-620 van het origineel; medewerker.webp begint op rij 500, dus in 1200-schaal ligt de uitsnede
+   134 px hoger. Het kader laat de foto nog 40 px hoger beginnen (net onder de neus): de uitsnede staat
+   dan 174 px boven de kaderrand en het gezicht komt tot aan de mond boven de kaart uit. De onderste
+   40 px van de uitsnede vallen precies op dezelfde pixels in het kader en lopen daar zacht uit.
+   Marges in % rekenen met de breedte, dus het past op elke schermbreedte. */
+.ckb-form {
+  position: relative;
+  margin-top: calc(130 / 1200 * 100% + 0.4rem);
+  box-shadow: 0 0 0 1px rgba(2, 13, 65, 0.07), var(--schaduw);
+}
+/* naast elkaar: het haar mag in de bovenmarge van de sectie steken, dat scheelt hoogte */
+@media (min-width: 901px) { .ckb-form { margin-top: calc(80 / 1200 * 100%); } }
+.ckb-form__foto { position: relative; }
+.ckb-form__kader {
+  aspect-ratio: 1200 / 215;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+  border-bottom: 4px solid var(--geel);
+  background: var(--creme-2);
+}
+.ckb-form__kader img { display: block; width: 100%; height: auto; margin-top: calc(-40 / 1200 * 100%); }
+.ckb-form__uit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  margin-top: calc(-174 / 1200 * 100%);
+  pointer-events: none;
+  filter: drop-shadow(0 10px 12px rgba(2, 13, 65, 0.3));
+  -webkit-mask-image: linear-gradient(#000 84%, transparent 99%);
+  mask-image: linear-gradient(#000 84%, transparent 99%);
+}
+.ckb-form__body { padding: clamp(1.1rem, 1.8vw, 1.4rem) clamp(1.1rem, 2.2vw, 1.6rem) clamp(1.1rem, 1.8vw, 1.5rem); }
+.ckb-form__kop {
+  margin: 0 0 0.25rem;
+  font: 700 clamp(1.2rem, 1rem + 0.6vw, 1.4rem)/1.25 var(--font-kop);
+  letter-spacing: 0;
+  color: var(--goud-diep);
+}
+.ckb-form__intro { margin: 0 0 0.9rem; color: var(--ant-zacht); font-size: 0.95rem; line-height: 1.55; }
+.ckb-form__intro p { margin: 0; line-height: inherit; }
+
+/* de db-form-regels in style.css zijn voor de Diepblauwe formulierkaart; hier staat het op wit */
+.ckb-form .db-form { margin-top: 0; gap: 0.75rem 1rem; }
+.ckb-form .db-form input:not([type="checkbox"]):not([type="radio"]),
+.ckb-form .db-form textarea { padding: 0.65rem 0.9rem; }
+/* breed genoeg: naam, telefoon en e-mail op één rij */
+@media (min-width: 1100px) {
+  .ckb-form .db-form { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ckb-form .db-form .ckb-form__mail { grid-column: auto; }
+}
+.ckb-form .db-form .lf__field label {
+  color: var(--bruin);
+  font: 600 0.85rem/1.3 var(--font-kop);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ckb-form .db-form .lf__ster { color: var(--geel-rand-aa); }
+.ckb-form .db-form input:not([type="checkbox"]):not([type="radio"]),
+.ckb-form .db-form textarea { transition: border-color 0.2s var(--ease); }
+.ckb-form .db-form input:not([type="checkbox"]):not([type="radio"]):hover,
+.ckb-form .db-form textarea:hover { border-color: #8f9bab; }
+.ckb-form .db-form textarea { height: 4.75rem; min-height: 4.5rem; resize: vertical; }
+.ckb-form__voet {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.25rem;
+  margin-top: 0.3rem;
+}
+.ckb-form .db-form .ckb-form__voet .lf__actions { margin: 0; flex: none; }
+.ckb-form .db-form .ckb-form__voet .lf__html {
+  flex: 1 1 13rem;
+  color: var(--ant-zacht);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.ckb-form .db-form .lf__html p { margin: 0; }
+.ckb-form .db-form .lf__html a { color: var(--goud-donker); }
+.ckb-form .db-form__melding { color: var(--bruin); }
+.ckb-form .db-form__melding.is-fout { background: #fdecea; color: var(--fout); }
+
+/* ---------- smal: kop, telefoon en e-mail, dan het formulier, dan de kaart ---------- */
+@media (max-width: 900px) {
+  .ckb__grid { grid-template-columns: minmax(0, 1fr); max-width: 620px; margin-inline: auto; }
+  .ckb__links { display: contents; }
+  .ckb-info { order: 1; }
+  .ckb-form { order: 2; }
+  .ckb-form__kader { aspect-ratio: 1200 / 320; }
+  .ckb-kaart { order: 3; }
+  .ckb-kaart__bron { order: 4; margin-top: calc(-1 * clamp(1.25rem, 2.6vw, 2.25rem) + 0.5rem); }
+}
+@media (max-width: 520px) {
+  .ckb-info__rij { gap: 0.85rem; padding: 1.1rem 1.1rem; }
+  .ckb-kaart__beeld { min-height: 0; aspect-ratio: 1 / 1.05; }
+  .ckb-form .db-form .ckb-form__voet .lf__actions,
+  .ckb-form .db-form .ckb-form__voet .btn { width: 100%; }
+}

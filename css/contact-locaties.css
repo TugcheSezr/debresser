@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Contact, Locaties (contact.html, 25 september 2026)
+   Wereldbol links, even hoog als de lijst; rechts per land een kop met vlag en de
+   vestigingen als witte kaarten: nummer (zelfde als de pin op de bol), naam, adres
+   en de telefoon als pil. Een oneven laatste kaart pakt de hele breedte.
+   Markup: tools/sitebouw/contact-locaties.cjs (nabewerking van bouw.cjs).
+   Bol en pinnen: css/style.css en js/main.js blok "Contact, Locaties: wereldbol";
+   die zet .is-actief op de kaart van de locatie die op de bol oplicht.
+   Niets beweegt bij hover, alleen kleur en schaduw.
+   ========================================================================== */
+.vst__bord {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.6rem, 3.5vw, 3rem);
+  align-items: stretch;
+}
+.vst__bol {
+  height: 100%;
+  border-radius: 18px;
+  box-shadow: var(--schaduw);
+}
+
+/* landen */
+.vst-groep + .vst-groep { margin-top: clamp(1.8rem, 3vw, 2.6rem); }
+.vst-groep__kop {
+  position: relative;
+  margin: 0 0 1rem;
+  padding-bottom: 0.85rem;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+.vst-groep__kop::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(2, 13, 65, 0.18), rgba(2, 13, 65, 0));
+}
+
+/* kaarten */
+.vst-kaarten {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.vst-kaarten > .vst-kaart:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.vst-kaart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px 20px 20px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: var(--schaduw-kaart);
+  cursor: pointer;
+  transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease);
+}
+.vst-kaart:hover { box-shadow: var(--schaduw); }
+.vst-kaart.is-actief {
+  border-color: var(--goud);
+  box-shadow: 0 0 0 1px var(--goud), var(--schaduw);
+}
+.vst-kaart__kop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+  margin-bottom: 10px;
+}
+.vst-kaart__nr {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e6f0f8;
+  color: var(--goud);
+  font: 700 0.8rem/1 var(--font-kop);
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+.vst-kaart.is-actief .vst-kaart__nr { background: var(--geel); color: var(--bruin); }
+.vst-kaart__naam {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font: 600 1.1rem/1.3 var(--font-kop);
+  color: var(--bruin);
+}
+.vst-kaart__pin {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: rgba(2, 13, 65, 0.2);
+  transition: color 200ms var(--ease);
+}
+.vst-kaart.is-actief .vst-kaart__pin { color: var(--goud); }
+.vst-kaart address {
+  font-style: normal;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ant-zacht);
+}
+.vst-kaart__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 7px 14px 7px 10px;
+  border-radius: 999px;
+  color: var(--bruin);
+  font: 600 0.84rem/1.2 var(--font-kop);
+  white-space: nowrap;
+  text-decoration: none;
+  background: rgba(123, 213, 52, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(123, 213, 52, 0.4);
+  transition: background 200ms var(--ease);
+}
+.vst-kaart__tel svg { flex: none; width: 15px; height: 15px; color: var(--geel-rand-aa); }
+.vst-kaart__tel:hover,
+.vst-kaart__tel:focus-visible { background: var(--geel); }
+.vst-kaart__tel:hover svg,
+.vst-kaart__tel:focus-visible svg { color: var(--bruin); }
+.vst-kaart__tel:focus-visible { outline: 2px solid var(--goud); outline-offset: 2px; }
+
+/* brede kaart (Reeuwijk, Brussel): adres links, telefoon rechts op dezelfde regel */
+@media (min-width: 761px) {
+  .vst-kaarten > .vst-kaart:last-child:nth-child(odd) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    align-items: end;
+  }
+  .vst-kaarten > .vst-kaart:last-child:nth-child(odd) .vst-kaart__kop { grid-column: 1 / -1; }
+  .vst-kaarten > .vst-kaart:last-child:nth-child(odd) .vst-kaart__tel { margin-top: 0; }
+}
+
+/* smaller: bol boven de lijst */
+@media (max-width: 1080px) {
+  .vst__bord { grid-template-columns: 1fr; }
+  .vst__bol { height: auto; min-height: clamp(22rem, 52vw, 30rem); }
+}
+@media (max-width: 760px) {
+  .vst-kaarten { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vst-kaart, .vst-kaart__nr, .vst-kaart__pin, .vst-kaart__tel { transition: none; }
+}

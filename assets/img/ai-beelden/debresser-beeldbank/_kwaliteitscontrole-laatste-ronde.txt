@@ -1,0 +1,9 @@
+BESTE POGING       100-jarig-jubileum-3  (poging 1, score 4)  opmerking: Readable DAF logo present.
+GOEDGEKEURD       container-opslag-3  (poging 2, score 8)
+GOEDGEKEURD       gebouwbeheer-4  (poging 1, score 8)
+GOEDGEKEURD       home-2  (poging 4, score 7)
+GOEDGEKEURD       inkoop-en-verkoop-assets  (poging 2, score 8)
+GOEDGEKEURD       onderhoud-2  (poging 1, score 7)
+GOEDGEKEURD       overzicht-vacatures  (poging 2, score 8)
+GOEDGEKEURD       verduurzamen  (poging 1, score 6)
+GOEDGEKEURD       wms-en-meubelpaspoort-3  (poging 2, score 7)

@@ -1,0 +1,47 @@
+{
+ "gebouwbeheer-verduurzamen": {
+  "ar": 1.7778,
+  "hy": 0.0741,
+  "fx": 0.6186
+ },
+ "gebouwbeheer-huismeester": {
+  "ar": 1.7778,
+  "hy": 0.2352,
+  "fx": 0.7109
+ },
+ "assetmanagement": {
+  "ar": 1.3333,
+  "hy": 0.4042,
+  "fx": 0.4919
+ },
+ "opslag": {
+  "ar": 1.3333,
+  "hy": 0.4722,
+  "fx": 0.8835
+ },
+ "verhuizen": {
+  "ar": 1.3333,
+  "hy": 0.2861,
+  "fx": 0.1675
+ },
+ "internationale-verhuizing": {
+  "ar": 1.7778,
+  "hy": 0.237,
+  "fx": 0.3987
+ },
+ "zakelijke-opslag": {
+  "ar": 1.7778,
+  "hy": 0.1278,
+  "fx": 0.6414
+ },
+ "gebouwbeheer": {
+  "ar": 1.3333,
+  "hy": 0.3361,
+  "fx": 0.8849
+ },
+ "meubeltransport": {
+  "ar": 1.7778,
+  "hy": 0.2907,
+  "fx": 0.374
+ }
+}

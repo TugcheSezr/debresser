@@ -1,0 +1,199 @@
+/* Tien varianten voor de homepage-blokken "Onze diensten" en "Nieuws & Tips".
+   Basis = css/style.css (dezelfde kaarten als de homepage, inclusief het foto-pop-blok).
+   Elke variant zit onder .hv--NN; niets beweegt behalve de hover die de site al heeft. */
+
+/* ---------- pagina ---------- */
+body { background: var(--creme); }
+.hv-nav {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; overflow-x: auto;
+  background: #020d41; box-shadow: 0 8px 24px -12px rgba(2, 13, 65, 0.6);
+}
+.hv-nav__titel { color: #33bcfa; font: 700 0.72rem/1 var(--font-kop); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; margin-right: 0.6rem; }
+.hv-nav a {
+  color: #fff; text-decoration: none; white-space: nowrap;
+  font: 600 0.82rem/1 var(--font-kop); padding: 0.55rem 0.85rem; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.hv-nav a b { color: #7bd534; margin-right: 0.25rem; }
+.hv-nav a:hover { background: rgba(255, 255, 255, 0.18); }
+.hv-intro { padding-block: 2.2rem 1rem; }
+.hv-intro h1 { font: 700 clamp(1.5rem, 3vw, 2.2rem)/1.15 var(--font-kop); color: #020d41; margin: 0 0 0.6rem; }
+.hv-intro p { max-width: 780px; color: var(--ant-zacht); margin: 0; }
+.hv { border-top: 6px solid #020d41; scroll-margin-top: 44px; }
+.hv__bar {
+  max-width: var(--maxw); margin: 0 auto; padding: 1.4rem var(--pad) 0;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 1rem;
+}
+.hv__nr { font: 700 2.4rem/1 var(--font-kop); color: #7bd534; }
+.hv__naam { font: 700 1.35rem/1.2 var(--font-kop); color: #020d41; margin: 0; }
+.hv__uitleg { margin: 0; color: var(--ant-zacht); font-size: 0.95rem; flex-basis: 100%; }
+@media (min-width: 900px) { .hv__uitleg { flex-basis: auto; } }
+
+/* ---------- 02 Zachte kaarten ---------- */
+.hv--02 .dienst { border-radius: 18px; box-shadow: 0 1px 2px rgba(2, 13, 65, 0.06), 0 22px 44px -26px rgba(2, 13, 65, 0.55); }
+.hv--02 .dienst__nis { border-radius: 18px 18px 0 0; }
+.hv--02 .dienst__nr { left: 14px; bottom: 14px; border-radius: 999px; padding: 0.5rem 0.95rem; font-size: 1rem; box-shadow: 0 6px 14px -6px rgba(2, 13, 65, 0.55); }
+.hv--02 .dienst__tekst { padding: 1.45rem 1.6rem 1.75rem; }
+.hv--02 .bericht { border-radius: 18px; }
+.hv--02 .bericht.is-foto-pop .bericht__foto,
+.hv--02 .bericht--pop .bericht__foto { margin: 10px 10px 0; border-radius: 12px; }
+.hv--02 .bericht--pop .bericht__foto > img:first-child { border-radius: 12px; }
+
+/* ---------- 03 Wit op lichtblauw ---------- */
+.hv--03 .hv-d { background: #e6f0f8; }
+.hv--03 .hv-d.ring::before { border-color: rgba(255, 255, 255, 0.9); }
+.hv--03 .dienst { background: #fff; color: var(--ant); border-radius: 14px; box-shadow: var(--schaduw-kaart); }
+.hv--03 .dienst:hover { background: #fff; box-shadow: var(--schaduw); }
+.hv--03 .dienst h3 { color: #00498f; }
+.hv--03 .dienst p { color: var(--ant-zacht); }
+.hv--03 .dienst__nis { border-radius: 14px 14px 0 0; }
+.hv--03 .dienst__nr {
+  left: auto; right: 18px; bottom: -24px; z-index: 3;
+  width: 48px; height: 48px; padding: 0; border-radius: 50%;
+  display: grid; place-items: center; font-size: 1rem;
+  border: 3px solid #fff; box-shadow: 0 8px 16px -8px rgba(2, 13, 65, 0.6);
+}
+.hv--03 .dienst__meer { color: #00498f; }
+.hv--03 .dienst h3 { padding-right: 3.4rem; }
+.hv--03 .hv-n { background: #fff; }
+.hv--03 .bericht { box-shadow: 0 0 0 1px #dfe7f0, var(--schaduw-kaart); }
+
+/* ---------- 04 Nachtblauwe band ---------- */
+.hv--04 .hv-d { background: #020d41; }
+.hv--04 .hv-d.ring::before { border-color: rgba(51, 188, 250, 0.18); }
+.hv--04 .hv-d .label { color: #33bcfa; }
+.hv--04 .hv-d .label::before { background: #33bcfa; }
+.hv--04 .hv-d .kop { color: #fff; }
+.hv--04 .dienst { background: #00498f; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 34px 60px -32px rgba(0, 0, 0, 0.75); }
+.hv--04 .dienst:hover { background: #0b5ba8; }
+.hv--04 .dienst__nis { border-radius: 6px 6px 0 0; }
+.hv--04 .foto-pop__boven > img { filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.5)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35)); }
+.hv--04 .hv-n { background: #e6f0f8; }
+
+/* ---------- 05 Fotoafdruk ---------- */
+.hv--05 .dienst { padding: 14px 14px 0; border-radius: 4px; }
+.hv--05 .dienst__nis,
+.hv--05 .bericht__foto {
+  border: 8px solid #fff; border-radius: 3px; background: #fff;
+  box-shadow: 0 1px 0 #d6dde6, 0 2px 0 #cbd3de, 0 3px 0 #c0c9d5, 0 4px 0 #b6c0cd, 0 18px 26px -12px rgba(2, 13, 65, 0.55);
+}
+.hv--05 .diensten > .dienst:nth-child(odd) .dienst__nis { transform: rotate(-1.2deg); }
+.hv--05 .diensten > .dienst:nth-child(even) .dienst__nis { transform: rotate(1deg); }
+.hv--05 .dienst__tekst { padding: 1.3rem 0.4rem 1.6rem; }
+.hv--05 .bericht { overflow: visible; }
+.hv--05 .bericht.is-foto-pop .bericht__foto,
+.hv--05 .bericht--pop .bericht__foto { margin: 12px 12px 0; border-radius: 3px; }
+.hv--05 .nieuws > li:nth-child(odd) .bericht__foto { transform: rotate(1deg); }
+.hv--05 .nieuws > li:nth-child(even) .bericht__foto { transform: rotate(-1.1deg); }
+.hv--05 .bericht--pop .bericht__foto img { border-radius: 0; }
+.hv--05 .foto-pop__raam { border-radius: 0; }
+
+/* ---------- 06 Boogvenster ---------- */
+.hv--06 .dienst { background: #fff; color: var(--ant); padding: 14px 14px 0; border-radius: 18px; box-shadow: var(--schaduw-kaart); }
+.hv--06 .dienst:hover { background: #fff; box-shadow: var(--schaduw); }
+.hv--06 .dienst h3 { color: #00498f; }
+.hv--06 .dienst p { color: var(--ant-zacht); }
+.hv--06 .dienst__meer { color: #00498f; }
+.hv--06 .dienst__tekst { padding: 1.2rem 0.6rem 1.6rem; }
+.hv--06 .dienst__nis,
+.hv--06 .bericht.is-foto-pop .bericht__foto,
+.hv--06 .bericht--pop .bericht__foto { border-radius: 50% 50% 8px 8px / 36% 36% 8px 8px; background: transparent; }
+.hv--06 .bericht.is-foto-pop .bericht__foto,
+.hv--06 .bericht--pop .bericht__foto { margin: 12px 12px 0; }
+.hv--06 .bericht--pop .bericht__foto > img:first-child { border-radius: 50% 50% 8px 8px / 36% 36% 8px 8px; }
+/* de strook loopt door tot onder de boog, zodat wat in de hoeken valt ook uitsteekt */
+.hv--06 .foto-pop__boven { bottom: 64%; height: calc(36% + 80px) !important; }
+.hv--06 .foto-pop__boven > img { filter: drop-shadow(0 6px 8px rgba(2, 13, 65, 0.22)); }
+.hv--06 .dienst__nr { left: 50%; transform: translateX(-50%); bottom: -16px; border-radius: 999px; padding: 0.5rem 0.95rem; font-size: 1rem; z-index: 3; }
+
+/* ---------- 07 Schuine naad ---------- */
+.hv--07 .dienst__nis,
+.hv--07 .bericht.is-foto-pop .bericht__foto { background: transparent; }
+.hv--07 .foto-pop__raam { clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%); border-radius: 0; }
+.hv--07 .bericht .foto-pop__raam { clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); border-radius: var(--r) var(--r) 0 0; }
+.hv--07 .dienst__nis::after,
+.hv--07 .bericht.is-foto-pop .bericht__foto::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 22%; z-index: 1; pointer-events: none;
+  background: #7bd534; clip-path: polygon(0 calc(100% - 6px), 100% 27%, 100% calc(27% + 6px), 0 100%);
+}
+.hv--07 .bericht.is-foto-pop .bericht__foto::after { height: 18%; clip-path: polygon(0 calc(100% - 6px), 100% 22%, 100% calc(22% + 6px), 0 100%); }
+.hv--07 .bericht--pop .bericht__foto { background: transparent; }
+.hv--07 .bericht--pop .bericht__foto > img:first-child { clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%); }
+/* de uitsnede van Sander is 1.12x vanaf de onderkant geschaald: in zijn eigen maat ligt de naad op 87.5% */
+.hv--07 .bericht--pop .bericht__foto .bericht__pop { clip-path: polygon(5.36% 0, 94.64% 0, 94.64% 87.5%, 5.36% 100%); }
+.hv--07 .bericht--pop .bericht__foto::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 18%; z-index: 3; pointer-events: none;
+  background: #7bd534; clip-path: polygon(0 calc(100% - 6px), 100% 22%, 100% calc(22% + 6px), 0 100%);
+}
+.hv--07 .dienst__nr { bottom: 4%; z-index: 2; transform: rotate(-4deg); transform-origin: left bottom; box-shadow: 0 8px 14px -8px rgba(2, 13, 65, 0.6); }
+
+/* ---------- 08 Uitgelicht ---------- */
+/* eerste kaart over de volle breedte (foto links, tekst rechts), daaronder rijen van drie, de laatste rij gecentreerd */
+@media (min-width: 901px) {
+  .hv--08 .diensten,
+  .hv--08 .nieuws { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 1.3rem; }
+  .hv--08 .diensten > .dienst,
+  .hv--08 .nieuws > li { flex: 0 0 calc((100% - 2.6rem) / 3); }
+  .hv--08 .diensten > .dienst:first-child,
+  .hv--08 .nieuws > li:first-child { flex-basis: 100%; }
+  .hv--08 .diensten > .dienst:first-child { display: grid; grid-template-columns: minmax(0, 62%) minmax(0, 1fr); min-width: 0; flex-shrink: 1; }
+  .hv--08 .diensten > .dienst:first-child .dienst__tekst { display: flex; flex-direction: column; justify-content: center; padding: 2rem 2.2rem; }
+  .hv--08 .diensten > .dienst:first-child h3 { font-size: 1.8rem; }
+  .hv--08 .diensten > .dienst:first-child p { font-size: 1.12rem; }
+  .hv--08 .diensten > .dienst:first-child .dienst__nr { font-size: 1.7rem; padding: 0.8rem 1.1rem; }
+  .hv--08 .nieuws > li:first-child .bericht { flex-direction: row; }
+  .hv--08 .nieuws > li:first-child .bericht__foto { flex: 0 0 62%; border-radius: var(--r) 0 0 var(--r); }
+  .hv--08 .nieuws > li:first-child .bericht__foto > img:first-child { border-radius: var(--r) 0 0 var(--r); }
+  .hv--08 .nieuws > li:first-child .bericht__tekst { justify-content: center; padding: 2rem 2.2rem; }
+  .hv--08 .nieuws > li:first-child h3 { font-size: 1.5rem; }
+  .hv--08 .nieuws > li:first-child p { font-size: 1rem; }
+}
+
+/* ---------- 09 Liggende kaarten ---------- */
+@media (min-width: 761px) {
+  .hv--09 .diensten { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hv--09 .dienst { display: grid; grid-template-columns: 50% 1fr; border-radius: 14px; }
+  .hv--09 .dienst p { font-size: 0.93rem; }
+  .hv--09 .dienst__tekst { padding: 1.2rem 1.3rem 1.3rem; }
+  .hv--09 .dienst__nis { aspect-ratio: auto; height: 100%; min-height: 230px; border-radius: 14px 0 0 14px; }
+  .hv--09 .dienst__tekst { display: flex; flex-direction: column; justify-content: center; }
+  .hv--09 .nieuws { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hv--09 .bericht { flex-direction: row; border-radius: 14px; }
+  .hv--09 .bericht.is-foto-pop .bericht__foto,
+  .hv--09 .bericht--pop .bericht__foto { flex: 0 0 42%; aspect-ratio: auto; min-height: 210px; border-radius: 14px 0 0 14px; }
+  .hv--09 .bericht--pop .bericht__foto > img:first-child { border-radius: 14px 0 0 14px; }
+  .hv--09 .bericht__tekst { justify-content: center; }
+}
+
+/* ---------- 10 Redactioneel ---------- */
+.hv--10 .dienst { background: transparent; color: var(--ant); }
+.hv--10 .dienst:hover { background: transparent; }
+.hv--10 .dienst__nis { border-radius: 18px; background: transparent; }
+.hv--10 .foto-pop__raam { box-shadow: 0 26px 40px -28px rgba(2, 13, 65, 0.7); }
+.hv--10 .dienst__nr {
+  left: auto; right: 14px; bottom: -34px; z-index: 3; padding: 0;
+  background: none; color: #fff; font-size: 3.4rem; letter-spacing: 0;
+  -webkit-text-stroke: 2px #00498f; paint-order: stroke fill;
+}
+.hv--10 .dienst__tekst { padding: 1.2rem 0.2rem 0.5rem; }
+.hv--10 .dienst h3 { color: #020d41; padding-right: 4.4rem; }
+.hv--10 .dienst p { color: var(--ant-zacht); }
+.hv--10 .dienst__meer {
+  margin-top: 1.1rem; padding: 0.75rem 1.15rem; border-radius: 999px;
+  background: #7bd534; color: #020d41;
+}
+.hv--10 .dienst:hover .dienst__meer { background: #6db23f; }
+.hv--10 .bericht { background: transparent; box-shadow: none; }
+.hv--10 .bericht:hover { box-shadow: none; }
+.hv--10 .bericht.is-foto-pop .bericht__foto,
+.hv--10 .bericht--pop .bericht__foto { border-radius: 18px; }
+.hv--10 .bericht--pop .bericht__foto > img:first-child { border-radius: 18px; }
+.hv--10 .bericht .foto-pop__raam,
+.hv--10 .bericht--pop .bericht__foto > img:first-child { box-shadow: 0 22px 34px -26px rgba(2, 13, 65, 0.7); }
+.hv--10 .bericht__tekst { padding: 1.1rem 0.2rem 0; }
+.hv--10 .bericht__meer {
+  align-self: flex-start; padding: 0.6rem 1rem; border-radius: 999px;
+  box-shadow: inset 0 0 0 2px #00498f; color: #00498f; text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.08em;
+}

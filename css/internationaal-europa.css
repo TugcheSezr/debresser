@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Internationale verhuizing, "Internationale verhuizing binnen Europa" (klantwens 25-09)
+   Tekst links, rechts een eigen wagen in een bergdorp in Frankrijk, en de wagen komt links
+   onder uit het kader naar voren. Werkwijze: het kader (de figure) is kleiner dan de foto.
+   De foto is 14% links, 30% rechts en 20% onder afgesneden (clip-path; rechts valt de
+   lantaarnpaal weg en wordt het kader staand, zodat het naast de lange tekst niet verdwijnt).
+   De uitsnede van de wagen heeft
+   dezelfde maat en plek en is niet afgesneden. Binnen het kader vallen ze precies samen,
+   daarbuiten zie je alleen de wagen. Geen vergroting, dus geen schim.
+   Rechtsboven een wit kaartje met de vlaggen van de meubelroutes uit de tekst
+   (Nederland, België, Luxemburg).
+   Markup: tools/sitebouw/internationaal-europa.cjs. De sectie blijft een Diepblauwe band
+   ("Banden per sectie" in style.css), dus het kaartje zet zijn eigen tekstkleur. Er beweegt niets.
+
+   Maten: foto 1024x804 (A = 1,2736). Kader = A * 0,56 / 0,80 = 0,8915.
+   Foto en uitsnede: breedte 1/0,56 = 178,57%, links -0,14/0,56 = -25%, hoogte 1/0,80 = 125%.
+   De wagen (x 1,3-38,8%, y 32-93% van de foto) steekt dan 22,7% van de kaderbreedte links uit
+   en 16% van de kaderhoogte onder. Het kader is 80% van de kolom breed en staat rechts, zodat de
+   wagen nooit over de tekst ernaast valt; margin-bottom (15% van de kolom) houdt ruimte vrij
+   voor de onderkant.
+   ========================================================================== */
+.db-vlag--lu { background: linear-gradient(180deg, #ed2939 0 33.4%, #fff 33.4% 66.6%, #00a1de 66.6%); }
+
+.blok--vlak .ive-foto {
+  align-self: center;
+  justify-self: end;
+  width: 80%;
+  min-height: 0;
+  aspect-ratio: 8915 / 10000;
+  margin: 0 0 15% auto;
+}
+.blok--vlak .ive-foto > img {
+  inset: 0 auto auto -25%;
+  width: 178.57%;
+  height: 125%;
+  max-width: none;
+  object-fit: cover;
+  border-radius: 0;
+}
+.ive-foto__beeld {
+  clip-path: inset(0 30% 20% 14% round var(--r));
+}
+.ive-foto__wagen {
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 16px rgba(2, 13, 65, 0.32)) drop-shadow(0 3px 4px rgba(2, 13, 65, 0.25));
+}
+
+.ive-route {
+  position: absolute;
+  z-index: 3;
+  top: -1.3rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem 1.1rem 0.75rem 0.9rem;
+  background: #fff;
+  color: #020d41;
+  border-radius: var(--r);
+  box-shadow: 0 18px 34px -14px rgba(2, 13, 65, 0.6), 0 3px 8px rgba(2, 13, 65, 0.18);
+  white-space: nowrap;
+}
+.ive-route__vlaggen { display: flex; gap: 0.35rem; }
+.ive-route__tekst {
+  display: grid;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #00498f;
+}
+.ive-route__tekst b {
+  font: 700 0.92rem/1.3 var(--font-kop);
+  color: #020d41;
+}
+
+@media (max-width: 860px) {
+  .blok--vlak .ive-foto { margin-top: 1.3rem; }
+  .ive-route { right: 0.9rem; }
+}
+/* Het kaartje mag links over het kader heen, maar niet buiten de kolom */
+@media (max-width: 560px) {
+  .ive-route { right: 0.6rem; gap: 0.6rem; padding: 0.6rem 0.8rem; }
+  .ive-route .db-vlag { width: 1.5rem; height: 1rem; }
+  .ive-route__tekst { font-size: 0.74rem; }
+  .ive-route__tekst b { font-size: 0.85rem; }
+}
+@media (max-width: 380px) {
+  .ive-route { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+}

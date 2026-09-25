@@ -1,0 +1,376 @@
+/* Tien varianten voor het blok "Gerelateerde diensten" (9 NL-dienstpagina's).
+   Basis = css/style.css, inclusief "Banden per sectie" (Diepblauwe band op S2).
+   Elke variant zit onder #vNN: een id, zodat hij de lange band-selectors uit style.css overstemt.
+   Foto per dienst via de href (fotos.css). Niets beweegt: hover verandert alleen kleur. */
+
+/* ---------- pagina ---------- */
+body { background: #fff; }
+.gv-nav {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; overflow-x: auto;
+  background: #020d41; box-shadow: 0 8px 24px -12px rgba(2, 13, 65, 0.6);
+}
+.gv-nav__titel { color: #33bcfa; font: 700 0.72rem/1 var(--font-kop); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; margin-right: 0.6rem; }
+.gv-nav a {
+  color: #fff; text-decoration: none; white-space: nowrap;
+  font: 600 0.82rem/1 var(--font-kop); padding: 0.55rem 0.85rem; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.gv-nav a b { color: #7bd534; margin-right: 0.25rem; }
+.gv-nav a:hover { background: rgba(255, 255, 255, 0.18); }
+.gv-intro { padding-block: 2.2rem 1.4rem; }
+.gv-intro h1 { font: 700 clamp(1.5rem, 3vw, 2.2rem)/1.15 var(--font-kop); color: #020d41; margin: 0 0 0.6rem; }
+.gv-intro p { max-width: 820px; color: var(--ant-zacht); margin: 0; }
+.gv { border-top: 6px solid #020d41; scroll-margin-top: 44px; padding-bottom: 2rem; background: #f4f7fa; }
+.gv__bar {
+  max-width: var(--maxw); margin: 0 auto; padding: 1.4rem var(--pad) 0;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 1rem;
+}
+.gv__nr { font: 700 2.4rem/1 var(--font-kop); color: #7bd534; }
+.gv__naam { font: 700 1.35rem/1.2 var(--font-kop); color: #020d41; margin: 0; }
+.gv__uitleg { margin: 0; color: var(--ant-zacht); font-size: 0.95rem; flex-basis: 100%; }
+@media (min-width: 900px) { .gv__uitleg { flex-basis: auto; } }
+.gv-demo__uitleg { max-width: var(--maxw); margin: 1.2rem auto 0.5rem; padding: 0 var(--pad); font-size: 0.8rem; color: var(--ant-zacht); }
+.gv-demo { box-shadow: 0 0 0 1px #dfe6ee; }
+
+/* ---------- gedeeld: knoppen worden geen hoofdletterpillen meer (behalve 00 en 09) ---------- */
+.gv:not(#v00, #v09) .db-knoppen > a.btn {
+  text-transform: none; letter-spacing: 0; text-align: left; white-space: normal;
+}
+.gv:not(#v00) .db-knoppen > a.btn svg { margin: 0; flex: none; }
+
+/* ---------- gedeeld: medewerker stapt uit het kader (03, 05, 07, 10) ----------
+   ::before = de foto in het kader, ::after = een strook boven het kader met de uitsnede.
+   Beide lagen hebben dezelfde maat en plek (cq-eenheden van de link zelf), dus ze sluiten naadloos aan.
+   Per dienst: --foto --uit --ar --hy --fx (fotos.css), per variant --z --yc (_bouw.cjs), per variant --arF. */
+:is(#v03, #v05, #v07) .db-knoppen > a.btn:not(.btn--groen),
+#v10 .db-knoppen > a.btn:first-child {
+  container-type: inline-size;
+  position: relative;
+  /* cqw = inhoudsbreedte van de link, dus de horizontale padding (--px) erbij */
+  --fl: 0px; --ft: 0px; --fw: calc(100cqw + var(--px, 0px));
+  --Wp: calc(var(--fw) * var(--z));
+  --Hp: calc(var(--Wp) / var(--ar));
+  --bx: clamp(calc(var(--fw) - var(--Wp)), calc(var(--fw) / 2 - var(--fx) * var(--Wp)), 0px);
+  --by: calc(var(--yc) * var(--Hp) * -1);
+  --up: calc((var(--yc) - var(--hy) + 0.018) * var(--Hp));
+}
+:is(#v03, #v05, #v07) .db-knoppen > a.btn:not(.btn--groen)::before,
+#v10 .db-knoppen > a.btn:first-child::before {
+  content: "";
+  position: absolute;
+  left: var(--fl); top: var(--ft);
+  width: var(--fw); height: calc(var(--fw) / var(--arF));
+  background: #c9d8e8 var(--foto) no-repeat var(--bx) var(--by) / var(--Wp) auto;
+}
+:is(#v03, #v05, #v07) .db-knoppen > a.btn:not(.btn--groen)::after,
+#v10 .db-knoppen > a.btn:first-child::after {
+  content: "";
+  position: absolute; z-index: 1;
+  left: var(--fl); top: calc(var(--ft) - var(--up));
+  width: var(--fw); height: calc(var(--up) + 1px);
+  background: var(--uit) no-repeat var(--bx) calc(var(--by) + var(--up)) / var(--Wp) auto;
+  pointer-events: none;
+}
+
+/* ================= 01 Fotolijst ================= */
+#v01 .db-knoppen {
+  display: grid; gap: 0; margin-top: 1.1rem; padding: 6px;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.08), 0 26px 50px -30px rgba(2, 13, 65, 0.65);
+}
+#v01 .gv-demo--licht .db-knoppen { box-shadow: 0 0 0 1px #dfe6ee, 0 26px 50px -30px rgba(2, 13, 65, 0.45); }
+#v01 .db-knoppen > a.btn {
+  display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; align-items: center; gap: 0 1rem;
+  padding: 8px 10px 8px 8px; border: 0; border-radius: 12px;
+  background: transparent; color: #020d41; font: 600 1rem/1.3 var(--font-kop);
+}
+#v01 .db-knoppen > a.btn:not(.btn--groen) + a.btn:not(.btn--groen) { box-shadow: 0 -1px 0 #e6ebf1; }
+#v01 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: ""; aspect-ratio: 3 / 2; border-radius: 8px;
+  background: #ebeff4 var(--foto) center / cover;
+}
+#v01 .db-knoppen > a.btn svg {
+  box-sizing: border-box; width: 36px; height: 36px; padding: 12px; border-radius: 50%;
+  background: #ebeff4; color: #00498f;
+}
+#v01 .db-knoppen > a.btn:not(.btn--groen):hover { background: #f4f7fa; color: #020d41; }
+#v01 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #00498f; color: #fff; }
+#v01 .db-knoppen > a.btn--groen {
+  grid-template-columns: minmax(0, 1fr) auto; margin-top: 6px; padding: 10px 10px 10px 18px;
+  background: #7bd534; font: 700 1rem/1.3 var(--font-kop);
+}
+#v01 .db-knoppen > a.btn--groen svg { background: rgba(2, 13, 65, 0.12); color: #020d41; }
+#v01 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 02 Fototegels ================= */
+#v02 .db-knoppen { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; margin-top: 1.1rem; }
+#v02 .db-knoppen > a.btn {
+  grid-column: span 2; position: relative; isolation: isolate; overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: flex-start; aspect-ratio: 1 / 1.08;
+  padding: 12px 14px; border: 0; border-radius: 12px;
+  background: #020d41; color: #fff; font: 600 0.9rem/1.25 var(--font-kop);
+  box-shadow: 0 20px 34px -22px rgba(2, 13, 65, 0.8);
+}
+#v02 .db-knoppen > a.btn:nth-child(4):nth-last-child(2),
+#v02 .db-knoppen > a.btn:nth-child(5):last-child { grid-column: span 3; aspect-ratio: 1.55 / 1; }
+#v02 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(2, 13, 65, 0.9), rgba(2, 13, 65, 0.5) 22%, rgba(2, 13, 65, 0) 44%), var(--foto) center / cover;
+}
+#v02 .db-knoppen > a.btn svg {
+  position: absolute; top: 10px; right: 10px;
+  box-sizing: border-box; width: 30px; height: 30px; padding: 9px; border-radius: 50%;
+  background: #fff; color: #020d41;
+}
+#v02 .db-knoppen > a.btn:not(.btn--groen):hover { background: #020d41; color: #fff; }
+#v02 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; color: #020d41; }
+#v02 .db-knoppen > a.btn--groen {
+  background: #7bd534; color: #020d41; border: 0;
+  font: 700 1rem/1.25 var(--font-kop);
+}
+#v02 .db-knoppen > a.btn--groen svg { background: #020d41; color: #7bd534; padding: 8px; }
+#v02 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 03 Mensen uit de kaart ================= */
+#v03 .db-knoppen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.4rem 14px; padding-top: 2.6rem; margin-top: 0; }
+#v03 .db-knoppen > a.btn {
+  --arF: 1.5; --px: 26px;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+  padding: calc(66.667% + 12px) 12px 12px 14px; border: 0; border-radius: 14px;
+  background: #fff; color: #020d41; font: 600 0.88rem/1.25 var(--font-kop); hyphens: auto;
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.1), 0 22px 38px -24px rgba(2, 13, 65, 0.75);
+}
+#v03 .db-knoppen > a.btn:not(.btn--groen)::before { border-radius: 14px 14px 0 0; }
+#v03 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen) { box-shadow: 0 0 0 1px #dfe6ee, 0 22px 38px -24px rgba(2, 13, 65, 0.5); }
+#v03 .db-knoppen > a.btn:not(.btn--groen) { padding-bottom: 14px; }
+/* pijlrondje op de naad tussen foto en kaart, zodat lange namen de hele breedte hebben */
+#v03 .db-knoppen > a.btn:not(.btn--groen) svg {
+  position: absolute; z-index: 2; right: 10px; top: calc(var(--fw) / var(--arF) - 16px);
+  box-sizing: border-box; width: 32px; height: 32px; padding: 10px; border-radius: 50%;
+  background: #fff; color: #00498f; box-shadow: 0 4px 10px -4px rgba(2, 13, 65, 0.55);
+}
+#v03 .db-knoppen > a.btn:not(.btn--groen):hover { background: #fff; color: #00498f; }
+#v03 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; color: #020d41; }
+#v03 .db-knoppen > a.btn--groen {
+  flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 0.8rem;
+  padding: 16px; background: #7bd534; color: #020d41;
+  font: 700 1rem/1.25 var(--font-kop);
+}
+#v03 .db-knoppen > a.btn--groen svg { order: -1; box-sizing: border-box; border-radius: 50%; background: #020d41; color: #7bd534; width: 40px; height: 40px; padding: 11px; }
+#v03 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 04 Doorzichtig verloop ================= */
+#v04 .db-knoppen { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 1.1rem; }
+#v04 .db-knoppen > a.btn {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 0 0.7rem;
+  padding: 8px 10px 8px 8px; border-radius: 14px; font: 600 0.9rem/1.25 var(--font-kop);
+}
+#v04 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: ""; aspect-ratio: 1; border-radius: 50%;
+  background: #c9d8e8 var(--foto) center / cover;
+}
+#v04 .db-knoppen > a.btn svg { box-sizing: border-box; width: 26px; height: 26px; padding: 7px; border-radius: 50%; }
+#v04 .db-knoppen > a.btn:nth-child(odd):last-child { grid-column: 1 / -1; }
+#v04 .gv-demo--donker .db-knoppen > a.btn:not(.btn--groen) {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 55%, rgba(2, 13, 65, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.28); color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+#v04 .gv-demo--donker .db-knoppen > a.btn:not(.btn--groen)::before { box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85); }
+#v04 .gv-demo--donker .db-knoppen > a.btn:not(.btn--groen) svg { background: rgba(255, 255, 255, 0.16); color: #fff; }
+#v04 .gv-demo--donker .db-knoppen > a.btn:not(.btn--groen):hover { background-color: rgba(2, 13, 65, 0.22); border-color: rgba(255, 255, 255, 0.5); color: #fff; }
+#v04 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen) {
+  background: linear-gradient(180deg, #fff, #ebeff4); border: 1px solid #c9d8e8; color: #020d41;
+}
+#v04 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen)::before { box-shadow: 0 0 0 2px #fff, 0 4px 10px -4px rgba(2, 13, 65, 0.5); }
+#v04 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen) svg { background: #00498f; color: #fff; }
+#v04 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen):hover { border-color: #00498f; color: #020d41; }
+#v04 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; color: #020d41; }
+#v04 .db-knoppen > a.btn--groen {
+  grid-template-columns: minmax(0, 1fr) auto; padding: 8px 10px 8px 18px;
+  font: 700 0.95rem/1.25 var(--font-kop);
+}
+#v04 .db-knoppen > a.btn--groen svg { background: rgba(2, 13, 65, 0.12); color: #020d41; }
+
+/* ================= 05 Fotoafdruk ================= */
+#v05 .db-knoppen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.2rem 18px; padding-top: 2.6rem; margin-top: 0; }
+#v05 .db-knoppen > a.btn {
+  --arF: 1.25; --px: 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.4rem;
+  padding: calc((100% - 16px) * 0.8 + 18px) 12px 12px; border: 0; border-radius: 3px;
+  background: #fff; color: #020d41; font: 600 0.86rem/1.25 var(--font-kop);
+  box-shadow: 0 1px 0 #e3e8ee, 0 2px 0 #d5dce4, 0 3px 0 #c9d1db, 0 22px 30px -16px rgba(2, 13, 65, 0.65);
+  rotate: -2deg;
+}
+#v05 .db-knoppen > a.btn:not(.btn--groen) { --fl: 8px; --ft: 8px; --fw: calc(100cqw + var(--px) - 16px); }
+#v05 .db-knoppen > a.btn:nth-child(3n + 2) { rotate: 1.6deg; }
+#v05 .db-knoppen > a.btn:nth-child(3n) { rotate: -0.8deg; }
+#v05 .db-knoppen > a.btn:not(.btn--groen)::before { border-radius: 1px; }
+#v05 .db-knoppen > a.btn:not(.btn--groen) { font-size: 0.8rem; padding-inline: 10px 8px; }
+#v05 .db-knoppen > a.btn:not(.btn--groen) svg { width: 11px; height: 11px; color: #00498f; }
+#v05 .db-knoppen > a.btn:not(.btn--groen):hover { background: #fff; color: #00498f; }
+#v05 .db-knoppen > a.btn--groen {
+  flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 0.7rem;
+  padding: 16px; background: #7bd534; color: #020d41; font: 700 1rem/1.25 var(--font-kop);
+  box-shadow: 0 1px 0 #6db23f, 0 2px 0 #5c9a2b, 0 3px 0 #4f8a22, 0 22px 30px -16px rgba(2, 13, 65, 0.65);
+}
+#v05 .db-knoppen > a.btn--groen svg { order: -1; width: 40px; height: 40px; padding: 11px; box-sizing: border-box; border-radius: 50%; background: #020d41; color: #7bd534; }
+#v05 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 06 Index met nummers ================= */
+#v06 .db-knoppen { display: grid; gap: 0; margin-top: 1rem; counter-reset: gr; border-top: 1px solid var(--gr-lijn); }
+#v06 .gv-demo--donker { --gr-lijn: rgba(255, 255, 255, 0.24); --gr-nr: #33bcfa; --gr-tekst: #fff; --gr-hover: #33bcfa; }
+#v06 .gv-demo--licht { --gr-lijn: #dfe6ee; --gr-nr: #007ac0; --gr-tekst: #020d41; --gr-hover: #007ac0; }
+#v06 .db-knoppen > a.btn:not(.btn--groen) {
+  counter-increment: gr;
+  display: grid; grid-template-columns: 3rem minmax(0, 1fr) 84px auto; align-items: center; gap: 0 1rem;
+  padding: 10px 2px; border: 0; border-bottom: 1px solid var(--gr-lijn); border-radius: 0;
+  background: transparent; color: var(--gr-tekst); font: 600 1.15rem/1.25 var(--font-kop);
+}
+#v06 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: counter(gr, decimal-leading-zero); color: var(--gr-nr); font: 700 1.5rem/1 var(--font-kop);
+}
+#v06 .db-knoppen > a.btn:not(.btn--groen)::after {
+  content: ""; aspect-ratio: 3 / 2; border-radius: 8px; background: #c9d8e8 var(--foto) center / cover;
+}
+#v06 .db-knoppen > a.btn:not(.btn--groen) svg {
+  box-sizing: border-box; width: 32px; height: 32px; padding: 10px; border-radius: 50%;
+  border: 1px solid var(--gr-lijn); color: var(--gr-tekst);
+}
+#v06 .db-knoppen > a.btn:not(.btn--groen):hover { background: transparent; color: var(--gr-hover); }
+#v06 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; border-color: #7bd534; color: #020d41; }
+#v06 .db-knoppen > a.btn--groen { justify-self: start; margin-top: 1.4rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ================= 07 Staande panelen ================= */
+#v07 .db-knoppen { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4rem 14px; padding-top: 3.4rem; margin-top: 0; }
+#v07 .db-knoppen > a.btn {
+  --arF: 0.75; --px: 24px;
+  isolation: isolate; aspect-ratio: 3 / 4;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 0.45rem;
+  padding: 12px; border: 0; border-radius: 12px;
+  background: transparent; color: #fff; font: 600 0.9rem/1.25 var(--font-kop);
+}
+#v07 .db-knoppen > a.btn:not(.btn--groen)::before {
+  z-index: -1; border-radius: 12px;
+  background:
+    linear-gradient(to top, rgba(2, 13, 65, 0.92), rgba(2, 13, 65, 0.5) 24%, rgba(2, 13, 65, 0) 46%) 0 0 / 100% 100% no-repeat,
+    var(--foto) var(--bx) var(--by) / var(--Wp) auto no-repeat #c9d8e8;
+  box-shadow: 0 2px 0 rgba(2, 13, 65, 0.3), 0 24px 36px -20px rgba(2, 13, 65, 0.8);
+}
+#v07 .db-knoppen > a.btn:not(.btn--groen) svg { order: -1; align-self: flex-end; }
+#v07 .db-knoppen > a.btn svg {
+  box-sizing: border-box; width: 28px; height: 28px; padding: 8px; border-radius: 50%;
+  background: #fff; color: #020d41;
+}
+#v07 .db-knoppen > a.btn:not(.btn--groen):hover { background: transparent; color: #fff; }
+#v07 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; }
+#v07 .db-knoppen > a.btn--groen {
+  flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 0.8rem;
+  padding: 16px; background: #7bd534; color: #020d41; font: 700 1rem/1.25 var(--font-kop);
+  box-shadow: 0 24px 36px -20px rgba(2, 13, 65, 0.8);
+}
+#v07 .db-knoppen > a.btn--groen svg { order: -1; box-sizing: border-box; border-radius: 50%; width: 40px; height: 40px; padding: 11px; background: #020d41; color: #7bd534; }
+#v07 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 08 Kaart met kopband ================= */
+#v08 .db-twee__kol:has(> .db-knoppen) {
+  overflow: hidden; border-radius: 18px; background: #fff; color: var(--ant);
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.1), 0 30px 60px -34px rgba(2, 13, 65, 0.75);
+}
+#v08 .gv-demo--licht .db-twee__kol:has(> .db-knoppen) { box-shadow: 0 0 0 1px #dfe6ee, 0 30px 60px -34px rgba(2, 13, 65, 0.45); }
+#v08 .db-twee__kol:has(> .db-knoppen) > .kop--sub {
+  margin: 0; padding: 1.15rem 1.5rem;
+  background: #020d41 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%2333bcfa' stroke-opacity='.45' stroke-width='2'/%3E%3C/svg%3E") no-repeat right -34px center / 130px;
+  color: #fff; font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  box-shadow: inset 0 -4px 0 #7bd534;
+}
+#v08 .db-knoppen {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+  margin: 0; padding: 1.3rem 1.5rem 1.6rem; background: #f4f7fa;
+}
+#v08 .db-knoppen > a.btn {
+  display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 0 0.7rem;
+  padding: 7px 12px 7px 7px; border-radius: 10px;
+  background: #fff; border: 1px solid #c9d8e8; box-shadow: 0 3px 0 #c9d8e8;
+  color: #020d41; font: 600 0.92rem/1.25 var(--font-kop);
+}
+#v08 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: ""; aspect-ratio: 1; border-radius: 7px; background: #c9d8e8 var(--foto) center / cover;
+}
+#v08 .db-knoppen > a.btn svg { color: #00498f; }
+#v08 .db-knoppen > a.btn:nth-child(odd):last-child { grid-column: 1 / -1; }
+#v08 .db-knoppen > a.btn:not(.btn--groen):hover { background: #fff; border-color: #00498f; box-shadow: 0 3px 0 #00498f; color: #00498f; }
+#v08 .db-knoppen > a.btn--groen {
+  grid-template-columns: auto auto; justify-content: center; gap: 0 0.6rem;
+  padding: 10px 12px; background: #7bd534; border-color: #5c9a2b; box-shadow: 0 3px 0 #5c9a2b;
+  font: 700 0.8rem/1.2 var(--font-kop); letter-spacing: 0.08em; text-transform: uppercase;
+}
+#v08 .db-knoppen > a.btn--groen svg { color: #020d41; }
+#v08 .db-knoppen > a.btn--groen:hover { background: #6db23f; }
+
+/* ================= 09 Pillen met foto ================= */
+#v09 .db-knoppen { gap: 0.6rem; margin-top: 1.1rem; }
+#v09 .db-knoppen > a.btn {
+  gap: 0.6rem; padding: 5px 6px 5px 5px;
+  text-transform: none; letter-spacing: 0; font: 600 0.92rem/1.2 var(--font-kop);
+}
+#v09 .db-knoppen > a.btn:not(.btn--groen)::before {
+  content: ""; flex: none; width: 36px; height: 36px; border-radius: 50%;
+  background: #c9d8e8 var(--foto) center / cover;
+}
+#v09 .db-knoppen > a.btn svg { box-sizing: border-box; width: 28px; height: 28px; padding: 8px; border-radius: 50%; }
+#v09 .gv-demo--donker .db-knoppen > a.btn:not(.btn--groen) svg { background: #ebeff4; color: #00498f; }
+#v09 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen) svg { background: rgba(255, 255, 255, 0.18); color: #fff; }
+#v09 .gv-demo--licht .db-knoppen > a.btn:not(.btn--groen)::before { box-shadow: 0 0 0 2px #fff; }
+#v09 .db-knoppen > a.btn:not(.btn--groen):hover svg { background: #7bd534; color: #020d41; }
+#v09 .db-knoppen > a.btn--groen { padding: 5px 6px 5px 18px; }
+#v09 .db-knoppen > a.btn--groen svg { background: rgba(2, 13, 65, 0.12); color: #020d41; }
+
+/* ================= 10 Uitgelicht + lijst ================= */
+#v10 .db-knoppen { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding-top: 4.6rem; margin-top: 0; }
+#v10 .db-knoppen > a.btn:first-child {
+  --arF: 1.7778; --px: 36px;
+  grid-column: 1 / -1; margin-bottom: 6px;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.6rem;
+  padding: calc(56.25% + 16px) 16px 16px 20px; border: 0; border-radius: 16px;
+  background: #fff; color: #020d41; font: 600 1.2rem/1.25 var(--font-kop);
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.1), 0 28px 50px -30px rgba(2, 13, 65, 0.8);
+}
+#v10 .gv-demo--licht .db-knoppen > a.btn:first-child { box-shadow: 0 0 0 1px #dfe6ee, 0 28px 50px -30px rgba(2, 13, 65, 0.5); }
+#v10 .db-knoppen > a.btn:first-child::before { border-radius: 16px 16px 0 0; }
+#v10 .db-knoppen > a.btn:first-child svg {
+  box-sizing: border-box; width: 38px; height: 38px; padding: 12px; border-radius: 50%; background: #00498f; color: #fff;
+}
+#v10 .db-knoppen > a.btn:first-child:hover { background: #fff; color: #00498f; }
+#v10 .db-knoppen > a.btn:first-child:hover svg { background: #7bd534; color: #020d41; }
+#v10 .db-knoppen > a.btn:not(:first-child):not(.btn--groen) {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 0 0.7rem;
+  padding: 7px 12px 7px 7px; border-radius: 12px; font: 600 0.92rem/1.25 var(--font-kop);
+}
+#v10 .db-knoppen > a.btn:not(:first-child):not(.btn--groen)::before {
+  content: ""; aspect-ratio: 1; border-radius: 8px; background: #c9d8e8 var(--foto) center / cover;
+}
+#v10 .gv-demo--donker .db-knoppen > a.btn:not(:first-child):not(.btn--groen) { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.24); color: #fff; }
+#v10 .gv-demo--donker .db-knoppen > a.btn:not(:first-child):not(.btn--groen):hover { background: rgba(255, 255, 255, 0.18); }
+#v10 .gv-demo--donker .db-knoppen > a.btn:not(:first-child):not(.btn--groen) svg { color: #fff; }
+#v10 .gv-demo--licht .db-knoppen > a.btn:not(:first-child):not(.btn--groen) { background: #ebeff4; border: 1px solid #ebeff4; color: #020d41; }
+#v10 .gv-demo--licht .db-knoppen > a.btn:not(:first-child):not(.btn--groen):hover { border-color: #00498f; }
+#v10 .gv-demo--licht .db-knoppen > a.btn:not(:first-child):not(.btn--groen) svg { color: #00498f; }
+#v10 .db-knoppen > a.btn--groen {
+  grid-column: 1 / -1; margin-top: 4px; padding: 13px;
+  font: 700 0.95rem/1.25 var(--font-kop);
+}
+
+/* ---------- smal: minder kolommen ---------- */
+@media (max-width: 560px) {
+  #v02 .db-knoppen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #v02 .db-knoppen > a.btn,
+  #v02 .db-knoppen > a.btn:nth-child(4):nth-last-child(2),
+  #v02 .db-knoppen > a.btn:nth-child(5):last-child { grid-column: auto; aspect-ratio: 1 / 1.08; }
+  #v02 .db-knoppen > a.btn:nth-child(5):last-child { grid-column: 1 / -1; aspect-ratio: 2.2 / 1; }
+  :is(#v03, #v05, #v07) .db-knoppen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  :is(#v04, #v08, #v10) .db-knoppen { grid-template-columns: 1fr; }
+  #v06 .db-knoppen > a.btn:not(.btn--groen) { grid-template-columns: 2.4rem minmax(0, 1fr) 64px auto; gap: 0 0.7rem; font-size: 1rem; }
+}

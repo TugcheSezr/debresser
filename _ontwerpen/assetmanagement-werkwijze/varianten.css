@@ -1,0 +1,373 @@
+/* Tien varianten voor "Hoe we te werk gaan / Assetmanagement" (diensten-assetmanagement.html #werkwijze).
+   Basis = css/style.css + css/diensten-overzicht.css (de echte regels van het blok). Elke variant heeft een eigen
+   klasse aw1 t/m aw10 op de echte section.dov-werkwijze; niets beweegt vanzelf.
+   Kleuren: Nachtblauw #020D41, Diepblauw #00498F, Bresserblauw #007DC2, Signaalgroen #7BD534,
+   Hemelsblauw #33BCFA, Mist #EBEFF4, crème #F4F7FA. */
+
+/* ---------- pagina ---------- */
+body { background: var(--creme); }
+.aw-nav {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; overflow-x: auto;
+  background: #020d41; box-shadow: 0 8px 24px -12px rgba(2, 13, 65, 0.6);
+}
+.aw-nav__titel { color: #33bcfa; font: 700 0.72rem/1 var(--font-kop); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; margin-right: 0.6rem; }
+.aw-nav a {
+  color: #fff; text-decoration: none; white-space: nowrap;
+  font: 600 0.82rem/1 var(--font-kop); padding: 0.55rem 0.85rem; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+.aw-nav a b { color: #7bd534; margin-right: 0.25rem; }
+.aw-nav a:hover { background: rgba(255, 255, 255, 0.18); }
+.aw-intro { padding-block: 2.2rem 1.4rem; }
+.aw-intro h1 { font: 700 clamp(1.5rem, 3vw, 2.2rem)/1.15 var(--font-kop); color: #020d41; margin: 0 0 0.6rem; }
+.aw-intro p { max-width: 860px; color: var(--ant-zacht); margin: 0; }
+.aw-intro a { color: #007ac0; }
+/* Boven elke variant de crème van Ons aanbod, eronder een strook wit zoals de CTA-band */
+.aw { border-top: 6px solid #020d41; scroll-margin-top: 44px; background: var(--creme); }
+.aw::after { content: ""; display: block; height: 48px; background: #fff; }
+.aw__bar {
+  max-width: var(--maxw); margin: 0 auto; padding: 1.4rem var(--pad) 1.6rem;
+  display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 0.4rem 1rem;
+}
+.aw__nr { font: 700 2.4rem/1 var(--font-kop); color: #7bd534; }
+.aw__naam { font: 700 1.35rem/1.2 var(--font-kop); color: #020d41; margin: 0; }
+.aw__uitleg { margin: 0; color: var(--ant-zacht); font-size: 0.95rem; grid-column: 1 / -1; max-width: 900px; }
+
+/* ---------- gedeeld ---------- */
+.aw .stap h3 { min-height: 0; display: block; }
+.aw img { display: block; }
+
+/* Kader met uitstapper: de foto in .awp__raam, de uitsnede (zelfde maat en plek) in een strook boven het kader */
+.awp { --a: 1.5; position: relative; aspect-ratio: var(--a); margin: 0; border-radius: 14px; }
+.awp__raam { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; background: #c9d8e8; }
+.awp img {
+  position: absolute; max-width: none; height: auto;
+  width: calc(var(--s) * 100%);
+  left: calc(var(--fx) * var(--s) * -100%);
+}
+.awp__raam img { top: calc(var(--fy) * var(--s) * var(--a) / var(--p) * -100%); }
+.awp__boven { position: absolute; left: 0; right: 0; bottom: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 2; }
+.awp__boven img {
+  top: calc(100% - var(--fy) * var(--s) * var(--a) / var(--p) * 100%);
+  filter: drop-shadow(0 6px 8px rgba(2, 13, 65, 0.22));
+}
+
+/* Losse kaarten: het lichte paneel en de scheidslijnen van het origineel eruit */
+.aw-los ol.dov-stappen { background: none; padding: 0; border-radius: 0; gap: clamp(1.2rem, 2.4vw, 2rem); }
+.aw-los ol.dov-stappen > li.stap:nth-child(n) { border: 0; padding: 0; }
+
+/* Dikte van een kaart: gestapelde randjes + lange schaduw */
+.aw1 ol.dov-stappen > li.stap:nth-child(n),
+.aw7 ol.dov-stappen > li.stap:nth-child(n),
+.aw10 ol.dov-stappen > li.stap:nth-child(n) {
+  background: #fff;
+  box-shadow: 0 1px 0 #e3e8ef, 0 2px 0 #d9dfe8, 0 3px 0 #cfd6e1, 0 4px 0 #c5cdd9, 0 24px 36px -20px rgba(2, 13, 65, 0.45);
+}
+
+/* Donkere banden: witte tekst, witte knop, witte vragen */
+.aw-donker .sectiekop .kop { color: #fff; }
+.aw-donker .sectiekop .label { color: #33bcfa; }
+.aw-donker .sectiekop .label::before { background: #7bd534; }
+.aw-donker .dov-stappen .stap__nr,
+.aw-donker .dov-stappen .stap h3 { color: #fff; }
+.aw-donker .dov-stappen .db-tekst li { color: rgba(255, 255, 255, 0.9); }
+.aw-donker .dov-stappen .btn--goud { background: #fff; border-color: #fff; color: #020d41; }
+.aw-donker .dov-stappen .btn--goud:hover { background: #ebeff4; border-color: #ebeff4; color: #020d41; }
+.aw-donker .dov-stappen .faq details,
+.aw-donker .dov-stappen .faq details:first-of-type { border-color: rgba(255, 255, 255, 0.24); }
+.aw-donker .dov-stappen .faq summary { color: #fff; }
+.aw-donker .dov-stappen .faq summary:hover,
+.aw-donker .dov-stappen .faq details[open] summary { color: #33bcfa; }
+.aw-donker .dov-stappen .faq__tk::before,
+.aw-donker .dov-stappen .faq__tk::after { background: currentColor; }
+.aw-donker .dov-stappen .faq__a,
+.aw-donker .dov-stappen .faq__a p,
+.aw-donker .dov-stappen .faq__a li { color: rgba(255, 255, 255, 0.88); }
+.aw-donker .dov-stappen .faq__a a { color: #33bcfa; }
+.aw-donker .dov-deco { display: none; }
+
+/* ==========================================================================
+   01 Fotokaarten, de mens stapt uit de foto
+   ========================================================================== */
+.aw1 ol.dov-stappen { margin-top: 3.6rem; }
+.aw1 ol.dov-stappen > li.stap:nth-child(n) {
+  display: flex; flex-direction: column;
+  border-radius: 20px; padding: 12px 12px 1.7rem;
+}
+.aw1 li.stap > :not(figure) { margin-inline: 0.9rem; }
+.aw1 .dov-stappen .stap__nr {
+  position: relative; z-index: 3;
+  align-self: flex-start;
+  margin-top: -1.7rem; margin-bottom: 0.9rem;
+  padding: 0.45rem 0.9rem 0.45rem 1rem; border-radius: 999px;
+  background: #fff; font-size: 1.7rem;
+  box-shadow: 0 10px 22px -12px rgba(2, 13, 65, 0.45);
+}
+.aw1 .dov-stappen .knoprij { margin-top: auto; padding-top: 1.3rem; }
+
+/* ==========================================================================
+   02 Diepblauwe band, doorzichtige panelen
+   ========================================================================== */
+.aw2 { background: #00498f; isolation: isolate; }
+.aw2::before {
+  content: ""; position: absolute; z-index: -1; top: 0; right: 0;
+  width: clamp(380px, 46vw, 700px); aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.13); border-radius: 7%;
+  translate: 42% -50%; rotate: 45deg; pointer-events: none;
+}
+.aw2 ol.dov-stappen > li.stap:nth-child(n) {
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 45%, rgba(2, 13, 65, 0.22) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-top: 4px solid #7bd534;
+  border-radius: 20px;
+  padding: 1.8rem 1.7rem 1.9rem;
+}
+.aw2 .dov-stappen .stap__nr { font-size: 2.8rem; }
+
+/* ==========================================================================
+   03 Schuine naad, uit de foto
+   ========================================================================== */
+.aw3 { isolation: isolate; }
+.aw3::before {
+  content: ""; position: absolute; z-index: -1; inset: 0 0 auto 0;
+  height: clamp(430px, 34vw, 520px);
+  background: #020d41;
+  clip-path: polygon(0 0, 100% 0, 100% 64%, 0 100%);
+}
+.aw3 .sectiekop .kop { color: #fff; }
+.aw3 .sectiekop .label { color: #33bcfa; }
+.aw3 .sectiekop .label::before { background: #7bd534; }
+.aw3 .dov-deco { display: none; }
+.aw3 ol.dov-stappen { margin-top: 4rem; }
+.aw3 .awp {
+  border-radius: 18px;
+  box-shadow: 0 30px 44px -24px rgba(2, 13, 65, 0.7);
+}
+.aw3 .aw3__kaart {
+  position: relative; z-index: 3;
+  margin: -2.6rem 1rem 0;
+  padding: 1.4rem 1.5rem 1.6rem;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 18px 34px -22px rgba(2, 13, 65, 0.5);
+}
+.aw3 .dov-stappen .stap__nr { font-size: 2.2rem; }
+
+/* ==========================================================================
+   04 Fotoafdruk
+   ========================================================================== */
+.aw4 ol.dov-stappen { margin-top: 3.8rem; column-gap: clamp(1.6rem, 3.4vw, 3rem); }
+.aw4 .aw4__afdruk {
+  background: #fff; padding: 10px 10px 14px; border-radius: 6px;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 1px 0 #dde3eb, 0 2px 0 #d2d9e3, 0 3px 0 #c7cfdb, 0 4px 0 #bcc5d2, 0 26px 32px -18px rgba(2, 13, 65, 0.5);
+  rotate: -1.6deg;
+}
+.aw4 li.stap:nth-child(2) .aw4__afdruk { rotate: 1.4deg; }
+.aw4 li.stap:nth-child(3) .aw4__afdruk { rotate: -0.8deg; }
+.aw4 .awp { border-radius: 2px; }
+
+/* ==========================================================================
+   05 Route over de weg
+   ========================================================================== */
+.aw5 ol.dov-stappen { position: relative; padding-top: 128px; }
+.aw5 ol.dov-stappen::before {
+  content: ""; position: absolute; left: calc((100% - 100vw) / 2); right: 40px; top: 28px; height: 66px;
+  border-radius: 0 6px 6px 0;
+  background:
+    repeating-linear-gradient(90deg, #fff 0 36px, transparent 36px 64px) left center / 100% 4px no-repeat,
+    #30343b;
+  box-shadow: inset 0 7px 0 #30343b, inset 0 10px 0 rgba(255, 255, 255, 0.85), inset 0 -7px 0 #30343b, inset 0 -10px 0 rgba(255, 255, 255, 0.85),
+    0 16px 24px -16px rgba(2, 13, 65, 0.5);
+}
+.aw5 ol.dov-stappen::after {
+  content: ""; position: absolute; right: 0; top: 43px; width: 56px; height: 36px;
+  background: url("../../assets/img/deco/pijl-weg.svg") center / contain no-repeat;
+}
+.aw5 ol.dov-stappen > li.stap:nth-child(n) {
+  position: relative;
+  background: #fff; border-radius: 18px;
+  padding: 3.4rem 1.6rem 1.8rem;
+  box-shadow: 0 18px 36px -24px rgba(2, 13, 65, 0.4);
+}
+.aw5 .dov-stappen .stap__nr {
+  position: absolute; left: 1.4rem; top: -118px;
+  width: 80px; height: 80px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #fff; border: 5px solid #00498f;
+  font-size: 1.7rem; color: #00498f;
+  box-shadow: 0 10px 18px -8px rgba(2, 13, 65, 0.55);
+}
+.aw5 .dov-stappen .stap__nr::after { content: none; }
+/* paaltje van het bord naar de kaart */
+.aw5 ol.dov-stappen > li.stap::before {
+  content: ""; position: absolute; left: calc(1.4rem + 37px); top: -38px; width: 6px; height: 38px;
+  background: linear-gradient(90deg, #aab4c2, #d9dfe7 50%, #aab4c2);
+}
+.aw5 .dov-deco { display: none; }
+
+/* ==========================================================================
+   06 Redactionele rijen
+   ========================================================================== */
+.aw6 .dov-stappen--3 { grid-template-columns: 1fr; padding-block: 0.4rem; }
+.aw6 ol.dov-stappen { margin-top: 2.6rem; }
+.aw6 ol.dov-stappen > li.stap:nth-child(n) {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.7fr) minmax(0, 1.5fr) minmax(240px, 1fr);
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas: "nr tekst foto" "kop tekst foto" "knop tekst foto";
+  column-gap: clamp(1.4rem, 3vw, 2.6rem);
+  border-left: 0; padding: 3.6rem 0 2rem;
+  border-top: 1px solid rgba(0, 73, 143, 0.16);
+}
+.aw6 ol.dov-stappen > li.stap:first-child { border-top: 0; padding-top: 2.4rem; }
+.aw6 li.stap > .awp { grid-area: foto; align-self: start; }
+.aw6 li.stap > .stap__nr { grid-area: nr; }
+.aw6 li.stap > h3 { grid-area: kop; font-size: 1.5rem; }
+.aw6 li.stap > .db-tekst,
+.aw6 li.stap > .faq { grid-area: tekst; align-self: start; }
+.aw6 li.stap > .knoprij { grid-area: knop; align-self: start; }
+.aw6 .awp { box-shadow: 0 22px 32px -22px rgba(2, 13, 65, 0.55); }
+
+/* ==========================================================================
+   07 Kopkaarten met kringloop
+   ========================================================================== */
+.aw7 ol.dov-stappen { column-gap: clamp(2.2rem, 4vw, 3.4rem); }
+.aw7 ol.dov-stappen > li.stap:nth-child(n) {
+  position: relative;
+  border-radius: 18px; padding: 0 0 1.8rem;
+}
+.aw7 .aw7__kop {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.3rem 1.5rem; margin-bottom: 1.4rem;
+  background: #00498f; border-radius: 18px 18px 0 0;
+  border-bottom: 4px solid #7bd534;
+}
+.aw7 li.stap > :not(.aw7__kop) { margin-inline: 1.5rem; }
+.aw7 .dov-stappen .stap__nr { font-size: 2.3rem; color: #fff; margin: 0; }
+.aw7 .dov-stappen .stap__nr::after { content: none; }
+.aw7 .aw7__kop h3 { color: #fff; margin: 0; font-size: 1.25rem; }
+/* groene pijl tussen de kaarten */
+.aw7 ol.dov-stappen > li.stap:not(:last-child)::after {
+  content: ""; position: absolute; z-index: 2;
+  right: calc(-0.5 * clamp(2.2rem, 4vw, 3.4rem) - 19px); top: 2.1rem;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: #7bd534 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23020d41' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h13m-5-5 5 5-5 5'/%3E%3C/svg%3E") center / 20px no-repeat;
+  box-shadow: 0 0 0 5px var(--creme-2);
+}
+/* stippellijn van 03 terug naar 01 */
+.aw7 .aw7__terug {
+  position: relative;
+  width: calc(66.66% + 0.33 * clamp(2.2rem, 4vw, 3.4rem)); height: 52px; margin: 14px auto 0;
+  border: 2px dashed #00498f; border-top: 0; border-radius: 0 0 30px 30px;
+}
+.aw7 .aw7__terug::before {
+  content: ""; position: absolute; left: -9px; top: -10px;
+  border: 8px solid transparent; border-bottom: 12px solid #00498f; border-top: 0;
+}
+
+/* ==========================================================================
+   08 Magazijnfoto als achtergrond
+   ========================================================================== */
+.aw8 {
+  background:
+    linear-gradient(180deg, rgba(2, 13, 65, 0.9), rgba(2, 13, 65, 0.8)),
+    url("../../assets/img/site/De-Bresser-inboedelopslag-1024x659.jpg") center 40% / cover;
+}
+.aw8 ol.dov-stappen > li.stap:nth-child(n) {
+  background: #fff; border-radius: 18px;
+  border-top: 5px solid #7bd534;
+  padding: 1.8rem 1.7rem 1.9rem;
+  box-shadow: 0 30px 50px -26px rgba(0, 0, 0, 0.7);
+}
+/* in de witte kaarten weer donkere tekst */
+.aw8 .dov-stappen .stap__nr { color: #00498f; }
+.aw8 .dov-stappen .stap h3 { color: #020d41; }
+.aw8 .dov-stappen .db-tekst li { color: var(--ant); }
+.aw8 .dov-stappen .btn--goud { background: #00498f; border-color: #00498f; color: #fff; }
+.aw8 .dov-stappen .faq details,
+.aw8 .dov-stappen .faq details:first-of-type { border-color: var(--lijn); }
+.aw8 .dov-stappen .faq summary { color: var(--ant); }
+.aw8 .dov-stappen .faq summary:hover,
+.aw8 .dov-stappen .faq details[open] summary { color: #00498f; }
+.aw8 .dov-stappen .faq__a,
+.aw8 .dov-stappen .faq__a p,
+.aw8 .dov-stappen .faq__a li { color: var(--ant); }
+.aw8 .dov-stappen .faq__a a { color: #007ac0; }
+
+/* ==========================================================================
+   09 Grote cijfers
+   ========================================================================== */
+.aw9 { background: #020d41; }
+.aw9 ol.dov-stappen { background: none; padding: 0; border-radius: 0; margin-top: 1rem; }
+.aw9 ol.dov-stappen > li.stap { position: relative; padding-top: 6.2rem; }
+.aw9 ol.dov-stappen > li.stap:not(:first-child) { border-left-color: rgba(255, 255, 255, 0.16); }
+.aw9 .dov-stappen .stap__nr {
+  position: absolute; top: 0; left: calc(var(--stap-gap) - 0.35rem);
+  font-size: clamp(6rem, 9vw, 8.4rem); line-height: 0.9;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(51, 188, 250, 0.6);
+}
+.aw9 ol.dov-stappen > li.stap:first-child .stap__nr { left: -0.35rem; }
+.aw9 .dov-stappen .stap__nr::after { content: none; }
+.aw9 .dov-stappen .stap h3 { position: relative; font-size: 1.45rem; }
+.aw9 .dov-stappen .stap h3::after {
+  content: ""; display: block; width: 2rem; height: 4px; border-radius: 2px; margin-top: 0.7rem; background: #7bd534;
+}
+
+/* ==========================================================================
+   10 Foto links, stappen rechts
+   ========================================================================== */
+.aw10 .aw10__grid {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 4.5vw, 4.4rem); align-items: start;
+}
+.aw10 .aw10__links .awp { margin-top: 5.2rem; border-radius: 22px; box-shadow: 0 34px 48px -28px rgba(2, 13, 65, 0.6); }
+.aw10 .dov-stappen--3 { grid-template-columns: 1fr; gap: 1.2rem; }
+.aw10 ol.dov-stappen > li.stap:nth-child(n) {
+  display: grid; grid-template-columns: 5.2rem minmax(0, 1fr); gap: 0 1.2rem;
+  border-radius: 18px; padding: 1.6rem 1.7rem 1.7rem 1.3rem;
+}
+.aw10 .dov-stappen .stap__nr {
+  flex-direction: column; align-items: flex-start; gap: 0.5rem;
+  font-size: 2.5rem; border-right: 1px solid rgba(0, 73, 143, 0.14); height: 100%;
+}
+.aw10 .dov-stappen .stap h3 { font-size: 1.3rem; }
+.aw10 .dov-deco { display: none; }
+.aw10 .sectiekop .kop { font-size: clamp(1.8rem, 2.9vw, 2.5rem); }
+
+/* ==========================================================================
+   Tablet en mobiel
+   ========================================================================== */
+@media (max-width: 900px) {
+  .aw .dov-deco { display: none; }
+  .aw-los .dov-stappen--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .aw-los .dov-stappen--3 > li.stap:nth-child(3) { grid-column: 1 / -1; }
+  .aw1 ol.dov-stappen, .aw3 ol.dov-stappen, .aw4 ol.dov-stappen { row-gap: 4.2rem; }
+  .aw5 ol.dov-stappen { padding-top: 0; row-gap: 3rem; margin-top: 3rem; }
+  .aw5 ol.dov-stappen::before, .aw5 ol.dov-stappen::after, .aw5 ol.dov-stappen > li.stap::before { display: none; }
+  .aw5 .dov-stappen .stap__nr { top: -40px; width: 68px; height: 68px; font-size: 1.4rem; }
+  .aw6 ol.dov-stappen > li.stap:nth-child(n) {
+    grid-template-columns: 1fr; grid-template-rows: none;
+    grid-template-areas: "foto" "nr" "kop" "tekst" "knop";
+    padding-top: 4.4rem;
+  }
+  .aw6 li.stap > .awp { margin-bottom: 1.4rem; }
+  .aw7 .dov-stappen--3 { row-gap: 3rem; }
+  .aw7 ol.dov-stappen > li.stap:not(:last-child)::after,
+  .aw7 .aw7__terug { display: none; }
+  .aw9 .dov-stappen--3 { grid-template-columns: 1fr; row-gap: 2.4rem; }
+  .aw9 ol.dov-stappen > li.stap:nth-child(n) { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.16); padding-top: 7rem; }
+  .aw9 ol.dov-stappen > li.stap:first-child { border-top: 0; padding-top: 6.2rem; }
+  .aw9 ol.dov-stappen > li.stap:nth-child(n) .stap__nr { left: -0.35rem; top: 0.8rem; }
+  .aw9 ol.dov-stappen > li.stap:first-child .stap__nr { top: 0; }
+  .aw10 .aw10__grid { grid-template-columns: 1fr; }
+  .aw10 .aw10__links .awp { margin-top: 4.6rem; max-width: 520px; }
+  .aw10 .dov-stappen--3 > li.stap:nth-child(3) { grid-column: auto; }
+}
+@media (max-width: 600px) {
+  .aw-los .dov-stappen--3 { grid-template-columns: 1fr; }
+  .aw-los .dov-stappen--3 > li.stap:nth-child(3) { grid-column: auto; }
+  .aw10 ol.dov-stappen > li.stap:nth-child(n) { grid-template-columns: 1fr; padding: 1.4rem 1.4rem 1.6rem; }
+  .aw10 .dov-stappen .stap__nr { flex-direction: row; align-items: center; border-right: 0; height: auto; margin-bottom: 0.6rem; }
+}

@@ -1,0 +1,57 @@
+/* 100-jarig-jubileum.html, blok "De Bresser een eeuw in ontwikkeling" (sessie tugce-09, 25 september 2026).
+   Ontwerp 08 uit _ontwerpen/eeuw-varianten: kop op wit, daarna een Diepblauwe band met een schuine bovenrand.
+   Op elke kaart stapt het onderwerp (mensen, paard, wagens, pand) boven de fotorand uit.
+   Markup: tools/sitebouw/eeuw-tijdlijn.cjs (via NABEWERKING in bouw.cjs).
+   Beeld: de bestaande foto's in assets/img/geschiedenis en assets/img/tijdlijn, plus per jaar een uitsnede
+   assets/img/eeuw-uit/<jaar>.webp met dezelfde maat als de foto (achtergrond weg met imgly). Niets beweegt vanzelf. */
+
+.eeuw.sectie { background: #fff; padding-bottom: 0; }
+.eeuw .sectiekop { margin-bottom: 0; }
+.eeuw .kop--sub { margin-bottom: 0; }
+
+.eeuw__band {
+  position: relative;
+  background: #00498f;
+  clip-path: polygon(0 clamp(40px, 7vw, 110px), 100% 0, 100% 100%, 0 100%);
+  margin-top: clamp(1.4rem, 3vw, 2.2rem);
+  padding-top: clamp(130px, 13vw, 190px);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+}
+.eeuw__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5.5rem 26px; }
+.eeuw__kaart { display: flex; flex-direction: column; }
+.eeuw__kaart--breed { grid-column: span 2; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; align-items: center; }
+
+/* Kader 3:2 met de foto; --s, --fx, --fy (welk deel van de foto) en --p (fotoverhouding) staan inline per jaar */
+.eeuw__foto {
+  --a: 1.5;
+  position: relative; display: block; aspect-ratio: 3 / 2;
+  border-radius: 12px; border: 6px solid #fff;
+  box-shadow: 0 30px 44px -26px rgba(0, 0, 0, 0.75);
+}
+.eeuw__raam { position: absolute; inset: 0; overflow: hidden; border-radius: 6px; background: #c9d8e8; }
+.eeuw__raam img, .eeuw__boven img {
+  position: absolute; max-width: none; height: auto;
+  width: calc(var(--s) * 100%);
+  left: calc(var(--fx) * var(--s) * -100%);
+  top: calc(var(--fy) * var(--s) * var(--a) / var(--p) * -100%);
+}
+/* De uitsnede staat in een strook boven het kader (2x kaderhoogte) met overflow hidden: alleen het stuk boven
+   de rand is zichtbaar, en de brede afbeelding telt niet mee voor horizontaal scrollen (clip-path doet dat wel). */
+.eeuw__boven { position: absolute; left: 0; right: 0; bottom: 100%; height: 200%; overflow: hidden; pointer-events: none; z-index: 2; }
+.eeuw__boven img { top: calc(100% + var(--fy) * var(--s) * var(--a) / var(--p) * -50%); filter: drop-shadow(0 10px 12px rgba(2, 13, 65, 0.45)); }
+
+.eeuw__tekst { padding: 1.3rem 0.2rem 0; }
+.eeuw__tekst h3 { font: 700 1.9rem/1 var(--font-titel); color: #7bd534; margin: 0 0 0.6rem; }
+.eeuw__tekst p { margin: 0; color: rgba(255, 255, 255, 0.9); font-size: 0.98rem; line-height: 1.6; }
+.eeuw__kaart--breed .eeuw__tekst { padding: 0; }
+.eeuw__kaart--breed .eeuw__tekst h3 { font-size: 2.6rem; }
+.eeuw__kaart--breed .eeuw__tekst p { font-size: 1.12rem; }
+
+@media (max-width: 980px) {
+  .eeuw__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .eeuw__kaart--breed { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .eeuw__grid { grid-template-columns: 1fr; }
+  .eeuw__kaart--breed { grid-template-columns: 1fr; }
+}

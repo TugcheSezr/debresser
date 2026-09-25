@@ -1,0 +1,81 @@
+/* Zakelijke opslag, blok "Zakelijk opslag nodig in de buurt?": magazijnfoto als achtergrond van het hele blok,
+   kop en knop op een witte kaart over de stellingen (sessie tugce-97, 25 september 2026).
+   Markup: NABEWERKING 'zakelijke-opslag.html' in tools/sitebouw/bouw.cjs.
+   Foto: beeldbank 03-opslag/zakelijke-opslag-2 -> assets/img/zakelijk-buurt/opslag-kantoormeubilair(-960).webp.
+   Er beweegt niets. */
+
+.zo-buurt {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  /* kaart bovenin, over de stellingen: de stoelen en het bureau eronder blijven vrij */
+  align-items: flex-start;
+  min-height: clamp(520px, 44vw, 820px);
+  padding-block: clamp(2.2rem, 3.4vw, 3.2rem);
+  overflow: hidden;
+  background: var(--bruin);
+}
+.zo-buurt > .wrap {
+  width: 100%;
+}
+.zo-buurt__foto {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: 0;
+}
+.zo-buurt__foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  object-fit: cover;
+  /* logo op de wagen, meubilair en de man met de palletwagen in beeld */
+  object-position: 50% 56%;
+}
+
+.zo-buurt__kaart {
+  max-width: 530px;
+  padding: clamp(1.5rem, 2.4vw, 2.1rem) clamp(1.6rem, 2.8vw, 2.5rem);
+  border-radius: 28px;
+  border-top: 5px solid var(--oranje);
+  background: rgba(255, 255, 255, 0.93);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 34px 70px -28px rgba(2, 13, 65, 0.6),
+    0 12px 24px -14px rgba(2, 13, 65, 0.4);
+}
+.zo-buurt__kaart .kop {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.9rem, 2.7vw, 2.45rem);
+}
+.zo-buurt__kaart .knoprij {
+  margin: 0;
+}
+
+/* Smal: foto helemaal zichtbaar bovenaan, kaart schuift er onderaan overheen */
+@media (max-width: 760px) {
+  .zo-buurt {
+    display: block;
+    min-height: 0;
+    padding-top: 0;
+    background: var(--creme-2);
+  }
+  .zo-buurt__foto {
+    position: relative;
+    inset: auto;
+    z-index: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .zo-buurt__foto img {
+    object-position: 50% 50%;
+  }
+  .zo-buurt__kaart {
+    position: relative;
+    margin-top: -56px;
+  }
+}
