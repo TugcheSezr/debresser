@@ -11,11 +11,12 @@
 <link rel="apple-touch-icon" href="assets/img/db/apple-touch-icon.png">
 <script src="js/main.js"></script>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-latin.woff2" crossorigin>
-<link rel="preload" as="image" href="assets/video/hero-compleet-poster.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/hero/home-compleet-1920.webp" imagesrcset="assets/img/hero/home-compleet-900.webp 900w, assets/img/hero/home-compleet-1280.webp 1280w, assets/img/hero/home-compleet-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/home-reviews.css">
 <link rel="stylesheet" href="css/home-diensten-3d.css">
+<link rel="stylesheet" href="css/home-hero.css">
 <link rel="canonical" href="https://www.debresser.nl/">
 <meta property="og:url" content="https://www.debresser.nl/">
 <meta property="og:type" content="website">
@@ -193,30 +194,25 @@
 
 <main id="top" tabindex="-1">
 
-<section class="hero" aria-labelledby="hero-titel">
+<!-- hero uit branch site-arnas (25-09-2026); opmaak in css/home-hero.css, video en knop via js/main.js -->
+<section class="hero hero--pagina hero--home hf1-hero" aria-labelledby="hero-titel">
   <picture class="hero__bg">
-    <img src="assets/video/hero-compleet-poster.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+    <img src="assets/img/hero/home-compleet-1920.webp" srcset="assets/img/hero/home-compleet-900.webp 900w, assets/img/hero/home-compleet-1280.webp 1280w, assets/img/hero/home-compleet-1920.webp 1920w" sizes="100vw" width="1600" height="900" alt="Vrachtwagens van De Bresser aan de laaddocks van een bedrijfshal, van bovenaf gezien" fetchpriority="high" decoding="async">
   </picture>
   <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" data-src="assets/video/hero-compleet.mp4" data-src-klein="assets/video/hero-compleet-1280.mp4"></video>
   <div class="hero__veil" aria-hidden="true"></div>
-  <picture class="hero__pic">
-    <img class="hero__person" src="assets/img/db/hero-team.webp" width="730" height="500" alt="Het verhuisteam van De Bresser" fetchpriority="high" decoding="async">
-  </picture>
+  <picture class="hero__pic"><img class="hero__person" src="assets/img/db/hero-team.webp" width="730" height="500" alt="Het verhuisteam van De Bresser" decoding="async"></picture>
   <button class="hero__videoknop" id="heroVideoKnop" type="button" hidden aria-pressed="false">
     <svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/></svg>
     <span class="hero__videoknop__lbl">Film pauzeren</span>
   </button>
   <div class="wrap">
     <div class="hero__content">
-      <h1 class="hero__title hero__title--merk delay-hero" id="hero-titel" data-reveal>
-        <span class="visueel-verborgen">Geweldig in verhuizen, opslag, logistiek</span>
-        <span aria-hidden="true">Geweldig in <span class="hero__wissel" data-woorden="verhuizen|opslag|logistiek">verhuizen</span></span>
-        <span class="hero__title__sub">Erkende verhuizers &amp; uw partner in full service logistiek</span>
-      </h1>
+      <h1 class="hero__title hero__title--merk" id="hero-titel"><span class="visueel-verborgen">Geweldig in verhuizen, opslag en logistiek. </span><span aria-hidden="true">Geweldig in <span class="hero__wissel" data-woorden="verhuizen|opslag|logistiek">verhuizen</span></span><span class="hero__title__sub">Erkende verhuizers &amp; uw partner in full service logistiek</span></h1>
     </div>
   </div>
   <svg class="art-ruit art-ruit--hero" aria-hidden="true"><use href="#i-ruit"/></svg>
-  <img src="assets/img/deco/beeldmerk-topmovers.svg" alt="" width="813" height="225" loading="lazy" decoding="async" class="art-h1">
+  <img class="art-h1" src="assets/img/deco/beeldmerk-topmovers.svg" alt="" width="813" height="225" loading="lazy" decoding="async">
 </section>
 
 <section class="offerte-overlay hf1" id="prijs" aria-label="Offerte aanvragen">
@@ -285,7 +281,7 @@
     </div>
     <ul class="sb-diensten__grid sb-diensten__grid--3" data-reveal-groep>
       <li class="sb-dienst">
-        <div class="sb-dienst__beeld" style="--kruin:.286;--midden:.772">
+        <div class="sb-dienst__beeld" style="--kruin:.286;--midden:.772;--boven:22cqw">
           <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/verhuizen-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
           <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/verhuizen.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
           <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/verhuisdoos.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
@@ -371,6 +367,7 @@
       <li><a class="bericht" href="blog-de-bresser-verwelkomt-brocken-verhuizingen.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/brocken-556.webp" width="556" height="677" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>De Bresser verwelkomt Brocken Verhuizingen</h3><p>Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
       <li><a class="bericht" href="blog-verhuizen-met-kinderen.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/kinderen-1024.webp" srcset="assets/img/home-pop/foto/kinderen-640.webp 640w, assets/img/home-pop/foto/kinderen-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:601px) 46vw, calc(100vw - 40px)" width="1024" height="687" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>Verhuizen met kinderen</h3><p>Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
     </ul>
+    <div class="knoprij nieuws__voet" data-reveal><a class="btn btn--goud btn--groen" href="blog.html">Bekijk alle berichten</a></div>
   </div>
 </section>
 

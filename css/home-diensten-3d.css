@@ -30,10 +30,12 @@
   margin-top: 0.45rem;
 }
 
-/* ---- raster: drie kolommen, ruimte boven elke rij voor wat uit de foto komt ---- */
+/* ---- raster: drie kolommen, ruimte boven elke rij voor wat uit de foto komt ----
+   Boven de eerste rij staat de matras van Verhuizen: die komt ~0,27 kaartbreedte boven de rand. Een marge in %
+   rekent met de breedte van het raster, dus 8.9% - 15px houdt hem ~14px onder de intro, op elke breedte. */
 #diensten .sb-diensten__grid {
   list-style: none;
-  margin: clamp(2.6rem, 4vw, 3.3rem) 0 0;
+  margin: max(clamp(2.6rem, 4vw, 3.3rem), calc(8.9% - 15px)) 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -199,14 +201,15 @@
     left: clamp(calc(100cqw - var(--Wp)), calc(50cqw - var(--midden) * var(--Wp)), 0px);
     object-fit: fill;
   }
-  /* de uitsnede alleen boven de rand (1px overlap tegen een haarlijn) */
+  /* de uitsnede alleen boven de rand (1px overlap tegen een haarlijn); --boven per kaart als er iets hoger
+     uitsteekt dan de kruin (Verhuizen: de matras op zijn schouder) */
   #diensten .sb-dienst__uit {
     display: block;
     position: absolute;
     inset: 0;
     z-index: 2;
     pointer-events: none;
-    clip-path: inset(calc(-1 * var(--uit) - 24px) 0 calc(100% - 1px) 0);
+    clip-path: inset(calc(-1 * var(--uit) - var(--boven, 24px)) 0 calc(100% - 1px) 0);
   }
   #diensten .sb-dienst__uit img {
     filter: drop-shadow(5px 3px 4px rgba(2, 13, 65, 0.28));
@@ -225,7 +228,7 @@
     display: none;
   }
   #diensten .sb-diensten__grid {
-    margin-top: 1.9rem;
+    margin-top: max(1.9rem, calc(13.7% + 14px));
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.1rem 0.55rem;
   }
@@ -263,3 +266,28 @@
     --uit: clamp(16px, 6cqw, 24px);
   }
 }
+
+/* ---- achtergrond in Bresserblauw (klantwens 25-09-2026: "de lichte kleur van De Bresser") ----
+   Zelfde uitleg als Werkwijze en de FAQ op de stadspagina's: het lichtere logoblauw #007dc2.
+   Buren verschillen: Over ons erboven is Nachtblauw, Nieuws & Tips eronder Mist.
+   Wit op #007dc2 is 4,45:1. De kop is groot genoeg (3:1). De intro staat daarom halfvet op
+   1.17rem, dat telt als grote tekst. De focusrand werd wit, want Diepblauw haalde hier maar 2:1. */
+#diensten.sb-diensten {
+  background: #007dc2;
+}
+#diensten .sb-diensten__kop .label,
+#diensten .sb-diensten__kop .kop,
+#diensten .sb-diensten__kop .sectiekop > .intro {
+  color: #fff;
+}
+#diensten .sb-diensten__kop .label::before {
+  background: #fff;
+}
+#diensten .sb-diensten__kop .sectiekop > .intro {
+  font-size: 1.17rem;
+  font-weight: 600;
+}
+#diensten .sb-dienst:focus-within {
+  outline-color: #fff;
+}
+/* einde achtergrond in Bresserblauw */

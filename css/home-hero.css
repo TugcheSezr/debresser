@@ -1,0 +1,148 @@
+/* ===============================================================
+   Homepage-hero uit branch site-arnas (klantwens 25-09-2026)
+   Video, foto, sluier, titel en team zoals site/index.html in site-arnas;
+   de navigatie erboven blijft die van main. Alleen gelinkt in index.html.
+   Bron: site/_werk/style.css (hero, hf1-hero, homehero hoger, homehero-trio,
+   home-header). Alles hangt aan .hero--home, zodat de hero--pagina-hero van
+   de subpagina's niet verandert.
+   =============================================================== */
+
+/* Sluier: ook als de video speelt (main zet dan een eigen sluier via :has) */
+.hero--home .hero__veil,
+.hero--home:has(.hero__video[src]) .hero__veil {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 13, 65, 0.62) 0%,
+    rgba(2, 13, 65, 0.38) 45%,
+    rgba(2, 13, 65, 0.72) 100%
+  );
+}
+
+.hero--home .hero__title {
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  max-width: 24ch;
+  margin-inline: auto;
+  line-height: 1.15;
+  font-weight: 600;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+}
+.hero--home.hero--pagina .hero__content {
+  padding-block: clamp(9.5rem, 13vw, 11.5rem) clamp(1.8rem, 3.4vw, 2.8rem);
+}
+.hero--home {
+  min-height: min(86vh, 720px);
+}
+
+/* Formulier valt over de onderrand */
+.hero--home.hf1-hero {
+  min-height: 560px;
+}
+.hero--home.hf1-hero .hero__content {
+  padding-bottom: calc(clamp(56px, 7.5vw, 104px) + 2rem);
+}
+@media (max-width: 620px) {
+  .hero--home.hf1-hero {
+    min-height: 0;
+  }
+  .hero--home.hf1-hero .hero__content {
+    padding-top: 6.6rem;
+    padding-bottom: calc(48px + 1.2rem);
+  }
+}
+
+/* Hoger vanaf 761px, waar de video speelt */
+@media (min-width: 761px) {
+  .hero--home.hf1-hero {
+    min-height: clamp(560px, calc(100vh - 190px), 664px);
+  }
+}
+
+/* Team tussen tekst en formulier: vanaf 761px 80px achter het formulier, op de telefoon onder de kop */
+@media (min-width: 761px) {
+  .hero--home.hf1-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .hero--home.hf1-hero .wrap {
+    order: 1;
+    flex: none;
+  }
+  .hero--home.hf1-hero .hero__content {
+    padding-bottom: 0.4rem;
+  }
+  .hero--home .hero__pic {
+    position: relative;
+    inset: auto;
+    order: 2;
+    flex: 1 1 auto;
+    min-height: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero--home .hero__person {
+    position: absolute;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    bottom: calc(clamp(56px, 7.5vw, 104px) - 80px);
+    height: min(359px, calc(100% - clamp(56px, 7.5vw, 104px) + 80px));
+    width: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.3));
+  }
+}
+@media (max-width: 760px) {
+  .hero--home.hf1-hero .hero__content {
+    padding-bottom: 0.4rem;
+  }
+  .hero--home .hero__pic {
+    position: relative;
+    order: 2;
+    min-height: 0;
+    display: block;
+    z-index: 0;
+  }
+  .hero--home .hero__person {
+    position: static;
+    transform: none;
+    display: block;
+    height: clamp(150px, 44vw, 190px);
+    width: auto;
+    max-width: 96%;
+    max-height: none;
+    object-fit: contain;
+    object-position: bottom;
+    margin: 0 auto;
+  }
+}
+
+/* Kop: merknaam groot, tweede regel .52em */
+.hero--home .hero__title--merk {
+  font-size: clamp(2.2rem, 4.4vw, 3.35rem);
+  max-width: none;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.hero--home .hero__title__sub {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.52em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 1080px) {
+  .hero--home.hf1-hero .hero__content {
+    padding-top: calc(5.35rem + 33px);
+  }
+}
+
+/* Ruit uit het logo alleen vanaf 761px */
+@media (max-width: 760px) {
+  .hero--home .art-ruit--hero {
+    display: none;
+  }
+}

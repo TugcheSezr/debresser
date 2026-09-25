@@ -273,3 +273,109 @@
     scroll-snap-align: start;
   }
 }
+
+/* ==========================================================================
+   Achtergrond zoals "Succesverhalen" op contact.html (25-09-2026): een schuine
+   Diepblauwe band van rand tot rand die naar rechts oploopt, Signaalgroene streep
+   erboven, Nachtblauwe rand eronder, witte en groene ruit als lijn. Zelfde kleuren
+   en maten als het blok "review-mensen, versie 3" in style.css, maar zonder duo's.
+   Breed: de band hangt aan de kaartenlijst (boven de kaarten een schuine strook,
+   de kaarten liggen erop). Tot 760px is de lijst een veegrij (overflow), daar hangt
+   de band aan de onderkant van .wrap. Er beweegt niets.
+   ========================================================================== */
+.sb-reviews {
+  --rb-schuin: 110px;
+  --rb-boven: 124px;
+  --rb-onder: 190px;
+  --rb-ruit-wit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%23ffffff' stroke-opacity='.28' stroke-width='2' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --rb-ruit-groen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3 97 50 50 97 3 50Z' fill='none' stroke='%237bd534' stroke-width='2.5' vector-effect='non-scaling-stroke' stroke-linejoin='round'/%3E%3C/svg%3E");
+  isolation: isolate;
+  overflow-x: clip;
+}
+/* ruimte voor de strook boven de kaarten; de scorekaart blijft boven de groene streep */
+.sb-reviews__kop {
+  margin-bottom: calc(var(--rb-boven) + 6px);
+}
+.sb-reviews__kaarten::before,
+.sb-reviews__kaarten::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  top: calc(var(--rb-boven) * -1);
+  height: calc(var(--rb-boven) + var(--rb-onder));
+  clip-path: polygon(0 var(--rb-schuin), 100% 0, 100% calc(100% - var(--rb-schuin)), 0 100%);
+  pointer-events: none;
+}
+/* 5px hoger en 14px lager dan het vlak: groen blijft boven zichtbaar, Nachtblauw onder */
+.sb-reviews__kaarten::before {
+  margin-top: -5px;
+  height: calc(var(--rb-boven) + var(--rb-onder) + 19px);
+  background: linear-gradient(#7bd534 0 50%, #020d41 50% 100%);
+}
+.sb-reviews__kaarten::after {
+  background:
+    var(--rb-ruit-wit) right max(3vw, calc(50% - 700px)) top 12% / 170px auto no-repeat,
+    var(--rb-ruit-groen) left max(3vw, calc(50% - 700px)) top 50% / 58px auto no-repeat,
+    #00498f;
+}
+.sb-reviews .sb-review {
+  box-shadow:
+    0 1px 2px rgba(2, 13, 65, 0.1),
+    0 22px 40px -20px rgba(2, 13, 65, 0.6);
+}
+@media (max-width: 1099.98px) {
+  .sb-reviews {
+    --rb-schuin: 80px;
+    --rb-boven: 96px;
+    --rb-onder: 170px;
+  }
+  /* de marge naast de kaarten is te smal voor de groene ruit: alleen de witte */
+  .sb-reviews__kaarten::after {
+    background:
+      var(--rb-ruit-wit) right max(3vw, calc(50% - 700px)) top 12% / 170px auto no-repeat,
+      #00498f;
+  }
+}
+/* Telefoon: de kaartenlijst is een veegrij (overflow knipt pseudo-elementen), dus de
+   band hangt aan de onderkant van de kop, net onder de scorekaart. */
+@media (max-width: 760px) {
+  .sb-reviews {
+    --rb-schuin: 40px;
+    --rb-boven: 64px;
+    --rb-onder: 150px;
+  }
+  .sb-reviews__kop {
+    position: relative;
+    margin-bottom: calc(var(--rb-boven) + 4px);
+  }
+  .sb-reviews__kaarten::before,
+  .sb-reviews__kaarten::after {
+    content: none;
+  }
+  .sb-reviews__kop::before,
+  .sb-reviews__kop::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    top: calc(100% + 8px);
+    height: calc(var(--rb-boven) - 4px + var(--rb-onder));
+    clip-path: polygon(0 var(--rb-schuin), 100% 0, 100% calc(100% - var(--rb-schuin)), 0 100%);
+    pointer-events: none;
+  }
+  .sb-reviews__kop::before {
+    margin-top: -5px;
+    height: calc(var(--rb-boven) - 4px + var(--rb-onder) + 19px);
+    background: linear-gradient(#7bd534 0 50%, #020d41 50% 100%);
+  }
+  .sb-reviews__kop::after {
+    background:
+      var(--rb-ruit-wit) right -24px top 4% / 110px auto no-repeat,
+      #00498f;
+  }
+}
