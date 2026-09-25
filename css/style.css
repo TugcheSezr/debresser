@@ -9178,10 +9178,10 @@ article.db-kaart + article.db-kaart {
 
 /* ==========================================================================
    Offertebox + kerncijfers: witte band, kaarten in De Bresser-kleuren (sessie tugce-7f, 25-09)
-   Een band in Bresserblauw was de gebruiker te zwaar. Nu is de band wit en krijgen de vier
-   kaarten van links naar rechts Nachtblauw, Diepblauw, Webblauw en Bressergroen: de drie
-   ruitkleuren van het logo plus Nachtblauw, van donker naar licht. Webblauw (#007AC0) in plaats
-   van Bresserblauw omdat wit daarop net AA haalt; op groen staat de tekst in Nachtblauw.
+   Een band in Bresserblauw was de gebruiker te zwaar. Nu is de band wit; de linker twee kaarten
+   zijn Bresserblauw en de rechter twee Bressergroen (eerder vier kleuren, daarna Nachtblauw +
+   groen; de klant wilde de tinten van het logo). Samen met de Diepblauwe box erboven zijn dat
+   de drie ruitkleuren van het logo. Op groen staat de tekst in Nachtblauw.
    De icoontegels zijn wit, zodat de iconen hun eigen kleuren houden.
    Geldt voor index.html en de 113 subpagina's met de offertebox.
    ========================================================================== */
@@ -9196,19 +9196,16 @@ article.db-kaart + article.db-kaart {
   box-shadow: 0 24px 60px -18px rgba(0, 73, 143, 0.45);
 }
 .offerte-overlay + .trust .trust__item {
-  --kaart: #020d41;
+  --kaart: #007ac0;
   background: var(--kaart);
   border-color: var(--kaart);
   color: var(--wit);
   box-shadow: 0 18px 38px -22px rgba(2, 13, 65, 0.55);
 }
-.offerte-overlay + .trust .trust__item:nth-child(2) {
-  --kaart: #00498f;
-}
-.offerte-overlay + .trust .trust__item:nth-child(3) {
-  --kaart: #007ac0;
-}
-.offerte-overlay + .trust .trust__item:nth-child(4) {
+/* Klantwens 25-09: links twee kaarten Bresserblauw, rechts twee Bressergroen (niet om en om).
+   Blauw is Webblauw #007AC0, de schermtint van Bresserblauw #007DC2 waarop witte tekst AA haalt.
+   Geen Diepblauw, want de box erboven is al Diepblauw. */
+.offerte-overlay + .trust .trust__item:nth-child(n + 3) {
   --kaart: #6db23f;
   color: #020d41;
 }
