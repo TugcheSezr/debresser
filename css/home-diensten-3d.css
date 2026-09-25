@@ -1,0 +1,265 @@
+/* ==========================================================================
+   Homepage "Onze diensten" (#diensten), 25 september 2026.
+   De kaarten komen uit branch site-arnas (site/_werk/style.css: "services-grid", "dienstkaarten: zes in drie
+   kolommen", "Waarmee wij u helpen, compact" en de donkere dienstkaarten). Hier samengevoegd tot de regels die
+   voor dit blok gelden, met de kleuren van die branch.
+   Nieuw: de mensen en wagens komen boven uit de foto. De foto staat in een raam (.sb-dienst__raam) dat op de
+   kaartrand afsnijdt. Daarover ligt dezelfde foto als uitsnede zonder achtergrond (.sb-dienst__uit, imgly), op
+   precies dezelfde maat en plek, maar alleen zichtbaar boven de rand. Per kaart staat in de html waar de kruin
+   van het onderwerp zit (--kruin, fractie van de fotohoogte) en waar het midden zit (--midden, van de breedte).
+   De foto wordt zo gelegd dat die kruin --uit boven de rand uitkomt en het raam toch helemaal gevuld is.
+   Niets beweegt behalve de hover van de kaart.
+   ========================================================================== */
+
+#diensten.sb-diensten {
+  padding-block: clamp(2.25rem, 3.4vw, 3rem);
+}
+#diensten .sb-diensten__kop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+#diensten .sb-diensten__kop .sectiekop {
+  margin-bottom: 0;
+  max-width: none;
+}
+#diensten .sb-diensten__kop .sectiekop > .intro {
+  max-width: none;
+  font-size: 1.05rem;
+  margin-top: 0.45rem;
+}
+
+/* ---- raster: drie kolommen, ruimte boven elke rij voor wat uit de foto komt ---- */
+#diensten .sb-diensten__grid {
+  list-style: none;
+  margin: clamp(2.6rem, 4vw, 3.3rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.2rem 0.9rem;
+}
+
+/* ---- kaart ---- */
+#diensten .sb-dienst {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  background: #020d41;
+  border-radius: var(--r);
+  box-shadow: 0 1px 2px rgba(2, 13, 65, 0.12), 0 16px 34px -18px rgba(2, 13, 65, 0.6);
+}
+#diensten .sb-dienst__beeld {
+  --ar: 3;
+  --A: 1.3333;
+  --uit: clamp(16px, 10cqw, 40px);
+  position: relative;
+  aspect-ratio: var(--ar);
+  container-type: inline-size;
+}
+#diensten .sb-dienst__raam {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--r) var(--r) 0 0;
+  background: #0c1a55;
+}
+#diensten .sb-dienst__foto {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 28%;
+}
+/* diepte: de bovenrand van het raam is een sleuf waar het onderwerp uit komt */
+#diensten .sb-dienst__raam::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 12px 14px -12px rgba(2, 13, 65, 0.42), inset 0 -1px 0 rgba(2, 13, 65, 0.35);
+}
+#diensten .sb-dienst__uit {
+  display: none;
+}
+#diensten .sb-dienst__ico {
+  position: absolute;
+  right: 0.8rem;
+  bottom: -1rem;
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: var(--schaduw-kaart);
+  pointer-events: none;
+}
+#diensten .sb-dienst__ico img {
+  width: 26px;
+  height: 26px;
+}
+#diensten .sb-dienst__tekst {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0.75rem 3.2rem 0.8rem 1.1rem;
+}
+#diensten .sb-dienst h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+  color: #fff;
+}
+#diensten .sb-dienst h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+/* de hele kaart is de link, foto inbegrepen (zoals op site-arnas) */
+#diensten .sb-dienst h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+#diensten .sb-dienst p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #dce6f0;
+}
+#diensten .sb-dienst__pijl {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #33bcfa;
+  color: #020d41;
+}
+#diensten .sb-dienst__pijl svg {
+  width: 16px;
+  height: 16px;
+}
+#diensten .sb-dienst:focus-within {
+  outline: 3px solid #00498f;
+  outline-offset: 3px;
+}
+#diensten .sb-dienst h3 a:focus-visible {
+  outline: none;
+}
+#diensten .sb-nieuw {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 5px;
+  background: #7bd534;
+  color: #020d41;
+  font: 600 0.66rem/1 var(--font-kop);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #diensten .sb-dienst {
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  #diensten .sb-dienst:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1px 2px rgba(2, 13, 65, 0.12), 0 26px 40px -20px rgba(2, 13, 65, 0.65);
+  }
+  #diensten .sb-dienst:hover .sb-dienst__pijl {
+    background: #00498f;
+    color: #fff;
+  }
+}
+
+/* ---- uit de foto (alleen waar containereenheden werken; anders blijft het een gewone foto) ---- */
+@supports (width: 1cqw) {
+  /* foto en uitsnede: dezelfde maat en plek. H = hoogte van het raam, Hp/Wp = maat van de foto. */
+  #diensten .sb-dienst__foto,
+  #diensten .sb-dienst__uit img {
+    --H: calc(100cqw / var(--ar));
+    --Hp: max(calc((var(--H) + var(--uit)) / (1 - var(--kruin))), calc(100cqw / var(--A)));
+    --Wp: calc(var(--Hp) * var(--A));
+    position: absolute;
+    inset: auto;
+    width: var(--Wp);
+    height: var(--Hp);
+    max-width: none;
+    top: calc(-1 * (var(--kruin) * var(--Hp) + var(--uit)));
+    left: clamp(calc(100cqw - var(--Wp)), calc(50cqw - var(--midden) * var(--Wp)), 0px);
+    object-fit: fill;
+  }
+  /* de uitsnede alleen boven de rand (1px overlap tegen een haarlijn) */
+  #diensten .sb-dienst__uit {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(calc(-1 * var(--uit) - 24px) 0 calc(100% - 1px) 0);
+  }
+  #diensten .sb-dienst__uit img {
+    filter: drop-shadow(5px 3px 4px rgba(2, 13, 65, 0.28));
+  }
+}
+
+/* ---- telefoon: tegels in twee kolommen met foto en titel; de kaarttekst blijft voor schermlezers ---- */
+@media (max-width: 620px) {
+  #diensten .sb-diensten__kop {
+    display: block;
+  }
+  #diensten .kop {
+    font-size: 1.75rem;
+  }
+  #diensten .sb-diensten__kop .sectiekop > .intro {
+    display: none;
+  }
+  #diensten .sb-diensten__grid {
+    margin-top: 1.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.1rem 0.55rem;
+  }
+  #diensten .sb-dienst__beeld {
+    --ar: 2;
+    --uit: clamp(15px, 9cqw, 26px);
+  }
+  #diensten .sb-dienst__ico,
+  #diensten .sb-dienst__pijl {
+    display: none;
+  }
+  #diensten .sb-dienst__tekst {
+    padding: 0.55rem 0.7rem 0.65rem;
+  }
+  #diensten .sb-dienst h3 {
+    font-size: 0.93rem;
+    line-height: 1.25;
+    margin: 0;
+  }
+  #diensten .sb-dienst p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  /* oneven aantal: de laatste kaart over de volle breedte, even hoog als de andere tegels; minder uitsteken,
+     anders komt het tegen de kaarten erboven */
+  #diensten .sb-diensten__grid > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  #diensten .sb-diensten__grid > li:last-child:nth-child(odd) .sb-dienst__beeld {
+    --ar: 4;
+    --uit: clamp(16px, 6cqw, 24px);
+  }
+}

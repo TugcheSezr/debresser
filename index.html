@@ -13,6 +13,9 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-latin.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/video/hero-compleet-poster.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/home-reviews.css">
+<link rel="stylesheet" href="css/home-diensten-3d.css">
 <link rel="canonical" href="https://www.debresser.nl/">
 <meta property="og:url" content="https://www.debresser.nl/">
 <meta property="og:type" content="website">
@@ -216,7 +219,7 @@
   <img src="assets/img/deco/beeldmerk-topmovers.svg" alt="" width="813" height="225" loading="lazy" decoding="async" class="art-h1">
 </section>
 
-<section class="offerte-overlay" id="prijs" aria-label="Offerte aanvragen">
+<section class="offerte-overlay hf1" id="prijs" aria-label="Offerte aanvragen">
   <div class="of-wrap">
     <div class="of-box">
       <div class="of-trust keurmerken" data-reveal-groep aria-label="Beoordelingen en keurmerk">
@@ -224,33 +227,23 @@
         <a class="keurmerk keurmerk--ev" href="https://www.erkendeverhuizers.nl/lid/de-bresser-verhuizingen-b-v-2/" target="_blank" rel="noopener nofollow"><img src="assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80"></a>
         <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">1.538</span><span class="keurmerk__sub">beoordelingen,<br> 93% beveelt aan</span></span>
       </div>
-      <h2 class="of-title">Offerte aanvragen</h2>
+      <h2 class="of-title">Vraag vrijblijvend een offerte aan</h2>
+      <p class="of-sub">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. Daarna bespreken wij de offerte met u: telefonisch, via een videocall of met een adviseur bij u thuis.</p>
       <form class="of-form" id="ofForm" action="offerte.html" method="get">
         <div class="of-pill">
-          <label class="of-field"><span>Van</span><input id="of-van" name="van" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <label class="of-field"><span>Van</span><input id="of-van" name="van" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
           <span class="of-divider" aria-hidden="true"></span>
-          <label class="of-field"><span>Naar</span><input id="of-naar" name="naar" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <label class="of-field"><span>Naar</span><input id="of-naar" name="naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
           <span class="of-divider" aria-hidden="true"></span>
           <label class="of-field"><span>Wanneer</span><input id="of-datum" name="datum" type="date" aria-label="Wanneer, gewenste verhuisdatum"></label>
           <span class="of-divider" aria-hidden="true"></span>
-          <label class="of-field"><span>Soort verhuizing</span>
-            <select id="of-woning" name="soort" aria-label="Soort verhuizing">
-              <option value="">Maak een keuze</option>
-              <option>Particulier</option>
-              <option>Zakelijk</option>
-              <option>Internationaal</option>
-              <option>Zorgverhuizing</option>
-              <option>Opslag</option>
-            </select>
+          <label class="of-field"><span>Type woning</span>
+            <select id="of-woning" name="woning" aria-label="Type woning"><option value="">Kies woning</option><option>Appartement</option><option>Eengezinswoning</option><option>Studio / kamer</option><option>Tussenwoning</option><option>Vrijstaande woning</option><option>Kantoor / bedrijf</option><option>Anders</option></select>
           </label>
           <button class="of-cta" type="submit">Offerte aanvragen<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
         </div>
       </form>
-      <div class="of-extra">
-        <a class="of-nieuw" href="duurzame-werkomgeving.html"><span class="nieuw">Nieuw!</span><b>Duurzame Werkomgeving</b><span class="of-nieuw__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="of-contact" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg>+31 (0)13 52 82 372</a>
-        <a class="of-contact" href="mailto:info@debresser.nl"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@debresser.nl</a>
-      </div>
+      <p class="hf1-tel">U hoort binnen 24 uur van ons. Liever bellen? <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
     </div>
   </div>
 </section>
@@ -281,22 +274,90 @@
   </div>
 </section>
 
-<section class="sectie ring" id="diensten" aria-labelledby="diensten-kop">
+<section class="sectie sb-diensten" id="diensten" aria-labelledby="diensten-kop">
   <div class="wrap">
-    <div class="sectiekop sectiekop--midden" data-reveal>
-      <p class="label">Waar we goed in zijn</p>
-      <h2 class="kop" id="diensten-kop">Onze diensten</h2>
+    <div class="sb-diensten__kop">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Onze diensten</p>
+        <h2 class="kop" id="diensten-kop">Waarmee wij u helpen</h2>
+        <p class="intro">Van een woning of kantoor verhuizen tot opslag, meubelprojecten, gebouwbeheer en het beheer van uw inventaris.</p>
+      </div>
     </div>
-    <div class="diensten">
-      <a class="dienst" href="diensten-verhuizen.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/verhuizen-768.webp" srcset="assets/img/home-pop/foto/verhuizen-640.webp 640w, assets/img/home-pop/foto/verhuizen-768.webp 768w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="768" height="512" alt="Twee verhuizers van De Bresser dragen een verhuisdeken naar de verhuiswagen" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">01</span></div><div class="dienst__tekst"><h3>Verhuizen</h3><p>Ontdek onze complete verhuisservice. Laat ons alle zorgen uit handen nemen terwijl we een vakkundige, zorgeloze en duurzame verhuizing garanderen.</p><span class="dienst__meer">Lees meer</span></div></a>
-      <a class="dienst delay-1" href="diensten-opslag.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/opslag-1024.webp" srcset="assets/img/home-pop/foto/opslag-640.webp 640w, assets/img/home-pop/foto/opslag-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1024" height="659" alt="Heftruck van De Bresser bij de opslagcontainers in de loods" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">02</span></div><div class="dienst__tekst"><h3>Opslag</h3><p>Of het nu gaat om tijdelijke opslag tijdens een verhuizing of voorraadbeheer voor uw bedrijf, wij bieden veilige en flexibele opslagoplossingen.</p><span class="dienst__meer">Lees meer</span></div></a>
-      <a class="dienst delay-2" href="diensten-meubelprojecten.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/meubelprojecten-1000.webp" srcset="assets/img/home-pop/foto/meubelprojecten-640.webp 640w, assets/img/home-pop/foto/meubelprojecten-1000.webp 1000w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1000" height="667" alt="Medewerker van De Bresser rijdt een kast op een steekwagen door het magazijn" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">03</span></div><div class="dienst__tekst"><h3>Meubelprojecten</h3><p>Het transporteren van meubels, het monteren ervan op locatie, of het afhandelen van veilingaankopen in het buitenland, De Bresser biedt complete oplossingen voor al uw meubelbehoeften.</p><span class="dienst__meer">Lees meer</span></div></a>
-      <a class="dienst" href="diensten-gebouwbeheer.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/gebouwbeheer-900.webp" srcset="assets/img/home-pop/foto/gebouwbeheer-640.webp 640w, assets/img/home-pop/foto/gebouwbeheer-900.webp 900w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="900" height="600" alt="Huismeesters van De Bresser stellen een bureau af" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">04</span></div><div class="dienst__tekst"><h3>Gebouwbeheer</h3><p>Stelt u zich voor: een kantooromgeving die niet alleen functioneel is, maar ook duurzaam en aangenaam om in te werken. Elke maand voeren we een quality-scan uit om ervoor te zorgen dat alles optimaal blijft functioneren.</p><span class="dienst__meer">Lees meer</span></div></a>
-      <a class="dienst delay-1" href="diensten-assetmanagement.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/assetmanagement-1024.webp" srcset="assets/img/home-pop/foto/assetmanagement-640.webp 640w, assets/img/home-pop/foto/assetmanagement-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1024" height="683" alt="Medewerker van De Bresser werkt aan haar bureau" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">05</span></div><div class="dienst__tekst"><h3>Assetmanagement</h3><p>Het beheren van al uw assets in één overzicht: wij begrijpen dat. Met ons WMS en Meubelpaspoort brengen we niet alleen uw assets in kaart, maar minimaliseren we ook de CO2-voetafdruk en dragen we bij aan een efficiëntere circulaire economie.</p><span class="dienst__meer">Lees meer</span></div></a>
-      <a class="dienst delay-2" href="duurzame-werkomgeving.html" data-reveal><div class="dienst__nis"><img src="assets/img/home-pop/foto/duurzaam-1024.webp" srcset="assets/img/home-pop/foto/duurzaam-640.webp 640w, assets/img/home-pop/foto/duurzaam-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1024" height="868" alt="Medewerker van De Bresser voor de elektrische bedrijfsbus" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">06</span><span class="nieuw dienst__nieuw">Nieuw!</span></div><div class="dienst__tekst"><h3>Duurzame werkomgeving</h3><p>Met De Bresser als uw partner voor gebouw- en assetmanagement, heeft u altijd een betrouwbare ondersteuning, 24/7. Met één vast aanspreekpunt bespaart u tijd en geld, waardoor u zich kunt concentreren op de groei van uw bedrijf.</p><span class="dienst__meer">Lees meer</span></div></a>
-    </div>
+    <ul class="sb-diensten__grid sb-diensten__grid--3" data-reveal-groep>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.286;--midden:.772">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/verhuizen-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/verhuizen.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/verhuisdoos.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="diensten-verhuizen.html">Verhuizen</a></h3>
+          <p>Zakelijk, particulier en internationaal verhuizen, zorg- en seniorenverhuizingen, en duurzaam verhuizen.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.2877;--midden:.624">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/opslag-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/opslag.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/opslag.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="diensten-opslag.html">Opslag</a></h3>
+          <p>Zakelijke en particuliere opslag, DIY-opslag en containeropslag.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.1439;--midden:.814">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/meubelprojecten-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/meubelprojecten.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/montage.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="diensten-meubelprojecten.html">Meubelprojecten</a></h3>
+          <p>Meubeltransport, veilingen en montageservice.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.2825;--midden:.431">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/gebouwbeheer-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/gebouwbeheer.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/sleutel.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></h3>
+          <p>Onderhoud, verduurzamen, een huismeester en handyman-services voor uw pand.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.1105;--midden:.486">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/assetmanagement-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/assetmanagement.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/checklist.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="diensten-assetmanagement.html">Assetmanagement</a></h3>
+          <p>Inventarisatie, WMS en Meubelpaspoort, opslag, inkoop en verkoop van assets en circulair meubilair.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+      <li class="sb-dienst">
+        <div class="sb-dienst__beeld" style="--kruin:.3316;--midden:.416">
+          <div class="sb-dienst__raam"><img class="sb-dienst__foto" src="assets/img/home-diensten/duurzame-werkomgeving-760.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <div class="sb-dienst__uit" aria-hidden="true"><img src="assets/img/home-diensten/uit/duurzame-werkomgeving.webp" width="760" height="570" alt="" loading="lazy" decoding="async"></div>
+          <span class="sb-dienst__ico"><img src="assets/img/bresser-icoon/blad.svg" alt="" width="34" height="34" loading="lazy" decoding="async"></span>
+        </div>
+        <div class="sb-dienst__tekst">
+          <h3><a href="duurzame-werkomgeving.html">Duurzame werkomgeving</a> <span class="sb-nieuw">Nieuw</span></h3>
+          <p>Een duurzame inrichting van uw werkomgeving.</p>
+          <span class="sb-dienst__pijl" aria-hidden="true"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </li>
+    </ul>
   </div>
-  <img src="assets/img/deco/pijl-weg.svg" alt="" width="20" height="13" loading="lazy" decoding="async" class="art-7">
 </section>
 
 <section class="sectie sectie--creme2" id="nieuws" aria-labelledby="nieuws-kop">
@@ -309,41 +370,43 @@
       <li><a class="bericht bericht--pop" href="blog-samen-bouwen-aan-succes.html"><span class="bericht__foto"><img src="assets/img/db/blog-samen-bouwen-kop.webp" width="640" height="462" alt="" loading="lazy" decoding="async"><img class="bericht__pop" src="assets/img/db/blog-samen-bouwen-kop-vrijstaand.webp" width="640" height="462" alt="" aria-hidden="true" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>Samen bouwen aan succes</h3><p>Satelliet hospitality furniture en De Bresser al jaren een sterk team</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
       <li><a class="bericht" href="blog-de-bresser-verwelkomt-brocken-verhuizingen.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/brocken-556.webp" width="556" height="677" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>De Bresser verwelkomt Brocken Verhuizingen</h3><p>Met veel trots mogen wij bekendmaken dat Brocken Verhuizingen uit Tilburg onderdeel is geworden van onze organisatie.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
       <li><a class="bericht" href="blog-verhuizen-met-kinderen.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/kinderen-1024.webp" srcset="assets/img/home-pop/foto/kinderen-640.webp 640w, assets/img/home-pop/foto/kinderen-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:601px) 46vw, calc(100vw - 40px)" width="1024" height="687" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>Verhuizen met kinderen</h3><p>Verhuizen is een spannende gebeurtenis — voor volwassenen, maar zeker ook voor kinderen. Lees hier hoe je er samen een positieve ervaring van maakt.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
-      <li><a class="bericht" href="blog-de-populairste-reden-om-te-verhuizen.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/reden-1024.webp" srcset="assets/img/home-pop/foto/reden-640.webp 640w, assets/img/home-pop/foto/reden-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:601px) 46vw, calc(100vw - 40px)" width="1024" height="725" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>De populairste reden om te verhuizen!</h3><p>De populairste redenen om te verhuizen zijn als volgt; Huwelijk of samenwonen, groter wonen, dichterbij werk en scheidingen of een relatiebreuk.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
-      <li><a class="bericht" href="blog-nieuw-qwiek-snooze-reinigingsservice.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/qwiek-1024.webp" srcset="assets/img/home-pop/foto/qwiek-640.webp 640w, assets/img/home-pop/foto/qwiek-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:601px) 46vw, calc(100vw - 40px)" width="1024" height="765" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>Nieuw! Qwiek.snooze reinigingsservice</h3><p>Uit het centraal bureau van statistieken is gebleken dat de meeste verhuizers mannen zijn, logisch hoor ik u denken maar wij hebben ook verhuis (sterren) in ons team!</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
-      <li><a class="bericht" href="blog-interne-verhuizing.html"><span class="bericht__foto"><img src="assets/img/home-pop/foto/intern-1024.webp" srcset="assets/img/home-pop/foto/intern-640.webp 640w, assets/img/home-pop/foto/intern-1024.webp 1024w" sizes="(min-width:901px) 380px, (min-width:601px) 46vw, calc(100vw - 40px)" width="1024" height="767" alt="" loading="lazy" decoding="async"></span><span class="bericht__tekst"><h3>Interne verhuizing</h3><p>Wij verrichten al jaren interne verhuizingen voor verschillende bedrijven.</p><span class="bericht__meer">Lees meer<svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a></li>
     </ul>
   </div>
 </section>
 
-<section class="sectie reviews" id="reviews" aria-labelledby="reviews-kop">
+<section class="sectie sb-reviews" id="reviews" aria-labelledby="reviews-kop">
   <div class="wrap">
-    <div class="sectiekop sectiekop--midden" data-reveal>
-      <p class="label">Succesverhalen</p>
-      <h2 class="kop" id="reviews-kop">Klanten zijn blij met ons</h2>
+    <div class="sb-reviews__kop">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Reviews</p>
+        <h2 class="kop" id="reviews-kop">Klanten zijn blij met ons</h2>
+        <p class="intro">Drie recente beoordelingen, letterlijk overgenomen van Klantenvertellen.</p>
+      </div>
+      <a class="sb-reviews__score" href="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv" target="_blank" rel="noopener" data-reveal>
+        <span class="sb-reviews__cijfer">9<span class="sb-verborgen"> uit 10</span></span>
+        <span class="sb-reviews__uitleg"><span class="sb-reviews__rij"><span class="sb-sterren sb-sterren--9" aria-hidden="true"></span><b>Klantenvertellen</b></span><span>1.538 beoordelingen</span></span>
+        <span class="sb-reviews__alle"><span class="sb-reviews__alle-tekst">Alle reviews</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        <span class="sb-verborgen"> (opent in een nieuw tabblad)</span>
+      </a>
     </div>
-    <ul class="rgrid rgrid--3">
-      <li class="review" data-reveal>
-        <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
-        <p class="review__tekst">Fijne verhuizers alles goed geregeld. 2de keer verhuisd was weer top. Verhuizers doen niet moeilijk kijken naar mogelijkheden.</p>
-        <p class="review__wie"><b>M, Esch</b><time datetime="2026-08-24">24-08-2026</time></p>
+    <ul class="sb-reviews__kaarten" data-reveal-groep>
+      <li class="sb-review">
+        <p class="sb-review__top"><span class="sb-sterren sb-sterren--9" aria-hidden="true"></span>9<span class="sb-verborgen"> van 10</span></p>
+        <blockquote cite="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv#review-a6dc3a41-d511-4149-ae6b-63eaefc6a10d"><p>Zeer tevreden, over de organisatie&nbsp;, de medewerkers en de uitvoering van de verhuizing zelf. Vriendelijk, hardwerkend&nbsp;, als één team. Kan het iedereen aanbevelen.</p></blockquote>
+        <p class="sb-review__wie"><span class="sb-review__letter" aria-hidden="true">M</span><span><b>Marian, Tilburg</b><small><time datetime="2026-09-18">18-09-2026</time> op Klantenvertellen</small></span></p>
       </li>
-      <li class="review delay-1" data-reveal>
-        <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
-        <p class="review__tekst">Met verbazing gekeken hoe efficiënt de verhuizing is gegaan . Zo’n til lift is een uitkomst, vooral als je hoog woont. Niets hoeft meer met de huislift, die vaak te klein is. De kast en het bed hoefden niet gedemonteerd te worden. Perfect.</p>
-        <p class="review__wie"><b>A , Tilburg</b><time datetime="2026-08-21">21-08-2026</time></p>
+      <li class="sb-review">
+        <p class="sb-review__top"><span class="sb-sterren" aria-hidden="true"></span>10<span class="sb-verborgen"> van 10</span></p>
+        <blockquote cite="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv#review-34e46db8-1526-4d9b-b012-587368144f63"><p>Fijne verhuizers alles goed geregeld. 2de keer verhuisd was weer top. Verhuizers doen niet moeilijk kijken naar mogelijkheden.</p></blockquote>
+        <p class="sb-review__wie"><span class="sb-review__letter" aria-hidden="true">M</span><span><b>M, Esch</b><small><time datetime="2026-08-24">24-08-2026</time> op Klantenvertellen</small></span></p>
       </li>
-      <li class="review delay-2" data-reveal>
-        <svg class="review__quote" aria-hidden="true"><use href="#i-quote"/></svg>
-        <p class="review__tekst">De verhuizing verliep heel soepel, voor alles werd een oplossing bedacht, waardoor onze spullen snel en vakkundig overgehuisd werden. Vriendelijke medewerkers die voorzichtig met onze spullen omgingen.</p>
-        <p class="review__wie"><b>Berry, Tilburg</b><time datetime="2026-08-05">5-08-2026</time></p>
+      <li class="sb-review">
+        <p class="sb-review__top"><span class="sb-sterren" aria-hidden="true"></span>10<span class="sb-verborgen"> van 10</span></p>
+        <blockquote cite="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv#review-40a4d64c-935f-42cc-9df6-a42ee9f7f23f"><p>Met verbazing gekeken hoe efficiënt de verhuizing is gegaan&nbsp;. Zo&#39;n til lift is een uitkomst, vooral als je hoog woont. Niets hoeft meer met de huislift, die vaak te klein is. De kast en het bed hoefden niet gedemonteerd te worden. Perfect.</p></blockquote>
+        <p class="sb-review__wie"><span class="sb-review__letter" aria-hidden="true">A</span><span><b>A, Tilburg</b><small><time datetime="2026-08-21">21-08-2026</time> op Klantenvertellen</small></span></p>
       </li>
     </ul>
-    <div class="reviews__voet" data-reveal>
-      <p class="reviews__meer"><a href="https://www.klantenvertellen.nl/reviews/1038076/erkende_verhuizer_de_bresser_verhuizingen_bv?from=widget&amp;lang=nl" target="_blank" rel="noopener">Alle reviews<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
-    </div>
   </div>
-  <img src="assets/img/deco/hart-huis.svg" alt="" width="90" height="84" loading="lazy" decoding="async" class="art-3">
 </section>
 
 <section class="opslag" id="duurzaam" aria-labelledby="duurzaam-kop">
@@ -385,106 +448,93 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <ul class="footer__logos glass-dark">
-      <li><a href="https://www.erkendeverhuizers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-erkende-verhuizers.webp" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
-      <li><a href="https://www.erkendeprojectverhuizers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-erkende-projectverhuizers.webp" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
-      <li><a href="https://www.topmovers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-top-movers.webp" alt="Logo Top Movers" loading="lazy"></a></li>
-      <li><img src="assets/img/db/keurmerk-fedemac.webp" alt="Logo Fedemac" loading="lazy"></li>
-      <li><img src="assets/img/db/keurmerk-iam.webp" alt="Logo IAM" loading="lazy"></li>
-    </ul>
-
-    <nav class="footer__cols" aria-label="Footer">
-      <div>
-        <h2><a href="diensten-verhuizen.html">Verhuizen</a></h2>
-        <ul>
-          <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
-          <li><a href="particuliere-verhuizing.html">Particulier</a></li>
-          <li><a href="internationale-verhuizing.html">Internationaal</a></li>
-          <li><a href="zorg-verhuizing.html">Zorg verhuizing</a></li>
-          <li><a href="duurzaam-verhuizen.html">Duurzaam</a></li>
+  <div class="footer__boven">
+    <div class="footer__media" aria-hidden="true">
+      <img src="assets/img/footer/wagen-groen-1200.webp" srcset="assets/img/footer/wagen-groen-800.webp 800w, assets/img/footer/wagen-groen-1200.webp 1200w, assets/img/footer/wagen-groen-1600.webp 1600w, assets/img/footer/wagen-groen-2400.webp 2400w" sizes="100vw" alt="" width="1600" height="679" loading="lazy" decoding="async">
+    </div>
+    <div class="wrap">
+      <div class="footer__claim">
+        <p class="eyebrow">De Bresser, sinds 1923</p>
+        <h2>Wij gaan altijd voor 100% tevreden klanten</h2>
+        <p>Daarom staat eerlijkheid bij ons voorop. Vraag een vrijblijvende offerte aan of bel ons, dan denken wij met u mee.</p>
+        <a class="footer__tel" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg>+31 (0)13 52 82 372</a>
+        <div class="footer__knoppen">
+          <a class="btn btn--offerte btn--lg" href="offerte.html"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+          <a class="btn btn--lijn-wit btn--lg" href="mailto:info@debresser.nl"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@debresser.nl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__onder">
+    <div class="wrap">
+      <div class="footer__rooster">
+        <div class="footer__merk">
+          <img class="footer__logo" src="assets/img/footer/logo-debresser-wit.png" alt="De Bresser" width="243" height="240" loading="lazy" decoding="async">
+          <p>Erkende verhuizers &amp; uw partner in full service logistiek. Sinds 1923.</p>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul>
+            <li><a href="index.html#diensten">Alle diensten</a></li>
+            <li><a href="diensten-verhuizen.html">Verhuizen</a></li>
+            <li><a href="diensten-opslag.html">Opslag</a></li>
+            <li><a href="diensten-meubelprojecten.html">Meubelprojecten</a></li>
+            <li><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></li>
+            <li><a href="diensten-assetmanagement.html">Assetmanagement</a></li>
+            <li><a href="duurzame-werkomgeving.html">Duurzame werkomgeving</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>De Bresser</h2>
+          <ul>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="vacatures.html">Vacatures</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">Veelgestelde vragen</a></li>
+            <li><a href="https://www.instagram.com/de_bresser/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.facebook.com/debresserverhuizingen/" target="_blank" rel="noopener">Facebook</a> en <a href="https://www.linkedin.com/company/debresser-verhuizingen-logistiek/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Voorwaarden</h2>
+          <ul>
+            <li><a href="assets/docs/AVVV-PV05-AVBV-AVHD.pdf" target="_blank" rel="noopener">Voorwaarden verhuizingen</a></li>
+            <li><a href="assets/docs/6010-Algemene-Vervoerscondities-A4-web-2.pdf" target="_blank" rel="noopener">Algemene vervoerscondities</a></li>
+            <li><a href="assets/docs/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf" target="_blank" rel="noopener">Voorwaarden bedrijfsverhuizing</a></li>
+            <li><a href="assets/docs/Logistieke-Services-Voorwaarden-LSV-2.pdf" target="_blank" rel="noopener">Voorwaarden logistieke services</a></li>
+            <li><a href="assets/docs/CMR-Conditions-English-2.pdf" target="_blank" rel="noopener">CMR conditions</a></li>
+            <li><a href="assets/docs/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf" target="_blank" rel="noopener">Opslagvoorwaarden</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__vestigingen">
+        <h2>Vestigingen</h2>
+        <ul class="footer__vest">
+          <li><b><a href="verhuisbedrijf-tilburg.html">Tilburg (hoofdkantoor)</a></b><span>Herastraat 9</span><span>5047 TX Tilburg</span><a href="tel:+31135425935">+31 (0)13 54 25 935</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Herastraat+9%2C+5047+TX+Tilburg" target="_blank" rel="noopener" aria-label="Route naar De Bresser Tilburg (Google Maps)">Route</a></li>
+          <li><b><a href="verhuisbedrijf-oisterwijk.html">Oisterwijk</a></b><span>Schijfstraat 13</span><span>5061 KA Oisterwijk</span><a href="tel:+31135282372">+31 (0)13 52 82 372</a><a class="footer__route" href="https://maps.app.goo.gl/fiTtYM83db5SjHLLA" target="_blank" rel="noopener" aria-label="Route naar De Bresser Oisterwijk (Google Maps)">Route</a></li>
+          <li><b><a href="breda.html">Breda</a></b><span>Mijkenbroek 46</span><span>4824 AC Breda</span><a href="tel:+31765224100">+31 (0)76 52 24 100</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Mijkenbroek+46%2C+4824+AC+Breda" target="_blank" rel="noopener" aria-label="Route naar De Bresser Breda (Google Maps)">Route</a></li>
+          <li><b><a href="verhuisbedrijf-venlo.html">Venlo</a></b><span>Coehoornstraat 11</span><span>5916 PH Venlo</span><a href="tel:+31773232100">+31 (0)77 32 32 100</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Coehoornstraat+11%2C+5916+PH+Venlo" target="_blank" rel="noopener" aria-label="Route naar De Bresser Venlo (Google Maps)">Route</a></li>
+          <li><b>Reeuwijk</b><span>Edisonstraat 1A-B</span><span>2811 EM Reeuwijk</span><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Edisonstraat+1A-B%2C+2811+EM+Reeuwijk" target="_blank" rel="noopener" aria-label="Route naar De Bresser Reeuwijk (Google Maps)">Route</a></li>
+          <li><b><a href="de-bresser-brussel.html">Brussel</a></b><span>Bazellaan 8</span><span>1140 Evere, België</span><a href="tel:+3226701894">+32 (0)26 – 701894</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Bazellaan+8%2C+1140+Evere%2C+Belgi%C3%AB" target="_blank" rel="noopener" aria-label="Route naar De Bresser Brussel (Google Maps)">Route</a></li>
         </ul>
       </div>
-      <div>
-        <h2><a href="diensten-opslag.html">Opslag</a></h2>
-        <ul>
-          <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
-          <li><a href="particuliere-opslag.html">Particulier</a></li>
-          <li><a href="particuliere-opslag.html#diy-opslag">DIY opslag</a></li>
-        </ul>
+      <div class="footer__merken">
+        <a class="merk merk--ev" href="https://www.erkendeverhuizers.nl/" target="_blank" rel="noopener nofollow"><img src="assets/img/footer/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80" loading="lazy" decoding="async"></a>
+        <a class="merk merk--epv" href="https://www.erkendeprojectverhuizers.nl/" target="_blank" rel="noopener nofollow"><img src="assets/img/footer/erkende-projectverhuizers-wit.webp" alt="Erkende Projectverhuizers" width="211" height="96" loading="lazy" decoding="async"></a>
+        <a class="merk merk--tm" href="https://www.topmovers.nl/" target="_blank" rel="noopener"><img src="assets/img/footer/topmovers-wit.png" alt="Top Movers" width="336" height="160" loading="lazy" decoding="async"></a>
+        <span class="merk merk--fedemac"><img src="assets/img/footer/fedemac-wit.webp" alt="Fedemac European Movers" width="768" height="156" loading="lazy" decoding="async"></span>
+        <span class="merk merk--iam"><img src="assets/img/footer/iam-wit.webp" alt="IAM International Association of Movers" width="300" height="166" loading="lazy" decoding="async"></span>
       </div>
-      <div>
-        <h2><a href="diensten-meubelprojecten.html">Meubelprojecten</a></h2>
-        <ul>
-          <li><a href="meubeltransport.html">Meubeltransport</a></li>
-          <li><a href="veilingen.html">Veilingen</a></li>
-          <li><a href="meubelmontage.html">Montageservice</a></li>
-        </ul>
+    </div>
+  </div>
+  <div class="footer__balk">
+    <div class="wrap">
+      <small>&copy; 2026 De Bresser B.V.<span class="footer__sep" aria-hidden="true"> &middot; </span><span class="footer__kvk">KvK 18014730 &middot; Btw NL0055.15.452.B.01</span></small>
+      <div class="footer__legal">
+        <a href="faq.html">FAQ</a>
+        <a href="privacyverklaring.html">Privacyverklaring</a>
+        <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
       </div>
-      <div>
-        <h2><a href="duurzame-werkomgeving.html">Duurzame Werkomgeving</a></h2>
-        <ul>
-          <li><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></li>
-          <li><a href="diensten-assetmanagement.html">Assetmanagement</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Voorwaarden</h2>
-        <ul>
-          <li><a href="assets/docs/AVVV-PV05-AVBV-AVHD.pdf">Voorwaarden verhuizingen</a></li>
-          <li><a href="assets/docs/6010-Algemene-Vervoerscondities-A4-web-2.pdf">Algemene vervoerscondities</a></li>
-          <li><a href="assets/docs/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf">Voorwaarden bedrijfsverhuizing</a></li>
-          <li><a href="assets/docs/Logistieke-Services-Voorwaarden-LSV-2.pdf">Voorwaarden logistieke services</a></li>
-          <li><a href="assets/docs/CMR-Conditions-English-2.pdf" hreflang="en">CMR conditions</a></li>
-          <li><a href="assets/docs/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf">Opslagvoorwaarden</a></li>
-          <li><a href="privacyverklaring.html">Privacyverklaring</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <details class="footer__snel">
-      <summary>Snelmenu <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <ul>
-        <li><a href="kantoor-verhuizen.html">Kantoor verhuizen</a></li>
-        <li><a href="zakelijke-verhuizing.html">Zakelijk verhuizen</a></li>
-        <li><a href="winkelverhuizing.html">Winkelverhuizing</a></li>
-        <li><a href="verhuisservice-zakelijk.html">Verhuisservice zakelijk</a></li>
-        <li><a href="opslagruimte-goirle.html">Opslagruimte Goirle</a></li>
-        <li><a href="opslagruimte-den-bosch.html">Opslagruimte Den Bosch</a></li>
-        <li><a href="opslagruimte-roosendaal.html">Opslagruimte Roosendaal</a></li>
-        <li><a href="opslagruimte-etten-leur.html">Opslagruimte Etten-Leur</a></li>
-        <li><a href="opslagruimte-oirschot.html">Opslagruimte Oirschot</a></li>
-        <li><a href="opslagruimte-breda.html">Opslagruimte Breda</a></li>
-        <li><a href="container-opslag.html">Container opslag</a></li>
-        <li><a href="verhuisbedrijf-eindhoven.html">Verhuisbedrijf Eindhoven</a></li>
-        <li><a href="verhuisbedrijf-den-bosch.html">Verhuisbedrijf Den Bosch</a></li>
-        <li><a href="verhuisbedrijf-waalwijk.html">Verhuisbedrijf Waalwijk</a></li>
-        <li><a href="verhuisbedrijf-etten-leur.html">Verhuisbedrijf Etten-Leur</a></li>
-        <li><a href="verhuisbedrijf-belgie.html">Verhuisbedrijf België</a></li>
-        <li><a href="verhuisbedrijf-oosterhout.html">Verhuisbedrijf Oosterhout</a></li>
-        <li><a href="verhuisbedrijf-sint-oedenrode.html">Verhuisbedrijf Sint-Oedenrode</a></li>
-        <li><a href="verhuisbedrijf-vught.html">Verhuisbedrijf Vught</a></li>
-        <li><a href="verhuisbedrijf-goirle.html">Verhuisbedrijf Goirle</a></li>
-        <li><a href="verhuisbedrijf-oisterwijk.html">Verhuisbedrijf Oisterwijk</a></li>
-        <li><a href="verhuisbedrijf-europa.html">Verhuisbedrijf Europa</a></li>
-        <li><a href="verhuisbedrijf-weert.html">Verhuisbedrijf Weert</a></li>
-        <li><a href="verhuisbedrijf-roermond.html">Verhuisbedrijf Roermond</a></li>
-        <li><a href="verhuisbedrijf-venlo.html">Verhuisbedrijf Venlo</a></li>
-        <li><a href="roosendaal.html">Verhuisbedrijf Roosendaal</a></li>
-        <li><a href="breda.html">Verhuisbedrijf Breda</a></li>
-        <li><a href="verhuisbedrijf-oss.html">Verhuisbedrijf Oss</a></li>
-        <li><a href="verhuisbedrijf-maastricht.html">Verhuisbedrijf Maastricht</a></li>
-        <li><a href="verhuisbedrijf-dordrecht.html">Verhuisbedrijf Dordrecht</a></li>
-        <li><a href="verhuisbedrijf-zevenbergen.html">Verhuisbedrijf Zevenbergen</a></li>
-      </ul>
-    </details>
-
-    <div class="footer__bottom">
-      <p>Copyright © 2025 De Bresser B.V. &nbsp;|&nbsp; KVK 18014730 &nbsp;|&nbsp; BTW NL0055.15.452.B.01</p>
-      <nav aria-label="Service">
-        <a href="tel:0031135282372">T +31 (0)13 52 82 372</a>
-        <a href="mailto:info@debresser.nl">info@debresser.nl</a>
-      </nav>
     </div>
   </div>
 </footer>

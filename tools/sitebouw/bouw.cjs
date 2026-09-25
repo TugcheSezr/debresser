@@ -29,15 +29,16 @@ const ctaVoorToon = (html) => {
 };
 // Offertebox met keurmerkpil + de vier kerncijferkaarten (.trust) onder de hero van elke subpagina behalve offerte.html
 // (wens gebruiker, 25 september 2026). Letterlijk uit index.html, zodat de cijfers overal gelijk lopen; zonder de regel
-// Nieuw!/telefoon/mail, die staat al in de hero.
+// Nieuw!/telefoon/mail, die staat al in de hero. Sinds 25-09 is de box de site-arnas-versie (klasse hf1, telefoonregel
+// .hf1-tel in plaats van of-extra); daarom zoekt dit op het begin van de klasse en niet op de hele klassenlijst.
 const OFFERTEBOX = (() => {
-  const b = INDEX.indexOf('<section class="offerte-overlay"');
+  const b = INDEX.indexOf('<section class="offerte-overlay');
   const t = INDEX.indexOf('<section class="trust"', b);
   const e = INDEX.indexOf('</section>', t);
   if (b < 0 || t < 0 || e < 0) throw new Error('niet gevonden: offertebox of kerncijfers in index.html');
   return INDEX.slice(b, e + '</section>'.length)
     .replace(/\n      <div class="of-extra">[\s\S]*?\n      <\/div>/, '')
-    .replace('class="offerte-overlay"', 'class="offerte-overlay offerte-overlay--pagina"');
+    .replace(/class="offerte-overlay([^"]*)"/, 'class="offerte-overlay$1 offerte-overlay--pagina"');
 })();
 const CHROME_BOTTOM = INDEX.slice(INDEX.indexOf('<footer class="footer">'), INDEX.indexOf('</body>')); // footer + mobiele balk
 
@@ -585,6 +586,7 @@ ${desc ? `<meta name="description" content="${esc(desc)}">\n` : ''}<meta name="t
 <script src="js/main.js"></script>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-latin.woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/footer.css">
 <link rel="canonical" href="${S.LIVE}/${slug}${slug ? '/' : ''}">
 ${jsonHtml}
 </head>

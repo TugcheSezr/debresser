@@ -11,6 +11,7 @@
 <script src="js/main.js"></script>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-latin.woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/footer.css">
 <link rel="canonical" href="https://www.debresser.nl/gebouwbeheer/huismeester/">
 
 </head>
@@ -198,7 +199,7 @@
   <svg class="art-ruit art-ruit--hero" aria-hidden="true"><use href="#i-ruit"/></svg>
 </section>
 
-<section class="offerte-overlay offerte-overlay--pagina" id="prijs" aria-label="Offerte aanvragen">
+<section class="offerte-overlay hf1 offerte-overlay--pagina" id="prijs" aria-label="Offerte aanvragen">
   <div class="of-wrap">
     <div class="of-box">
       <div class="of-trust keurmerken" data-reveal-groep aria-label="Beoordelingen en keurmerk">
@@ -206,28 +207,23 @@
         <a class="keurmerk keurmerk--ev" href="https://www.erkendeverhuizers.nl/lid/de-bresser-verhuizingen-b-v-2/" target="_blank" rel="noopener nofollow"><img src="assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80"></a>
         <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">1.538</span><span class="keurmerk__sub">beoordelingen,<br> 93% beveelt aan</span></span>
       </div>
-      <h2 class="of-title">Offerte aanvragen</h2>
+      <h2 class="of-title">Vraag vrijblijvend een offerte aan</h2>
+      <p class="of-sub">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. Daarna bespreken wij de offerte met u: telefonisch, via een videocall of met een adviseur bij u thuis.</p>
       <form class="of-form" id="ofForm" action="offerte.html" method="get">
         <div class="of-pill">
-          <label class="of-field"><span>Van</span><input id="of-van" name="van" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <label class="of-field"><span>Van</span><input id="of-van" name="van" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
           <span class="of-divider" aria-hidden="true"></span>
-          <label class="of-field"><span>Naar</span><input id="of-naar" name="naar" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <label class="of-field"><span>Naar</span><input id="of-naar" name="naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
           <span class="of-divider" aria-hidden="true"></span>
           <label class="of-field"><span>Wanneer</span><input id="of-datum" name="datum" type="date" aria-label="Wanneer, gewenste verhuisdatum"></label>
           <span class="of-divider" aria-hidden="true"></span>
-          <label class="of-field"><span>Soort verhuizing</span>
-            <select id="of-woning" name="soort" aria-label="Soort verhuizing">
-              <option value="">Maak een keuze</option>
-              <option>Particulier</option>
-              <option>Zakelijk</option>
-              <option>Internationaal</option>
-              <option>Zorgverhuizing</option>
-              <option>Opslag</option>
-            </select>
+          <label class="of-field"><span>Type woning</span>
+            <select id="of-woning" name="woning" aria-label="Type woning"><option value="">Kies woning</option><option>Appartement</option><option>Eengezinswoning</option><option>Studio / kamer</option><option>Tussenwoning</option><option>Vrijstaande woning</option><option>Kantoor / bedrijf</option><option>Anders</option></select>
           </label>
           <button class="of-cta" type="submit">Offerte aanvragen<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
         </div>
       </form>
+      <p class="hf1-tel">U hoort binnen 24 uur van ons. Liever bellen? <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
     </div>
   </div>
 </section>
@@ -300,106 +296,93 @@
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <ul class="footer__logos glass-dark">
-      <li><a href="https://www.erkendeverhuizers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-erkende-verhuizers.webp" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
-      <li><a href="https://www.erkendeprojectverhuizers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-erkende-projectverhuizers.webp" alt="Logo Erkende verhuizers" loading="lazy"></a></li>
-      <li><a href="https://www.topmovers.nl/" rel="noopener"><img src="assets/img/db/keurmerk-top-movers.webp" alt="Logo Top Movers" loading="lazy"></a></li>
-      <li><img src="assets/img/db/keurmerk-fedemac.webp" alt="Logo Fedemac" loading="lazy"></li>
-      <li><img src="assets/img/db/keurmerk-iam.webp" alt="Logo IAM" loading="lazy"></li>
-    </ul>
-
-    <nav class="footer__cols" aria-label="Footer">
-      <div>
-        <h2><a href="diensten-verhuizen.html">Verhuizen</a></h2>
-        <ul>
-          <li><a href="zakelijke-verhuizing.html">Zakelijk</a></li>
-          <li><a href="particuliere-verhuizing.html">Particulier</a></li>
-          <li><a href="internationale-verhuizing.html">Internationaal</a></li>
-          <li><a href="zorg-verhuizing.html">Zorg verhuizing</a></li>
-          <li><a href="duurzaam-verhuizen.html">Duurzaam</a></li>
+  <div class="footer__boven">
+    <div class="footer__media" aria-hidden="true">
+      <img src="assets/img/footer/wagen-groen-1200.webp" srcset="assets/img/footer/wagen-groen-800.webp 800w, assets/img/footer/wagen-groen-1200.webp 1200w, assets/img/footer/wagen-groen-1600.webp 1600w, assets/img/footer/wagen-groen-2400.webp 2400w" sizes="100vw" alt="" width="1600" height="679" loading="lazy" decoding="async">
+    </div>
+    <div class="wrap">
+      <div class="footer__claim">
+        <p class="eyebrow">De Bresser, sinds 1923</p>
+        <h2>Wij gaan altijd voor 100% tevreden klanten</h2>
+        <p>Daarom staat eerlijkheid bij ons voorop. Vraag een vrijblijvende offerte aan of bel ons, dan denken wij met u mee.</p>
+        <a class="footer__tel" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg>+31 (0)13 52 82 372</a>
+        <div class="footer__knoppen">
+          <a class="btn btn--offerte btn--lg" href="offerte.html"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+          <a class="btn btn--lijn-wit btn--lg" href="mailto:info@debresser.nl"><svg aria-hidden="true"><use href="#i-mail"/></svg>info@debresser.nl</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__onder">
+    <div class="wrap">
+      <div class="footer__rooster">
+        <div class="footer__merk">
+          <img class="footer__logo" src="assets/img/footer/logo-debresser-wit.png" alt="De Bresser" width="243" height="240" loading="lazy" decoding="async">
+          <p>Erkende verhuizers &amp; uw partner in full service logistiek. Sinds 1923.</p>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul>
+            <li><a href="index.html#diensten">Alle diensten</a></li>
+            <li><a href="diensten-verhuizen.html">Verhuizen</a></li>
+            <li><a href="diensten-opslag.html">Opslag</a></li>
+            <li><a href="diensten-meubelprojecten.html">Meubelprojecten</a></li>
+            <li><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></li>
+            <li><a href="diensten-assetmanagement.html">Assetmanagement</a></li>
+            <li><a href="duurzame-werkomgeving.html">Duurzame werkomgeving</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>De Bresser</h2>
+          <ul>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="vacatures.html">Vacatures</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">Veelgestelde vragen</a></li>
+            <li><a href="https://www.instagram.com/de_bresser/" target="_blank" rel="noopener">Instagram</a>, <a href="https://www.facebook.com/debresserverhuizingen/" target="_blank" rel="noopener">Facebook</a> en <a href="https://www.linkedin.com/company/debresser-verhuizingen-logistiek/" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Voorwaarden</h2>
+          <ul>
+            <li><a href="assets/docs/AVVV-PV05-AVBV-AVHD.pdf" target="_blank" rel="noopener">Voorwaarden verhuizingen</a></li>
+            <li><a href="assets/docs/6010-Algemene-Vervoerscondities-A4-web-2.pdf" target="_blank" rel="noopener">Algemene vervoerscondities</a></li>
+            <li><a href="assets/docs/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf" target="_blank" rel="noopener">Voorwaarden bedrijfsverhuizing</a></li>
+            <li><a href="assets/docs/Logistieke-Services-Voorwaarden-LSV-2.pdf" target="_blank" rel="noopener">Voorwaarden logistieke services</a></li>
+            <li><a href="assets/docs/CMR-Conditions-English-2.pdf" target="_blank" rel="noopener">CMR conditions</a></li>
+            <li><a href="assets/docs/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf" target="_blank" rel="noopener">Opslagvoorwaarden</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__vestigingen">
+        <h2>Vestigingen</h2>
+        <ul class="footer__vest">
+          <li><b><a href="verhuisbedrijf-tilburg.html">Tilburg (hoofdkantoor)</a></b><span>Herastraat 9</span><span>5047 TX Tilburg</span><a href="tel:+31135425935">+31 (0)13 54 25 935</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Herastraat+9%2C+5047+TX+Tilburg" target="_blank" rel="noopener" aria-label="Route naar De Bresser Tilburg (Google Maps)">Route</a></li>
+          <li><b><a href="verhuisbedrijf-oisterwijk.html">Oisterwijk</a></b><span>Schijfstraat 13</span><span>5061 KA Oisterwijk</span><a href="tel:+31135282372">+31 (0)13 52 82 372</a><a class="footer__route" href="https://maps.app.goo.gl/fiTtYM83db5SjHLLA" target="_blank" rel="noopener" aria-label="Route naar De Bresser Oisterwijk (Google Maps)">Route</a></li>
+          <li><b><a href="breda.html">Breda</a></b><span>Mijkenbroek 46</span><span>4824 AC Breda</span><a href="tel:+31765224100">+31 (0)76 52 24 100</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Mijkenbroek+46%2C+4824+AC+Breda" target="_blank" rel="noopener" aria-label="Route naar De Bresser Breda (Google Maps)">Route</a></li>
+          <li><b><a href="verhuisbedrijf-venlo.html">Venlo</a></b><span>Coehoornstraat 11</span><span>5916 PH Venlo</span><a href="tel:+31773232100">+31 (0)77 32 32 100</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Coehoornstraat+11%2C+5916+PH+Venlo" target="_blank" rel="noopener" aria-label="Route naar De Bresser Venlo (Google Maps)">Route</a></li>
+          <li><b>Reeuwijk</b><span>Edisonstraat 1A-B</span><span>2811 EM Reeuwijk</span><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Edisonstraat+1A-B%2C+2811+EM+Reeuwijk" target="_blank" rel="noopener" aria-label="Route naar De Bresser Reeuwijk (Google Maps)">Route</a></li>
+          <li><b><a href="de-bresser-brussel.html">Brussel</a></b><span>Bazellaan 8</span><span>1140 Evere, België</span><a href="tel:+3226701894">+32 (0)26 – 701894</a><a class="footer__route" href="https://www.google.com/maps/dir/?api=1&destination=Bazellaan+8%2C+1140+Evere%2C+Belgi%C3%AB" target="_blank" rel="noopener" aria-label="Route naar De Bresser Brussel (Google Maps)">Route</a></li>
         </ul>
       </div>
-      <div>
-        <h2><a href="diensten-opslag.html">Opslag</a></h2>
-        <ul>
-          <li><a href="zakelijke-opslag.html">Zakelijk</a></li>
-          <li><a href="particuliere-opslag.html">Particulier</a></li>
-          <li><a href="particuliere-opslag.html#diy-opslag">DIY opslag</a></li>
-        </ul>
+      <div class="footer__merken">
+        <a class="merk merk--ev" href="https://www.erkendeverhuizers.nl/" target="_blank" rel="noopener nofollow"><img src="assets/img/footer/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80" loading="lazy" decoding="async"></a>
+        <a class="merk merk--epv" href="https://www.erkendeprojectverhuizers.nl/" target="_blank" rel="noopener nofollow"><img src="assets/img/footer/erkende-projectverhuizers-wit.webp" alt="Erkende Projectverhuizers" width="211" height="96" loading="lazy" decoding="async"></a>
+        <a class="merk merk--tm" href="https://www.topmovers.nl/" target="_blank" rel="noopener"><img src="assets/img/footer/topmovers-wit.png" alt="Top Movers" width="336" height="160" loading="lazy" decoding="async"></a>
+        <span class="merk merk--fedemac"><img src="assets/img/footer/fedemac-wit.webp" alt="Fedemac European Movers" width="768" height="156" loading="lazy" decoding="async"></span>
+        <span class="merk merk--iam"><img src="assets/img/footer/iam-wit.webp" alt="IAM International Association of Movers" width="300" height="166" loading="lazy" decoding="async"></span>
       </div>
-      <div>
-        <h2><a href="diensten-meubelprojecten.html">Meubelprojecten</a></h2>
-        <ul>
-          <li><a href="meubeltransport.html">Meubeltransport</a></li>
-          <li><a href="veilingen.html">Veilingen</a></li>
-          <li><a href="meubelmontage.html">Montageservice</a></li>
-        </ul>
+    </div>
+  </div>
+  <div class="footer__balk">
+    <div class="wrap">
+      <small>&copy; 2026 De Bresser B.V.<span class="footer__sep" aria-hidden="true"> &middot; </span><span class="footer__kvk">KvK 18014730 &middot; Btw NL0055.15.452.B.01</span></small>
+      <div class="footer__legal">
+        <a href="faq.html">FAQ</a>
+        <a href="privacyverklaring.html">Privacyverklaring</a>
+        <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
       </div>
-      <div>
-        <h2><a href="duurzame-werkomgeving.html">Duurzame Werkomgeving</a></h2>
-        <ul>
-          <li><a href="diensten-gebouwbeheer.html">Gebouwbeheer</a></li>
-          <li><a href="diensten-assetmanagement.html">Assetmanagement</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Voorwaarden</h2>
-        <ul>
-          <li><a href="assets/docs/AVVV-PV05-AVBV-AVHD.pdf">Voorwaarden verhuizingen</a></li>
-          <li><a href="assets/docs/6010-Algemene-Vervoerscondities-A4-web-2.pdf">Algemene vervoerscondities</a></li>
-          <li><a href="assets/docs/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf">Voorwaarden bedrijfsverhuizing</a></li>
-          <li><a href="assets/docs/Logistieke-Services-Voorwaarden-LSV-2.pdf">Voorwaarden logistieke services</a></li>
-          <li><a href="assets/docs/CMR-Conditions-English-2.pdf" hreflang="en">CMR conditions</a></li>
-          <li><a href="assets/docs/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf">Opslagvoorwaarden</a></li>
-          <li><a href="privacyverklaring.html">Privacyverklaring</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <details class="footer__snel">
-      <summary>Snelmenu <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-      <ul>
-        <li><a href="kantoor-verhuizen.html">Kantoor verhuizen</a></li>
-        <li><a href="zakelijke-verhuizing.html">Zakelijk verhuizen</a></li>
-        <li><a href="winkelverhuizing.html">Winkelverhuizing</a></li>
-        <li><a href="verhuisservice-zakelijk.html">Verhuisservice zakelijk</a></li>
-        <li><a href="opslagruimte-goirle.html">Opslagruimte Goirle</a></li>
-        <li><a href="opslagruimte-den-bosch.html">Opslagruimte Den Bosch</a></li>
-        <li><a href="opslagruimte-roosendaal.html">Opslagruimte Roosendaal</a></li>
-        <li><a href="opslagruimte-etten-leur.html">Opslagruimte Etten-Leur</a></li>
-        <li><a href="opslagruimte-oirschot.html">Opslagruimte Oirschot</a></li>
-        <li><a href="opslagruimte-breda.html">Opslagruimte Breda</a></li>
-        <li><a href="container-opslag.html">Container opslag</a></li>
-        <li><a href="verhuisbedrijf-eindhoven.html">Verhuisbedrijf Eindhoven</a></li>
-        <li><a href="verhuisbedrijf-den-bosch.html">Verhuisbedrijf Den Bosch</a></li>
-        <li><a href="verhuisbedrijf-waalwijk.html">Verhuisbedrijf Waalwijk</a></li>
-        <li><a href="verhuisbedrijf-etten-leur.html">Verhuisbedrijf Etten-Leur</a></li>
-        <li><a href="verhuisbedrijf-belgie.html">Verhuisbedrijf België</a></li>
-        <li><a href="verhuisbedrijf-oosterhout.html">Verhuisbedrijf Oosterhout</a></li>
-        <li><a href="verhuisbedrijf-sint-oedenrode.html">Verhuisbedrijf Sint-Oedenrode</a></li>
-        <li><a href="verhuisbedrijf-vught.html">Verhuisbedrijf Vught</a></li>
-        <li><a href="verhuisbedrijf-goirle.html">Verhuisbedrijf Goirle</a></li>
-        <li><a href="verhuisbedrijf-oisterwijk.html">Verhuisbedrijf Oisterwijk</a></li>
-        <li><a href="verhuisbedrijf-europa.html">Verhuisbedrijf Europa</a></li>
-        <li><a href="verhuisbedrijf-weert.html">Verhuisbedrijf Weert</a></li>
-        <li><a href="verhuisbedrijf-roermond.html">Verhuisbedrijf Roermond</a></li>
-        <li><a href="verhuisbedrijf-venlo.html">Verhuisbedrijf Venlo</a></li>
-        <li><a href="roosendaal.html">Verhuisbedrijf Roosendaal</a></li>
-        <li><a href="breda.html">Verhuisbedrijf Breda</a></li>
-        <li><a href="verhuisbedrijf-oss.html">Verhuisbedrijf Oss</a></li>
-        <li><a href="verhuisbedrijf-maastricht.html">Verhuisbedrijf Maastricht</a></li>
-        <li><a href="verhuisbedrijf-dordrecht.html">Verhuisbedrijf Dordrecht</a></li>
-        <li><a href="verhuisbedrijf-zevenbergen.html">Verhuisbedrijf Zevenbergen</a></li>
-      </ul>
-    </details>
-
-    <div class="footer__bottom">
-      <p>Copyright © 2025 De Bresser B.V. &nbsp;|&nbsp; KVK 18014730 &nbsp;|&nbsp; BTW NL0055.15.452.B.01</p>
-      <nav aria-label="Service">
-        <a href="tel:0031135282372">T +31 (0)13 52 82 372</a>
-        <a href="mailto:info@debresser.nl">info@debresser.nl</a>
-      </nav>
     </div>
   </div>
 </footer>

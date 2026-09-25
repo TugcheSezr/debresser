@@ -6802,7 +6802,7 @@ main[tabindex="-1"]:focus {
   transform: translateX(3px) rotate(45deg);
 }
 
-/* Nieuws & Tips: zes berichten */
+/* Nieuws & Tips: drie berichten */
 .nieuws {
   list-style: none;
   margin: 0;
@@ -9487,3 +9487,110 @@ html:has(link[rel="canonical"]:is([href$="/breda/"], [href$="/verhuisbedrijf-bes
   }
 }
 /* einde FAQ stadspagina's in Bresserblauw */
+
+/* ==========================================================================
+   Offertebox uit branch site-arnas (hf1), sessie tugce-30, 25-09
+   Klantwens: het formulier onder de hero wordt de versie van site-arnas
+   (kop "Vraag vrijblijvend een offerte aan", uitleg, compacte velden,
+   telefoonregel, donkerblauw paneel #002E63 zoals de footer van die branch).
+   Alleen de keurmerkpil rechtsboven (Klantenvertellen 9,0, Erkende Verhuizers,
+   1.538 beoordelingen) blijft zoals hij was. De witte band en de vier
+   kerncijferkaarten eronder blijven ook staan.
+   Geldt voor index.html en de subpagina's met <section class="offerte-overlay hf1">.
+   ========================================================================== */
+.offerte-overlay.hf1 .of-box {
+  background: #002e63;
+  border-radius: 15px;
+  padding: clamp(18px, 1.8vw, 24px) clamp(20px, 2.4vw, 32px);
+  box-shadow: 0 26px 60px -20px rgba(2, 13, 65, 0.6);
+}
+.offerte-overlay.hf1 .of-trust {
+  top: clamp(18px, 1.8vw, 24px);
+  right: clamp(20px, 2.4vw, 32px);
+}
+.offerte-overlay.hf1 .of-title {
+  letter-spacing: 0;
+  font-weight: 600;
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+  margin-bottom: 6px;
+}
+.offerte-overlay.hf1 .of-sub {
+  max-width: 62ch;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.offerte-overlay.hf1 .of-pill {
+  border-radius: 10px;
+  padding: 6px;
+  grid-template-columns: 1fr 1px 1fr 1px 0.9fr 1px 1.1fr auto;
+}
+.offerte-overlay.hf1 .of-field {
+  padding: 6px 14px;
+}
+.offerte-overlay.hf1 .of-field span {
+  color: var(--bruin);
+}
+.offerte-overlay.hf1 .of-cta {
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 13px 22px;
+}
+.hf1-tel {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hf1-tel a {
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .offerte-overlay.hf1 .of-pill {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+    gap: 4px;
+  }
+  .offerte-overlay.hf1 .of-cta {
+    border-radius: 5px;
+    margin-top: 2px;
+  }
+  .offerte-overlay.hf1 .of-field:last-of-type {
+    border-bottom: 0;
+  }
+}
+@media (max-width: 620px) {
+  .offerte-overlay.hf1 .of-box {
+    padding: 13px 12px 12px;
+  }
+  .offerte-overlay.hf1 .of-title {
+    font-size: 1.28rem;
+    margin-bottom: 6px;
+  }
+  .offerte-overlay.hf1 .of-sub {
+    display: none;
+  }
+  .offerte-overlay.hf1 .of-pill {
+    padding: 6px;
+  }
+  .offerte-overlay.hf1 .of-field {
+    padding: 6px 12px;
+  }
+  .offerte-overlay.hf1 .of-cta {
+    padding: 12px 18px;
+  }
+  .hf1-tel {
+    margin-top: 8px;
+    font-size: 0.86rem;
+  }
+}
+/* De keurmerkpil is hier ~380px breed (breder dan in de branch, want het cijfer staat naast
+   het logo). Vanaf 1081px hangt hij rechtsboven; de uitleg stopt daarom 40px voor de pil,
+   anders valt de pil tussen 1081 en ~1400px over de tekst. */
+@media (min-width: 1081px) {
+  .offerte-overlay.hf1 .of-sub {
+    max-width: min(62ch, 100% - 420px);
+  }
+}
+/* einde offertebox uit branch site-arnas (hf1) */

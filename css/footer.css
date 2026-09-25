@@ -1,0 +1,221 @@
+/* Footer uit branch site-arnas (site/assets/css/style.min.css), 25 september 2026.
+   Wagen-foto met claim, drie linkkolommen, vestigingen, keurmerken en een smalle balk.
+   Staat na css/style.css; het eerste blok zet de oude footer-opmaak van style.css uit
+   (achtergrondfoto in ::after, logo-ruiten in ::before, padding-top voor de foto). */
+
+/* ---------- oude footer uit style.css uitzetten ---------- */
+.footer {
+  --footer-rgb: 0, 46, 99;
+  --footer-waas: 0.35;
+  --offerte: #7bd534;
+  --offerte-tekst: #020d41;
+  --offerte-hover: #166909;
+  --offerte-rand: #166909;
+  padding-top: 0;
+  overflow: visible;
+  background: rgb(var(--footer-rgb));
+  color: #fff;
+  font-size: 0.95rem;
+}
+.footer::before,
+.footer::after {
+  content: none;
+}
+
+/* ---------- basis ---------- */
+.footer { position: relative; isolation: isolate; }
+.footer a:not(.btn) { color: #fff; text-decoration: none; }
+.footer a:not(.btn):hover { text-decoration: underline; }
+
+/* knoppen zoals op site-arnas, alleen in de footer */
+.footer .btn { border-radius: 5px; letter-spacing: 0.05em; font-weight: 600; }
+.footer .btn--lijn-wit { background: transparent; border-color: rgba(255, 255, 255, 0.55); color: #fff; }
+.footer .btn--lijn-wit:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.footer .btn--lijn-wit svg { order: 0; width: 16px; height: 16px; }
+.footer a.btn.btn--offerte { background: var(--offerte); border: 1px solid var(--offerte); color: var(--offerte-tekst); }
+.footer a.btn.btn--offerte svg { color: inherit; }
+.footer a.btn.btn--offerte:hover,
+.footer a.btn.btn--offerte:focus-visible { background: var(--offerte-hover); border-color: var(--offerte-rand); color: #fff; box-shadow: none; }
+.footer a.btn.btn--offerte:focus-visible { outline: 2px solid transparent; outline-offset: 2px; box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--offerte-rand); }
+
+/* ---------- boven: wagen-foto met claim ---------- */
+/* In dit project hangt de CTA-kaart (.cta-band, margin-bottom -120px in style.css) 120px in de footer;
+   de claim begint daarom pas onder de kaart. Op site-arnas staat er geen kaart boven de footer. */
+.footer { --ft-cta: 0px; }
+body:has(.cta-band) .footer { --ft-cta: 120px; }
+.footer__boven { position: relative; isolation: isolate; padding-top: var(--ft-cta); }
+.footer__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.footer__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(var(--footer-rgb), 0) calc(100% - 88px), rgb(var(--footer-rgb)) 100%),
+    rgba(var(--footer-rgb), var(--footer-waas));
+}
+.footer__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 55%;
+  transform: none;
+}
+@media (min-width: 1441px) {
+  .footer__media img { object-position: 50% 70%; }
+}
+
+.footer__claim { max-width: 44rem; padding-block: clamp(1.6rem, 3vw, 2.5rem) clamp(1.2rem, 2vw, 1.6rem); }
+.footer__claim .eyebrow { color: #7fd4fb; margin-bottom: 0.55rem; }
+.footer__claim .eyebrow::before { background: #7fd4fb; }
+.footer__claim h2 { color: #fff; font-size: clamp(1.5rem, 2.4vw, 1.95rem); margin: 0 0 0.55rem; max-width: 22ch; }
+.footer__claim p { color: rgba(255, 255, 255, 0.8); }
+.footer__claim p:not(.eyebrow) { margin: 0 0 0.9rem; max-width: 52ch; line-height: 1.55; font-size: 0.95rem; }
+.footer__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  font: 600 clamp(1.15rem, 1.9vw, 1.45rem)/1 var(--font-kop);
+  color: #fff !important;
+  text-decoration: none !important;
+  margin-bottom: 0.8rem;
+}
+.footer__tel svg { width: 19px; height: 19px; color: var(--teal-op-navy); flex: none; }
+.footer__knoppen { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.footer__knoppen .btn { padding: 0.74rem 1.3rem; font-size: 0.78rem; }
+
+@media (min-width: 701px) {
+  .footer__boven { padding-bottom: 40px; overflow: hidden; }
+  .footer__claim { position: relative; isolation: isolate; width: fit-content; }
+  .footer__claim::before {
+    content: "";
+    position: absolute;
+    inset: 0.25rem 0.25rem 0.5rem -3rem;
+    z-index: -1;
+    background: rgba(var(--footer-rgb), 0.82);
+    filter: blur(14px);
+    pointer-events: none;
+  }
+}
+@media (min-width: 1441px) {
+  .footer__boven { min-height: calc(var(--ft-cta) + 362px + (100vw - 1440px) * 0.33); display: flex; flex-direction: column; justify-content: center; }
+  .footer__boven > .wrap { width: 100%; }
+}
+
+/* ---------- onder: kolommen, vestigingen, keurmerken ---------- */
+.footer__onder { position: relative; padding-top: 0; background: none; }
+.footer__onder h2 {
+  font: 700 0.85rem/1.3 var(--font-kop);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--teal-op-navy);
+  margin: 0 0 0.6rem;
+}
+.footer__rooster { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.1fr; gap: 1.6rem 2rem; padding-block: 0.5rem 0.6rem; }
+.footer__rooster > * { min-width: 0; }
+.footer__rooster p { margin: 0.6rem 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.62); line-height: 1.6; }
+.footer__rooster ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; font-size: 0.9rem; }
+.footer__merk .footer__logo { display: block; width: 108px; height: auto; margin: 0 0 0.6rem; }
+.footer__merk p { margin: 0; }
+
+.footer__vestigingen { border-top: 1px solid rgba(255, 255, 255, 0.16); padding-block: 0.8rem 0.9rem; }
+.footer__vest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1rem 1.6rem; }
+.footer__vest li {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-rows: repeat(4, auto) 1fr;
+  column-gap: 0.3rem;
+  align-content: start;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer__vest li > * { grid-column: 1 / -1; }
+.footer__vest li > .footer__route { grid-row: 5; align-self: end; justify-self: start; }
+.footer__vest b { font-weight: 600; color: #fff; margin-bottom: 0.1rem; }
+.footer__vest b a { color: inherit; }
+.footer__vest a.footer__route { font-weight: 400; font-size: 0.8rem; color: var(--teal-op-navy); text-decoration: underline; text-underline-offset: 2px; }
+.footer__vest a.footer__route:hover { color: #fff; }
+@media (min-width: 1320px) {
+  .footer__vest li > span:first-of-type { grid-column: 1; grid-row: 2; }
+  .footer__vest li > .footer__route { grid-column: 2; grid-row: 2; align-self: baseline; }
+}
+
+.footer__merken {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.3rem 1.6rem;
+  flex-wrap: wrap;
+  padding-block: 0.9rem 1rem;
+}
+.footer .merk { display: block; flex: 0 0 auto; }
+.footer a.merk { opacity: 0.82; transition: opacity 0.25s var(--ease); }
+.footer a.merk:hover,
+.footer a.merk:focus-visible { opacity: 1; }
+.footer span.merk { opacity: 0.82; }
+.footer .merk img { display: block; width: auto; }
+.merk--ev img,
+.merk--epv img,
+.merk--tm img,
+.merk--iam img { height: 56px; }
+.merk--fedemac img { height: 41px; }
+
+/* ---------- balk ---------- */
+.footer__balk { background: #00224d; color: rgba(255, 255, 255, 0.58); font-size: 0.82rem; }
+.footer__balk .wrap { display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; align-items: baseline; gap: 0.4rem 2.2rem; padding-block: 1.05rem; text-align: center; }
+.footer__balk small { font-size: 1em; }
+.footer__balk a { color: rgba(255, 255, 255, 0.8); }
+.footer__kvk { white-space: nowrap; }
+.footer__legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.3rem; }
+.footer__legal a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+.footer__legal a:hover,
+.footer__legal a:focus-visible { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- smaller ---------- */
+@media (max-width: 1100px) {
+  .footer__vest { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 940px) {
+  .footer__merken { justify-content: center; gap: 1.2rem 1.9rem; }
+}
+@media (max-width: 900px) {
+  .footer__rooster { grid-template-columns: 1fr 1fr; }
+  .footer__merken { justify-content: center; gap: 1.2rem 2.2rem; }
+}
+@media (max-width: 767.98px) {
+  .footer__balk .wrap { flex-direction: column; align-items: center; gap: 0.45rem; padding-bottom: 6.5rem; } /* ruimte voor .mcta */
+  .footer__balk small .footer__sep { display: none; }
+  .footer__kvk { display: block; }
+}
+@media (max-width: 700px) {
+  .footer__boven { padding-top: calc(var(--ft-cta) + 100vw / 1.9); }
+  .footer__media { top: var(--ft-cta); bottom: auto; height: calc(100vw / 1.9); }
+  .footer__media img { object-position: 50% 50%; }
+  .footer__media::after { background: linear-gradient(to bottom, rgba(var(--footer-rgb), 0) 70%, rgb(var(--footer-rgb)) 100%); }
+  .footer__knoppen { width: 100%; max-width: 23rem; }
+  .footer__knoppen .btn { width: 100%; }
+}
+@media (max-width: 620px) {
+  .footer__knoppen { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .footer__rooster { grid-template-columns: 1.1fr 0.9fr; gap: 1.4rem 0.8rem; }
+  .footer__rooster ul { font-size: 0.85rem; line-height: 1.6; }
+  .footer__merk { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; column-gap: 1.1rem; align-items: start; }
+  .footer__merk .footer__logo { grid-row: 1 / 3; width: 88px; margin: 0; }
+  .footer__rooster > div:last-child { grid-column: 1 / -1; }
+  .footer__rooster > div:last-child ul { grid-template-columns: 1fr 1fr; column-gap: 1.2rem; }
+  .footer__vest { grid-template-columns: 1fr 1fr; gap: 1rem 1.2rem; }
+  .footer__onder h2 { font-size: 0.78rem; letter-spacing: 0.16em; }
+  .merk--ev img,
+  .merk--epv img,
+  .merk--tm img,
+  .merk--iam img { height: 44px; }
+  .merk--fedemac img { height: 32px; }
+}
+@media print {
+  .footer { display: none !important; }
+}
