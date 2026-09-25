@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Offerteblok varianten</title>
+<style>
+/* Offerteblok-varianten 25-09-2026. Tokens uit brandbook-de-bresser en site/_werk/style.css.
+   Radius: kaart 15px, van/naar-kader 12px, velden 8px, knoppen en chips 5px. */
+@font-face{font-family:'Sora';font-style:normal;font-weight:400 700;font-display:swap;src:url(../../site/assets/fonts/sora-400-700-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Sora';font-style:normal;font-weight:400 700;font-display:swap;src:url(../../site/assets/fonts/sora-400-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --navy:#020D41;--blauw:#007AC0;--licht:#33BCFA;--groen:#7BD534;--groen-hover:#166909;--diep:#00498F;
+  --creme:#F4F6F9;--creme2:#EBEFF4;--boogvlak:#DCE6F0;--lijn:#D5DDE8;--rand:#7C8AA0;--grijs:#5A6478;--tekst:#2F2F2F;
+  --f:'Sora','Helvetica Neue',Arial,sans-serif;--r:15px;
+  --schaduw-kaart:0 1px 2px rgba(2,13,65,.05),0 14px 34px -22px rgba(2,13,65,.28);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--creme);color:var(--tekst);font:400 16px/1.55 var(--f)}
+img{display:block;max-width:100%}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- paginakop en variantsecties ---------- */
+.pk{background:var(--navy);color:#fff;padding:28px 16px 24px}
+.pk__in{max-width:1180px;margin:0 auto}
+.pk__plek{margin:0 0 6px;color:var(--licht);font:700 .76rem/1.3 var(--f);letter-spacing:.14em;text-transform:uppercase}
+.pk h1{margin:0 0 10px;font:700 clamp(1.45rem,3vw,2.1rem)/1.15 var(--f)}
+.pk p{margin:0;color:#D5DDE8;max-width:78ch}
+.pk nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pk nav a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.4);border-radius:5px;padding:6px 14px;font:600 .85rem/1.2 var(--f)}
+.pk nav a:hover{background:rgba(255,255,255,.12)}
+.var{padding:44px 16px 52px;border-bottom:1px solid var(--lijn)}
+.var__kop{max-width:1180px;margin:0 auto}
+.var__nr{margin:0;color:var(--diep);font:700 .76rem/1.3 var(--f);letter-spacing:.16em;text-transform:uppercase}
+.var__titel{margin:4px 0 6px;color:var(--navy);font:700 clamp(1.2rem,2.2vw,1.5rem)/1.25 var(--f)}
+.var__uitleg{margin:0;max-width:80ch;color:#3D4658}
+.var__bron{margin:6px 0 0;color:var(--grijs);font-size:.85rem}
+.podium{max-width:1180px;margin:0 auto;padding-top:var(--boven,100px)}
+.keuze{max-width:1180px;margin:28px auto 0;border:1px solid var(--lijn);border-radius:12px;background:#fff;padding:12px 18px 16px}
+.keuze legend{padding:0 6px;font:700 .9rem/1.3 var(--f);color:var(--navy)}
+.keuze__opties{display:flex;flex-wrap:wrap;gap:10px}
+.keuze__opties label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rand);border-radius:8px;padding:9px 14px;font:600 .9rem/1.2 var(--f);color:var(--navy);cursor:pointer;background:#fff}
+.keuze__opties input{accent-color:var(--blauw);width:18px;height:18px;margin:0}
+.keuze__opties label:has(input:checked){background:var(--creme2);border-color:var(--navy)}
+.keuze__tekst{display:flex;flex-direction:column;gap:6px;margin-top:12px;font:600 .85rem/1.3 var(--f);color:var(--navy)}
+.keuze__tekst[hidden]{display:none}
+.keuze__tekst textarea{font:500 1rem/1.4 var(--f);border:1px solid var(--rand);border-radius:8px;padding:10px 12px;color:var(--navy);min-height:64px;width:100%}
+.uit{max-width:1180px;margin:0 auto;padding:44px 16px 64px}
+.uit h2{margin:0 0 10px;color:var(--navy);font:700 1.4rem/1.2 var(--f)}
+.uit__tekst{white-space:pre-wrap;background:#fff;border:1px solid var(--lijn);border-radius:12px;padding:14px 16px;font:500 .95rem/1.5 var(--f);color:var(--navy);margin:0 0 14px}
+.uit__melding{min-height:1.4em;margin:8px 0 0;color:var(--diep);font-weight:600}
+
+/* ---------- knoppen (zoals .btn op de site) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;padding:.98rem 1.6rem;border-radius:5px;font:600 .8rem/1.2 var(--f);letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn svg{width:12px;height:12px;flex:none;margin-top:-.15em;order:2}
+.btn--lg{padding:1.15rem 1.9rem;font-size:.88rem}
+.btn--offerte{background:var(--groen);border-color:var(--groen);color:var(--navy)}
+.btn--offerte:hover{background:var(--groen-hover);border-color:var(--groen-hover);color:#fff}
+.btn--offerte:focus-visible{outline:2px solid transparent;outline-offset:2px;box-shadow:0 0 0 2px #fff,0 0 0 5px var(--groen-hover)}
+.btn--navy{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn--navy:hover{background:var(--diep);border-color:var(--diep)}
+.btn:focus-visible,.bel:focus-visible,.pk nav a:focus-visible{outline:3px solid var(--licht);outline-offset:3px}
+
+/* ---------- het blok: gedeeld ---------- */
+.ob{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:#fff;border-radius:var(--r);box-shadow:var(--schaduw-kaart);color:var(--tekst)}
+.ob__links{position:relative;display:flex;flex-direction:column;min-width:0}
+.ob__rechts{position:relative;min-width:0;padding:40px 44px 40px}
+.ob__beeld{position:relative;flex:1 0 auto;min-height:var(--beeld-h,330px)}
+.ob__fig{position:absolute;z-index:1;width:auto;max-width:none;pointer-events:none;user-select:none}
+.ob__paneel{position:relative;z-index:2;padding:6px 44px 44px}
+.ob__paneel::before{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;top:calc(-1 * var(--schuin,60px))}
+.ob__kop{margin:14px 0 22px;font:700 clamp(1.9rem,2.7vw,2.4rem)/1.1 var(--f);letter-spacing:-.005em}
+.ob__accent{display:block}
+.chip{display:inline-flex;align-items:center;gap:8px;border-radius:5px;padding:6px 12px;background:#fff;color:var(--navy);font:700 .72rem/1.2 var(--f);letter-spacing:.14em;text-transform:uppercase}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--groen);flex:none}
+.chip--groen{background:var(--groen)}
+.chip--groen::before{background:var(--navy)}
+.label{display:inline-flex;align-items:center;gap:.75rem;font:700 .76rem/1.3 var(--f);letter-spacing:.18em;text-transform:uppercase}
+.label::before{content:"";width:2rem;height:1px;background:currentColor;flex:none}
+.stappen{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:16px}
+.stap{position:relative;display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;align-items:start;align-content:start}
+.stap__nr{grid-row:span 2;font:700 1.75rem/1 var(--f)}
+.stap strong{font:700 1rem/1.35 var(--f);text-wrap:balance}
+.stap span:not(.stap__nr){font:400 .92rem/1.5 var(--f);text-wrap:pretty}
+.bel-zin{margin:0 0 10px;font:500 .95rem/1.4 var(--f)}
+.bel{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:8px 18px 8px 8px;border-radius:5px;border:1px solid #fff;background:#fff;color:var(--navy);text-decoration:none;font:700 1.25rem/1 var(--f);white-space:nowrap}
+.bel:hover{background:var(--creme2);border-color:var(--creme2)}
+.bel__ico{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--creme2);flex:none}
+.bel__ico svg{width:22px;height:22px}
+.bel--groot{min-height:64px;padding:10px 22px 10px 10px;font-size:1.45rem}
+.bel--groot .bel__ico{width:46px;height:46px}
+.bel--lijn{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.bel--lijn:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.bel--lijn .bel__ico{background:#fff}
+.bel--navy{background:var(--navy);border-color:var(--navy);color:#fff}
+.bel--navy:hover{background:var(--diep);border-color:var(--diep)}
+.bel--navy .bel__ico{background:#fff}
+
+/* ---------- formulier ---------- */
+.of{margin:0}
+.of__intro{margin:0 0 22px;color:#3D4658;font:400 1rem/1.6 var(--f);max-width:62ch}
+.of__velden{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+.vn,.veld--mail,.veld--opm,.of__verstuur{grid-column:1/-1}
+.vn{position:relative;margin:0;padding:16px 20px 18px;min-width:0;border:2px solid var(--navy);border-radius:12px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:22px;align-items:start}
+.vn::before{content:"";position:absolute;top:16px;bottom:16px;left:50%;border-left:1.5px dashed var(--rand)}
+.vn__deel{display:flex;flex-direction:column;min-width:0}
+.vn__kop{font:700 1.3rem/1.2 var(--f);color:var(--navy);margin:0 0 2px}
+.vn input[type=text]{width:100%;min-height:44px;margin:0;border:0;border-bottom:1.5px solid var(--rand);border-radius:0;padding:8px 0;background:transparent;font:500 1rem/1.3 var(--f);color:var(--navy)}
+.vn__pijl{position:relative;z-index:1;align-self:center;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--blauw)}
+.vn__pijl svg{width:18px;height:18px}
+.veld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.veld>label:first-child{font:600 .85rem/1.3 var(--f);color:var(--navy)}
+.veld input:not([type=checkbox]),.veld select,.veld textarea{width:100%;min-height:48px;margin:0;border:1px solid var(--rand);border-radius:8px;background:#fff;padding:11px 14px;font:500 1rem/1.3 var(--f);color:var(--navy)}
+.veld textarea{min-height:92px;resize:vertical;line-height:1.45}
+.veld select{-webkit-appearance:none;appearance:none;padding-right:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23020D41' d='M5.5 8.5l6.5 7 6.5-7z'/%3E%3C/svg%3E") no-repeat right 14px center/16px}
+.of ::placeholder{color:var(--grijs);opacity:1}
+.vink{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font:500 .85rem/1.3 var(--f);color:var(--navy);cursor:pointer;min-height:24px}
+.vink input{width:18px;height:18px;margin:0;accent-color:var(--blauw);flex:none}
+.of input:focus-visible,.of select:focus-visible,.of textarea:focus-visible{outline:3px solid var(--diep);outline-offset:1px}
+.of__verstuur{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:4px}
+.of__privacy{margin:0;flex:1 1 220px;font:400 .8rem/1.5 var(--f);color:var(--grijs)}
+.of__privacy a{color:var(--diep);font-weight:600}
+.of__proef{flex-basis:100%;margin:0;font:600 .85rem/1.4 var(--f);color:var(--diep)}
+
+/* ---------- V1: navy links, schuine rand, vlak onder de verhuizer ---------- */
+.ob--v1 .ob__beeld{--beeld-h:330px}
+.ob--v1 .ob__fig{left:64px;top:-44px;height:calc(100% + 54px)}
+.ob--v1 .ob__paneel{--schuin:60px;color:#fff;padding-top:26px}
+.ob--v1 .ob__paneel::before{background:var(--navy);border-radius:0 0 0 var(--r);clip-path:polygon(0 60px,58% 60px,100% 0,100% 100%,0 100%)}
+.ob--v1 .ob__accent,.ob--v1 .stap__nr{color:var(--licht)}
+.ob--v1 .stap span:not(.stap__nr),.ob--v1 .bel-zin{color:#D5DDE8}
+
+/* ---------- V2: blauw rechts, gespiegeld, bellen voorop ---------- */
+.ob--v2{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.ob--v2 .ob__links{order:2}
+.ob--v2 .ob__beeld{--beeld-h:330px}
+.ob--v2 .ob__fig{right:34px;top:-44px;height:calc(100% + 58px)}
+.ob--v2 .ob__paneel{--schuin:60px;color:#fff;padding-top:26px}
+.ob--v2 .ob__paneel::before{background:var(--blauw);border-radius:0 0 var(--r) 0;clip-path:polygon(0 0,42% 60px,100% 60px,100% 100%,0 100%)}
+.ob--v2 .ob__accent{text-decoration:underline;text-decoration-color:var(--groen);text-decoration-thickness:.12em;text-underline-offset:.16em}
+.ob--v2 .stap__nr{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);font-size:1rem}
+.ob--v2 .stap:not(:last-child)::after{content:"";position:absolute;left:16px;top:40px;bottom:-12px;width:2px;background:rgba(255,255,255,.6)}
+
+/* ---------- V3: brede navy band, formulier eronder in drie kolommen ---------- */
+.ob--v3{display:block}
+.ob--v3 .ob__band{position:relative;background:var(--navy);color:#fff;border-radius:var(--r) var(--r) 0 0;padding:44px 48px 100px}
+.ob--v3 .ob__fig{right:28px;top:-56px;height:680px}
+.ob--v3 .ob__bandtekst{position:relative;z-index:3;max-width:calc(100% - 400px)}
+.ob--v3 .ob__accent{display:inline;color:var(--licht)}
+.ob--v3 .stappen{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-bottom:28px}
+.ob--v3 .stap{grid-template-columns:28px minmax(0,1fr)}
+.ob--v3 .stap__nr{color:var(--licht)}
+.ob--v3 .stap span:not(.stap__nr),.ob--v3 .bel-zin{color:#D5DDE8}
+.ob__belrij{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.ob__belrij .bel-zin{margin:0}
+.ob--v3 .ob__rechts{z-index:2;padding:6px 48px 44px}
+.ob--v3 .ob__rechts::before{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;top:-64px;background:#fff;border-radius:0 0 var(--r) var(--r);clip-path:polygon(0 64px,100% 0,100% 100%,0 100%)}
+.ob--v3 .of__intro{max-width:none}
+.ob--v3 .of__velden{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ob--v3 .vn{grid-column:span 2}
+.ob--v3 .veld--mail{grid-column:auto}
+.ob--v3 .veld--opm{grid-column:span 2}
+.ob--v3 .of__verstuur{grid-column:auto;align-self:end}
+
+/* ---------- V4: licht, verhuizer voor de boog ---------- */
+.ob--v4 .ob__links{background:var(--creme);border-radius:var(--r) 0 0 var(--r)}
+.ob--v4 .ob__boog{position:relative;height:350px;margin:0 44px}
+.ob--v4 .ob__boog::before{content:"";position:absolute;left:0;right:0;bottom:0;top:30px;background:var(--boogvlak);border:2px solid var(--licht);border-bottom:0;border-radius:999px 999px 0 0}
+.ob--v4 .ob__fig{left:50%;transform:translateX(-50%);top:-42px;height:660px}
+.ob--v4 .ob__paneel{background:var(--creme);border-radius:0 0 0 var(--r);padding-top:26px}
+.ob--v4 .ob__paneel::before{display:none}
+.ob--v4 .label{color:var(--diep)}
+.ob--v4 .ob__kop{color:var(--navy)}
+.ob--v4 .ob__accent,.ob--v4 .stap__nr{color:var(--blauw)}
+.ob--v4 .stap strong,.ob--v4 .bel-zin{color:var(--navy)}
+
+/* ---------- V5: hele blok navy, verhuizer achter de schuine rand ---------- */
+.ob--v5{background:transparent;box-shadow:none}
+.ob--v5::before{content:"";position:absolute;inset:0;z-index:1;background:var(--navy);border-radius:var(--r);clip-path:polygon(0 160px,42% 0,100% 0,100% 100%,0 100%)}
+.ob--v5 .ob__fig{z-index:0;left:34px;top:-160px;height:520px}
+.ob--v5 .ob__links{z-index:2;color:#fff}
+.ob--v5 .ob__paneel{padding:190px 44px 40px}
+.ob--v5 .ob__paneel::before{display:none}
+.ob--v5 .label,.ob--v5 .ob__accent,.ob--v5 .stap__nr{color:var(--licht)}
+.ob--v5 .stap__nr{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:2px solid var(--licht);font-size:1rem}
+.ob--v5 .stap span:not(.stap__nr),.ob--v5 .bel-zin{color:#D5DDE8}
+.ob--v5 .ob__rechts{z-index:2;margin:40px 40px 40px 0;background:#fff;border-radius:12px;padding:32px 32px 32px}
+.keur{list-style:none;margin:28px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.2);display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px}
+.keur li{display:flex;align-items:center;gap:10px}
+.keur__kv span{font:400 .8rem/1.35 var(--f);color:#D5DDE8}
+.keur__kv b{font-size:1rem;color:#fff}
+.keur img[alt="Erkende Verhuizers"]{height:40px;width:auto}
+.keur img[alt="Lid van Top Movers"]{height:34px;width:auto}
+.podium--v5{--boven:180px}
+
+/* ---------- telefoon en tablet ---------- */
+@media (max-width:900px){
+  .podium{--boven:84px}
+  .ob{grid-template-columns:minmax(0,1fr)}
+  .ob__rechts{padding:28px 20px 28px}
+  .ob__paneel{padding:6px 24px 32px}
+  .ob__kop{font-size:clamp(1.75rem,7.4vw,2.2rem)}
+  .of__velden{grid-template-columns:minmax(0,1fr)}
+  .vn,.veld--mail,.veld--opm,.of__verstuur{grid-column:auto}
+  .vn{grid-template-columns:minmax(0,1fr);row-gap:6px;padding:14px 16px 16px}
+  .vn::before{display:none}
+  .vn__pijl{justify-self:center;transform:rotate(90deg);width:36px;height:36px}
+  .ob--v1 .ob__beeld,.ob--v2 .ob__beeld{--beeld-h:230px}
+  .ob--v1 .ob__fig{left:28px}
+  .ob--v2 .ob__links{order:0}
+  .ob--v2 .ob__fig{right:22px}
+  .ob--v2 .ob__paneel::before{border-radius:0}
+  .ob--v1 .ob__paneel::before{border-radius:0}
+  .ob--v3 .ob__band{background:transparent;padding:0}
+  .ob--v3 .ob__band::before{content:"";position:absolute;z-index:2;left:0;right:0;bottom:0;top:180px;background:var(--navy);clip-path:polygon(0 50px,100% 0,100% 100%,0 100%)}
+  .ob--v3 .ob__fig{right:22px;top:-40px;height:330px}
+  .ob--v3 .ob__bandtekst{max-width:none;padding:236px 24px 78px}
+  .ob--v3 .stappen{grid-template-columns:minmax(0,1fr);gap:16px}
+  .ob--v3 .ob__rechts{padding:6px 20px 28px}
+  .ob--v3 .of__velden{grid-template-columns:minmax(0,1fr)}
+  .ob--v3 .vn,.ob--v3 .veld--opm{grid-column:auto}
+  .ob--v4 .ob__links{border-radius:var(--r) var(--r) 0 0}
+  .ob--v4 .ob__boog{height:270px;margin:0 24px}
+  .ob--v4 .ob__fig{top:-36px;height:520px}
+  .ob--v4 .ob__paneel{border-radius:0}
+  .ob--v5::before{clip-path:polygon(0 150px,100% 40px,100% 100%,0 100%)}
+  .ob--v5 .ob__fig{left:18px;top:-118px;height:380px}
+  .ob--v5 .ob__paneel{padding:176px 24px 28px}
+  .ob--v5 .ob__rechts{margin:0 12px 12px;padding:24px 18px}
+  .podium--v5{--boven:130px}
+}
+@media (max-width:620px){
+  .of__verstuur .btn{width:100%}
+  .bel{width:100%;max-width:23rem}
+  .keur{gap:12px 20px}
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-caret" viewBox="0 0 24 24"><path fill="currentColor" d="M8.5 5.5l7 6.5-7 6.5z"/></symbol><symbol id="i-phone" viewBox="0 0 256 256"><defs><clipPath id="ti-phonea"><polygon points="-100,-100 348.09,-100 -100,348.09" fill="#fff"/></clipPath><clipPath id="ti-phoneb"><polygon points="356,356 -91.91,356 356,-91.91" fill="#fff"/></clipPath></defs><g clip-path="url(#ti-phonea)"><path d="M164.39,145.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,176,216,136,136,0,0,1,40,80,48.33,48.33,0,0,1,81.92,32.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L89.32,117a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#ti-phoneb)"><path d="M164.39,145.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,176,216,136,136,0,0,1,40,80,48.33,48.33,0,0,1,81.92,32.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L89.32,117a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></symbol><symbol id="i-arrow" viewBox="0 0 256 256"><defs><clipPath id="ti-arrowa"><polygon points="-100,-100 375.84,-100 -100,375.84" fill="#fff"/></clipPath><clipPath id="ti-arrowb"><polygon points="356,356 -64.16,356 356,-64.16" fill="#fff"/></clipPath></defs><g clip-path="url(#ti-arrowa)"><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><polyline points="144 56 216 128 144 200" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#ti-arrowb)"><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><polyline points="144 56 216 128 144 200" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></symbol></svg>
+<header class="pk">
+  <div class="pk__in">
+    <p class="pk__plek">Voorstel 25-09-2026, versie van Arnas</p>
+    <h1>Offerteblok: vijf varianten met een uitstekende verhuizer</h1>
+    <p>Naar het voorbeeld van het offerteblok van Brocken, in de huisstijl van De Bresser. Elke variant heeft een andere uitgeknipte verhuizer in een Top Movers-polo. Kies per variant Ja, Nee of Aangepast; onderaan kopieert u uw keuzes. De formulieren op deze pagina versturen niets.</p>
+    <nav aria-label="Varianten"><a href="#v1">V1</a><a href="#v2">V2</a><a href="#v3">V3</a><a href="#v4">V4</a><a href="#v5">V5</a><a href="#keuzes">Uw keuzes</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="var" id="v1" aria-labelledby="v1-titel">
+  <div class="var__kop">
+    <p class="var__nr">Variant 1</p>
+    <h2 class="var__titel" id="v1-titel">V1: Schuin navy, zoals het voorbeeld</h2>
+    <p class="var__uitleg">Het dichtst bij het Brocken-blok: een navy vlak links met een schuine bovenrand, de verhuizer met de De Bresser-doos staat erachter en steekt boven het blok uit. Witte chip, lichtblauwe cijfers, wit belvlak.</p>
+    <p class="var__bron">Verhuizer: verhuizer-bresser-bovenlijf-604.webp (De Bresser)</p>
+  </div>
+  <div class="podium podium--v1">
+    <div class="ob ob--v1">
+      <div class="ob__links">
+        <div class="ob__beeld"><img class="ob__fig" src="../../site/assets/img/beeld/verhuizer-bresser-bovenlijf-604.webp" width="320" height="604" alt="Verhuizer van De Bresser in een Top Movers-polo met een verhuisdoos van De Bresser" decoding="async"></div>
+        <div class="ob__paneel">
+          <span class="chip">Offerte aanvragen</span>
+          <h2 class="ob__kop">Geweldig verhuizen <span class="ob__accent">begint hier</span></h2>
+          <ol class="stappen">
+            <li class="stap"><span class="stap__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">3</span><strong>Alles op &eacute;&eacute;n plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op &eacute;&eacute;n plek.</span></li>
+          </ol>
+          <p class="bel-zin">Liever direct overleggen? Bel ons op</p>
+          <a class="bel" href="tel:+31135282372"><span class="bel__ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <div class="ob__rechts">
+        <form class="of" data-proef novalidate aria-label="Offerte aanvragen (proefversie)">
+          <p class="of__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+          <div class="of__velden">
+            <fieldset class="vn">
+              <legend class="vh">Van en naar</legend>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v1-van">Van</label>
+                <input id="v1-van" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+              </div>
+              <span class="vn__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v1-naar">Naar</label>
+                <input id="v1-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+                <label class="vink"><input type="checkbox">Nog onbekend of buitenland</label>
+              </div>
+            </fieldset>
+            <div class="veld veld--wanneer">
+              <label for="v1-datum">Wanneer</label>
+              <input id="v1-datum" type="date">
+              <label class="vink"><input type="checkbox">Weet ik nog niet</label>
+            </div>
+            <div class="veld"><label for="v1-soort">Soort offerte</label><select id="v1-soort"><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+            <div class="veld"><label for="v1-naam">Naam</label><input id="v1-naam" type="text" placeholder="Uw naam" autocomplete="off"></div>
+            <div class="veld"><label for="v1-tel">Telefoon</label><input id="v1-tel" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></div>
+            <div class="veld veld--mail"><label for="v1-mail">E-mail</label><input id="v1-mail" type="email" placeholder="u@email.nl" autocomplete="off"></div>
+            <div class="veld veld--opm"><label for="v1-opm">Opmerkingen (optioneel)</label><textarea id="v1-opm" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+            <div class="veld"><label for="v1-via">Offerte ontvangen via (optioneel)</label><select id="v1-via"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+            <div class="veld"><label for="v1-gevonden">Hoe heeft u ons gevonden? (optioneel)</label><select id="v1-gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+            <div class="of__verstuur">
+              <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+              <p class="of__privacy">Door dit formulier te versturen gaat u akkoord met onze <a href="../../site/privacyverklaring/">privacyverklaring</a>.</p>
+              <p class="of__proef" role="status" hidden>Proefversie: dit formulier verstuurt niets.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <fieldset class="keuze" data-id="V1">
+    <legend>Uw keuze voor V1</legend>
+    <div class="keuze__opties">
+      <label><input type="radio" name="k-V1" value="Ja">Ja</label>
+      <label><input type="radio" name="k-V1" value="Nee">Nee</label>
+      <label><input type="radio" name="k-V1" value="Aangepast">Aangepast</label>
+    </div>
+    <label class="keuze__tekst" hidden>Wat moet er anders?<textarea rows="2"></textarea></label>
+  </fieldset>
+</section>
+<section class="var" id="v2" aria-labelledby="v2-titel">
+  <div class="var__kop">
+    <p class="var__nr">Variant 2</p>
+    <h2 class="var__titel" id="v2-titel">V2: Blauw rechts, bellen voorop</h2>
+    <p class="var__uitleg">Gespiegeld: formulier links, rechts een vlak in het lichtblauw van het logo. De verhuizer belt, en het telefoonnummer is het grootste element in het vlak. Stappen als tijdlijn met witte bolletjes.</p>
+    <p class="var__bron">Verhuizer: contact-bel-man-1100.webp (De Kievit, Top Movers)</p>
+  </div>
+  <div class="podium podium--v2">
+    <div class="ob ob--v2">
+      <div class="ob__links">
+        <div class="ob__beeld"><img class="ob__fig" src="../../_archief-kievit/site/assets/img/contact-bel-man-1100.webp" width="1100" height="1672" alt="Verhuizer in een Top Movers-polo aan de telefoon" decoding="async"></div>
+        <div class="ob__paneel">
+          <span class="label">Offerte aanvragen</span>
+          <h2 class="ob__kop">Geweldig verhuizen <span class="ob__accent">begint hier</span></h2>
+          <ol class="stappen">
+            <li class="stap"><span class="stap__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">3</span><strong>Alles op &eacute;&eacute;n plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op &eacute;&eacute;n plek.</span></li>
+          </ol>
+          <p class="bel-zin">Liever direct overleggen? Bel ons op</p>
+          <a class="bel bel--groot" href="tel:+31135282372"><span class="bel__ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <div class="ob__rechts">
+        <form class="of" data-proef novalidate aria-label="Offerte aanvragen (proefversie)">
+          <p class="of__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+          <div class="of__velden">
+            <fieldset class="vn">
+              <legend class="vh">Van en naar</legend>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v2-van">Van</label>
+                <input id="v2-van" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+              </div>
+              <span class="vn__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v2-naar">Naar</label>
+                <input id="v2-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+                <label class="vink"><input type="checkbox">Nog onbekend of buitenland</label>
+              </div>
+            </fieldset>
+            <div class="veld veld--wanneer">
+              <label for="v2-datum">Wanneer</label>
+              <input id="v2-datum" type="date">
+              <label class="vink"><input type="checkbox">Weet ik nog niet</label>
+            </div>
+            <div class="veld"><label for="v2-soort">Soort offerte</label><select id="v2-soort"><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+            <div class="veld"><label for="v2-naam">Naam</label><input id="v2-naam" type="text" placeholder="Uw naam" autocomplete="off"></div>
+            <div class="veld"><label for="v2-tel">Telefoon</label><input id="v2-tel" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></div>
+            <div class="veld veld--mail"><label for="v2-mail">E-mail</label><input id="v2-mail" type="email" placeholder="u@email.nl" autocomplete="off"></div>
+            <div class="veld veld--opm"><label for="v2-opm">Opmerkingen (optioneel)</label><textarea id="v2-opm" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+            <div class="veld"><label for="v2-via">Offerte ontvangen via (optioneel)</label><select id="v2-via"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+            <div class="veld"><label for="v2-gevonden">Hoe heeft u ons gevonden? (optioneel)</label><select id="v2-gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+            <div class="of__verstuur">
+              <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+              <p class="of__privacy">Door dit formulier te versturen gaat u akkoord met onze <a href="../../site/privacyverklaring/">privacyverklaring</a>.</p>
+              <p class="of__proef" role="status" hidden>Proefversie: dit formulier verstuurt niets.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <fieldset class="keuze" data-id="V2">
+    <legend>Uw keuze voor V2</legend>
+    <div class="keuze__opties">
+      <label><input type="radio" name="k-V2" value="Ja">Ja</label>
+      <label><input type="radio" name="k-V2" value="Nee">Nee</label>
+      <label><input type="radio" name="k-V2" value="Aangepast">Aangepast</label>
+    </div>
+    <label class="keuze__tekst" hidden>Wat moet er anders?<textarea rows="2"></textarea></label>
+  </fieldset>
+</section>
+<section class="var" id="v3" aria-labelledby="v3-titel">
+  <div class="var__kop">
+    <p class="var__nr">Variant 3</p>
+    <h2 class="var__titel" id="v3-titel">V3: Brede band, formulier eronder</h2>
+    <p class="var__uitleg">Voor een brede plek op de pagina: bovenaan een navy band met de stappen naast elkaar, eronder het formulier in drie kolommen met een schuine bovenrand. De verhuizer met de steekwagen staat rechts in de band en steekt erboven uit.</p>
+    <p class="var__bron">Verhuizer: werker-steekwagen-uitsnede-900.webp (De Bresser)</p>
+  </div>
+  <div class="podium podium--v3">
+    <div class="ob ob--v3">
+      <div class="ob__band">
+        <img class="ob__fig" src="../../site/assets/img/beeld/werker-steekwagen-uitsnede-900.webp" width="488" height="900" alt="Verhuizer in een Top Movers-polo met een steekwagen" decoding="async">
+        <div class="ob__bandtekst">
+          <span class="chip chip--groen">Offerte aanvragen</span>
+          <h2 class="ob__kop">Geweldig verhuizen <span class="ob__accent">begint hier</span></h2>
+          <ol class="stappen">
+            <li class="stap"><span class="stap__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">3</span><strong>Alles op &eacute;&eacute;n plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op &eacute;&eacute;n plek.</span></li>
+          </ol>
+          <div class="ob__belrij"><p class="bel-zin">Liever direct overleggen? Bel ons op</p>
+          <a class="bel bel--lijn" href="tel:+31135282372"><span class="bel__ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a></div>
+        </div>
+      </div>
+      <div class="ob__rechts">
+        <form class="of" data-proef novalidate aria-label="Offerte aanvragen (proefversie)">
+          <p class="of__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+          <div class="of__velden">
+            <fieldset class="vn">
+              <legend class="vh">Van en naar</legend>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v3-van">Van</label>
+                <input id="v3-van" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+              </div>
+              <span class="vn__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v3-naar">Naar</label>
+                <input id="v3-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+                <label class="vink"><input type="checkbox">Nog onbekend of buitenland</label>
+              </div>
+            </fieldset>
+            <div class="veld veld--wanneer">
+              <label for="v3-datum">Wanneer</label>
+              <input id="v3-datum" type="date">
+              <label class="vink"><input type="checkbox">Weet ik nog niet</label>
+            </div>
+            <div class="veld"><label for="v3-soort">Soort offerte</label><select id="v3-soort"><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+            <div class="veld"><label for="v3-naam">Naam</label><input id="v3-naam" type="text" placeholder="Uw naam" autocomplete="off"></div>
+            <div class="veld"><label for="v3-tel">Telefoon</label><input id="v3-tel" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></div>
+            <div class="veld veld--mail"><label for="v3-mail">E-mail</label><input id="v3-mail" type="email" placeholder="u@email.nl" autocomplete="off"></div>
+            <div class="veld veld--opm"><label for="v3-opm">Opmerkingen (optioneel)</label><textarea id="v3-opm" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+            <div class="veld"><label for="v3-via">Offerte ontvangen via (optioneel)</label><select id="v3-via"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+            <div class="veld"><label for="v3-gevonden">Hoe heeft u ons gevonden? (optioneel)</label><select id="v3-gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+            <div class="of__verstuur">
+              <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+              <p class="of__privacy">Door dit formulier te versturen gaat u akkoord met onze <a href="../../site/privacyverklaring/">privacyverklaring</a>.</p>
+              <p class="of__proef" role="status" hidden>Proefversie: dit formulier verstuurt niets.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <fieldset class="keuze" data-id="V3">
+    <legend>Uw keuze voor V3</legend>
+    <div class="keuze__opties">
+      <label><input type="radio" name="k-V3" value="Ja">Ja</label>
+      <label><input type="radio" name="k-V3" value="Nee">Nee</label>
+      <label><input type="radio" name="k-V3" value="Aangepast">Aangepast</label>
+    </div>
+    <label class="keuze__tekst" hidden>Wat moet er anders?<textarea rows="2"></textarea></label>
+  </fieldset>
+</section>
+<section class="var" id="v4" aria-labelledby="v4-titel">
+  <div class="var__kop">
+    <p class="var__nr">Variant 4</p>
+    <h2 class="var__titel" id="v4-titel">V4: Licht, met de boog</h2>
+    <p class="var__uitleg">De lichte variant voor een pagina met al veel donkere blokken. De verhuizer met de dekens staat voor een lichtblauwe boog, net als het blok "Offerte per mail" op de home, en steekt boven de boog uit. Navy tekst, blauwe cijfers, navy belknop.</p>
+    <p class="var__bron">Verhuizer: werker-dekens-uitsnede-1100.webp (De Bresser)</p>
+  </div>
+  <div class="podium podium--v4">
+    <div class="ob ob--v4">
+      <div class="ob__links">
+        <div class="ob__boog"><img class="ob__fig" src="../../site/assets/img/beeld/werker-dekens-uitsnede-1100.webp" width="503" height="1100" alt="Verhuizer in een Top Movers-polo met opgevouwen verhuisdekens over de arm" decoding="async"></div>
+        <div class="ob__paneel">
+          <span class="label">Offerte aanvragen</span>
+          <h2 class="ob__kop">Geweldig verhuizen <span class="ob__accent">begint hier</span></h2>
+          <ol class="stappen">
+            <li class="stap"><span class="stap__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">3</span><strong>Alles op &eacute;&eacute;n plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op &eacute;&eacute;n plek.</span></li>
+          </ol>
+          <p class="bel-zin">Liever direct overleggen? Bel ons op</p>
+          <a class="bel bel--navy" href="tel:+31135282372"><span class="bel__ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <div class="ob__rechts">
+        <form class="of" data-proef novalidate aria-label="Offerte aanvragen (proefversie)">
+          <p class="of__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+          <div class="of__velden">
+            <fieldset class="vn">
+              <legend class="vh">Van en naar</legend>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v4-van">Van</label>
+                <input id="v4-van" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+              </div>
+              <span class="vn__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v4-naar">Naar</label>
+                <input id="v4-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+                <label class="vink"><input type="checkbox">Nog onbekend of buitenland</label>
+              </div>
+            </fieldset>
+            <div class="veld veld--wanneer">
+              <label for="v4-datum">Wanneer</label>
+              <input id="v4-datum" type="date">
+              <label class="vink"><input type="checkbox">Weet ik nog niet</label>
+            </div>
+            <div class="veld"><label for="v4-soort">Soort offerte</label><select id="v4-soort"><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+            <div class="veld"><label for="v4-naam">Naam</label><input id="v4-naam" type="text" placeholder="Uw naam" autocomplete="off"></div>
+            <div class="veld"><label for="v4-tel">Telefoon</label><input id="v4-tel" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></div>
+            <div class="veld veld--mail"><label for="v4-mail">E-mail</label><input id="v4-mail" type="email" placeholder="u@email.nl" autocomplete="off"></div>
+            <div class="veld veld--opm"><label for="v4-opm">Opmerkingen (optioneel)</label><textarea id="v4-opm" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+            <div class="veld"><label for="v4-via">Offerte ontvangen via (optioneel)</label><select id="v4-via"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+            <div class="veld"><label for="v4-gevonden">Hoe heeft u ons gevonden? (optioneel)</label><select id="v4-gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+            <div class="of__verstuur">
+              <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+              <p class="of__privacy">Door dit formulier te versturen gaat u akkoord met onze <a href="../../site/privacyverklaring/">privacyverklaring</a>.</p>
+              <p class="of__proef" role="status" hidden>Proefversie: dit formulier verstuurt niets.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <fieldset class="keuze" data-id="V4">
+    <legend>Uw keuze voor V4</legend>
+    <div class="keuze__opties">
+      <label><input type="radio" name="k-V4" value="Ja">Ja</label>
+      <label><input type="radio" name="k-V4" value="Nee">Nee</label>
+      <label><input type="radio" name="k-V4" value="Aangepast">Aangepast</label>
+    </div>
+    <label class="keuze__tekst" hidden>Wat moet er anders?<textarea rows="2"></textarea></label>
+  </fieldset>
+</section>
+<section class="var" id="v5" aria-labelledby="v5-titel">
+  <div class="var__kop">
+    <p class="var__nr">Variant 5</p>
+    <h2 class="var__titel" id="v5-titel">V5: Heel het blok navy, verhuizer achter de rand</h2>
+    <p class="var__uitleg">Het hele blok is navy met een schuine bovenrand; de verhuizer staat erachter en kijkt over de rand. Het formulier ligt als witte kaart in het vlak. Onderin de keurmerken: Klantenvertellen, Erkende Verhuizers en Top Movers.</p>
+    <p class="var__bron">Verhuizer: werker-doos-uitsnede-1100.webp (De Bresser)</p>
+  </div>
+  <div class="podium podium--v5">
+    <div class="ob ob--v5">
+      <img class="ob__fig" src="../../site/assets/img/beeld/werker-doos-uitsnede-1100.webp" width="456" height="1100" alt="Verhuizer in een Top Movers-polo met een verhuisdoos" decoding="async">
+      <div class="ob__links">
+        <div class="ob__paneel">
+          <span class="label">Offerte aanvragen</span>
+          <h2 class="ob__kop">Geweldig verhuizen <span class="ob__accent">begint hier</span></h2>
+          <ol class="stappen">
+            <li class="stap"><span class="stap__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li class="stap"><span class="stap__nr" aria-hidden="true">3</span><strong>Alles op &eacute;&eacute;n plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op &eacute;&eacute;n plek.</span></li>
+          </ol>
+          <p class="bel-zin">Liever direct overleggen? Bel ons op</p>
+          <a class="bel bel--lijn" href="tel:+31135282372"><span class="bel__ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+          <ul class="keur" aria-label="Keurmerken">
+            <li class="keur__kv"><img src="../../site/assets/img/keurmerk/klantenvertellen-icoon.svg" width="26" height="24" alt=""><span><b>9</b> op Klantenvertellen<br>1.538 beoordelingen</span></li>
+            <li><img src="../../site/assets/img/keurmerk/erkende-verhuizers-wit.svg" width="165" height="80" alt="Erkende Verhuizers"></li>
+            <li><img src="../../site/assets/img/merk/topmovers-wit.png" width="336" height="160" alt="Lid van Top Movers"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ob__rechts">
+        <form class="of" data-proef novalidate aria-label="Offerte aanvragen (proefversie)">
+          <p class="of__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+          <div class="of__velden">
+            <fieldset class="vn">
+              <legend class="vh">Van en naar</legend>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v5-van">Van</label>
+                <input id="v5-van" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+              </div>
+              <span class="vn__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              <div class="vn__deel">
+                <label class="vn__kop" for="v5-naar">Naar</label>
+                <input id="v5-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off">
+                <label class="vink"><input type="checkbox">Nog onbekend of buitenland</label>
+              </div>
+            </fieldset>
+            <div class="veld veld--wanneer">
+              <label for="v5-datum">Wanneer</label>
+              <input id="v5-datum" type="date">
+              <label class="vink"><input type="checkbox">Weet ik nog niet</label>
+            </div>
+            <div class="veld"><label for="v5-soort">Soort offerte</label><select id="v5-soort"><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+            <div class="veld"><label for="v5-naam">Naam</label><input id="v5-naam" type="text" placeholder="Uw naam" autocomplete="off"></div>
+            <div class="veld"><label for="v5-tel">Telefoon</label><input id="v5-tel" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></div>
+            <div class="veld veld--mail"><label for="v5-mail">E-mail</label><input id="v5-mail" type="email" placeholder="u@email.nl" autocomplete="off"></div>
+            <div class="veld veld--opm"><label for="v5-opm">Opmerkingen (optioneel)</label><textarea id="v5-opm" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+            <div class="veld"><label for="v5-via">Offerte ontvangen via (optioneel)</label><select id="v5-via"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+            <div class="veld"><label for="v5-gevonden">Hoe heeft u ons gevonden? (optioneel)</label><select id="v5-gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+            <div class="of__verstuur">
+              <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+              <p class="of__privacy">Door dit formulier te versturen gaat u akkoord met onze <a href="../../site/privacyverklaring/">privacyverklaring</a>.</p>
+              <p class="of__proef" role="status" hidden>Proefversie: dit formulier verstuurt niets.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <fieldset class="keuze" data-id="V5">
+    <legend>Uw keuze voor V5</legend>
+    <div class="keuze__opties">
+      <label><input type="radio" name="k-V5" value="Ja">Ja</label>
+      <label><input type="radio" name="k-V5" value="Nee">Nee</label>
+      <label><input type="radio" name="k-V5" value="Aangepast">Aangepast</label>
+    </div>
+    <label class="keuze__tekst" hidden>Wat moet er anders?<textarea rows="2"></textarea></label>
+  </fieldset>
+</section>
+<section class="uit" id="keuzes" aria-labelledby="keuzes-titel">
+  <h2 id="keuzes-titel">Uw keuzes</h2>
+  <pre class="uit__tekst" id="keuzes-tekst">Nog niets gekozen.</pre>
+  <button class="btn btn--navy" type="button" id="kopieer">Kopieer mijn keuzes</button>
+  <p class="uit__melding" id="kopieer-melding" role="status"></p>
+</section>
+</main>
+<script>
+// Proefformulieren: niets versturen, alleen melden dat het een proef is.
+document.querySelectorAll('form[data-proef]').forEach(function(f){
+  f.addEventListener('submit',function(e){e.preventDefault();var m=f.querySelector('.of__proef');if(m)m.hidden=false;});
+});
+// Keuze per variant (Ja, Nee of Aangepast), bewaard in deze browser.
+(function(){
+  var SLEUTEL='offerteblok-verhuizer-20260925', staat={};
+  try{staat=JSON.parse(localStorage.getItem(SLEUTEL)||'{}')||{};}catch(e){staat={};}
+  function bewaar(){try{localStorage.setItem(SLEUTEL,JSON.stringify(staat));}catch(e){}}
+  var uit=document.getElementById('keuzes-tekst');
+  function toon(){
+    var regels=[];
+    document.querySelectorAll('.keuze').forEach(function(fs){
+      var id=fs.dataset.id,k=staat[id];
+      if(!k||!k.keuze)return;
+      regels.push(k.keuze==='Aangepast'?id+': Aangepast'+(k.tekst&&k.tekst.trim()?' ('+k.tekst.trim()+')':''):id+': '+k.keuze);
+    });
+    uit.textContent=regels.length?regels.join('\n'):'Nog niets gekozen.';
+  }
+  document.querySelectorAll('.keuze').forEach(function(fs){
+    var id=fs.dataset.id,veld=fs.querySelector('.keuze__tekst'),ta=veld.querySelector('textarea'),k=staat[id]||{};
+    if(k.keuze){var r=fs.querySelector('input[value="'+k.keuze+'"]');if(r)r.checked=true;}
+    ta.value=k.tekst||'';veld.hidden=k.keuze!=='Aangepast';
+    fs.addEventListener('change',function(e){
+      if(e.target.type!=='radio')return;
+      staat[id]={keuze:e.target.value,tekst:ta.value};veld.hidden=e.target.value!=='Aangepast';
+      if(!veld.hidden)ta.focus();
+      bewaar();toon();
+    });
+    ta.addEventListener('input',function(){staat[id]={keuze:'Aangepast',tekst:ta.value};bewaar();toon();});
+  });
+  toon();
+  var knop=document.getElementById('kopieer'),melding=document.getElementById('kopieer-melding');
+  knop.addEventListener('click',function(){
+    var tekst='Offerteblok varianten\n'+uit.textContent;
+    function selecteer(){var r=document.createRange();r.selectNodeContents(uit);var s=getSelection();s.removeAllRanges();s.addRange(r);
+      melding.textContent='Automatisch kopiëren lukte niet. De tekst is geselecteerd: kopieer hem met Cmd+C.';}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(tekst).then(function(){melding.textContent='Gekopieerd. Plak het in uw bericht.';},selecteer);
+    }else selecteer();
+  });
+})();
+
+</script>
+</body>
+</html>

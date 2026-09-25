@@ -57,6 +57,9 @@ ZONDER_HEADERFORMULIER = {nav.OFFERTE}
 # /gebouwbeheer/, /meubelprojecten/ en de vacatures. 25-09-2026.
 BERICHT = (WERK / "blok-bericht.html").read_text(encoding="utf-8")
 BERICHT_OP = {"/verhuizen/", "/assetmanagement/", "/duurzame-werkomgeving/", "/breda/", "/roosendaal/", "/bergen-op-zoom/"}
+# Offerteblok (V2 met gele rand, 25-09-2026): boven de footer op elke pagina behalve /offerte/, ook onder het
+# berichtformulier (keuze gebruiker: "Overal, naast bericht"). Op /offerte/ staat het grote formulier al.
+OFFERTEBLOK = (WERK / "blok-offerteblok.html").read_text(encoding="utf-8")
 
 
 def bericht_op(href, inhoud=""):
@@ -212,31 +215,48 @@ def kruimels(href, titel):
 # Hero-video, alleen op de homepage (zoals de-kievit.nl): echte beelden van De Bresser uit de eigen YouTube-films
 # (Algemeen 2015, Inboedelopslag 2016); bronnen en knipregels in hero/video/debresser/. De bron komt pas als de film
 # echt getoond wordt (vanaf 761px, geen reduced-motion), de 1280-versie tot 1280px breed; telefoon en reduced-motion
-# houden de foto. WCAG 2.2.2: de film duurt 30 s en herhaalt zich, dus er hoort een pauzeknop bij.
+# houden de foto. WCAG 2.2.2: de film duurt 39 s en herhaalt zich, dus er hoort een pauzeknop bij.
 # Sinds 25-09-2026 (d5) de homeheader van Tugche (github TugcheSezr/debresser, index.html .hero), op wens van de
 # gebruiker: "add the header from the tugche, keep the form from mine". Haar film hero-compleet(-1280).mp4 met de
 # poster home-compleet-*.webp, haar teamuitsnede, de wisselkop "Geweldig in ..." en de ruit en het Top Movers-
 # beeldmerk als decor. De oude film hero-debresser-*.mp4 blijft in assets staan.
+# 25-09-2026, wens gebruiker: de 100-jaarfilm van De Bresser als herofilm, live van YouTube (geen eigen kopie) en
+# zonder ondertiteling. De ondertiteling zit in het beeld zelf, in de onderste zesde: de speler is groter dan de hero
+# (.hero__yt in style.css), zodat die band onder de hero wegvalt. YouTubes eigen automatische ondertiteling gaat uit.
+# Start op 1,44 s, na het zwart en de inzoom; de poster is dat beeld. YouTubes titelregel, die na het starten ongeveer
+# 4 s bovenin staat, valt boven de hero weg, dus de speler komt in beeld zodra hij speelt. Op 39,9 s terug naar het
+# begin: de film eindigt op 40,38 s, en getDuration() geeft soms afgerond 41 s, dus daar niet op rekenen. Zie
+# hero/video/100jaar/. Tugches film en poster blijven in assets staan.
 HERO_VIDEO = """
-  <video class="hero__video" muted loop playsinline preload="none" aria-hidden="true" data-src="/assets/video/hero-compleet.mp4" data-src-klein="/assets/video/hero-compleet-1280.mp4"></video>"""
+  <div class="hero__video hero__yt" aria-hidden="true" inert data-youtube="TV39Q2X01C0" data-start="1.44" data-einde="39.9"><div id="heroYouTube"></div></div>"""
+# Decor sinds 25-09-2026 (plaatser, Shahab): alleen het witte Top Movers-logo rechtsonder. De ruit en het grijze
+# Top Movers-beeldmerk zijn eruit. CSS: blok "artifacts homepage (plaatser 25-09-2026)" onderaan _werk/style.css.
 HERO_DECOR = """
-  <svg class="art-ruit art-ruit--hero" viewBox="0 0 100 100" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" d="M50 3 97 50 50 97 3 50Z"/></svg>
-  <img class="art-h1" src="/assets/img/merk/beeldmerk-topmovers.svg" alt="" width="813" height="225" loading="lazy" decoding="async">"""
+  <img class="art-b6" src="/assets/img/deco/logo-topmovers-wit.svg" alt="" width="813" height="387" loading="lazy" decoding="async">"""
 HERO_VIDEOKNOP = """
   <button class="hero__videoknop" id="heroVideoKnop" type="button" hidden aria-pressed="false">
     <svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/></svg>
     <span class="hero__videoknop__lbl">Film pauzeren</span>
   </button>
   <script>
-  (function(){var v=document.querySelector('.hero__video'),k=document.getElementById('heroVideoKnop');if(!v||!k)return;
-   var mq=matchMedia('(min-width:761px) and (prefers-reduced-motion:no-preference)');
+  (function(){var h=document.querySelector('.hero__yt'),k=document.getElementById('heroVideoKnop');if(!h||!k)return;
+   var mq=matchMedia('(min-width:761px) and (prefers-reduced-motion:no-preference)'),START=+h.dataset.start,EINDE=+h.dataset.einde,p,gestart=false,klaar=false,uit=false;
    var PAUZE='<rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/>',SPEEL='<path d="M2 1l9 6-9 6z"/>';
-   function toon(){k.hidden=!mq.matches||!v.src}
-   function start(){if(!mq.matches||v.src)return;v.src=v.dataset[innerWidth>1280?'src':'srcKlein'];v.play().catch(function(){});toon()}
-   k.addEventListener('click',function(){var uit=!v.paused;if(uit)v.pause();else v.play().catch(function(){});
+   function toon(){k.hidden=!mq.matches||!klaar}
+   function stand(e){var S=YT.PlayerState;
+    if(e.data===S.PLAYING){if(p.unloadModule)p.unloadModule('captions');h.classList.add('is-speelt')}
+    else if(e.data===S.PAUSED||e.data===S.ENDED)h.classList.remove('is-speelt');
+    if(e.data===S.ENDED){p.seekTo(START,true);p.playVideo()}}
+   function start(){if(!mq.matches||gestart)return;gestart=true;
+    window.onYouTubeIframeAPIReady=function(){p=new YT.Player('heroYouTube',{host:'https://www.youtube-nocookie.com',videoId:h.dataset.youtube,
+     playerVars:{autoplay:1,mute:1,controls:0,disablekb:1,fs:0,rel:0,iv_load_policy:3,cc_load_policy:0,playsinline:1},
+     events:{onReady:function(){klaar=true;p.seekTo(START,true);p.playVideo();toon();
+      setInterval(function(){if(p.getCurrentTime()>EINDE)p.seekTo(START,true)},250)},onStateChange:stand}})};
+    var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s)}
+   k.addEventListener('click',function(){uit=!uit;if(uit)p.pauseVideo();else p.playVideo();
     k.setAttribute('aria-pressed',uit?'true':'false');k.querySelector('.hero__videoknop__lbl').textContent=uit?'Film afspelen':'Film pauzeren';k.querySelector('svg').innerHTML=uit?SPEEL:PAUZE});
    if(document.readyState==='complete')start();else addEventListener('load',start);
-   mq.addEventListener('change',function(){if(!mq.matches&&v.src)v.pause();start();toon()})})();
+   mq.addEventListener('change',function(){if(klaar){if(!mq.matches)p.pauseVideo();else if(!uit)p.playVideo()}start();toon()})})();
   </script>"""
 
 
@@ -245,8 +265,11 @@ HERO_VIDEOKNOP = """
 # vrijstaande versie staat ernaast (-uitsnede.png). Opmaak in het d1-blok van style.css (homehero-trio).
 # 25-09-2026 (d5, na overleg met d1): de drie werkers zijn vervangen door Tugches uitsnede van het echte team
 # (hero-team.webp, 730x500); de drie-werkers-*.webp blijven in assets staan.
+# 25-09-2026 (Shahab): het team is vervangen door de trio-uitsnede van de-kievit.nl zelf (team-cutout-trio-g4, 900 en
+# 1600 breed, bestanden ongewijzigd overgenomen); home-team-730.webp blijft in assets staan. De hoogte komt uit het
+# d5-blok (359px vanaf 761px, 150-190px op de telefoon), dus sizes = die hoogte x 1600/915: 628px en 332px.
 HERO_TRIO = """
-  <picture class="hero__pic"><img class="hero__person" src="/assets/img/hero/home-team-730.webp" width="730" height="500" alt="Het verhuisteam van De Bresser" decoding="async"></picture>"""
+  <picture class="hero__pic"><img class="hero__person" src="/assets/img/hero/team-cutout-trio-g4-1600.webp" srcset="/assets/img/hero/team-cutout-trio-g4-900.webp 900w, /assets/img/hero/team-cutout-trio-g4-1600.webp 1600w" sizes="(max-width:760px) 332px, 628px" width="1600" height="915" alt="Drie verhuizers in Top Movers-shirt met de duim omhoog" decoding="async"></picture>"""
 
 
 def hero(href, titel, meta, home=False, formulier=False):
@@ -256,10 +279,10 @@ def hero(href, titel, meta, home=False, formulier=False):
     focus = f' style="object-position:50% {meta["HERO_FOCUS"]}%"' if meta.get("HERO_FOCUS") else ""
     lead = f'\n      <p class="hero__sub">{meta["LEAD"]}</p>' if meta.get("LEAD") and not home else ""
     if home:
-        # Tugches poster (een beeld uit haar film) in plaats van de gewone homefoto; alleen hier gebruikt.
-        src = "/assets/img/hero/home-compleet-1920.webp"
-        srcset = ", ".join(f"/assets/img/hero/home-compleet-{w}.webp {w}w" for w in (900, 1280, 1920))
-        alt = "Vrachtwagens van De Bresser aan de laaddocks van een bedrijfshal, van bovenaf gezien"
+        # Poster = het eerste beeld van de herofilm (hero/video/100jaar/), in plaats van de gewone homefoto; alleen hier.
+        src = "/assets/img/hero/home-100jaar-1920.webp"
+        srcset = ", ".join(f"/assets/img/hero/home-100jaar-{w}.webp {w}w" for w in (900, 1280, 1920))
+        alt = "Verhuizer met een verhuisdoos van De Bresser, tussen gestapelde dozen en verhuisdekens"
     kop = (f'<h1 class="hero__title hero__title--merk" id="hero-titel">'
            '<span class="sb-verborgen">Geweldig in verhuizen, opslag en logistiek. </span>'
            '<span aria-hidden="true">Geweldig in <span class="hero__wissel" data-woorden="verhuizen|opslag|logistiek">verhuizen</span></span>'
@@ -648,6 +671,11 @@ def pagina(href):
         laatste = re.findall(r'<section class="([^"]*)"', inhoud)
         creme = not laatste or "sectie--creme2" not in laatste[-1]
         delen.append(BERICHT.replace("{{ACHTERGROND}}", " sectie--creme2" if creme else ""))
+    if href != nav.OFFERTE:
+        # ook hier een andere achtergrond dan het blok erboven (het berichtblok is diepblauw)
+        laatste = re.findall(r'<section class="([^"]*)"', delen[-1])
+        creme = not laatste or "sectie--creme2" not in laatste[-1]
+        delen.append(OFFERTEBLOK.replace("{{ACHTERGROND}}", " sectie--creme2" if creme else ""))
     naam = hero_naam(href, meta, home=href == "/")
     return document(href, titel, "\n\n".join(delen), beschrijving,
                     doc_titel=("De Bresser - " + nav.PAYOFF.replace("&amp;", "&")) if href == "/" else None,

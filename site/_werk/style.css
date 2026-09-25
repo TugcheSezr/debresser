@@ -1124,6 +1124,17 @@ a.merk:hover,a.merk:focus-visible{opacity:1}
 /* ---------- hero-video (V3, sessie -64, keuze Shahab 28-aug): zelfde laag als picture.hero__bg, later in de DOM dus boven de foto en onder de veil; mobiel en reduced-motion tonen de foto ---------- */
 .hero__video{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}
 @media(max-width:760px),(prefers-reduced-motion:reduce){.hero__video{display:none}}
+/* 25-09-2026: de 100-jaarfilm live van YouTube (HERO_VIDEO in build_paginas.py). De speler (2:1) begint 72px boven de
+   hero, zodat YouTubes titelregel (tot 52px hoog, gemeten bij spelers van 1387 tot 2560 breed) erbuiten valt, en is zo
+   groot dat de bovenste vijf zesde van het beeld de rest van de hero vult; de onderste zesde, met de ingebrande
+   ondertiteling, valt onder de hero weg. Vanaf 761px staat de poster (dat deel van het eerste beeld, 2,4:1) precies zo. */
+.hero__yt{overflow:hidden;container-type:size;opacity:0;transition:opacity .6s var(--ease)}
+.hero__yt.is-speelt{opacity:1}
+.hero__yt iframe{--b:max(100cqw,calc(2.4 * (100cqh + 72px)));position:absolute;top:-72px;left:50%;width:var(--b);height:calc(var(--b) / 2);transform:translateX(-50%);border:0}
+@media(min-width:761px) and (prefers-reduced-motion:no-preference){
+  .hero__bg:has(+ .hero__yt){container-type:size;overflow:hidden}
+  .hero__bg:has(+ .hero__yt) img{--b:max(100cqw,calc(2.4 * (100cqh + 72px)));position:absolute;top:-72px;left:50%;width:var(--b);max-width:none;height:calc(var(--b) / 2.4);transform:translateX(-50%)}
+}
 
 /* ---------- artifacts (28-aug, sessie dienstenblok): Top Movers-vormen als design-aanvulling ----------
    Bron van dit blok: site/_werk/artifacts.css (verdwijnt het hier, plak het per append terug).
@@ -2078,6 +2089,17 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-voordelen__kaarten li:nth-child(2){background:#F8EDCB}
 .sb-voordelen__kaarten li:nth-child(3){background:#DFEFCF}
 .sb-voordelen__kaarten li:nth-child(4){background:#E3DEF3}
+/* home #waarom, de vier kaarten in de drie logokleuren en het geel van de site (3936dcac, 25-09-2026). Wens gebruiker:
+   "deze kleur van geel, de 3 kleuren van het bresser logo ga je als kleur gebruiken voor deze 4 blokken en text wit".
+   Logopalet uit het merkboek: blauw #007DC2, groen #6DB23F, donkerblauw #00498F; geel = --geel (het gele blok van
+   .sb-terugbel). Alleen de home (.sb-pop), /duurzame-werkomgeving/ houdt de tinten hierboven. Wit haalt op #00498F
+   8,9:1 en op #007DC2 4,46:1, op #6DB23F maar 2,6:1 en op #FFC400 maar 1,6:1. Iconen wit mee. */
+.sb-pop+.sb-voordelen__kaarten li:nth-child(1){background:#007DC2}
+.sb-pop+.sb-voordelen__kaarten li:nth-child(2){background:var(--geel)}
+.sb-pop+.sb-voordelen__kaarten li:nth-child(3){background:#6DB23F}
+.sb-pop+.sb-voordelen__kaarten li:nth-child(4){background:#00498F}
+.sb-pop+.sb-voordelen__kaarten :is(h3,p,a){color:var(--wit)}
+.sb-pop+.sb-voordelen__kaarten img{filter:brightness(0) invert(1)}
 /* Desktop past op een scherm (1440x900: 1101 -> 819px): de kaarten bepalen de rijhoogte, niet de foto (die vult de rij,
    bovenkant in beeld), en wat minder lucht. Telefoon blijft zoals hij was. */
 @media(min-width:861px){
@@ -2101,6 +2123,33 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-pop__foto{clip-path:inset(26.84cqw 0 1cqw 49cqw round var(--r))}
 .sb-pop__uit{clip-path:inset(0 0 calc(78.66cqw - 1px) 0);pointer-events:none}
 @media(max-width:860px){.sb-voordelen__foto.sb-pop{aspect-ratio:505/420}}
+/* home #waarom: vier gelijke kaarten, samen precies zo hoog als het fotokader (12, 25-09-2026). Wens gebruiker: "alle 4
+   gelijkmatig en even groot als het blok links ervan, het hoofd en de rug mogen erboven uitsteken". Het kader bepaalt nu de
+   rijhoogte: de figure krijgt de maat van het zichtbare kader (100 breed, 149 x .708 - 26.84 - 1 = 77.652cqw hoog, zie de
+   clip-paths hierboven) en de kaarten vullen die hoogte in twee gelijke rijen. Het icoon staat naast de kop in plaats van
+   erboven, anders passen de teksten niet (1440: kaart 1 had 226px nodig, het kader geeft (392 - 16) / 2 = 188px; nu 183px).
+   De rij begint nu gelijk met het kader, niet 28px erboven; de intro krijgt daarom 28px extra ruimte (3.5rem), zodat foto
+   en hoofd op dezelfde plek blijven en net als eerst 26px van de introtekst staan. Smaller dan ~1270px hebben de teksten meer
+   hoogte nodig dan het kader: dan zijn de kaarten wel gelijk, maar samen hoger dan het kader (onderkanten gelijk).
+   25-09 16:07, wens gebruiker "de foto rechts de 4 blokken links": gespiegeld met grid-column en omgedraaide kolommaten,
+   de HTML blijft foto-kaarten (gestapeld blijft de foto boven, anders valt het hoofd over de kaarten). De laag steekt 49cqw
+   links uit de figure, maar de uitsnede is daar helemaal doorzichtig (opaak alleen x 496-883 van 1000), dus er komt niets
+   over de kaarten. Het hoofd blijft 22 tot 26px van de introtekst (2D gemeten van 1200 tot 1920px). */
+@media(min-width:861px){
+  .sb-voordelen__rij:has(>.sb-pop){grid-template-columns:1.15fr .85fr}
+  .sb-voordelen__foto.sb-pop{grid-column:2;grid-row:1;aspect-ratio:100/77.652;align-self:end}
+  .sb-pop+.sb-voordelen__kaarten{grid-column:1;grid-row:1;grid-template-rows:repeat(2,1fr)}
+  .sb-pop+.sb-voordelen__kaarten li{display:grid;grid-template-columns:auto 1fr;align-items:center;align-content:start;column-gap:.8rem}
+  .sb-pop+.sb-voordelen__kaarten img{margin:0}
+  .sb-pop+.sb-voordelen__kaarten h3{margin:0;text-wrap:balance}
+  .sb-pop+.sb-voordelen__kaarten p{grid-column:1/-1;margin-top:.6rem}
+  .sb-voordelen:has(.sb-pop) .sectiekop{margin-bottom:3.5rem}
+}
+/* Gestapeld (foto boven de kaarten) steekt het hoofd 7.76% van de fotobreedte boven de rij uit (13.28cqw boven het kader,
+   dat 5.52cqw onder de bovenkant van de 505/420-figure zit). Bij een vaste intromarge van 32px viel het hoofd daardoor vanaf
+   ~505px breed over de laatste introregel (768: 19px, 860: 23px). Fotobreedte = 92vw (pad 4vw), dus hoofd = 7.14vw: met
+   7.2vw + 1rem staat het hoofd van 480 tot 860px steeds 20px onder de introtekst. Telefoon tot 479px blijft zoals hij was. */
+@media(min-width:480px) and (max-width:860px){.sb-voordelen:has(.sb-pop) .sectiekop{margin-bottom:calc(7.2vw + 1rem)}}
 
 /* ---- contact-map-form: gegevens, kaart en berichtformulier (/contact/) ---- */
 .sb-contact__rij{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.2rem,3vw,2rem);align-items:start}
@@ -2470,8 +2519,13 @@ body:not(:has(.hero)) .topbar::before{display:none}
 .hf1 .of-box{padding-block:clamp(18px,1.8vw,24px)}
 /* wens 25-09: "make the header form background be dark blue instead of blue". Het donkerblauw van de footer
    (#002E63, geen nieuwe kleur): wit erop ~13:1 (was 4,6:1, de telefoonregel 4,0:1) en blauwer dan de navy waas
-   over de herofoto, dus het blok blijft los van de foto staan. */
-.hf1 .of-box{background:#002E63}
+   over de herofoto, dus het blok blijft los van de foto staan.
+   Teruggedraaid 25-09 (Shahab, 15:54): "maak dit de lichtblauw van de bresser logo". Het lichte blauw in het logo
+   meet #007DC2; merkboek (--blue) en palet (--teal-paneel) zeggen #007AC0, en alleen die haalt AA: wit erop 4,62:1
+   (#007DC2 4,46:1; het merkboek-lichtblauw --lblue #33BCFA staat niet in het logo en haalt met wit 2,16:1).
+   De telefoonregel stond op 90% wit (4,06:1 op dit blauw) en is daarom vol wit. */
+.hf1 .of-box{background:var(--teal-paneel)}
+.hf1 .hf1-tel{color:#fff}
 .hf1 .of-sub{margin-bottom:14px}
 .hf1-tel{margin-top:8px}
 .hf1-merken{flex-direction:row;align-items:center;gap:16px}
@@ -3821,8 +3875,25 @@ main > :is(.hf1,.jurtoc)::after,
 main > :not(.venster,.opslag):has(+ :is(.opslag,.venster,.sb-nabericht,.sb-stappen,.sb-hubplaat,.sb-impact,.sb-crew,.sb-zakelijk))::after{
   content:"";position:absolute;left:0;right:0;top:calc(100% - 1px);height:calc(min(var(--r-uh),var(--rh-gewoon)) + 1px);background-color:inherit;clip-path:var(--r-uit);
   z-index:1;pointer-events:none}
-/* Het venster snijdt af en heeft zijn beeld tot de onderrand: de sectie eronder tekent de navy rand in haar eigen bovenkant. */
-main > .venster + *::before{bottom:auto;top:-1px;background-color:var(--bruin);clip-path:var(--r-in)}
+/* Home 25-09, wens gebruiker: #opslag tussen #voor-bedrijven en #waarom. .sb-zakelijk snijdt ook af (overflow:clip),
+   dus zijn hangende rand hierboven viel weg in zijn eigen clip en de grens werd een rechte lijn (1440, gemeten). Het
+   opslagblok tekent die rand daarom zelf in zijn bovenruimte: zelfde vorm (--r-in = --r-uit van de sectie erboven),
+   hoogte en laag, in het vlak van .sb-zakelijk; dat is door de a/b-afwisseling het andere vlak dan dat van #opslag. */
+main > .sb-zakelijk + .opslag::before{content:"";position:absolute;left:0;right:0;top:0;bottom:auto;height:min(var(--r-h),var(--rh-gewoon));
+  background-color:var(--vlak-b);clip-path:var(--r-in);z-index:1;pointer-events:none}
+main > .sb-zakelijk + .opslag:nth-child(odd)::before{background-color:var(--vlak-a)}
+/* Het venster snijdt af (overflow) en had zijn beeld tot de onderrand, dus tekende de sectie eronder de navy rand in haar
+   eigen bovenkant; onder de boog bleef dan een navy strook (1440: 8 tot 27px). Wens gebruiker 25-09: de foto "iets naar
+   beneden ... niet over de laag van het blok eronder, er juist onder vallen". Nu andersom: het venster krijgt de
+   randhoogte eronder (--r-uh, gelijk aan --r-h van de sectie eronder) als ruimte onderin, boog en persoon schuiven samen
+   die hoogte omlaag (de kop steekt even ver uit), en de sectie eronder tekent haar gewone lichte tab omhoog, boven het
+   beeld: z-index 2 tegen 1 van .venster__in. De schuine lijn blijft op dezelfde plek; de onderkant van de boog valt erachter. */
+main > .venster{padding-bottom:var(--r-uh)}
+main > .venster .venster__fig{top:var(--r-uh)}
+main > .venster + *::before{z-index:2}
+/* Waar de rand vlak op de onderrand ligt (helling: links van 40%, op mobiel onder de linkerhelft van de boog) viel de
+   onderste lijn van het binnenkader precies op de grens en bleef zichtbaar; de boog loopt nu altijd door onder de rand. */
+main > .venster .venster__boog::after{border-bottom:0}
 /* (De ruimte boven twee gewone secties na elkaar staat in de basisregel .sectie + .sectie bovenaan het bestand.) */
 /* Een formulier dat een sectie voortzet (--vervolg): na een diepblauwe sectie loopt het door op hetzelfde blauw, zonder
    rand. Na een lichte sectie wordt het een eigen blauwe band met rand, en dus ook ruimte boven. */
@@ -3920,6 +3991,14 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
 .sb-verhaal .sb-werkwijze__band--los .sb-werkwijze__stappen strong::before{background:var(--goud);color:var(--bruin)}
 .sb-verhaal .sb-werkwijze__band--los .sb-werkwijze__stappen a{color:var(--wit)}
 /* ==== dc 25-09: sectievlakken, sectieranden en blokcontrast: end ==== */
+/* home #voor-bedrijven, de kaart Zakelijke verhuizing in het geel van de site (3936dcac, 25-09-2026). Wens gebruiker:
+   "dit blok dan ook die geel". Kaart mee, net als bij het navy hierboven, anders geeft de ronde hoek een donkere rand.
+   Tekst navy: #020D41 op #FFC400 is 11,6:1, wit maar 1,6:1. De vier rijen ernaast blijven navy. Het schuine vlak
+   erachter in het donkerblauw van het logo (#00498F), wens gebruiker: "die baby blauw hierachter mag het donkere
+   blauw worden in de logo van de bresser". */
+.sb-zakelijk__kaart,.sb-zakelijk__tekstvak{background:var(--geel)}
+.sb-zakelijk__tekstvak :is(h3,p){color:var(--bruin)}
+.sb-zakelijk__schuin{background:var(--goud-diep)}
 
 /* ==== sb-terugbel: na uw aanvraag, een klok achter de kantoorfoto, de keuzekaart als voorgrond (e0, 25-09-2026). Patroon reply-dial-choices uit de sectiebibliotheek. Lagen: klok (0), foto (1), uitsnede (2), kaart (3); de kaart dekt de voeten van de uitsnede. ==== */
 .sb-terugbel{--tb-over:4rem;--tb-streep:rgba(2,13,65,.38);position:relative;background:var(--bruin);color:#E3EAF3;padding-block:clamp(2.75rem,4.4vw,3.75rem)}
@@ -3985,12 +4064,6 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
 @media(min-width:1080px){.hero--home.hf1-hero .hero__content{padding-top:calc(5.35rem + 33px)}}
 /* Team zoals bij Tugche: hooguit 359px (54% van 664), onderaan 80px achter het formulier. */
 @media(min-width:761px){.hero--home .hero__person{height:min(359px,calc(100% - clamp(56px,7.5vw,104px) + 80px))}}
-/* Decor: de ruit uit het logo als lijn rechts, het Top Movers-beeldmerk grijs links (alleen breed). */
-.art-ruit{position:absolute;pointer-events:none;color:#fff}
-.art-ruit--hero{width:clamp(180px,22vw,340px);height:clamp(180px,22vw,340px);right:-4vw;top:16%;opacity:.16}
-.hero .art-h1{position:absolute;left:6.76%;top:49.74%;width:248px;height:auto;filter:grayscale(100%);opacity:.75;z-index:5;pointer-events:none}
-@media(max-width:1279.98px){.hero .art-h1{display:none}}
-@media(max-width:760px){.art-ruit--hero{display:none}}
 
 /* Keurmerkenlabel in het headerformulier (alle pagina's): Tugches pil, rechts naast titel en uitleg. */
 .hf1 .keurmerk--ev{width:112px;padding:9px 12px}
@@ -4003,23 +4076,34 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
    hangt, houdt de tekst die breedte vrij (label 359 + 24 lucht). Onder 1081 staat het label erboven. */
 @media(min-width:1081px){.hf1 .of-sub{max-width:min(737px,calc(100% - 383px))}}
 
-/* Kerncijfers (home, onder het formulier): vier navy kaarten op de lichte band van dc's afwisseling. */
+/* Kerncijfers (home, onder het formulier): een witte balk met scheidingslijnen, even breed als het formulier erboven.
+   Keuze gebruiker 25-09: variant 8 uit een vergelijking van tien, "even breed als het onderkant van het formulier".
+   Breedte: .of-wrap is max 1300px BINNEN --pad, .wrap houdt --pad binnen 1300px en was dus 80px smaller. Gemeten aan
+   .of-box: 1440 = 1300 vanaf x=70, 1000 = 920 vanaf x=40, 390 = 358 vanaf x=16; met de max-width hieronder de balk ook.
+   Binnenruimte = die van .hf1 .of-box (clamp 20-32px): het eerste icoon staat dan onder de formuliertekst (x=102 op 1440).
+   Behalve tussen 1101 en 1379px: daar laat 32px naast het icoon te weinig over voor "Sinds 1923 in Oisterwijk" (198,2px
+   in Sora 700), dus 20px, zodat die kop op 1280 op een regel blijft, zoals bij de oude kaarten.
+   Iconen: blauwgroene helften uit de stroke-attributen, de rest navy via currentColor. De klasse sb-kerncijfer--licht op
+   kaart 3 en 4 heeft geen eigen stijl meer. */
 .sb-kerncijfers{padding-block:clamp(2rem,3vw,2.6rem) clamp(2.2rem,3.4vw,2.9rem)}
-.sb-kerncijfers__rij{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-.sb-kerncijfer{display:flex;align-items:center;gap:.8rem;margin:0;padding:1.05rem .95rem;border-radius:12px;background:var(--bruin);
-  color:var(--licht-hover);box-shadow:0 18px 38px -22px rgba(2,13,65,.55)}
-.sb-kerncijfer__ic{flex:none;width:40px;height:40px;color:#fff}
+.sb-kerncijfers .wrap{max-width:calc(var(--maxw) + 2*var(--pad))}
+.sb-kerncijfers__rij{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 1px 2px rgba(2,13,65,.05),0 18px 40px -24px rgba(2,13,65,.32)}
+.sb-kerncijfer{display:flex;align-items:center;gap:.8rem;margin:0;padding:1.15rem clamp(20px,2.4vw,32px);color:#3A4670}
+.sb-kerncijfer + .sb-kerncijfer{border-left:1px solid #E1E8F0}
+.sb-kerncijfer__ic{flex:none;width:40px;height:40px;color:var(--bruin)}
 .sb-kerncijfer p{margin:0;font-size:.94rem;line-height:1.4;text-wrap:balance}
-.sb-kerncijfer b{display:block;margin-bottom:.15rem;color:#fff;font:700 1rem/1.25 var(--font-kop)}
-/* Kaart 3 en 4 helderblauw (wens gebruiker 25-09: "change these 2 blocks to have bright blue"); navy tekst 8,6:1, wit
-   zou 2,3:1 zijn. Iconen: details navy via currentColor. Kop 1rem en iets minder binnenruimte: zo past "Sinds 1923 in
-   Oisterwijk" op 1440 en 1280 op een regel, net als de andere drie. */
-.sb-kerncijfer--licht{background:var(--goud);color:var(--bruin);box-shadow:0 18px 38px -22px rgba(0,73,143,.6)}
-.sb-kerncijfer--licht b,.sb-kerncijfer--licht .sb-kerncijfer__ic{color:var(--bruin)}
-@media(max-width:1100px){.sb-kerncijfers__rij{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sb-kerncijfer b{display:block;margin-bottom:.15rem;color:var(--bruin);font:700 1rem/1.25 var(--font-kop)}
+@media(min-width:1101px) and (max-width:1379px){.sb-kerncijfer{padding-inline:20px}}
+@media(max-width:1100px){
+  .sb-kerncijfers__rij{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sb-kerncijfer:nth-child(odd){border-left:0}
+  .sb-kerncijfer:nth-child(n+3){border-top:1px solid #E1E8F0}
+}
 @media(max-width:560px){
-  .sb-kerncijfers__rij{grid-template-columns:minmax(0,1fr);gap:.6rem}
-  .sb-kerncijfer{padding:.8rem .95rem;gap:.75rem}
+  .sb-kerncijfers__rij{grid-template-columns:minmax(0,1fr)}
+  .sb-kerncijfer{padding:.85rem 1rem;gap:.75rem}
+  .sb-kerncijfer + .sb-kerncijfer{border-left:0;border-top:1px solid #E1E8F0}
   .sb-kerncijfer__ic{width:36px;height:36px}
   .sb-kerncijfer p{font-size:.9rem}
   .sb-kerncijfer b{font-size:1rem}
@@ -4061,6 +4145,20 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
 .sb-reviews .sb-reviews__alle svg{color:var(--goud)}
 .sb-reviews .sb-reviews__score:hover .sb-reviews__alle{background:var(--goud-diep);color:#fff}
 /* ==== home #reviews werkers 7a 25-09: end ==== */
+/* ==== home #reviews kaarten zonder kaart, 12 25-09: start ====
+   Keuze gebruiker 25-09 uit tien varianten (~/debresser-versies-20260925/_varianten-reviewkaarten, 8980): "doe maar 9".
+   Geen kaart en geen band meer: de drie reviews staan als tekst op het sectievlak, met een dunne lijn ertussen. Zet de
+   witte kaarten van d1 en de schuine band van 7a hierboven uit; het Klantenvertellen-blok en de werkers blijven.
+   Contrast op #F4F6F9: reviewtekst navy 17:1, datum #2F2F2F 12:1. Op een telefoon schuiven de reviews nog steeds opzij. */
+.sb-reviews .sb-reviews__kaarten::before,.sb-reviews .sb-reviews__kaarten::after{content:none}
+@media(max-width:900px){.sb-reviews .wrap::after{content:none}}
+.sb-reviews .sb-review{background:none;border:0;border-radius:0;box-shadow:none;padding:.4rem clamp(1rem,2vw,1.6rem)}
+.sb-reviews .sb-review:first-child{padding-left:0}
+.sb-reviews .sb-review:last-child{padding-right:0}
+.sb-reviews .sb-review+.sb-review{border-left:1px solid #C9D5E3}
+.sb-reviews .sb-review blockquote p{font-size:1rem;color:var(--bruin)}
+@media(max-width:760px){.sb-reviews .sb-review{padding:.4rem 1rem}.sb-reviews .sb-review:first-child{padding-left:0}}
+/* ==== home #reviews kaarten zonder kaart, 12 25-09: end ==== */
 
 /* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: start ====
    Wens gebruiker 25-09: "for onze diensten add the less round corner and the parts of the image sticking out to mine
@@ -4118,15 +4216,43 @@ main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--go
 }
 /* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: end ==== */
 
-/* ==== e0 25-09: home #offerte-manieren, de lichtblauwe band loopt door: start ====
-   Wens gebruiker 25-09: "Kies hoe wij uw verhuizing bekijken - the bright blue line should not stop." Vanaf 901 loopt
-   de band van links onder (via de onderrand de sectie uit) onder de stapkaarten door tot de rechterrand. Het draaipunt
-   ligt op de linkerkant van de beeldkolom, zodat de band op elke breedte onder de belregel blijft (5.3rem boven de voet). */
-@media(min-width:901px){
-  #offerte-manieren .sb-stappen__band{left:-100vw;height:44%;bottom:calc(5.3rem - 44%);border-radius:0;transform:skewY(-17.5deg);transform-origin:100vw 100%}
-  #offerte-manieren .sb-stappen__tekst{position:relative;z-index:1}
+/* ==== fb 25-09: /verhuizen/ #offerte-manieren, variant 3 "groene band van de wagens": start ====
+   Keuze Shahab 25-09 uit de varianten op 8978 (~/debresser-versies-20260925/_varianten-offerte-manieren/, maak.py);
+   vervangt e0's doorlopende lichtblauwe band van dezelfde dag. Witte kaarten op de trap; boven elke kaart een eigen
+   uitgeknipte adviseur met Top Movers-borstlogo (bellen, videobellen, handdruk: beeld/adviseur-*-uitsnede-*.webp, bron
+   en borstlogo in beeld/ daar). Eronder de groene band; het eind (beeld/band-einde-wagen.svg) is nagetekend van de
+   belettering op de wagens (band-natekening/ daar), met het contrast van de wagen in de tinten van --offerte.
+   Figuren op gelijke hoofdgrootte: breedte per kaart 45,7 / 51,6 / 94 procent. De hoogste (3) is 0,652 x kaartbreedte,
+   daarom schuift de trap (100cqi - 2 kolomgaten) / 3 x 0,652 + 1,5rem omlaag. clip-path houdt de schaduw van de
+   figuur boven de kaart. */
+#offerte-manieren{--gb-h:4.5rem;--st-kop:0rem}
+#offerte-manieren .sb-stappen__beeld{container-type:inline-size}
+#offerte-manieren .sb-stappen__stappen{margin-top:calc((100cqi - 2rem) / 3 * .652 + 1.5rem)}
+#offerte-manieren .sb-stappen__band{left:-1.5rem;right:0;bottom:-.25rem;height:var(--gb-h);transform:none;border-radius:var(--r) 0 0 var(--r);
+  background:linear-gradient(var(--offerte),var(--offerte)) 0 0/calc(100% - var(--gb-h) * 2.62 + 2px) 100% no-repeat}
+#offerte-manieren .sb-stappen__band::after{content:"";position:absolute;right:0;top:calc(var(--gb-h) * -.24);width:calc(var(--gb-h) * 2.62);height:calc(var(--gb-h) * 1.4);background:url(../img/beeld/band-einde-wagen.svg) no-repeat 0 0/100% 100%}
+#offerte-manieren .sb-stappen__figuur{position:absolute;bottom:100%;margin:0;pointer-events:none;clip-path:inset(-2rem -2rem 0 -2rem)}
+#offerte-manieren .sb-stappen__figuur img{display:block;width:100%;height:auto;filter:drop-shadow(3px 6px 7px rgba(2,13,65,.24))}
+#offerte-manieren .sb-stappen__stap:nth-child(1) .sb-stappen__figuur{right:7%;width:45.7%}
+#offerte-manieren .sb-stappen__stap:nth-child(2) .sb-stappen__figuur{left:24%;width:51.6%}
+#offerte-manieren .sb-stappen__stap:nth-child(3) .sb-stappen__figuur{left:3%;width:94%}
+#offerte-manieren .sb-stappen__stap{background:var(--wit);box-shadow:var(--schaduw-kaart)}
+#offerte-manieren .sb-stappen__stap h3{color:var(--bruin);-webkit-hyphens:auto;hyphens:auto}
+#offerte-manieren .sb-stappen__stap p{color:#2F2F2F}
+#offerte-manieren .sb-stappen__ico{color:#007DC2}
+#offerte-manieren .sb-stappen__nr{background:var(--bruin);color:var(--wit);border-radius:5px}
+#offerte-manieren .sb-stappen__stap:hover{box-shadow:0 1px 2px rgba(2,13,65,.06),0 24px 40px -22px rgba(2,13,65,.4)}
+@media(max-width:560px){
+  #offerte-manieren{--gb-h:2.5rem}
+  #offerte-manieren .sb-stappen__band{top:1rem;bottom:auto;left:calc(-1 * var(--pad));right:36%;border-radius:0}
+  #offerte-manieren .sb-stappen__stappen{margin-top:7.4rem;row-gap:0}
+  #offerte-manieren .sb-stappen__stap:nth-child(2){margin-top:6.1rem}
+  #offerte-manieren .sb-stappen__stap:nth-child(3){margin-top:8rem}
+  #offerte-manieren .sb-stappen__stap:nth-child(1) .sb-stappen__figuur{right:1.25rem;width:5.35rem}
+  #offerte-manieren .sb-stappen__stap:nth-child(2) .sb-stappen__figuur{left:auto;right:1.25rem;width:6rem}
+  #offerte-manieren .sb-stappen__stap:nth-child(3) .sb-stappen__figuur{left:auto;right:1rem;width:11rem}
 }
-/* ==== e0 25-09: home #offerte-manieren, de lichtblauwe band loopt door: end ==== */
+/* ==== fb 25-09: /verhuizen/ #offerte-manieren, variant 3 "groene band van de wagens": end ==== */
 
 /* ==== e0 25-09: uitsnedes van drie foto's op /verhuizen/: start ====
    Aan de foto gekoppeld (src), niet aan de pagina: dezelfde sectie draagt op andere pagina's andere foto's.
@@ -4147,3 +4273,91 @@ main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--go
   .sectie.sb-impact:has(img[src*="/warehouse-tilburg-"]){padding-bottom:1.75rem}
 }
 /* ==== e0 25-09: uitsnedes van drie foto's op /verhuizen/: end ==== */
+/* ==== c2 25-09: artifacts homepage (plaatser): start ====
+   Plaatsing van Shahab uit _werk/plaatser.html op /, 16:25, gezet op 1440px. Elk beeld hangt als laatste element in
+   zijn sectie (de hero via HERO_DECOR in build_paginas.py, de rest in _werk/paginas/home.html), dus de percentages
+   horen bij die sectie. Hernummerd van art-N naar art-bN: art-1 t/m art-7 hebben eerder in dit bestand nog regels
+   van de Kievit-site (#diensten .art-7 bijvoorbeeld). De ruit en het grijze Top Movers-beeldmerk in de hero zijn in
+   de plaatser verwijderd en hier weggehaald. Onder 1280px eruit, zoals de andere artifacts. */
+.hero .art-b6{position:absolute;left:75.35%;top:63.68%;width:255px;opacity:.34;z-index:5;pointer-events:none}
+#diensten .art-b7{position:absolute;left:84.5%;top:9.14%;width:123px;opacity:.48;z-index:5;pointer-events:none}
+#waarom .art-b1{position:absolute;left:82.26%;top:2.67%;width:144px;z-index:5;pointer-events:none}
+#reviews .art-b2{position:absolute;left:6.95%;top:2.9%;width:160px;z-index:5;pointer-events:none}
+#sinds-1923 .art-b4{position:absolute;left:91.35%;top:-1.94%;width:108px;opacity:.67;z-index:5;pointer-events:none}
+#offerte-per-mail .art-b3{position:absolute;left:84.28%;top:3.74%;width:214px;opacity:.46;z-index:5;pointer-events:none}
+@media(max-width:1279.98px){.art-b1,.art-b2,.art-b3,.art-b4,.art-b6,.art-b7{display:none}}
+/* ==== c2 25-09: artifacts homepage (plaatser): end ==== */
+
+/* ==== ba 25-09: home #offerte-aanvragen, offerteblok V2 boven de footer met gele rand: start ====
+   Variant V2 uit _voorstellen/offerteblok-verhuizer-20260925 (keuze gebruiker). Wens: "een HELE Dunne gele lijn (geel
+   kleur van de home) over de randen van het formulier heen dus heel het vierkant, achter de layer van de verhuizer wel".
+   Lagen in de kaart: de gele lijn (0) onder de verhuizer (1), het blauwe vlak (2) over zijn benen. Het blauw blijft 1px
+   van de kaartrand, zodat de lijn er ook langs doorloopt. De verhuizer steekt 44px boven de kaart uit (margin-top).
+   Radius: kaart 15px, van/naar-kader 12px, velden 8px, knoppen 5px. Contrast: wit op #007AC0 4,6:1. */
+.sb-ob__kaart{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);margin-top:44px;background:#fff;border-radius:var(--r);box-shadow:var(--schaduw-kaart)}
+.sb-ob__kaart::before{content:"";position:absolute;inset:0;z-index:0;border:1px solid var(--geel);border-radius:inherit;pointer-events:none}
+.sb-ob__zij{position:relative;order:2;display:flex;flex-direction:column;min-width:0}
+.sb-ob__beeld{position:relative;flex:1 0 auto;min-height:330px}
+.sb-ob__fig{position:absolute;z-index:1;right:34px;top:-44px;height:calc(100% + 58px);width:auto;max-width:none;pointer-events:none;user-select:none}
+.sb-ob__paneel{position:relative;z-index:2;padding:26px 44px 44px;color:#fff}
+.sb-ob__paneel::before{content:"";position:absolute;z-index:-1;left:0;right:1px;bottom:1px;top:-60px;background:var(--teal-paneel);border-radius:0 0 calc(var(--r) - 1px) 0;clip-path:polygon(0 0,42% 60px,100% 60px,100% 100%,0 100%)}
+.sb-ob__label{display:inline-flex;align-items:center;gap:.75rem;margin:0;font:700 .76rem/1.3 var(--font-kop);letter-spacing:.18em;text-transform:uppercase}
+.sb-ob__label::before{content:"";width:2rem;height:1px;background:currentColor;flex:none}
+.sb-ob__kop{margin:14px 0 22px;color:#fff;font-size:clamp(1.9rem,2.7vw,2.4rem);line-height:1.1}
+.sb-ob__kop span{display:block;text-decoration:underline;text-decoration-color:var(--offerte);text-decoration-thickness:.12em;text-underline-offset:.16em}
+.sb-ob__stappen{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:16px}
+.sb-ob__stappen li{position:relative;display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;align-items:start;align-content:start}
+.sb-ob__stappen li:not(:last-child)::after{content:"";position:absolute;left:16px;top:40px;bottom:-12px;width:2px;background:rgba(255,255,255,.6)}
+.sb-ob__nr{grid-row:span 2;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ant-diep);font:700 1rem/1 var(--font-kop)}
+.sb-ob__stappen strong{font:700 1rem/1.35 var(--font-kop);text-wrap:balance}
+.sb-ob__stappen span:not(.sb-ob__nr){font-size:.92rem;line-height:1.5;text-wrap:pretty}
+.sb-ob__belzin{margin:0 0 10px;font-size:.95rem;font-weight:500;line-height:1.4}
+.sb-ob__bel{display:inline-flex;align-items:center;gap:12px;min-height:64px;padding:10px 22px 10px 10px;border:1px solid #fff;border-radius:5px;background:#fff;color:var(--ant-diep);font:700 1.45rem/1 var(--font-kop);text-decoration:none;white-space:nowrap}
+.sb-ob__bel:hover{background:var(--creme-2);border-color:var(--creme-2)}
+.sb-ob__bel:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.sb-ob__belico{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--creme-2);flex:none}
+.sb-ob__belico svg{width:22px;height:22px}
+.sb-ob__form{position:relative;min-width:0;margin:0;padding:40px 44px}
+.sb-ob__intro{margin:0 0 22px;max-width:62ch;color:#3D4658;font-size:1rem;line-height:1.6}
+.sb-ob__velden{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+.sb-ob__vn,.sb-ob__veld--breed,.sb-ob__verstuur,.sb-ob__melding{grid-column:1/-1}
+.sb-ob__vn{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:22px;align-items:start;min-width:0;margin:0;padding:16px 20px 18px;border:2px solid var(--ant-diep);border-radius:12px}
+.sb-ob__vn::before{content:"";position:absolute;top:16px;bottom:16px;left:50%;border-left:1.5px dashed #7C8AA0}
+.sb-ob__deel{display:flex;flex-direction:column;min-width:0}
+.sb-ob__deel>label:first-child{margin:0 0 2px;color:var(--ant-diep);font:700 1.3rem/1.2 var(--font-kop)}
+.sb-ob__vn input[type=text]{width:100%;min-height:44px;margin:0;padding:8px 0;border:0;border-bottom:1.5px solid #7C8AA0;border-radius:0;background:transparent;color:var(--ant-diep);font:500 1rem/1.3 var(--font-tekst)}
+.sb-ob__pijl{position:relative;z-index:1;align-self:center;display:grid;place-items:center;width:40px;height:40px;border:2px solid var(--teal-paneel);border-radius:50%;background:#fff}
+.sb-ob__pijl svg{width:18px;height:18px}
+.sb-ob__veld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sb-ob__veld>label:first-child{color:var(--ant-diep);font:600 .85rem/1.3 var(--font-kop)}
+.sb-ob__veld input:not([type=checkbox]),.sb-ob__veld select,.sb-ob__veld textarea{width:100%;min-height:48px;margin:0;padding:11px 14px;border:1px solid #7C8AA0;border-radius:8px;background:#fff;color:var(--ant-diep);font:500 1rem/1.3 var(--font-tekst)}
+.sb-ob__veld textarea{min-height:92px;resize:vertical;line-height:1.45}
+.sb-ob__veld select{-webkit-appearance:none;appearance:none;padding-right:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23020D41' d='M5.5 8.5l6.5 7 6.5-7z'/%3E%3C/svg%3E") no-repeat right 14px center/16px}
+.sb-ob__veld input[aria-invalid="true"],.sb-ob__veld select[aria-invalid="true"]{border-color:var(--fout)}
+.sb-ob__form ::placeholder{color:#5A6478;opacity:1}
+.sb-ob__vink{display:inline-flex;align-items:center;gap:8px;min-height:24px;margin-top:10px;color:var(--ant-diep);font:500 .85rem/1.3 var(--font-tekst);cursor:pointer}
+.sb-ob__vink input{flex:none;width:18px;height:18px;margin:0;accent-color:var(--teal-paneel)}
+.sb-ob__form input:focus-visible,.sb-ob__form select:focus-visible,.sb-ob__form textarea:focus-visible{outline:3px solid var(--goud-diep);outline-offset:1px}
+.sb-ob__verstuur{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:4px}
+.sb-ob__verstuur p{flex:1 1 220px;margin:0;color:#5A6478;font-size:.8rem;line-height:1.5}
+.sb-ob__verstuur a{color:var(--goud-diep);font-weight:600}
+@media (max-width:900px){
+  .sb-ob__kaart{grid-template-columns:minmax(0,1fr)}
+  .sb-ob__zij{order:0}
+  .sb-ob__beeld{min-height:230px}
+  .sb-ob__fig{right:22px}
+  .sb-ob__paneel{padding:26px 24px 32px}
+  /* hier raakt het blauw de linker- en rechterrand; de onderkant grenst aan het formulier */
+  .sb-ob__paneel::before{left:1px;right:1px;bottom:0;border-radius:0}
+  .sb-ob__kop{font-size:clamp(1.75rem,7.4vw,2.2rem)}
+  .sb-ob__form{padding:28px 20px}
+  .sb-ob__velden{grid-template-columns:minmax(0,1fr)}
+  .sb-ob__vn{grid-template-columns:minmax(0,1fr);row-gap:6px;padding:14px 16px 16px}
+  .sb-ob__vn::before{display:none}
+  .sb-ob__pijl{justify-self:center;width:36px;height:36px;transform:rotate(90deg)}
+}
+@media (max-width:620px){
+  .sb-ob__verstuur .btn{width:100%}
+  .sb-ob__bel{width:100%;max-width:23rem}
+}
+/* ==== ba 25-09: home #offerte-aanvragen, offerteblok V2 boven de footer met gele rand: end ==== */

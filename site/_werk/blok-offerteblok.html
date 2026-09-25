@@ -1,0 +1,67 @@
+<!-- Offerteblok boven de footer (25-09-2026, bafeff99): variant V2 uit _voorstellen/offerteblok-verhuizer-20260925, gekozen
+     door de gebruiker: "doe maar V2 en dan een HELE Dunne gele lijn (geel kleur van de home) over de randen van het
+     formulier heen dus heel het vierkant, achter de layer van de verhuizer wel en deze blok boven de footer plaatsen".
+     Daarna op elke pagina behalve /offerte/, ook onder het berichtformulier (keuze gebruiker: "Overal, naast bericht").
+     build_paginas.py zet het als laatste blok boven de footer ({{ACHTERGROND}}: anders dan het blok erboven).
+     De bellende verhuizer in de Top Movers-polo komt van de Kievit-site (contact-bel-man). Het formulier gaat via site.js
+     (form[data-w3f]) naar Web3Forms, met de veldnamen van het offerteformulier op /offerte/. Verplicht zijn de dienst,
+     naam, telefoon en e-mail; de adressen niet, want bij opslag, gebouwbeheer en assetmanagement is er geen verhuisadres. -->
+<section class="sectie{{ACHTERGROND}} sb-ob" id="offerte-aanvragen" aria-labelledby="offerte-aanvragen-kop">
+  <div class="wrap">
+    <div class="sb-ob__kaart">
+      <div class="sb-ob__zij">
+        <div class="sb-ob__beeld"><img class="sb-ob__fig" src="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp" srcset="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp 700w, /assets/img/beeld/verhuizer-bellen-uitsnede-1100.webp 1100w" sizes="(max-width:900px) 190px, 260px" width="700" height="1064" alt="Verhuizer in een Top Movers-polo aan de telefoon" loading="lazy" decoding="async"></div>
+        <div class="sb-ob__paneel">
+          <p class="sb-ob__label">Offerte aanvragen</p>
+          <h2 class="sb-ob__kop" id="offerte-aanvragen-kop">Geweldig verhuizen <span>begint hier</span></h2>
+          <ol class="sb-ob__stappen">
+            <li><span class="sb-ob__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">3</span><strong>Alles op één plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op één plek.</span></li>
+          </ol>
+          <p class="sb-ob__belzin">Liever direct overleggen? Bel ons op</p>
+          <a class="sb-ob__bel" href="tel:+31135282372"><span class="sb-ob__belico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <form class="sb-ob__form" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw aanvraag is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
+        <input type="hidden" name="access_key" value="">
+        <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Bresser">
+        <input type="hidden" name="from_name" value="De Bresser offerteformulier">
+        <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="sb-ob__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+        <div class="sb-ob__velden">
+          <fieldset class="sb-ob__vn">
+            <legend class="sb-verborgen">Van en naar</legend>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-van">Van</label>
+              <input id="sb-ob-van" type="text" name="Verhuizen van" placeholder="Postcode + huisnummer" autocomplete="off">
+            </div>
+            <span class="sb-ob__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-naar">Naar</label>
+              <input id="sb-ob-naar" type="text" name="Verhuizen naar" placeholder="Postcode + huisnummer" autocomplete="off">
+              <label class="sb-ob__vink"><input type="checkbox" name="Bestemming onbekend of buitenland" value="ja">Nog onbekend of buitenland</label>
+            </div>
+          </fieldset>
+          <div class="sb-ob__veld">
+            <label for="sb-ob-datum">Wanneer</label>
+            <input id="sb-ob-datum" type="date" name="Gewenste datum">
+            <label class="sb-ob__vink"><input type="checkbox" name="Datum nog onbekend" value="ja">Weet ik nog niet</label>
+          </div>
+          <div class="sb-ob__veld"><label for="sb-ob-dienst">Soort offerte</label><select id="sb-ob-dienst" name="Dienst" required data-leeg="Kies waarvoor u een offerte wilt."><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-naam">Naam</label><input id="sb-ob-naam" type="text" name="Naam" placeholder="Uw naam" required data-leeg="Vul uw naam in." autocomplete="name"></div>
+          <div class="sb-ob__veld"><label for="sb-ob-tel">Telefoon</label><input id="sb-ob-tel" type="tel" name="Telefoon" placeholder="06 12 34 56 78" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-mail">E-mail</label><input id="sb-ob-mail" type="email" name="E-mail" placeholder="u@email.nl" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-opm">Opmerkingen <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sb-ob-opm" name="Opmerkingen" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+          <div class="sb-ob__veld"><label for="sb-ob-via">Offerte ontvangen via <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-via" name="Offerte bespreken"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-gevonden">Hoe heeft u ons gevonden? <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-gevonden" name="Hoe heeft u ons gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+          <div class="sb-ob__verstuur">
+            <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+            <p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+          </div>
+          <p class="sbf__melding sb-ob__melding" id="sb-ob-melding" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

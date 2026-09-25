@@ -24,8 +24,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2210">
-<script src="/assets/js/site.js?v=20260925-2210" defer></script>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2216">
+<script src="/assets/js/site.js?v=20260925-2216" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -116,12 +116,17 @@
           <div class="mega mega--1">
             <div class="mega__grid">
               <div class="mega__col">
-                <ul>
-                  <li><a href="/overzicht-vacatures/">Alle vacatures</a></li>
-                  <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
-                  <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
-                </ul>
+                <div class="mega__groep">
+                  <a class="mega__kop" href="/overzicht-vacatures/#vacatures">Openstaande vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                  <ul>
+                    <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
+                    <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/overzicht-vacatures/">Bekijk alle vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </li>
@@ -151,7 +156,7 @@
       </button>
     </div>
     <nav class="drawer__nav" aria-label="Mobiele navigatie">
-        <details class="drawer__group drawer__group--diensten">
+        <details class="drawer__group drawer__group--koppen drawer__group--diensten">
           <summary>Diensten</summary>
           <a href="/diensten/">Alle diensten</a>
           <a class="drawer__dienst" href="/verhuizen/" aria-current="page">Verhuizen</a>
@@ -182,11 +187,12 @@
           <a class="drawer__dienst" href="/duurzame-werkomgeving/">Duurzame werkomgeving</a>
         </details>
         <a class="drawer__link" href="/over-ons/">Over ons</a>
-        <details class="drawer__group">
+        <details class="drawer__group drawer__group--koppen">
           <summary>Vacatures</summary>
           <a href="/overzicht-vacatures/">Alle vacatures</a>
-          <a href="/vacature/verhuizer/">Verhuizer</a>
-          <a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
+          <a class="drawer__dienst" href="/overzicht-vacatures/#vacatures">Openstaande vacatures</a>
+          <a class="drawer__sub" href="/vacature/verhuizer/">Verhuizer</a>
+          <a class="drawer__sub" href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
         </details>
         <a class="drawer__link" href="/blog/">Blog</a>
         <a class="drawer__link" href="/contact/">Contact</a>
@@ -333,40 +339,24 @@
   </div>
 </section>
 
-<section class="sectie sb-zakelijk" id="voor-bedrijven" aria-labelledby="voor-bedrijven-kop">
-  <div class="wrap">
-    <div class="sb-zakelijk__kop" data-reveal>
-      <div>
-        <p class="label">Voor bedrijven</p>
-        <h2 class="kop" id="voor-bedrijven-kop">Van kantoorverhuizing tot gebouwbeheer</h2>
-        <p class="intro">Uw verhuizing, uw opslag, uw meubilair en uw pand: bij De Bresser regelt u het op één plek.</p>
+<section class="sectie sb-stappen" id="offerte-manieren" aria-labelledby="offerte-manieren-kop">
+  <div class="wrap sb-stappen__binnen">
+    <div class="sb-stappen__tekst" data-reveal>
+      <p class="label">Offerte aanvragen</p>
+      <h2 class="kop" id="offerte-manieren-kop">Kies hoe wij uw verhuizing bekijken</h2>
+      <p class="intro">Telefonisch, via een videogesprek of met een adviseur bij u thuis. Daarna ontvangt u een offerte die bij uw verhuizing past.</p>
+      <div class="sb-stappen__acties">
+        <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="sb-bel" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Liever bellen? <strong>+31 (0)13 52 82 372</strong></span></a>
       </div>
-      <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
     </div>
-    <div class="sb-zakelijk__raster">
-      <div class="sb-zakelijk__uitgelicht" data-reveal>
-        <div class="sb-zakelijk__schuin" aria-hidden="true"></div>
-        <article class="sb-zakelijk__kaart">
-          <div class="sb-zakelijk__media">
-            <figure class="sb-zakelijk__foto"><img src="/assets/img/bresser/de-bresser-duurzame-werkomgeving-zakelijke-verhuizing-1000.webp" srcset="/assets/img/bresser/de-bresser-duurzame-werkomgeving-zakelijke-verhuizing-1000.webp 1000w, /assets/img/bresser/de-bresser-duurzame-werkomgeving-zakelijke-verhuizing-1600.webp 1200w" sizes="(max-width:900px) 92vw, 640px" alt="Twee verhuiswagens van De Bresser bij een appartementencomplex" width="1000" height="667" loading="lazy" decoding="async"></figure>
-            <p class="sb-zakelijk__tag">Projectverhuizer</p>
-            <figure class="sb-zakelijk__persoon" aria-hidden="true"><img src="/assets/img/beeld/werker-steekwagen-uitsnede-900.webp" alt="" width="488" height="900" loading="lazy" decoding="async"></figure>
-          </div>
-          <div class="sb-zakelijk__tekstvak">
-            <div class="sb-zakelijk__titel">
-              <h3><a href="#zakelijk">Zakelijke verhuizing</a></h3>
-              <span class="sb-zakelijk__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </div>
-            <p>Jaarlijks meer dan 100 bedrijfs-, school- en zorgverhuizingen van meer dan 100 m³.</p>
-          </div>
-        </article>
-      </div>
-      <ul class="sb-zakelijk__rijen" data-reveal-groep>
-        <li class="sb-zakelijk__rij"><img class="sb-zakelijk__icoon" src="/assets/img/bresser-icoon/opslag.svg" alt="" width="52" height="52" loading="lazy" decoding="async"><div><h3><a href="/opslag/#zakelijk">Opslag</a></h3><p>Geconditioneerd, in containers van 8 tot 48 m³</p></div><span class="sb-zakelijk__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></li>
-        <li class="sb-zakelijk__rij"><img class="sb-zakelijk__icoon" src="/assets/img/bresser-icoon/montage.svg" alt="" width="52" height="52" loading="lazy" decoding="async"><div><h3><a href="/meubelprojecten/">Meubelprojecten</a></h3><p>Meubeltransport door Europa en montage op locatie</p></div><span class="sb-zakelijk__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></li>
-        <li class="sb-zakelijk__rij"><img class="sb-zakelijk__icoon" src="/assets/img/bresser-icoon/sleutel.svg" alt="" width="52" height="52" loading="lazy" decoding="async"><div><h3><a href="/gebouwbeheer/">Gebouwbeheer</a></h3><p>Onderhoud, een huismeester en een handyman</p></div><span class="sb-zakelijk__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></li>
-        <li class="sb-zakelijk__rij"><img class="sb-zakelijk__icoon" src="/assets/img/bresser-icoon/checklist.svg" alt="" width="52" height="52" loading="lazy" decoding="async"><div><h3><a href="/assetmanagement/">Assetmanagement</a></h3><p>Al uw meubilair in één overzicht</p></div><span class="sb-zakelijk__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></li>
-      </ul>
+    <div class="sb-stappen__beeld">
+      <div class="sb-stappen__band" aria-hidden="true"></div>
+      <ol class="sb-stappen__stappen" data-reveal-groep>
+        <li class="sb-stappen__stap"><figure class="sb-stappen__figuur" aria-hidden="true"><img src="/assets/img/beeld/adviseur-bellen-uitsnede-260.webp" alt="" width="260" height="348" loading="lazy" decoding="async"></figure><span class="sb-stappen__nr" aria-hidden="true">1</span><svg class="sb-stappen__ico" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><defs><clipPath id="om-tel-a"><polygon points="-100,-100 348.09,-100 -100,348.09"/></clipPath><clipPath id="om-tel-b"><polygon points="356,356 -91.91,356 356,-91.91"/></clipPath></defs><g clip-path="url(#om-tel-a)"><path pathLength="1" d="M164.39,145.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,176,216,136,136,0,0,1,40,80,48.33,48.33,0,0,1,81.92,32.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L89.32,117a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#om-tel-b)"><path pathLength="1" d="M164.39,145.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,176,216,136,136,0,0,1,40,80,48.33,48.33,0,0,1,81.92,32.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L89.32,117a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><h3>Telefonisch</h3><p>U neemt met onze adviseur door wat er mee moet. U krijgt een prijs per uur.</p></div></li>
+        <li class="sb-stappen__stap"><figure class="sb-stappen__figuur" aria-hidden="true"><img src="/assets/img/beeld/adviseur-videobellen-uitsnede-300.webp" alt="" width="300" height="275" loading="lazy" decoding="async"></figure><span class="sb-stappen__nr" aria-hidden="true">2</span><svg class="sb-stappen__ico" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><polyline pathLength="1" points="200 112 244 80 244 176 200 144" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><defs><clipPath id="om-video-a"><polygon points="-100,-100 331.99,-100 -100,331.99"/></clipPath><clipPath id="om-video-b"><polygon points="356,356 -108.01,356 356,-108.01"/></clipPath></defs><g clip-path="url(#om-video-a)"><rect pathLength="1" x="24" y="64" width="176" height="128" rx="8" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#om-video-b)"><rect pathLength="1" x="24" y="64" width="176" height="128" rx="8" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><h3>Via een videogesprek</h3><p>U geeft ons een rondleiding door uw huis. Daarna maken wij een gedetailleerde offerte.</p></div></li>
+        <li class="sb-stappen__stap"><figure class="sb-stappen__figuur" aria-hidden="true"><img src="/assets/img/beeld/adviseur-handdruk-uitsnede-480.webp" alt="" width="480" height="333" loading="lazy" decoding="async"></figure><span class="sb-stappen__nr" aria-hidden="true">3</span><svg class="sb-stappen__ico" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><defs><clipPath id="om-huis-a"><polygon points="-100,-100 366.48,-100 -100,366.48"/></clipPath><clipPath id="om-huis-b"><polygon points="356,356 -73.52,356 356,-73.52"/></clipPath></defs><g clip-path="url(#om-huis-a)"><path pathLength="1" d="M104,216V152h48v64h64V120a8,8,0,0,0-2.34-5.66l-80-80a8,8,0,0,0-11.32,0l-80,80A8,8,0,0,0,40,120v96Z" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#om-huis-b)"><path pathLength="1" d="M104,216V152h48v64h64V120a8,8,0,0,0-2.34-5.66l-80-80a8,8,0,0,0-11.32,0l-80,80A8,8,0,0,0,40,120v96Z" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></svg><div><h3>Adviseur aan huis</h3><p>Onze voorkeur: een adviseur bespreekt alles bij u thuis, voor een exacte offerte.</p></div></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -637,6 +627,67 @@
           <p class="sbf__melding" id="sbf-bericht-melding" role="status" aria-live="polite"></p>
         </form>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="sectie sectie--creme2 sb-ob" id="offerte-aanvragen" aria-labelledby="offerte-aanvragen-kop">
+  <div class="wrap">
+    <div class="sb-ob__kaart">
+      <div class="sb-ob__zij">
+        <div class="sb-ob__beeld"><img class="sb-ob__fig" src="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp" srcset="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp 700w, /assets/img/beeld/verhuizer-bellen-uitsnede-1100.webp 1100w" sizes="(max-width:900px) 190px, 260px" width="700" height="1064" alt="Verhuizer in een Top Movers-polo aan de telefoon" loading="lazy" decoding="async"></div>
+        <div class="sb-ob__paneel">
+          <p class="sb-ob__label">Offerte aanvragen</p>
+          <h2 class="sb-ob__kop" id="offerte-aanvragen-kop">Geweldig verhuizen <span>begint hier</span></h2>
+          <ol class="sb-ob__stappen">
+            <li><span class="sb-ob__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">3</span><strong>Alles op één plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op één plek.</span></li>
+          </ol>
+          <p class="sb-ob__belzin">Liever direct overleggen? Bel ons op</p>
+          <a class="sb-ob__bel" href="tel:+31135282372"><span class="sb-ob__belico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <form class="sb-ob__form" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw aanvraag is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
+        <input type="hidden" name="access_key" value="">
+        <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Bresser">
+        <input type="hidden" name="from_name" value="De Bresser offerteformulier">
+        <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="sb-ob__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+        <div class="sb-ob__velden">
+          <fieldset class="sb-ob__vn">
+            <legend class="sb-verborgen">Van en naar</legend>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-van">Van</label>
+              <input id="sb-ob-van" type="text" name="Verhuizen van" placeholder="Postcode + huisnummer" autocomplete="off">
+            </div>
+            <span class="sb-ob__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-naar">Naar</label>
+              <input id="sb-ob-naar" type="text" name="Verhuizen naar" placeholder="Postcode + huisnummer" autocomplete="off">
+              <label class="sb-ob__vink"><input type="checkbox" name="Bestemming onbekend of buitenland" value="ja">Nog onbekend of buitenland</label>
+            </div>
+          </fieldset>
+          <div class="sb-ob__veld">
+            <label for="sb-ob-datum">Wanneer</label>
+            <input id="sb-ob-datum" type="date" name="Gewenste datum">
+            <label class="sb-ob__vink"><input type="checkbox" name="Datum nog onbekend" value="ja">Weet ik nog niet</label>
+          </div>
+          <div class="sb-ob__veld"><label for="sb-ob-dienst">Soort offerte</label><select id="sb-ob-dienst" name="Dienst" required data-leeg="Kies waarvoor u een offerte wilt."><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-naam">Naam</label><input id="sb-ob-naam" type="text" name="Naam" placeholder="Uw naam" required data-leeg="Vul uw naam in." autocomplete="name"></div>
+          <div class="sb-ob__veld"><label for="sb-ob-tel">Telefoon</label><input id="sb-ob-tel" type="tel" name="Telefoon" placeholder="06 12 34 56 78" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-mail">E-mail</label><input id="sb-ob-mail" type="email" name="E-mail" placeholder="u@email.nl" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-opm">Opmerkingen <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sb-ob-opm" name="Opmerkingen" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+          <div class="sb-ob__veld"><label for="sb-ob-via">Offerte ontvangen via <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-via" name="Offerte bespreken"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-gevonden">Hoe heeft u ons gevonden? <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-gevonden" name="Hoe heeft u ons gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+          <div class="sb-ob__verstuur">
+            <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+            <p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+          </div>
+          <p class="sbf__melding sb-ob__melding" id="sb-ob-melding" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </div>
   </div>
 </section>

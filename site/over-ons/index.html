@@ -25,8 +25,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2210">
-<script src="/assets/js/site.js?v=20260925-2210" defer></script>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2216">
+<script src="/assets/js/site.js?v=20260925-2216" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -116,12 +116,17 @@
           <div class="mega mega--1">
             <div class="mega__grid">
               <div class="mega__col">
-                <ul>
-                  <li><a href="/overzicht-vacatures/">Alle vacatures</a></li>
-                  <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
-                  <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
-                </ul>
+                <div class="mega__groep">
+                  <a class="mega__kop" href="/overzicht-vacatures/#vacatures">Openstaande vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                  <ul>
+                    <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
+                    <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/overzicht-vacatures/">Bekijk alle vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </li>
@@ -151,7 +156,7 @@
       </button>
     </div>
     <nav class="drawer__nav" aria-label="Mobiele navigatie">
-        <details class="drawer__group drawer__group--diensten">
+        <details class="drawer__group drawer__group--koppen drawer__group--diensten">
           <summary>Diensten</summary>
           <a href="/diensten/">Alle diensten</a>
           <a class="drawer__dienst" href="/verhuizen/">Verhuizen</a>
@@ -182,11 +187,12 @@
           <a class="drawer__dienst" href="/duurzame-werkomgeving/">Duurzame werkomgeving</a>
         </details>
         <a class="drawer__link" href="/over-ons/" aria-current="page">Over ons</a>
-        <details class="drawer__group">
+        <details class="drawer__group drawer__group--koppen">
           <summary>Vacatures</summary>
           <a href="/overzicht-vacatures/">Alle vacatures</a>
-          <a href="/vacature/verhuizer/">Verhuizer</a>
-          <a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
+          <a class="drawer__dienst" href="/overzicht-vacatures/#vacatures">Openstaande vacatures</a>
+          <a class="drawer__sub" href="/vacature/verhuizer/">Verhuizer</a>
+          <a class="drawer__sub" href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
         </details>
         <a class="drawer__link" href="/blog/">Blog</a>
         <a class="drawer__link" href="/contact/">Contact</a>
@@ -436,6 +442,67 @@
     </div>
   </div>
 </section>
+
+<section class="sectie sectie--creme2 sb-ob" id="offerte-aanvragen" aria-labelledby="offerte-aanvragen-kop">
+  <div class="wrap">
+    <div class="sb-ob__kaart">
+      <div class="sb-ob__zij">
+        <div class="sb-ob__beeld"><img class="sb-ob__fig" src="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp" srcset="/assets/img/beeld/verhuizer-bellen-uitsnede-700.webp 700w, /assets/img/beeld/verhuizer-bellen-uitsnede-1100.webp 1100w" sizes="(max-width:900px) 190px, 260px" width="700" height="1064" alt="Verhuizer in een Top Movers-polo aan de telefoon" loading="lazy" decoding="async"></div>
+        <div class="sb-ob__paneel">
+          <p class="sb-ob__label">Offerte aanvragen</p>
+          <h2 class="sb-ob__kop" id="offerte-aanvragen-kop">Geweldig verhuizen <span>begint hier</span></h2>
+          <ol class="sb-ob__stappen">
+            <li><span class="sb-ob__nr" aria-hidden="true">1</span><strong>U hoort binnen 24 uur van ons</strong><span>Vul uw gegevens in, dan nemen wij binnen 24 uur contact met u op.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">2</span><strong>Een offerte zoals het u past</strong><span>Vrijblijvend, telefonisch, via een videocall of met een adviseur bij u thuis.</span></li>
+            <li><span class="sb-ob__nr" aria-hidden="true">3</span><strong>Alles op één plek</strong><span>Verhuizen, inpakken en opslag regelt u bij De Bresser op één plek.</span></li>
+          </ol>
+          <p class="sb-ob__belzin">Liever direct overleggen? Bel ons op</p>
+          <a class="sb-ob__bel" href="tel:+31135282372"><span class="sb-ob__belico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+31 (0)13 52 82 372</a>
+        </div>
+      </div>
+      <form class="sb-ob__form" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw aanvraag is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
+        <input type="hidden" name="access_key" value="">
+        <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Bresser">
+        <input type="hidden" name="from_name" value="De Bresser offerteformulier">
+        <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="sb-ob__intro">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. U hoort binnen 24 uur van ons voor een vrijblijvende offerte op maat.</p>
+        <div class="sb-ob__velden">
+          <fieldset class="sb-ob__vn">
+            <legend class="sb-verborgen">Van en naar</legend>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-van">Van</label>
+              <input id="sb-ob-van" type="text" name="Verhuizen van" placeholder="Postcode + huisnummer" autocomplete="off">
+            </div>
+            <span class="sb-ob__pijl" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+            <div class="sb-ob__deel">
+              <label for="sb-ob-naar">Naar</label>
+              <input id="sb-ob-naar" type="text" name="Verhuizen naar" placeholder="Postcode + huisnummer" autocomplete="off">
+              <label class="sb-ob__vink"><input type="checkbox" name="Bestemming onbekend of buitenland" value="ja">Nog onbekend of buitenland</label>
+            </div>
+          </fieldset>
+          <div class="sb-ob__veld">
+            <label for="sb-ob-datum">Wanneer</label>
+            <input id="sb-ob-datum" type="date" name="Gewenste datum">
+            <label class="sb-ob__vink"><input type="checkbox" name="Datum nog onbekend" value="ja">Weet ik nog niet</label>
+          </div>
+          <div class="sb-ob__veld"><label for="sb-ob-dienst">Soort offerte</label><select id="sb-ob-dienst" name="Dienst" required data-leeg="Kies waarvoor u een offerte wilt."><option value="">Kies wat u nodig heeft</option><option>Particuliere verhuizing</option><option>Zakelijke verhuizing</option><option>Verhuizing en opslag (full service)</option><option>Particuliere opslag</option><option>Zakelijke opslag</option><option>Transport</option><option>Gebouwbeheer</option><option>Assetmanagement</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-naam">Naam</label><input id="sb-ob-naam" type="text" name="Naam" placeholder="Uw naam" required data-leeg="Vul uw naam in." autocomplete="name"></div>
+          <div class="sb-ob__veld"><label for="sb-ob-tel">Telefoon</label><input id="sb-ob-tel" type="tel" name="Telefoon" placeholder="06 12 34 56 78" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-mail">E-mail</label><input id="sb-ob-mail" type="email" name="E-mail" placeholder="u@email.nl" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></div>
+          <div class="sb-ob__veld sb-ob__veld--breed"><label for="sb-ob-opm">Opmerkingen <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sb-ob-opm" name="Opmerkingen" rows="3" placeholder="Bijvoorbeeld een piano, een smalle trap of tijdelijke opslag"></textarea></div>
+          <div class="sb-ob__veld"><label for="sb-ob-via">Offerte ontvangen via <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-via" name="Offerte bespreken"><option value="">Kies, mag u overslaan</option><option>Telefonisch</option><option>Videogesprek</option><option>Adviseur aan huis</option><option>Per mail</option></select></div>
+          <div class="sb-ob__veld"><label for="sb-ob-gevonden">Hoe heeft u ons gevonden? <span class="sbf__optioneel">(optioneel)</span></label><select id="sb-ob-gevonden" name="Hoe heeft u ons gevonden"><option value="">Kies, mag u overslaan</option><option>Via Google</option><option>Familie, vriend of kennis</option><option>Ik zag een verhuiswagen van De Bresser</option><option>Via Top Movers of Erkende Verhuizers</option><option>Via de makelaar of een bedrijf</option><option>Via Facebook, Instagram of LinkedIn</option><option>Ik ben al eerder klant geweest</option><option>Anders</option></select></div>
+          <div class="sb-ob__verstuur">
+            <button class="btn btn--offerte btn--lg" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</button>
+            <p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+          </div>
+          <p class="sbf__melding sb-ob__melding" id="sb-ob-melding" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 
 </main>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Artifact-plaatser De Kievit</title>
+<title>Artifact-plaatser De Bresser</title>
 <meta name="robots" content="noindex">
 <style>
   :root{--bg:#1b2230;--bg2:#232c3d;--lijn:#38455c;--tekst:#e8ecf3;--zacht:#95a3ba;--accent:#00A19B;--oranje:#EE7203;--geel:#FFD500}
@@ -23,7 +23,9 @@
   .kolom:last-child{border-right:0;border-left:1px solid var(--lijn)}
   .kolom h2{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--zacht);margin:0 0 8px}
   .palet{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-  .pal{background:#f6f4ec;border:1px solid var(--lijn);border-radius:6px;padding:6px;cursor:pointer;display:grid;gap:4px;justify-items:center}
+  .pal{background:#F4F6F9;border:1px solid var(--lijn);border-radius:6px;padding:6px;cursor:pointer;display:grid;gap:4px;justify-items:center}
+  .pal.donker{background:#020D41}                /* witte artifacts zijn op licht onzichtbaar */
+  .pal.donker b{color:#fff}
   .pal:hover{outline:2px solid var(--accent)}
   .pal.aan{outline:2px solid var(--oranje)}
   .pal .mini{height:44px;display:grid;place-items:center;width:100%;overflow:hidden}
@@ -88,7 +90,7 @@
 
 <dialog id="uitvoer">
   <h2 style="margin:0 0 8px;font-size:15px">CSS en HTML voor de site</h2>
-  <p class="leeg" style="margin:0 0 8px">Het CSS-deel gaat onderaan <code>site/_werk/artifacts.css</code> en met append in <code>style.css</code>; de HTML-regels gaan als <code>vervang1</code> in <code>site/_werk/build_kievit.py</code>.</p>
+  <p class="leeg" style="margin:0 0 8px">Het CSS-deel gaat onderaan <code>site/_werk/style.css</code>. De HTML-regels gaan als laatste element in hun sectie: homepage-secties in <code>site/_werk/paginas/home.html</code>, de hero van de homepage in <code>HERO_DECOR</code> van <code>site/_werk/build_paginas.py</code>. Daarna <code>python3 site/_werk/build_paginas.py</code> (schrijft ook style.min.css).</p>
   <textarea id="uitvoer-tekst" spellcheck="false"></textarea>
   <div class="rij" style="margin-top:10px">
     <button class="knop knop--oranje" id="kopieer">Kopieer</button>
@@ -102,7 +104,8 @@
 // van de homepage overschrijven zodra er iets bewaard wordt.
 const PAGINA = (() => { const p = new URLSearchParams(location.search).get('p') || '/';
   return /^\/[a-z0-9-]*\/?$/.test(p) ? p : '/'; })();
-const SLEUTEL = 'kievit-plaatser-v1:' + PAGINA;
+const SLEUTEL = 'bresser-plaatser-v1:' + PAGINA;
+const SLEUTEL_BESTAAND = SLEUTEL + '|bestaand';   // verschoven en verwijderde artifacts die al op de pagina stonden
 const frame = document.getElementById('frame');
 const iframe = document.getElementById('pagina');
 const kader = document.getElementById('kader');
@@ -117,7 +120,7 @@ let sleep = null;            // {dx, dy} tijdens verslepen
 fetch('/_werk/deco-lijst.json').then(r => r.json()).then(lijst => {
   palet = lijst;
   document.getElementById('palet').innerHTML = lijst.map((it, i) => `
-    <button class="pal" data-i="${i}" title="${it.naam}">
+    <button class="pal${/-wit\./.test(it.bestand) ? ' donker' : ''}" data-i="${i}" title="${it.naam}">
       <span class="mini">${it.soort === 'img' ? `<img src="/assets/img/deco/${it.bestand}" alt="">` : '&#9733;'}</span>
       <b>${it.naam}</b>
     </button>`).join('');
@@ -161,8 +164,22 @@ iframe.addEventListener('load', () => {
   doc.addEventListener('pointerdown', omlaag, true);
   doc.addEventListener('keydown', toets);
   win.addEventListener('scroll', tekenKader, {passive: true});
-  schaalFrame(); herstel(); vulPaginakeuze();
+  // nieuwe nummers boven de art-N die al in de gebouwde pagina OF in de CSS staan (style.css heeft nog art-1 t/m art-7
+  // van de Kievit-site), anders botst een nieuwe ronde met een regel die er al is
+  const nummer = s => s.replace(/(?:^|\.)art-(\d+)\b/g, (_, n) => { teller = Math.max(teller, +n); return ''; });
+  doc.querySelectorAll('[class*="art-"]').forEach(el => el.classList.forEach(c => { if (/^art-\d+$/.test(c)) nummer(c); }));
+  const loop = lijst => { for (const r of lijst) { if (r.cssRules) loop(r.cssRules); if (r.selectorText) nummer(r.selectorText); } };
+  for (const ss of doc.styleSheets) { try { loop(ss.cssRules); } catch {} }
+  schaalFrame(); herstel(); neemOver(); vulPaginakeuze(); vulInspector();
 });
+
+/* SVG-elementen hebben geen offsetParent: zoek dan zelf het vak waar left/top in procenten bij horen. */
+function ouderVan(el) {
+  if (el.offsetParent !== undefined) return el.offsetParent || doc.body;
+  let p = el.parentElement;
+  while (p && p !== doc.body && getComputedStyle(p).position === 'static') p = p.parentElement;
+  return p || doc.body;
+}
 
 /* De keuzelijst komt uit de navigatie van de geladen pagina zelf (topbar plus drawer), zodat er niets te
    onderhouden valt als er een pagina bijkomt. Alleen echte mappen op de site, geen ankers of externe links. */
@@ -217,9 +234,10 @@ function beweeg(e) {
   if (!sleep || !sel) return;
   const x = e.clientX, y = e.clientY, {dx, dy} = sleep;
   plan(() => {
-    const p = sel.offsetParent || doc.body, pr = p.getBoundingClientRect();
+    const p = ouderVan(sel), pr = p.getBoundingClientRect();
     sel.style.left = (((x - dx - pr.left) / pr.width) * 100).toFixed(2) + '%';
     sel.style.top  = (((y - dy - pr.top) / pr.height) * 100).toFixed(2) + '%';
+    if (sel.dataset.art === 'bestaand') Object.assign(sel.style, {right: 'auto', bottom: 'auto'});   // siteregel kan right/bottom zetten
     tekenKader(); toonMaten();
   });
 }
@@ -301,16 +319,17 @@ greep.addEventListener('pointerdown', e => {
   let breed = r0.width;
   const mv = ev => { breed = Math.max(16, r0.width + (ev.clientX - start) / schaal); plan(() => elastiek(breed)); };
   addEventListener('pointermove', mv);
-  addEventListener('pointerup', () => { removeEventListener('pointermove', mv); sel.style.width = Math.round(breed) + 'px'; voltooi(); }, {once: true});
+  addEventListener('pointerup', () => { removeEventListener('pointermove', mv); sel.style.width = Math.round(breed) + 'px'; sel.style.height = 'auto'; voltooi(); }, {once: true});
 });
 
 /* ---------- kleur ----------
    Een SVG in een <img> is niet met CSS te kleuren. Daarom wordt een gekleurd artifact een <span> met het
    bestand als masker: de vorm blijft, de kleur is vrij. Bij een beeld met meerdere kleuren (bij, katrol,
-   logo's, stempels) levert dat een egale silhouetvorm op; "Origineel" zet het terug. Alleen huiskleuren. */
-const KLEUREN = [['Teal', '#00A19B'], ['Teal donker', '#00807A'], ['Teal diep', '#006C68'], ['Teal licht', '#32B3AF'],
-  ['Navy', '#22314E'], ['Antraciet', '#1D1D1B'], ['Oranje', '#EE7203'], ['Geel', '#FFD500'],
-  ['Zand', '#C4E4E4'], ['Lichtteal', '#E5F3F3'], ['Wit', '#FFFFFF'], ['Creme', '#F6F4EC']];
+   logo's, stempels) levert dat een egale silhouetvorm op; "Origineel" zet het terug. Alleen huiskleuren:
+   de tokens uit style.css plus het groen van het logo. */
+const KLEUREN = [['Navy', '#020D41'], ['Logo-navy', '#00498F'], ['Blauw', '#007AC0'], ['Lichtblauw', '#33BCFA'],
+  ['Blauwtint', '#C7E2F1'], ['Groen (logo)', '#6DB23F'], ['Geel', '#FFC400'], ['Antraciet', '#2F2F2F'],
+  ['Zand', '#D5DDE8'], ['Grijs licht', '#EBEFF4'], ['Achtergrond', '#F4F6F9'], ['Wit', '#FFFFFF']];
 function bronVan(el) { return el.dataset.bron || (el.tagName === 'IMG' ? el.getAttribute('src').split('/').pop() : ''); }
 function zetKleur(el, hex) {
   const bestand = bronVan(el);
@@ -370,7 +389,7 @@ function sectieLaag(p) {
    Vanaf 0 ligt elk artifact voor de inhoud, dus 5 > 0 stappen verandert niets zichtbaars (gemeten 28-08). */
 function zetLaag(z, herbouw = true) {
   sel.style.zIndex = z;
-  const p = sel.offsetParent || doc.body;
+  const p = ouderVan(sel);
   if (z < 0 && sectieLaag(p) === null) zetSectieLaag(p, 0);
   if (herbouw) vulInspector();
   bewaar();
@@ -400,20 +419,28 @@ function zetGrijs(el, pct) {
 function vulInspector() {
   const i = document.getElementById('inspector');
   if (!sel) {
-    const lijst = alles();
-    i.innerHTML = '<p class="leeg">Klik een geplaatst artifact aan om het te verschuiven, te schalen, doorzichtig te maken of naar een andere laag te zetten. Ligt het achter de inhoud, klik dan op de plek waar het zit, of kies het hieronder.</p>'
-      + (lijst.length ? '<h2 style="margin-top:14px">Geplaatst</h2>' + lijst.map((el, n) => `<button class="knop" data-n="${n}" style="width:100%;margin-bottom:6px;text-align:left">${el.dataset.naam} <span class="leeg">in ${kies_sel(el.offsetParent || doc.body)}${(parseInt(getComputedStyle(el).zIndex) || 0) < 0 ? ', achter de inhoud' : ''}</span></button>`).join('') : '');
-    i.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => { const el = lijst[+b.dataset.n]; el.scrollIntoView({block: 'center'}); kies(el); }));
+    const lijst = alles(), staan = bestaande().filter(el => !el.dataset.artWeg), weg = bestaande().filter(el => el.dataset.artWeg);
+    const knop = (el, n, extra) => `<button class="knop" data-n="${n}" style="width:100%;margin-bottom:6px;text-align:left">${el.dataset.naam} <span class="leeg">${extra}</span></button>`;
+    i.innerHTML = '<p class="leeg">Klik een artifact aan om het te verschuiven, te schalen, doorzichtig te maken, naar een andere laag te zetten of te verwijderen. Ligt het achter de inhoud, klik dan op de plek waar het zit, of kies het hieronder.</p>'
+      + (lijst.length ? '<h2 style="margin-top:14px">Geplaatst</h2>' + lijst.map((el, n) => knop(el, n, `in ${kies_sel(ouderVan(el))}${(parseInt(getComputedStyle(el).zIndex) || 0) < 0 ? ', achter de inhoud' : ''}`)).join('') : '')
+      + (staan.length ? '<h2 style="margin-top:14px">Stond al op de pagina</h2>' + staan.map((el, n) => knop(el, 'b' + n, `in ${kies_sel(ouderVan(el))}`)).join('') : '')
+      + (weg.length ? '<h2 style="margin-top:14px">Verwijderd</h2>' + weg.map((el, n) => knop(el, 'w' + n, 'klik = terugzetten')).join('') : '');
+    i.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => {
+      const n = b.dataset.n;
+      if (n[0] === 'w') { zetTerug(weg[+n.slice(1)]); bewaar(); vulInspector(); return; }
+      const el = n[0] === 'b' ? staan[+n.slice(1)] : lijst[+n];
+      el.scrollIntoView({block: 'center'}); kies(el);
+    }));
     return;
   }
-  const cs = getComputedStyle(sel), p = sel.offsetParent || doc.body;
+  const cs = getComputedStyle(sel), p = ouderVan(sel);
   const vast = cs.position !== 'absolute';
   const geknipt = getComputedStyle(p).overflow === 'hidden' || getComputedStyle(p).overflowX === 'hidden';
   const z = parseInt(cs.zIndex) || 0, max = hoogsteLaagIn(p);
   const ar = sel.getBoundingClientRect(), pr = p.getBoundingClientRect(), mx = ar.left + ar.width / 2, my = ar.top + ar.height / 2;
   const buiten = !vast && (mx < pr.left || mx > pr.right || my < pr.top || my > pr.bottom);
   i.innerHTML = `
-    <p style="margin:0 0 10px"><b>${sel.dataset.naam || sel.className.split(' ')[0]}</b><br><span class="leeg">${eigen_sel(sel)} in ${kies_sel(p)}</span></p>
+    <p style="margin:0 0 10px"><b>${sel.dataset.naam || sel.classList[0]}</b><br><span class="leeg">${eigen_sel(sel)} in ${kies_sel(p)}</span></p>
     ${vast ? '<div class="waarschuwing">Dit artifact staat in de tekststroom, verschuiven kan niet. Breedte, dekking en laag wel.</div>' : ''}
     ${geknipt ? '<div class="waarschuwing">Het vak eromheen knipt af (overflow hidden): buiten de rand valt het weg.</div>' : ''}
     <div class="veld"><label>Breedte <span>${Math.round(sel.getBoundingClientRect().width)} px</span></label>
@@ -437,7 +464,7 @@ function vulInspector() {
     <button class="knop" id="f-secboven" style="width:100%;margin-bottom:8px">Sectie boven de rest</button>
     <p class="leeg" style="margin:0 0 12px">Andere delen van de pagina gaan tot laag <b>${hoogsteLaag()}</b>. Zolang de sectie zelf lager ligt, telt de laag van het artifact alleen bínnen deze sectie.</p>
     ${vast ? '' : `<div class="veld" id="f-pos"><label>Links <span>${sel.style.left || '-'}</span></label><label>Boven <span>${sel.style.top || '-'}</span></label></div>`}
-    <button class="knop" id="f-weg" style="width:100%">Verwijderen</button>`;
+    <div class="rij"><button class="knop" id="f-weg">Verwijderen</button>${sel.dataset.art === 'bestaand' ? '<button class="knop" id="f-orig" title="terug naar hoe het in de site staat">Origineel</button>' : ''}</div>`;
   const aan = (id, ev, fn) => { const el = document.getElementById(id); if (el) el.addEventListener(ev, fn); };
   aan('f-breed', 'input', e => { const w = +e.target.value; plan(() => elastiek(w)); });
   aan('f-breed', 'change', e => { sel.style.width = e.target.value + 'px'; sel.style.height = 'auto'; voltooi(); });
@@ -453,6 +480,7 @@ function vulInspector() {
   aan('f-seclaag', 'input', e => { zetSectieLaag(p, e.target.value); bewaar(); });
   aan('f-secboven', 'click', () => { zetSectieLaag(p, hoogsteLaag() + 1); vulInspector(); bewaar(); });
   aan('f-weg', 'click', verwijder);
+  aan('f-orig', 'click', () => { herstelOrigineel(sel); tekenKader(); vulInspector(); bewaar(); });
   i.querySelectorAll('.staal').forEach(b => b.addEventListener('click', () => {
     const nieuw = zetKleur(sel, b.dataset.hex);
     if (sel) sel.classList.remove('is-gekozen');
@@ -460,36 +488,62 @@ function vulInspector() {
     tekenKader(); vulInspector(); bewaar();
   }));
 }
+/* Een artifact dat al in de site stond kan niet echt weg (het zit in de bron), dus het wordt verborgen en
+   onthouden; "CSS tonen" zegt daarna wat er uit de bron moet. Terugzetten kan via de lijst rechts. */
 function verwijder() {
   if (!sel) return;
-  if (sel.dataset.art === 'nieuw') sel.remove(); else { sel.removeAttribute('data-art'); sel.style.cssText = sel.dataset.artOud || ''; }
+  if (sel.dataset.art === 'nieuw') sel.remove(); else { sel.dataset.artWeg = '1'; sel.style.display = 'none'; }
   kies(null); bewaar();
 }
+function zetTerug(el) {
+  delete el.dataset.artWeg;
+  const m = /(?:^|;)\s*display\s*:\s*([^;]+)/.exec(el.dataset.artOud || '');
+  el.style.display = m ? m[1].trim() : '';
+}
+function herstelOrigineel(el) { el.style.cssText = el.dataset.artOud || ''; delete el.dataset.artWeg; }
 function toets(e) {
-  if (!sel || getComputedStyle(sel).position !== 'absolute') return;
-  const stap = e.shiftKey ? 10 : 1, p = sel.offsetParent || doc.body, pr = p.getBoundingClientRect();
-  const nu = k => parseFloat(sel.style[k]) || 0;
+  if (!sel || e.target.closest?.('input, textarea, select')) return;   // typen in een veld verwijdert of verschuift niets
+  if (e.key === 'Backspace' || e.key === 'Delete') { e.preventDefault(); verwijder(); return; }
+  if (getComputedStyle(sel).position !== 'absolute') return;
+  const stap = e.shiftKey ? 10 : 1, p = ouderVan(sel), pr = p.getBoundingClientRect();
+  // zonder eigen left/top (een bestaand artifact dat met right of bottom staat) beginnen bij de plek waar het nu staat
+  const r = sel.getBoundingClientRect();
+  const nu = k => sel.style[k] ? parseFloat(sel.style[k]) : (k === 'left' ? (r.left - pr.left) / pr.width : (r.top - pr.top) / pr.height) * 100;
+  if (sel.dataset.art === 'bestaand' && e.key.startsWith('Arrow'))   // eerst vastpinnen, dan pas right/bottom los
+    Object.assign(sel.style, {left: nu('left').toFixed(2) + '%', top: nu('top').toFixed(2) + '%', right: 'auto', bottom: 'auto'});
   if (e.key === 'ArrowLeft')  sel.style.left = (nu('left') - stap / pr.width * 100).toFixed(2) + '%';
   else if (e.key === 'ArrowRight') sel.style.left = (nu('left') + stap / pr.width * 100).toFixed(2) + '%';
   else if (e.key === 'ArrowUp')    sel.style.top = (nu('top') - stap / pr.height * 100).toFixed(2) + '%';
   else if (e.key === 'ArrowDown')  sel.style.top = (nu('top') + stap / pr.height * 100).toFixed(2) + '%';
-  else if (e.key === 'Backspace' || e.key === 'Delete') { verwijder(); return; }
   else return;
   e.preventDefault(); tekenKader(); toonMaten(); bewaar();
 }
 document.addEventListener('keydown', toets);
 
-/* ---------- bestaande artifacts overnemen ---------- */
-document.getElementById('overnemen').addEventListener('click', () => {
-  const kiezers = ['img[src*="/deco/"]', '.ster', '.tmster', '.zegel', '.dozen__bij', '.kaartje', '.route-lijn', '.trust__deco > *'];
+/* ---------- bestaande artifacts overnemen ----------
+   Gebeurt bij het laden vanzelf, zodat ze meteen aan te klikken en te verwijderen zijn. Op de De Bresser-homepage:
+   de ruit en het Top Movers-beeldmerk in de hero (art-*) en de logo's als decor in #opslag en #offerte-per-mail.
+   De uitsnede-foto's die uit hun kader steken horen bij de foto's en blijven er bewust buiten. */
+const KIEZERS = ['img[src*="/deco/"]', '[class^="art-"]', '[class*=" art-"]', '.opslag__mark', '.opslag__script', '.venster__mark'];
+function naamVan(el) {
+  const klas = [...el.classList].filter(c => c !== 'is-gekozen').pop() || el.tagName.toLowerCase();
+  const src = el.getAttribute('src');
+  return src ? klas + ': ' + src.split('/').pop() : klas;
+}
+function neemOver() {
   let n = 0;
-  doc.querySelectorAll(kiezers.join(',')).forEach(el => {
+  doc.querySelectorAll(KIEZERS.join(',')).forEach(el => {
     if (el.dataset.art || el.closest('[data-art]')) return;
-    el.dataset.art = 'bestaand'; el.dataset.artOud = el.style.cssText;
-    el.dataset.naam = el.className.split(' ').filter(c => c && c !== 'is-gekozen').pop() || el.tagName.toLowerCase();
+    el.dataset.art = 'bestaand'; el.dataset.artOud = el.style.cssText; el.dataset.naam = naamVan(el);
     n++;
   });
-  document.getElementById('modus').textContent = `${n} bestaande artifacts overgenomen, je kunt ze nu aanklikken`;
+  return n;
+}
+function bestaande() { return [...doc.querySelectorAll('[data-art="bestaand"]')]; }
+document.getElementById('overnemen').addEventListener('click', () => {
+  const n = neemOver();
+  document.getElementById('modus').textContent = `${n} nieuwe bestaande artifacts gevonden, ${bestaande().length} in totaal aan te klikken`;
+  vulInspector();
 });
 
 /* ---------- opslaan en herstellen ---------- */
@@ -507,16 +561,24 @@ function eigen_sel(el) {                      // voor het ELEMENT zelf: alle kla
 function alles() { return [...doc.querySelectorAll('[data-art="nieuw"]')]; }
 function bewaar() {
   const data = alles().map(el => {
-    const p = el.offsetParent || doc.body;
+    const p = ouderVan(el);
     return {naam: el.dataset.naam, bron: el.dataset.bron, klas: [...el.classList].filter(c => c.startsWith('art-'))[0],
       ouder: kies_sel(p), ouderZ: p.dataset.artZ || '', html: el.outerHTML, stijl: el.style.cssText};
   });
   localStorage.setItem(SLEUTEL, JSON.stringify(data));
+  // bestaande: alleen wat veranderd of verwijderd is, teruggevonden via selector plus volgnummer
+  const best = bestaande().filter(el => el.dataset.artWeg || el.style.cssText !== (el.dataset.artOud || '')).map(el => {
+    const s = eigen_sel(el);
+    return {sel: s, n: [...doc.querySelectorAll(s)].indexOf(el), stijl: el.style.cssText, weg: !!el.dataset.artWeg};
+  });
+  localStorage.setItem(SLEUTEL_BESTAAND, JSON.stringify(best));
 }
 function herstel() {
   let data; try { data = JSON.parse(localStorage.getItem(SLEUTEL) || '[]'); } catch { return; }
+  let terug = 0;
   data.forEach(d => {
     const ouder = doc.querySelector(d.ouder) || doc.body;
+    if (ingebouwd(d, ouder)) return;
     if (getComputedStyle(ouder).position === 'static') { ouder.style.position = 'relative'; ouder.dataset.artRelatief = '1'; }
     if (d.ouderZ) zetSectieLaag(ouder, d.ouderZ);
     const h = doc.createElement('div'); h.innerHTML = d.html;
@@ -524,21 +586,47 @@ function herstel() {
     ouder.appendChild(el);
     const nr = parseInt((d.klas || '').replace('art-', '')) || 0;
     if (nr > teller) teller = nr;
+    terug++;
   });
-  if (data.length) document.getElementById('modus').textContent = `${data.length} artifacts hersteld uit de vorige sessie`;
+  let best; try { best = JSON.parse(localStorage.getItem(SLEUTEL_BESTAAND) || '[]'); } catch { best = []; }
+  let weg = 0, aangepast = 0;
+  best.forEach(d => {
+    const el = [...doc.querySelectorAll(d.sel)][d.n];
+    if (!el) return;                               // uit de bron gehaald of hernoemd: niets meer te doen
+    if (!el.dataset.art) { el.dataset.art = 'bestaand'; el.dataset.artOud = el.style.cssText; el.dataset.naam = naamVan(el); }
+    el.style.cssText = d.stijl;
+    if (d.weg) { el.dataset.artWeg = '1'; weg++; } else aangepast++;
+  });
+  if (terug || weg || aangepast || data.length) document.getElementById('modus').textContent =
+    `Hersteld uit de vorige sessie: ${terug} geplaatst, ${weg} verwijderd, ${aangepast} bestaande aangepast`
+    + (data.length > terug ? `; ${data.length - terug} stonden al in de site` : '');
+}
+/* Staat een bewaard artifact inmiddels in de gebouwde site (zelfde bestand, zelfde sectie, zelfde plek), dan niet
+   nog eens neerzetten: na "CSS tonen" en een build zou de plaatser het anders dubbel tonen. */
+function ingebouwd(d, ouder) {
+  if (!d.bron || d.bron === 'css') return false;
+  const t = doc.createElement('span'); t.style.cssText = d.stijl || '';
+  const L = parseFloat(t.style.left), T = parseFloat(t.style.top), pr = ouder.getBoundingClientRect();
+  if (isNaN(L) || isNaN(T) || !pr.width) return false;
+  return [...ouder.querySelectorAll(`img[src$="/deco/${d.bron}"]:not([data-art])`)].some(el => {
+    const r = el.getBoundingClientRect();
+    return Math.abs((r.left - pr.left) / pr.width * 100 - L) < 1 && Math.abs((r.top - pr.top) / pr.height * 100 - T) < 1;
+  });
 }
 document.getElementById('wissen').addEventListener('click', () => {
-  if (!confirm('Alle geplaatste artifacts weghalen?')) return;
-  alles().forEach(el => el.remove()); localStorage.removeItem(SLEUTEL); kies(null);
+  if (!confirm('Alles terugzetten? Geplaatste artifacts gaan weg, verwijderde en verschoven bestaande komen terug zoals in de site.')) return;
+  alles().forEach(el => el.remove()); bestaande().forEach(herstelOrigineel);
+  localStorage.removeItem(SLEUTEL); localStorage.removeItem(SLEUTEL_BESTAAND); kies(null);
 });
 
 /* ---------- uitvoer ---------- */
 document.getElementById('toon-css').addEventListener('click', () => {
-  const nieuw = alles(), bestaand = [...doc.querySelectorAll('[data-art="bestaand"]')].filter(el => el.style.cssText);
+  const nieuw = alles(), weg = bestaande().filter(el => el.dataset.artWeg);
+  const bestaand = bestaande().filter(el => !el.dataset.artWeg && el.style.cssText !== (el.dataset.artOud || ''));
   const regels = [], html = [];
   const num = v => (v || '').trim();
   nieuw.forEach(el => {
-    const ouder = el.offsetParent || doc.body, os = kies_sel(ouder), klas = [...el.classList].filter(c => c.startsWith('art-'))[0];
+    const ouder = ouderVan(el), os = kies_sel(ouder), klas = [...el.classList].filter(c => c.startsWith('art-'))[0];
     const s = el.style;
     if (ouder.dataset.artZ) regels.push(`${os}{position:relative;z-index:${ouder.dataset.artZ}}  /* sectie omhoog, anders blijft het artifact onder #prijs (6) en de blokken die zichzelf isoleren */`);
     else if (ouder.dataset.artRelatief) regels.push(`${os}{position:relative}`);
@@ -554,18 +642,31 @@ document.getElementById('toon-css').addEventListener('click', () => {
     html.push(`  /* ${el.dataset.naam} in ${os} */\n  ${k.outerHTML}`);
   });
   bestaand.forEach(el => {
-    const s = el.style, d = [];
-    ['left','top','width','opacity','filter','zIndex'].forEach(k => { if (s[k]) d.push((k === 'zIndex' ? 'z-index' : k) + ':' + s[k]); });
-    if (d.length) regels.push(`${eigen_sel(el)}{${d.join(';')}}  /* aangepast in de plaatser */`);
+    const s = el.style, d = [], ouder = ouderVan(el), os = kies_sel(ouder);
+    if (ouder.dataset.artZ) regels.push(`${os}{position:relative;z-index:${ouder.dataset.artZ}}`);
+    ['left','top','right','bottom','width','height','opacity','filter','zIndex'].forEach(k => { if (s[k]) d.push((k === 'zIndex' ? 'z-index' : k) + ':' + s[k]); });
+    // met de sectie ervoor: de siteregel is vaak al zo specifiek (.hero .art-h1), dan wint alleen een regel die later komt
+    if (d.length) regels.push(`${os} ${eigen_sel(el)}{${d.join(';')}}  /* aangepast in de plaatser */`);
+  });
+  const wegHtml = weg.map(el => {
+    const k = el.cloneNode(false);
+    ['style','data-art','data-naam','data-bron','data-art-filter','data-art-oud','data-kleur','data-art-weg'].forEach(x => k.removeAttribute(x));
+    k.classList.remove('is-gekozen');
+    return `  ${kies_sel(el.closest('section, header, footer') || doc.body)} ${eigen_sel(el)}: ${k.outerHTML.match(/^<[^>]*>/)[0]}`;
   });
   const t = [
     `/* Artifact-plaatsing uit _werk/plaatser.html voor ${PAGINA}, ${new Date().toLocaleString('nl-NL')}, gezet op ${iframe.getAttribute('width')} px breed.`,
     `   Percentages horen bij de sectie eromheen, dus ze schalen mee; controleer 390 en 1440 apart.`,
-    `   De HTML hoort bij de generator van DEZE pagina: de homepage staat in build_kievit.py, een subpagina in _werk/paginas/<slug>.html. */`,
+    `   CSS onderaan site/_werk/style.css; python3 site/_werk/build_paginas.py schrijft daarna style.min.css en de pagina's. */`,
     ...[...new Set(regels)],
-    ``,
-    `<!-- HTML: als vervang1() in site/_werk/build_kievit.py, in de sectie waar het bij hoort -->`,
-    ...html
+    ...(html.length ? [``,
+      `<!-- HTML: als laatste element in de sectie waar het bij hoort. Homepage: secties in site/_werk/paginas/home.html,`,
+      `     de hero in HERO_DECOR van site/_werk/build_paginas.py; een subpagina in site/_werk/paginas/<route>.html -->`,
+      ...html] : []),
+    ...(wegHtml.length ? [``,
+      `<!-- WEGHALEN: stond al op ${PAGINA} en is in de plaatser verwijderd. Haal het element en zijn CSS-regels uit de bron`,
+      `     (zoek de klasse in site/_werk/paginas/ en site/_werk/build_paginas.py). -->`,
+      ...wegHtml] : [])
   ].join('\n');
   document.getElementById('uitvoer-tekst').value = t;
   document.getElementById('uitvoer').showModal();
