@@ -1,0 +1,44 @@
+{
+ "zor1-ziekenhuisbed-gang": {
+  "oordeel": "let",
+  "tekst": "Bed op eigen wielen, gezichten naar het werk, beide borstprints wit TOP/MOVERS met teal swoosh (zonder pijlpunt), bedlabels en kratlabels onleesbaar. Enige afwijking: de oudere verhuizer draagt een polo met epauletten.",
+  "retouche": "Epauletten (schouderklepjes met knoop) op beide schouders van de oudere verhuizer links wegwerken tot gladde polo-schouder zoals de referentiepolo.",
+  "opnieuw": ""
+ },
+ "zor2-overleg-verpleegkundige": {
+  "oordeel": "goed",
+  "tekst": "Projectleider met correcte borstprint incl. pijlpunt, verpleegkundige in wit zonder bedrijfskleding; naambadge, klembord en prikbord onleesbaar, bordjes alleen pictogram. Kader snijdt onder de knie, voeten buiten beeld.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "zor3-rolcontainer-gang": {
+  "oordeel": "let",
+  "tekst": "Container rechtop op vier wielen, gezicht en hand goed, bordje rechts en kratlabels onleesbaar. Borstprint fout: O van TOP is een teal ring met de swoosh er dwars doorheen, onder MOVERS een teal balk met wartaal.",
+  "retouche": "Borstprint links op de borst vervangen door de referentieprint: wit TOP, wit MOVERS, teal swoosh onder de letters met pijlpunt rechts; teal balk met tekst onder MOVERS weg.",
+  "opnieuw": ""
+ },
+ "zor4-bewoner-nieuwe-kamer": {
+  "oordeel": "let",
+  "tekst": "Verhaal klopt: verhuizer zet stoel, zorgmedewerker in blauw helpt bewoonster, doos open zonder tape, opdruk correct gespeld. Polo-print fout: teal O, bij boven de O, twee regels wartaal, geen swoosh; embleem op de mouw.",
+  "retouche": "Borstprint vervangen door referentieprint (wit TOP/MOVERS, teal swoosh, geen bij, geen tekstregels); wit embleempje op de mouw beeldlinks weg; evt. bandje om het bundeltje kleding in de doos weg.",
+  "opnieuw": ""
+ },
+ "zor5-kratten-gezondheidscentrum": {
+  "oordeel": "let",
+  "tekst": "Tilhouding goed (buik naar de krat, armen voor het lijf), steekwagen met schep onder de last en collega erachter, rug zonder print, labels en bordje onleesbaar. Borstprint: swoosh vormt een halve ellips rond MOVERS.",
+  "retouche": "Borstprint: de grote teal boog rechts van MOVERS vervangen door de kleine pijlpunt van de referentie; linker boog onder de letters mag blijven. Kader snijdt onder de knie, voeten buiten beeld.",
+  "opnieuw": ""
+ },
+ "zor6-wagen-zorgcentrum-breed": {
+  "oordeel": "fout",
+  "tekst": "Zijkant-lockup fout: O van TOP is een teal schijf met swoosh erdoor, rechte teal balk i.p.v. swoosh met pijlpunt; cabinedeur 'WOVESS' + tekstregel, tekstje linksonder op de bak, blauwe spanband in laadbak, prints teal.",
+  "retouche": "",
+  "opnieuw": "Te veel merkfouten op de wagen voor retouche (lockup, cabinedeur, tekstje, spanband, laadklep zonder gele reling, twee borstprints). Prompt: de zijkant draagt ALLEEN het bijgevoegde logo, O van TOP een dichte zwarte letter gelijk aan T en P, swoosh onder MOVERS eindigend in een pijlpunt; cabinedeuren effen wit; lege laadbakwanden zonder hangende banden; laadklep met gele reling; verhuizers schuin van achteren of van opzij zodat de borstprint niet in beeld is."
+ },
+ "zor7-plattegrond-manager": {
+  "oordeel": "fout",
+  "tekst": "Manager zakelijk, borstprint projectleider correct incl. pijlpunt, plattegrond zonder leesbare woorden. Fout: projectleider lacht breed met open mond en tanden; beide verhuizers achterin dragen een grote rugprint.",
+  "retouche": "Als de lach toch wordt geaccepteerd: rugprint TOP MOVERS op beide verhuizers in de gang (achterin, midden-rechts) wegwerken tot effen antraciet; verder niets.",
+  "opnieuw": "Lach valt onder 'geen lachen' uit de brief en is niet te retoucheren. Prompt: 'lips closed, a light smile while he looks at the plan'; 'the polos of the two movers in the corridor are plain charcoal on the back, no print on the back'; gezichten iets lager in het kader voor de bannercrop."
+ }
+}

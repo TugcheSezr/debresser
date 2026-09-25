@@ -1,0 +1,70 @@
+Contrastratio's (WCAG 2.1) Top Movers-huisstijl, berekend 28-aug-2026 uit site/assets/css/style.css; eis 4,5:1 normale tekst, 3:1 grote tekst en grafiek. Alfa-kleuren gemengd op hun ondergrond.
+tekst ant op creme (body)                                                                            #1D1D1B op #F6F4EC: 15.33:1  OK
+tekst ant op creme-2 / lichtteal-secties                                                             #1D1D1B op #E5F3F3: 14.83:1  OK
+tekst ant op wit (kaarten, chips)                                                                    #1D1D1B op #FFFFFF: 16.88:1  OK
+ant-zacht op creme                                                                                   #4B4B49 op #F6F4EC: 7.94:1  OK
+ant-zacht op creme-2                                                                                 #4B4B49 op #E5F3F3: 7.68:1  OK
+ant-zacht op wit                                                                                     #4B4B49 op #FFFFFF: 8.74:1  OK
+goud-diep = donkere teal op creme (labels, faq-nummers, stapnummers)                                 #006C68 op #F6F4EC: 5.70:1  OK
+goud-diep op creme-2                                                                                 #006C68 op #E5F3F3: 5.51:1  OK
+goud-diep op wit (scorecijfer, vinkjes, keurmerkcijfer)                                              #006C68 op #FFFFFF: 6.28:1  OK
+goud-diep op goud-licht #E5F3F3 (icoontegels, calc-chip aan, vcl-badge.ht)                           #006C68 op #E5F3F3: 5.51:1  OK
+goud-diep op zand #C4E4E4 (vcl-badge.geld)                                                           #006C68 op #C4E4E4: 4.65:1  OK
+ant op teal #00A19B (.btn--goud/.btn--ant, vcl-chip.aan, vcl-tab.aan)                                #1D1D1B op #00A19B: 5.28:1  OK
+ant op teal-hover #32B3AF (knop hover)                                                               #1D1D1B op #32B3AF: 6.59:1  OK
+ant op oranje #EE7203 (.btn--groen, .of-cta)                                                         #1D1D1B op #EE7203: 5.66:1  OK
+ant op oranje-hover #D9660A                                                                          #1D1D1B op #D9660A: 4.71:1  OK
+zwart op secundair #E5F3F3 (.btn--lijn, .vcl-knop)                                                   #000000 op #E5F3F3: 18.45:1  OK
+wit op teal-paneel #00807A (offertebox .of-sub, dozenkaart p, leadblock labels)                      #FFFFFF op #00807A: 4.81:1  OK
+wit op leadblock-verloop start #00837D                                                               #FFFFFF op #00837D: 4.62:1  OK
+wit op leadblock-verloop eind #00726E                                                                #FFFFFF op #00726E: 5.78:1  OK
+wit op lfcalc-uitklapper (teal-paneel + 12% zwart)                                                   #FFFFFF op #00716B: 5.88:1  OK
+wit op lfcalc toegevoegd (teal-paneel + 20% zwart)                                                   #FFFFFF op #006662: 6.83:1  OK
+wit .92 op hero-veil (donkerste stand #1D1D1B)                                                       #EDEDED op #1D1D1B: 14.42:1  OK
+teal-op-navy #32B3AF op hero-veil (eyebrow)                                                          #32B3AF op #1D1D1B: 6.59:1  OK
+creme op navy #22314E (reviews, calc-uitkomst, opslag-kaart, venster, split, footer)                 #F6F4EC op #22314E: 11.79:1  OK
+creme .72 op navy (reviews intro)                                                                    #BBBDC0 op #22314E: 6.90:1  OK
+creme .65 op navy (calc-label, calc-detail)                                                          #ACB0B5 op #22314E: 5.96:1  OK
+creme .6 op navy (btn--omlijnd rand, grafisch 3:1)                                                   #A1A6AD op #22314E: 5.30:1  OK
+teal-op-navy #32B3AF op navy (labels, footer-koppen, badge, calc-getal, reviews-meer)                #32B3AF op #22314E: 5.07:1  OK
+teal #00A19B op navy (review--kv balk, watermerk, grafisch 3:1)                                      #00A19B op #22314E: 4.06:1  OK
+wit .8 op navy (footer adres, claim-alinea)                                                          #D3D6DC op #22314E: 8.92:1  OK
+wit .62 op navy (footer rooster p)                                                                   #ABB1BC op #22314E: 6.03:1  OK
+wit .58 op footer-balk #1A2540 (legal)                                                               #9FA3AF op #1A2540: 6.03:1  OK
+wit .8 op footer-balk #1A2540 (links)                                                                #D1D3D9 op #1A2540: 10.15:1  OK
+review-tekst creme .93 op navy                                                                       #E7E6E1 op #22314E: 10.39:1  OK
+review__wie creme .66 op navy                                                                        #AEB2B6 op #22314E: 6.09:1  OK
+goud-licht #E5F3F3 op navy (review-avatar letter)                                                    #E5F3F3 op #22314E: 11.41:1  OK
+ant op bron-chip creme                                                                               #1D1D1B op #F6F4EC: 15.33:1  OK
+ok-groen op wit                                                                                      #2E6B3A op #FFFFFF: 6.40:1  OK
+fout op wit (formulierfout)                                                                          #A33A2E op #FFFFFF: 6.56:1  OK
+placeholder #767674 op wit (invoervelden)                                                            #767674 op #FFFFFF: 4.55:1  OK
+vcl klaar #6B6B68 op wit (doorgestreept)                                                             #6B6B68 op #FFFFFF: 5.35:1  OK
+goud-diep sterren op wit / creme (grafisch 3:1)                                                      #006C68 op #F6F4EC: 5.70:1  OK
+ik-b #00807A icoonaccent (trust-tegels op #E5F3F3; sterren in topbar, bronchips, lead-pill op wit)                #00807A op #E5F3F3: 4.22:1  OK
+wit mark/logo op opslag-band teal #00A19B (grafisch 3:1)                                             #FFFFFF op #00A19B: 3.20:1  OK
+wit logo op opslag-band eind teal-paneel #00807A (grafisch 3:1)                                      #FFFFFF op #00807A: 4.81:1  OK
+wit hero-titel op em-markering teal #00A19B (grote tekst 3:1, alleen onderste 38% van de letters)    #FFFFFF op #00A19B: 3.20:1  OK
+wit .of-title / dozen h2 op teal-paneel (grote tekst)                                                #FFFFFF op #00807A: 4.81:1  OK
+wit op teal-paneel (dienstkaarten, kop en tekst; variant 2 van 28-aug)                              #FFFFFF op #00807A: 4.81:1  OK
+wit op goud-diep (dienstkaart hover)                                                                #FFFFFF op #006C68: 6.28:1  OK
+ant op geel (dienst-nummerlabel, grote tekst)                                                       #1D1D1B op #FFD500: 11.87:1  OK
+
+Decoratief (geen tekst, geen eis): stap-borderlijn teal op creme, ring-ornament wit .85, review-aanhalingsteken teal .34, watermerken .12-.16, hero-korrel .05, footer-veils.
+Totaal 50 paren, 0 onder de eis.
+
+Aanvulling 28-aug-2026 (sessie huisstijl): accent van oranje naar het Top Movers-geel, en het historie-blok van navy naar warm wit.
+ant op geel #FFD500 (.btn--groen, .of-cta)                                             #1D1D1B op #FFD500: 11.87:1  OK
+ant op geel-hover #E8BC00                                                              #1D1D1B op #E8BC00: 9.35:1  OK
+ant op geel-rand #C7A400 (randpixels)                                                  #1D1D1B op #C7A400: 7.03:1  OK
+geel vlak op navy (knop in footer/venster, grafisch)                                   #FFD500 op #22314E: 9.13:1  OK
+geel vlak op teal-paneel (offerte-pill, grafisch)                                      #FFD500 op #00807A: 3.38:1  OK
+geel vlak op hero-veil (topbar-knop, grafisch)                                         #FFD500 op #1D1D1B: 11.87:1  OK
+geel vlak op creme (knop op licht vlak; vorm leunt op de rand #A88A00 = --geel-rand-aa, 3,03:1, tekst 11,87:1)  #FFD500 op #F6F4EC: 1.29:1  ONDER EIS
+  correctie 30-08-2026: hier stond #C7A400 (--geel-rand). .btn--groen zet border-color op var(--geel-rand-aa)
+  en dat is #A88A00. Het verschil is niet cosmetisch: #C7A400 op creme is 2,18:1 en had de eis van 3:1 NIET
+  gehaald, #A88A00 haalt 3,03:1. Gevonden door de sessie die aan /toegankelijkheid/ werkte.
+historie: ant op creme                                                                 #1D1D1B op #F6F4EC: 15.33:1  OK
+historie: ant-zacht op creme (intro, tijdlijntekst)                                    #4B4B49 op #F6F4EC: 7.94:1  OK
+historie: goud-diep op creme (label, kop, jaartallen, bolletjes)                       #006C68 op #F6F4EC: 5.70:1  OK
+Aanvulling: 10 paren, 1 onder de eis (het gele knopVLAK op een licht vlak; de knoptekst haalt 11,87:1 en de rand geeft de vorm; het vorige oranje haalde daar 2,71:1).

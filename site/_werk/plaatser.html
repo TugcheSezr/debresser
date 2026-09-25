@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Artifact-plaatser De Kievit</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#1b2230;--bg2:#232c3d;--lijn:#38455c;--tekst:#e8ecf3;--zacht:#95a3ba;--accent:#00A19B;--oranje:#EE7203;--geel:#FFD500}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tekst);font:14px/1.45 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;height:100vh;display:grid;grid-template-rows:auto 1fr}
+  button,select,input{font:inherit;color:inherit}
+  .balk{display:flex;gap:10px;align-items:center;padding:9px 14px;background:var(--bg2);border-bottom:1px solid var(--lijn);flex-wrap:wrap}
+  .balk h1{font-size:14px;margin:0 12px 0 0;font-weight:700;letter-spacing:.02em}
+  .knop{background:#2f3a4e;border:1px solid var(--lijn);border-radius:6px;padding:6px 11px;cursor:pointer}
+  #paginakeuze{background:#2f3a4e;border:1px solid var(--lijn);border-radius:6px;padding:6px 9px;max-width:270px;cursor:pointer}
+  .knop:hover{background:#3a4760}
+  .knop.aan{background:var(--accent);border-color:var(--accent);color:#04211f;font-weight:700}
+  .knop--oranje{background:var(--oranje);border-color:var(--oranje);color:#1D1D1B;font-weight:700}
+  .spatie{flex:1}
+  .app{display:grid;grid-template-columns:212px 1fr 244px;min-height:0}
+  .kolom{background:var(--bg2);overflow:auto;padding:12px;border-right:1px solid var(--lijn)}
+  .kolom:last-child{border-right:0;border-left:1px solid var(--lijn)}
+  .kolom h2{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--zacht);margin:0 0 8px}
+  .palet{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .pal{background:#f6f4ec;border:1px solid var(--lijn);border-radius:6px;padding:6px;cursor:pointer;display:grid;gap:4px;justify-items:center}
+  .pal:hover{outline:2px solid var(--accent)}
+  .pal.aan{outline:2px solid var(--oranje)}
+  .pal .mini{height:44px;display:grid;place-items:center;width:100%;overflow:hidden}
+  .pal img{max-width:100%;max-height:44px}
+  .pal b{font:600 9.5px/1.15 sans-serif;color:#1D1D1B;text-align:center}
+  .doek{overflow:auto;padding:16px;display:grid;justify-items:center;align-content:start;background:#141a24}
+  .frame{background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  /* de schaal hoort op het IFRAME zelf en vanuit de linkerbovenhoek; op .frame schaalt hij vanuit het
+     midden en schuift de pagina 124px op bij 0,83 (gemeten 28-08) */
+  iframe{border:0;display:block;background:#fff;transform-origin:top left}
+  .veld{display:grid;gap:5px;margin-bottom:12px}
+  .veld label{font-size:11px;color:var(--zacht);display:flex;justify-content:space-between}
+  .veld input[type=range]{width:100%;accent-color:var(--accent)}
+  .veld input[type=number]{background:#2f3a4e;border:1px solid var(--lijn);border-radius:5px;padding:5px 7px;width:100%}
+  .rij{display:flex;gap:6px}
+  .rij .knop{flex:1;text-align:center;padding:6px 4px}
+  .leeg{color:var(--zacht);font-size:12.5px}
+  .stalen{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+  .staal{height:26px;border-radius:5px;border:1px solid var(--lijn);cursor:pointer;padding:0}
+  .staal.aan{outline:2px solid var(--oranje);outline-offset:1px}
+  .staal--org{grid-column:span 6;background:#2f3a4e;color:var(--tekst);font-size:11.5px}
+  .waarschuwing{background:#4a3a12;border:1px solid #7a6018;color:#ffd77a;border-radius:6px;padding:7px 9px;font-size:11.5px;margin-bottom:10px}
+  #kader{position:fixed;pointer-events:none;z-index:50;border:1.5px solid var(--oranje);display:none}
+  #greep{position:absolute;right:-6px;bottom:-6px;width:13px;height:13px;background:var(--oranje);border:2px solid #fff;border-radius:3px;pointer-events:auto;cursor:nwse-resize}
+  dialog{background:var(--bg2);color:var(--tekst);border:1px solid var(--lijn);border-radius:10px;padding:16px;max-width:860px;width:92vw}
+  dialog textarea{width:100%;height:46vh;background:#141a24;color:#dfe6f2;border:1px solid var(--lijn);border-radius:7px;padding:10px;font:12px/1.5 ui-monospace,Menlo,monospace;resize:vertical}
+  dialog::backdrop{background:rgba(0,0,0,.6)}
+</style>
+</head>
+<body>
+<div class="balk">
+  <h1>Artifact-plaatser</h1>
+  <span class="leeg" id="modus">Kies links een artifact en klik in de pagina</span>
+  <span class="spatie"></span>
+  <select id="paginakeuze" title="Welke pagina wil je inrichten"><option value="/">Homepage</option></select>
+  <button class="knop" data-breed="390">390</button>
+  <button class="knop" data-breed="820">820</button>
+  <button class="knop aan" data-breed="1440">1440</button>
+  <button class="knop" data-breed="1920">1920</button>
+  <button class="knop" id="overnemen">Bestaande overnemen</button>
+  <button class="knop knop--oranje" id="toon-css">CSS tonen</button>
+  <button class="knop" id="wissen">Alles wissen</button>
+</div>
+
+<div class="app">
+  <div class="kolom">
+    <h2>Artifacts</h2>
+    <div class="palet" id="palet"></div>
+  </div>
+
+  <div class="doek" id="doek" title="Scroll in de pagina zelf om lager te komen">
+    <div class="frame" id="frame"><iframe id="pagina" width="1440" height="900"></iframe></div>
+  </div>
+
+  <div class="kolom">
+    <h2>Eigenschappen</h2>
+    <div id="inspector"><p class="leeg">Klik een geplaatst artifact aan om het te verschuiven, te schalen, doorzichtig te maken of naar een andere laag te zetten.</p></div>
+  </div>
+</div>
+
+<div id="kader"><div id="greep"></div></div>
+
+<dialog id="uitvoer">
+  <h2 style="margin:0 0 8px;font-size:15px">CSS en HTML voor de site</h2>
+  <p class="leeg" style="margin:0 0 8px">Het CSS-deel gaat onderaan <code>site/_werk/artifacts.css</code> en met append in <code>style.css</code>; de HTML-regels gaan als <code>vervang1</code> in <code>site/_werk/build_kievit.py</code>.</p>
+  <textarea id="uitvoer-tekst" spellcheck="false"></textarea>
+  <div class="rij" style="margin-top:10px">
+    <button class="knop knop--oranje" id="kopieer">Kopieer</button>
+    <button class="knop" id="sluit">Sluiten</button>
+  </div>
+</dialog>
+
+<script>
+// Welke pagina staat er in het frame? Uit ?p= zodat een herlaad of een gedeelde link op dezelfde pagina uitkomt.
+// De plaatsingen worden PER PAGINA bewaard: met een gedeelde sleutel zou het openen van /diensten/ de plaatsing
+// van de homepage overschrijven zodra er iets bewaard wordt.
+const PAGINA = (() => { const p = new URLSearchParams(location.search).get('p') || '/';
+  return /^\/[a-z0-9-]*\/?$/.test(p) ? p : '/'; })();
+const SLEUTEL = 'kievit-plaatser-v1:' + PAGINA;
+const frame = document.getElementById('frame');
+const iframe = document.getElementById('pagina');
+const kader = document.getElementById('kader');
+const greep = document.getElementById('greep');
+let doc = null, win = null, schaal = 1, teller = 0;
+let sel = null;              // geselecteerd element in de pagina
+let plaatsItem = null;       // gekozen palet-item, wacht op een klik in de pagina
+let palet = [];
+let sleep = null;            // {dx, dy} tijdens verslepen
+
+/* ---------- palet ---------- */
+fetch('/_werk/deco-lijst.json').then(r => r.json()).then(lijst => {
+  palet = lijst;
+  document.getElementById('palet').innerHTML = lijst.map((it, i) => `
+    <button class="pal" data-i="${i}" title="${it.naam}">
+      <span class="mini">${it.soort === 'img' ? `<img src="/assets/img/deco/${it.bestand}" alt="">` : '&#9733;'}</span>
+      <b>${it.naam}</b>
+    </button>`).join('');
+  document.getElementById('palet').addEventListener('click', e => {
+    const k = e.target.closest('.pal'); if (!k) return;
+    const i = +k.dataset.i;
+    plaatsItem = (plaatsItem && plaatsItem.i === i) ? null : {i, ...palet[i]};
+    document.querySelectorAll('.pal').forEach(p => p.classList.toggle('aan', plaatsItem && +p.dataset.i === plaatsItem.i));
+    document.getElementById('modus').textContent = plaatsItem ? `"${plaatsItem.naam}": klik nu de plek in de pagina aan` : 'Kies links een artifact en klik in de pagina';
+  });
+});
+
+/* ---------- frame ---------- */
+function schaalFrame() {
+  const b = +iframe.getAttribute('width');
+  // het frame houdt de hoogte van het venster en scrolt zelf; boven ~16.000px tekent Chrome een iframe niet meer
+  const h = Math.max(600, innerHeight - 84);
+  iframe.setAttribute('height', h); iframe.style.height = h + 'px';
+  const ruimte = document.getElementById('doek').clientWidth - 32;
+  schaal = Math.min(1, ruimte / b);
+  iframe.style.transform = `scale(${schaal})`;
+  const r = iframe.getBoundingClientRect();
+  frame.style.width = r.width + 'px';
+  frame.style.height = r.height + 'px';
+  tekenKader();
+}
+document.querySelectorAll('[data-breed]').forEach(k => k.addEventListener('click', () => {
+  document.querySelectorAll('[data-breed]').forEach(x => x.classList.toggle('aan', x === k));
+  iframe.setAttribute('width', k.dataset.breed); schaalFrame();
+}));
+addEventListener('resize', schaalFrame);
+
+iframe.addEventListener('load', () => {
+  doc = iframe.contentDocument; win = iframe.contentWindow;
+  const st = doc.createElement('style');
+  st.textContent = `[data-reveal],[data-reveal-groep]>*{opacity:1!important;transform:none!important;transition:none!important}
+    [data-art]{cursor:move}
+    [data-art].is-gekozen{outline:2px dashed #EE7203;outline-offset:2px}`;
+  doc.head.appendChild(st);
+  doc.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); }, true);
+  doc.addEventListener('pointerdown', omlaag, true);
+  doc.addEventListener('keydown', toets);
+  win.addEventListener('scroll', tekenKader, {passive: true});
+  schaalFrame(); herstel(); vulPaginakeuze();
+});
+
+/* De keuzelijst komt uit de navigatie van de geladen pagina zelf (topbar plus drawer), zodat er niets te
+   onderhouden valt als er een pagina bijkomt. Alleen echte mappen op de site, geen ankers of externe links. */
+function vulPaginakeuze() {
+  const sel = document.getElementById('paginakeuze');
+  if (sel.dataset.gevuld) return;
+  const paden = new Map([['/', 'Homepage']]);
+  doc.querySelectorAll('.topbar a[href^="/"], .drawer a[href^="/"]').forEach(a => {
+    const h = a.getAttribute('href');
+    if (/^\/[a-z0-9-]+\/$/.test(h) && !paden.has(h)) paden.set(h, (a.textContent || '').trim().slice(0, 34) || h);
+  });
+  sel.innerHTML = '';
+  for (const [h, label] of paden) {
+    const o = document.createElement('option');
+    o.value = h; o.textContent = label + '  (' + h + ')'; o.selected = (h === PAGINA);
+    sel.appendChild(o);
+  }
+  if (!paden.has(PAGINA)) {   // pagina uit de URL die niet in het menu staat: toch tonen
+    const o = document.createElement('option'); o.value = PAGINA; o.textContent = PAGINA; o.selected = true;
+    sel.insertBefore(o, sel.firstChild);
+  }
+  sel.dataset.gevuld = '1';
+}
+document.getElementById('paginakeuze').addEventListener('change', e => {
+  // herladen in plaats van alleen de src wisselen: dan wordt alles (opslagsleutel, palet, kader) vers opgebouwd
+  location.search = '?p=' + encodeURIComponent(e.target.value);
+});
+iframe.src = PAGINA;
+
+/* ---------- plaatsen en selecteren ---------- */
+/* Een artifact achter de inhoud krijgt de klik niet (die gaat naar het blok ervoor), dus zoek ook op geometrie:
+   alle artifacts waarvan het vak het klikpunt bevat, hoogste laag eerst, bij gelijke laag de laatste in de DOM. */
+function artifactOp(x, y) {
+  const z = el => parseInt(getComputedStyle(el).zIndex) || 0;
+  return [...doc.querySelectorAll('[data-art]')].reverse()
+    .filter(el => { const r = el.getBoundingClientRect(); return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom; })
+    .sort((a, b) => z(b) - z(a))[0] || null;
+}
+function omlaag(e) {
+  if (plaatsItem) { plaats(e); return; }
+  const el = e.target.closest('[data-art]') || artifactOp(e.clientX, e.clientY);
+  if (!el) { kies(null); return; }
+  kies(el);
+  if (getComputedStyle(el).position !== 'absolute') return;
+  const r = el.getBoundingClientRect();
+  sleep = {dx: e.clientX - r.left, dy: e.clientY - r.top};
+  doc.addEventListener('pointermove', beweeg);
+  doc.addEventListener('pointerup', () => { sleep = null; doc.removeEventListener('pointermove', beweeg); voltooi(); }, {once: true});
+  e.preventDefault();
+}
+function beweeg(e) {
+  if (!sleep || !sel) return;
+  const x = e.clientX, y = e.clientY, {dx, dy} = sleep;
+  plan(() => {
+    const p = sel.offsetParent || doc.body, pr = p.getBoundingClientRect();
+    sel.style.left = (((x - dx - pr.left) / pr.width) * 100).toFixed(2) + '%';
+    sel.style.top  = (((y - dy - pr.top) / pr.height) * 100).toFixed(2) + '%';
+    tekenKader(); toonMaten();
+  });
+}
+function plaats(e) {
+  const sec = e.target.closest('section, header, footer') || doc.body;
+  if (getComputedStyle(sec).position === 'static') { sec.style.position = 'relative'; sec.dataset.artRelatief = '1'; }
+  const it = plaatsItem;
+  const el = doc.createElement('span');
+  el.innerHTML = it.soort === 'img'
+    ? `<img src="/assets/img/deco/${it.bestand}" alt="" width="${it.b}" height="${it.h}" loading="lazy" decoding="async">`
+    : it.html;
+  const nieuw = el.firstElementChild;
+  nieuw.dataset.art = 'nieuw';
+  nieuw.dataset.naam = it.naam;
+  nieuw.dataset.bron = it.soort === 'img' ? it.bestand : 'css';
+  nieuw.classList.add('art-' + (++teller));
+  const pr = sec.getBoundingClientRect(), br = it.breed;
+  Object.assign(nieuw.style, {position: 'absolute', width: br + 'px', height: 'auto', zIndex: 5,
+    left: (((e.clientX - pr.left - br / 2) / pr.width) * 100).toFixed(2) + '%',
+    top: (((e.clientY - pr.top - br / 2) / pr.height) * 100).toFixed(2) + '%'});
+  sec.appendChild(nieuw);
+  plaatsItem = null;
+  document.querySelectorAll('.pal').forEach(p => p.classList.remove('aan'));
+  document.getElementById('modus').textContent = 'Kies links een artifact en klik in de pagina';
+  kies(nieuw); bewaar();
+  e.preventDefault();
+}
+function kies(el) {
+  if (sel) sel.classList.remove('is-gekozen');
+  sel = el;
+  if (sel) sel.classList.add('is-gekozen');
+  tekenKader(); vulInspector();
+}
+
+/* ---------- kader en greep ---------- */
+function tekenKader() {
+  if (!sel || !doc.contains(sel)) { kader.style.display = 'none'; return; }
+  const r = sel.getBoundingClientRect(), f = iframe.getBoundingClientRect();
+  Object.assign(kader.style, {display: 'block', left: (f.left + r.left * schaal) + 'px', top: (f.top + r.top * schaal) + 'px',
+    width: (r.width * schaal) + 'px', height: (r.height * schaal) + 'px'});
+}
+/* Tijdens slepen en schalen alleen het kader en de getallen bijwerken, een keer per frame. De inspector bij
+   elke muisbeweging opnieuw opbouwen (met hoogsteLaag() langs alle elementen van de pagina) maakte het
+   schokkerig, pixel voor pixel: 300 muisstappen kostten 347 ms hoofdthread in headless Chrome, na deze fix 1 ms
+   (gemeten 28-08). Opbouwen gebeurt nu pas bij het loslaten, in voltooi(). */
+let raf = 0, laatste = null;
+function plan(fn) {
+  laatste = fn;
+  if (!raf) raf = requestAnimationFrame(() => { raf = 0; laatste(); laatste = null; });
+}
+function voltooi() {
+  if (raf) { cancelAnimationFrame(raf); raf = 0; }
+  if (laatste) { laatste(); laatste = null; }
+  tekenKader(); vulInspector(); bewaar();
+}
+function maatLabel(w) {
+  const b = document.getElementById('f-breed');
+  if (b) { b.value = w; b.previousElementSibling.querySelector('span').textContent = w + ' px'; }
+}
+/* Schalen als elastiek: tijdens het slepen beweegt alleen het oranje kader mee (een div in dit venster, dus
+   goedkoop) en de pagina krijgt de nieuwe breedte pas bij het loslaten. De breedte live in het iframe zetten
+   liet Chrome de svg elk frame opnieuw rasteren, en zonder pointer-capture kwamen muisbewegingen boven het
+   iframe niet meer in dit venster aan (28-08). */
+function elastiek(w) {
+  const r = sel.getBoundingClientRect();
+  kader.style.width = (w * schaal) + 'px'; kader.style.height = (w * r.height / r.width * schaal) + 'px';
+  maatLabel(Math.round(w));
+}
+function toonMaten() {
+  if (!sel) return;
+  maatLabel(Math.round(sel.getBoundingClientRect().width));
+  const pos = document.getElementById('f-pos');
+  if (pos) pos.innerHTML = `<label>Links <span>${sel.style.left || '-'}</span></label><label>Boven <span>${sel.style.top || '-'}</span></label>`;
+}
+greep.addEventListener('pointerdown', e => {
+  e.preventDefault(); e.stopPropagation();
+  try { greep.setPointerCapture(e.pointerId); } catch {}
+  const start = e.clientX, r0 = sel.getBoundingClientRect();
+  let breed = r0.width;
+  const mv = ev => { breed = Math.max(16, r0.width + (ev.clientX - start) / schaal); plan(() => elastiek(breed)); };
+  addEventListener('pointermove', mv);
+  addEventListener('pointerup', () => { removeEventListener('pointermove', mv); sel.style.width = Math.round(breed) + 'px'; voltooi(); }, {once: true});
+});
+
+/* ---------- kleur ----------
+   Een SVG in een <img> is niet met CSS te kleuren. Daarom wordt een gekleurd artifact een <span> met het
+   bestand als masker: de vorm blijft, de kleur is vrij. Bij een beeld met meerdere kleuren (bij, katrol,
+   logo's, stempels) levert dat een egale silhouetvorm op; "Origineel" zet het terug. Alleen huiskleuren. */
+const KLEUREN = [['Teal', '#00A19B'], ['Teal donker', '#00807A'], ['Teal diep', '#006C68'], ['Teal licht', '#32B3AF'],
+  ['Navy', '#22314E'], ['Antraciet', '#1D1D1B'], ['Oranje', '#EE7203'], ['Geel', '#FFD500'],
+  ['Zand', '#C4E4E4'], ['Lichtteal', '#E5F3F3'], ['Wit', '#FFFFFF'], ['Creme', '#F6F4EC']];
+function bronVan(el) { return el.dataset.bron || (el.tagName === 'IMG' ? el.getAttribute('src').split('/').pop() : ''); }
+function zetKleur(el, hex) {
+  const bestand = bronVan(el);
+  if (!bestand) return el;
+  const stijl = el.style.cssText, klassen = el.className, ouder = el.parentNode, na = el.nextSibling;
+  let nieuw;
+  if (!hex) {                                   // terug naar het originele beeld
+    if (el.tagName === 'IMG') return el;
+    nieuw = doc.createElement('img');
+    nieuw.src = '/assets/img/deco/' + bestand; nieuw.alt = '';
+    nieuw.setAttribute('loading', 'lazy'); nieuw.setAttribute('decoding', 'async');
+  } else {
+    nieuw = doc.createElement('span');
+    const m = `url("/assets/img/deco/${bestand}") center/contain no-repeat`;
+    nieuw.style.cssText = `display:block;background:${hex};-webkit-mask:${m};mask:${m}`;
+    nieuw.dataset.kleur = hex;
+  }
+  nieuw.className = klassen; nieuw.dataset.art = el.dataset.art; nieuw.dataset.naam = el.dataset.naam;
+  nieuw.dataset.bron = bestand;
+  if (el.dataset.artOud !== undefined) nieuw.dataset.artOud = el.dataset.artOud;
+  const eigen = stijl.replace(/(^|;)\s*(background|-webkit-mask|mask|display)\s*:[^;]*/g, '');
+  nieuw.style.cssText = (nieuw.style.cssText + ';' + eigen).replace(/;;+/g, ';');
+  if (!nieuw.style.height) nieuw.style.height = Math.round(el.getBoundingClientRect().height) + 'px';
+  ouder.insertBefore(nieuw, na); el.remove();
+  return nieuw;
+}
+
+/* ---------- lagen ----------
+   z-index werkt alleen binnen de stapelcontext waar het element in zit. Op deze pagina hebben #prijs
+   (z-index 6), .trust__deco (7) en de secties hero, reviews en footer (isolation:isolate) hun eigen
+   context, dus een artifact in een andere sectie komt daar met geen enkel getal bovenuit. Wat wel werkt:
+   de SECTIE zelf een hogere laag geven. Gemeten 28-08-2026. */
+function hoogsteLaag() {
+  let m = 0;
+  doc.querySelectorAll('body *').forEach(el => {
+    const c = getComputedStyle(el);
+    if (c.position !== 'static' && c.zIndex !== 'auto') m = Math.max(m, parseInt(c.zIndex) || 0);
+  });
+  return m;
+}
+function hoogsteLaagIn(p) {                     // hoogste z-index van de inhoud van de sectie, artifacts niet meegeteld
+  let m = 0;
+  p.querySelectorAll('*').forEach(el => {
+    if (el.dataset.art) return;
+    const c = getComputedStyle(el);
+    if (c.position !== 'static' && c.zIndex !== 'auto') m = Math.max(m, parseInt(c.zIndex) || 0);
+  });
+  return m;
+}
+function sectieLaag(p) {
+  const c = getComputedStyle(p);
+  return (c.position !== 'static' && c.zIndex !== 'auto') ? (parseInt(c.zIndex) || 0) : null;
+}
+/* Een artifact onder 0 valt alleen achter de INHOUD van zijn sectie (foto's, tekst) als die sectie zelf een
+   stapelcontext is. Anders zakt het onder de sectie-achtergrond: in #diensten (doorzichtig) zie je het nog,
+   in de creme2-secties (#werkwijze, #checklist, #faq) is het weg. Daarom krijgt de sectie dan z-index:0.
+   Vanaf 0 ligt elk artifact voor de inhoud, dus 5 > 0 stappen verandert niets zichtbaars (gemeten 28-08). */
+function zetLaag(z, herbouw = true) {
+  sel.style.zIndex = z;
+  const p = sel.offsetParent || doc.body;
+  if (z < 0 && sectieLaag(p) === null) zetSectieLaag(p, 0);
+  if (herbouw) vulInspector();
+  bewaar();
+}
+function zetSectieLaag(p, waarde) {
+  if (waarde === '' || waarde === null) { p.style.zIndex = ''; if (p.dataset.artRelatief) p.style.position = ''; delete p.dataset.artZ; return; }
+  if (getComputedStyle(p).position === 'static') { p.style.position = 'relative'; p.dataset.artRelatief = '1'; }
+  p.style.zIndex = waarde; p.dataset.artZ = waarde;
+}
+
+/* ---------- zwart-wit ---------- */
+function grijs(el) {
+  const m = /grayscale\(([\d.]+)(%?)\)/.exec(el.style.filter || '');
+  if (!m) return 0;
+  return Math.round(m[2] ? +m[1] : +m[1] * 100);
+}
+function zetGrijs(el, pct) {
+  if (el.dataset.artFilter === undefined) {            // schaduw uit de stylesheet bewaren en meenemen
+    const c = getComputedStyle(el).filter;
+    el.dataset.artFilter = (c && c !== 'none' && !el.style.filter) ? c : '';
+  }
+  const rest = el.dataset.artFilter;
+  el.style.filter = pct ? `grayscale(${pct}%)${rest ? ' ' + rest : ''}` : (rest || '');
+}
+
+/* ---------- inspector ---------- */
+function vulInspector() {
+  const i = document.getElementById('inspector');
+  if (!sel) {
+    const lijst = alles();
+    i.innerHTML = '<p class="leeg">Klik een geplaatst artifact aan om het te verschuiven, te schalen, doorzichtig te maken of naar een andere laag te zetten. Ligt het achter de inhoud, klik dan op de plek waar het zit, of kies het hieronder.</p>'
+      + (lijst.length ? '<h2 style="margin-top:14px">Geplaatst</h2>' + lijst.map((el, n) => `<button class="knop" data-n="${n}" style="width:100%;margin-bottom:6px;text-align:left">${el.dataset.naam} <span class="leeg">in ${kies_sel(el.offsetParent || doc.body)}${(parseInt(getComputedStyle(el).zIndex) || 0) < 0 ? ', achter de inhoud' : ''}</span></button>`).join('') : '');
+    i.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => { const el = lijst[+b.dataset.n]; el.scrollIntoView({block: 'center'}); kies(el); }));
+    return;
+  }
+  const cs = getComputedStyle(sel), p = sel.offsetParent || doc.body;
+  const vast = cs.position !== 'absolute';
+  const geknipt = getComputedStyle(p).overflow === 'hidden' || getComputedStyle(p).overflowX === 'hidden';
+  const z = parseInt(cs.zIndex) || 0, max = hoogsteLaagIn(p);
+  const ar = sel.getBoundingClientRect(), pr = p.getBoundingClientRect(), mx = ar.left + ar.width / 2, my = ar.top + ar.height / 2;
+  const buiten = !vast && (mx < pr.left || mx > pr.right || my < pr.top || my > pr.bottom);
+  i.innerHTML = `
+    <p style="margin:0 0 10px"><b>${sel.dataset.naam || sel.className.split(' ')[0]}</b><br><span class="leeg">${eigen_sel(sel)} in ${kies_sel(p)}</span></p>
+    ${vast ? '<div class="waarschuwing">Dit artifact staat in de tekststroom, verschuiven kan niet. Breedte, dekking en laag wel.</div>' : ''}
+    ${geknipt ? '<div class="waarschuwing">Het vak eromheen knipt af (overflow hidden): buiten de rand valt het weg.</div>' : ''}
+    <div class="veld"><label>Breedte <span>${Math.round(sel.getBoundingClientRect().width)} px</span></label>
+      <input type="range" id="f-breed" min="16" max="900" value="${Math.round(sel.getBoundingClientRect().width)}"></div>
+    <div class="veld"><label>Dekking <span>${Math.round((cs.opacity === '' ? 1 : +cs.opacity) * 100)}%</span></label>
+      <input type="range" id="f-dek" min="0" max="100" value="${Math.round((+cs.opacity || 1) * 100)}"></div>
+    <div class="veld"><label>Zwart-wit <span>${grijs(sel)}%</span></label>
+      <input type="range" id="f-grijs" min="0" max="100" value="${grijs(sel)}"></div>
+    <div class="veld"><label>Kleur <span>${sel.dataset.kleur || 'origineel'}</span></label>
+      <div class="stalen">
+        ${KLEUREN.map(([n, h]) => `<button class="staal${sel.dataset.kleur === h ? ' aan' : ''}" data-hex="${h}" title="${n}" style="background:${h}"></button>`).join('')}
+        <button class="staal staal--org${sel.dataset.kleur ? '' : ' aan'}" data-hex="">Origineel</button>
+      </div></div>
+    ${buiten ? `<div class="waarschuwing">Het midden van dit artifact ligt buiten ${kies_sel(p)}. Voor en achter gelden alleen voor de inhoud van ${kies_sel(p)}; waar het over een buursectie hangt, blijft het v&oacute;&oacute;r de tekst daarvan. Moet het daar achter, plaats het dan opnieuw in die sectie.</div>` : ''}
+    <div class="rij" style="margin-bottom:8px"><button class="knop${z >= max ? ' aan' : ''}" id="f-vooraan">Vooraan</button><button class="knop${z < 0 ? ' aan' : ''}" id="f-achterin">Achter de inhoud</button></div>
+    <div class="veld"><label>Laag (z-index) <span>${z < 0 ? 'achter de inhoud' : z >= max ? 'vooraan' : 'tussen de inhoud (0 t/m ' + max + ')'}</span></label>
+      <div class="rij"><input type="number" id="f-laag" value="${z}" style="flex:1"><button class="knop" id="f-achter" title="een laag terug">&minus;1</button><button class="knop" id="f-voor" title="een laag vooruit">+1</button></div></div>
+    <p class="leeg" style="margin:0 0 12px">Vooraan = boven alles in ${kies_sel(p)} (hoogste laag daar: ${max}). Achter de inhoud = laag -1, achter de foto's, tekst en blokken; de sectie krijgt dan zelf laag 0 zodat het artifact niet onder de achtergrond zakt.</p>
+    <div class="veld"><label>Laag van de sectie <span>${sectieLaag(p) === null ? 'auto' : sectieLaag(p)}</span></label>
+      <input type="number" id="f-seclaag" placeholder="auto" value="${sectieLaag(p) === null ? '' : sectieLaag(p)}"></div>
+    <button class="knop" id="f-secboven" style="width:100%;margin-bottom:8px">Sectie boven de rest</button>
+    <p class="leeg" style="margin:0 0 12px">Andere delen van de pagina gaan tot laag <b>${hoogsteLaag()}</b>. Zolang de sectie zelf lager ligt, telt de laag van het artifact alleen bínnen deze sectie.</p>
+    ${vast ? '' : `<div class="veld" id="f-pos"><label>Links <span>${sel.style.left || '-'}</span></label><label>Boven <span>${sel.style.top || '-'}</span></label></div>`}
+    <button class="knop" id="f-weg" style="width:100%">Verwijderen</button>`;
+  const aan = (id, ev, fn) => { const el = document.getElementById(id); if (el) el.addEventListener(ev, fn); };
+  aan('f-breed', 'input', e => { const w = +e.target.value; plan(() => elastiek(w)); });
+  aan('f-breed', 'change', e => { sel.style.width = e.target.value + 'px'; sel.style.height = 'auto'; voltooi(); });
+  aan('f-dek', 'input', e => { sel.style.opacity = (e.target.value / 100).toFixed(2); e.target.previousElementSibling.querySelector('span').textContent = e.target.value + '%'; });
+  aan('f-dek', 'change', bewaar);
+  aan('f-grijs', 'input', e => { zetGrijs(sel, +e.target.value); e.target.previousElementSibling.querySelector('span').textContent = e.target.value + '%'; });
+  aan('f-grijs', 'change', bewaar);
+  aan('f-laag', 'input', e => zetLaag(parseInt(e.target.value) || 0, false));
+  aan('f-voor', 'click', () => zetLaag((parseInt(getComputedStyle(sel).zIndex) || 0) + 1));
+  aan('f-achter', 'click', () => zetLaag((parseInt(getComputedStyle(sel).zIndex) || 0) - 1));
+  aan('f-vooraan', 'click', () => zetLaag(hoogsteLaagIn(p) + 1));
+  aan('f-achterin', 'click', () => zetLaag(-1));
+  aan('f-seclaag', 'input', e => { zetSectieLaag(p, e.target.value); bewaar(); });
+  aan('f-secboven', 'click', () => { zetSectieLaag(p, hoogsteLaag() + 1); vulInspector(); bewaar(); });
+  aan('f-weg', 'click', verwijder);
+  i.querySelectorAll('.staal').forEach(b => b.addEventListener('click', () => {
+    const nieuw = zetKleur(sel, b.dataset.hex);
+    if (sel) sel.classList.remove('is-gekozen');
+    sel = nieuw; sel.classList.add('is-gekozen');
+    tekenKader(); vulInspector(); bewaar();
+  }));
+}
+function verwijder() {
+  if (!sel) return;
+  if (sel.dataset.art === 'nieuw') sel.remove(); else { sel.removeAttribute('data-art'); sel.style.cssText = sel.dataset.artOud || ''; }
+  kies(null); bewaar();
+}
+function toets(e) {
+  if (!sel || getComputedStyle(sel).position !== 'absolute') return;
+  const stap = e.shiftKey ? 10 : 1, p = sel.offsetParent || doc.body, pr = p.getBoundingClientRect();
+  const nu = k => parseFloat(sel.style[k]) || 0;
+  if (e.key === 'ArrowLeft')  sel.style.left = (nu('left') - stap / pr.width * 100).toFixed(2) + '%';
+  else if (e.key === 'ArrowRight') sel.style.left = (nu('left') + stap / pr.width * 100).toFixed(2) + '%';
+  else if (e.key === 'ArrowUp')    sel.style.top = (nu('top') - stap / pr.height * 100).toFixed(2) + '%';
+  else if (e.key === 'ArrowDown')  sel.style.top = (nu('top') + stap / pr.height * 100).toFixed(2) + '%';
+  else if (e.key === 'Backspace' || e.key === 'Delete') { verwijder(); return; }
+  else return;
+  e.preventDefault(); tekenKader(); toonMaten(); bewaar();
+}
+document.addEventListener('keydown', toets);
+
+/* ---------- bestaande artifacts overnemen ---------- */
+document.getElementById('overnemen').addEventListener('click', () => {
+  const kiezers = ['img[src*="/deco/"]', '.ster', '.tmster', '.zegel', '.dozen__bij', '.kaartje', '.route-lijn', '.trust__deco > *'];
+  let n = 0;
+  doc.querySelectorAll(kiezers.join(',')).forEach(el => {
+    if (el.dataset.art || el.closest('[data-art]')) return;
+    el.dataset.art = 'bestaand'; el.dataset.artOud = el.style.cssText;
+    el.dataset.naam = el.className.split(' ').filter(c => c && c !== 'is-gekozen').pop() || el.tagName.toLowerCase();
+    n++;
+  });
+  document.getElementById('modus').textContent = `${n} bestaande artifacts overgenomen, je kunt ze nu aanklikken`;
+});
+
+/* ---------- opslaan en herstellen ---------- */
+function kies_sel(el) {                       // voor het OUDERVAK: id, anders de eerste klasse
+  if (!el || el === doc.body) return 'body';
+  if (el.id) return '#' + el.id;
+  const c = [...el.classList].filter(x => x !== 'is-gekozen')[0];
+  return c ? '.' + c : el.tagName.toLowerCase();
+}
+function eigen_sel(el) {                      // voor het ELEMENT zelf: alle klassen, anders raakt .zegel beide stempels
+  if (el.id) return '#' + el.id;
+  const c = [...el.classList].filter(x => x !== 'is-gekozen');
+  return c.length ? '.' + c.join('.') : el.tagName.toLowerCase();
+}
+function alles() { return [...doc.querySelectorAll('[data-art="nieuw"]')]; }
+function bewaar() {
+  const data = alles().map(el => {
+    const p = el.offsetParent || doc.body;
+    return {naam: el.dataset.naam, bron: el.dataset.bron, klas: [...el.classList].filter(c => c.startsWith('art-'))[0],
+      ouder: kies_sel(p), ouderZ: p.dataset.artZ || '', html: el.outerHTML, stijl: el.style.cssText};
+  });
+  localStorage.setItem(SLEUTEL, JSON.stringify(data));
+}
+function herstel() {
+  let data; try { data = JSON.parse(localStorage.getItem(SLEUTEL) || '[]'); } catch { return; }
+  data.forEach(d => {
+    const ouder = doc.querySelector(d.ouder) || doc.body;
+    if (getComputedStyle(ouder).position === 'static') { ouder.style.position = 'relative'; ouder.dataset.artRelatief = '1'; }
+    if (d.ouderZ) zetSectieLaag(ouder, d.ouderZ);
+    const h = doc.createElement('div'); h.innerHTML = d.html;
+    const el = h.firstElementChild; el.classList.remove('is-gekozen');
+    ouder.appendChild(el);
+    const nr = parseInt((d.klas || '').replace('art-', '')) || 0;
+    if (nr > teller) teller = nr;
+  });
+  if (data.length) document.getElementById('modus').textContent = `${data.length} artifacts hersteld uit de vorige sessie`;
+}
+document.getElementById('wissen').addEventListener('click', () => {
+  if (!confirm('Alle geplaatste artifacts weghalen?')) return;
+  alles().forEach(el => el.remove()); localStorage.removeItem(SLEUTEL); kies(null);
+});
+
+/* ---------- uitvoer ---------- */
+document.getElementById('toon-css').addEventListener('click', () => {
+  const nieuw = alles(), bestaand = [...doc.querySelectorAll('[data-art="bestaand"]')].filter(el => el.style.cssText);
+  const regels = [], html = [];
+  const num = v => (v || '').trim();
+  nieuw.forEach(el => {
+    const ouder = el.offsetParent || doc.body, os = kies_sel(ouder), klas = [...el.classList].filter(c => c.startsWith('art-'))[0];
+    const s = el.style;
+    if (ouder.dataset.artZ) regels.push(`${os}{position:relative;z-index:${ouder.dataset.artZ}}  /* sectie omhoog, anders blijft het artifact onder #prijs (6) en de blokken die zichzelf isoleren */`);
+    else if (ouder.dataset.artRelatief) regels.push(`${os}{position:relative}`);
+    regels.push(`${os} .${klas}{position:absolute;left:${num(s.left)};top:${num(s.top)};width:${num(s.width)}${s.opacity && s.opacity !== '1' ? ';opacity:' + s.opacity : ''}${s.filter ? ';filter:' + s.filter : ''};z-index:${num(s.zIndex) || 2};pointer-events:none}`);
+    if (el.dataset.kleur) regels.push(`/* ${el.dataset.naam}: gekleurde vorm, het bestand dient als masker */`);
+    const k = el.cloneNode(true);
+    ['style','data-art','data-naam','data-bron','data-art-filter','data-art-oud','data-kleur'].forEach(x => k.removeAttribute(x)); k.classList.remove('is-gekozen');
+    if (el.dataset.kleur) {
+      const m = `url(/assets/img/deco/${el.dataset.bron}) center/contain no-repeat`;
+      regels[regels.length - 1] = regels[regels.length - 1];
+      regels.push(`${os} .${klas}{background:${el.dataset.kleur};-webkit-mask:${m};mask:${m}}`);
+    }
+    html.push(`  /* ${el.dataset.naam} in ${os} */\n  ${k.outerHTML}`);
+  });
+  bestaand.forEach(el => {
+    const s = el.style, d = [];
+    ['left','top','width','opacity','filter','zIndex'].forEach(k => { if (s[k]) d.push((k === 'zIndex' ? 'z-index' : k) + ':' + s[k]); });
+    if (d.length) regels.push(`${eigen_sel(el)}{${d.join(';')}}  /* aangepast in de plaatser */`);
+  });
+  const t = [
+    `/* Artifact-plaatsing uit _werk/plaatser.html voor ${PAGINA}, ${new Date().toLocaleString('nl-NL')}, gezet op ${iframe.getAttribute('width')} px breed.`,
+    `   Percentages horen bij de sectie eromheen, dus ze schalen mee; controleer 390 en 1440 apart.`,
+    `   De HTML hoort bij de generator van DEZE pagina: de homepage staat in build_kievit.py, een subpagina in _werk/paginas/<slug>.html. */`,
+    ...[...new Set(regels)],
+    ``,
+    `<!-- HTML: als vervang1() in site/_werk/build_kievit.py, in de sectie waar het bij hoort -->`,
+    ...html
+  ].join('\n');
+  document.getElementById('uitvoer-tekst').value = t;
+  document.getElementById('uitvoer').showModal();
+});
+document.getElementById('kopieer').addEventListener('click', async () => {
+  await navigator.clipboard.writeText(document.getElementById('uitvoer-tekst').value);
+  document.getElementById('kopieer').textContent = 'Gekopieerd';
+  setTimeout(() => document.getElementById('kopieer').textContent = 'Kopieer', 1200);
+});
+document.getElementById('sluit').addEventListener('click', () => document.getElementById('uitvoer').close());
+</script>
+</body>
+</html>

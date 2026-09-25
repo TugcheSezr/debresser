@@ -1,0 +1,10 @@
+raw/
+web/
+sheets/
+edit/
+klaar/
+qa/crops/
+cutout/
+__pycache__/
+*.log
+.poort

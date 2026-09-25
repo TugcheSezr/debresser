@@ -1,0 +1,44 @@
+{
+ "ant1-schilderij-ingepakt": {
+  "oordeel": "goed",
+  "tekst": "Verhuizer vouwt deken om een volledig ingepakt schilderij (papier + noppenfolie, niets van doek of lijst te zien); borstprint TOP/MOVERS correct; schilderijen aan de muur mogen; papier op tafel onleesbaar; geen tape.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "ant2-antieke-kast-grachtenpand": {
+  "oordeel": "let",
+  "tekst": "Kast op hondje met 4 wielen, twee verhuizers gezicht naar de kast, handen en gezichten goed, NL stopcontacten. Borstprint jonge man: swoosh is een gesloten ovaal om MOVERS zonder pijlpunt; voorste man toont geen print.",
+  "retouche": "Borstprint jonge man rechts (x 1120-1235, y 926-995): gesloten teal ovaal rond MOVERS vervangen door open swoosh onder de letters met pijlpunt rechts. Optioneel: rood merkvlakje op zijn broekzak (x 1190, y 1490) weg. Print voorste man zit achter de deken, mag.",
+  "opnieuw": ""
+ },
+ "ant3-kunstkist-schuim": {
+  "oordeel": "fout",
+  "tekst": "Kist en deksel zonder belettering, borstprint en gezicht goed, maar het schilderij zit alleen in transparante noppenfolie: kleuren van het doek en de paneelrand schemeren door. Niets-van-doek-zichtbaar geschonden.",
+  "retouche": "Alternatief voor opnieuw: voorvlak van het pakket (x 350-950, y 1230-1980) dekkend wit maken onder de noppenfolie; groot vlak, geen kleine retouche.",
+  "opnieuw": "Doek schemert door de folie. Prompt: 'the painting is first wrapped in OPAQUE white acid-free paper (or a grey blanket) and only then in bubble wrap; no colour or detail of the artwork shows through; the wrapped panel reads as a plain white slab'."
+ },
+ "ant4-delftse-vaas": {
+  "oordeel": "goed",
+  "tekst": "Verhuizer pakt Delftse vaas in wit papier (per scene zichtbaar); doosopdruk exact als referentie (bij, honingraat, 'Aangesloten BIJ erkende verhuizers', QR), flappen open zonder tape, borstprint correct, handen goed.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "ant5-verzamelaar-adviseur": {
+  "oordeel": "let",
+  "tekst": "Adviseur met tablet (scherm onleesbaar) en verzamelaar van ~70 in vest die wijst; gezichten vriendelijk, verzamelaar lacht net binnen de grens. Borstprint: MOVERS vervormd (leest als MCVERS). Adviseur tegen linkerrand.",
+  "retouche": "Borstprint adviseur (x 498-592, y 1191-1266): MOVERS-letters herstellen, swoosh met pijl mag blijven. Bij smaller uitsnijden alleen aan de rechterkant (schilderij) knippen, anders valt de linkerarm van de adviseur weg.",
+  "opnieuw": ""
+ },
+ "ant6-kunstverhuizing-breed": {
+  "oordeel": "let",
+  "tekst": "Twee verhuizers dragen een volledig in deken gepakt schilderij, gezicht naar de last, handen met grip; open kisten zonder belettering, stoel in deken, NL gevels. Borstprint rechter verhuizer: MOVERS is een veeg.",
+  "retouche": "Borstprint rechter verhuizer met top knot (x 1657-1720, y 668-731): TOP leesbaar, MOVERS onleesbare veeg; herstellen of de print iets verzachten. Linker verhuizer toont geen print (arm ervoor), mag.",
+  "opnieuw": ""
+ },
+ "ant7-kunstkist-grachtenpand-wagen": {
+  "oordeel": "let",
+  "tekst": "Wagen-lockup klopt (letters zwart, swoosh onder, pijl rechts), laadklep achterop, kist op hondje, NL grachtenpand en fiets. Maar: kenteken leesbaar, spanbanden in laadbak, 2 stickers op kist, MOVERS-prints verhaspeld.",
+  "retouche": "1) kenteken achterop (x 1449-1537, y 1115-1159) leest '5-3X': onscherp maken; 2) blauwe en oranje spanband aan de rail in de laadbak (x 1184-1298, y 617-832) weg; 3) witte stickers op de kist rechtsboven (x 1266-1304, y 901-945) en linksboven achter de arm (x 857-882, y 995-1021) weg; 4) borstprints grijze man (x 662-731, y 844-901: MOVERS verhaspeld plus extra regeltje eronder) en jonge man (x 1367-1424, y 775-819: MOVERS verhaspeld) herstellen; 5) optioneel merklabel op broekzak jonge man (x 1424-1462, y 1058-1084). Geen gele reling op de laadklep zoals op de referentie; met de klep op de grond verdedigbaar, geen retouche.",
+  "opnieuw": ""
+ }
+}

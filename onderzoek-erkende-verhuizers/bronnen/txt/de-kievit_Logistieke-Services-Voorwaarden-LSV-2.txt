@@ -1,0 +1,850 @@
+LOGISTIEKE SERVICES VOORWAARDEN (LSV)
+
+
+
+
+           Zoetermeer, 1 februari 2014
+     LOGISTIEKE SERVICES VOORWAARDEN (LSV)
+
+
+ Gedeponeerd door FENEX (de Nederlandse Organisatie voor Expeditie en Logistiek)
+ en TLN (Transport en Logistiek Nederland), ter griffie van de rechtbank Rotterdam op
+                            2 april 2014 onder nummer 28/2014.
+
+
+
+
+Transport en Logistiek Nederland                                                 FENEX
+Postbus 3008                                                             Postbus 54200
+2700 KS Zoetermeer                                                   3008 JE Rotterdam
+I: www.tln.nl                                                             I: www.fenex.nl
+E: info@tln.nl                                                        E: fenex@fenex.nl
+Inhoudsopgave
+
+    Artikelen LSV
+    1.    Definities
+    2.    Werkingssfeer
+    3.    Verplichtingen van de Logistieke dienstverlener
+    4.    Gevolgen van niet-nakoming van de verplichtingen door de Logistieke
+          dienstverlener
+    5.    Aansprakelijkheid van de Logistieke dienstverlener
+    6.    Verplichtingen van de Opdrachtgever
+    7.    Gevolgen van niet-nakoming van de verplichtingen door de Opdrachtgever
+    8.    Aansprakelijkheid van de Opdrachtgever
+    9.    Overig
+    10.   Reclamatie
+    11.   Verjaring en verval
+    12.   Betalingsvoorwaarden
+    13.   Zekerheden
+    14.   Geschillenbeslechting / Arbitrage
+    15.   Slotbepalingen
+    16.   Aanbevolen citeertitel
+Artikel 1 - Definities
+
+
+In deze Voorwaarden wordt verstaan onder:
+
+
+1.   Logistieke activiteiten: alle werkzaamheden, waaronder lossen, inslag, opslag, uitslag,
+     laden, voorraadbeheer, assemblage, orderbehandeling, orderverzameling, verzend
+     gereed maken, facturering, informatie-uitwisseling en –beheer, evenals vervoer, doen
+     vervoeren en het doen van douaneaangiften met betrekking tot zaken;
+
+
+2.   Logistiek centrum: de ruimte(n) waar de Logistieke activiteiten plaatsvinden;
+
+
+3.   Logistieke dienstverlener: degene die de overeenkomst met de opdrachtgever sluit en
+     uit dien hoofde de Logistieke activiteiten verricht;
+
+
+4.   Hulppers(o)on(en): al diegenen van wie de Logistieke dienstverlener gebruik maakt
+     voor de uitvoering van de Logistieke activiteiten - niet zijnde de ondergeschikten van de
+     Logistieke dienstverlener;
+
+
+5.   Opdrachtgever: degene die de opdracht tot het uitvoeren van de Logistieke activiteiten
+     aan de Logistieke dienstverlener geeft en daartoe met deze de overeenkomst sluit;
+
+
+6.   Overeenkomst: de door de Logistieke dienstverlener en Opdrachtgever met elkaar
+     gesloten overeenkomst met betrekking tot de door de Logistieke dienstverlener uit te
+     voeren Logistieke activiteiten, waar deze voorwaarden voor Logistieke activiteiten deel
+     van uitmaken;
+
+
+7.   Voorwaarden: de voorwaarden die van toepassing zijn op de Overeenkomst,
+     waaronder begrepen deze voorwaarden welke in het navolgende steeds worden
+     aangeduid als ‘deze Voorwaarden’ of ‘de onderhavige Voorwaarden’;
+
+
+8.   Overmacht: alle omstandigheden die een zorgvuldig logistieke dienstverlener niet heeft
+     kunnen vermijden en waarvan hij de gevolgen niet heeft kunnen verhinderen. Onder
+     overmacht wordt onder meer verstaan: brand, explosie en overstroming als gevolg van
+     natuurgeweld, alsmede de gevolgen daarvan;
+
+
+
+
+                                          Pagina 4 van 21
+9.   Werkdagen: alle dagen, met uitzondering van zaterdagen, zondagen en erkende
+     feestdagen en in het land of de regio van uitvoering van de Logistieke activiteiten
+     erkende feest- en rustdagen;
+
+
+10. Zaken: de ter zake van de uitvoering van de Overeenkomst aan de Logistieke
+     dienstverlener of diens Hulppersoon door of namens de Opdrachtgever ter beschikking
+     gestelde zaken;
+
+
+11. Inontvangstneming: de handeling ten gevolge waarvan de Opdrachtgever de macht
+     over de Zaken met uitdrukkelijke of stilzwijgende instemming van de Logistieke
+     dienstverlener of diens Hulppersoon opgeeft en deze in de gelegenheid stelt de feitelijke
+     macht over de Zaken uit te oefenen;
+
+
+12. Aflevering: de handeling ten gevolge waarvan de Logistieke dienstverlener de macht
+     over de Zaken met uitdrukkelijke of stilzwijgende instemming van de Opdrachtgever of
+     van een door de Opdrachtgever aangewezene rechthebbende of van de ter zake
+     bevoegde autoriteiten opgeeft en deze in de gelegenheid stelt de feitelijke macht over de
+     Zaken uit te oefenen, dan wel in geval de Logistieke dienstverlener zich tot doen
+     vervoeren heeft verbonden, de handeling ten gevolge waarvan de Logistieke
+     dienstverlener de macht over de Zaken met uitdrukkelijke of stilzwijgende
+     instemming van de vervoerder opgeeft en deze in de gelegenheid stelt de
+     feitelijke macht over de Zaken uit te oefenen;
+
+
+13. Doen vervoeren: het ten behoeve van de Opdrachtgever doen vervoeren van de Zaken
+     door daartoe met één of meer vervoerders één of meer passende
+     vervoerovereenkomsten te sluiten;
+
+
+14. Voorraadverschil: een niet verklaarbaar verschil tussen de fysieke voorraad en de
+     voorraad zoals die blijkens de voorraadadministratie van de Logistieke dienstverlener
+     zou moeten zijn, behoudens tegenbewijs door de Opdrachtgever.
+
+
+
+
+                                         Pagina 5 van 21
+Artikel 2 – Werkingssfeer
+
+
+1. Algemeen
+Deze Voorwaarden beheersen alle aanbiedingen, overeenkomsten, rechts- en feitelijke
+handelingen met betrekking tot de te verrichten Logistieke activiteiten, voor zover deze niet
+zijn onderworpen aan dwingend recht. Andersluidende voorwaarden en voorschriften van de
+Opdrachtgever zijn niet van toepassing, tenzij deze uitdrukkelijk en schriftelijk zijn aanvaard
+door de Logistieke dienstverlener. Op de rechtsverhouding tussen partijen zijn, ook nadat de
+Overeenkomst is geëindigd, deze Voorwaarden van toepassing.
+
+
+2. Ondergeschikten / Hulppersonen
+De Logistieke dienstverlener is gerechtigd voor de uitvoering van de Logistieke activiteiten
+Hulppersonen in te schakelen, tenzij met de Opdrachtgever anders is overeengekomen.
+Indien ondergeschikten of Hulppersonen buiten overeenkomst worden aangesproken ter
+zake van werkzaamheden waartoe zij door de Logistieke dienstverlener zijn gebruikt, is te
+hunner behoeve bedongen dat zij zich op alle in de onderhavige Voorwaarden en
+Overeenkomst opgenomen bedingen betreffende uitsluiting of beperking van
+aansprakelijkheid kunnen beroepen.
+
+
+3. Vervoer
+Indien de Logistieke dienstverlener zich verbindt tot vervoer gelden, met inachtneming van
+deze Voorwaarden, naast (dwingendrechtelijke) verdragen, wetten en wettelijke regelingen,
+de bepalingen uit de vervoerdocumenten alsmede, voor nationaal Nederlands wegvervoer
+en voor zover daarvan niet in deze Voorwaarden of de Overeenkomst wordt afgeweken, de
+Algemene Vervoer Condities (AVC) , in de versie zoals gedeponeerd bij de griffie van de
+rechtbanken te Amsterdam en Rotterdam ten tijde van de totstandkoming van de
+Overeenkomst, tenzij een andere versie is overeengekomen.
+
+
+Voor zeevervoer gelden bij gebreke van een cognossement de Hague Visby Rules, zoals
+gewijzigd bij het Protocol van 22 december 1979, dan wel de Rotterdam Rules ingeval deze
+in werking zijn getreden, tenzij anders overeengekomen. Het vervoer omvat niet het laden in
+en lossen uit vervoermiddelen op het Logistiek centrum.
+
+
+Onder de in het onderhavige artikel genoemde vervoerdocumenten wordt verstaan het
+vervoerdocument dat door de Logistieke dienstverlener of diens Hulppersoon is afgegeven
+dan wel als afzender is ondertekend.
+
+
+
+                                         Pagina 6 van 21
+Indien en voor zover voormelde verdragen, wetten, wettelijke regelingen en condities
+aansprakelijkheden ongeregeld laten, geldt ter zake de bij het tot stand komen van de
+Overeenkomst gedeponeerde versie van de onderhavige Voorwaarden.
+
+
+4. Doen vervoeren
+Ingeval de Logistieke dienstverlener zich ter zake van het vervoer van Zaken, al dan niet op
+bepaalde trajecten of met betrekking tot bepaalde vervoermodaliteiten, uitdrukkelijk verbindt
+tot het doen vervoeren daarvan, zijn van toepassing de Nederlandse Expeditievoorwaarden
+(algemene voorwaarden van FENEX) in de versie zoals gedeponeerd bij de griffie van de
+rechtbanken te Amsterdam, Arnhem, Breda en Rotterdam ten tijde van de totstandkoming
+van de Overeenkomst (‘de Nederlandse Expeditievoorwaarden’), tenzij een andere versie is
+overeengekomen.
+
+
+5. Douane- en fiscale diensten
+Ingeval de Logistieke dienstverlener zich verbindt tot het verrichten van douaneformaliteiten
+(daarbij inbegrepen formaliteiten ter zake opslag in douane-entrepot) en/of tot fiscale
+vertegenwoordiging, zijn daarop van toepassing de Nederlandse Expeditievoorwaarden in de
+versie zoals gedeponeerd bij de griffie van de rechtbanken te Amsterdam, Arnhem, Breda en
+Rotterdam ten tijde van de totstandkoming van de Overeenkomst (‘de Nederlandse
+Expeditievoorwaarden’), tenzij een andere versie is overeengekomen.
+
+
+Artikel 3 – Verplichtingen van de Logistieke dienstverlener
+
+
+De Logistieke dienstverlener is verplicht:
+
+
+1.   de overeengekomen Zaken op de overeengekomen plaats, tijd en wijze in ontvangst te
+     (doen) nemen, mits deze deugdelijk verpakt zijn, de juiste documenten aanwezig zijn en
+     de Zaken aan hem of zijn Hulppersoon ter beschikking zijn gesteld;
+
+
+2.   zorg te (doen) dragen voor het laden, stuwen en lossen op het Logistiek centrum en de
+     in- en uitslag van Zaken, tenzij deze naar het oordeel van de Logistieke dienstverlener of
+     zijn Hulppersoon zodanig gevaarlijk zijn, dan wel een dusdanige overlast veroorzaken,
+     dat deze werkzaamheden niet van hem of zijn Hulppersoon kunnen worden gevergd;
+
+
+3.   de Logistieke activiteiten met betrekking tot de Zaken te laten plaatsvinden in het met de
+     Opdrachtgever overeengekomen Logistiek centrum;
+
+
+
+                                         Pagina 7 van 21
+     a. indien geen specifiek Logistiek centrum is overeengekomen, is de Logistieke
+        dienstverlener vrij een geschikte ruimte te kiezen en Zaken tussen geschikte ruimten
+        te verplaatsen.
+     b. indien een specifiek Logistiek centrum is overeengekomen, is de Logistieke
+        dienstverlener bevoegd de Zaken in overleg met de Opdrachtgever te verplaatsen
+        indien dit wenselijk is voor een goede bedrijfsvoering en/of een goede uitvoering van
+        de Logistieke activiteiten. De Opdrachtgever mag toestemming voor verplaatsing niet
+        weigeren, indien de nieuwe ruimten gelijkwaardig of beter zijn;
+
+
+4.   de verplaatsing als bedoeld in lid 3 van dit artikel voor zijn rekening te laten
+     plaatsvinden, tenzij de verplaatsing moet geschieden:
+     a. in het belang van de Opdrachtgever, dan wel in zijn opdracht, en/of;
+     b. ten gevolge van omstandigheden waarvoor de Logistieke dienstverlener niet
+        aansprakelijk is en/of;
+     c. ten gevolge van omstandigheden die in redelijkheid niet voor rekening en/of risico van
+        de Logistieke dienstverlener komen, en/of;
+     d. ten gevolge van regelgeving en/of op aanwijzing van de bevoegde autoriteiten;
+
+
+     het vervoer in verband met de verplaatsing vindt plaats onder toepassing van de
+     regelingen genoemd in artikel 2 lid 3 van deze Voorwaarden;
+
+
+5.   alle, ook niet rechtstreeks uit de Overeenkomst voortvloeiende maatregelen te nemen
+     ter bescherming van het belang van de Opdrachtgever en van zijn Zaken. Waar mogelijk
+     pleegt hij voorafgaand overleg met de Opdrachtgever. Indien geen tijdig voorafgaand
+     overleg mogelijk is, neemt de Logistieke dienstverlener de maatregelen die hem het
+     beste voorkomen in het belang van de Opdrachtgever en informeert de Opdrachtgever
+     daaromtrent;
+
+
+6.   zijn aansprakelijkheid voortvloeiend uit de Overeenkomst te verzekeren op basis van
+     gebruikelijke verzekeringsvoorwaarden en de Opdrachtgever op aanvraag een kopie
+     van het verzekeringscertificaat te verstrekken;
+
+
+7.   de Opdrachtgever en de door deze aangewezen personen voor risico van de
+     Opdrachtgever toe te laten tot de plaatsen waar de Zaken zich bevinden tijdens
+     kantooruren op Werkdagen, tenzij anders overeengekomen, mits:
+     a. de gewenste toegang tijdig tevoren aan de Logistieke dienstverlener kenbaar is
+        gemaakt;
+
+                                          Pagina 8 van 21
+     b. de Opdrachtgever akkoord gaat met begeleiding door de Logistieke dienstverlener;
+     c. de inspectie plaatsvindt volgens de huisregels van de Logistieke dienstverlener;
+     d. de door de Opdrachtgever tijdens de inspectie verkregen informatie omtrent andere in
+        de ruimte(n) aanwezige Zaken niet met derden wordt gedeeld.
+     Eventuele aan de inspectie verbonden kosten zijn voor rekening van de Opdrachtgever;
+
+
+8.   bijkomende werkzaamheden in overleg met en in opdracht van de Opdrachtgever te
+     verzorgen, indien deze werkzaamheden redelijkerwijze van de Logistieke dienstverlener
+     kunnen worden verlangd;
+
+
+9.   schades aan en manco’s op in ontvangst te nemen en in ontvangst genomen Zaken zo
+     spoedig mogelijk schriftelijk aan de Opdrachtgever te melden en aan deze ter zake
+     instructies te vragen;
+
+
+10. in te staan voor de deugdelijkheid en de geschiktheid van het door hem te gebruiken
+     materiaal;
+
+
+11. de Zaken hetzij in dezelfde staat als waarin hij deze heeft ontvangen, hetzij in de
+     overeengekomen staat af te leveren;
+
+
+12. tegenover derden geheimhouding in acht te nemen ten aanzien van alle feiten en
+     gegevens die hem uitsluitend door uitvoering van de Overeenkomst bekend zijn, met
+     uitzondering van bevoegde overheidsinstanties indien informatie moet worden verstrekt
+     op basis van een wettelijk voorschrift en van informatie-uitwisseling met derden in het
+     kader van een normale bedrijfsvoering.
+
+
+Artikel 4 – Gevolgen van niet-nakoming van de verplichtingen door de Logistieke
+dienstverlener
+
+
+Indien de Logistieke dienstverlener bij voortduring toerekenbaar tekortschiet in de nakoming
+van één of meerdere van zijn verplichtingen als vermeld in artikel 3 kan de Opdrachtgever,
+onverminderd zijn recht op vergoeding van geleden schade conform artikel 5, de
+Overeenkomst met onmiddellijke ingang geheel of gedeeltelijk ontbinden, nadat:
+-    hij de Logistieke dienstverlener door aangetekend schrijven gemotiveerd heeft
+     aangegeven waarin de Logistieke dienstverlener is tekort geschoten en deze daarbij een
+     termijn van minimaal dertig dagen voor nakoming heeft gesteld en;
+
+
+
+                                         Pagina 9 van 21
+-    de Logistieke dienstverlener bij afloop van die termijn nog niet aan zijn verplichtingen
+     heeft voldaan.
+Opdrachtgever heeft deze bevoegdheid niet indien de tekortkoming, gezien haar bijzondere
+aard of geringe betekenis, de ontbinding met haar gevolgen niet rechtvaardigt.
+
+
+Artikel 5 – Aansprakelijkheid van de Logistieke dienstverlener
+
+
+1.   De Logistieke dienstverlener is, behoudens Overmacht en het overige in deze
+     Voorwaarden bepaalde, aansprakelijk voor schade aan en/of het verlies van de Zaken,
+     ontstaan tijdens de periode van Inontvangstneming tot Aflevering. De Logistieke
+     dienstverlener is niet aansprakelijk voor schade welke het gevolg is van het niet
+     nakomen door de Opdrachtgever van enige krachtens deze of afzonderlijke
+     O(o)vereenkomst(en) en de op beide van toepassing zijnde V(v)oorwaarden, op de
+     Opdrachtgever rustende verplichting.
+
+
+2.   In geval van vervoer is de Logistieke dienstverlener aansprakelijk tot maximaal de voor
+     de betreffende vervoersmodaliteit(en) in de geldende regelgeving gestelde
+     aansprakelijkheidslimieten, tenzij anders overeengekomen. De Logistieke dienstverlener
+     is daarbij niet aansprakelijk voor zover de schade zijn oorzaak vindt in het ontbreken of
+     de gebrekkigheid van de verpakking van de Zaken die gelet op hun aard of de wijze van
+     vervoer voldoende verpakt hadden moeten zijn en de Logistieke dienstverlener
+     aannemelijk maakt dat de schade een gevolg heeft kunnen zijn van deze oorzaak. In
+     geval van wegvervoer door de Logistieke dienstverlener de Zaken niet op de
+     overeengekomen plaats, tijd en wijze in ontvangst worden genomen, is de
+     aansprakelijkheid voor de daaruit voortvloeiende schade beperkt tot niet meer dan
+     tweemaal de vracht zoals overeengekomen voor het wegvervoerdeel, doch maximaal
+     10.000 SDR; doch niet alvorens de Opdrachtgever de Logistieke dienstverlener een
+     uiterste termijn heeft gesteld en de Logistieke dienstverlener bij afloop daarvan nog niet
+     aan zijn verplichting heeft voldaan.
+
+
+3.   Met betrekking tot de overige Logistieke activiteiten is de aansprakelijkheid van de
+     Logistieke dienstverlener voor schade aan of verlies van de Zaken beperkt tot 4 SDR per
+     kilogram brutogewicht van de beschadigde of verloren Zaken, met een maximum van
+     100.000 SDR per gebeurtenis of reeks van gebeurtenissen met één en dezelfde
+     schadeoorzaak.
+
+
+
+
+                                            Pagina 10 van 21
+4.   De door de Logistieke dienstverlener te vergoeden schade ten gevolge van
+     beschadiging of verlies van de Zaken zal nimmer meer bedragen dan de door de
+     Opdrachtgever te bewijzen waarde van de Zaken. Bij gebreke van bewijs geldt de
+     gangbare marktprijs voor goederen van dezelfde aard en kwaliteit, geldend op de plaats
+     en het tijdstip van Inontvangstneming.
+
+
+5.   Onder toepassing van het bepaalde in artikel 5 lid 7, is de aansprakelijkheid van de
+     Logistieke dienstverlener voor alle andere schade dan schade aan en/of verlies van de
+     Zaken, beperkt tot 10.000 SDR per gebeurtenis of reeks van gebeurtenissen met één en
+     dezelfde schadeoorzaak, met dien verstande – en met inachtneming van deze
+     beperking van aansprakelijkheid tot 10.000 SDR – dat in het geval door de Logistieke
+     dienstverlener douaneformaliteiten worden verricht of door deze als fiscaal
+     vertegenwoordiger wordt opgetreden, de Logistieke dienstverlener niet aansprakelijk is
+     voor enige schade, tenzij de Opdrachtgever bewijst dat de schade is ontstaan door
+     schuld of nalatigheid van de Logistieke dienstverlener.
+
+
+6.   Eventuele Voorraadverschillen dienen te blijken uit opname van de fysieke voorraad,
+     welke opname voor rekening van de Opdrachtgever tenminste eenmaal per jaar en
+     tevens op het moment dat de Overeenkomst eindigt dient plaats te vinden.
+
+
+     Eventuele tekorten en eventuele overschotten worden daarbij tegen elkaar weg geboekt.
+     Van enige aansprakelijkheid van de Logistieke dienstverlener voor Voorraadverschillen
+     kan slechts sprake zijn indien en voor zover, in de rekeneenheid die voor de registratie
+     van de voorraad wordt gehanteerd, de tekorten (manco’s) eventuele overschotten
+     overtreffen met minstens één procent van het aantal, dat op jaarbasis betreffende die
+     Zaken onderwerp is van de Overeenkomst. Elke aanpassing door de Logistieke
+     dienstverlener van zijn voorraadadministratie, niet ten gevolge van in- en uitslag van
+     goederen, zal zo spoedig mogelijk door hem aan de Opdrachtgever worden gemeld. Ten
+     overvloede wordt uitdrukkelijk overeengekomen dat deze Voorwaarden ook de
+     aansprakelijkheid van de Logistieke dienstverlener wegens Voorraadverschillen
+     beheersen, met inbegrip van de aansprakelijkheidslimieten omschreven in artikel 5 lid 3.
+
+
+7.   De Logistieke dienstverlener is nimmer aansprakelijk voor gederfde winst, gevolgschade
+     en immateriële schade, hoe ook ontstaan.
+
+
+
+
+                                        Pagina 11 van 21
+8.   De Logistieke dienstverlener kan zich niet beroepen op de in het onderhavige artikel
+     bepaalde aansprakelijkheidslimieten in geval van opzet of bewuste roekeloosheid van
+     hemzelf.
+
+
+9.   Indien de Logistieke dienstverlener door de Opdrachtgever buiten overeenkomst wordt
+     aangesproken ter zake van bij de uitvoering van de Logistieke activiteiten ontstane
+     schade, dan is de Logistieke dienstverlener niet verder aansprakelijk dan hij dit zou zijn
+     op grond van de Overeenkomst.
+
+
+10. Kan de Logistieke dienstverlener ter afwering van zijn aansprakelijkheid voor een
+     gedraging van een Hulppersoon of ondergeschikte aan de Overeenkomst een
+     verweermiddel jegens de Opdrachtgever ontlenen, dan kan ook de Hulppersoon of
+     ondergeschikte, indien zij op grond van deze gedraging door de Opdrachtgever wordt
+     aangesproken, dit verweermiddel inroepen, als ware ook de Hulppersoon of
+     ondergeschikte zelf partij bij de overeenkomst.
+
+
+11. Wordt een Logistieke dienstverlener ter zake van beschadiging of verlies van een zaak
+     of vertraging in de aflevering, buiten overeenkomst aangesproken door iemand die geen
+     partij is bij de Overeenkomst of een door of namens de Logistiek dienstverlener gesloten
+     overeenkomst tot vervoer, dan is hij tegen deze niet verder aansprakelijk dan hij uit
+     overeenkomst zou zijn.
+
+
+Artikel 6 – Verplichtingen van de Opdrachtgever
+
+
+De Opdrachtgever is verplicht:
+
+
+1.   de Logistieke dienstverlener tijdig al die opgaven te doen en documenten te verschaffen
+     omtrent de Zaken alsmede de behandeling daarvan, waarvan hij weet of behoort te
+     weten dat zij voor de Logistieke dienstverlener van belang zijn, tenzij hij aantoont dat de
+     Logistieke dienstverlener deze gegevens kent of behoort te kennen. De Opdrachtgever
+     staat er voor in dat de door hem verstrekte gegevens juist zijn en alle instructies en ter
+     beschikking gestelde Zaken in overeenstemming zijn met de wet- en regelgeving;
+
+
+2.   indien Zaken en/of werkzaamheden onderworpen zijn aan overheidsbepalingen,
+     waaronder begrepen douane- en accijnsbepalingen en belastingvoorschriften, dient de
+     Opdrachtgever tijdig alle inlichtingen en documenten te verstrekken welke voor de
+     Logistieke dienstverlener noodzakelijk zijn om aan die bepalingen te voldoen;
+
+                                         Pagina 12 van 21
+     Het verstrekken van inlichtingen en / of documenten aan de Logistieke dienstverlener,
+     vereist voor het verrichten van formaliteiten in verband met de hiervoor bedoelde
+     overheidsbepalingen, houdt een instructie daartoe in. De Logistieke dienstverlener is
+     steeds gerechtigd deze instructie al dan niet op te volgen;
+
+
+3.   de overeengekomen Zaken in deugdelijke verpakking op de overeengekomen plaats, tijd
+     en wijze, vergezeld van een wegvervoer-vrachtbrief (voor zover nodig) en van de
+     overeengekomen documenten en/of documentatie en de overige door of krachtens
+     regelgeving van overheidswege vereiste documenten ter beschikking van de Logistieke
+     dienstverlener of diens Hulppersoon te stellen;
+
+
+4.   zorg te (doen) dragen voor het laden, stuwen en lossen van Zaken, tenzij:
+     - artikel 3 lid 2 van toepassing is, of;
+     - partijen anders overeenkomen, of;
+     - uit de aard van het voorgenomen vervoer - in aanmerking genomen de te vervoeren
+        Zaken en het ter beschikking gestelde voertuig - anders voortvloeit.
+
+
+5.   de Logistieke dienstverlener c.q. diens ondergeschikten en/of Hulppersonen op diens
+     eerste verzoek te vrijwaren ingeval deze door derden buiten overeenkomst wordt
+     aangesproken ter zake van schade dan wel financieel nadeel, op enigerlei wijze verband
+     houdend met de uitvoering van deze of afzonderlijke O(o)vereenkomst(en) en de op
+     beide van toepassing zijnde V(v)oorwaarden, met inbegrip van aanspraken wegens
+     productaansprakelijkheid en/of intellectuele eigendomsrechten. Deze
+     vrijwaringsverplichting geldt indien de Opdrachtgever niet voldeed aan enige verplichting
+     die de wet, deze Voorwaarden of de Overeenkomst hem opleggen, of ingeval de schade
+     dan wel het financiële nadeel wordt veroorzaakt door omstandigheden welke zijn
+     gelegen in de risicosfeer van de Opdrachtgever;
+
+
+6.   in te staan voor de door hem aan de Logistieke dienstverlener of diens Hulppersoon ter
+     beschikking gestelde Zaken en materiaal;
+
+
+7.   naast de overeengekomen vergoeding, de eventuele andere uit deze of afzonderlijke
+     O(o)vereenkomst(en) en de op beide van toepassing zijnde V(v)oorwaarden
+     voortvloeiende kosten tijdig te vergoeden;
+
+
+
+
+                                          Pagina 13 van 21
+8.   kosten voor inspecties, vervolgwerkzaamheden, opruimingswerkzaamheden, en afvoer
+     van afval ontstaan ten gevolge van de uitvoering van deze of afzonderlijke
+     O(o)vereenkomst(en) en de op beide van toepassing zijnde V(v)oorwaarden tijdig te
+     vergoeden;
+
+
+9.   bij beëindiging van de Overeenkomst de zich bij de Logistieke dienstverlener of diens
+     Hulppersoon bevindende Zaken uiterlijk op de laatste werkdag vóór de datum van
+     beëindiging van de Overeenkomst in ontvangst te nemen en/of te doen afvoeren, zulks
+     na betaling van al hetgeen aan de Logistieke dienstverlener verschuldigd is en van
+     datgene, waarvan op die dag bekend is dat het verschuldigd zal gaan zijn. Voor hetgeen
+     de Opdrachtgever na beëindiging van de Overeenkomst verschuldigd zal worden, voor
+     zover al bekend en/of in redelijkheid door de Logistieke dienstverlener geschat, kan de
+     Opdrachtgever volstaan met het stellen van naar het oordeel van de Logistieke
+     dienstverlener voldoende zekerheid;
+
+
+10. tegenover derden geheimhouding in acht te nemen ten aanzien van alle feiten en
+     gegevens die hem uitsluitend op basis van de Overeenkomst bekend zijn, met
+     uitzondering van bevoegde overheidsinstanties indien informatie moet worden verstrekt
+     op basis van een wettelijk voorschrift en van informatie-uitwisseling met derden in het
+     kader van een normale bedrijfsvoering.
+
+
+11. de Zaken onmiddellijk in ontvangst te nemen en/of te doen afvoeren, indien deze naar
+     het oordeel van de Logistieke dienstverlener zodanig gevaarlijk zijn, dan wel een
+     dusdanige overlast veroorzaken, dat van hem niet kan worden gevergd deze langer in
+     opslag te houden. In afwijking van het bepaalde in artikel 3 lid 2 geschiedt de uitslag en
+     de belading door of namens de Opdrachtgever en voor diens rekening en risico;
+
+
+Artikel 7 – Gevolgen van niet-nakoming van de verplichtingen door de Opdrachtgever
+
+
+1.   Indien de Opdrachtgever bij voortduring toerekenbaar tekortschiet in de nakoming van
+     één of meerdere van zijn verplichtingen als vermeld in artikel 6 leden 1 t/m 10 kan de
+     Logistieke dienstverlener onverminderd zijn recht op vergoeding van geleden schade de
+     Overeenkomst met onmiddellijke ingang geheel of gedeeltelijk ontbinden, nadat hij de
+     Opdrachtgever door aangetekend schrijven een uiterste termijn van minimaal veertien
+     dagen voor nakoming heeft gesteld en de Opdrachtgever bij afloop daarvan nog niet aan
+     zijn verplichtingen heeft voldaan. Indien door het stellen van een dergelijke termijn het
+     belang van de Logistieke dienstverlener bij een ongestoorde exploitatie van zijn bedrijf
+
+                                         Pagina 14 van 21
+     op onevenredige wijze zou worden geschaad, kan hij ook zonder inachtneming van een
+     uiterste termijn de Overeenkomst ontbinden.
+
+
+2. Indien de Opdrachtgever niet voldoet aan een of meerdere van zijn verplichtingen als
+     vermeld in artikel 6 leden 1 t/m 8, is de Logistieke dienstverlener bevoegd de nakoming
+     van zijn verbintenis op te schorten. Dit opschortingsrecht kan ook worden ingeroepen
+     tegen de schuldeisers van de Opdrachtgever.
+
+3. Indien de Opdrachtgever niet voldoet aan zijn verplichtingen als vermeld in artikel 6
+     leden 9 en 11, is de Logistieke dienstverlener gerechtigd tot:
+     a. het verplaatsen van de Zaken naar andere ruimten voor rekening en risico van de
+        Opdrachtgever, en/of;
+     b. het onderhands of publiekelijk verkopen van de Zaken voor rekening van de
+        Opdrachtgever na verloop van veertien dagen na aangetekende verzending aan de
+        Opdrachtgever van een schriftelijke kennisgeving van de voorgenomen verkoop,
+        zonder dat daarbij enige verdere formaliteit in acht genomen zal behoeven te
+        worden;
+     c. het abandonneren of vernietigen van de Zaken indien aannemelijk is dat bij verkoop
+        van de Zaken de kosten hoger zullen zijn dan de baten of indien, ondanks een
+        redelijke poging daartoe van de Logistieke dienstverlener, geen koper gevonden kan
+        worden, waarbij de kosten voor het abandonneren of vernietigen steeds voor
+        rekening van de Opdrachtgever zijn.
+
+
+Artikel 8 – Aansprakelijkheid van de Opdrachtgever
+
+
+1.   De Opdrachtgever is aansprakelijk voor alle schade aan het Logistiek centrum en/of de
+     bezittingen van de Logistieke dienstverlener, van diens Hulppersonen, van diens
+     ondergeschikten en van diens andere Opdrachtgevers, alsmede voor personenschade,
+     veroorzaakt door de Opdrachtgever zelf, zijn Zaken, daaronder begrepen ook de
+     verpakking van zijn Zaken, zijn Hulppersonen, ondergeschikten en de door hem
+     aangewezen personen.
+
+
+2.   De Opdrachtgever is jegens de Logistieke dienstverlener aansprakelijk voor alle schade,
+     waaronder boeten, interesten, alsmede straffen en verbeurdverklaringen, daaronder
+     begrepen gevolgen wegens niet of niet tijdige aanzuivering van douanedocumenten, ten
+     gevolge van onder meer de onjuistheid, onnauwkeurigheid of onvolledigheid van zijn
+     instructies en de door hem verschafte gegevens en/of documenten, het niet of niet tijdig
+
+                                         Pagina 15 van 21
+     ter beschikking stellen van de Zaken op de afgesproken tijd, plaats en wijze alsmede het
+     niet of niet tijdig verstrekken van documenten en/of instructies.
+
+
+3.   De Opdrachtgever is jegens de Logistieke dienstverlener aansprakelijk voor alle schade
+     veroorzaakt door het niet nakomen van diens verplichtingen uit hoofde van deze of
+     afzonderlijke O(o)vereenkomst(en) en de op beide van toepassing zijnde
+     V(v)oorwaarden.
+
+
+4.   De Opdrachtgever moet aan de Logistieke dienstverlener de aan deze terzake van
+     overbelading bij wegvervoer opgelegde boete vergoeden. Indien de Opdrachtgever het
+     bewijs kan overleggen van een beboeting voor overtreding van artikel 2.6 lid 2 uit de
+     Wet wegvervoer goederen, dan vervalt deze bepaling, behoudens in geval van kwade
+     trouw.
+
+
+Artikel 9 – Overig
+
+
+1.   De Logistieke dienstverlener kan de Overeenkomst met onmiddellijke ingang opzeggen
+     ingeval de Opdrachtgever:
+     - zijn beroep of bedrijf geheel of voor een belangrijk deel staakt;
+     - de vrije beschikking over zijn vermogen of een belangrijk deel daarvan verliest;
+     - zijn rechtspersoonlijkheid verliest, wordt ontbonden of feitelijk wordt geliquideerd;
+     - in staat van faillissement wordt verklaard;
+     - een akkoord buiten faillissement aanbiedt;
+     - surseance van betaling aanvraagt;
+     - de beschikking over zijn goederen of een belangrijk deel daarvan verliest ten gevolge
+        van beslaglegging door derden;
+     - niet voldoet aan zijn verplichtingen als vermeld in artikel 6 lid 11.
+
+
+2.   Wanneer na Inontvangstneming van de Zaken, door de Logistieke dienstverlener het
+     vervoer redelijkerwijs niet of niet binnen redelijke tijd kan worden aangevangen,
+     voortgezet of voltooid, is de Logistieke dienstverlener verplicht zulks aan de
+     Opdrachtgever mede te delen. Partijen hebben alsdan de bevoegdheid de onderhavige
+     vervoerovereenkomst schriftelijk op te zeggen en deze overeenkomst eindigt bij
+     ontvangst van deze mededeling. De Logistieke dienstverlener is vervolgens niet
+     verplicht voor het verdere vervoer zorg te dragen en is bevoegd de Zaken te lossen en
+     op te slaan op een daartoe geschikte plaats; de Opdrachtgever is bevoegd de Zaken tot
+     zich te nemen. De in verband met de opzegging met betrekking tot de Zaken gemaakte
+
+                                         Pagina 16 van 21
+     kosten komen ten laste van de Opdrachtgever. Behoudens overmacht (6:75 BW) is de
+     Logistieke dienstverlener verplicht de Opdrachtgever de schade te vergoeden, die deze
+     door de opzegging van de overeenkomst heeft geleden, waarbij de aansprakelijkheid
+     beperkt is tot niet meer dan tweemaal de vracht zoals overeengekomen voor de
+     betreffende vervoersmodaliteit, doch maximaal 10.000 SDR.
+
+
+Artikel 10 – Reclamatie
+
+
+1.   Indien de Zaken door de Logistieke dienstverlener worden afgeleverd zonder dat de
+     geadresseerde, ten overstaan van de Logistieke dienstverlener de staat daarvan heeft
+     vastgesteld, worden de Zaken behoudens tegenbewijs geacht in goede staat te zijn
+     afgeleverd.
+
+
+2.   Indien de Zaken door de Logistieke dienstverlener worden afgeleverd zonder dat de
+     geadresseerde, schriftelijke voorbehouden ter kennis van de Logistieke dienstverlener
+     heeft gebracht waarin de algemene aard van het verlies of de beschadiging is
+     aangegeven, worden:
+     - indien het verliezen of waarneembare beschadigingen betreft, uiterlijk op het ogenblik
+       van Aflevering;
+     - indien het niet uiterlijk waarneembare beschadigingen betreft, binnen de periode die
+       op grond van de op de voor Aflevering gekozen vervoersmodaliteit van toepassing
+       zijnde wet- en regelgeving is voorgeschreven of, bij gebreke van een (wettelijke)
+       regeling, uiterlijk binnen vijf Werkdagen na de Aflevering;
+     de Zaken behoudens tegenbewijs geacht in goede staat te zijn afgeleverd.
+
+
+3.   De dag van de Aflevering wordt bij het bepalen van voornoemde termijnen niet
+     meegerekend.
+
+
+4.   In geval van nationaal vervoer worden de Zaken indien deze niet zijn afgeleverd binnen
+     dertig dagen na de dag waarop zij ten vervoer werden aangenomen en het onbekend is
+     waar zij zich bevinden, als verloren aangemerkt.
+
+
+Artikel 11 – Verjaring en verval
+
+
+1.   Alle vorderingen in verband met de Overeenkomst verjaren door het enkele verloop van
+     twaalf maanden en vervallen door het verloop van achttien maanden.
+
+
+
+                                        Pagina 17 van 21
+2.   De in lid 1 genoemde termijnen vangen in geval van algeheel of gedeeltelijk verlies,
+     beschadiging, vertraging of Voorraadverschil aan vanaf de eerste van de volgende
+     dagen:
+     a. de dag waarop de Zaken door de Logistieke dienstverlener afgeleverd zijn of
+        afgeleverd hadden moeten worden;
+     b. de dag waarop de Logistieke dienstverlener van het verlies, de beschadiging of van
+        het bestaan van het Voorraadverschil aan de Opdrachtgever mededeling doet.
+
+
+3.   Ingeval de Logistieke dienstverlener door derden, waaronder enige overheid, wordt
+     aangesproken, vangen de in lid 1 genoemde termijnen aan vanaf de eerste van de
+     volgende dagen:
+     a. de dag waarop de Logistieke dienstverlener door de derde in rechte is aangesproken;
+     b. de dag waarop de Logistieke dienstverlener de tot hem gerichte vordering heeft
+        voldaan.
+
+
+4.   Ingeval de Logistieke dienstverlener of een door hem ingeschakelde derde tegen de
+     aanspraak in bezwaar of beroep is gegaan, vangen de in de leden 1 en 2 genoemde
+     termijnen aan op de dag volgende op die, waarop de uitspraak in bezwaar en/of beroep
+     definitief is geworden.
+
+
+5.   Voor alle overige vorderingen vangen de in lid 1 genoemde termijnen aan vanaf de dag
+     waarop deze opeisbaar zijn geworden.
+
+
+6.   In ieder geval vangen de in lid 1 genoemde termijnen voor alle vorderingen in verband
+     met de Overeenkomst aan vanaf de dag, volgend op die waarop de Overeenkomst
+     tussen partijen is geëindigd.
+
+
+Artikel 12 – Betalingsvoorwaarden
+
+
+1.   Alle bedragen, die door de Opdrachtgever aan de Logistieke dienstverlener verschuldigd
+     zijn, zullen worden betaald met inachtneming van de daartoe overeengekomen termijn
+     of, bij gebreke aan een overeengekomen termijn, binnen veertien dagen na de
+     factuurdatum. Deze termijn heeft te gelden als een fatale termijn.
+
+
+2.   Indien de Opdrachtgever enig verschuldigd bedrag niet binnen de termijn als bedoeld in
+     lid 1 van dit artikel betaalt, is hij gehouden daarover de wettelijke (handels)rente te
+     betalen conform artikel 6:119a dan wel artikel 6:119 van het Burgerlijk Wetboek, met
+
+                                          Pagina 18 van 21
+     ingang van de dag waarop deze betaling uiterlijk had moeten geschieden tot en met de
+     dag der algehele voldoening.
+
+
+3.   De Logistieke dienstverlener is gerechtigd om buitengerechtelijke en gerechtelijke
+     kosten ter incasso van de vordering aan de Opdrachtgever in rekening te brengen. De
+     buitengerechtelijke incassokosten zijn verschuldigd vanaf het moment dat de
+     Opdrachtgever in verzuim is en bedragen 15% van de vordering met een minimum van €
+     150,-.
+
+
+4.   De Opdrachtgever is te allen tijde verplicht in verband met deze of afzonderlijke
+     O(o)vereenkomst(en) en de op beide van toepassing zijnde V(v)oorwaarden, door enige
+     overheid in te vorderen dan wel na te vorderen c.q. na te heffen bedragen alsmede
+     daarmee samenhangende boetes, aan de Logistieke dienstverlener te vergoeden.
+
+
+5.   De Opdrachtgever is verplicht op eerste vordering van de Logistieke dienstverlener
+     zekerheid te stellen voor hetgeen de Opdrachtgever aan de Logistieke dienstverlener is
+     verschuldigd dan wel wordt verschuldigd. Deze verplichting bestaat ook, indien de
+     Opdrachtgever zelf in verband met het verschuldigde reeds zekerheid heeft moeten
+     stellen of heeft gesteld.
+
+
+6.   Beroep op verrekening van vorderingen tot betaling van vergoedingen voortvloeiend uit
+     deze of afzonderlijke O(o)vereenkomst(en) en de op beide van toepassing zijnde
+     V(v)oorwaarden, van het uit anderen hoofde ter zake van de Logistieke activiteiten door
+     de Opdrachtgever verschuldigde of van verdere op de Zaken drukkende kosten, met
+     vorderingen van de Opdrachtgever of opschorting van voormelde vorderingen door
+     Opdrachtgever is niet toegestaan.
+
+
+7.   Alle bedragen als bedoeld in lid 1 van dit artikel zijn terstond opeisbaar en vatbaar voor
+     verrekening door de Logistieke dienstverlener, indien de gevallen zoals genoemd in
+     artikel 7 leden 1 en 2 van deze Voorwaarden zich voordoen.
+
+
+Artikel 13 – Zekerheden
+
+
+1.   De Logistieke dienstverlener heeft het recht de afgifte van Zaken, documenten en
+     gelden, die de Logistieke dienstverlener in verband met de Overeenkomst onder zich
+     heeft of zal krijgen, jegens een ieder te weigeren.
+
+
+
+                                         Pagina 19 van 21
+2.   De Logistieke dienstverlener kan een retentierecht uitoefenen op alle Zaken,
+     documenten en gelden die hij in verband met de Overeenkomst onder zich heeft of zal
+     krijgen, voor alle vorderingen die de Logistieke dienstverlener ten laste van de
+     Opdrachtgever en / of de eigenaar van de Zaken heeft of zal krijgen, ook ten aanzien
+     van vorderingen welke geen betrekking hebben op die Zaken.
+
+
+3.   Op alle Zaken, documenten en gelden die de Logistieke dienstverlener in verband met
+     de Overeenkomst onder zich heeft of zal krijgen, wordt een pandrecht gevestigd voor
+     alle vorderingen die de Logistieke dienstverlener ten laste van de Opdrachtgever en / of
+     de eigenaar van de Zaken heeft of zal krijgen.
+
+
+4.   De Logistieke dienstverlener zal een ieder die ten behoeve van de Opdrachtgever Zaken
+     aan de Logistieke dienstverlener toevertrouwt voor het verrichten van Logistieke
+     activiteiten, kunnen beschouwen als door de Opdrachtgever gevolmachtigd tot het
+     vestigen van een pandrecht op die Zaken.
+
+
+5.   Indien bij afrekening een geschil ontstaat over het verschuldigde bedrag of ter bepaling
+     daarvan een niet spoedig uit te voeren berekening nodig is, is, naar keuze van de
+     Logistieke dienstverlener, de Opdrachtgever of hij die Aflevering vordert gehouden op
+     verzoek van de Logistieke dienstverlener het gedeelte over de verschuldigdheid
+     waarvan overeenstemming bestaat terstond te voldoen en voor de betaling van het
+     betwiste gedeelte of van het gedeelte, waarvan het bedrag nog niet vaststaat, zekerheid
+     te stellen.
+
+
+6.   Verkoop van enig onderpand geschiedt voor rekening van de Opdrachtgever op de bij
+     de wet bepaalde wijze of, indien daaromtrent overeenstemming bestaat, onderhands.
+
+
+7.   Op eerste verzoek van de Logistieke dienstverlener zal de Opdrachtgever zekerheid
+     stellen voor door de Logistieke dienstverlener aan derden of overheden betaalde of te
+     betalen kosten en andere kosten die de Logistieke dienstverlener maakt of voorziet te
+     zullen maken ten behoeve van de Opdrachtgever, waaronder onder meer vracht,
+     havenkosten, rechten, belastingen, heffingen en premies.
+
+
+Artikel 14 – Geschillenbeslechting / Arbitrage
+
+
+1.   Alle uit of in verband met (de) O(o)vereenkomst(en) waarop deze Voorwaarden van
+     toepassing zijn voortvloeiende geschillen worden uitsluitend onderworpen aan arbitrage
+
+                                        Pagina 20 van 21
+     te Rotterdam overeenkomstig het TAMARA Arbitragereglement, met uitzondering van
+     vorderingen tot € 25.000,- alsmede onbetwiste vorderingen in welk geval
+     geschillenbeslechting geschiedt door de bevoegde rechter te Rotterdam.
+
+
+2.   Geen beroep kan worden gedaan op de onder lid 1 genoemde uitzonderingen indien de
+     Opdrachtgever is gevestigd in een niet-EU lidstaat.
+
+
+3.   Waar toepasselijk zullen arbiters de bepalingen van internationale vervoersverdragen,
+     waaronder onder meer het verdrag betreffende de overeenkomst tot internationaal
+     vervoer van goederen over de weg (CMR), toepassen. Opdrachtgever staat er jegens de
+     Logistieke dienstverlener voor in dat de aflader, de geadresseerde en de overige
+     ladingbelanghebbenden in geval van schade aan de Zaken en / of vertraging in de
+     aflevering daarvan, gebonden zullen zijn aan het bepaalde in dit beding.
+
+
+Artikel 15 – Slotbepalingen
+
+
+1.   Alle O(o)vereenkomsten waarop deze Voorwaarden van toepassing zijn, zijn
+     onderworpen aan Nederlands recht.
+
+
+2.   Als plaats van vereffening en schaderegeling geldt de plaats van vestiging van de
+     Logistieke dienstverlener.
+
+
+Artikel 16 – Aanbevolen citeertitel
+
+
+De onderhavige Voorwaarden kunnen worden aangehaald als "LSV 2014".
+
+
+
+
+In geval van strijdigheden met vertaalde voorwaarden prevaleert de Nederlandse versie van
+deze Voorwaarden.
+
+
+
+
+                                        Pagina 21 van 21
+

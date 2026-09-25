@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historie-blok De Kievit: 4 varianten</title>
+<style>
+body{font:15px/1.45 -apple-system,Helvetica,Arial,sans-serif;margin:0;background:#f4f2ee;color:#222}
+header{background:#1c2a38;color:#fff;padding:18px 28px}header h1{margin:0 0 4px;font-size:22px}header p{margin:0;opacity:.85;max-width:90ch}
+section{padding:22px 28px 30px;border-bottom:1px solid #ddd}
+h2{margin:0 0 4px;font-size:19px}.vak{color:#555;margin:0 0 12px;font-size:14px;max-width:100ch}
+.knoppen{display:flex;gap:8px;align-items:center;margin:0 0 10px;flex-wrap:wrap}
+.knoppen button,.knoppen a{font:600 13px/1 inherit;padding:8px 12px;border-radius:999px;border:1px solid #bbb;background:#fff;color:#222;cursor:pointer;text-decoration:none}
+.knoppen button.aan{background:#1c2a38;color:#fff;border-color:#1c2a38}
+.frame{background:#fff;border:1px solid #ddd;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);width:100%}
+.frame.mobiel{width:390px}
+iframe{display:block;border:0;width:100%;height:600px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Historie-blok De Kievit (#historie): 4 varianten</h1>
+  <p>Zelfde feiten als het huidige blok (12 maart 1910, vijf generaties lang familiebedrijf, De Bresser sinds 1923, hele Venlose team mee), alleen de huisstijl-tokens, echte Kievit-foto's. Per variant: desktop of 390 px mobiel, en "open los" voor de pagina op ware grootte. Bestanden: site/_werk/historie-varianten/, integratie via regie (-43).</p>
+</header>
+
+<section id="v1">
+  <h2>Variant 1: tijdlijn op navy</h2>
+  <p class="vak">De "meer dan honderd jaar" wordt letterlijk zichtbaar als vier momenten (1910, 1923, 2024, nu) naast de foto van paard en wagen. Rustig, feitelijk, past bij de donkere panelen van de site. Foto staand uitgesneden mét het gevelopschrift; geen ovaal, geen cirkel.</p>
+  <div class="knoppen"><button class="aan" data-w="desktop">Desktop</button><button data-w="mobiel">Mobiel 390</button><a href="v1-tijdlijn.html" target="_blank">Open los</a></div>
+  <div class="frame"><iframe src="v1-tijdlijn.html" title="Variant 1"></iframe></div>
+</section>
+
+<section id="v2">
+  <h2>Variant 2: groot jaartal op creme</h2>
+  <p class="vak">Het jaartal 1910 in de display-letter (Zilla Slab) als blikvanger, daaronder de kop en het volledige verhaal; rechts de brede foto in zwart-wit met het opschrift "W. de Kievit Expeditie en Verhuizingen" in beeld. Licht blok, dus een adempauze tussen de FAQ en het offerteblok.</p>
+  <div class="knoppen"><button class="aan" data-w="desktop">Desktop</button><button data-w="mobiel">Mobiel 390</button><a href="v2-jaartal.html" target="_blank">Open los</a></div>
+  <div class="frame"><iframe src="v2-jaartal.html" title="Variant 2"></iframe></div>
+</section>
+
+<section id="v3">
+  <h2>Variant 3: toen en nu op teal</h2>
+  <p class="vak">Drie beelden op een rij vertellen de eeuw zonder woorden: paard en wagen (1910), de vrachtwagens van Firma W. de Kievit &amp; Zonen (later), en het Top Movers-team van vandaag in kleur. Teal paneel met witte tekst (AA), op mobiel een veegstrook.</p>
+  <div class="knoppen"><button class="aan" data-w="desktop">Desktop</button><button data-w="mobiel">Mobiel 390</button><a href="v3-toen-nu.html" target="_blank">Open los</a></div>
+  <div class="frame"><iframe src="v3-toen-nu.html" title="Variant 3"></iframe></div>
+</section>
+
+<section id="v4">
+  <h2>Variant 4: archief met de advertentie van 1910</h2>
+  <p class="vak">De echte krantenadvertentie van 12 maart 1910 ("een groote Meubelwagen") als knipsel over de foto van de oude vrachtwagens, met drie feiten in cijfers: 116 jaar (telt automatisch mee), 5 generaties, 2024 De Bresser. Het meest "archief", het meest bewijs.</p>
+  <div class="knoppen"><button class="aan" data-w="desktop">Desktop</button><button data-w="mobiel">Mobiel 390</button><a href="v4-archief.html" target="_blank">Open los</a></div>
+  <div class="frame"><iframe src="v4-archief.html" title="Variant 4"></iframe></div>
+</section>
+
+<section id="v5">
+  <h2>Variant 5: tijdlijn met polaroidstapel (mix van 1 en 4)</h2>
+  <p class="vak">De tijdlijn van variant 1 op navy, rechts alle drie de archiefbeelden als stapel in witte lijsten zoals op pro.woodler.nl (zelfde opzet: absolute lijsten, hover draait recht, wordt 3% groter en komt naar voren): de oude trucks, paard en wagen, en de advertentie van 12 maart 1910. Lijsten 25% groter dan de eerste versie, de stapel is even hoog als het tekstvak. Bijschriften in de displayletter van de huisstijl (Zilla Slab); een handgeschreven letter zit niet in de huisstijl en zou een nieuwe font vragen.</p>
+  <div class="knoppen"><button class="aan" data-w="desktop">Desktop</button><button data-w="mobiel">Mobiel 390</button><a href="v5-tijdlijn-collage.html" target="_blank">Open los</a></div>
+  <div class="frame"><iframe src="v5-tijdlijn-collage.html" title="Variant 5"></iframe></div>
+</section>
+
+<script>
+function fit(f){try{f.style.height=(f.contentDocument.documentElement.scrollHeight)+'px'}catch(e){}}
+document.querySelectorAll('iframe').forEach(function(f){f.addEventListener('load',function(){fit(f);setTimeout(function(){fit(f)},400)})});
+document.querySelectorAll('.knoppen button').forEach(function(b){b.addEventListener('click',function(){
+  var s=b.closest('section'),fr=s.querySelector('.frame'),f=s.querySelector('iframe');
+  s.querySelectorAll('button').forEach(function(x){x.classList.remove('aan')});b.classList.add('aan');
+  fr.classList.toggle('mobiel',b.dataset.w==='mobiel');setTimeout(function(){fit(f)},80);setTimeout(function(){fit(f)},500);
+})});
+window.addEventListener('resize',function(){document.querySelectorAll('iframe').forEach(fit)});
+</script>
+</body>
+</html>

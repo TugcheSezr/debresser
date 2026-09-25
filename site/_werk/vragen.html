@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vragen voor Shahab - De Kievit SEO</title>
+<meta name="robots" content="noindex">
+<style>
+  :root{--bg:#1b2230;--bg2:#232c3d;--lijn:#38455c;--tekst:#e8ecf3;--zacht:#95a3ba;--accent:#00A19B;--geel:#FFD500;--rood:#e2564d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--tekst);font:15px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+  header{position:sticky;top:0;z-index:5;background:var(--bg2);border-bottom:1px solid var(--lijn);padding:14px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  header h1{font-size:16px;margin:0;font-weight:700}
+  .telling{color:var(--zacht);font-size:13px}
+  .knop{background:#2f3a4e;border:1px solid var(--lijn);border-radius:7px;padding:8px 14px;color:inherit;font:inherit;cursor:pointer}
+  .knop:hover{background:#3a4760}
+  .knop--doen{background:var(--accent);border-color:var(--accent);color:#04211f;font-weight:700}
+  main{max-width:960px;margin:0 auto;padding:26px 22px 90px}
+  h2{font-size:14px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent);margin:34px 0 6px;border-bottom:1px solid var(--lijn);padding-bottom:7px}
+  h2 span{color:var(--zacht);text-transform:none;letter-spacing:0;font-weight:400;font-size:12px;display:block;margin-top:4px}
+  .v{background:var(--bg2);border:1px solid var(--lijn);border-radius:10px;padding:16px 18px;margin:14px 0}
+  .v.klaar{border-color:var(--accent)}
+  .v h3{margin:0 0 4px;font-size:15px}
+  .v h3 b{color:var(--geel);margin-right:8px}
+  .v .toel{color:var(--zacht);font-size:13.5px;margin:0 0 12px}
+  .opt{display:block;padding:9px 12px;border:1px solid var(--lijn);border-radius:7px;margin:6px 0;cursor:pointer;background:#283245}
+  .opt:hover{border-color:var(--zacht)}
+  .opt input{margin-right:9px}
+  .opt.gekozen{border-color:var(--accent);background:#20423f}
+  .opt .let{display:inline-block;width:19px;font-weight:700;color:var(--geel)}
+  .opt small{display:block;color:var(--zacht);margin:3px 0 0 28px;font-size:12.5px}
+  textarea{width:100%;margin-top:8px;background:#283245;border:1px solid var(--lijn);border-radius:7px;color:inherit;font:inherit;padding:8px 10px;min-height:44px}
+  .uit{position:fixed;inset:auto 0 0 0;background:var(--bg2);border-top:1px solid var(--lijn);padding:10px 22px;display:flex;gap:12px;align-items:center}
+  .beslist{background:#20423f;border:1px solid var(--accent);border-radius:10px;padding:12px 16px;margin:0 0 8px}
+  .beslist p{margin:3px 0;font-size:13.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Vragen voor Shahab</h1>
+  <span class="telling" id="telling"></span>
+  <button class="knop knop--doen" onclick="kopieer()">Kopieer antwoorden</button>
+  <button class="knop" onclick="if(confirm('Alles wissen?')){localStorage.removeItem('kievit-vragen');location.reload()}">Wissen</button>
+</header>
+<main>
+<div class="beslist">
+  <p><b>Beantwoord op 30-08:</b> domein <b>www.de-kievit.nl</b> (apex redirect via Vercel) &middot; diplomaclaim smallere zin &middot; voorwaarden laten staan &middot; openingstijden 08:00-17:00 &middot; contractpartij <b>De Bresser Verhuizingen B.V.</b> &middot; AVB 2020 ja &middot; Web3Forms voorlopig niet &middot; nieuw Vercel-project &middot; polis: alleen naar voorwaarden verwijzen &middot; geen uitspraak over opslaglocatie &middot; dienstdetails algemeen &middot; Horsterweg alleen historie &middot; 1910 &middot; WhatsApp klopt &middot; brand niet noemen &middot; PPV weg &middot; calculatorbron weglaten &middot; beeldrechten geregeld &middot; GBP toegang &middot; GSC/GA4 later &middot; masterplan corrigeren</p>
+  <p><b>Alternatieven die je aanvaardde:</b> cases uit de echte Klantenvertellen-reviews in plaats van verzinnen &middot; certificaten als "onze vestiging valt hieronder", zonder nummer of einddatum</p>
+</div>
+<div id="lijst">
+<div id="lijst"></div>
+</main>
+<div class="uit"><span class="telling" id="telling2"></span><button class="knop knop--doen" onclick="kopieer()">Kopieer antwoorden</button></div>
+<script>
+const VRAGEN=[
+{g:"G. Nieuw sinds je vorige antwoorden",gt:"Uit het werk van vanavond. Deze drie blokkeren nu iets concreets.",v:[
+ {id:"G1",t:"AVB 2020: publiceren of naar verwijzen?",u:"Je zei ja, De Kievit hanteert AVB 2020. Maar die set staat NIET op de site: gepubliceerd zijn AVVV, AVVV-BE, AVBV, AVHD en PV05. Een verwijzing zonder bestemming werkt niet.",o:[
+  ["Publiceer AVB 2020 er ook bij","Zelfde behandeling als de andere vijf, woordelijk op /algemene-voorwaarden/."],
+  ["Alleen een samenvatting plus link naar de OEV-PDF","Minder tekst, en de officiele bron blijft leidend."],
+  ["Alleen noemen in de tekst, geen eigen sectie","Dan blijft de linkmatrixregel geblokkeerd."]]},
+ {id:"G2",t:"/kantoorverhuizing/ heeft een eigen staart nodig",u:"De gedeelde staart is voor consumenten geschreven: 100.000 euro nieuwwaarde, Garantiecertificaat, twaalf maanden opslag, zelfs een zin over de Duitse grensstreek. Dat klopt geen van alle voor een zakelijke klant. Ik heb het zekerhedenblok vervangen maar ben daar gestopt: verder wegknippen levert een pagina met gaten.",o:[
+  ["Laat T2 en T3 een eigen zakelijke staart schrijven","Dan kan de route later vrijkomen. Meeste werk, beste uitkomst."],
+  ["Haal alleen de onjuiste zinnen weg, gaten accepteren","Sneller, maar de pagina wordt dunner en haalt de gate niet."],
+  ["Route permanent noindex laten","Kantoorverhuizing komt dan nooit in Google."]]},
+ {id:"G3",t:"Externe profielen bijwerken",u:"Drie dingen op externe profielen kloppen niet meer met wat wij voeren: openingstijden.nl zegt 07:30 (wij 08:00), LinkedIn zegt oprichting 1895 (wij 1910), en Horsterweg 217 staat nog in oude directories terwijl dat alleen historie is.",o:[
+  ["Ik pas ze zelf aan","Ik lever je de lijst met wat waar staat."],
+  ["Doe jij het, ik geef toegang","Waar toegang mogelijk is."],
+  ["Laat maar, niet belangrijk","Dan blijft de entity-informatie tegenstrijdig."]]}]},
+{g:"H. Nog steeds open van de vorige ronde",gt:"",v:[
+ {id:"H1",t:"Web3Forms-key",u:"Je zei voorlopig niet. 28 formulieren blijven dood en de livegang blijft geblokkeerd. Alleen om te bevestigen dat dat de bedoeling blijft.",o:[
+  ["Klopt, voorlopig niet",""],["Toch doen, ik regel de key",""],["Doe jij de aanvraag","Ik zet hem klaar op naam van de klant."]]},
+ {id:"H2",t:"Diplomabewijs (U3)",u:"De smallere formulering staat nu live en is te staven. Een personeelslijst zou de sterkere claim mogelijk maken.",o:[
+  ["Laat de smallere zin staan","Niets meer nodig."],["Ik lever de personeelslijst",""]]},
+ {id:"H3",t:"Google Business-toegang",u:"Je zei dat je toegang geeft. Dit is de herinnering.",o:[
+  ["Toegang is geregeld of komt vandaag",""],["Later",""],["Loop het zelf na met een lijst van mij",""]]}]}
+];
+const KEY="kievit-vragen";
+let st={};try{st=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const L=["a","b","c","d"];
+function teken(){
+  document.getElementById("lijst").innerHTML=VRAGEN.map(g=>
+    `<h2>${g.g}${g.gt?`<span>${g.gt}</span>`:""}</h2>`+g.v.map(v=>{
+      const gek=st[v.id]&&st[v.id].keus!=null;
+      return `<div class="v ${gek?"klaar":""}" id="v-${v.id}">
+        <h3><b>${v.id}</b>${v.t}</h3>${v.u?`<p class="toel">${v.u}</p>`:""}
+        ${v.o.map((o,i)=>`<label class="opt ${st[v.id]&&st[v.id].keus===i?"gekozen":""}">
+           <input type="radio" name="${v.id}" ${st[v.id]&&st[v.id].keus===i?"checked":""} onchange="kies('${v.id}',${i})">
+           <span class="let">${L[i]}</span>${o[0]}${o[1]?`<small>${o[1]}</small>`:""}</label>`).join("")}
+        <textarea placeholder="Toelichting of het antwoord zelf (optioneel)" oninput="notitie('${v.id}',this.value)">${(st[v.id]&&st[v.id].notitie)||""}</textarea>
+      </div>`}).join("")).join("");
+  const tot=VRAGEN.reduce((n,g)=>n+g.v.length,0);
+  const kl=Object.values(st).filter(x=>x&&x.keus!=null).length;
+  document.getElementById("telling").textContent=`${kl} van ${tot} beantwoord`;
+  document.getElementById("telling2").textContent=`${kl} van ${tot} beantwoord`;
+}
+function bewaar(){localStorage.setItem(KEY,JSON.stringify(st))}
+function kies(id,i){st[id]=st[id]||{};st[id].keus=i;bewaar();teken()}
+function notitie(id,v){st[id]=st[id]||{};st[id].notitie=v;bewaar()}
+function kopieer(){
+  let uit="ANTWOORDEN VAN SHAHAB\n\n";
+  VRAGEN.forEach(g=>{uit+=g.g+"\n";g.v.forEach(v=>{
+    const s=st[v.id];
+    uit+=`  ${v.id} ${v.t}: `+(s&&s.keus!=null?`${L[s.keus]}) ${v.o[s.keus][0]}`:"NIET BEANTWOORD");
+    if(s&&s.notitie&&s.notitie.trim())uit+=`\n     toelichting: ${s.notitie.trim()}`;
+    uit+="\n"});uit+="\n"});
+  navigator.clipboard.writeText(uit).then(()=>alert("Antwoorden gekopieerd. Plak ze terug in de chat."),
+    ()=>{const w=window.open("");w.document.write("<pre>"+uit.replace(/</g,"&lt;")+"</pre>")});
+}
+teken();
+</script>
+</body>
+</html>

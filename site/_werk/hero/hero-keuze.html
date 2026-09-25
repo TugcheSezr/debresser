@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero-figuur kiezen, De Kievit</title>
+<style>
+  :root{--teal:#00A19B;--teal-diep:#006C68;--navy:#22314E;--creme:#F6F4EC;--lijn:#C4E4E4;--ant:#1D1D1B;--zacht:#4B4B49;--oranje:#EE7203}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--creme);color:var(--ant);font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif}
+  header.kop{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;padding:12px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  header.kop h1{font-size:18px;margin:0}
+  header.kop .gekozen{margin-left:auto;background:var(--oranje);color:var(--ant);border-radius:999px;padding:8px 16px;font-weight:700}
+  header.kop small{opacity:.75}
+  main{max-width:1680px;margin:0 auto;padding:24px}
+  h2{font-size:22px;margin:28px 0 12px;color:var(--teal-diep)}
+  .leeg{background:#fff;border:1px dashed var(--lijn);border-radius:12px;padding:18px;color:var(--zacht)}
+  .kaart{background:#fff;border:1px solid var(--lijn);border-radius:16px;padding:18px;margin-bottom:22px;display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:20px;box-shadow:0 10px 30px -24px rgba(29,29,27,.4)}
+  .kaart.is-gekozen{outline:3px solid var(--oranje)}
+  .nr{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:56px;padding:0 14px;border-radius:14px;background:var(--teal);color:#fff;font-size:30px;font-weight:800;letter-spacing:-.02em}
+  .meta{display:grid;gap:8px;align-content:start}
+  .meta .rij{display:flex;align-items:center;gap:12px}
+  .meta img.orig{display:block;width:100%;max-width:600px;height:auto;border-radius:10px;background:#eee}
+  .meta dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:14px}
+  .meta dt{color:var(--zacht)}
+  .meta dd{margin:0;overflow-wrap:anywhere}
+  .meta .opm{background:#FFF6EC;border-left:3px solid var(--oranje);padding:8px 10px;border-radius:6px;font-size:14px}
+  button.kies{background:var(--oranje);color:var(--ant);border:0;border-radius:999px;padding:12px 20px;font-weight:700;font-size:15px;cursor:pointer}
+  button.kies:hover{background:#D9660A}
+  .previews{display:grid;grid-template-columns:1fr auto;gap:16px;align-content:start}
+  .pv{background:#e9e7df;border-radius:12px;overflow:hidden;position:relative}
+  .pv .lbl{position:absolute;left:10px;top:8px;z-index:2;background:rgba(34,49,78,.85);color:#fff;font-size:12px;padding:3px 8px;border-radius:999px}
+  .pv--desk{width:100%;aspect-ratio:1440/960}
+  .pv--desk iframe{width:1440px;height:960px;border:0;transform-origin:0 0}
+  .pv--mob{width:234px;aspect-ratio:390/1000}
+  .pv--mob iframe{width:390px;height:1000px;border:0;transform:scale(.6);transform-origin:0 0}
+  .slider{grid-column:1/-1;display:flex;align-items:center;gap:12px;font-size:14px}
+  .slider input{flex:1;max-width:420px;accent-color:var(--teal)}
+  .slider output{font-weight:700;min-width:5ch}
+  .slider small{color:var(--zacht)}
+  @media(max-width:1100px){.kaart{grid-template-columns:1fr}.previews{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="kop">
+  <h1>Hero-figuur kiezen</h1>
+  <small>Previews laden <code>hero-preview.html</code> met de echte hero-markup en <code>/assets/css/style.css</code>; de teal balk onderaan is de offertebox-overlap. Het schuifje stuurt alleen de 1440-preview (op 390 bepaalt de CSS de maat).</small>
+  <span class="gekozen" id="gekozen">Nog niets gekozen</span>
+</header>
+<main>
+  <h2>Echte foto's uit de Top Movers-bank</h2>
+  <div id="groep-echt" class="leeg">Laden...</div>
+  <h2>Nieuw gegenereerd, Top Movers/De Kievit-stijl</h2>
+  <div id="groep-ai" class="leeg">Laden...</div>
+</main>
+<script>
+(function(){
+  var TEST = new URLSearchParams(location.search).get('test');
+  var GROEPEN = [
+    {el:'groep-echt', json: TEST ? 'hero-keuze-test.json' : 'kandidaten.json'},
+    {el:'groep-ai',   json: TEST ? 'hero-keuze-test.json' : 'ai/kandidaten.json'}
+  ];
+  var STD = 420;
+  function esc(t){ return String(t==null?'':t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  // paden: absoluut (/assets/..) of http blijven; anders relatief aan de map van het json-bestand
+  function pad(p, basis){ if(!p) return ''; if(/^(\/|https?:)/.test(p)) return p; return basis + p; }
+  function previewUrl(k, basis, hoogte){
+    var q = new URLSearchParams({p1600: pad(k.cutout1600, basis), p900: pad(k.cutout900 || k.cutout1600, basis)});
+    if(k.breedte) q.set('w', k.breedte); if(k.hoogte) q.set('h', k.hoogte); if(k.omschrijving) q.set('alt', k.omschrijving);
+    if(hoogte) q.set('hoogte', hoogte);
+    return 'hero-preview.html?' + q.toString();
+  }
+  function kaart(k, basis){
+    var el = document.createElement('article'); el.className = 'kaart'; el.dataset.id = k.id;
+    el.innerHTML =
+      '<div class="meta">' +
+        '<div class="rij"><span class="nr">' + esc(k.id) + '</span><button class="kies" type="button">Gekozen: ' + esc(k.id) + '</button></div>' +
+        (k.origineel ? '<img class="orig" src="' + esc(pad(k.origineel, basis)) + '" alt="" loading="lazy">' : '') +
+        '<dl>' +
+          '<dt>Bron</dt><dd>' + esc(k.bron) + '</dd>' +
+          '<dt>Origineel</dt><dd>' + esc(k.origineel) + '</dd>' +
+          '<dt>Cutout</dt><dd>' + esc(k.cutout1600) + (k.breedte ? ' (' + esc(k.breedte) + '&times;' + esc(k.hoogte) + ')' : '') + '</dd>' +
+          '<dt>Personen</dt><dd>' + esc(k.personen) + '</dd>' +
+          '<dt>Omschrijving</dt><dd>' + esc(k.omschrijving) + '</dd>' +
+        '</dl>' +
+        (k.opmerking ? '<div class="opm">' + esc(k.opmerking) + '</div>' : '') +
+      '</div>' +
+      '<div class="previews">' +
+        '<div class="pv pv--desk"><span class="lbl">1440 px</span><iframe loading="lazy" title="Preview 1440" src="' + esc(previewUrl(k, basis, STD)) + '"></iframe></div>' +
+        '<div class="pv pv--mob"><span class="lbl">390 px</span><iframe loading="lazy" title="Preview 390" src="' + esc(previewUrl(k, basis, null)) + '"></iframe></div>' +
+        '<label class="slider">Hoogte figuur (1440) <input type="range" min="300" max="520" value="' + STD + '" step="10"><output>' + STD + 'px</output><small>standaard 420, CSS: min(420px, 54%)</small></label>' +
+      '</div>';
+    var desk = el.querySelector('.pv--desk iframe'), range = el.querySelector('input[type=range]'), out = el.querySelector('output');
+    range.addEventListener('input', function(){ out.value = range.value + 'px'; desk.contentWindow.postMessage({type:'hoogte', px:+range.value}, '*'); });
+    el.querySelector('.kies').addEventListener('click', function(){
+      document.querySelectorAll('.kaart.is-gekozen').forEach(function(x){ x.classList.remove('is-gekozen'); });
+      el.classList.add('is-gekozen');
+      document.getElementById('gekozen').textContent = 'Gekozen: ' + k.id + ' (hoogte ' + range.value + 'px)';
+      try{ localStorage.setItem('hero-keuze', JSON.stringify({id:k.id, hoogte:+range.value})); }catch(e){}
+    });
+    return el;
+  }
+  function schaal(){
+    document.querySelectorAll('.pv--desk').forEach(function(pv){ var f = pv.querySelector('iframe'); f.style.transform = 'scale(' + (pv.clientWidth / 1440) + ')'; });
+  }
+  GROEPEN.forEach(function(g){
+    var houder = document.getElementById(g.el), basis = g.json.replace(/[^\/]*$/, '');
+    fetch(g.json, {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }).then(function(lijst){
+      houder.className = ''; houder.innerHTML = '';
+      if(!Array.isArray(lijst) || !lijst.length){ houder.className = 'leeg'; houder.textContent = 'Nog geen kandidaten (' + g.json + ' is leeg).'; return; }
+      lijst.forEach(function(k){ houder.appendChild(kaart(k, basis)); });
+      schaal();
+    }).catch(function(e){ houder.className = 'leeg'; houder.textContent = 'Nog geen kandidaten (' + g.json + ' ontbreekt of is geen geldige JSON: ' + e.message + ').'; });
+  });
+  window.addEventListener('resize', schaal);
+  try{ var v = JSON.parse(localStorage.getItem('hero-keuze') || 'null'); if(v) document.getElementById('gekozen').textContent = 'Eerder gekozen: ' + v.id + ' (hoogte ' + v.hoogte + 'px)'; }catch(e){}
+})();
+</script>
+</body>
+</html>

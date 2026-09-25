@@ -1,0 +1,5 @@
+_werk/hero/ai/shot-keuze.part0.png
+_werk/hero/ai/shot-keuze.part1.png
+_werk/hero/ai/shot-keuze.part2.png
+_werk/hero/ai/shot-keuze.part3.png
+_werk/hero/ai/shot-keuze.part4.png

@@ -1,0 +1,574 @@
+                      Energiemanagement actieplan 2026
+
+                      Top Movers Nederland B.V.
+                      Conform niveau 3 op de CO2-prestatieladder 3.1
+                      .
+
+
+
+
+Opdrachtgever
+Top Movers Nederland B.V.
+Auteur:
+Wim Ubaghs- Arbo-less
+CO2 manager
+Wim Ubaghs a.i.
+Datum/versie nummer
+27 februari 2026 2026/1.0
+Top Movers Nederland B.V.
+
+
+
+
+Inhoudsopgave
+
+
+
+1    Inleiding                                        3
+2    IBeleidsverklaring                               3
+3    Hoofddoeslstelling                               4
+4.    Vergelijking met sectorgenoten                  5
+5     Maatregelen reductieplan                        6
+6     Energiemeetplan                                 6
+7     Planning meetmomenten                           6
+8     Stuurcyclus                                     7
+
+Bijlage A Maatregelen om reductiedoelen te behalen    10
+Bijlage B Referentietabel IS 5001                     12
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland     2/14
+Top Movers Nederland B.V.
+
+
+
+
+1   Inleiding
+
+
+In dit document worden de scope 1 en 2 CO2 reductiedoelstellingen van Top Movers
+Nederland beschreven en de voortgang van de CO2-reductie beoordeeld. Basis hiervoor
+de CO2 foodprint voor scope 1 en 2 en business travel opgesteld conform ISO 14064-1 en
+het GHG Protocol .
+
+Voor het bepalen van de CO2 reductiemaatregelen die binnen Top Movers Nederland
+mogelijk zijn is eerst een inventarisatie van mogelijke reductiemaatregelen opgesteld, zie
+hiervoor bijlage A. Vervolgens is het energiemanagementplan opgesteld waarin de
+reductiedoelstellingen en maatregelen zijn opgenomen.
+
+In hoofdstuk 3 zijn de doelstellingen beschreven en in hoofdstuk 4 het plan van aanpak en
+de status van de uit te voeren maatregelen.
+
+Eén en ander is besproken en goedgekeurd in het managementteam. De voortgang wordt
+jaarlijks besproken en vastgelegd
+
+
+2   Beleidsverklaring
+
+
+Het streven is om de dienstverlening van Top Movers Nederland en de aangesloten
+individuele Top Movers Verhuisbedrijven zo hoog mogelijk te laten zijn.
+
+Wij beschikken over een ISO 9001/14001 en VCA** certificaat. In het opgestelde KAM
+handboek is de volledige beleidsverklaring opgenomen. Hieraan wordt het reduceren van
+de CO2 uitstoot toegevoegd. Dit alles moet leiden tot een optimale klanttevredenheid en
+waarborgen van de Veiligheid, Gezondheid en Welzijn van alle medewerkers.
+
+Om dit mede vorm te geven maken we gebruik van een extern adviseur, Wim Ubaghs, die
+op interim basis tot bader orde zowel KAM coördinator alsmede de CO2 manager van Top
+Movers Nederland is.
+
+De beleidsverklaring wordt ieder jaar geëvalueerd en zo nodig aangepast. In ieder geval
+vindt iedere 3 jaar een update van de beleidsverklaring plaats.
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                       3/14
+Top Movers Nederland B.V.
+
+
+
+
+    3. Hoofddoelstelling
+Top Movers Nederland B.V. heeft de volgende reductiedoelstellingen opgesteld. Deze
+doelstellingen hebben betrekking op scope 1, scope 2 en scope 3 van de CO 2 footprint
+van Top Movers Nederland B.V. Als referentiejaar geldt 2021.
+
+
+            Scope 1 doelstellingen Top Movers Nederland B.V..*
+
+  Top Movers Nederland B.V. wil in 2026 ten opzichte van 2025 5 % minder
+  CO2 uitstoten voor wat betreft m3 gas, dieselverbruik en benzine verbruik
+
+     Top Movers Nederland B.V. wil in 2026 ten opzichte van 2021 25 %
+  minder CO2 uitstoten** voor wat betreft m3 gas, dieselverbruik en benzine
+                                  verbruik
+
+       Top Movers Nederland B.V. wil in 2030 ten opzichte van 2025 70 %
+  minder CO2 uitstoten** voor wat betreft dieselverbruik; 30 % minder CO2
+  uitstoten voor wat betreft m3 gas; en 50 % minder CO2 uitstoten voor wat
+                             betreft benzine verbruik
+
+*Deze doelstellingen zijn gerelateerd aan het aantal FTE.
+**In dit document wordt alleen worden ingegaan op de doelstelling voor 2026.
+
+Dit willen we realiseren door indien we de aanbestedingen in de loop van 2026 winnen
+versneld over te gaan op de aanschaf van elektrische verhuiswagens alsmede door het
+optimaliseren van ritten (groupage indien mogelijk) De reductie van gas willen we
+realiseren door ook de laatste vestigingen te enthousiasmeren voor de aanleg van
+zonnepanelen (wat de stijging van grijze stroom door het extern opladen van elektrische
+wagens ruimschoots moet compenseren). Het benzineverbruik verder realiseren door
+zoveel mogelijk elektrische personenauto’s (of minimaal hybride auto’s) te leasen)
+
+
+            Scope 2 doelstellingen Top Movers Nederland B.V..*
+
+  Top Movers Nederland B.V. wil in 2026 ten opzichte van 2025 5 % minder
+ CO2 uitstoten voor wat betreft grijze stroom en 5 % minder aan stadswarmte
+                                     uitstoten
+
+     Top Movers Nederland B.V. wil in 2026 ten opzichte van 2021 25 %
+    minder CO2 uitstoten voor wat betreft grijze stroom en 5 % minder aan
+                           stadswarmte uitstoten
+
+      Top Movers Nederland B.V. wil in 2030 ten opzichte van 2025 25 %
+    minder CO2 uitstoten voor wat betreft grijze stroom en 5 % minder aan
+                           stadswarmte uitstoten
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                     4/14
+Top Movers Nederland B.V.
+
+
+
+
+Dit willen we realiseren door zoals eerder gezegd die vestigingen die nog geen
+zonnepanelen hebben te enthousiasmeren door deze aan te gaan schaffen. Uitstoot via
+stadswarmte afhankelijk van beleid gemeenten.
+
+*Deze doelstellingen zijn gerelateerd aan het aantal FTE.
+**In dit document wordt alleen worden ingegaan op de doelstelling voor 2026
+
+
+        Business travel doelstellingen Top Movers Nederland B.V..*
+
+  Top Movers Nederland B.V. wil in 2026 ten opzichte van 2025 5 % minder
+              CO2 uitstoten voor wat betreft Business travel
+
+      Top Movers Nederland B.V. wil in 2030 ten opzichte van 2035 25 %
+      minder CO2 uitstoten voor wat betreft zakelijke kilometers en 50 %
+                            besparen op vliegen
+
+      Top Movers Nederland B.V. wil in 2030 ten opzichte van 2035 25 %
+      minder CO2 uitstoten voor wat betreft zakelijke kilometers en 50 %
+                            besparen op vliegen
+*Deze doelstellingen zijn gerelateerd aan het aantal FTE.
+**In dit document wordt alleen worden ingegaan op de doelstelling voor 2026e
+
+De doelstelling voor wat betreft zakelijke kilometers willen we met name realiseren door
+efficiëntere planning van afspraken, vergaderingen e.d. en besparing op vliegreizen door
+vooraf te beoordelen of het bijwonen van internationale conferenties noodzakelijk is.
+
+Hierbij horen de volgende subdoelstellingen:
+
+Subdoelstelling kantoren
+
+
+ Top Movers Nederland reduceert het energieverbruik van kantoren van kantoren met 5
+ % % (van het totaal tonnage CO2).
+ Maatregelen                 -   Zonnepanelen, terug levering energie
+                             -   100% groene stroom afnemen;
+                             -   Meedoen aan initiatieven die op een bedrijventerrein
+                                 aanwezig zijn of het zelf initiëren van deze initiatieven
+ Effect op:                  -   Scope 2
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                         5/14
+Top Movers Nederland B.V.
+
+
+
+
+Subdoelstelling bedrijfsauto’s
+
+
+ Top Movers Nederland reduceert het verbruik auto’s in 2030 met 10,0 %. (van het totaal
+ tonnage CO2);
+ Maatregelen                  -   Onderzoek uitvoeren naar mogelijkheden voor reduceren
+                                  woon-werk kilometers;
+                              -   Blijvende inzet van de “duurzame verhuisdoos” bij de
+                                  individuele Top Movers verhuisbedrijven
+                              -   Alle Verhuiswagen chauffeurs instrueren op het toepassing
+                                  van ‘Het Nieuwe Rijden’ ook als ze in hun eigen auto rijden
+                              -   Per gebruiker verbruik berekenen en vergelijken met het
+                                  normverbruik van de auto;
+                              -   Leasen van elektrische personenwagens
+ Effect op:                   -   Business Travel
+
+
+
+
+4.   Vergelijking met sectorgenoten
+
+Basis van de CO2 Prestatieladder is om op basis de vastgestelde CO2 Footprint
+reductiedoelstellingen vast te stellen. Daarom is voor het opstellen van de in het vorige
+hoofdstuk beschreven reductiedoelstellingen nagegaan welke doelstellingen de
+sectorgenoten van Top Movers Nederland B.V. hebben. Top Movers Nederland heeft 2
+sectorgenoten. Dit betreft UTS en Mondial Movers.
+
+Volgens de website van UTS heeft UTS t.o.v. in 2025 5 % minder C)2 uitgestoot en zijn
+ze gecertificeerd voor trede 4
+
+Mondial Movers is volgens haar eigen website en volgens de website van SKAO niet
+gecertificeerd volgend de CO2 Prestatieladder. Wel beschikken zij (volgens eigen zeggen
+als enige verhuisbedrijf) over het Keurmerk Sociaal en Duurzaam Ondernemen
+
+Top Movers Nederland ziet zichzelf op basis van de vastgestelde reductiedoelstellingen
+als middenmotor met wel de ambitie om op termijn koploper te worden (vanaf 2028). Dit
+wordt bevestigd door de ingevulde Maatregelenlijst van SKAO. Dit is mede afhankelijk in
+hoeverre in de overheidsaanbestedingen het emissie loos rijden een bestekseis gaat
+worden en of Top Movers Nederland de aanbesteding wint. Dit bepaalt volgens de
+directeur van Top Movers Nederland het tempo van de investering.
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                        6/14
+Top Movers Nederland B.V.
+
+
+
+
+5.   Maatregelen reductieplan
+
+De maatregelen die genomen moeten worden om invulling te geven aan de CO2
+reductiedoelstellingen en die worden onderschreven door het managementteam, zijn
+beschreven in een apart document en in dit document opgenomen als Bijlage A. Dit
+document, genaamd CO2 Reductiedoelstellingen, beschrijft per subdoelstelling welke
+maatregel nodig is, de verantwoordelijke en wanneer de maatregel ingevoerd moet zijn.
+
+6. Energie meetplan
+
+Het energie meetplan bevat een aantal vaste onderdelen voor het up-to-date houden van
+het CO2 managementsysteem. Hiermee wordt gezorgd dat het hele reductiesysteem
+voldoet aan de eisen van ISO 50001 en ISO 14064-1. Tevens wordt hiermee continue
+verbetering gewaarborgd.
+
+Het meetplan zorgt ervoor dat een volledige, betrouwbare en actuele vaststelling van de
+energieprestaties van Top Movers Nederland en de aangesloten individuele Top Movers
+Verhuisbedrijven plaatsvindt.
+
+De CO2 manager van Top Movers Nederland heeft alle actuele informatie onder zich.
+Oudere versies van alle documenten worden minimaal 5 jaar bewaard.
+
+7. Planning meetmomenten
+
+Voor het meten van de verschillende energiestromen is een planning opgesteld.
+Vaststelling van de verschillende energiestromen is per individueel Top Movers
+Verhuisbedrijf vastgesteld op basis van hetgeen haalbaar en passend is voor het
+individuele Top Movers Verhuisbedrijf.
+
+De planning ziet er als volgt uit:
+Scope 1 emissies
+ Categorie                  Meetmoment      Wie                   Toelichting
+ Gasverbruik (in m3         Elk jaar        CO2 Manager (1)       Facturen kunnen opgevraagd
+ aardgas)                                                         worden bij individuele Top Movers
+                                                                  verhuisbedrijven
+
+ Brandstofverbruik          Elk jaar        CO2 Manager           De meeste brandstof wordt getankt
+ materieel en auto’s (in                                          met een tankpasje. Per kenteken
+ liters benzine, diesel &                                         kunnen de getankte hoeveelheden
+ LPG)                                                             opgevraagd worden. Daarnaast
+                                                                  wordt een kleinere hoeveelheid
+                                                                  getankt bij verschillende tankstations
+                                                                  en gedeclareerd a.d.h.v. tankbonnen.
+                                                                  Gegevens zijn op te vragen via de
+                                                                  boekhouding van de individuele Top
+                                                                  Movers Verhuisbedrijven
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                     7/14
+Top Movers Nederland B.V.
+
+
+
+
+Scope 2 emissies
+ Categorie                 Meetmoment         Wie                    Toelichting
+ Elektriciteitsverbruik    Elk jaar           CO2 Manager            Facturen kunnen opgevraagd worden
+ (in kWh)                                                            bij boekhouding van de individuele
+                                                                     Top Movers Verhuisbedrijven. Denk
+                                                                     hierbij ook aan het energieverbruik
+                                                                     indien wagens bij derden worden
+                                                                     opgeladen
+
+
+
+
+Business travel
+ Categorie                 Meetmoment         Wie                    Toelichting
+ Gereden en                Elk jaar           CO2 Manager            Kilometeradministratie wordt
+ gedeclareerd                                                        bijgehouden
+ kilometers
+ Vliegreizen               Elk jaar           CO2 Manager            De vliegreizen die gedaan worden
+                                                                     uiteraard bijgehouden.
+
+
+
+     (1) De individuele Top Movers Verhuisbedrijven zijn verantwoordelijk voor het
+         opvragen, verzamelen en rubriceren van de gevraagde gegevens. De CO2
+         Manager vraagt ieder jaar deze gegevens op en stelt de totalen voor Top Movers
+         Nederland vast. De wijze is in bovenstaande tabellen weergegeven. Het
+         individuele Top Movers Verhuisbedrijf is ook verantwoordelijk voor de
+         onderbouwing van de aangeleverde gegevens. Dit zal meestal in de vorm van
+         daadwerkelijke facturen zijn. De CO2 manager is tot nader order de extern
+         adviseur (op interim basis).
+
+Eventuele afwijkingen c.q. klachten dienen door de medewerker gemeld te worden
+waarnaar beoordeeld zal worden hoer met de melding wordt omgegaan. De CO2 manager
+kan hierbij ondersteuning aan het desbetreffende individuele Top Movers Verhuisbedrijf
+geven.
+
+Registratie van afwijkingen en eventuele genomen corrigerende maatregelen worden
+vastgelegd.
+
+8.   Stuurcyclus
+
+Het CO2 beleid van Top Movers Nederland B.V. kent cycli van een jaar, waarin de
+gegevens voor de CO2 footprint verzameld worden, er beoordeeld wordt of de
+emissiefactoren nog actueel zijn en of er significante veranderingen in het bedrijf zijn die
+een impact op de footprint hebben; en of herberekening van emissies van voorgaande
+jaren vanwege deze veranderingen nodig is. Ook wordt de voortgang van de CO 2 reductie
+en behalen van de doelstelling bepaald. Vervolgens wordt beoordeeld of sturing op de
+doelstelling en maatregelen nodig is; in de vorm van het aanscherpen van de doelstelling
+wanneer deze (te) eenvoudig behaald wordt, of in de vorm van het nemen van extra
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                       8/14
+Top Movers Nederland B.V.
+
+
+
+
+maatregelen wanneer bepaalde maatregelen niet mogelijk bleken te zijn en de doelstelling
+niet gehaald dreigt te worden. Hierover wordt vervolgens intern en extern
+gecommuniceerd. Ook de nuttige toepassing van het sector- of keteninitiatief in de
+afgelopen periode wordt geëvalueerd.
+
+Dit energiemanagementplan wordt onderschreven door de hoogste directe in casu de
+directeur van Top Movers Nederland en wordt intern en extern gecommuniceerd via de
+website van Top Movers Nederland B.V. die door iedere belanghebbende kan worden
+geraadpleegd, Daarnaast is er ook een Link naar de website van SKAO.
+
+Eén keer per jaar (eind van ieder jaar) vindt er een energiebeoordeling plaats (Paragraaf
+6.3). Doel van deze beoordeling is om vast te stellen wat de actuele uitstoot in tonnen
+CO2 bedraag en of in de pas wordt gelopen met gestelde CO2 reductiedoelstelling. Dit
+kan derhalve ook inhouden dat doelstellingen(Paragraaf 6.2) op basis van actuele
+inzichten worden bijgesteld (aangescherpt of afgezwakt). Ieder jaar wordt ook bekeken of
+de verschillende scopes en Business travel nadere actie verdienen. De planning voor het
+bereiken van de doelstelling is aan het einde van ieder kalenderjaar bij te sturen. De
+planning (Paragraaf 6.6) voor het verzamelen van de noodzakelijk gegevens van ieder
+individueel Top Movers Verhuisbedrijf om de CO2 uitstoot te bepalen is de maand januari
+van ieder jaar (voor de gegevens van het voorafgaande jaar).
+
+Op basis van de verzamelde gegevens omtrent het verbruik en daarmee de CO2 uitstoot
+van ieder individueel wordt de CO2 Footprint van Top Movers Nederland zowel in zijn
+totaliteit als geworden vastgesteld. Op bassi van het totale FTE kan de CO2 uitstoot per
+FTE wordt vastgesteld. Met dit cijfer kan vergelijking plaatsvinden met eerdere jaren
+(evaluatie) en vastgesteld (Paragraaf 9.1) worden hoe de vlag ervoor staat in het bereiken
+van de gestelde doelstellingen (prestaties) en of eventuele bijsturing nodig is. Indien er
+significante wijzigingen zijn die een echte bijsturing noodzakelijk maken dan zal dit via een
+corrigerende maatregel (Paragraaf 10.1) worden vastgesteld. Deze corrigerende
+maatregel worden uiteraard met direct betrokkenen besproken en worden gemonitord en
+uiterlijk bij het opstellen van de volgende CO2 Footprint (dus uiterlijk na een jaar)
+geëvalueerd (geverifieerd)
+
+Hieronder weergegeven is een zogenoemde PCDA-cyclus, waarin de verschillende fasen
+van het CO2 reductiebeleid zijn weergegeven.
+
+In een apart document, CO2 Managementplan (stuurcyclus) is de TBV matrix opgenomen.
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                        9/14
+Top Movers Nederland B.V.
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland   10/14
+Top Movers Nederland B.V.
+
+
+
+
+Bijlage A Maatregelen om reductiedoelstellingen te behalen.
+
+
+Maatregelen kantoren
+
+ Maatregel: Zonnepanelen
+ Actieplan              In maart 2026 zijn in minimaal 12 vestigingen    December 2026
+                        zonnepanelen geplaatst
+ Verantwoordelijke      Extern adviseur in samenspraak directie individuele Top Movers
+                        Verhuisbedrijven
+ Middelen               Euro’s beschikbaar stellen
+
+ Bijdrage aan           Reductie gasverbruik (scope 1) en reductie grijze stroom (scope 2)
+ doelstelling           waarbij de eventuele stijging van extern opladen van auto’s moet
+                        worden opgeheven
+
+
+
+ Maatregel: Ook externe medewerkers bewegen tot minder kilometers
+ Actieplan              De externe adviseur een zodanige planning         December 2026
+                        laten maken dat minder frequent de
+                        verhuisbedrijven worden bezocht
+ Verantwoordelijke      W. Ubaghs
+
+ Middelen               Agenda externe adviseur
+
+ Bijdrage aan           Reductie gasverbruik (scope 1) en reductie grijze stroom (scope 2)
+ doelstelling           waarbij de eventuele stijging van extern opladen van auto’s moet
+                        worden opgeheven
+
+
+
+ Maatregel: Plaatsen LED verlichting in kantoren en Loods
+ Actieplan              Die leden die nog geen LED verlichting            December 2026
+                        (overal) hebben bewegen om tot plaatsing over
+                        te gaan
+ Verantwoordelijke      Directeur van iedere individueel verhuisbedrijf
+
+ Middelen               Geld
+
+ KPI’s                  Aantal opgehangen LED lampen
+
+ Bijdrage aan           Scope 2 minder grijze stroom
+ doelstelling
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                   11/14
+Top Movers Nederland B.V.
+
+
+
+
+ Maatregel: Posters ophangen (lichten uit etc)
+ Actieplan               Papier bij de voordeur opgehangen dat de            December 2026
+                         lichten uitgedaan worden.
+ Verantwoordelijke       Directeur van iedere individueel verhuisbedrijf
+
+ Middelen                Posters
+
+ KPI’s                   Als de lichten tijdig uitgaan dan zal dit resulteren in minder C02
+                         verbruik. Eind 2025 hangen nog niet overal de papieren.
+ Bijdrage aan            Scope 2 minder grijze stroom
+ doelstelling
+
+
+Maatregelen verhuiswagen
+
+
+ Maatregel: Enkel bedrijfsauto’s met zo laag mogelijke emissie aanschaffen
+ Actieplan               Alleen bedrijfsauto’s aanschaffen met een zo        Continu proces
+                         laag mogelijke emissie,
+ Verantwoordelijke       Directeur van iedere individueel verhuisbedrijf
+
+ Middelen                Euro’s
+
+ Bijdrage aan            Scope 1 minder uitstoot diesel
+ doelstelling
+
+
+
+ Maatregel: Woonwerk kilometers en zakelijke kilometers
+ Actieplan               Introductie “duurzame verhuisdoos”. Deze gaat Continu proces
+                         langer mee waardoor minder gereden hoeft te
+                         worden om de dozen te brengen en op te
+                         halen. Medewerkers enthousiasmeren om
+                         vaker de fiets te pakken
+ Verantwoordelijke       Iedere directeur van individuele Top Movers verhuisbedrijf
+
+ Middelen                De “duurzame verhuisdoos”
+
+ Bijdrage aan            Business Travel doordat er minder kilometers gereden hoeven te
+ doelstelling            worden.
+
+
+
+ Maatregel: Mee helpen aan ontwikkeling zero emissie verhuiswagens
+ Actieplan               Ondersteuning van ieder initiatief daartoe          Continu proces
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                       12/14
+Top Movers Nederland B.V.
+
+
+
+
+ Verantwoordelijke      Directeur Top Movers Nederland
+
+ Middelen               Contacten met derden
+
+ Bijdrage aan           Grijpt in op alles dus scope 1, 2 en Business Travel
+ doelstelling
+
+
+
+ Maatregel: Verder in de markt zetten van Circulair Connect
+ Actieplan              Ondersteuning van ieder initiatief daartoe        Continu proces
+
+ Verantwoordelijke      Directeur Top Movers Nederland met de individuele
+                        verhuisbedrijven
+ Middelen               Contacten met derden
+
+ Bijdrage aan           Grijpt in op alles dus scope 1, 2 en Business Travel
+ doelstelling
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                                  13/14
+Top Movers Nederland B.V.
+
+
+
+
+Bijlage B Referentietabel ISO 5001
+
+   NEN 5001 paragraaf:               Documenten CO2 Reductiesysteem:
+            6.3             Emissie-inventaris
+            6.3             Emissiemanagement actieplan
+            6.3             Energiemanagement actieplan
+          A.6.3             Energiemanagement actieplan
+            6.2             Energiemanagement actieplan
+        6.6 en 9.1          Energiemanagement actieplan
+        6.6 en 9.1          Interne audit en zelfevaluatie
+        6.6 en 9.1          Energiemanagement actieplan, Directiebeoordeling CO2
+                            reductiesysteem en Interne audit en zelfevaluatie
+         6.6 en 9.1         Directiebeoordeling CO2 reductiesysteem
+         6.6 en 9.1         Energiemanagement actieplan
+            10.1            Interne audit en zelfevaluatie
+
+
+
+
+Energiemanagement actieplan Top Movers Nederland                             14/14
+

@@ -1,0 +1,12 @@
+{
+ "1": {"schouder": 375, "uit": "drie-werkers-1-terrein-dekens.png", "mannen": [
+   {"wie": "B", "knoop": [860, 518], "draai": 6, "dx": -14},
+   {"wie": "A", "knoop": [1267, 558], "draai": 0},
+   {"wie": "C", "knoop": [1708, 514], "draai": 0}
+ ]},
+ "2": {"schouder": 380, "uit": "drie-werkers-2-opslag-steekwagen.png", "mannen": [
+   {"wie": "B", "knoop": [840, 488], "draai": 7},
+   {"wie": "A", "knoop": [1303, 536], "draai": 0},
+   {"wie": "C", "knoop": [1766, 487], "draai": -9}
+ ]}
+}

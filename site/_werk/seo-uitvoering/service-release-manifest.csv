@@ -1,0 +1,12 @@
+route,batch,t2_content,t3_claims,t4_qa,stakeholder,noindex_nu,sitemap,inkomende_contextlinks_actief,uitgaande_links_actief,schema_gecontroleerd,live_200_getest,status,blokkade
+/antiek-en-kunst-verhuizen/,C,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/inboedelopslag/,A,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/inpakservice/,B,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/internationale-verhuizing/,A,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/kantoorverhuizing/,A,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX + EIGEN STAART VEREIST,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/montage-demontage/,B,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/particulier-verhuizen/,A,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/piano-verhuizen/,C,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/seniorenverhuizing/,B,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/spoedverhuizing/,B,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"
+/zorgverhuizing/,C,OPEN,OPEN,OPEN,OPEN,JA,NEE,0/3,NEE,NEE,NEE,KEEP NOINDEX,"echte case + toestemming, polis/dekking, certificaatscope: USER_EXTERNAL"

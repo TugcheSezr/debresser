@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Merkboek De Bresser</title>
+<meta name="description" content="Beknopt merkboek De Bresser voor website, bedrijfskleding en voertuigen, afgeleid van debresser.nl en eigen foto's. Stand 24-09-2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Tokens voor de opmaak van DIT document. De merkkleuren zelf staan letterlijk in de stalen. */
+:root{
+  --bg:#F6F8FB; --paper:#FFFFFF; --ink:#0B1433; --muted:#5A6275; --line:#DCE2EA;
+  --navy:#020D41; --lblue:#33BCFA; --blue:#007AC0; --green:#7BD534; --soft:#EBEFF4;
+  --warn-bg:#FFF4D6; --warn-ink:#6B4E00; --ok-bg:#E4F6D6; --ok-ink:#23510B;
+  --code:#EEF2F7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#070B1C; --paper:#0F1630; --ink:#E7EBF3; --muted:#A3ACC0; --line:#26304F;
+    --soft:#18213F; --warn-bg:#3A2E0A; --warn-ink:#FFD978; --ok-bg:#16301A; --ok-ink:#B7EE97;
+    --code:#18213F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#070B1C; --paper:#0F1630; --ink:#E7EBF3; --muted:#A3ACC0; --line:#26304F;
+  --soft:#18213F; --warn-bg:#3A2E0A; --warn-ink:#FFD978; --ok-bg:#16301A; --ok-ink:#B7EE97;
+  --code:#18213F;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Sora",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration-color:var(--lblue);text-underline-offset:3px}
+a:hover{color:var(--blue)}
+img{max-width:100%;height:auto;display:block}
+code{font:500 .86em/1.4 ui-monospace,Consolas,monospace;background:var(--code);padding:.1em .35em;border-radius:5px;overflow-wrap:anywhere}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* kop */
+.kop{background:#020D41;color:#fff;padding:48px 0 40px}
+.kop .wrap{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.kop h1{font-size:clamp(30px,5vw,45px);font-weight:600;line-height:1.1;margin:.2em 0 .35em}
+.kop p{margin:0;color:#C9D2E6;max-width:60ch}
+.kop .logo-plaat{background:#fff;border-radius:0 0 20px 20px;padding:18px;width:170px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.kop .eyebrow{color:#33BCFA}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:14px;color:#C9D2E6}
+
+/* inhoud */
+nav.toc{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav.toc ul{list-style:none;margin:0 auto;padding:10px 16px;max-width:1100px;display:flex;gap:6px 18px;overflow-x:auto;white-space:nowrap;font-size:14px;font-weight:500}
+nav.toc a{text-decoration:none;color:var(--muted)}
+nav.toc a:hover{color:var(--ink)}
+section{padding:48px 0 8px}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:600;line-height:1.2;margin:.25em 0 .6em}
+h3{font-size:19px;font-weight:600;margin:1.6em 0 .5em}
+p,li{max-width:72ch}
+.kaart{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:20px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.label{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px;vertical-align:middle;letter-spacing:.02em}
+.l-exact{background:var(--ok-bg);color:var(--ok-ink)}
+.l-onb{background:var(--warn-bg);color:var(--warn-ink)}
+.l-advies{background:var(--soft);color:var(--ink)}
+.l-regel{background:#7BD534;color:#020D41}
+.bron{font-size:13px;color:var(--muted)}
+.bron a{color:var(--muted)}
+.noot{border-left:4px solid var(--lblue);background:var(--paper);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.noot.let{border-left-color:#FFC400}
+table{width:100%;border-collapse:collapse;font-size:15px;background:var(--paper);border-radius:15px;overflow:hidden}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.tabel{overflow-x:auto;border:1px solid var(--line);border-radius:15px}
+
+/* stalen */
+.staal{border-radius:15px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.staal .vlak{height:92px;display:flex;align-items:flex-end;padding:10px 12px;font-weight:600;font-size:14px}
+.staal .info{padding:10px 12px 12px;font-size:14px;line-height:1.45}
+.staal .info b{display:block;font-size:15px}
+.staal .hex{font:600 14px ui-monospace,Consolas,monospace}
+
+/* plaat: vaste lichte ondergrond voor logo's en web-voorbeelden, ook in donkere modus */
+.plaat{background:#fff;color:#000;border-radius:15px;padding:24px;border:1px solid var(--line)}
+.plaat.navy{background:#020D41;color:#fff}
+.plaat code{background:#EEF2F7;color:#0B1433}
+.plaat.grijs{background:#EBEFF4}
+.logo-rij{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.logo-rij figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.logo-rij .plaat{display:flex;align-items:center;justify-content:center;min-height:170px;padding:16px}
+.logo-rij img{max-height:140px;width:auto}
+figcaption{font-size:13px;color:var(--muted);line-height:1.45}
+figcaption code{font-size:12px}
+
+/* web-voorbeelden, nagebouwd met de kit-waarden van debresser.nl */
+.db{font-family:"Sora",sans-serif}
+.db-knop{display:inline-block;background:#33BCFA;color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:5px;text-decoration:none}
+.db-knop.groen{background:#7BD534;color:#020D41;font-weight:700;border:1px solid #166909}
+.db-knop.groen.hover{background:#166909;color:#fff}
+.db-knop.nu{font-size:13px;padding:8px 15px;font-weight:700}
+.regel{background:var(--paper);border:2px solid #7BD534;border-radius:15px;padding:20px;margin:20px 0}
+.regel h3{margin-top:0}
+.db-eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7A7A7A;margin:0 0 6px}
+.db-h2{font-size:32px;font-weight:600;line-height:40px;color:#020D41;margin:0 0 12px}
+.db-kaart{background:#fff;border-radius:15px;padding:22px}
+.db-kaart h4{color:#020D41;font-size:18px;font-weight:600;margin:12px 0 6px}
+.db-kaart p{color:#2F2F2F;font-size:14px;line-height:24px;margin:0 0 10px}
+.db-lees{color:#020D41;font-weight:600;font-size:14px}
+.db-lees span{color:#33BCFA;font-weight:700;margin-right:6px}
+.db-groen{background:#7BD534;border-radius:15px;padding:22px;color:#020D41;position:relative}
+.db-badge{position:absolute;top:14px;right:14px;background:#020D41;color:#fff;font-size:12px;font-weight:600;padding:3px 9px;border-radius:5px}
+.db-balk{background:#020D41;color:#fff;font-size:14px;padding:10px 16px;border-radius:5px}
+.db-hero{position:relative;border-radius:15px;overflow:hidden;min-height:230px;display:flex;align-items:flex-end}
+.db-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.db-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,13,65,.88),rgba(2,13,65,.35))}
+.db-hero div{position:relative;z-index:1;padding:22px;color:#fff}
+.db-hero b{display:block;font-size:26px;line-height:30px;font-weight:600;margin-bottom:6px}
+
+/* voertuigschema */
+.schema svg{width:100%;height:auto;display:block}
+.fotos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.fotos figure{margin:0}
+.fotos img{border-radius:10px;aspect-ratio:3/2;object-fit:cover;width:100%}
+
+/* prompts */
+.prompt{background:var(--code);border-radius:10px;padding:14px 16px;font:500 14px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.doe{list-style:none;padding:0;margin:0}
+.doe li{padding:4px 0 4px 26px;position:relative}
+.doe li::before{position:absolute;left:0;font-weight:700}
+.doe.ja li::before{content:"✓";color:#3F8F1D}
+.doe.nee li::before{content:"✕";color:#C0392B}
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+
+@media (max-width:860px){
+  .g3,.g4,.logo-rij{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fotos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .kop .wrap{grid-template-columns:1fr}
+  .kop .logo-plaat{width:130px}
+  .g2,.g3,.g4,.logo-rij,.fotos{grid-template-columns:1fr}
+  .db-h2{font-size:26px;line-height:32px}
+}
+</style>
+</head>
+<body>
+
+<header class="kop">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Merkboek · beknopt</div>
+      <h1>De Bresser</h1>
+      <p>Wat je nodig hebt om de website, bedrijfskleding en voertuigen van De Bresser in de eigen stijl te maken of te laten genereren. Alles is afgeleid uit debresser.nl, het logobestand en foto's van eigen wagens en medewerkers.</p>
+      <div class="meta"><span>Stand: 24-09-2026</span><span>Geen officiële huisstijlgids van De Bresser</span></div>
+    </div>
+    <div class="logo-plaat"><img src="../de-kievit-nl/logos/2024-07_De-Bresser-Logo-2024.png" alt="Logo De Bresser 2024" width="2809" height="2777"></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Inhoud">
+  <ul>
+    <li><a href="#lezen">Zo lees je dit</a></li>
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#kleur">Kleur</a></li>
+    <li><a href="#type">Letter</a></li>
+    <li><a href="#web">Website</a></li>
+    <li><a href="#foto">Fotografie</a></li>
+    <li><a href="#wagens">Voertuigen</a></li>
+    <li><a href="#kleding">Kleding</a></li>
+    <li><a href="#dozen">Dozen</a></li>
+    <li><a href="#genereren">Beeld genereren</a></li>
+    <li><a href="#bronnen">Bronnen</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+<section id="lezen">
+  <div class="eyebrow">Uitgangspunt</div>
+  <h2>Zo lees je dit merkboek</h2>
+  <p>De Bresser publiceert geen huisstijlgids, geen logo-handleiding en geen belettering- of kledingspecificatie; op debresser.nl staan alleen voorwaarden-PDF's (zie <code>bevindingen.md</code>). Dit boek zet daarom bij elk gegeven waar het vandaan komt en hoe zeker het is:</p>
+  <div class="grid g4">
+    <div class="kaart"><span class="label l-exact">exact</span><p>Letterlijk uit een bronbestand gehaald: de Elementor-stijl van debresser.nl of de pixels van het logobestand.</p></div>
+    <div class="kaart"><span class="label l-onb">onbevestigd</span><p>Gemeten of afgelezen van foto's. Belichting en compressie vertekenen kleur; laat De Bresser het bevestigen voor drukwerk.</p></div>
+    <div class="kaart"><span class="label l-advies">advies</span><p>Onze eigen afspraak waar De Bresser niets vastlegt. Geen feit over De Bresser.</p></div>
+    <div class="kaart"><span class="label l-regel">huisregel</span><p>Een regel die de opdrachtgever heeft gesteld. Gaat voor wat debresser.nl nu doet.</p></div>
+  </div>
+  <div class="noot let"><b>Vectorlogo ontbreekt.</b> Het logo bestaat hier alleen als PNG (2809 × 2777 px). Voor belettering op wagens en borduur- of zeefdruk op kleding is een vectorbestand (AI/EPS/PDF/SVG) van De Bresser nodig. Teken het logo niet zelf na.</div>
+</section>
+
+<section id="logo">
+  <div class="eyebrow">Logo</div>
+  <h2>Logo 2024</h2>
+  <p>Het logo bestaat uit vier delen: het <b>beeldmerk</b> (drie in elkaar grijpende ruiten), een <b>kroon</b> met <b>SINDS 1923</b> en een hoeklijn, het <b>woordmerk</b> DE BRESSER in zwarte cursieve kapitalen, en twee <b>regels</b>: FULL SERVICE IN LOGISTIEK en GEWELDIG IN VERHUIZEN. <span class="label l-exact">exact</span></p>
+  <p class="bron">Bron: <code>de-kievit-nl/logos/2024-07_De-Bresser-Logo-2024.png</code>, byte-identiek (MD5 888b308d…) aan <a href="https://www.debresser.nl/wp-content/uploads/2024/03/De-Bresser-Logo-2024.png">debresser.nl/…/2024/03/De-Bresser-Logo-2024.png</a>.</p>
+
+  <div class="logo-rij">
+    <figure><div class="plaat"><img src="../de-kievit-nl/logos/2024-07_De-Bresser-Logo-2024.png" alt="De Bresser logo in kleur"></div>
+      <figcaption><b>Kleur</b>, op wit en licht.<br><code>2024-07_De-Bresser-Logo-2024.png</code></figcaption></figure>
+    <figure><div class="plaat navy"><img src="../de-kievit-nl/logos/2024-07_De-Bresser-Logo-2024-WIT.png" alt="De Bresser logo in wit"></div>
+      <figcaption><b>Wit</b>, op navy, foto's en donkere kleding.<br><code>2024-07_De-Bresser-Logo-2024-WIT.png</code></figcaption></figure>
+    <figure><div class="plaat"><img src="../de-kievit-nl/logos/2024-04_De-Bresser-favicon.png" alt="Favicon De Bresser" style="max-height:90px"></div>
+      <figcaption><b>Favicon</b>, 291 × 289 px.<br><code>2024-04_De-Bresser-favicon.png</code></figcaption></figure>
+    <figure><div class="plaat"><img src="../de-kievit-nl/logos/2024-03_De-Bresser-Top-movers.png" alt="Top Movers logo" style="max-height:80px"></div>
+      <figcaption><b>Top Movers</b>, als tweede logo in de header van debresser.nl. Wit: <code>2024-04_TOP-MOVERS-De-Bresser.png</code></figcaption></figure>
+  </div>
+
+  <h3>Hoe het logo in de praktijk wordt opgedeeld</h3>
+  <div class="tabel"><table>
+    <thead><tr><th>Vorm</th><th>Waar gezien</th><th>Zekerheid</th></tr></thead>
+    <tbody>
+      <tr><td>Volledig logo (met kroon en SINDS 1923)</td><td>Website-header, footer, favicon (kroon niet)</td><td><span class="label l-exact">exact</span></td></tr>
+      <tr><td>Beeldmerk + woordmerk + twee regels, <b>zonder kroon</b></td><td>Achterkant laadbak, zijkant bestelbus, verhuisdozen</td><td><span class="label l-onb">foto</span></td></tr>
+      <tr><td>Woordmerk + twee regels, zonder beeldmerk</td><td>Cabinedeur vrachtwagen (beeldmerk los ernaast)</td><td><span class="label l-onb">foto</span></td></tr>
+      <tr><td>DE BRESSER · GROUP OF COMPANIES + klein beeldmerk</td><td>Voorkant laadbak, onder het Erkende Verhuizers-logo</td><td><span class="label l-onb">foto</span></td></tr>
+      <tr><td>Oud: regels VERHUIZINGEN / LOGISTIEK / BEDRIJFSDIENSTEN, geen Top Movers</td><td>Oudere belettering, <code>2024-03_De-Bresser-verhuizen-opslag-logistiek-2.jpg</code></td><td>niet meer gebruiken <span class="label l-advies">advies</span></td></tr>
+      <tr><td>Jubileumlogo 100 jaar</td><td><code>2024-03_DeBresser-100jaar.svg</code></td><td>alleen historisch <span class="label l-advies">advies</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="bron">Foto's: <code>de-kievit-nl/fotos/2024-03_De-Bresser-Verhuisbedrijf-Tilburg.jpg</code>, <code>2024-03_De-Bresser-Verhuizingen.jpg</code>, <code>2024-04_Gebouwenbeheer-De-Bresser.jpg</code>, <code>2024-03_Erkende-verhuizer-bedrijf-De-Bresser.jpg</code>.</p>
+
+  <h3>Gebruik</h3>
+  <div class="grid g2">
+    <div class="kaart"><b>Wel</b>
+      <ul class="doe ja">
+        <li>Het originele bestand gebruiken, alleen schalen.</li>
+        <li>Kleurlogo op wit of #EBEFF4, wit logo op navy #020D41 of op een rustig, donker deel van een foto.</li>
+        <li>Vrije ruimte rondom minstens de hoogte van de letter D uit DE BRESSER. <span class="label l-advies">advies</span></li>
+        <li>Op kleding en kleine formaten: beeldmerk + woordmerk; de twee regels vallen onder circa 40 mm breed weg. <span class="label l-advies">advies</span></li>
+      </ul></div>
+    <div class="kaart"><b>Niet</b>
+      <ul class="doe nee">
+        <li>Natekenen, hertypen of in een ander lettertype zetten.</li>
+        <li>Kleuren van de ruiten wisselen of het logo in één merkkleur zetten (behalve de witte variant).</li>
+        <li>Uitrekken, schuin zetten, schaduw of gloed toevoegen.</li>
+        <li>Het kleurlogo op felgroen of lichtblauw zetten: het groene en blauwe deel verdwijnen.</li>
+        <li>Het logo in een gegenereerde foto laten "bakken" (zie <a href="#genereren">beeld genereren</a>).</li>
+      </ul></div>
+  </div>
+  <div class="noot let">De regel <b>FULL SERVICE IN LOGISTIEK</b> staat nog in het logo, terwijl de logistieke tak volgens <code>onderzoek/07</code> in september 2024 is verkocht. Dat is een keuze van De Bresser; wij veranderen het logo niet.</div>
+</section>
+
+<section id="kleur">
+  <div class="eyebrow">Kleur</div>
+  <h2>Kleuren</h2>
+  <p>Er zijn twee paletten. Het <b>logopalet</b> hoort bij drukwerk, wagens en kleding. Het <b>webpalet</b> staat in de Elementor-stijl van debresser.nl en ligt er dichtbij, maar is niet gelijk (webblauw #007AC0 tegen logoblauw #007DC2; webgroen #7BD534 tegen logogroen #6DB23F).</p>
+
+  <h3>Logopalet <span class="label l-exact">exact</span></h3>
+  <div class="grid g4">
+    <div class="staal"><div class="vlak" style="background:#00498F;color:#fff">Ruit donker</div><div class="info"><span class="hex">#00498F</span><br>donkerblauwe ruit</div></div>
+    <div class="staal"><div class="vlak" style="background:#007DC2;color:#fff">Ruit blauw</div><div class="info"><span class="hex">#007DC2</span><br>blauwe ruit, kroon, SINDS 1923, regel GEWELDIG IN VERHUIZEN</div></div>
+    <div class="staal"><div class="vlak" style="background:#6DB23F;color:#fff">Ruit groen</div><div class="info"><span class="hex">#6DB23F</span><br>groene ruit, regel FULL SERVICE IN LOGISTIEK</div></div>
+    <div class="staal"><div class="vlak" style="background:#231F20;color:#fff">Woordmerk</div><div class="info"><span class="hex">#231F20</span><br>DE BRESSER</div></div>
+  </div>
+  <p class="bron">Bron: meest voorkomende volledig dekkende pixels in <code>2024-07_De-Bresser-Logo-2024.png</code>. Pantone- of CMYK-waarden zijn niet gepubliceerd <span class="label l-onb">onbevestigd</span>.</p>
+
+  <h3>Webpalet <span class="label l-exact">exact</span></h3>
+  <div class="grid g4">
+    <div class="staal"><div class="vlak" style="background:#020D41;color:#fff">Primary</div><div class="info"><span class="hex">#020D41</span><br>navy: menu, koppen, links, contactbalk, reviewsectie</div></div>
+    <div class="staal"><div class="vlak" style="background:#33BCFA;color:#020D41">Lichtblauw</div><div class="info"><span class="hex">#33BCFA</span><br>link-hover, pijltjes bij "Lees meer", knop "Alle reviews". Niet voor de Offerte-knop (zie huisregel)</div></div>
+    <div class="staal"><div class="vlak" style="background:#EBEFF4;color:#020D41">Licht vlak</div><div class="info"><span class="hex">#EBEFF4</span><br>sectie-achtergrond, reviewkaarten; verloop naar #FFFFFF op 20%</div></div>
+    <div class="staal"><div class="vlak" style="background:#7BD534;color:#020D41">Accent</div><div class="info"><span class="hex">#7BD534</span><br><b>Offerte-knop</b> (huisregel) en groene uitlichtkaart ("Duurzame werkomgeving", "Nieuw!")</div></div>
+    <div class="staal"><div class="vlak" style="background:#007AC0;color:#fff">Secondary</div><div class="info"><span class="hex">#007AC0</span><br>secondary van de kit</div></div>
+    <div class="staal"><div class="vlak" style="background:#000000;color:#fff">Text</div><div class="info"><span class="hex">#000000</span><br>lopende tekst (kit), grijzen #2F2F2F en #676767 voor zachtere tekst</div></div>
+    <div class="staal"><div class="vlak" style="background:#7A7A7A;color:#fff">Grijs</div><div class="info"><span class="hex">#7A7A7A</span><br>grijs van de kit; de eyebrow-labels zijn grijs (tint niet apart gemeten)</div></div>
+    <div class="staal"><div class="vlak" style="background:#FFC400;color:#020D41">Geel</div><div class="info"><span class="hex">#FFC400</span><br>globale kleur in de kit; waar hij gebruikt wordt is niet vastgesteld</div></div>
+  </div>
+  <p class="bron">Bron: <a href="https://www.debresser.nl/wp-content/uploads/elementor/css/post-8.css">post-8.css</a> (Elementor-kit): primary #020D41, secondary #007AC0, text #000000, accent #7BD534, verder #33BCFA, #FFC400, #7A7A7A, #004B97, #2F2F2F, #676767, #EBEFF4, #001D21, #C7C7C7, #166909, #0A0A0A, #207AB4, #232C49. Gebruik per kleur afgelezen van de homepage op 1440 en 390 px; #33BCFA komt 76 keer voor in de header-stijl <a href="https://www.debresser.nl/wp-content/uploads/elementor/css/post-4261.css">post-4261.css</a>.</p>
+
+  <h3>Voertuiggroen <span class="label l-onb">onbevestigd</span></h3>
+  <div class="grid g4">
+    <div class="staal"><div class="vlak" style="background:#3DE55A;color:#020D41">Band</div><div class="info"><span class="hex">≈ #3DE55A</span><br>gemeten op de groene band van de laadbak</div></div>
+    <div class="staal"><div class="vlak" style="background:#77F628;color:#020D41">Cabine</div><div class="info"><span class="hex">≈ #77F628</span><br>gemeten op het groene vlak van de cabine</div></div>
+  </div>
+  <p>De belettering gebruikt een feller, geler groen dan het logo. Er is geen folienummer bekend; vraag De Bresser of de wrapfolie een vaste kleur heeft (bijvoorbeeld een Oracal- of 3M-nummer). Tot die tijd: <b>#6DB23F</b> voor alles wat bij het logo hoort, en de gemeten waarden alleen voor beeldgeneratie. <span class="label l-advies">advies</span></p>
+
+  <h3>Contrast</h3>
+  <div class="tabel"><table>
+    <thead><tr><th>Combinatie</th><th>Verhouding</th><th>Gebruik</th></tr></thead>
+    <tbody>
+      <tr><td>Wit op #020D41</td><td>18,5 : 1</td><td>alles</td></tr>
+      <tr><td>#020D41 op #33BCFA</td><td>8,6 : 1</td><td>knoptekst, ook klein</td></tr>
+      <tr><td>Wit op #33BCFA</td><td>2,2 : 1</td><td>zo staan de meeste knoppen nu op debresser.nl; haalt WCAG AA niet. Voor andere knoppen dan Offerte: navy tekst. <span class="label l-advies">advies</span></td></tr>
+      <tr><td>Wit op #007AC0</td><td>4,6 : 1</td><td>normale tekst net AA</td></tr>
+      <tr><td>#020D41 op #7BD534</td><td>10,0 : 1</td><td>Offerte-knop, tekst op groen</td></tr>
+      <tr><td>Wit op #166909</td><td>6,9 : 1</td><td>Offerte-knop bij hover en focus</td></tr>
+      <tr><td>#166909 tegen wit</td><td>6,9 : 1</td><td>rand van de Offerte-knop op wit en #EBEFF4 (het groene vlak zelf haalt daar maar 1,8 en 1,6 : 1)</td></tr>
+      <tr><td>Wit op #7BD534 / #6DB23F</td><td>1,8 / 2,6 : 1</td><td>niet voor tekst, ook niet op de Offerte-knop; op de wagens alleen in grote kapitalen</td></tr>
+      <tr><td>#7A7A7A op #EBEFF4</td><td>3,7 : 1</td><td>alleen grote of vette labels</td></tr>
+    </tbody>
+  </table></div>
+  <p class="bron">Berekend met de WCAG 2.x-formule voor relatieve luminantie.</p>
+</section>
+
+<section id="type">
+  <div class="eyebrow">Letter</div>
+  <h2>Typografie</h2>
+  <div class="grid g2">
+    <div class="kaart">
+      <p style="font-size:40px;font-weight:600;line-height:1.1;margin:0 0 8px">Sora</p>
+      <p style="margin:0 0 10px">Alle rollen op debresser.nl: primary 600, secondary 400, text 400, accent 500. Zelf gehost in gewichten 100 t/m 800. Op Google Fonts vrij te gebruiken (SIL Open Font License). <span class="label l-exact">exact</span></p>
+      <p class="bron">Bron: post-8.css en <a href="https://www.debresser.nl/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/sora.css">sora.css</a>. Licentie: <a href="https://fonts.google.com/specimen/Sora">fonts.google.com/specimen/Sora</a>.</p>
+    </div>
+    <div class="kaart">
+      <div class="tabel" style="border:0"><table>
+        <thead><tr><th>Rol</th><th>Kit-waarde</th></tr></thead>
+        <tbody>
+          <tr><td>h1</td><td>45px, 600</td></tr>
+          <tr><td>h2</td><td>600, regelhoogte 40px</td></tr>
+          <tr><td>h3</td><td>26px, regelhoogte 30px</td></tr>
+          <tr><td>lopende tekst</td><td>400, regelhoogte 28px</td></tr>
+          <tr><td>links</td><td>#020D41, hover #33BCFA</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+  <div class="noot">Het <b>logo</b> gebruikt geen Sora: het woordmerk en de twee regels zijn een zware en een smalle cursieve schreefloze letter die niet als lettertype is vastgesteld. Zet het logo dus nooit in tekst. De plaatsnamen en telefoonnummers op de wagens staan in een brede schreefloze letter met veel spatiëring; ook die letter is niet vastgesteld. <span class="label l-onb">onbevestigd</span></div>
+</section>
+
+<section id="web">
+  <div class="eyebrow">Website</div>
+  <h2>Webonderdelen</h2>
+  <p>Nagebouwd met de kit-waarden. Container maximaal <b>1300px</b> (1024 op tablet, 767 op mobiel), widget-afstand 20px. Afronding: kaarten <b>15px</b> (soms 20px), knoppen en kleine elementen <b>5px</b>, het witte logovlak in de header <b>0 0 20px 20px</b>. <span class="label l-exact">exact</span></p>
+
+  <div class="regel">
+    <h3>De Offerte-knop is altijd groen <span class="label l-regel">huisregel</span></h3>
+    <p style="margin-top:0">Elke knop die naar de offerte leidt is groen: de knop "Offerte" in de header, elke "Offerte aanvragen" in een pagina, op wit, op #EBEFF4, op navy en op een foto.</p>
+    <div class="grid g2" style="align-items:center">
+      <div class="tabel"><table>
+        <tbody>
+          <tr><td>Achtergrond</td><td><code>#7BD534</code>, het accent van de kit</td></tr>
+          <tr><td>Tekst</td><td><code>#020D41</code> navy, Sora 700 (10,0 : 1). Geen witte tekst: wit op dit groen is 1,8 : 1 <span class="label l-advies">advies</span></td></tr>
+          <tr><td>Rand</td><td>1px <code>#166909</code> zodat de knop op wit en #EBEFF4 zichtbaar blijft <span class="label l-advies">advies</span></td></tr>
+          <tr><td>Hover en focus</td><td>achtergrond <code>#166909</code> (donkergroen uit de kit), witte tekst (6,9 : 1). Blijft dus groen <span class="label l-advies">advies</span></td></tr>
+          <tr><td>Vorm</td><td>afronding 5px, header-knop 8px × 15px binnenruimte, zoals nu op debresser.nl <span class="label l-exact">exact</span></td></tr>
+          <tr><td>Niet</td><td>de knop op een groen vlak zetten (zoals de uitlichtkaart); daar valt hij weg</td></tr>
+        </tbody>
+      </table></div>
+      <div class="plaat db" style="display:grid;gap:14px;justify-items:start">
+        <div><a class="db-knop groen" href="#web" onclick="return false">Offerte</a> <a class="db-knop groen hover" href="#web" onclick="return false" style="margin-left:6px">Offerte</a></div>
+        <div style="font-size:12px;color:#676767">normaal · hover en focus</div>
+        <div style="background:#020D41;padding:14px;border-radius:5px"><a class="db-knop groen" href="#web" onclick="return false">Offerte aanvragen</a></div>
+        <div style="font-size:12px;color:#676767">Nu op debresser.nl: <a class="db-knop nu" href="#web" onclick="return false">Offerte</a> lichtblauw met witte tekst in de header en op 11 pagina's; groen met witte tekst op 4 pagina's. Zie <code>bevindingen.md</code>.</div>
+      </div>
+    </div>
+    <p class="bron">Regel: opdracht van de gebruiker, 24-09-2026: "make sure that the offerte button is always green." Huidige kleuren gemeten met de berekende stijl in Chrome op de pagina's van debresser.nl, en uit de widget-CSS (<code>post-4462.css</code>, header-knop d0503fb: achtergrond #33BCFA, tekst #FFFFFF, hover #020D41).</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:20px">
+    <div class="plaat grijs db">
+      <p class="db-eyebrow">Onze diensten</p>
+      <p class="db-h2">Eyebrow boven navy kop</p>
+      <p style="color:#2F2F2F;font-size:15px;line-height:28px;margin:0 0 18px">Grijs label in kapitalen, daaronder een navy kop in Sora 600. Zo begint bijna elke sectie op debresser.nl.</p>
+      <a class="db-knop groen" href="#web" onclick="return false">Offerte aanvragen</a>
+      <p style="font-size:12px;color:#676767;margin:10px 0 0">Offerte-knop volgens de huisregel: groen, navy tekst.</p>
+    </div>
+    <div class="plaat grijs db">
+      <div class="grid g2" style="gap:14px">
+        <div class="db-kaart">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#007AC0" stroke-width="1.6" aria-hidden="true"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20v-6h6v6"/></svg>
+          <h4>Particulier verhuizen</h4>
+          <p>Witte kaart op #EBEFF4, blauw lijnicoon.</p>
+          <span class="db-lees"><span>›</span>Lees meer</span>
+        </div>
+        <div class="db-groen">
+          <span class="db-badge">Nieuw!</span>
+          <h4 style="margin:26px 0 6px;font-size:18px">Duurzame werkomgeving</h4>
+          <p style="font-size:14px;line-height:24px;margin:0">Uitlichtkaart in accentgroen #7BD534.</p>
+        </div>
+      </div>
+    </div>
+    <div class="db">
+      <div class="db-hero">
+        <img src="../de-kievit-nl/fotos/2024-03_De-Bresser-Verhuizingen.jpg" alt="">
+        <div><b>Erkende verhuizers &amp; uw partner in full service logistiek</b><span style="font-size:14px">Heldfoto met navy overlay en witte tekst</span></div>
+      </div>
+    </div>
+    <div class="db" style="display:grid;gap:14px;align-content:start">
+      <div class="db-balk">+31 (0)13 52 82 372 &nbsp;|&nbsp; info@debresser.nl</div>
+      <div class="plaat navy" style="padding:18px">
+        <p style="margin:0 0 10px;font-weight:600">Reviewsectie</p>
+        <div style="background:#EBEFF4;color:#020D41;border-radius:15px;padding:14px;font-size:14px"><span style="color:#FFC400;letter-spacing:2px">★★★★★</span><br>Navy vlak, reviewkaarten in #EBEFF4, gele sterren, lichtblauwe knop "Alle reviews", Klantenvertellen-badges.</div>
+      </div>
+    </div>
+  </div>
+  <p class="bron">Bron: homepage <a href="https://www.debresser.nl/">debresser.nl</a>, schermafdrukken op 1440 en 390 px; kit-waarden uit post-8.css. De payoff en het nummer staan letterlijk zo op de site.</p>
+
+  <h3>Header</h3>
+  <p>Wit logovlak dat over de heldfoto valt (onderaan afgerond 20px), menu op navy, de knop "Offerte" en het Top Movers-logo (<code>De-Bresser-Top-movers.png</code>). Paginaovergang en link-hover in #33BCFA. De Offerte-knop in de header volgt de huisregel hierboven: groen, ook al staat hij op debresser.nl nu lichtblauw.</p>
+</section>
+
+<section id="foto">
+  <div class="eyebrow">Fotografie</div>
+  <h2>Fotostijl</h2>
+  <div class="grid g2">
+    <div>
+      <ul>
+        <li>Echte ploegen bij echte witte wagens, op het eigen terrein met grijze bedrijfshal en blauwe lucht.</li>
+        <li>Fel daglicht, hoge verzadiging; wit is echt wit.</li>
+        <li>Mensen poseren met de De Bresser-doos in de handen of hurken ervoor.</li>
+        <li>Groepsfoto's in een rij langs de laadbak, belettering goed leesbaar.</li>
+        <li>Op de website krijgt de heldfoto een navy overlay met witte tekst.</li>
+      </ul>
+      <p class="bron">Afgelezen van de foto's hiernaast en van de homepage. <span class="label l-onb">interpretatie</span></p>
+    </div>
+    <div class="fotos" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <figure><img src="../de-kievit-nl/fotos/2024-03_De-Bresser-Verhuisbedrijf-Tilburg.jpg" alt="Vrachtwagen, bestelbus en drie medewerkers met dozen"><figcaption>Verhuisbedrijf-Tilburg</figcaption></figure>
+      <figure><img src="../de-kievit-nl/fotos/2024-04_De-Bresser-Uw-verhuis-partner.jpg" alt="Zeven medewerkers op een laadbrug"><figcaption>Uw-verhuis-partner</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="wagens">
+  <div class="eyebrow">Voertuigen</div>
+  <h2>Belettering vrachtwagen en bus</h2>
+  <p>Wit voertuig, felgroene band die aan het eind uiteenvalt in 3D-blokjes, keurmerken voorin, groot logo achterin, vestigingen met telefoonnummer onderaan. Afgelezen van drie foto's; De Bresser heeft geen beletteringsspecificatie gepubliceerd. <span class="label l-onb">foto</span></p>
+
+  <div class="plaat schema" style="margin:16px 0">
+    <svg viewBox="0 0 1000 380" role="img" aria-label="Schema belettering laadbak, van voor naar achter">
+      <rect x="300" y="40" width="660" height="250" rx="6" fill="#fff" stroke="#9AA3B5" stroke-width="2"/>
+      <path d="M60 300 V150 Q60 110 100 100 L240 80 Q290 76 290 120 V300 Z" fill="#fff" stroke="#9AA3B5" stroke-width="2"/>
+      <rect x="215" y="130" width="72" height="90" fill="#77F628"/>
+      <rect x="330" y="150" width="360" height="62" fill="#3DE55A"/>
+      <g fill="#3DE55A"><rect x="698" y="138" width="34" height="34" transform="rotate(12 715 155)"/><rect x="744" y="176" width="26" height="26" transform="rotate(-18 757 189)"/><rect x="710" y="200" width="20" height="20"/><rect x="782" y="146" width="14" height="14"/><rect x="662" y="120" width="18" height="18" transform="rotate(20 671 129)"/></g>
+      <text x="345" y="187" font-family="Sora,sans-serif" font-size="13" font-weight="700" fill="#fff">ONS VERVOER WORDT ENKEL UITGEVOERD MET DE SCHOONSTE MOTOREN!!!</text>
+      <g font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#0B1433">
+        <text x="330" y="70">A · ERKENDE VERHUIZERS</text><text x="330" y="90">DE BRESSER GROUP OF COMPANIES</text>
+        <text x="520" y="80">B · TOP MOVERS</text>
+        <text x="820" y="100">D · logo</text><text x="820" y="120">zonder kroon</text>
+        <text x="330" y="270" letter-spacing="2">E · OISTERWIJK 013-5282372 · TILBURG 013-5425935 · BREDA 076-8200233</text>
+        <text x="72" y="250">F · cabine:</text><text x="72" y="268">woordmerk + regels</text>
+      </g>
+      <text x="345" y="235" font-family="Sora,sans-serif" font-size="13" font-weight="600" fill="#0B1433">C · groene band met slogan, valt uiteen in blokjes</text>
+      <g stroke="#00498F" stroke-width="3" fill="none"><rect x="850" y="150" width="46" height="46" transform="rotate(45 873 173)"/></g>
+      <text x="60" y="345" font-family="Sora,sans-serif" font-size="13" fill="#5A6275">rijrichting ←  ·  schema, niet op schaal</text>
+    </svg>
+  </div>
+
+  <div class="tabel"><table>
+    <thead><tr><th>Zone</th><th>Wat staat er</th></tr></thead>
+    <tbody>
+      <tr><td>A · laadbak voor, boven</td><td>Logo Erkende Verhuizers, daaronder "DE BRESSER GROUP OF COMPANIES" met klein beeldmerk</td></tr>
+      <tr><td>B · laadbak, midden boven</td><td>Top Movers-logo (zwart met teal #009881)</td></tr>
+      <tr><td>C · laadbak, midden</td><td>Brede groene band vanaf de voorkant, die naar achteren uiteenvalt in groene 3D-blokjes. Witte kapitalen: "ONS VERVOER WORDT ENKEL UITGEVOERD MET DE SCHOONSTE MOTOREN!!!"</td></tr>
+      <tr><td>D · laadbak achter</td><td>Groot logo: beeldmerk boven, DE BRESSER, FULL SERVICE IN LOGISTIEK (groen), GEWELDIG IN VERHUIZEN (blauw); zonder kroon</td></tr>
+      <tr><td>E · laadbak onder</td><td>Vestigingen in gespatieerde zwarte kapitalen met telefoonnummer: OISTERWIJK 013-5282372, TILBURG 013-5425935, BREDA 076-8200233</td></tr>
+      <tr><td>F · cabine</td><td>Witte Renault T. Deur: woordmerk + twee regels; beeldmerk los op de zijkant; groen blokkenvlak op de hoek van de cabine</td></tr>
+      <tr><td>Bestelbus</td><td>Witte elektrische bus (Citroën-wieldoppen). Achterzijpaneel: beeldmerk + woordmerk + regels; rechtsboven Top Movers en Erkende Verhuizers; groene blokjes achteraan; vestigingen onderaan; voordeur: groen stekker-blad-icoon met "100% elektrisch" (alleen op elektrische wagens)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="bron">Foto's: <code>2024-03_De-Bresser-Verhuisbedrijf-Tilburg.jpg</code>, <code>2024-03_De-Bresser-Verhuizingen.jpg</code>, <code>2024-04_Gebouwenbeheer-De-Bresser.jpg</code>, detail <code>2024-03_Erkende-verhuizer-bedrijf-De-Bresser.jpg</code>. Top Movers-teal gemeten in <code>2024-03_De-Bresser-Top-movers.png</code> <span class="label l-exact">exact</span>.</p>
+
+  <div class="fotos" style="margin-top:14px">
+    <figure><img src="../de-kievit-nl/fotos/2024-03_De-Bresser-Verhuizingen.jpg" alt="Vrachtwagen De Bresser met vier medewerkers"><figcaption>Laadbak, zijaanzicht</figcaption></figure>
+    <figure><img src="../de-kievit-nl/fotos/2024-04_Gebouwenbeheer-De-Bresser.jpg" alt="Elektrische bestelbus De Bresser"><figcaption>Bus, 100% elektrisch</figcaption></figure>
+    <figure><img src="../de-kievit-nl/fotos/2024-03_Erkende-verhuizer-bedrijf-De-Bresser.jpg" alt="Detail keurmerken op de laadbak"><figcaption>Zone A in detail</figcaption></figure>
+  </div>
+  <div class="noot let">Op de wagens staan alleen Oisterwijk, Tilburg en Breda. Venlo (De Kievit) staat er niet op. Een nieuwe wagen voor Venlo vraagt dus een keuze van De Bresser: vestigingsregel aanpassen of niet. Niet zelf invullen.</div>
+</section>
+
+<section id="kleding">
+  <div class="eyebrow">Bedrijfskleding</div>
+  <h2>Bedrijfskleding</h2>
+  <p>De ploeg draagt <b>antraciet</b> met een klein <b>Top Movers-logo op de linkerborst</b>. Op geen enkele foto staat het De Bresser-logo op kleding. <span class="label l-onb">foto</span></p>
+  <div class="regel">
+    <h3>Op de kleding staat het Top Movers-logo <span class="label l-regel">huisregel</span></h3>
+    <p style="margin-top:0">Op polo, sweater, softshell en jas staat het <b>Top Movers-logo</b> op de borst, niet het De Bresser-logo. Dat is het logo dat de ploeg nu draagt.</p>
+    <ul style="margin:.4em 0 0">
+      <li><b>Kleur:</b> witte letters met de turquoise swoosh (#009881) op antraciet. Er is geen kant-en-klaar bestand in die kleuren. <code>2024-03_De-Bresser-Top-movers.png</code> heeft zwarte letters en een teal swoosh; <code>2024-04_TOP-MOVERS-De-Bresser.png</code> en <code>topmovers/logos-certificaten/2021-09_TOP-MOVERS-LOGO-wit.png</code> zijn helemaal wit.</li>
+      <li><b>Plaats:</b> linkerborst van de drager (bij een frontale figuur de rechterkant van het beeld), zijwaarts 0,22 × de schouderbreedte vanaf de knoopsluiting, verticaal ter hoogte van de onderste knoop, helemaal op de stof.</li>
+      <li><b>Maat:</b> logobreedte is 16,5% van de schouderbreedte (mouwen inbegrepen). Niet groter maken om het leesbaar te krijgen; toon dan het beeld groter of snij krapper uit.</li>
+      <li><b>Draaiing:</b> staat de romp gedraaid, dan volgt het logo de draai van de borst (perspectief, vier hoeken op de stof), en staat het niet plat op het beeld.</li>
+      <li><b>Niet:</b> het De Bresser-logo op de borst, een tweede logo op mouw of rug, of een logo dat de generator zelf tekent.</li>
+    </ul>
+    <p class="bron">Besluit: opdracht van de gebruiker, 24-09-2026 (via debresser-fc): "use the top movers logo on the shirt as its the one being used by them, make sure to note that down in the brand book." Plaatsing en maat volgens <code>dereus/_ai-beelden/gereedschap/MERK-OP-KLEDING.md</code>. Draaiing: gevraagd door de gebruiker bij werknemerversie 4 (debresser-58).</p>
+  </div>
+  <div class="grid g4">
+    <div class="staal"><div class="vlak" style="background:#4B484F;color:#fff">Polo</div><div class="info"><span class="hex">≈ #4B484F – #4E5156</span><br>polo korte mouw, polo lange mouw of sweater</div></div>
+    <div class="staal"><div class="vlak" style="background:#3E3E40;color:#fff">Softshell</div><div class="info"><span class="hex">≈ #3E3E40</span><br>softshell met kraag en rits</div></div>
+    <div class="staal"><div class="vlak" style="background:#2D2A2B;color:#fff">Winterjas</div><div class="info"><span class="hex">≈ #2D2A2B</span><br>zwarte gewatteerde werkjas</div></div>
+    <div class="staal"><div class="vlak" style="background:#1E1C1C;color:#fff">Broek</div><div class="info"><span class="hex">zwart</span><br>zwarte werkbroek met kniezakken, of spijkerbroek; donkere veiligheidsschoenen</div></div>
+  </div>
+  <p class="bron">Kleuren gemeten op <code>2024-04_De-Bresser-Uw-verhuis-partner.jpg</code> en <code>2024-03_De-Bresser-Transport-Contact-e1711724004960.png</code> (in fel licht tot #6C6666). <span class="label l-onb">onbevestigd</span></p>
+
+  <div class="grid g3" style="margin-top:16px">
+    <div class="kaart"><b>Logo op de foto's</b><p style="margin:.4em 0 0">Top Movers, wit met teal, links op de borst, circa 7 tot 9 cm breed, geborduurd. Op mouw of rug is geen opdruk te zien, maar ruggen staan ook niet op de foto's. <span class="label l-onb">foto</span></p></div>
+    <div class="kaart"><b>Niet</b><p style="margin:.4em 0 0">Geen signaalkleuren (oranje, geel), geen slogans, geen logo van een ander bedrijf. De voorste man op <code>Uw-verhuis-partner</code> draagt een ander rood-navy borstlogo; dat is geen De Bresser.</p></div>
+    <div class="kaart"><b>Productie</b> <span class="label l-advies">advies</span><p style="margin:.4em 0 0">Borduren of transferdruk vraagt een vectorbestand van het Top Movers-logo in wit met teal. Vraag dat op via De Bresser of Top Movers en teken het logo niet zelf na.</p></div>
+  </div>
+
+  <div class="fotos" style="margin-top:14px">
+    <figure><img src="../de-kievit-nl/fotos/2024-04_De-Bresser-Uw-verhuis-partner.jpg" alt="Zeven medewerkers in polo, softshell en winterjas"><figcaption>Alle kledingstukken</figcaption></figure>
+    <figure><img src="../de-kievit-nl/fotos/2024-03_De-Bresser-verhuizen-opslag-logistiek-2.jpg" alt="Zomerpolo's voor een vrachtwagen met oude belettering"><figcaption>Zomerpolo's (oude belettering)</figcaption></figure>
+    <figure><img src="../de-kievit-nl/fotos/2024-03_De-Bresser-Transport-Contact-e1711724004960.png" alt="Medewerker in polo met Top Movers-logo en een doos" style="object-position:top"><figcaption>Borstlogo van dichtbij</figcaption></figure>
+  </div>
+</section>
+
+<section id="dozen">
+  <div class="eyebrow">Verhuisdozen</div>
+  <h2>Dozen</h2>
+  <p>Witte doos. Voorkant: beeldmerk, DE BRESSER en de twee regels, onderaan www.debresser.nl. Zijkant: het Erkende (Project) Verhuizers-merk. <span class="label l-onb">foto</span> Volgens De Bresser zijn de kartonnen dozen voor 100% gemaakt van gerecycled materiaal. <span class="label l-exact">bron</span></p>
+  <p>De sluiting is op de foto's niet te zien. Beeldregel 1 (<code>site/_werk/BEELDREGELS.md</code>) zegt dat Top Movers-dozen een kliksluiting hebben en geen tape; voor De Bresser-dozen is dat niet bevestigd. Toon in gegenereerd beeld daarom geen tape. <span class="label l-advies">advies</span></p>
+  <p class="bron">Foto's: <code>2024-03_De-Bresser-Verhuisbedrijf-Tilburg.jpg</code>, <code>2024-03_De-Bresser-Verhuizingen.jpg</code>. Gerecycled: <a href="https://www.debresser.nl/duurzaam-verhuizen/">debresser.nl/duurzaam-verhuizen</a>.</p>
+</section>
+
+<section id="genereren">
+  <div class="eyebrow">Beeld genereren</div>
+  <h2>Prompts voor wagens, kleding en dozen</h2>
+  <div class="noot let">
+    <b>Regels uit <code>site/_werk/BEELDREGELS.md</code></b>
+    <ul style="margin:.4em 0 0">
+      <li>Geen merk- of keurmerklogo's in gegenereerde foto's (regel 2). Genereer <b>lege vlakken</b> en zet het echte PNG-logo er daarna als overlay op.</li>
+      <li>Gegenereerde mensen alleen met de zes goedgekeurde gezichten in <code>beeldronde-debresser/gezichten/</code> (gebruiker, 24-09-2026). Die vervangen de "mixbibliotheek kop-01 t/m 19" uit regel 4; die map bestaat op deze machine niet.</li>
+      <li>Kleding: genereer een lege linkerborst; het Top Movers-logo komt er daarna als overlay op, volgens de <a href="#kleding">huisregel bij Kleding</a> (16,5% van de schouderbreedte, ter hoogte van de onderste knoop, meegedraaid met de borst).</li>
+      <li>Tekst in gegenereerd beeld wordt wartaal (regel 3). Laat de generator geen letters maken; tekst komt er als overlay op.</li>
+    </ul>
+  </div>
+
+  <h3>Vrachtwagen</h3>
+  <div class="prompt">Photorealistic side view of a clean white Renault T tractor-style moving truck with a white box body, parked on grey brick pavers in front of a dark grey corrugated industrial hall, bright midday sun, clear blue sky. The box body carries one wide horizontal bright green band (#3DE55A) running from the front edge to about 55% of the length, where it breaks apart into a scattered cluster of glossy green 3D cubes of different sizes. The cab has a bright green (#77F628) block on its rear corner with a few floating cubes. All other surfaces plain white and empty. No text, no letters, no numbers, no logos, no license plate text. Sharp, high saturation, commercial fleet photography, 3:2.</div>
+  <p class="bron">Na generatie: zones A, B, D en E (zie schema) als overlay met de originele logobestanden. Slogan in de band ook als overlay, witte kapitalen.</p>
+
+  <h3>Elektrische bestelbus</h3>
+  <div class="prompt">Photorealistic three-quarter front view of a white mid-size electric panel van (Citroën ë-Jumpy style), parked on grey brick pavers next to a white box truck, overcast bright daylight. On the rear side panel a cluster of glossy bright green 3D cubes (#3DE55A) near the rear wheel arch. Large empty white areas on the front door and the middle side panel. No text, no letters, no logos, no stickers. Clean, commercial fleet photography, 3:2.</div>
+
+  <h3>Medewerker, zomer</h3>
+  <div class="prompt">Photorealistic portrait of a moving company worker, [face reference: one of beeldronde-debresser/gezichten/gezicht-XX.jpg], standing in front of a white box truck with a green band, bright sunny day. He wears a charcoal grey short-sleeve pique polo shirt (#4B484F) with a clean, plain left chest (no patch; the logo is added later as an overlay), black work trousers with knee pockets, dark safety shoes. Friendly, confident, arms relaxed. No logos, no text on clothing, no hi-vis, no orange or yellow. Natural skin, 4:5.</div>
+
+  <h3>Medewerker, winter</h3>
+  <div class="prompt">Photorealistic group of three moving company workers, [face references: three of beeldronde-debresser/gezichten/gezicht-XX.jpg], standing on an aluminium loading ramp behind an open white moving truck, winter daylight, bare trees. One wears a charcoal long-sleeve polo sweater (#4E5156), one a charcoal softshell jacket with collar and zip (#3E3E40), one a black padded work jacket (#2D2A2B). Black work trousers or dark jeans, dark safety shoes. Every garment has a clean, plain left chest (the logo is added later as an overlay). No logos, no text, no hi-vis. 3:2.</div>
+
+  <h3>Verhuisdoos</h3>
+  <div class="prompt">Photorealistic white corrugated cardboard moving box, closed with interlocking top flaps, no tape, with hand holes in the short sides, held in both hands by a worker in a charcoal polo, in front of a white van. The front face of the box is plain white and empty for a later overlay. No text, no logos. Bright daylight, 4:5.</div>
+
+  <h3>Negatief (voor elke prompt)</h3>
+  <div class="prompt">text, letters, numbers, logo, watermark, brand name, license plate characters, sticker, tape on boxes, hi-vis vest, orange, yellow safety colours, blue work clothes, company uniform with print, distorted hands, extra fingers, garbled signage</div>
+</section>
+
+<section id="bronnen">
+  <div class="eyebrow">Bronnen</div>
+  <h2>Bronnen</h2>
+  <ul>
+    <li><a href="https://www.debresser.nl/">debresser.nl</a>, homepage, geraadpleegd september 2026: schermafdrukken 1440 en 390 px.</li>
+    <li><a href="https://www.debresser.nl/wp-content/uploads/elementor/css/post-8.css">post-8.css</a>: Elementor-kit met globale kleuren, lettertypes, koppen, container.</li>
+    <li><a href="https://www.debresser.nl/wp-content/uploads/elementor/css/post-4261.css">post-4261.css</a>: header-stijl.</li>
+    <li><a href="https://www.debresser.nl/wp-content/cache/min/1/wp-content/uploads/elementor/google-fonts/css/sora.css">sora.css</a>: Sora zelf gehost, 100–800.</li>
+    <li><a href="https://www.debresser.nl/duurzaam-verhuizen/">debresser.nl/duurzaam-verhuizen</a>: dozen van 100% gerecycled materiaal.</li>
+    <li>Logo's: <code>de-kievit-nl/logos/</code> (herkomst in <code>de-kievit-nl/manifest.csv</code>).</li>
+    <li>Foto's: <code>de-kievit-nl/fotos/</code>: Verhuisbedrijf-Tilburg, Verhuizingen, Gebouwenbeheer, Erkende-verhuizer-bedrijf, Uw-verhuis-partner, verhuizen-opslag-logistiek-2, Transport-Contact.</li>
+    <li>Beeldregels: <code>site/_werk/BEELDREGELS.md</code>, regels 1 t/m 4.</li>
+    <li>Verkoop logistieke tak: <code>onderzoek/07-de-kievit-en-de-bresser.md</code>.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Merkboek De Bresser · beknopt · stand 24-09-2026 · samengesteld uit openbare bronnen, niet door De Bresser vastgesteld. Bevindingen over de Kievit-site staan in <code>bevindingen.md</code>.</div>
+</footer>
+
+</body>
+</html>

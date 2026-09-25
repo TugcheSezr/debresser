@@ -1,0 +1,44 @@
+{
+ "par1-laadklep-steekwagen": {
+  "oordeel": "let",
+  "tekst": "Sterk beeld: wagen-lockup klopt (zwarte letters, O niet teal, geen extra tekst), borstprint TOP MOVERS goed, klant zonder bedrijfskleding, laadklep achterop. Elke doos op de steekwagen draagt een tweede bij linksonder.",
+  "retouche": "Op alle drie de dozen op de steekwagen de tweede gele bij linksonder (onder de swoosh) weghalen; de bij rechtsboven van TOP blijft. Verder: laadklep heeft geen gele reling, honingraat alleen op de rechterrand, swoosh is een glimlach onder MOVERS.",
+  "opnieuw": ""
+ },
+ "par2-woonkamer-doos-tillen": {
+  "oordeel": "let",
+  "tekst": "Dozen trouw aan de referentie (gele bij, honingraat, 'Aangesloten BIJ erkende verhuizers' leesbaar en correct zoals op de bron-doos), borstprint goed, tilt met buik naar de doos. Twee gewichtslabels verhaspeld.",
+  "retouche": "Gewichtslabel op de korte zijde van de middelste doos leest 'Mox. 20 kg' en van de onderste doos 'Maz. 80 kg': beide naar 'Max. 20 kg' zoals op de bovenste doos.",
+  "opnieuw": ""
+ },
+ "par3-trap-kast-dekens": {
+  "oordeel": "let",
+  "tekst": "Scene en tiltechniek kloppen, twee duidelijk verschillende mannen, Nederlandse trap en stopcontacten. Maar de onderste verhuizer draagt een grote TOP MOVERS-print op zijn RUG met teal O; nergens een borstprint zichtbaar.",
+  "retouche": "Rugprint op de onderste verhuizer (rechtsboven op de rug, TOP met teal O boven MOVERS) volledig weghalen tot kaal antraciet. Daarna is er geen merk meer in beeld. Linkerhand van de onderste man is een vuist tegen de zijkant, hand bovenste man vlak op de rand: laten zo.",
+  "opnieuw": ""
+ },
+ "par4-voordeur-nieuw-huis": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: stel zonder bedrijfskleding, sleutels in de hand, teal achterkant met laadklep, kenteken blanco. Borstprint zit op de RECHTER borst en leest 'TOP MOIERS'; doosregels leesbare onzin; vrouw lacht vrij breed.",
+  "retouche": "Print op de rechterborst van de verhuizer verwijderen en een correcte print (wit TOP / wit MOVERS, teal swoosh) op de linkerborst zetten; de twee regels onder de doos-lockup ('Aangesieten' / 'erkende verhulters') vervangen door de juiste tekst of onleesbaar zacht maken.",
+  "opnieuw": ""
+ },
+ "par5-laadbak-inladen": {
+  "oordeel": "fout",
+  "tekst": "Dozen zijn een ander ontwerp: teal TOP, lijn-bij, 'TOP MOVERS LOCKUP' en 'www.topmovers.com' op elke doos, tape op naden. Oranje spanband in de laadbak, '.com' op de wagenzijkant, polo met teal TOP en badge.",
+  "retouche": "",
+  "opnieuw": "Het woord 'lockup' uit de prompt is letterlijk geprint. Vervang 'lockup' overal door 'the printed name'. Eis expliciet: TOP en MOVERS beide donkergrijs op dozen (beide wit op de polo), geen webadres of andere woorden, gele cartoon-bij, gekleurde zeshoeken alleen op de verticale randen, geen spanbanden of rails met banden in de laadbak, geen letters op de wagenzijkant binnen beeld."
+ },
+ "par6-straat-wagen-breed": {
+  "oordeel": "fout",
+  "tekst": "Wagen-lockup goed, maar borstprinten verhaspeld ('TORL MONDS', 'TOP MOKCSS'), extra eenregelig TOP MOVERS op achterkant en cabinedeur, dozen monochroom met pijl-pictogrammen, schrijflijntjes en gespiegelde flaptekst.",
+  "retouche": "",
+  "opnieuw": "Te veel losse fouten voor retouche. Prompt: de naam precies EEN keer op de wagen (zijkant), achterkant en cabine kaal wit; verhuizers klein in beeld op de rug of in profiel zodat geen borstprint zichtbaar is; dozen ver weg houden de gekleurde zeshoeken en de gele bij, geen pictogrammen, geen lijnen, niets op de bovenflappen."
+ },
+ "par7-gezin-dozen-woonkamer": {
+  "oordeel": "goed",
+  "tekst": "Gezin in gewone kleding, dozen trouw aan de referentie zonder leesbare onzin, niemand in de lens, lichte patches op de muur. Glimlach ouders aan de brede kant; gezichten in het bovenste derde, bannercrop van boven nemen.",
+  "retouche": "",
+  "opnieuw": ""
+ }
+}

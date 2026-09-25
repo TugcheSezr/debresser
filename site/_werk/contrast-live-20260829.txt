@@ -1,0 +1,96 @@
+TEKSTCONTRAST VAN DE TOPBALK, GEMETEN OP DE ECHT GERENDERDE PIXELS
+(Bestandsnaam draagt 20260829 omdat dit bij de ronde van 29 augustus hoort; de meting zelf
+is in de nacht erna gedraaid, zie de tijd hieronder. Naam vastgezet in open-punten regel 29.)
+Gedraaid 30-08-2026 00:10 tegen de gebouwde site op http://127.0.0.1:4740/,
+buster 20260830-0010a, venster 1440px breed. Script: _werk/contrastlive.mjs
+
+WAAROM APART VAN contrast.txt
+  _werk/contrast.txt rekent kleurparen uit style.css. Dat werkt zolang de tekst op een dekkende
+  kleur staat. De topbalk is doorzichtig en ligt OVER de herofoto, dus daar bestaat geen
+  CSS-kleurpaar om mee te rekenen. Een eerdere sweep zocht de eerste voorouder met een dekkende
+  achtergrond, landde daardoor op de creme body en meldde 1,1:1 op acht pagina's. Dat is niet
+  wat de bezoeker ziet. Deze meting maakt alle glyphs onzichtbaar, fotografeert de pagina, en
+  bemonstert ALLE pixels onder elke tekstrechthoek. Gerapporteerd wordt de SLECHTSTE pixel.
+
+WAT DEZE METING WEL EN NIET DEKT
+  WEL: alle tekst binnen .topbar op 12 pagina's, dus het enige geval waar tekst over een foto ligt.
+  NIET: de rest van de pagina. Die staat op dekkende achtergronden en zit in _werk/contrast.txt.
+  Een eerdere poging om de hele pagina zo te meten gaf onbetrouwbare uitslagen (reveal-blokken
+  die hun achtergrond nog niet tekenen, en panelen achter een dichte staat), en is niet gebruikt.
+
+IJKING, want een sweep die alleen groen kan zeggen bewijst niets
+  Dezelfde meting met .topbar::before uitgezet, dus zonder de band die op 29-08 is toegevoegd:
+  FOUT /                               7 tekstknopen, 1 onder de eis
+          3.76:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(133,132,123)  14.4px/700  "Over ons"
+  FOUT /diensten/                      7 tekstknopen, 5 onder de eis
+          2.84:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(150,154,154)  16px/600  "077 - 32 32 100"
+          3.00:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(146,150,147)  14.4px/700  "Voorbereiden"
+          3.07:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(143,148,151)  14.4px/700  "Contact"
+          3.16:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(143,145,147)  14.4px/700  "Verhuizen"
+          3.56:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(128,137,143)  14.4px/700  "Over ons"
+  FOUT /particulier-verhuizen/         7 tekstknopen, 4 onder de eis
+          2.88:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(153,152,149)  14.4px/700  "Over ons"
+          3.04:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,148,144)  14.4px/700  "Contact"
+          3.05:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(152,147,141)  14.4px/700  "Voorbereiden"
+          3.26:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(145,142,139)  14.4px/700  "Verhuizen"
+  FOUT /contact/                       7 tekstknopen, 5 onder de eis
+          2.68:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(158,158,156)  16px/600  "077 - 32 32 100"
+          2.84:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(151,154,152)  14.4px/700  "Contact"
+          2.97:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(154,149,144)  14.4px/700  "Voorbereiden"
+          3.44:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(128,140,148)  14.4px/700  "Verhuizen"
+          3.62:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(124,136,147)  14.4px/700  "Over ons"
+  FOUT /over-ons/                      7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /duurzaamheid/                  7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /m3-calculator/                 7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /veelgestelde-vragen/           7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /verhuischecklist/              7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /inpaktips/                     7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /klantervaringen/               7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  FOUT /werkwijze/                     7 tekstknopen, 3 onder de eis
+          2.90:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(155,151,145)  16px/600  "077 - 32 32 100"
+          3.08:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(148,147,142)  14.4px/700  "Contact"
+          3.70:1 (eis 4.5) rgb(255,255,255) op de slechtste pixel rgb(138,132,125)  14.4px/700  "Over ons"
+  
+  12 pagina's op 1440px, 84 tekstknopen, 39 onder de eis  [IJKING: band uitgezet]
+
+UITSLAG MET DE BAND, ZOALS DE SITE NU IS
+  ok   /                               7 tekstknopen, 0 onder de eis
+  ok   /diensten/                      7 tekstknopen, 0 onder de eis
+  ok   /particulier-verhuizen/         7 tekstknopen, 0 onder de eis
+  ok   /contact/                       7 tekstknopen, 0 onder de eis
+  ok   /over-ons/                      7 tekstknopen, 0 onder de eis
+  ok   /duurzaamheid/                  7 tekstknopen, 0 onder de eis
+  ok   /m3-calculator/                 7 tekstknopen, 0 onder de eis
+  ok   /veelgestelde-vragen/           7 tekstknopen, 0 onder de eis
+  ok   /verhuischecklist/              7 tekstknopen, 0 onder de eis
+  ok   /inpaktips/                     7 tekstknopen, 0 onder de eis
+  ok   /klantervaringen/               7 tekstknopen, 0 onder de eis
+  ok   /werkwijze/                     7 tekstknopen, 0 onder de eis
+  
+  12 pagina's op 1440px, 84 tekstknopen, 0 onder de eis
+
+OP 1920px BREED
+  ok   /werkwijze/                     7 tekstknopen, 0 onder de eis
+  
+  12 pagina's op 1920px, 84 tekstknopen, 0 onder de eis

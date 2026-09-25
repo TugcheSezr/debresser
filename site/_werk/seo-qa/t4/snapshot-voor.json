@@ -1,0 +1,261 @@
+{
+ "genomen_op": "2026-08-30T00:24:04+0200",
+ "git_head": "27287ea5a67afe0321686f168eba978e35c3ab1b",
+ "buster": "20260830-0010a",
+ "aantal_routes": 34,
+ "aantal_noindex": 11,
+ "aantal_indexeerbaar": 23,
+ "noindex_routes": [
+  "/antiek-en-kunst-verhuizen/",
+  "/inboedelopslag/",
+  "/inpakservice/",
+  "/internationale-verhuizing/",
+  "/kantoorverhuizing/",
+  "/montage-demontage/",
+  "/particulier-verhuizen/",
+  "/piano-verhuizen/",
+  "/seniorenverhuizing/",
+  "/spoedverhuizing/",
+  "/zorgverhuizing/"
+ ],
+ "routes": {
+  "/algemene-voorwaarden/": {
+   "bestand": "algemene-voorwaarden/index.html",
+   "sha256": "4edc656bcc7b6213b11306aa78ad9657e1dbe388e20a04bd9bc5d5ee66c2d0d6",
+   "bytes": 189986,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/antiek-en-kunst-verhuizen/": {
+   "bestand": "antiek-en-kunst-verhuizen/index.html",
+   "sha256": "d99f6984ec8e641e0a39b31ca36ac77c79882df656e9c589071c76c2d68dd398",
+   "bytes": 66947,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/certificeringen/": {
+   "bestand": "certificeringen/index.html",
+   "sha256": "2405959741eac26087eac8d4cf060b3bfc5ecf40c9a2b1732cceb38f86130647",
+   "bytes": 73167,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/contact/": {
+   "bestand": "contact/index.html",
+   "sha256": "a330be4f62c1aa088ecb7934a5ab014624d37093fbe399c3c34c2f73db639cbb",
+   "bytes": 61819,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/cookiebeleid/": {
+   "bestand": "cookiebeleid/index.html",
+   "sha256": "dedcc2ca8c3780f0b06d510a9ccda646a61c148fa735de24851dbb9de79a10d0",
+   "bytes": 32973,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/diensten/": {
+   "bestand": "diensten/index.html",
+   "sha256": "99d351bd331b5d2ab66a9a6449b6de22577555dd774c41d7288191fb12e822f6",
+   "bytes": 70076,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/disclaimer/": {
+   "bestand": "disclaimer/index.html",
+   "sha256": "0a6a541ed344a5c76f4b08bfc7293f4bb59fb907e2e0611450c59f3ad76b82a0",
+   "bytes": 34913,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/dozencalculator/": {
+   "bestand": "dozencalculator/index.html",
+   "sha256": "d7c21db811a6f64981ac568165d09875c9811f6a1e3c51f111f06d8953a13a98",
+   "bytes": 66181,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/duurzaamheid/": {
+   "bestand": "duurzaamheid/index.html",
+   "sha256": "2e27bd249568227f09f635223b5b8d23ff12fa861d55eac8e4f062bb15812a47",
+   "bytes": 60336,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/erkende-verhuizer/": {
+   "bestand": "erkende-verhuizer/index.html",
+   "sha256": "43e22ad8bf499c16a3fec45895279ba662f679090dd86fa02a2e1be16392cfff",
+   "bytes": 78486,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/inboedelopslag/": {
+   "bestand": "inboedelopslag/index.html",
+   "sha256": "5fc5b883703f185efbe3eb1da9e3353bb3e5e44ef8df616dee06073e6310558d",
+   "bytes": 66958,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/": {
+   "bestand": "index.html",
+   "sha256": "a16b3f8b4ac7fedd9480754c61cc2e1521ccf77262fc41d722caa01871cae665",
+   "bytes": 86479,
+   "meta_robots": "index, follow",
+   "canonical": false
+  },
+  "/inpakservice/": {
+   "bestand": "inpakservice/index.html",
+   "sha256": "d51e7ba40205d65cf09d672d0f42daf00e37806c8aa0aae4e5a23bd3bd33618f",
+   "bytes": 66904,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/inpaktips/": {
+   "bestand": "inpaktips/index.html",
+   "sha256": "bbad2790185d528fd5135d7b422587e6fb61a2cff734878b134811b61da51095",
+   "bytes": 62321,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/internationale-verhuizing/": {
+   "bestand": "internationale-verhuizing/index.html",
+   "sha256": "d75b5c4ce92f3938873c0e8f90357c816cb4cd0bdb0dbe7772f7937dbd72d8cb",
+   "bytes": 66989,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/kantoorverhuizing/": {
+   "bestand": "kantoorverhuizing/index.html",
+   "sha256": "dc7b4f375418db6ae914bd04064dd3d5400b2f7f23d560ed0d91391d90734b37",
+   "bytes": 67022,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/klachtenregeling/": {
+   "bestand": "klachtenregeling/index.html",
+   "sha256": "dbacad2ef7881e789a6bef8a81072092e41ce97462e4e80ca6e73b8d0e96ecfd",
+   "bytes": 53505,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/klantervaringen/": {
+   "bestand": "klantervaringen/index.html",
+   "sha256": "0ab437b9411869f1b58533ee5f2aae906ce2d2ba157997bf4d87e0d1c5c6faa7",
+   "bytes": 79219,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/m3-calculator/": {
+   "bestand": "m3-calculator/index.html",
+   "sha256": "e29f57af010fdbf12af01023e15902d947755f36adf71f14309dc1aa0e11b621",
+   "bytes": 136637,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/montage-demontage/": {
+   "bestand": "montage-demontage/index.html",
+   "sha256": "a3fccbc70e0a9c085f5aba29a834b9cea659bf8203aa9f7043f7ba8352da18c7",
+   "bytes": 66931,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/over-ons/": {
+   "bestand": "over-ons/index.html",
+   "sha256": "50e94569345c6e5cb99f38626aa01a07e7f2ec01704c860cbb2f77d239d7afc9",
+   "bytes": 66523,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/particulier-verhuizen/": {
+   "bestand": "particulier-verhuizen/index.html",
+   "sha256": "2e623397603c0750071398e0f8ad15cad2a4866b9f2a815bf937f57ff50fef54",
+   "bytes": 66988,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/piano-verhuizen/": {
+   "bestand": "piano-verhuizen/index.html",
+   "sha256": "57965c15d1ee8679ab3df520323f5909c8a3150c9da202f95d4098ecf8a3ed3e",
+   "bytes": 66959,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/privacybeleid/": {
+   "bestand": "privacybeleid/index.html",
+   "sha256": "e03836cdd40431189a88211c012fbf18bcc688da9f94ab65b6a800f64d0191b2",
+   "bytes": 40890,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/seniorenverhuizing/": {
+   "bestand": "seniorenverhuizing/index.html",
+   "sha256": "ee98fbc87fa2f9036d3f27145b72dee66f118f8f1bc916cfb6802ae199548585",
+   "bytes": 66992,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/sitemap/": {
+   "bestand": "sitemap/index.html",
+   "sha256": "154898f7effe0f53bf4faa33d889b7ca37219bebcf1304d179239369a0315c55",
+   "bytes": 27629,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/spoedverhuizing/": {
+   "bestand": "spoedverhuizing/index.html",
+   "sha256": "602d58931fb49f6d8e41cbbbab358bdc88b0f2d980bd1d706426f042260de51d",
+   "bytes": 66921,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  },
+  "/toegankelijkheid/": {
+   "bestand": "toegankelijkheid/index.html",
+   "sha256": "501761f178107905609732226b95a44c1e8f9eafeddf3c29edcc1f0263f3bba1",
+   "bytes": 47173,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/vacatures/": {
+   "bestand": "vacatures/index.html",
+   "sha256": "34e22d82b1c4f9473ef0fab5b491e5d56f80522d47157e432332833f4c2eccd7",
+   "bytes": 55726,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/veelgestelde-vragen/": {
+   "bestand": "veelgestelde-vragen/index.html",
+   "sha256": "a40c6e5b810431a6f58ddd49efb6bef8c0980aa707f61a2c2a2e24e3a7f26e5b",
+   "bytes": 60177,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/verhuischecklist/": {
+   "bestand": "verhuischecklist/index.html",
+   "sha256": "35fd555f7b50d0140e3069929079ffa8831c55d9573b3dc9bccbd736dfe0c22e",
+   "bytes": 78319,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/verzekering/": {
+   "bestand": "verzekering/index.html",
+   "sha256": "62069de783c3308ac8275916ff77631976740ee29540dfebdca637a943c8dc27",
+   "bytes": 55013,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/werkwijze/": {
+   "bestand": "werkwijze/index.html",
+   "sha256": "55cb7ce480d0fae1fd9e2b06696d8bd6785f44cef7dd696c2b460ea89aab4f66",
+   "bytes": 57741,
+   "meta_robots": null,
+   "canonical": false
+  },
+  "/zorgverhuizing/": {
+   "bestand": "zorgverhuizing/index.html",
+   "sha256": "c80e3ae1f461f8d289b009d763aa01d96b0cc2033658de876abc4ab0ae9b3c7f",
+   "bytes": 66991,
+   "meta_robots": "noindex, nofollow",
+   "canonical": false
+  }
+ }
+}

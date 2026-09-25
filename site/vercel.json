@@ -1,0 +1,392 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:pad*",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/:pad*",
+      "permanent": true
+    },
+    {
+      "source": "/zakelijke-verhuizing/",
+      "destination": "/verhuizen/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/kantoor-verhuizen/",
+      "destination": "/verhuizen/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/winkelverhuizing/",
+      "destination": "/verhuizen/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisservice-zakelijk/",
+      "destination": "/verhuizen/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/particuliere-verhuizing/",
+      "destination": "/verhuizen/#particulier",
+      "statusCode": 301
+    },
+    {
+      "source": "/full-service-verhuizing/",
+      "destination": "/verhuizen/#particulier",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/engeland/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/duitsland/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/frankrijk/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/zwitserland/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/benelux-verhuizing/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisbedrijf-belgie/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisbedrijf-europa/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/groupage-transport/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorg-verhuizing/",
+      "destination": "/verhuizen/#zorg",
+      "statusCode": 301
+    },
+    {
+      "source": "/senioren-verhuizen/",
+      "destination": "/verhuizen/#zorg",
+      "statusCode": 301
+    },
+    {
+      "source": "/duurzaam-verhuizen/",
+      "destination": "/verhuizen/#duurzaam",
+      "statusCode": 301
+    },
+    {
+      "source": "/zakelijke-opslag/",
+      "destination": "/opslag/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/particuliere-opslag/",
+      "destination": "/opslag/#particulier",
+      "statusCode": 301
+    },
+    {
+      "source": "/container-opslag/",
+      "destination": "/opslag/#container",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport/",
+      "destination": "/meubelprojecten/#transport",
+      "statusCode": 301
+    },
+    {
+      "source": "/veilingen/",
+      "destination": "/meubelprojecten/#veilingen",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubelmontage/",
+      "destination": "/meubelprojecten/#montage",
+      "statusCode": 301
+    },
+    {
+      "source": "/gebouwbeheer/onderhoud/",
+      "destination": "/gebouwbeheer/#onderhoud",
+      "statusCode": 301
+    },
+    {
+      "source": "/gebouwbeheer/verduurzamen/",
+      "destination": "/gebouwbeheer/#verduurzamen",
+      "statusCode": 301
+    },
+    {
+      "source": "/gebouwbeheer/huismeester/",
+      "destination": "/gebouwbeheer/#huismeester",
+      "statusCode": 301
+    },
+    {
+      "source": "/handyman-services/",
+      "destination": "/gebouwbeheer/#handyman",
+      "statusCode": 301
+    },
+    {
+      "source": "/quick-scan/",
+      "destination": "/gebouwbeheer/#quick-scan",
+      "statusCode": 301
+    },
+    {
+      "source": "/assetmanagement/inventarisatie/",
+      "destination": "/assetmanagement/#inventarisatie",
+      "statusCode": 301
+    },
+    {
+      "source": "/assetmanagement/wms-en-meubelpaspoort/",
+      "destination": "/assetmanagement/#wms",
+      "statusCode": 301
+    },
+    {
+      "source": "/assetmanagement/opslag-assets/",
+      "destination": "/assetmanagement/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/assetmanagement/inkoop-en-verkoop-assets/",
+      "destination": "/assetmanagement/#inkoop-verkoop",
+      "statusCode": 301
+    },
+    {
+      "source": "/assetmanagement/circulair-meubilair/",
+      "destination": "/assetmanagement/#circulair",
+      "statusCode": 301
+    },
+    {
+      "source": "/100-jarig-jubileum/",
+      "destination": "/over-ons/#geschiedenis",
+      "statusCode": 301
+    },
+    {
+      "source": "/tekenbonus/",
+      "destination": "/overzicht-vacatures/#tekenbonus",
+      "statusCode": 301
+    },
+    {
+      "source": "/videogesprek/",
+      "destination": "/offerte/#videogesprek",
+      "statusCode": 301
+    },
+    {
+      "source": "/tilburg/",
+      "destination": "/verhuisbedrijf-tilburg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-breda/",
+      "destination": "/breda/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-den-bosch/",
+      "destination": "/verhuisbedrijf-den-bosch/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-etten-leur/",
+      "destination": "/verhuisbedrijf-etten-leur/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-goirle/",
+      "destination": "/verhuisbedrijf-goirle/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-oirschot/",
+      "destination": "/verhuisbedrijf-oirschot/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslagruimte-roosendaal/",
+      "destination": "/roosendaal/#opslag",
+      "statusCode": 301
+    },
+    {
+      "source": "/zakelijk-verhuizen/",
+      "destination": "/verhuizen/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag-zakelijk/",
+      "destination": "/opslag/#zakelijk",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag-particulier/",
+      "destination": "/opslag/#particulier",
+      "statusCode": 301
+    },
+    {
+      "source": "/montage-service/",
+      "destination": "/meubelprojecten/#montage",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2019/10/AVVV-PV05-AVBV-AVHD.pdf",
+      "destination": "/downloads/voorwaarden-verhuizingen.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2024/04/6010-Algemene-Vervoerscondities-A4-web-2.pdf",
+      "destination": "/downloads/algemene-vervoerscondities.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2019/10/Algemene-voorwaarden-voor-Bedrijfsverhuizingen.pdf",
+      "destination": "/downloads/voorwaarden-bedrijfsverhuizing.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2024/04/Logistieke-Services-Voorwaarden-LSV-2.pdf",
+      "destination": "/downloads/voorwaarden-logistieke-services.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2024/04/CMR-Conditions-English-2.pdf",
+      "destination": "/downloads/cmr-conditions.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/2025/10/Nederlandse-Opslagvoorwaarden-De-Bresser-opslag-zakelijk.pdf",
+      "destination": "/downloads/opslagvoorwaarden.pdf",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/about-us/",
+      "destination": "/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/auction/",
+      "destination": "/meubelprojecten/#veilingen",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/contact/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/england/",
+      "destination": "/verhuizen/#internationaal",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/work-at-de-bresser/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek-full-service/",
+      "destination": "/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/logistieke-dienstverlening/",
+      "destination": "/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/webinet/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2019/09/06/handyman-services/",
+      "destination": "/gebouwbeheer/#handyman",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "missing": [
+        {
+          "type": "host",
+          "value": "www.debresser.nl"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    }
+  ]
+}

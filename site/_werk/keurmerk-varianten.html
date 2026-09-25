@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keurmerkenrij bij het offerteformulier: 5 varianten</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-2306">
+<style>
+/* ---------- alleen voor deze vergelijkpagina ---------- */
+body{background:var(--creme);padding:0 0 80px}
+.pv-kop{background:#22314E;color:#fff;padding:18px clamp(16px,4vw,40px)}
+.pv-kop h1{color:#fff;font-size:1.35rem;margin:0 0 .3em}
+.pv-kop p{margin:0;font-size:.92rem;color:rgba(255,255,255,.78);max-width:70ch}
+.pv{max-width:var(--maxw);margin:44px auto 0;padding-inline:var(--pad)}
+.pv-band{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1rem;margin-bottom:14px}
+.pv-band b{font:700 1.05rem/1.2 var(--font-titel);color:var(--ant)}
+.pv-band span{font-size:.92rem;color:var(--ant-zacht)}
+.pv .of-box{margin:0}
+.pv-code{margin:14px 0 0;background:#1D2433;color:#D7E3E2;border-radius:12px;padding:14px 16px;font:500 12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;overflow-x:auto}
+
+/* ===== 1. Glas ===== */
+.v1 .keurmerk{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);backdrop-filter:blur(10px);box-shadow:0 12px 26px -16px rgba(0,0,0,.55)}
+.v1 a.keurmerk:hover{background:rgba(255,255,255,.22);box-shadow:0 14px 28px -14px rgba(0,0,0,.55)}
+.v1 .keurmerk--kv img{filter:brightness(0) invert(1)}
+.v1 .keurmerk__cijfer{color:#fff}
+.v1 .keurmerk__kop{color:#fff}
+.v1 .keurmerk__sub{color:rgba(255,255,255,.8)}
+
+/* ===== 2. Navy met gouden streep ===== */
+.v2 .keurmerk{position:relative;overflow:hidden;background:var(--bruin);border-radius:12px;box-shadow:0 14px 28px -16px rgba(0,0,0,.6)}
+.v2 .keurmerk::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--geel)}
+.v2 .keurmerk--kv img{filter:brightness(0) invert(1)}
+.v2 .keurmerk__cijfer{color:var(--geel)}
+.v2 .keurmerk__kop{color:#fff}
+.v2 .keurmerk__sub{color:rgba(255,255,255,.74)}
+
+/* ===== 3. Een doorlopende balk ===== */
+.v3 .keurmerken{gap:0;padding:5px 6px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18);border-radius:999px}
+.v3 .keurmerk{background:none;border-radius:0;box-shadow:none;height:52px;width:96px}
+.v3 .keurmerk+.keurmerk{border-left:1px solid rgba(255,255,255,.24)}
+.v3 a.keurmerk:hover{transform:none;box-shadow:none;opacity:.82}
+.v3 .keurmerk--kv img{filter:brightness(0) invert(1)}
+.v3 .keurmerk__cijfer{color:#fff}
+.v3 .keurmerk__kop{color:#fff}
+.v3 .keurmerk__sub{color:rgba(255,255,255,.76)}
+
+/* ===== 4. Alleen lijnen ===== */
+.v4 .keurmerk{background:none;border:1.5px solid rgba(255,255,255,.5);border-radius:12px;box-shadow:none}
+.v4 a.keurmerk:hover{background:rgba(255,255,255,.12);box-shadow:none}
+.v4 .keurmerk--kv img{filter:brightness(0) invert(1)}
+.v4 .keurmerk__cijfer{color:var(--geel)}
+.v4 .keurmerk__kop{color:#fff}
+.v4 .keurmerk__sub{color:rgba(255,255,255,.8)}
+
+/* ===== 5. Diep teal met gouden rand ===== */
+.v5 .keurmerk{background:var(--goud-diep);border:1px solid rgba(255,213,0,.55);border-radius:12px;box-shadow:0 12px 26px -16px rgba(0,0,0,.5)}
+.v5 a.keurmerk:hover{background:#00726E}
+.v5 .keurmerk--kv img{filter:brightness(0) invert(1)}
+.v5 .keurmerk__cijfer{color:var(--geel)}
+.v5 .keurmerk__kop{color:#fff}
+.v5 .keurmerk__sub{color:rgba(255,255,255,.76)}
+</style></head><body>
+
+<div class="pv-kop">
+  <h1>Keurmerkenrij bij het offerteformulier, 5 varianten</h1>
+  <p>Alle vijf zonder witte kaart. Het Erkende Verhuizers-logo staat overal in de officiele witte versie (erkende-verhuizers-wit.svg, wit met de oranje roos). Het Klantenvertellen-woordmerk bestaat niet in wit, dus dat staat hier monochroom wit via een CSS-filter; de gekleurde boog gaat daarmee verloren. Zeg welk nummer het wordt, dan zet ik hem in style.css en pas ik het logo in build_kievit.py aan.</p>
+</div>
+
+<section class="pv">
+  <div class="pv-band"><b>1. Glas</b><span>halftransparant wit met blur, hoort bij de foto die erachter doorloopt; lichtst van de vijf</span></div>
+  <div class="of-box v1">
+    <div class="of-trust keurmerken" aria-label="Beoordelingen en keurmerk">
+      <a class="keurmerk keurmerk--kv keurmerk--score" href="#"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+      <a class="keurmerk keurmerk--ev" href="#"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+      <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+    </div>
+    <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+    <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt.</p>
+  </div>
+  <pre class="pv-code">.keurmerk{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);
+          backdrop-filter:blur(10px);box-shadow:0 12px 26px -16px rgba(0,0,0,.55)}
+.keurmerk--kv img{filter:brightness(0) invert(1)}
+.keurmerk__cijfer,.keurmerk__kop{color:#fff}
+.keurmerk__sub{color:rgba(255,255,255,.8)}</pre>
+</section>
+
+<section class="pv">
+  <div class="pv-band"><b>2. Navy met gouden streep</b><span>hardste contrast met het teal paneel, de streep pakt het geel van de knop op</span></div>
+  <div class="of-box v2">
+    <div class="of-trust keurmerken" aria-label="Beoordelingen en keurmerk">
+      <a class="keurmerk keurmerk--kv keurmerk--score" href="#"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+      <a class="keurmerk keurmerk--ev" href="#"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+      <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+    </div>
+    <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+    <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt.</p>
+  </div>
+  <pre class="pv-code">.keurmerk{position:relative;overflow:hidden;background:var(--bruin);border-radius:12px;
+          box-shadow:0 14px 28px -16px rgba(0,0,0,.6)}
+.keurmerk::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--geel)}
+.keurmerk--kv img{filter:brightness(0) invert(1)}
+.keurmerk__cijfer{color:var(--geel)}  .keurmerk__kop{color:#fff}
+.keurmerk__sub{color:rgba(255,255,255,.74)}</pre>
+</section>
+
+<section class="pv">
+  <div class="pv-band"><b>3. Een doorlopende balk</b><span>geen losse kaartjes meer maar een pil met haarlijntjes ertussen, rustigst in de hoek</span></div>
+  <div class="of-box v3">
+    <div class="of-trust keurmerken" aria-label="Beoordelingen en keurmerk">
+      <a class="keurmerk keurmerk--kv keurmerk--score" href="#"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+      <a class="keurmerk keurmerk--ev" href="#"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+      <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+    </div>
+    <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+    <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt.</p>
+  </div>
+  <pre class="pv-code">.keurmerken{gap:0;padding:5px 6px;background:rgba(0,0,0,.22);
+            border:1px solid rgba(255,255,255,.18);border-radius:999px}
+.keurmerk{background:none;border-radius:0;box-shadow:none;height:52px;width:96px}
+.keurmerk+.keurmerk{border-left:1px solid rgba(255,255,255,.24)}
+a.keurmerk:hover{transform:none;box-shadow:none;opacity:.82}
+.keurmerk--kv img{filter:brightness(0) invert(1)}
+.keurmerk__cijfer,.keurmerk__kop{color:#fff}  .keurmerk__sub{color:rgba(255,255,255,.76)}</pre>
+</section>
+
+<section class="pv">
+  <div class="pv-band"><b>4. Alleen lijnen</b><span>geen vlak, alleen een rand; het teal van het paneel blijft doorlopen</span></div>
+  <div class="of-box v4">
+    <div class="of-trust keurmerken" aria-label="Beoordelingen en keurmerk">
+      <a class="keurmerk keurmerk--kv keurmerk--score" href="#"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+      <a class="keurmerk keurmerk--ev" href="#"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+      <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+    </div>
+    <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+    <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt.</p>
+  </div>
+  <pre class="pv-code">.keurmerk{background:none;border:1.5px solid rgba(255,255,255,.5);border-radius:12px;box-shadow:none}
+a.keurmerk:hover{background:rgba(255,255,255,.12);box-shadow:none}
+.keurmerk--kv img{filter:brightness(0) invert(1)}
+.keurmerk__cijfer{color:var(--geel)}  .keurmerk__kop{color:#fff}
+.keurmerk__sub{color:rgba(255,255,255,.8)}</pre>
+</section>
+
+<section class="pv">
+  <div class="pv-band"><b>5. Diep teal met gouden rand</b><span>blijft in de teal-familie, de gouden rand maakt het los van het paneel</span></div>
+  <div class="of-box v5">
+    <div class="of-trust keurmerken" aria-label="Beoordelingen en keurmerk">
+      <a class="keurmerk keurmerk--kv keurmerk--score" href="#"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+      <a class="keurmerk keurmerk--ev" href="#"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+      <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+    </div>
+    <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+    <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt.</p>
+  </div>
+  <pre class="pv-code">.keurmerk{background:var(--goud-diep);border:1px solid rgba(255,213,0,.55);
+          border-radius:12px;box-shadow:0 12px 26px -16px rgba(0,0,0,.5)}
+a.keurmerk:hover{background:#00726E}
+.keurmerk--kv img{filter:brightness(0) invert(1)}
+.keurmerk__cijfer{color:var(--geel)}  .keurmerk__kop{color:#fff}
+.keurmerk__sub{color:rgba(255,255,255,.76)}</pre>
+</section>
+
+</body></html>

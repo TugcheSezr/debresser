@@ -1,0 +1,20 @@
+{
+ "int6-snelweg-wagen": {
+  "oordeel": "let",
+  "tekst": "Teal O is weg en de rest van het beeld is byte-identiek aan raw. Maar de retouche lichtte ook T en P op tot staalblauw (lum 191/167) terwijl de O donker bleef (75) en MOVERS zwart is (50). Bord links leest nog Storn.",
+  "retouche": "Plak T (x1080-1198, y470-760) en P (x1373-1516, y470-760) terug uit raw/int6-snelweg-wagen.png en houd alleen de O uit klaar/; blauw bord aan de linkerrand (x0-145, y725-850) wegcroppen of wegpoetsen ('Storn' / 'praffio: Soon').",
+  "opnieuw": ""
+ },
+ "inp4-televisie-deken": {
+  "oordeel": "goed",
+  "tekst": "Geen kartonnen doos meer in beeld: alleen een blanco papierrol en grijze dekens. Borstprint op 100% correct: wit TOP/MOVERS, een teal swoosh met pijlpunt rechts van MOVERS, geen bij, een keer, niet gespiegeld.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "inp6-team-woonkamer-breed": {
+  "oordeel": "fout",
+  "tekst": "Monden dicht, glazen en beide borstprints nu goed. Maar elke doos draagt leesbare verhaspelde tekst (Aangesioten OIJ / erkende verkuizers), rechts zit nog een zwarte oorplug en het linkerhoofd staat op 9-22% hoogte.",
+  "retouche": "",
+  "opnieuw": "Drie punten. 1) Regels onder MOVERS moeten onleesbaar: 'the two small lines under MOVERS are an out-of-focus soft grey blur, four times smaller than MOVERS, no legible characters, never a slogan; no QR code, no round seals, no icon cluster on any box'. 2) 'both earlobes bare, no ear plug, no stud, no tunnel'. 3) 'camera one step further back and lower; the standing man's head between 30% and 60% of the frame height, at least 25% of the height below the top edge' - nu snijdt een 21:9-bannercrop zijn voorhoofd af en een 3:1-crop onthoofdt hem."
+ }
+}

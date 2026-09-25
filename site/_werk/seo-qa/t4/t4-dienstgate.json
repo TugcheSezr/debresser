@@ -1,0 +1,160 @@
+{
+ "uitslag": {
+  "/antiek-en-kunst-verhuizen/": {
+   "eenheden": 108,
+   "eigen": 81,
+   "pct": 0.75,
+   "capsule_woorden": 48,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/spoedverhuizing/",
+    0.12
+   ],
+   "marge_eenheden": 0,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/inboedelopslag/": {
+   "eenheden": 109,
+   "eigen": 86,
+   "pct": 0.789,
+   "capsule_woorden": 57,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/internationale-verhuizing/",
+    0.089
+   ],
+   "marge_eenheden": 4,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/inpakservice/": {
+   "eenheden": 115,
+   "eigen": 88,
+   "pct": 0.765,
+   "capsule_woorden": 54,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/internationale-verhuizing/",
+    0.117
+   ],
+   "marge_eenheden": 1,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/internationale-verhuizing/": {
+   "eenheden": 117,
+   "eigen": 90,
+   "pct": 0.769,
+   "capsule_woorden": 60,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/spoedverhuizing/",
+    0.124
+   ],
+   "marge_eenheden": 2,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/kantoorverhuizing/": {
+   "eenheden": 93,
+   "eigen": 83,
+   "pct": 0.892,
+   "capsule_woorden": 58,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/internationale-verhuizing/",
+    0.039
+   ],
+   "marge_eenheden": 13,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/montage-demontage/": {
+   "eenheden": 107,
+   "eigen": 85,
+   "pct": 0.794,
+   "capsule_woorden": 55,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/inboedelopslag/",
+    0.083
+   ],
+   "marge_eenheden": 4,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/particulier-verhuizen/": {
+   "eenheden": 121,
+   "eigen": 94,
+   "pct": 0.777,
+   "capsule_woorden": 52,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/internationale-verhuizing/",
+    0.119
+   ],
+   "marge_eenheden": 3,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/piano-verhuizen/": {
+   "eenheden": 110,
+   "eigen": 83,
+   "pct": 0.755,
+   "capsule_woorden": 60,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/spoedverhuizing/",
+    0.122
+   ],
+   "marge_eenheden": 0,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/seniorenverhuizing/": {
+   "eenheden": 111,
+   "eigen": 84,
+   "pct": 0.757,
+   "capsule_woorden": 47,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/zorgverhuizing/",
+    0.132
+   ],
+   "marge_eenheden": 0,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/spoedverhuizing/": {
+   "eenheden": 108,
+   "eigen": 81,
+   "pct": 0.75,
+   "capsule_woorden": 53,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/internationale-verhuizing/",
+    0.124
+   ],
+   "marge_eenheden": 0,
+   "gate": "PASS",
+   "redenen": []
+  },
+  "/zorgverhuizing/": {
+   "eenheden": 110,
+   "eigen": 83,
+   "pct": 0.755,
+   "capsule_woorden": 50,
+   "eigen_vragen": 5,
+   "ergste_paar": [
+    "/seniorenverhuizing/",
+    0.132
+   ],
+   "marge_eenheden": 0,
+   "gate": "PASS",
+   "redenen": []
+  }
+ },
+ "paren_boven_drempel": 0,
+ "paren_totaal": 55
+}

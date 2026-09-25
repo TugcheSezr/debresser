@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approved workers</title>
+<style>
+  :root { --bg: #f4f2ee; --card: #fff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e2dfd8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --card: #22221f; --ink: #eceae4; --muted: #a09e97; --line: #34332f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1240px; margin: 0 auto; padding: 28px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
+  figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure a { display: block; }
+  img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+  figcaption { padding: 12px 14px 14px; display: flex; gap: 12px; align-items: baseline; }
+  .nr { font-weight: 700; font-size: 20px; min-width: 1.4em; }
+  .file { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; word-break: break-all; }
+  h2 { font-size: 18px; margin: 36px 0 4px; }
+  .uitsnede img { object-fit: contain; padding: 16px; background: #1d1d1b; }
+  .uitsnede figure:nth-child(even) img { background: #f4f2ee; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Approved workers in De Bresser workwear</h1>
+  <p class="sub">Six workers, approved 24 Sep 2026: 4 and 5 (face 4, round 2) and 6 to 9 (faces 2, 5, 8 and 9, one each) · same studio set-up and workwear, so they form one set · Nano Banana Pro (gemini-3-pro-image-preview), 2:3, 2K (1696×2528) · Top Movers chest logo placed afterwards in brand-book colours (#009881 swoosh) · not yet on the site · prompts and logo steps in prompts.md, logo tooling in werk/ · click a worker to open it full size.</p>
+  <div class="grid">
+    <figure><a href="werker-4-tablet.png"><img src="werker-4-tablet.png" alt="Worker 4"></a>
+      <figcaption><span class="nr">4</span><span>Face 4. Standing three-quarters to the right, checking a tablet in a black rugged case; the chest logo follows the turn of his body.<span class="file">werker-4-tablet.png</span></span></figcaption></figure>
+    <figure><a href="werker-5-armen-over-elkaar.png"><img src="werker-5-armen-over-elkaar.png" alt="Worker 5"></a>
+      <figcaption><span class="nr">5</span><span>Face 4. Facing the camera square on, arms folded low, small confident smile into the lens.<span class="file">werker-5-armen-over-elkaar.png</span></span></figcaption></figure>
+    <figure><a href="werker-6-doos.png"><img src="werker-6-doos.png" alt="Worker 6"></a>
+      <figcaption><span class="nr">6</span><span>Face 2. Turned three-quarters to the left, a white moving box held at his side at waist height, looking past the camera.<span class="file">werker-6-doos.png</span></span></figcaption></figure>
+    <figure><a href="werker-7-steekwagen.png"><img src="werker-7-steekwagen.png" alt="Worker 7"></a>
+      <figcaption><span class="nr">7</span><span>Face 5. Nearly square to the camera, right hand on an empty aluminium hand truck, looking into the lens.<span class="file">werker-7-steekwagen.png</span></span></figcaption></figure>
+    <figure><a href="werker-8-dekens.png"><img src="werker-8-dekens.png" alt="Worker 8"></a>
+      <figcaption><span class="nr">8</span><span>Face 8. Slightly turned, a folded grey moving blanket under his arm, looking just past the camera.<span class="file">werker-8-dekens.png</span></span></figcaption></figure>
+    <figure><a href="werker-9-accuboor.png"><img src="werker-9-accuboor.png" alt="Worker 9"></a>
+      <figcaption><span class="nr">9</span><span>Face 9. Torso turned to the right, head to the left, a plain black cordless drill in his hand.<span class="file">werker-9-accuboor.png</span></span></figcaption></figure>
+  </div>
+  <h2>Cutouts of workers 6 to 9</h2>
+  <p class="sub">Approved 24 Sep 2026 · transparent PNGs of the same four photos, cut out with site/_werk/cutout_mat.py (BiRefNet, closed-form matting, edge colour correction); on worker 7 the gaps in the hand truck were opened afterwards with werk/steekwagen_gaten.py · shown here alternately on dark and light · halo numbers and steps in prompts.md.</p>
+  <div class="grid uitsnede">
+    <figure><a href="werker-6-doos-uitsnede.png"><img src="werker-6-doos-uitsnede.png" alt="Worker 6, cut out"></a>
+      <figcaption><span class="nr">6</span><span>Face 2, with the box.<span class="file">werker-6-doos-uitsnede.png</span></span></figcaption></figure>
+    <figure><a href="werker-7-steekwagen-uitsnede.png"><img src="werker-7-steekwagen-uitsnede.png" alt="Worker 7, cut out"></a>
+      <figcaption><span class="nr">7</span><span>Face 5, with the hand truck; the gaps between the bars and in the base plate are transparent.<span class="file">werker-7-steekwagen-uitsnede.png</span></span></figcaption></figure>
+    <figure><a href="werker-8-dekens-uitsnede.png"><img src="werker-8-dekens-uitsnede.png" alt="Worker 8, cut out"></a>
+      <figcaption><span class="nr">8</span><span>Face 8, with the blanket.<span class="file">werker-8-dekens-uitsnede.png</span></span></figcaption></figure>
+    <figure><a href="werker-9-accuboor-uitsnede.png"><img src="werker-9-accuboor-uitsnede.png" alt="Worker 9, cut out"></a>
+      <figcaption><span class="nr">9</span><span>Face 9, with the drill.<span class="file">werker-9-accuboor-uitsnede.png</span></span></figcaption></figure>
+  </div>
+</main>
+</body>
+</html>

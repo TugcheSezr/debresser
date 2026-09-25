@@ -1,0 +1,44 @@
+{
+ "sen1-adviseur-keukentafel": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: echtpaar met thee, adviseur in polo, notitieblok zonder leesbare woorden, gezichten en handen goed. Alleen de borstprint: TOP leesbaar, de MOVERS-regel is een onleesbare klont met een miniregel eronder.",
+  "retouche": "Borstprint links op de borst van de adviseur (x1185-1260, y1325-1395): MOVERS-regel en miniregel vervangen door schone witte TOP/MOVERS met teal swoosh, zelfde maat.",
+  "opnieuw": ""
+ },
+ "sen2-servies-inpakken-samen": {
+  "oordeel": "let",
+  "tekst": "Doos klopt met de referentie (bij op de P, honingraat, echte tekst), handen en kopjes goed. Polo heeft een extra miniregel onder de swoosh; de glimlach van de dame is aan de brede kant (tanden zichtbaar).",
+  "retouche": "Polo: miniregel tekst onder de teal swoosh (x765-890, y1248-1260) weghalen. Doos-zijkant (x780-960, y2090-2110): garbelt webadres zacht maken.",
+  "opnieuw": "Optioneel, alleen als de brede glimlach te vrolijk is: 'the lady has a soft closed-mouth smile, her eyes on the cup'."
+ },
+ "sen3-fauteuil-bungalow": {
+  "oordeel": "let",
+  "tekst": "Tilhouding, deken zonder banden, laadklep achterop en borstprint verhuizer 2 kloppen. Fout: de kaalgeschoren verhuizer is van achteren te zien met een grote TOP MOVERS-print op de rug. Kenteken auto deels leesbaar.",
+  "retouche": "Rugprint tussen de schouderbladen van de linker verhuizer (x660-810, y1110-1240) weghalen, effen antraciet. Geel kenteken van de auto links achter de oude man (x295-345, y1350-1380) vervagen. Glimlach oude man is breed maar nog net acceptabel.",
+  "opnieuw": ""
+ },
+ "sen4-boeken-nieuw-appartement": {
+  "oordeel": "fout",
+  "tekst": "Borstprint, doostekst, gezichten en handen goed, maar de open doos hangt gekanteld (ca. 45 graden) onder de arm van de verhuizer met een hangende flap. Een doos staat rechtop; zo werkt niemand met een boekendoos.",
+  "retouche": "",
+  "opnieuw": "Doos niet rechtop, geen kleine retouche. Prompt: 'the open Top Movers box stands upright on the floor at his feet; he lifts two or three books out with both hands and sets them upright on the shelf'."
+ },
+ "sen5-rollator-entree": {
+  "oordeel": "let",
+  "tekst": "Scene en wagen-lockup kloppen (O zwart, swoosh eronder, pijl rechts), gezichten goed. Wel: blauwe spanband in de laadbak, kenteken leesbaar, doostekst is onzin ('Anagaderen DJ erkende vercuttate'), polo leest MOBERS.",
+  "retouche": "Blauwe spanband aan de rail in de laadbak (x210-270, y950-1370) weg. Kenteken achterop onder de laadvloer (x170-230, y1460-1495) vervagen. Doos: twee regels onder MOVERS (x1035-1170, y1455-1490), label linksboven (x890-935, y1308-1320) en zij-lockup 'MOFESS' (x897-937, y1413-1443) onleesbaar zacht of naar referentie. Polo MOVERS (x1012-1047, y1178-1192) schoon.",
+  "opnieuw": ""
+ },
+ "sen6-koffie-fotoalbum": {
+  "oordeel": "fout",
+  "tekst": "Mensen, licht en sfeer goed (hij kijkt naar haar, zij naar het album). Maar alle dozen wijken af van de referentie: geen honingraat, geen twee regels, bij los naast het logo; voorste doos heeft plakband op naad en hoek.",
+  "retouche": "",
+  "opnieuw": "Negen dozen opnieuw is geen retouche. Prompt: 'every box exactly like the attached box reference: honeycomb hexagons along the edges, the yellow bee on the P, two soft lines under MOVERS; closed by folding the flaps into each other, no tape anywhere, nothing printed on the top'."
+ },
+ "sen7-bungalow-wagen-breed": {
+  "oordeel": "fout",
+  "tekst": "Woord 'lockup' staat letterlijk in een teal vlak op de wagen, geen swoosh, extra tekst '..rup' bij de cabine; polo's lezen 'TOR' en 'VC MOVES' met zo'n teal blok, dozen ook; spanband in laadbak; kenteken M5-GK leesbaar.",
+  "retouche": "",
+  "opnieuw": "Prompt-lek: 'the TOP MOVERS lockup large on the side' wordt letterlijk gezet. Vervang 'lockup' door 'the TOP MOVERS lettering exactly as on the attached truck reference: TOP above MOVERS, both black, only a thin teal swoosh under the letters, no badge or other word', plus 'empty cargo bay without straps, blank licence plate'."
+ }
+}

@@ -1,0 +1,101 @@
+<style>
+  /* Artifacts voor de hub /diensten/, plaatsing van Shahab uit _werk/plaatser.html (29-08 16:51, gezet op 1440px).
+     Alleen op DEZE pagina, want #waarom is een gedeeld blok: build_paginas.py zet het op alle dertien
+     dienstenpagina's. Daarom staan de twee beelden in #waarom als pseudo-elementen van deze pagina en niet als
+     img in dat gedeelde blok; anders zouden ze overal verschijnen, of zou er op twaalf pagina's een verborgen
+     img blijven staan. #verhuisdiensten is wel van deze pagina zelf, dus daar staat een echte img.
+     LET OP: de plaatser leest pseudo-elementen niet terug met "Bestaande overnemen"; die twee staan alleen hier. */
+  #waarom{position:relative}
+  #waarom::before,#waarom::after{content:"";position:absolute;z-index:5;pointer-events:none;background:center/contain no-repeat}
+  #waarom::before{left:72.39%;top:55.51%;width:350px;aspect-ratio:813/225;background-image:url(/assets/img/deco/beeldmerk-topmovers.svg)}
+  #waarom::after{left:80.89%;top:95.26%;width:160px;aspect-ratio:90/84;background-image:url(/assets/img/deco/dozenstapel.svg)}
+  /* De hub heeft zijn eigen inrichting van #waarom (hierboven, als pseudo-elementen). De twee artifacts die
+     sessie -64 op 29-08 in het GEDEELDE #waarom-blok zette voor de elf dienstpagina's, horen hier dus niet. */
+  #waarom .art-d4,#waarom .art-d5{display:none}
+  /* De honingraat is 506px breed en begint op 66,96 procent, dus tussen ongeveer 1280 en 1500px steekt hij
+     buiten het venster en gaf hij een horizontale scrollbalk (gevonden door sessie -39; gemeten overloop 83px op
+     1280, 30px op 1440, weg vanaf 1600). `clip` in plaats van `hidden`: clip knipt alleen visueel en maakt van
+     de sectie geen scroll-container, dus sticky en scroll-anchoring binnen dit blok blijven werken. */
+  #verhuisdiensten{position:relative;overflow-x:clip}
+  #verhuisdiensten .art-3{position:absolute;left:66.96%;top:7.98%;width:506px;z-index:5;pointer-events:none}
+  /* Zelfde grens als op de homepage: de percentages zijn op 1440px gezet en de beelden blijven even breed, dus op
+     smallere schermen schuiven ze uit hun sectie. Onder 1280px eruit; de grens is gemeten, zie hieronder. */
+  @media(max-width:1279.98px){
+    #waarom::before,#waarom::after{display:none}
+    #verhuisdiensten .art-3{display:none}
+  }
+</style>
+
+<section class="sectie ring" id="verhuizen" aria-labelledby="verhuizen-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Verhuizen</p>
+      <h2 class="kop" id="verhuizen-kop">Uw verhuizing, van het eerste telefoontje tot de laatste doos</h2>
+      <p class="intro">Of u nu binnen Venlo verhuist, kleiner gaat wonen of de grens over gaat: het begint altijd met een opname aan huis. Daarna weet u wat wij doen, wie er komt en wat het kost.</p>
+    </div>
+    <div class="diensten diensten--paar">
+        <a class="dienst" id="d-particulier-verhuizen" href="/particulier-verhuizen/" data-reveal><div class="dienst__nis"><img src="/assets/img/dienst-compleet-760.webp" srcset="/assets/img/dienst-compleet-400.webp 400w, /assets/img/dienst-compleet-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Twee verhuizers van Top Movers dragen samen een kast" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">01</span></div><div class="dienst__tekst"><h3>Particuliere verhuizing</h3><p>Van studio tot vrijstaand huis. Ons verhuisteam laadt, vervoert en zet alles veilig op zijn plek in uw nieuwe woning. Kwetsbare meubels gaan in verhuisdekens de wagen in, en is het trapgat te smal, dan kijken wij of een verhuislift uitkomst biedt.</p></div></a>
+        <a class="dienst" id="d-internationale-verhuizing" href="/internationale-verhuizing/" data-reveal style="transition-delay:.06s"><div class="dienst__nis"><img src="/assets/img/huisje-800.webp" srcset="/assets/img/huisje-800.webp 800w, /assets/img/huisje-1200.webp 1200w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1200" height="900" alt="Verhuiswagen van Top Movers op een landweg" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">02</span></div><div class="dienst__tekst"><h3>Internationale verhuizing</h3><p>Naar Duitsland, Belgi&euml; of Engeland. Voor de Duitse grensstreek, Noordrijn-Westfalen en Nedersaksen, geldt het Nederlandse Garantiecertificaat van Erkende Verhuizers, net als bij een verhuizing binnen Nederland.</p></div></a>
+        <a class="dienst" id="d-seniorenverhuizing" href="/seniorenverhuizing/" data-reveal style="transition-delay:.12s"><div class="dienst__nis"><img src="/assets/img/dienst-plan-760.webp" srcset="/assets/img/dienst-plan-400.webp 400w, /assets/img/dienst-plan-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Verhuisadviseur van Top Movers schudt een klant de hand" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">03</span></div><div class="dienst__tekst"><h3>Seniorenverhuizing</h3><p>Kleiner gaan wonen, in uw eigen tempo. De verhuisadviseur komt langs, neemt de tijd en maakt een plan waarin staat wat meegaat, wat wij inpakken en wat er op de nieuwe plek als eerste klaar moet staan.</p></div></a>
+        <a class="dienst" id="d-spoedverhuizing" href="/spoedverhuizing/" data-reveal style="transition-delay:.18s"><div class="dienst__nis"><img src="/assets/img/familie-800.webp" srcset="/assets/img/familie-800.webp 800w, /assets/img/familie-1200.webp 1200w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1200" height="800" alt="Twee verhuizers van Top Movers rijden een kast op een meubelhondje bij de laadklep van de verhuiswagen" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">04</span></div><div class="dienst__tekst"><h3>Spoedverhuizing</h3><p>Moet het snel? Bel ons, dan kijken wij meteen of uw datum nog vrij is en wat er aan mensen en materieel nodig is. Ook dan komt er eerst een opname, want zonder plan wordt haast duur.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" id="verhuisdiensten" aria-labelledby="verhuisdiensten-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Verhuisdiensten</p>
+      <h2 class="kop" id="verhuisdiensten-kop">Het werk dat u uit handen kunt geven</h2>
+      <p class="intro">U kiest zelf hoeveel u zelf doet. Van alleen het zware werk tot een verhuizing waarbij u de kasten leeg aantreft en op het nieuwe adres alles weer op zijn plek staat.</p>
+    </div>
+    <div class="diensten">
+        <a class="dienst" id="d-inpakservice" href="/inpakservice/" data-reveal><div class="dienst__nis"><img src="/assets/img/dienst-inpak-760.webp" srcset="/assets/img/dienst-inpak-400.webp 400w, /assets/img/dienst-inpak-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Verhuizer van Top Movers pakt een plant in, tussen verhuisdozen van Top Movers" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">05</span></div><div class="dienst__tekst"><h3>Inpakservice</h3><p>Wij leveren de verhuisdozen en pakken op verzoek uw hele inboedel zorgvuldig in, van glaswerk en servies tot de inhoud van de kasten. Op elke doos komt een etiket met de kamer waar hij heen moet, en na de verhuizing halen wij de lege dozen weer bij u op.</p></div></a>
+        <a class="dienst" id="d-montage-demontage" href="/montage-demontage/" data-reveal style="transition-delay:.06s"><div class="dienst__nis"><img src="/assets/img/dienst-montage-760.webp" srcset="/assets/img/dienst-montage-400.webp 400w, /assets/img/dienst-montage-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Verhuizer van Top Movers monteert een hanglamp" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">06</span></div><div class="dienst__tekst"><h3>Montage en demontage</h3><p>Kasten, bedden en boxsprings halen wij bij u thuis uit elkaar en zetten wij op het nieuwe adres weer in elkaar. Ook het aansluiten van uw wasmachine of koelkast nemen wij mee, zodat u meteen kunt beginnen met wonen.</p></div></a>
+        <a class="dienst" id="d-inboedelopslag" href="/inboedelopslag/" data-reveal style="transition-delay:.12s"><div class="dienst__nis"><img src="/assets/img/dienst-opslag-760.webp" srcset="/assets/img/dienst-opslag-400.webp 400w, /assets/img/dienst-opslag-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Opslagcontainer met verhuisdozen van Top Movers" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">07</span></div><div class="dienst__tekst"><h3>Inboedelopslag</h3><p>Zit er tijd tussen uw oude en uw nieuwe woning, of verhuist u tijdelijk naar het buitenland? Uw inboedel gaat in houten opslagkisten of een eigen 20 ft of 25 ft container, tot u hem weer nodig heeft.</p></div></a>
+    </div>
+  </div>
+  <img src="/assets/img/deco/honingraat.svg" alt="" width="400" height="280" loading="lazy" decoding="async" class="art-3">
+</section>
+
+<section class="sectie ring" id="specialistisch" aria-labelledby="specialistisch-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Specialistisch</p>
+      <h2 class="kop" id="specialistisch-kop">Als er meer bij komt kijken dan dozen dragen</h2>
+      <p class="intro">Sommige verhuizingen vragen om een aparte aanpak: om overleg met derden, om ander materieel of om extra voorzichtigheid. Noem het bij de opname, dan staat het in het verhuisplan.</p>
+    </div>
+    <div class="diensten diensten--paar">
+        <a class="dienst" id="d-zorgverhuizing" href="/zorgverhuizing/" data-reveal><div class="dienst__nis"><img src="/assets/img/verhuisteam-800.webp" srcset="/assets/img/verhuisteam-800.webp 800w, /assets/img/verhuisteam-1200.webp 1200w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1200" height="800" alt="Verhuizer van Top Movers overlegt met een klant bij een verhuisdoos" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">08</span></div><div class="dienst__tekst"><h3>Zorgverhuizing</h3><p>Verhuizen vanuit of naar een zorginstelling vraagt om rust en overleg. Wij stemmen af met de familie of de begeleiding, werken in het tempo van de bewoner en zorgen dat het bed en de vaste plekken als eerste klaarstaan.</p></div></a>
+        <a class="dienst" id="d-piano-verhuizen" href="/piano-verhuizen/" data-reveal style="transition-delay:.06s"><div class="dienst__nis"><img src="/assets/img/pia-2-760.webp" srcset="/assets/img/pia-2-760.webp 760w, /assets/img/pia-2-1140.webp 1140w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1140" height="1710" alt="Twee verhuizers van Top Movers wikkelen een vleugel in verhuisdekens" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">09</span></div><div class="dienst__tekst"><h3>Piano verhuizen</h3><p>Een piano of vleugel gaat niet zomaar de trap af. Bij de opname bekijken wij het gewicht, de route en het trapgat, en daar kiezen wij het materieel en het aantal mensen bij. Is de trap geen optie, dan kijken wij of een verhuislift uitkomst biedt. In de wagen gaat het instrument in verhuisdekens en staat het vast.</p></div></a>
+        <a class="dienst" id="d-antiek-en-kunst-verhuizen" href="/antiek-en-kunst-verhuizen/" data-reveal style="transition-delay:.12s"><div class="dienst__nis"><img src="/assets/img/inpak-borden-760.webp" srcset="/assets/img/inpak-borden-760.webp 760w, /assets/img/inpak-borden-1140.webp 1140w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="1140" height="1710" alt="Borden worden in blanco inpakpapier gewikkeld en staan rechtop in een verhuisdoos van Top Movers" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">10</span></div><div class="dienst__tekst"><h3>Antiek en kunst</h3><p>Schilderijen, spiegels, serviezen en antieke meubels pakken wij stuk voor stuk in. Wat kwetsbaar is gaat in verhuisdekens of een kist de wagen in en staat tijdens het rijden vast, zodat er onderweg niets kan schuiven.</p></div></a>
+        <a class="dienst" id="d-kantoorverhuizing" href="/kantoorverhuizing/" data-reveal style="transition-delay:.18s"><div class="dienst__nis"><img src="/assets/img/dienst-zakelijk-760.webp" srcset="/assets/img/dienst-zakelijk-400.webp 400w, /assets/img/dienst-zakelijk-1120.webp 1120w" sizes="(min-width:901px) 380px, (min-width:561px) 44vw, calc(100vw - 60px)" width="760" height="435" alt="Verhuizer van Top Movers rijdt een rolcontainer met verhuiskratten door een kantoor" loading="lazy" decoding="async"><span class="dienst__nr" aria-hidden="true">11</span></div><div class="dienst__tekst"><h3>Kantoorverhuizing</h3><p>Kantoren, praktijken, scholen en zorginstellingen verhuizen wij volgens een draaiboek, buiten uw werktijden als dat moet. Rolcontainers, archiefbakken en computerboxen zorgen dat uw mensen op de eerste werkdag gewoon weer aan de slag kunnen.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Sectiebibliotheek: benefits-photo-cards (../section-library/benefits-photo-cards), 24-09-2026.
+     Alle vier de beloftes staan al op de site: over-ons (erkenning, 1910), claimsregister C5
+     (gediplomeerd) en het offerteblok (binnen 24 uur contact, gratis offerte). -->
+<!-- De Bresser-feiten uit brandbook-debresser/bevindingen.md sectie 3 (24-09-2026); gaten staan er benoemd. -->
+<section class="sectie sectie--creme2 sb-voordelen" id="wat-u-krijgt" aria-labelledby="wat-u-krijgt-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Bij elke dienst</p>
+      <h2 class="kop" id="wat-u-krijgt-kop">Dit mag u van ons verwachten</h2>
+      <p class="intro">Welke dienst u ook kiest, hier kunt u op rekenen.</p>
+    </div>
+    <div class="sb-voordelen__rij">
+      <figure class="sb-voordelen__foto" data-reveal>
+        <img src="/assets/img/hero-keukentafel-mobiel.webp" width="900" height="1034" sizes="(max-width:860px) 92vw, 470px" alt="Een verhuisadviseur in Top Movers-polo neemt lachend het verhuisplan door met een klant aan de keukentafel, verhuisdozen van Top Movers langs de wand" loading="lazy" decoding="async">
+      </figure>
+      <ul class="sb-voordelen__kaarten" data-reveal-groep>
+        <li><img src="/assets/img/icoon/gediplomeerd.svg" alt="" width="44" height="44" loading="lazy" decoding="async"><h3>Erkende Verhuizers en Top Movers</h3><p>De Bresser is lid van Erkende Verhuizers en van Top Movers Nederland. <a href="/erkende-verhuizer/">Wat die erkenning u oplevert</a>.</p></li>
+        <li><img src="/assets/img/icoon/mensen.svg" alt="" width="44" height="44" loading="lazy" decoding="async"><h3>Afspraak is afspraak</h3><p>Wij gaan altijd voor 100% tevreden klanten. Daarom is bij ons afspraak altijd afspraak en staat eerlijkheid voorop.</p></li>
+        <li><img src="/assets/img/icoon/plan.svg" alt="" width="44" height="44" loading="lazy" decoding="async"><h3>Een offerte zoals het u past</h3><p>Telefonisch, via een videocall of met een adviseur bij u thuis. U hoort binnen 24 uur van ons.</p></li>
+        <li><img src="/assets/img/icoon/generaties.svg" alt="" width="44" height="44" loading="lazy" decoding="async"><h3>Sinds 1923</h3><p>Cis de Bresser begon in 1923 in Oisterwijk. Nu werken wij vanuit Tilburg, Oisterwijk, Breda, Venlo, Reeuwijk en Brussel.</p></li>
+      </ul>
+    </div>
+    <p class="sb-voordelen__actie" data-reveal><a class="btn btn--goud btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a></p>
+  </div>
+</section>

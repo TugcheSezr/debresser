@@ -1,0 +1,213 @@
+<!-- BRONBESTAND VOOR /contact/
+TITEL: Contact
+LEAD: Bel, mail of stuur een bericht. U hoort binnen 24 uur van ons.
+DESCRIPTION: Neem contact op met De Bresser: +31 (0)13 52 82 372 of info@debresser.nl. Hoofdkantoor Herastraat 9, Tilburg, en vestigingen in Nederland en België.
+-->
+<!-- Feiten: brandbook-debresser/bevindingen.md §3. GATEN: openingstijden, kaart, WhatsApp-nummer, portret Ineke Brands, derde teamlid. -->
+
+<section class="sectie sectie--creme2 sb-contact" id="contact-adres" aria-labelledby="adres-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Waar u ons vindt</p>
+      <h2 class="kop" id="adres-kop">Herastraat 9, Tilburg</h2>
+      <p class="intro">In Tilburg staat het hoofdkantoor. Daarnaast zijn er vestigingen in Oisterwijk, Breda, Venlo, Reeuwijk en Brussel. Bel, mail of stuur een bericht: u hoort binnen 24 uur van ons.</p>
+    </div>
+    <div class="sb-contact__rij">
+      <div class="sb-contact__links">
+        <div class="sb-contact__gegevens" data-reveal>
+          <div class="sb-contact__regel">
+            <span class="sb-contact__ico"><img src="/assets/img/bresser-icoon/telefoon.svg" alt="" width="22" height="22" loading="lazy" decoding="async"></span>
+            <div><small>Bellen</small><a class="sb-contact__tel" href="tel:+31135282372">+31 (0)13 52 82 372</a>
+              <!-- GAT: WhatsApp-nummer van De Bresser is niet bekend. --></div>
+          </div>
+          <div class="sb-contact__regel">
+            <span class="sb-contact__ico"><img src="/assets/img/bresser-icoon/envelop.svg" alt="" width="22" height="22" loading="lazy" decoding="async"></span>
+            <div><small>Mailen</small><a href="mailto:info@debresser.nl">info@debresser.nl</a></div>
+          </div>
+          <div class="sb-contact__regel">
+            <span class="sb-contact__ico"><img src="/assets/img/bresser-icoon/klok.svg" alt="" width="22" height="22" loading="lazy" decoding="async"></span>
+            <div><small>Wanneer kunt u ons bereiken?</small>
+              <p class="sb-contact__tijd sb-gat__tekst">Openingstijden volgen</p></div>
+          </div>
+        </div>
+        <div class="sb-contact__kaart" data-reveal>
+          <div class="sb-gat sb-contact__kaartgat"><span>Kaart volgt: Herastraat 9, Tilburg</span></div>
+          <address><span class="sb-contact__pin"><img src="/assets/img/bresser-icoon/pin.svg" alt="" width="20" height="20" loading="lazy" decoding="async"></span><span>Herastraat 9<br>5047 TX Tilburg<a href="https://www.google.com/maps/dir/?api=1&amp;destination=Herastraat+9%2C+5047+TX+Tilburg" target="_blank" rel="noopener">Route plannen<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></span></address>
+        </div>
+      </div>
+      <div class="sb-contact__formkaart" data-reveal>
+        <div class="sb-contact__beeld" aria-hidden="true">
+          <img src="/assets/img/beeld/werker-doos-uitsnede-700.webp" srcset="/assets/img/beeld/werker-doos-uitsnede-700.webp 290w, /assets/img/beeld/werker-doos-uitsnede-1100.webp 456w" sizes="200px" width="456" height="1100" alt="" loading="lazy" decoding="async">
+        </div>
+        <form class="sb-contact__form" id="sbBericht" action="https://api.web3forms.com/submit" method="POST">
+          <h3 id="bericht">Stuur ons een bericht</h3>
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="Bericht via de contactpagina van De Bresser">
+          <input type="hidden" name="from_name" value="Contactpagina De Bresser">
+          <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="sb-contact__velden">
+            <p class="sb-veld"><label for="sb-naam">Naam</label><input id="sb-naam" name="naam" autocomplete="name" required></p>
+            <p class="sb-veld"><label for="sb-tel">Telefoon</label><input id="sb-tel" type="tel" name="telefoon" autocomplete="tel" inputmode="tel" aria-describedby="sb-tel-uitleg"><small id="sb-tel-uitleg">Zodat wij u kunnen terugbellen.</small></p>
+          </div>
+          <p class="sb-veld"><label for="sb-mail">E-mail</label><input id="sb-mail" type="email" name="email" autocomplete="email" required></p>
+          <p class="sb-veld"><label for="sb-bericht">Bericht</label><textarea id="sb-bericht" name="bericht" rows="4" required placeholder="Waar kunnen wij u mee helpen?"></textarea></p>
+          <div class="sb-contact__verstuur">
+            <button class="btn btn--offerte" type="submit">Bericht versturen</button>
+            <p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p>
+          </div>
+          <p class="sb-contact__melding" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var f=document.getElementById('sbBericht');if(!f||!window.fetch||!window.FormData)return;
+    var m=f.querySelector('.sb-contact__melding'),k=f.querySelector('button[type=submit]');
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      k.disabled=true;m.textContent='Uw bericht wordt verstuurd...';
+      // Zonder Web3Forms-key (navigatie.WEB3FORMS leeg) gaat er niets weg: meteen bellen of mailen als uitweg.
+      (f.querySelector('input[name=access_key]').value?fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)}):Promise.reject(0))
+        .then(function(r){return r.json()})
+        .then(function(d){if(!d||!d.success)throw 0;f.reset();m.textContent='Dank u wel, uw bericht is verstuurd. Wij nemen zo snel mogelijk contact met u op.'})
+        .catch(function(){m.textContent='Versturen is niet gelukt. Bel ons op +31 (0)13 52 82 372 of mail naar info@debresser.nl.'})
+        .then(function(){k.disabled=false});
+    });
+  })();
+  </script>
+</section>
+
+<!-- Sectiebibliotheek: branch-route-stops (../section-library/branch-route-stops), gedeeld ontwerp voor vestigingenlijsten
+     (home, /contact/, /over-ons/). 25-09-2026, wens gebruiker "Yes, use it on /contact/": vervangt hier de kaarten (.bh-vest) en de
+     hubplaat (.sb-hubplaat), die dezelfde zes vestigingen nog een keer toonde. Adressen, telefoon, routelinks en de contactpersonen
+     van Brussel uit navigatie.py en build_paginas.py via vestigingen_route_html(personen=True). -->
+<section class="sb-route" id="vestigingen" aria-labelledby="vestigingen-kop">
+  <div class="wrap sb-route__in">
+    <div class="sb-route__tekst" data-reveal>
+      <p class="label">Vestigingen</p>
+      <h2 class="kop" id="vestigingen-kop">Zes vestigingen in Nederland en België</h2>
+      <p class="intro">Wij werken vanuit Tilburg, Oisterwijk, Breda, Venlo, Reeuwijk en Brussel. Kies de vestiging bij u in de buurt, of vraag direct een offerte aan.</p>
+      <div class="knoprij">
+        <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="btn btn--lijn-wit" href="#werkgebied">Ons werkgebied</a>
+      </div>
+    </div>
+    {{VESTIGINGEN_ROUTE_PERSONEN}}
+  </div>
+</section>
+
+<!-- Werkgebied (25-09-2026, verzoek gebruiker "Werkgebied section"): alle 41 plaats- en vestigingspagina's uit
+     navigatie.PLAATSEN, gevuld door werkgebied_html() in build_paginas.py. 25 ervan hadden nergens op de site een link.
+     Op /contact/, direct onder de zes vestigingen: eerst waar wij zitten, dan waar wij komen. -->
+<section class="sb-werkgebied" id="werkgebied" aria-labelledby="werkgebied-kop">
+  <div class="wrap sb-werkgebied__binnen">
+    <div class="sb-werkgebied__tekst" data-reveal>
+      <p class="label">Werkgebied</p>
+      <h2 class="kop" id="werkgebied-kop">Hier verhuizen wij</h2>
+      <p class="intro">Vanuit onze vestigingen verhuizen wij in Brabant, Limburg en daarbuiten, tot in België. Kies uw plaats.</p>
+    </div>
+    {{WERKGEBIED}}
+  </div>
+</section>
+
+<!-- Portretten, namen en functies van https://www.debresser.nl/over-ons/ (Ons team), 25-09-2026 op verzoek van de gebruiker
+     ("add team face photos form the debresser.nl"). Echte foto's; alleen de achtergrond is weggeknipt (cutout_mat.py), gezichten onbewerkt. -->
+<section class="sectie sectie--creme2 sb-team" id="wie-u-spreekt" aria-labelledby="wie-u-spreekt-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Wie u spreekt</p>
+      <h2 class="kop" id="wie-u-spreekt-kop">De mensen achter De Bresser</h2>
+      <p class="intro">De Bresser wordt geleid door Tomas en Ineke Brands. Op kantoor werken 18 mensen, in de magazijnen en onderweg zo&#39;n 80.</p>
+    </div>
+    <ul class="sb-team__rij" data-reveal-groep>
+      <li class="sb-persoon">
+        <div class="sb-persoon__scherm"><img src="/assets/img/tomas-brands-368.webp" width="368" height="352" alt="Portret van Tomas Brands, algemeen directeur van De Bresser" loading="lazy" decoding="async"></div>
+        <h3>Tomas Brands</h3>
+        <p class="sb-persoon__rol">Algemeen directeur</p>
+        <p>Nam het bedrijf in 2011 over van de derde en laatste generatie De Bresser.</p>
+      </li>
+      <li class="sb-persoon">
+        <div class="sb-persoon__scherm"><img src="/assets/img/ineke-brands-335.webp" width="335" height="352" alt="Portret van Ineke Brands van De Bresser" loading="lazy" decoding="async"></div>
+        <h3>Ineke Brands</h3>
+        <p class="sb-persoon__rol">Ontzorgd Verhuizen</p>
+        <p>Leidt De Bresser samen met Tomas en heeft haar eigen bedrijf, Ontzorgd Verhuizen Noord-Brabant.</p>
+      </li>
+      <li class="sb-persoon">
+        <div class="sb-persoon__scherm"><img src="/assets/img/patrick-van-loon-316.webp" width="316" height="352" alt="Portret van Patrick van Loon, buitendienst bij De Bresser" loading="lazy" decoding="async"></div>
+        <h3>Patrick van Loon</h3>
+        <p class="sb-persoon__rol">Buitendienst</p>
+        <p>Gaat bij particulieren langs om de inboedel te inventariseren en maakt daarna een vrijblijvende offerte.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- #na-uw-aanvraag: patroon reply-dial-choices uit de sectiebibliotheek (e0, 25-09-2026). Foto: bresser/de-bresser-kantoor (echte foto van debresser.nl, De-Bresser-Kantoor.png); uitsnede: werker 8, dekens (goedgekeurd 24-09). Iconen: set 3.25. De drie keuzes gebruiken de tekst van home #offerte-manieren. -->
+<section class="sb-terugbel" id="na-uw-aanvraag" aria-labelledby="venster-kop">
+  <div class="wrap sb-terugbel__in">
+    <div class="sb-terugbel__tekst" data-reveal>
+      <p class="label">Na uw aanvraag</p>
+      <h2 class="kop" id="venster-kop">Binnen 24 uur hoort u van ons</h2>
+      <p class="intro">Vraagt u een offerte aan of stuurt u een bericht, dan nemen wij binnen 24 uur contact met u op.</p>
+      <div class="knoprij"><a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a><a class="btn btn--omlijnd" href="mailto:info@debresser.nl"><svg aria-hidden="true"><use href="#i-mail"/></svg>Mail ons</a></div>
+    </div>
+    <figure class="sb-terugbel__beeld" data-reveal>
+      <span class="sb-terugbel__klok" aria-hidden="true"></span>
+      <div class="sb-terugbel__foto"><img src="/assets/img/bresser/de-bresser-kantoor-906.webp" width="906" height="604" alt="Kantoor van De Bresser met medewerkers aan hun bureau" loading="lazy" decoding="async"></div>
+      <img class="sb-terugbel__persoon" src="/assets/img/beeld/werker-dekens-uitsnede-700.webp" srcset="/assets/img/beeld/werker-dekens-uitsnede-700.webp 320w, /assets/img/beeld/werker-dekens-uitsnede-1100.webp 503w" sizes="(max-width:560px) 110px, 210px" width="503" height="1100" alt="Verhuizer van De Bresser met een verhuisdeken onder de arm" loading="lazy" decoding="async">
+    </figure>
+    <div class="sb-terugbel__kaart" data-reveal>
+      <div class="sb-terugbel__kaartkop"><p class="sb-terugbel__kaartlabel">Daarna</p><h3>U kiest hoe wij uw verhuizing bekijken</h3></div>
+      <ul class="sb-terugbel__keuzes" data-reveal-groep>
+        <li><span class="sb-terugbel__ico"><img src="/assets/img/bresser-icoon/telefoon.svg" alt="" width="22" height="22"></span><div><strong>Telefonisch</strong><p>U neemt met onze adviseur door wat er mee moet. U krijgt een prijs per uur.</p></div></li>
+        <li><span class="sb-terugbel__ico"><img src="/assets/img/bresser-icoon/video.svg" alt="" width="22" height="22"></span><div><strong>Via een videogesprek</strong><p>U geeft ons een rondleiding door uw huis. Daarna maken wij een gedetailleerde offerte.</p></div></li>
+        <li><span class="sb-terugbel__ico"><img src="/assets/img/bresser-icoon/huis.svg" alt="" width="22" height="22"></span><div><strong>Adviseur aan huis</strong><p>Onze voorkeur: een adviseur bespreekt alles bij u thuis, voor een exacte offerte.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Bedrijfsgegevens (89, 25-09-2026), wens gebruiker: "Goed om te weten voor uw administratie - redesign this section using section skill".
+     Ideeën uit de sectiebibliotheek, nieuw ingezet: een gekantelde navy band over de volle breedte (tilted-block) met de kop erop,
+     de gegevens als wit naambord dat over beide randen van de band valt (card-on-band), en de goedgekeurde werker 7 (steekwagen)
+     die achter het bord staat en erover kijkt: het bord dekt zijn onderkant af (behind-card). De 3.25-iconen staan in het bord.
+     Alle gegevens zijn ongewijzigd; de kopieerknoppen verschijnen alleen met JavaScript. -->
+<section class="sectie sectie--creme2 sb-gegevens" id="bedrijfsgegevens" aria-labelledby="gegevens-kop">
+  <div class="wrap sb-gegevens__in">
+    <div class="sb-gegevens__band" aria-hidden="true"></div>
+    <div class="sb-gegevens__tekst" data-reveal>
+      <p class="label">Bedrijfsgegevens</p>
+      <h2 class="kop" id="gegevens-kop">Goed om te weten voor uw administratie</h2>
+      <p class="intro">Voor uw inkooporder, uw leveranciersregistratie of de factuur: onze gegevens op een rij.</p>
+    </div>
+    <div class="sb-gegevens__bord" data-reveal>
+      <img class="sb-gegevens__persoon" src="/assets/img/beeld/werker-steekwagen-uitsnede-900.webp" sizes="(max-width:560px) 150px, 230px" alt="" width="488" height="900" loading="lazy" decoding="async">
+      <dl class="sb-gegevens__plaat">
+        <div><dt><img src="/assets/img/bresser-icoon/pin.svg" alt="" width="34" height="34" loading="lazy" decoding="async">Bedrijf</dt><dd>De Bresser B.V., Herastraat 9, 5047 TX Tilburg</dd></div>
+        <div><dt><img src="/assets/img/bresser-icoon/schild-vinkje.svg" alt="" width="34" height="34" loading="lazy" decoding="async">KvK-nummer</dt><dd><span class="sb-gegevens__nr">18014730</span><button class="sb-gegevens__kopieer" type="button" data-kopieer="18014730" aria-label="Kopieer KvK-nummer">Kopieer</button></dd></div>
+        <div><dt><img src="/assets/img/bresser-icoon/checklist.svg" alt="" width="34" height="34" loading="lazy" decoding="async">Btw-nummer</dt><dd><span class="sb-gegevens__nr">NL0055.15.452.B.01</span><button class="sb-gegevens__kopieer" type="button" data-kopieer="NL0055.15.452.B.01" aria-label="Kopieer btw-nummer">Kopieer</button></dd></div>
+        <div><dt><img src="/assets/img/bresser-icoon/medaille.svg" alt="" width="34" height="34" loading="lazy" decoding="async">Lidmaatschap</dt><dd>Erkende Verhuizers en Top Movers Nederland</dd></div>
+      </dl>
+      <p class="sb-verborgen" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var s=document.getElementById('bedrijfsgegevens');if(!s)return;
+    var st=s.querySelector('[role=status]');
+    s.addEventListener('click',function(e){
+      var k=e.target.closest('[data-kopieer]');if(!k)return;
+      var w=k.getAttribute('data-kopieer');
+      function klaar(){
+        k.textContent='Gekopieerd';k.classList.add('is-klaar');
+        st.textContent=k.getAttribute('aria-label').replace('Kopieer ','')+' gekopieerd';
+        setTimeout(function(){k.textContent='Kopieer';k.classList.remove('is-klaar')},1800);
+      }
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(w).then(klaar,function(){});return}
+      var t=document.createElement('textarea');t.value=w;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();try{if(document.execCommand('copy'))klaar()}catch(x){}document.body.removeChild(t);
+    });
+  })();
+  </script>
+</section>

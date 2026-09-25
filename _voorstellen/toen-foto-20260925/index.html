@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toen-foto sinds 1923</title>
+<style>
+@font-face{font-family:'Sora';font-weight:400 700;font-display:swap;src:url(../../site/assets/fonts/sora-400-700-latin.woff2) format('woff2')}
+:root{--navy:#020D41;--blauw:#007AC0;--licht:#33BCFA;--groen:#7BD534;--creme:#F4F6F9;--creme2:#EBEFF4;--lijn:#D5DDE8;--grijs:#5A6478}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--navy);font:15px/1.55 'Sora','Helvetica Neue',Arial,sans-serif}
+a{color:var(--blauw)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.top{background:var(--navy);color:#fff;padding:2.2rem 0 2rem}
+.top h1{margin:.2rem 0 .6rem;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.15}
+.top p{margin:.3rem 0;max-width:64rem;color:#D7DEEA}
+.top .plek{color:var(--licht);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem}
+.inhoud{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.inhoud a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:.2rem .7rem;font-size:.85rem}
+.inhoud a.gekozen-ok{background:var(--groen);color:var(--navy);border-color:var(--groen)}
+.inhoud a.gekozen-houd{background:var(--licht);color:var(--navy);border-color:var(--licht)}
+.melding{background:#FFF4D6;color:#5A4200;padding:.6rem 1rem;border-radius:8px;margin:1rem 0 0;display:none}
+.huidig,.stijl,.uitkomst{background:#fff;border:1px solid var(--lijn);border-radius:14px;margin:1.5rem 0;padding:clamp(1rem,2.5vw,1.8rem)}
+.huidig h2,.stijl h2,.uitkomst h2{margin:.1rem 0 .3rem;font-size:1.45rem}
+.huidig p{color:var(--grijs);margin:.2rem 0 1rem}
+.huidig .los img{width:44px;height:44px}
+.stijl__nr{margin:0;color:var(--blauw);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem}
+.stijl__look{margin:.2rem 0;font-weight:500}
+.stijl__bron{margin:.2rem 0 0;color:var(--grijs);font-size:.85rem}
+.stijl__bron code{font-size:.8rem}
+.blok{margin-top:1.2rem}
+h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--grijs);margin:1.3rem 0 .6rem;font-weight:600}
+.los{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:.5rem}
+.los li{display:flex;flex-direction:column;align-items:center;gap:.45rem;padding:.9rem .3rem .7rem;border-radius:10px;background:var(--creme);text-align:center;font-size:.75rem;line-height:1.25}
+.klein{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.ic{display:inline-grid;place-items:center;flex:none;position:relative}
+.ic svg{display:block;position:relative}
+.ic--stip i{position:absolute;left:0;top:0;border-radius:50%;background:rgba(123,213,52,.4)}
+.ic--zacht{background:#DCE6F0;border-radius:26%}
+.ic--badge{background:var(--navy);border-radius:50%;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--blauw)}
+.ic--tegel{background:var(--blauw);border-radius:24%}
+.blok--site{border-top:1px solid var(--lijn);margin-top:1.4rem;padding-top:.2rem}
+.vt{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}
+.vt li{border:1px solid var(--lijn);border-radius:12px;padding:1.1rem;background:#fff}
+.vt li:nth-child(2){background:#FFFBEF}.vt li:nth-child(3){background:var(--creme)}.vt li:nth-child(4){background:var(--creme2)}
+.vt h4{margin:.7rem 0 .3rem;font-size:1rem;line-height:1.3}
+.vt p{margin:0;font-size:.85rem;color:#2F3A55}
+.dks{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.dk{border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--lijn)}
+.dk__beeld{position:relative}
+.dk__beeld img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.sb-ico{position:absolute;right:.8rem;bottom:-1.4rem;width:3.2rem;height:3.2rem;display:grid;place-items:center;border-radius:14px;background:#fff;box-shadow:0 6px 18px rgba(2,13,65,.14)}
+.sb-ico--eigen{background:none;box-shadow:none;border-radius:0}
+.sb-ico--eigen .ic{box-shadow:0 6px 18px rgba(2,13,65,.18)}
+.sb-ico--eigen .ic--badge{box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--blauw),0 6px 18px rgba(2,13,65,.18)}
+.dk__tekst{padding:1.3rem 1rem 1rem}
+.dk__tekst h4{margin:0 0 .3rem;font-size:1.05rem}
+.dk__tekst p{margin:0;font-size:.85rem;color:#2F3A55}
+.ct{list-style:none;margin:0;padding:1rem 1.2rem;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem 1.5rem;background:var(--creme);border-radius:12px}
+.ct li{display:flex;align-items:center;gap:.7rem;font-size:.95rem}
+.ct a{color:var(--navy);font-weight:600;text-decoration:none}
+.keuze{margin-top:1.4rem;padding-top:1.1rem;border-top:2px solid var(--navy);display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.keuze__knoppen{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.kn{font:inherit;font-weight:600;padding:.6rem 1.1rem;border-radius:8px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+.kn--ok[aria-pressed=true]{background:var(--groen);border-color:var(--groen)}
+.kn--houd[aria-pressed=true]{background:var(--licht);border-color:var(--licht)}
+.keuze__uitleg{font-size:.8rem;color:var(--grijs)}
+.keuze__notitie{display:flex;flex-direction:column;gap:.3rem;font-size:.8rem;color:var(--grijs)}
+.keuze__notitie textarea{font:inherit;font-size:.9rem;color:var(--navy);border:1px solid var(--lijn);border-radius:8px;padding:.5rem .6rem;resize:vertical;width:100%}
+.stijl.is-ok{border:2px solid var(--groen)}.stijl.is-houd{border:2px solid var(--licht)}
+.uitkomst pre{background:var(--navy);color:#fff;padding:1rem 1.2rem;border-radius:10px;white-space:pre-wrap;font-size:.9rem;margin:.8rem 0}
+.uitkomst button{font:inherit;font-weight:700;padding:.7rem 1.3rem;border-radius:8px;border:0;background:var(--groen);color:var(--navy);cursor:pointer}
+.uitkomst .status{margin-left:.8rem;font-size:.85rem;color:var(--grijs)}
+.bronnen{font-size:.85rem;color:var(--grijs);overflow-wrap:anywhere}
+@media(max-width:900px){.vt{grid-template-columns:repeat(2,minmax(0,1fr))}.dks{grid-template-columns:repeat(2,minmax(0,1fr))}.keuze{grid-template-columns:1fr}}
+@media(max-width:560px){.vt,.dks,.ct{grid-template-columns:1fr}.los{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.foto{display:block;max-width:100%;max-height:520px;border-radius:10px}.mock{display:block;max-width:100%;border-radius:10px;border:1px solid var(--lijn)}.mock--tel{max-width:300px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <p class="plek">Keuze · toen-foto-20260925 · plek: homepage, sectie "Een familiebedrijf, sinds 1923" (#sinds-1923)</p>
+  <h1>Toen-foto: optie 4 goedgekeurd voor de site</h1>
+  <p><strong>Goedgekeurd op 25-09-2026: optie 4 (Verhuizers tillen een kast in de wagen, Utrecht 1945–1955).</strong> De opties 1, 2, 3 en 5 zijn afgevallen en verwijderd. De foto staat op de homepage in "Een familiebedrijf, sinds 1923", met een bijschrift dat zegt wat erop staat (een ander verhuisbedrijf, niet De Bresser) en de verplichte naamsvermelding (CC BY 4.0). Het origineel en de bron staan in de map bron/.</p>
+  <nav class="inhoud" aria-label="Opties"><a href="#stijl-4">4 Verhuizers tillen een kast in de wagen, Utrecht 1945–1955</a></nav>
+  <p class="melding" id="melding">Je keuzes worden in deze browser niet bewaard (privévenster of geblokkeerde opslag). Kiezen en kopiëren werken wel.</p>
+</div></header>
+<main class="wrap">
+
+<section class="stijl" id="stijl-4" data-stijl="4" data-naam="Verhuizers tillen een kast in de wagen, Utrecht 1945–1955">
+  <header class="stijl__kop">
+    <p class="stijl__nr">Optie 4</p>
+    <h2>Verhuizers tillen een kast in de wagen, Utrecht 1945–1955</h2>
+    <p class="stijl__look">Verhuizers van C.A. van der Lee &amp; Co tillen een groot eikenhouten meubel in de verhuiswagen aan de Minrebroederstraat in Utrecht, 1945–1955. Geen foto van De Bresser.</p>
+    <p class="stijl__bron">Utrecht, Minrebroederstraat, 1945–1955 · L.H. (Henk) Hofland (Het Utrechts Archief, 501727) · licentie: <strong>CC BY 4.0</strong> · <a href="https://hetutrechtsarchief.nl/beeld/E065E449680F5358A5B5E56674DB6996">bron</a> · 5980 × 4325 px</p>
+    <p class="stijl__bron">Naamsvermelding op de site: Foto: L.H. Hofland / Het Utrechts Archief, CC BY 4.0</p>
+  </header>
+  <div class="blok">
+    <h3>De foto</h3>
+    <img class="foto" src="optie-4.jpg" alt="Verhuizers van C.A. van der Lee &amp; Co tillen een groot eikenhouten meubel in de verhuiswagen aan de Minrebroederstraat in Utrecht, 1945–1955. Geen foto van De Bresser." loading="lazy">
+  </div>
+  <div class="blok blok--site">
+    <h3>In de sectie op de homepage, 1440 breed (751 px hoog, past in 822)</h3>
+    <img class="mock" src="mock-4-1440.jpg" alt="Mock van de sectie op 1440 met optie 4" loading="lazy">
+    <h3>Op de telefoon, 390 breed</h3>
+    <img class="mock mock--tel" src="mock-4-390.jpg" alt="Mock van de sectie op 390 met optie 4" loading="lazy">
+  </div>
+  <div class="keuze">
+    <div class="keuze__knoppen" role="group" aria-label="Keuze voor optie 4">
+      <button type="button" class="kn kn--ok" data-keuze="ok" aria-pressed="false">Goedgekeurd voor de site</button>
+      <button type="button" class="kn kn--houd" data-keuze="houd" aria-pressed="false">Houden, aanpassen</button>
+      <span class="keuze__uitleg">Niets aangeklikt = valt af</span>
+    </div>
+    <label class="keuze__notitie">Notitie bij optie 4<textarea rows="2" placeholder="Bijvoorbeeld: andere uitsnede, of minder overlap"></textarea></label>
+  </div>
+</section>
+<section class="uitkomst">
+  <h2>Je keuze</h2>
+  <p>Kopieer dit blok en plak het in de chat.</p>
+  <pre id="uitkomst"></pre>
+  <button type="button" id="kopieer">Uitkomst kopiëren</button><span class="status" id="status" aria-live="polite"></span>
+</section>
+</main>
+<script>
+(function(){
+  var SLEUTEL='iconenkeuze:'+location.pathname;
+  var opslag=null;try{opslag=window.localStorage;opslag.setItem('__t','1');opslag.removeItem('__t')}catch(e){opslag=null}
+  if(!opslag){document.getElementById('melding').style.display='block'}
+  var staat={};try{staat=JSON.parse((opslag&&opslag.getItem(SLEUTEL))||'{}')||{}}catch(e){staat={}}
+  function bewaar(){try{opslag&&opslag.setItem(SLEUTEL,JSON.stringify(staat))}catch(e){}}
+  var kaarten=[].slice.call(document.querySelectorAll('.stijl'));
+  function lijst(a){a=a.map(function(x){return x});if(a.length<2)return a.join('');return a.slice(0,-1).join(', ')+' en '+a[a.length-1]}
+  function teken(){
+    var ok=[],houd=[],af=[],notities=[];
+    kaarten.forEach(function(k){
+      var n=k.dataset.stijl,naam=k.dataset.naam,s=staat[n]||{};
+      k.classList.toggle('is-ok',s.keuze==='ok');k.classList.toggle('is-houd',s.keuze==='houd');
+      k.querySelectorAll('.kn').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.keuze===s.keuze))});
+      var l=document.querySelector('.inhoud a[href="#stijl-'+n+'"]');
+      if(l){l.classList.toggle('gekozen-ok',s.keuze==='ok');l.classList.toggle('gekozen-houd',s.keuze==='houd')}
+      var t=n+' ('+naam+')';
+      if(s.keuze==='ok')ok.push(t);else if(s.keuze==='houd')houd.push(t);else af.push(t);
+      if(s.notitie&&s.notitie.trim())notities.push('Optie '+n+': '+s.notitie.trim().replace(/\s*\n\s*/g,' / '));
+    });
+    var r=['Toen-foto: goedgekeurde optie voor Een familiebedrijf, sinds 1923 (toen-foto-20260925)'];
+    r.push('Goedgekeurd: '+(ok.length?'optie '+lijst(ok):'geen'));
+    r.push('Houden, aanpassen: '+(houd.length?'optie '+lijst(houd):'geen'));
+    r.push('Valt af: '+(af.length?'optie '+lijst(af):'geen'));
+    document.getElementById('uitkomst').textContent=r.concat(notities).join('\n');
+  }
+  kaarten.forEach(function(k){
+    var n=k.dataset.stijl,ta=k.querySelector('textarea'),tm;
+    ta.value=(staat[n]&&staat[n].notitie)||'';
+    k.querySelectorAll('.kn').forEach(function(b){b.addEventListener('click',function(){
+      staat[n]=staat[n]||{};staat[n].keuze=staat[n].keuze===b.dataset.keuze?null:b.dataset.keuze;bewaar();teken();
+    })});
+    ta.addEventListener('input',function(){staat[n]=staat[n]||{};staat[n].notitie=ta.value;teken();clearTimeout(tm);tm=setTimeout(bewaar,400)});
+  });
+  document.getElementById('kopieer').addEventListener('click',function(){
+    var tekst=document.getElementById('uitkomst').textContent,st=document.getElementById('status');
+    function kies(){var r=document.createRange();r.selectNodeContents(document.getElementById('uitkomst'));var s=getSelection();s.removeAllRanges();s.addRange(r);st.textContent='Geselecteerd: druk op Ctrl+C.'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tekst).then(function(){st.textContent='Gekopieerd. Plak het in de chat.'},kies)}else kies();
+  });
+  teken();
+})();
+</script>
+</body>
+</html>

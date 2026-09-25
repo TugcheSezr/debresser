@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Toegankelijkheid | De Kievit Verhuizingen</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="description" content="Wat wij hebben ingebouwd voor toetsenbord, schermlezer en vergroting, wat nog niet goed is en wat u zelf kunt instellen. Nagekeken in de code van de site.">
+<link rel="canonical" href="https://www.de-kievit.nl/toegankelijkheid/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.de-kievit.nl/toegankelijkheid/#pagina","url":"https://www.de-kievit.nl/toegankelijkheid/","name":"Toegankelijkheid","isPartOf":{"@id":"https://www.de-kievit.nl/#website"},"about":{"@id":"https://www.de-kievit.nl/#bedrijf"},"inLanguage":"nl-NL","breadcrumb":{"@id":"https://www.de-kievit.nl/toegankelijkheid/#kruimels"}},{"@type":"BreadcrumbList","@id":"https://www.de-kievit.nl/toegankelijkheid/#kruimels","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.de-kievit.nl/"},{"@type":"ListItem","position":2,"name":"Toegankelijkheid","item":"https://www.de-kievit.nl/toegankelijkheid/"}]}]}</script>
+<meta name="theme-color" content="#00A19B">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/notosans-300-700-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260924-1716">
+<script src="/assets/js/kievit.js?v=20260924-1716" defer></script>
+</head>
+<body>
+<!-- lege pagina, gegenereerd door _werk/build_paginas.py -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.82 11.82 0 0 0 20.465 3.488"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.22 2.2z"/></symbol>
+  <symbol id="i-caret" viewBox="0 0 24 24"><path fill="currentColor" d="M8.5 5.5l7 6.5-7 6.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="ik-rating" viewBox="0 0 100 100"><path style="fill:var(--ik-b,#DBC096)" d="M 40.9 37.6 C 41.34 37.96 41.53 38.55 41.39 39.1 L 39.01 48.28 C 38.68 49.57 40.1 50.6 41.22 49.88 L 44.33 47.9 C 44.57 45.06 46.89 42.8 49.75 42.64 L 49.8 42.63 L 50.3 42.63 L 50.34 42.64 C 51.78 42.7 53.12 43.29 54.14 44.31 C 55.15 45.31 55.75 46.63 55.83 48.05 L 58.74 49.9 C 59.88 50.61 61.29 49.59 60.96 48.3 L 58.59 39.15 C 58.44 38.61 58.63 38.01 59.08 37.65 L 66.39 31.63 C 67.42 30.78 66.88 29.11 65.55 29.03 L 56.12 28.46 C 55.55 28.43 55.05 28.06 54.85 27.53 L 51.38 18.72 C 50.89 17.47 49.14 17.47 48.64 18.72 L 45.2 27.51 C 44.98 28.04 44.48 28.4 43.92 28.44 L 34.46 29 C 33.12 29.08 32.57 30.75 33.61 31.6 L 40.9 37.6"/><path style="fill:var(--ik-b,#DBC096)" d="M 33.26 38.46 L 25.28 37.98 C 24.8 37.95 24.37 37.64 24.2 37.2 L 21.26 29.73 C 20.85 28.68 19.37 28.68 18.95 29.73 L 16.03 37.17 C 15.85 37.62 15.43 37.92 14.95 37.95 L 6.94 38.44 C 5.82 38.51 5.36 39.92 6.23 40.64 L 12.4 45.71 C 12.77 46.02 12.93 46.52 12.81 46.98 L 10.8 54.75 C 10.51 55.84 11.72 56.71 12.67 56.11 L 19.4 51.81 C 19.81 51.55 20.33 51.55 20.74 51.81 L 27.5 56.12 C 28.45 56.73 29.66 55.86 29.37 54.76 L 27.36 47.03 C 27.24 46.56 27.4 46.06 27.78 45.76 L 33.97 40.66 C 34.84 39.95 34.38 38.53 33.26 38.46"/><path style="fill:var(--ik-b,#DBC096)" d="M 93.77 40.66 C 94.64 39.95 94.18 38.53 93.06 38.46 L 85.08 37.98 C 84.6 37.95 84.18 37.64 84 37.2 L 81.07 29.73 C 80.65 28.68 79.17 28.68 78.75 29.73 L 75.83 37.17 C 75.66 37.62 75.23 37.92 74.75 37.95 L 66.74 38.44 C 65.62 38.51 65.16 39.92 66.03 40.64 L 72.2 45.71 C 72.57 46.02 72.74 46.52 72.61 46.98 L 70.6 54.75 C 70.32 55.84 71.52 56.71 72.47 56.11 L 79.21 51.81 C 79.61 51.55 80.14 51.55 80.54 51.81 L 87.3 56.12 C 88.25 56.73 89.46 55.86 89.17 54.76 L 87.16 47.03 C 87.04 46.56 87.2 46.06 87.58 45.76 L 93.77 40.66"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 66.66 60.33 C 65.59 60.33 64.66 60.9 64.13 61.74 L 64.13 61.66 C 64.13 60.02 62.78 58.68 61.14 58.68 C 60.07 58.68 59.13 59.24 58.6 60.08 L 58.6 60.01 C 58.6 58.36 57.26 57.02 55.61 57.02 C 54.54 57.02 53.61 57.59 53.08 58.43 L 53.07 48.4 C 53.07 47.6 52.75 46.85 52.18 46.28 C 51.62 45.72 50.87 45.41 50.07 45.41 C 50.07 45.41 50.07 45.41 50.06 45.41 C 48.42 45.42 47.08 46.77 47.08 48.41 L 47.11 67.98 C 47.11 68.15 47.02 68.29 46.86 68.36 C 46.7 68.43 46.53 68.4 46.41 68.27 L 43.37 65.26 C 42.34 64.24 40.73 64.09 39.53 64.9 C 38.83 65.38 38.35 66.14 38.23 66.99 C 38.11 67.83 38.36 68.69 38.9 69.35 L 46.47 78.46 C 48.61 81.05 51.76 82.53 55.12 82.52 L 59.83 82.51 C 62.46 82.51 64.93 81.48 66.79 79.62 C 68.65 77.75 69.67 75.28 69.67 72.64 L 69.65 63.31 C 69.65 61.67 68.3 60.33 66.66 60.33"/></symbol>
+</svg>
+
+<a class="skiplink" href="#top">Direct naar de inhoud</a>
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="topbar__logo" href="/" aria-label="De Kievit Verhuizingen, naar de homepage">
+      <img src="/assets/img/deco/logo-kievit-wit.svg" alt="" width="1520" height="1040">
+      <img src="/assets/img/deco/logo-kievit-navy.svg" alt="" width="1520" height="1040">
+    </a>
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <ul class="nav__links">
+        <li class="has-mega">
+          <a class="nav__trigger" href="/over-ons/" aria-expanded="false">Over ons<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--3">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">De Kievit sinds 1910</p>
+                <ul>
+                  <li><a href="/over-ons/">Over De Kievit</a></li>
+                  <li><a href="/werkwijze/">Onze werkwijze</a></li>
+                  <li><a href="/duurzaamheid/">Duurzaamheid</a></li>
+                  <li><a href="/vacatures/">Werken bij De Kievit</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Zekerheid</p>
+                <ul>
+                  <li><a href="/erkende-verhuizer/">Erkende Verhuizer</a></li>
+                  <li><a href="/certificeringen/">Certificeringen</a></li>
+                  <li><a href="/verzekering/">Verzekering</a></li>
+                  <li><a href="/klachtenregeling/">Klachtenregeling</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Ervaringen</p>
+                <ul>
+                  <li><a href="/klantervaringen/">Klantervaringen</a></li>
+                  <li><a href="/veelgestelde-vragen/">Veelgestelde vragen</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/over-ons/">Uw Venlose vakverhuizer sinds 1910<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a class="nav__trigger" href="/diensten/" aria-expanded="false">Verhuizen<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--3">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">Verhuizen</p>
+                <ul>
+                  <li><a href="/particulier-verhuizen/">Particuliere verhuizing</a></li>
+                  <li><a href="/internationale-verhuizing/">Internationale verhuizing</a></li>
+                  <li><a href="/seniorenverhuizing/">Seniorenverhuizing</a></li>
+                  <li><a href="/spoedverhuizing/">Spoedverhuizing</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Verhuisdiensten</p>
+                <ul>
+                  <li><a href="/inpakservice/">Inpakservice</a></li>
+                  <li><a href="/montage-demontage/">Montage en demontage</a></li>
+                  <li><a href="/inboedelopslag/">Inboedelopslag</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Specialistisch</p>
+                <ul>
+                  <li><a href="/zorgverhuizing/">Zorgverhuizing</a></li>
+                  <li><a href="/piano-verhuizen/">Piano verhuizen</a></li>
+                  <li><a href="/antiek-en-kunst-verhuizen/">Antiek en kunst</a></li>
+                  <li><a href="/kantoorverhuizing/">Kantoorverhuizing</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/diensten/">Bekijk alle diensten<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a class="nav__trigger" href="/verhuischecklist/" aria-expanded="false">Voorbereiden<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--1">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">Zelf voorbereiden</p>
+                <ul>
+                  <li><a href="/verhuischecklist/">Verhuischecklist</a></li>
+                  <li><a href="/inpaktips/">Inpaktips</a></li>
+                  <li><a href="/dozencalculator/">Dozencalculator</a></li>
+                  <li><a href="/m3-calculator/">M3-calculator</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="topbar__actions">
+      <a class="topbar__reviews" href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow" aria-label="Beoordeeld met een 9,4 uit 10, 779 beoordelingen op Klantenvertellen"><svg class="topbar__g" aria-hidden="true" viewBox="0 0 100 100"><use href="#ik-rating"/></svg><span class="topbar__rv"><span class="topbar__sterren" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><b>9,4</b><small>779 beoordelingen op Klantenvertellen</small></span></a>
+      <a class="topbar__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <a class="btn btn--wa" href="https://wa.me/31773232100?text=Hallo%20De%20Kievit%2C%20ik%20heb%20een%20vraag%20over%20verhuizen." target="_blank" rel="noopener" aria-label="App ons via WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span class="lbl">App ons</span></a>
+      <a class="btn btn--goud btn--groen" href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="navDrawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__head">
+      <a class="drawer__logo" href="/" aria-label="De Kievit Verhuizingen, naar de homepage">
+        <img src="/assets/img/deco/logo-kievit-navy.svg" alt="" width="1520" height="1040">
+      </a>
+      <button class="drawer__close" id="navClose" aria-label="Menu sluiten">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobiele navigatie">
+        <details class="drawer__group">
+          <summary>Over ons</summary>
+          <a href="/over-ons/">Over De Kievit</a>
+          <a href="/werkwijze/">Onze werkwijze</a>
+          <a href="/duurzaamheid/">Duurzaamheid</a>
+          <a href="/vacatures/">Werken bij De Kievit</a>
+          <a href="/erkende-verhuizer/">Erkende Verhuizer</a>
+          <a href="/certificeringen/">Certificeringen</a>
+          <a href="/verzekering/">Verzekering</a>
+          <a href="/klachtenregeling/">Klachtenregeling</a>
+          <a href="/klantervaringen/">Klantervaringen</a>
+          <a href="/veelgestelde-vragen/">Veelgestelde vragen</a>
+        </details>
+        <details class="drawer__group">
+          <summary>Verhuizen</summary>
+          <a href="/particulier-verhuizen/">Particuliere verhuizing</a>
+          <a href="/internationale-verhuizing/">Internationale verhuizing</a>
+          <a href="/seniorenverhuizing/">Seniorenverhuizing</a>
+          <a href="/spoedverhuizing/">Spoedverhuizing</a>
+          <a href="/inpakservice/">Inpakservice</a>
+          <a href="/montage-demontage/">Montage en demontage</a>
+          <a href="/inboedelopslag/">Inboedelopslag</a>
+          <a href="/zorgverhuizing/">Zorgverhuizing</a>
+          <a href="/piano-verhuizen/">Piano verhuizen</a>
+          <a href="/antiek-en-kunst-verhuizen/">Antiek en kunst</a>
+          <a href="/kantoorverhuizing/">Kantoorverhuizing</a>
+        </details>
+        <details class="drawer__group">
+          <summary>Voorbereiden</summary>
+          <a href="/verhuischecklist/">Verhuischecklist</a>
+          <a href="/inpaktips/">Inpaktips</a>
+          <a href="/dozencalculator/">Dozencalculator</a>
+          <a href="/m3-calculator/">M3-calculator</a>
+        </details>
+        <a class="drawer__link" href="/contact/">Contact</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--goud btn--groen drawer__cta" href="/#offerte">Vrijblijvende verhuisofferte</a>
+      <a class="drawer__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <a class="drawer__wa" href="https://wa.me/31773232100" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons via WhatsApp</a>
+    </div>
+  </div>
+  <button class="drawer__scrim" id="navScrim" tabindex="-1" aria-hidden="true"></button>
+</div>
+
+<main id="top" tabindex="-1">
+
+<section class="pk">
+  <div class="wrap">
+    <nav class="pk__kruim" aria-label="Kruimelpad">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><span aria-current="page">Toegankelijkheid</span></li>
+      </ol>
+    </nav>
+    <h1>Toegankelijkheid</h1>
+  </div>
+</section>
+
+<nav class="jurtoc" aria-label="Op deze pagina">
+  <div class="wrap">
+    <ul class="jurtoc__lijst">
+      <li><a href="#waarover">Waar dit over gaat</a></li>
+      <li><a href="#gedaan">Wat wij hebben gedaan</a></li>
+      <li><a href="#beperkingen">Bekende beperkingen</a></li>
+      <li><a href="#zelf">Wat u zelf kunt instellen</a></li>
+      <li><a href="#hulp">Loopt u toch vast</a></li>
+      <li><a href="#onderhoud">Onderhoud van deze pagina</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="jur" aria-label="Toegankelijkheid">
+  <div class="wrap">
+    <div class="jur__intro">
+      <p>Deze pagina gaat over de bruikbaarheid van deze website voor bezoekers die hem anders bedienen dan met een muis op een groot scherm. Hieronder staat wat wij hebben ingebouwd, wat nog niet goed is en wat u zelf kunt instellen.</p>
+      <p>Wij houden het eerlijk. Alles wat hier staat, hebben wij zelf nagekeken in de code van de site. Wat wij niet hebben gecontroleerd, staat hieronder als beperking en niet als belofte.</p>
+      <p class="jur__versie">Versie 30 augustus 2026</p>
+    </div>
+
+    <section class="jur__blok" id="waarover">
+      <h2><span class="jur__nr">1.</span> Waar deze verklaring over gaat en voor wie</h2>
+      <p>Deze verklaring gaat over de pagina's van deze website. Zij is geschreven voor bezoekers die de site op een andere manier gebruiken dan met muis en beeldscherm.</p>
+      <ul class="jur__lijst">
+        <li><b>Met het toetsenbord.</b> U bedient de site met Tab, Enter, de spatiebalk en Escape, bijvoorbeeld omdat een muis of trackpad niet werkt voor u.</li>
+        <li><b>Met een schermlezer.</b> Uw computer, telefoon of tablet leest de pagina voor.</li>
+        <li><b>Vergroot.</b> U zet de tekst groter of zoomt in omdat u anders te weinig ziet.</li>
+        <li><b>Rustig.</b> U heeft last van bewegend beeld en heeft in uw apparaat ingesteld dat animaties beperkt moeten worden.</li>
+      </ul>
+      <h3>Dit is een vrijwillige verklaring</h3>
+      <p>Een toegankelijkheidsverklaring is wettelijk verplicht voor overheidsinstellingen. Wij zijn een verhuisbedrijf en vallen daar niet onder. Wij publiceren deze pagina uit eigen beweging, omdat een deel van onze klanten ouder is of minder goed ziet, en omdat wij vinden dat u moet kunnen nagaan wat een site wel en niet doet. U kunt er dus geen wettelijke aanspraak aan ontlenen, wel een eerlijk beeld.</p>
+      <h3>Waar deze verklaring niet over gaat</h3>
+      <p>Wij linken op een aantal plekken naar sites van anderen, bijvoorbeeld naar Klantenvertellen, naar de ledenpagina van Erkende Verhuizers, naar Top Movers en naar WhatsApp. Over de toegankelijkheid van die sites gaat deze verklaring niet, want daar hebben wij geen invloed op. Ook het offerteformulier verstuurt via een dienst van een andere partij; wat er daarna met uw gegevens gebeurt, leest u in ons <a href="/privacybeleid/">privacybeleid</a>.</p>
+    </section>
+
+    <section class="jur__blok" id="gedaan">
+      <h2><span class="jur__nr">2.</span> Wat wij hebben gedaan</h2>
+      <p>De punten hieronder hebben wij stuk voor stuk in de code van deze site teruggezocht voordat wij ze opschreven.</p>
+      <h3>Structuur en tekst</h3>
+      <ul class="jur__lijst">
+        <li><b>Nederlands ingesteld.</b> Elke pagina geeft door dat de tekst Nederlands is, zodat voorleessoftware de goede uitspraak en de goede stem kiest.</li>
+        <li><b>Een eigen titel per pagina.</b> Geen enkele pagina heet hetzelfde als een andere. In uw tabbladen en in uw browsergeschiedenis ziet u dus waar u bent.</li>
+        <li><b>Een hoofdkop per pagina.</b> Elke pagina heeft precies een grote kop bovenaan die vertelt waar de pagina over gaat.</li>
+        <li><b>Koppen in de goede volgorde.</b> Onder de hoofdkop zakken de koppen netjes een niveau per keer. Nergens op de site wordt een niveau overgeslagen. Met een schermlezer kunt u zo van kop naar kop springen en de pagina in een minuut overzien.</li>
+        <li><b>Kruimelpad en menu met een naam.</b> Het hoofdmenu, het menu op mobiel en het kruimelpad boven de kop hebben elk een eigen aanduiding, zodat voorleessoftware ze uit elkaar houdt.</li>
+        <li><b>De inhoud in een apart gebied.</b> De eigenlijke inhoud van elke pagina staat in een afgebakend hoofdgebied, los van de balk bovenaan en de voettekst.</li>
+      </ul>
+      <h3>Beeld</h3>
+      <ul class="jur__lijst">
+        <li><b>Alle afbeeldingen hebben een alt-tekst.</b> Van de ruim negenhonderd afbeeldingen op de site heeft er geen enkele een ontbrekende alt-tekst.</li>
+        <li><b>Vertellend beeld is beschreven.</b> Foto's die iets toevoegen hebben een omschrijving van wat er te zien is, bijvoorbeeld dat een verhuizer servies inpakt in een keuken.</li>
+        <li><b>Versiering wordt overgeslagen.</b> Achtergronden, logo's in vlakken, sterren en iconen hebben een lege alt-tekst of staan op verborgen voor voorleessoftware. Zo hoort u niet bij elke pagina dezelfde decoratie voorbijkomen.</li>
+        <li><b>Logo's die een link zijn, worden benoemd.</b> De keurmerklogo's onderin zijn links zonder zichtbare tekst. Zij ontlenen hun naam aan de alt-tekst van het logo, zodat een schermlezer bijvoorbeeld voorleest dat de link naar de ledenpagina van Erkende Verhuizers gaat.</li>
+      </ul>
+      <h3>Bediening zonder muis</h3>
+      <ul class="jur__lijst">
+        <li><b>Een link om de kop over te slaan.</b> Drukt u op een pagina meteen op Tab, dan verschijnt linksboven de link "Direct naar de inhoud". Met Enter springt u daarmee voorbij het logo, het menu, de beoordeling en de knoppen, rechtstreeks naar de tekst van de pagina.</li>
+        <li><b>Die link is ook echt te zien.</b> Hij staat buiten beeld tot u hem met Tab bereikt en schuift dan als donker blokje met lichte tekst onder de bovenrand vandaan, met een eigen focusrand eromheen. Hij is nooit helemaal weggezet, dus voorleessoftware vindt hem ook. Na de sprong zit de focus in het inhoudsgebied zelf, dus u leest verder bij de tekst en niet opnieuw bij het menu.</li>
+        <li><b>De pagina waar u bent, wordt aangekondigd.</b> In het menu, in het uitschuifmenu op mobiel en in het kruimelpad is de huidige pagina als zodanig gemarkeerd, zodat voorleessoftware hem als de huidige pagina noemt.</li>
+        <li><b>Aan of uit wordt doorgegeven.</b> Bij de faseknoppen en de filterknoppen van <a href="/verhuischecklist/">de verhuischecklist</a> geven wij de stand door aan voorleessoftware, dus u hoort welke fase en welk filter aan staan. Dat blijft ook kloppen als u wisselt.</li>
+        <li><b>Zichtbare focus.</b> Waar u met Tab staat, komt een dikke gekleurde rand omheen, met wat ruimte ertussen. Dat geldt voor links, knoppen, uitklapkoppen en invoervelden.</li>
+        <li><b>Niets verdwijnt achter de onderbalk.</b> Op een telefoon staat onderaan een vaste balk met bellen en offerte. De pagina houdt daar ruimte voor vrij bij het scrollen, zodat het onderdeel waar u met Tab op staat er niet achter schuift.</li>
+        <li><b>Het menu klapt open met Tab.</b> De uitklapmenu's bovenin openen niet alleen als u er met de muis overheen gaat, maar ook zodra u er met het toetsenbord in komt, en sluiten weer als u ze verlaat.</li>
+        <li><b>Escape sluit.</b> Een druk op Escape sluit de opengeklapte menu's en ook het uitschuifmenu op mobiel.</li>
+        <li><b>Het uitschuifmenu houdt de focus vast.</b> Staat het menu op mobiel open, dan blijft u met Tab binnen dat menu in plaats van erachter te verdwalen. Bij openen springt de focus naar de sluitknop, bij sluiten keert hij terug naar de knop waarmee u het menu opende.</li>
+        <li><b>Uitklapblokken van de browser zelf.</b> De vragen en antwoorden en de blokken in het mobiele menu zijn gewone uitklapelementen van de browser. Die openen met Enter of de spatiebalk, kondigen zichzelf aan als open of dicht, en werken ook als onze eigen code niet laadt.</li>
+        <li><b>Echte knoppen.</b> De knoppen in de calculators en in de verhuischecklist zijn echte knoppen en geen aanklikbare vlakken. U bereikt ze dus met Tab.</li>
+        <li><b>Geen omgegooide tabvolgorde.</b> Nergens op de site is een onderdeel handmatig naar voren gehaald in de volgorde waarin u tabt. U loopt de pagina af in de volgorde waarin hij is opgeschreven.</li>
+        <li><b>Meldingen worden voorgelezen.</b> Op plaatsen waar er iets verandert zonder dat de pagina herlaadt, bijvoorbeeld de uitkomst van een calculator of de bevestiging na het versturen van het formulier, geven wij die verandering door aan voorleessoftware.</li>
+      </ul>
+      <h3>Kleur en beweging</h3>
+      <ul class="jur__lijst">
+        <li><b>Contrast doorgerekend.</b> Wij hebben de kleurcombinaties van deze site nagerekend tegen de eis van 4,5 op 1 voor gewone tekst en 3 op 1 voor grote tekst en vormen. De tekst staat vrijwel overal op een vlakke kleur, en die paren zijn uit te rekenen. Op een plek kan dat niet: de menubalk bovenaan is doorzichtig en ligt over de foto, dus daar bestaat geen vast kleurenpaar. Die balk hebben wij op 30 augustus 2026 gemeten op de beeldpunten die er werkelijk uitkomen, op twaalf pagina's en bij twee schermbreedtes, waarbij per woord de ongunstigste plek in de foto telt. Elk woord haalt daar nu de eis; zonder de donkere band die wij eronder hebben gezet, zakte bijna de helft van die woorden eronder. Het regeltje "beoordelingen, 99% beveelt aan" op het teal vlak van het offerteblok haalde de eis eerder niet; dat staat nu op dekkend wit en komt daarmee op 4,81 op 1. De opvallende gele knop haalt als vlak zelf maar 1,29 op 1 tegen de cremekleurige achtergrond, maar heeft een donkerder rand die op 3,03 op 1 uitkomt en daarmee wel aan de eis voor vormen voldoet.</li>
+        <li><b>Beweging beperken werkt.</b> Heeft u in uw apparaat ingesteld dat beweging beperkt moet worden, dan zetten wij de verschijn-animaties uit, springt de pagina direct naar een anker in plaats van er zacht naartoe te scrollen, en speelt de film in de kop van de homepage niet. Ook het uitschuifmenu, de twee draaiende pijlpunten, de balk bovenaan met het beoordelingscijfer erin en de dienstkaarten zelf blijven dan stil.</li>
+        <li><b>De film is stop te zetten.</b> Achter de titel op de homepage speelt op een groot scherm een korte film zonder geluid van vijfendertig seconden, die zichzelf herhaalt. Rechtsboven in dat beeld staat een knop om hem te pauzeren en weer te starten, met Tab te bereiken, en een schermlezer hoort of die knop ingedrukt staat. Op een telefoon of smal scherm speelt hij sowieso niet, en ook niet als u beweging heeft beperkt.</li>
+        <li><b>Geen geluid.</b> Er start nergens op de site geluid.</li>
+      </ul>
+      <h3>Formulieren en lezen</h3>
+      <ul class="jur__lijst">
+        <li><b>Elk veld heeft een label.</b> In het offerteformulier hoort bij elk veld een naam die er ook echt aan gekoppeld is, ook bij het datumveld. Tikt u op de tekst boven of naast een vakje, dan springt de cursor in het veld.</li>
+        <li><b>Foutmeldingen horen bij het veld.</b> Vergeet u een verplicht veld of vult u een e-mailadres in dat niet klopt, dan verschijnt onder de verzendknop een lijstje met wat er ontbreekt, springt de aandacht daarheen, en wordt elk veld dat fout is als fout gemarkeerd en aan zijn eigen melding gekoppeld. Het regeltje in het lijstje is bovendien een link naar het veld zelf. Vult u het veld alsnog goed in, dan verdwijnt die melding meteen.</li>
+        <li><b>De fout is ook te zien.</b> Een fout veld krijgt een gekleurde ring, dus u hoeft niet af te gaan op kleur alleen.</li>
+        <li><b>Ook zonder JavaScript wordt er gecontroleerd.</b> Werkt onze code niet, dan doet de browser de controle op verplichte velden zelf. Dat geldt op alle 28 pagina's waar het formulier op staat.</li>
+        <li><b>Uw browser mag invullen.</b> De velden voor naam, telefoonnummer, e-mailadres en adres zijn zo ingesteld dat uw browser ze kan voorinvullen. U hoeft ze dus niet allemaal met de hand in te tikken.</li>
+        <li><b>Zoomen is niet geblokkeerd.</b> Wij zetten nergens een rem op knijpzoomen of inzoomen.</li>
+        <li><b>Geen vaste basislettergrootte.</b> De site legt de lettergrootte van de pagina niet vast op een aantal beeldpunten, dus de instelling van uw browser telt mee. Op een aantal plekken lukt dat nog niet, zie de beperkingen hieronder.</li>
+        <li><b>Geen cookiebanner in de weg.</b> Deze site zet zelf geen cookies, dus er verschijnt geen venster dat u eerst moet wegklikken voordat u iets kunt lezen. Meer daarover staat in ons <a href="/cookiebeleid/">cookiebeleid</a>.</li>
+        <li><b>De inhoud staat er ook zonder JavaScript.</b> De teksten, links, foto's, koppen en het offerteformulier staan gewoon in de pagina. Zet u JavaScript uit of laadt het niet, dan blijft de inhoud leesbaar en verstuurbaar. Wat dan niet meer werkt, staat bij de beperkingen.</li>
+        <li><b>Tabellen met kopcellen.</b> Alle zes tabellen op de site hebben per kolom en waar nodig per rij een kopcel, zodat voorleessoftware bij een waarde noemt waar die bij hoort.</li>
+        <li><b>De checklist gaat compleet op papier.</b> Drukt u de verhuischecklist af, dan verdwijnen de balk, de knoppen en de voettekst en komen alle zes fasen onder elkaar op papier te staan. Handig als u liever met een pen afvinkt.</li>
+      </ul>
+    </section>
+
+    <section class="jur__blok" id="beperkingen">
+      <h2><span class="jur__nr">3.</span> Bekende beperkingen</h2>
+      <p>Dit deel is minstens zo belangrijk als het vorige. Hieronder staat wat wij nog niet goed hebben, of nog niet hebben laten nakijken.</p>
+      <h3>Niet getoetst door een ander</h3>
+      <ul class="jur__lijst">
+        <li><b>Geen externe toets.</b> Deze site is niet door een onafhankelijk bureau of door ervaringsdeskundigen op toegankelijkheid onderzocht. Wij claimen daarom geen niveau A, AA of AAA van de richtlijn WCAG. Wat hier staat, is ons eigen onderzoek in onze eigen code.</li>
+        <li><b>Niet getest met echte hulpmiddelen.</b> Wij hebben de site niet doorgelopen met een schermlezer, een brailleleesregel of spraakbediening. Wat wij hebben nagekeken, is de code en de kleuren.</li>
+        <li><b>Gemeten op de bouwversie.</b> Deze verklaring is opgesteld terwijl de site nog werd gebouwd. Na publicatie kijken wij de punten opnieuw na.</li>
+      </ul>
+      <h3>Wat er in de site zelf nog ontbreekt</h3>
+      <ul class="jur__lijst">
+        <li><b>Een deel van de tekst schaalt niet mee.</b> Op tweeentwintig plaatsen in de opmaak staat de lettergrootte in beeldpunten in plaats van in een meeschalende maat. Dat raakt de verhuischecklist, de inpaktips, het korte offerteblok bovenaan, de sterrenrijen en het Google-balkje bij het formulier. Stelt u in uw browser een grotere basisletter in, dan wordt die tekst niet groter. Inzoomen met Ctrl of Cmd en de plus werkt daar wel gewoon.</li>
+        <li><b>Een paar kleine bewegingen blijven doorlopen.</b> Zet u beweging op beperkt, dan staan de grote bewegingen stil, maar vier kleine niet: het plusje en minnetje bij de vragen, het pijltje in de uitklapblokken van het mobiele menu, het uitklapmenu op grote schermen dat een klein stukje inschuift, en het pijltje dat in een dienstkaart opzij schuift.</li>
+        <li><b>Op de homepage staat niet dat u er bent.</b> De markering van de huidige pagina werkt op de 33 pagina's die in het menu staan. De homepage zelf heeft geen menuregel die naar zichzelf wijst, dus daar ontbreekt die markering.</li>
+        <li><b>Links naar andere sites melden dat niet.</b> Op de hele site openen ruim zeshonderd links in een nieuw tabblad, bijvoorbeeld naar Klantenvertellen of naar WhatsApp. In de linktekst staat niet dat dat gebeurt, dus dat kan onverwacht zijn.</li>
+        <li><b>Twee tabellen missen een bijschrift.</b> Van de zes tabellen op de site heeft er een een echt bijschrift en zijn er drie verbonden met een regel erboven die vertelt waar de tabel over gaat. De twee tabellen op de pagina met de algemene voorwaarden hebben geen van beide. Kopcellen hebben ze alle zes wel.</li>
+      </ul>
+      <h3>Wat er zonder JavaScript wegvalt</h3>
+      <ul class="jur__lijst">
+        <li><b>Het menu op telefoon en tablet.</b> Op schermen smaller dan ongeveer 1024 beeldpunten zit de navigatie achter de menuknop, en die knop werkt alleen met JavaScript. Werkt dat niet, gebruik dan de links onderaan elke pagina of de <a href="/sitemap/">sitemap</a>, daar staat alles op een rij.</li>
+        <li><b>De verhuischecklist is dan onvolledig.</b> Van de zes fasen is er zonder JavaScript maar een zichtbaar, en de faseknoppen en filters doen niets. Afvinken werkt dan wel, maar wordt niet bewaard. Afdrukken geeft wel alle zes fasen.</li>
+        <li><b>De calculators rekenen dan niet.</b> De <a href="/dozencalculator/">dozencalculator</a> en de <a href="/m3-calculator/">m3-calculator</a> rekenen in uw eigen browser en hebben JavaScript nodig. Bel of mail ons gerust, dan schatten wij het samen met u in.</li>
+      </ul>
+    </section>
+
+    <section class="jur__blok" id="zelf">
+      <h2><span class="jur__nr">4.</span> Wat u zelf kunt instellen</h2>
+      <p>Onderstaande instellingen zitten in uw eigen browser of apparaat en werken op deze site zoals ze horen te werken.</p>
+      <h3>Tekst groter maken</h3>
+      <ul class="jur__lijst">
+        <li><b>Inzoomen.</b> Houd Ctrl ingedrukt en druk op de plustoets, op een Mac is dat Cmd en de plustoets. Met de mintoets gaat u terug en met de nul zet u de zoom weer op honderd procent.</li>
+        <li><b>Knijpen.</b> Op een telefoon of tablet kunt u met twee vingers uitknijpen. Wij blokkeren dat niet.</li>
+        <li><b>Een grotere basisletter.</b> In de instellingen van uw browser kunt u een grotere standaardletter kiezen. De meeste tekst op deze site groeit daarin mee, op de plaatsen na die bij de beperkingen staan.</li>
+      </ul>
+      <h3>De site zonder muis bedienen</h3>
+      <ul class="jur__lijst">
+        <li><b>Tab en Shift met Tab.</b> Met Tab gaat u naar het volgende onderdeel, met Shift en Tab weer terug. Waar u staat, is te zien aan de gekleurde rand.</li>
+        <li><b>De eerste Tab.</b> Bovenaan elke pagina krijgt u eerst "Direct naar de inhoud". Met Enter slaat u het logo, het menu en de knoppen over en begint u bij de tekst.</li>
+        <li><b>Enter.</b> Volgt een link of drukt een knop in.</li>
+        <li><b>Spatiebalk of Enter.</b> Klapt een vraag of een menublok open en weer dicht.</li>
+        <li><b>Escape.</b> Sluit het opengeklapte menu.</li>
+        <li><b>Pijltjestoetsen.</b> Scrollen de pagina op en neer als u niet in een veld staat.</li>
+      </ul>
+      <h3>De pagina laten voorlezen</h3>
+      <p>Alle gangbare apparaten hebben ingebouwde voorleessoftware, die u aanzet bij de toegankelijkheidsinstellingen: VoiceOver op een Mac, iPhone of iPad, Verteller op Windows en TalkBack op Android. Daarnaast hebben de meeste browsers een leesweergave die de tekst uit de pagina haalt en groot en rustig toont.</p>
+      <h3>Beweging uitzetten</h3>
+      <p>Zet in de toegankelijkheidsinstellingen van uw apparaat de optie aan die beweging vermindert of animaties uitzet. Deze site luistert daarnaar: de blokken verschijnen dan direct, de pagina springt zonder te schuiven naar een anker en de film in de kop speelt niet. Wilt u de film alleen even stilzetten, gebruik dan de pauzeknop rechtsboven in het beeld.</p>
+      <h3>Als iets niet lukt</h3>
+      <p>Komt u er met bovenstaande niet uit, dan hoeft u niet door te blijven proberen. U hoeft niets via deze website te regelen. Bel of mail ons, dan doen wij het samen met u. Hoe dat gaat, staat hieronder.</p>
+    </section>
+
+    <section class="jur__blok" id="hulp">
+      <h2><span class="jur__nr">5.</span> Loopt u toch vast</h2>
+      <p>Lukt het invullen van het formulier niet, of komt u ergens anders op de site niet doorheen, neem dan gewoon contact op. Wij nemen de aanvraag telefonisch met u door en vullen hem aan onze kant in. Wilt u liever iemand aan tafel, dan komt een van onze verhuisadviseurs bij u langs om de inboedel op te nemen. Dat bezoek kost u niets en u zit nergens aan vast.</p>
+      <p>Vertel er kort bij waar het misging, bijvoorbeeld welke pagina het was en welk hulpmiddel u gebruikt. Dan kunnen wij het niet alleen voor u oplossen, maar ook op de site herstellen.</p>
+      <div class="jur__kaart">
+        <p><b>De Kievit Verhuizingen</b></p>
+        <p>Van Coehoornstraat 11, 5916 PH Venlo</p>
+        <p>Telefoon <a href="tel:0773232100">077 - 32 32 100</a></p>
+        <p>E-mail <a href="mailto:info@de-kievit.nl">info@de-kievit.nl</a></p>
+        <p>Kantoor open maandag tot en met vrijdag van 08:00 tot 17:00 uur</p>
+      </div>
+      <p>Alle manieren om ons te bereiken staan op <a href="/contact/">de contactpagina</a>. Gaat het niet over deze website maar over een verhuizing die is misgegaan, kijk dan bij <a href="/klachtenregeling/">de klachtenregeling</a>.</p>
+    </section>
+
+    <section class="jur__blok" id="onderhoud">
+      <h2><span class="jur__nr">6.</span> Hoe wij aan deze verklaring werken</h2>
+      <p>Deze verklaring is opgesteld op 29 augustus 2026, tijdens de bouw van deze website, en op 30 augustus 2026 opnieuw nagelopen nadat wij een ronde punten hadden hersteld. Zij is gebaseerd op eigen onderzoek in de opmaak, de opmaakregels en de scripts van de site. Er ligt geen rapport van een extern bureau onder.</p>
+      <ul class="jur__lijst">
+        <li><b>Wat hersteld is, verhuist naar blok 2.</b> De link om de kop over te slaan, het aankondigen van de huidige pagina, de aan- en uitstand van de checklistknoppen, de foutmeldingen bij de velden, de pauzeknop bij de film en de focus die achter de onderbalk verdween stonden in een eerdere versie van deze pagina nog bij de beperkingen. Wat nu nog in blok 3 staat, is dus echt open.</li>
+        <li><b>De bouw controleert een deel automatisch.</b> Bij het genereren van de site wordt op elke pagina nagegaan of de overslaan-link er staat, of het inhoudsgebied aanspringbaar is, of elk formulier zijn foutenlijst heeft en of de checklistknoppen hun aan- en uitstand doorgeven. Klopt daar iets niet, dan komt de site niet door de controle. Zo kan een nieuwe pagina dit niet stilletjes verliezen.</li>
+        <li><b>Wij kijken opnieuw na als de site verandert.</b> Komt er een pagina bij, gaat er een blok anders werken of veranderen de kleuren, dan lopen wij deze punten opnieuw langs en zetten wij een nieuwe datum bovenaan.</li>
+        <li><b>Uw melding telt mee.</b> Loopt u ergens tegenaan, dan is dat voor ons de snelste manier om te weten wat er echt in de weg zit. Wij nemen uw melding op in de lijst hierboven.</li>
+        <li><b>Een externe toets staat nog niet gepland.</b> Zodra wij de site door iemand anders laten nakijken, vermelden wij dat hier, met de datum en wat eruit kwam.</li>
+      </ul>
+      <p>Vragen over deze pagina kunt u stellen via <a href="mailto:info@de-kievit.nl">info@de-kievit.nl</a> of op <a href="tel:0773232100">077 - 32 32 100</a>.</p>
+    </section>
+  </div>
+</section>
+
+
+
+
+
+</main>
+
+<footer class="footer">
+  <div class="footer__media" aria-hidden="true">
+    <img src="/assets/img/footer-avond-1600.webp" srcset="/assets/img/footer-avond-900.webp 900w, /assets/img/footer-avond-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1073" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <div class="footer__claim">
+      <p class="eyebrow">De Kievit Verhuizingen</p>
+      <h2>Zorgeloos verhuizen begint met een belletje</h2>
+      <p>Vertel waar u vandaan komt en waar u heen gaat, dan rekenen wij de rest uit. Weet u nog niet alles zeker? Vul in wat u wel weet, de rest nemen wij telefonisch met u door.</p>
+      <a class="footer__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <div class="footer__knoppen">
+        <a class="btn btn--goud btn--lg" href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="btn btn--wa btn--lg btn--groen" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20stuur%20u%20foto%27s%20van%20mijn%20woning%20voor%20een%20prijsindicatie." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons de foto's</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__onder">
+    <div class="wrap">
+      <div class="footer__rooster">
+        <div>
+          <p>De Kievit Verhuizingen is Erkende Verhuizer en aangesloten bij Top Movers, een landelijk samenwerkingsverband van erkende verhuisbedrijven. Sinds 1 juni 2024 onderdeel van De Bresser Verhuizingen.</p>
+        </div>
+        <div>
+          <h2>Venlo</h2>
+          <address>De Kievit Verhuizingen<br>Van Coehoornstraat 11<br>5916 PH Venlo<br><a href="mailto:info@de-kievit.nl">info@de-kievit.nl</a></address>
+          <p>ma t/m vr 08:00 - 17:00<br>verhuizen in het weekend in overleg</p>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul>
+            <li><a href="/particulier-verhuizen/">Particuliere verhuizing</a></li>
+            <li><a href="/kantoorverhuizing/">Kantoorverhuizing</a></li>
+            <li><a href="/inboedelopslag/">Inboedelopslag</a></li>
+            <li><a href="/inpakservice/">Inpakservice</a></li>
+            <li><a href="/montage-demontage/">Montage en demontage</a></li>
+            <li><a href="/internationale-verhuizing/">Internationale verhuizing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Meer</h2>
+          <ul>
+            <li><a href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow">Ledenpagina Erkende Verhuizers</a></li>
+            <li><a href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow">Reviews op Klantenvertellen</a></li>
+            <li><a href="https://www.topmovers.nl/" target="_blank" rel="noopener">Top Movers</a></li>
+            <li><a href="https://www.debresser.nl/" target="_blank" rel="noopener">De Bresser Verhuizingen</a></li>
+            <li><a href="https://nl.linkedin.com/company/de-kievit-verhuizingen" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__merken">
+        <a class="merk merk--ev" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow"><img src="/assets/img/keurmerk/erkende-verhuizers-mono.svg" alt="Erkende Verhuizers, ledenpagina De Kievit" width="165" height="80" loading="lazy" decoding="async"></a>
+        <span class="merk merk--kievit"><img src="/assets/img/deco/logo-kievit-wit.svg" alt="De Kievit Verhuizingen" width="1520" height="1040" loading="lazy" decoding="async"></span>
+        <a class="merk merk--tm" href="https://www.topmovers.nl/" target="_blank" rel="noopener"><img src="/assets/img/deco/logo-topmovers-wit.svg" alt="Top Movers" width="813" height="387" loading="lazy" decoding="async"></a>
+        <a class="merk merk--niwo" href="/certificeringen/"><img src="/assets/img/keurmerk/niwo-wit.webp" alt="NIWO, Eurovergunning op naam van De Bresser Verhuizingen" width="249" height="102" loading="lazy" decoding="async"></a>
+        <a class="merk merk--vca" href="/certificeringen/"><img src="/assets/img/keurmerk/vca-wit.webp" alt="VCA, binnen het certificeringstraject van Top Movers" width="267" height="120" loading="lazy" decoding="async"></a>
+        <a class="merk merk--iso" href="/certificeringen/"><img src="/assets/img/keurmerk/iso9001-wit.webp" alt="ISO 9001, certificaat op naam van Top Movers Nederland" width="174" height="174" loading="lazy" decoding="async"></a>
+        <a class="merk merk--iso" href="/certificeringen/"><img src="/assets/img/keurmerk/iso14001-wit.webp" alt="ISO 14001, certificaat op naam van Top Movers Nederland" width="174" height="174" loading="lazy" decoding="async"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__balk">
+    <div class="wrap">
+      <small>&copy; 2026 De Kievit Verhuizingen &middot; Onderdeel van De Bresser Verhuizingen B.V. &middot; KvK 18014730 &middot; Btw-id NL0055.15.452.B.01 &middot; Uw Venlose vakverhuizer sinds 1910</small>
+      <div class="footer__legal">
+        <a href="/algemene-voorwaarden/">Algemene voorwaarden</a>
+        <a href="/privacybeleid/">Privacybeleid</a>
+        <a href="/cookiebeleid/">Cookiebeleid</a>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="/toegankelijkheid/">Toegankelijkheid</a>
+        <a href="/sitemap/">Sitemap</a>
+        <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
+      </div>
+    </div>
+  </div>
+  <img src="/assets/img/deco/bij.svg" alt="" width="133" height="68" loading="lazy" decoding="async" class="art-6">
+</footer>
+
+<div class="mcta" aria-label="Snel contact">
+  <a class="btn btn--lijn" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bellen</a>
+  <a class="btn btn--ant btn--groen" href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte</a>
+</div>
+
+<script>
+// Reveal zodra een blok in beeld komt.
+(function(){
+  var el=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  var gr=[].slice.call(document.querySelectorAll('[data-reveal-groep]'));
+  function aan(){el.forEach(function(e){e.classList.add('in')});gr.forEach(function(g){[].forEach.call(g.children,function(k){k.classList.add('in')})})}
+  if(!('IntersectionObserver' in window)){aan();return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  el.forEach(function(e){io.observe(e)});
+  var ioG=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;[].forEach.call(x.target.children,function(k,i){k.style.transitionDelay=Math.min(i*70,560)+'ms';k.classList.add('in')});ioG.unobserve(x.target)})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  gr.forEach(function(g){ioG.observe(g)});
+})();
+// Balk wordt solide zodra je scrolt (zelfde regel als op de homepage).
+(function(){var b=document.getElementById('topbar');
+ var f=function(){b.classList.toggle('is-stuck',window.scrollY>40)};f();addEventListener('scroll',f,{passive:true})})();
+</script>
+</body>
+</html>

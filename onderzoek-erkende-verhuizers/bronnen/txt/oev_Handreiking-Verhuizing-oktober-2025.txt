@@ -1,0 +1,826 @@
+HANDREIKING
+Deze handreiking, een initiatief van de Code Verantwoordelijk Marktgedrag, biedt organisaties een
+praktische leidraad voor het inhuren van verhuisdiensten, met als doel een verantwoorde, duurzame
+en succesvolle samenwerking. De handreiking legt de nadruk op het formuleren van
+duidelijke afspraken, het stellen van kwaliteitscriteria en het hanteren van eerlijke prijsstructuren,
+waarbij zowel de belangen van de opdrachtgever als de opdrachtnemer in balans worden
+gehouden. De handreiking gaat in op kwaliteitscriteria als gasttevredenheid en conceptuele
+invulling. Hiermee kunnen verhuizers (verhuisbedrijven) zich onderscheiden op kwaliteit.
+
+Belangrijke aandachtspunten zijn de kwaliteit van de dienstverlening, duurzaamheid en
+maatschappelijke verantwoordelijkheid. De handreiking benadrukt niet alleen het belang van
+klanttevredenheid, maar ook van goed werkgeverschap. Dit houdt in dat de opdrachtnemer
+verantwoordelijk is voor eerlijke arbeidsomstandigheden en het welzijn van zijn personeel.
+Daarnaast wordt het sociale aspect benadrukt, waarbij aandacht is voor de ontwikkeling van
+medewerkers en het bevorderen van een positieve werkcultuur.
+
+In lijn met de Code worden daarnaast duurzame keuzes bevorderd, zoals het kiezen voor
+leveranciers die zich inzetten voor milieuverantwoordelijkheid en sociale rechtvaardigheid.
+De handreiking moedigt ook de inzet van technologie aan, bijvoorbeeld door het verzamelen van
+feedback en het monitoren van prestaties, om de samenwerking continu te verbeteren.
+
+Het uiteindelijke doel van deze handreiking is het bevorderen van een eerlijke, transparante en
+maatschappelijk verantwoorde inkoop van verhuisdiensten, waarbij zowel de kwaliteit van de
+dienstverlening als de werkomstandigheden van de medewerkers centraal staan. Door heldere
+afspraken en een gezamenlijke inzet voor duurzaamheid en sociale verantwoordelijkheid, kunnen
+zowel de opdrachtgever als de opdrachtnemer een langdurige en succesvolle samenwerking
+realiseren.
+
+
+
+
+   Code Verantwoordelijk Marktgedrag, 2025
+   Voor het realiseren van deze handreiking heeft de Code Verantwoordelijk Marktgedrag een subsidie
+   ontvangen van het Ministerie van BZK.
+
+   Auteurs            Public Procurement Research Center
+                      Laura Bosman, MSc MSc
+                      Ir. Jonna van der Krift
+                      Em. Prof. dr. Jan Telgen
+                      Herziene versie 2025: Hub Keulen
+
+   Informatie         info@codevm.nl
+   Versie             2025
+Inhoudsopgave
+1.     Introductie                                                         1
+
+
+
+2.     Vaststellen van de opdracht en selecteren van dienstverleners       3
+
+2.1.   Een goede opdrachtomschrijving is de basis om passende aanbieders   3
+       te selecteren
+
+2.2.   Vaststellen geschiktheidseisen: alleen geschikte dienstverleners    4
+       dingen mee
+
+
+
+3.     Formuleren van kwaliteitscriteria en daar op beoordelen             6
+
+3.1.   Kwaliteitscriteria                                                  6
+
+3.1.1. Plan van aanpak                                                     6
+
+3.1.2. Communicatie                                                         7
+
+3.1.3. Aandacht en respect voor in te zetten medewerkers                    7
+
+3.1.4. Duurzaamheid                                                        8
+
+3.1.5 Waar let je op bij beoordelen?                                       9
+
+
+
+4.     Vormgeven van de prijsaanbieding                                    10
+
+4.1.   Uitvragen van de prijsaanbieding                                    10
+
+4.1.1. Tarieven voor personeel                                             10
+
+4.1.2. Tarieven voor materiaal                                             11
+
+4.1.3. Tarieven voor transport                                             11
+
+4.2.   Weegfactoren in prijsaanbiedingen                                   12
+
+5.     Contractmanagement                                                  13
+     1. Introductie
+        Het aangaan van een overeenkomst voor verhuisdiensten moet iets opleveren voor alle
+        betrokkenen. De opdrachtgever krijgt waar voor zijn geld, de opdrachtnemer realiseert een
+        gezond rendement en de medewerkers van opdrachtnemer worden gewaardeerd om hun
+        vakmanschap. Een dergelijke succesvolle relatie is het resultaat van verantwoordelijk
+        marktgedrag.
+
+        De Code Verantwoordelijk Marktgedrag stelt zich tot doel om dit gedrag te stimuleren. De Code
+        doet een moreel appel op opdrachtgevers, opdrachtnemers, inleners, vakbonden en
+        intermediairs. Elk van deze partijen heeft een rol in het sociaal verantwoord en met respect voor
+        kwaliteit uitzetten, aannemen en uitvoeren van opdrachten.
+
+
+
+        Het gunnen van opdrachten gebeurt doorgaans            Met dat laatste bedoelen we dat dienstverleners
+        middels een inkooptraject. Daarin stelt de             juist op die criteria kunnen laten zien in hoeverre
+        opdrachtgever zijn behoefte vast, wordt                ze de opdracht anders/beter uitvoeren dan hun
+        marktpartijen gevraagd een aanbieding te doen en       concurrenten. In deze handreiking geven we
+        worden aanbiedingen beoordeeld om te bepalen           handvatten om kwaliteitscriteria op te stellen en
+        welke de beste is. Het uitgangspunt moet zijn dat      uit te vragen.
+        de    aanbieding     met     de    beste     prijs-
+        kwaliteitverhouding de beste aanbieding is. Zowel      Voor een goede praktijk van het inkopen van
+        de kwaliteit als de prijs weegt mee, waarbij de        verhuisdiensten is kennis vereist. Kennis van de
+        weegfactor voor prijs niet zo hoog mag zijn dat hij    toekomstige        verhuisbehoefte    van      de
+        doorslaggevend wordt op het resultaat. Dit sluit       opdrachtgever, kennis van het vakgebied
+        aan bij de doelstelling van de Code en (voor de        verhuisdiensten, kennis van het inkoop vak en
+1.      publieke sector) de Aanbestedingswet 2012.             kennis over gunningsmethodieken en het opzetten
+                                                               en uitvoeren van beoordelingen. Met deze
+        Het kan lastig zijn voor opdrachtgevers om de door     handreiking dragen we graag bij aan het
+        hen gevraagde kwaliteit van diensten te                bevorderen van een goede inkooppraktijk door
+        specificeren, ook bij verhuisdiensten. Dat komt        aanwijzingen te geven over de eerste drie soorten
+        onder andere doordat de kwaliteit van een dienst       kennis. Voor meer informatie over beoordelen
+        grotendeels wordt bepaald tijdens de levering van      verwijzen we naar onze handreiking ”De beste
+        de diensten en in belangrijke mate door de mensen      inschrijving kiezen”.
+        die daarbij worden ingezet. De kwaliteit van de
+        dienstverlening zelf is vooraf moeilijk te             De handreiking is geschikt voor de publieke en de
+        beoordelen, zoals dat wel kan bij een product. Het     private sector en zowel bij concrete
+        is daarom zaak om zo goed mogelijk te beoordelen       verhuisprojecten als voor het aangaan van
+        in hoeverre erop mag worden vertrouwd dat de           raamovereenkomsten. Voor lezers uit de publieke
+        kwaliteit conform de gestelde eisen en wensen zal      sector gaan we er vanuit dat kennis van de
+        zijn. Daarbij bepaalt de opdrachtgever met name        Aanbestedingswet en de Gids Proportionaliteit
+        het doel dat hij wil bereiken, de dienstverlener       aanwezig is. De opdrachtgevers vormen de
+        geeft aan hoe hij dit denkt te gaan realiseren.        primaire doelgroep, maar ook opdrachtnemers
+        Bovendien heeft de opdrachtgever zelf ook invloed      nodigen we van harte uit om met deze handreiking
+        op de kwaliteit: de kwaliteit van de dienstverlening   in gesprek te gaan met hun (potentiële)
+        wordt mede bepaald door de samenwerking met            opdrachtgevers.
+        opdrachtgever.
+
+        Opdrachtgevers willen dat de kwaliteit conform
+        het programma van eisen zal zijn en zo goed
+        mogelijk zal voldoen aan de wensen. Daartoe
+        worden gunningscriteria geformuleerd waar de
+        dienstverleners in meer of mindere mate aan
+        zullen kunnen voldoen. Deze kwaliteitscriteria
+        moeten ten eerste aansluiten bij de opdracht en
+        ten tweede een onderscheidende werking hebben.
+Opzet van de handreiking
+
+In hoofdstuk 2 gaan we in op het opstellen van een
+goede opdrachtomschrijving en het stellen van
+eisen om geschikte dienstverleners te selecteren.
+In hoofdstuk 3 lichten we toe welke
+kwaliteitscriteria een onderscheidende werking
+hebben. In hoofdstuk 4 geven we aanwijzingen
+voor het vormgeven van de prijsaanbiedingen en
+tot    slot    gaat    hoofdstuk     5    in    op
+contractmanagement.
+
+
+
+
+                                                     2.
+     2. Vaststellen van de opdracht en
+        selecteren van dienstverleners
+        Het selecteren van de best passende dienstverlener begint met de basis voor ieder inkooptraject:
+        een goede opdrachtomschrijving. Vervolgens moet worden vastgesteld welke dienstverleners in
+        aanmerking komen om de opdracht uit te voeren.
+
+
+
+        2.1    Een goede opdrachtomschrijving is                                  Sociaal welzijn van eigen en externe
+               de basis om passende aanbieders te                                  medewerkers.
+                                                                                  Verduurzamen van de bedrijfsvoering.
+               selecteren
+                                                                                  Financiële kaders en bijbehorende
+        Aard en omvang van de opdracht bepalen al in hoge                          uitdagingen, zoals budgetbeperkingen.
+                                                                                  Klanttevredenheid     over   facilitaire
+        mate welke dienstverleners in aanmerking komen,
+                                                                                   diensten.
+        gegeven hun ervaring, expertise en capaciteit. Bij
+        een Europese aanbesteding is de opdracht-
+                                                                       2.    Aard van de gevraagde verhuisdiensten:
+        omschrijving         voor          geïnteresseerde
+                                                                                 Gaat het om concrete verhuisprojecten
+        dienstverleners bovendien een belangrijk ijkpunt
+                                                                                  of om een raamovereenkomst; in
+        om te bepalen of ze willen inschrijven. Zij zullen op
+                                                                                  hoeverre is al bekend wat wanneer moet
+        basis van de opdrachtomschrijving en de daarvan                           worden verhuisd?
+        afgeleide geschiktheidseisen (zie 2.2) zo goed                           Aard en omvang van de te verhuizen
+        mogelijk bepalen in hoeverre de gevraagde                                 goederen
+        dienstverlening bij hen past en hoe de                                   In hoeverre is er sprake van niet-
+        concurrentie er uit zal zien. Afhankelijk van de                          standaard goederen1, zoals zwaar
+        beschikbare kennis binnen de organisatie kan het                          materieel      uit    productielocaties,
+3.      verstandig zijn voorafgaand aan het formuleren                            museale kunst, archieven, inventaris
+        van      de       opdrachtomschrijving           een                      van laboratoria of praktijklokalen, et
+        marktverkenning      of     marktconsultatie       te                     cetera?
+        organiseren.
+                                                                                  Type verhuizingen:
+        In de private sector, en bij onderhandse                                   i.    Verhouding intern en extern
+        aanbestedingen in de publieke sector, moet de                                    (binnen het pand en via de
+        inkopende      organisatie     bepalen     welke                                 openbare weg).
+        dienstverleners geschikt zijn om mee te dingen.                            ii.   Gemiddelde         omvang        van
+        Die dienstverleners worden uitgenodigd om een                                    verhuisopdrachten         c.q.     in
+        aanbieding te doen. Ook dan is de opdracht-                                      hoeverre fluctueert de omvang.
+        omschrijving de basis voor een goede selectie.                             iii.  Permanente verhuizingen en/of
+                                                                                         tijdelijke verhuizingen in verband
+        Om de gevraagde dienstverlening vast te stellen,                                 met bijvoorbeeld evenementen, al
+        kunnen de volgende punten worden gevolgd. Wees                                   dan niet inclusief faciliteiten voor
+        hier zo duidelijk en volledig mogelijk in, zodat de                              tijdelijke opslag.
+        dienstverleners zo goed mogelijk in staat worden                           iv.   Zijn er opslagfaciliteiten nodig.
+        gesteld om hier met hun aanbieding op aan te
+        sluiten:                                                       3.    Locatie(s)      waar(tussen)        moet          worden
+                                                                             verhuisd.
+        1.    Wat zijn de missie, visie en de (beleids-)
+              doelstellingen van de inkopende organisatie
+              en wat betekent dat voor de opdracht?
+              Hieraan zal de dienstverlener moeten gaan
+              bijdragen.
+              (Beleids-)doelstellingen kunnen bijvoorbeeld
+              betrekking hebben op:
+
+
+
+        1 Denk bij standaard goederen aan tafels, stoelen, bureau’s,   machines of voorwerpen met uitzonderlijke afmetingen.
+        kasten en meterbakken. Denk bij niet-standaard aan zware
+4.   Omvang van de opdracht:                            2.2 Vaststellen geschiktheidseisen:
+        Bij    concrete     verhuisproject(en):            alleen geschikte dienstverleners
+         omschrijving van de te verhuizen
+                                                            dingen mee
+         goederen, inventaris.
+        Bij raamovereenkomst voor nog te               Het selecteren met behulp van geschiktheidseisen
+         plannen werkzaamheden: wat is de               draait om de vraag ‘welke dienstverleners mogen
+         geraamde opdrachtwaarde, aantallen of
+                                                        meedingen?’ Het gaat dan bijvoorbeeld over de
+         volumes. Maak hierbij duidelijk voor
+                                                        ervaring en capaciteiten van de dienstverlener,
+         hoeveel    jaar    er   initieel   een
+                                                        verzekeringen,       kwaliteitscertificaat    of
+         overeenkomst wordt afgesloten en
+         welke opties tot verlenging zijn               vergunningen. Offertes voor de uit te voeren
+         inbegrepen. Bij raamovereenkomsten             werkzaamheden komen nog niet aan de orde. Het
+         moet tevens de maximale waarde                 is essentieel dat alleen dienstverleners worden
+         opgenomen worden.                              geselecteerd, die qua ervaring en beschikbare
+                                                        kennis en expertise in staat zijn de te gunnen
+5.   Relevante omstandigheden, zoals:                   overeenkomst uit te voeren.
+         Vestigingen in oude panden zonder
+          liften, nauwe doorgangen, en dergelijke.      In Europese aanbestedingen worden hiervoor
+         Verhuizingen van/naar lastig te               geschiktheidseisen      opgenomen        in      de
+          bereiken locaties, zoals binnensteden,        aanbestedingsstukken.            Geïnteresseerde
+          of emissievrije zones.                        dienstverleners bepalen of zij daaraan menen te
+         Moet       de    bedrijfsvoering    van       voldoen als onderdeel van hun besluit wel of niet in
+          opdrachtgever          tijdens       de       te schrijven. In de private sector en bij
+          verhuiswerkzaamheden ongestoord en            onderhandse procedures in de publieke sector
+          zonder overlast kunnen doorlopen, of          selecteert de aanbestedende dienst zelf de
+          mogen/ moeten de werkzaamheden                dienstverleners die een aanbieding mogen doen.
+          (deels)     buiten   werktijden     van       De geschiktheidseisen worden dan niet met
+          opdrachtgever plaatsvinden.                   dienstverleners gedeeld, maar de aanbestedende
+         Afstemming binnen projecten met               dienst moet deze wel helder hebben. De uit te
+          andere leveranciers (bouwbedrijven,
+                                                        nodigen dienstverleners moeten er immers wel
+          meubelleveranciers)
+                                                        aan    voldoen.    Geschiktheidseisen      hebben      4.
+                                                        betrekking op de onderneming maar moeten wel in
+6.   Soort relatie dat wordt beoogd:
+                                                        verhouding staan tot de aard en omvang van de uit
+        Snelheid van reageren: in hoeverre
+                                                        te voeren verhuisopdracht(en) en moeten dus
+         wordt ruim van tevoren gepland of komt
+         het (ook) vaak voor dat er op zeer korte       goed aansluiten op de opdrachtomschrijving.
+         termijn verhuisdiensten nodig zijn.
+                                                        We raden aan om in ieder geval de volgende
+        Mate van uitbesteding: in hoeverre
+                                                        geschiktheidseisen te hanteren. De indeling komt
+         zullen verhuizingen worden voorbereid,
+                                                        uit de praktijk van Europees aanbesteden, maar de
+         uitgevoerd en geleid door eigen
+         medewerkers van de inkopende                   eisen gelden voor inkopende organisaties in zowel
+         organisatie, of wordt verwacht dat het         de publieke als de private sector:
+         verhuisbedrijf dat zal doen. Met andere
+         woorden: in hoeverre wil de inkopende
+         organisaties worden ontzorgd.                  Financiële en economische draagkracht
+
+Het is niet nodig om aan te geven welke typen           Een      verzekering     voor      beroeps-     en
+verhuisdiensten u nodig heeft, zoals ‘handyman-         bedrijfsaansprakelijkheid met een dekking die
+diensten (tenzij die per uur worden afgenomen)’.        passend is gezien de feitelijke risico’s op schade
+De opdrachtomschrijving maakt duidelijk wat er          en de mogelijke omvang van die schade. Deze
+moet gebeuren, de verhuisbedrijven kunnen zelf          verzekering heeft als doel eventuele schade op te
+bepalen hoe zij hiervoor zullen zorgen. Zij beslissen   vangen.
+of zij daarbij, bijvoorbeeld, specifiek een
+handyman nodig hebben of dat hun verhuizers het
+zelf kunnen.
+     Technische en beroepsbekwaamheid                     Beroepsbevoegdheid
+
+     1.   Opleidingsniveau in te zetten medewerkers:      Dienstverlener heeft een geldige inschrijving in het
+          dienstverlener garandeert dat alle mede-        handelsregister.
+          werkers die zij bij verhuiswerkzaamheden
+          inzet en die langer dan twee jaar bij
+          dienstverlener in dienst zijn, de opleidingen
+          hebben gevolgd en de certificaten hebben           Eurovergunning
+          behaald zoals ook geëist wordt voor het
+          keurmerk Erkende Projectverhuizer2.                Om een Eurovergunning te verkrijgen, moet
+                                                             een onderneming kortweg aan de volgende
+     2.   Vereiste vergunningen:                             eisen voldoen:
+              Als (ook) sprake is van externe
+               verhuizingen: dienstverlener heeft de             Reële vestiging, aan te tonen door een
+               wettelijk vereiste vergunning voor                 inschrijving bij de Kamer van
+               beroepsgoederenvervoer over de weg,                Koophandel.
+               ‘Eurovergunning’, uitgegeven door de              Vakbekwaamheid, aan te tonen door
+               Nationaal en Internationaal Wegvervoer             vakdiploma                 ondernemer
+               Organisatie NIWO.                                  beroepsgoederenvervoer.
+              Dienstverlener beschikt over een                  Financiële draagkracht, aan te tonen
+               geldige Veiligheid, Gezondheid en Milieu           door bewijs dat er voldoende
+               Checklist Aannemers (VCA-certificaat)              financiële middelen zijn.
+               dan wel een geldig ISO 45001 certificaat          Betrouwbaarheid, aan te tonen door
+               (of een nog geldig OHSAS 18001                     een verklaring omtrent gedrag (VOG).
+               certificaat)    of    een    certificaat
+               gelijkwaardig daaraan.                        Hoewel met het eisen van een Euro-
+                                                             vergunning indirect dus ook een eis wordt
+     3.   Kwaliteitsborging: dienstverlener borgt de         gesteld     aan     inschrijving    in    het
+          kwaliteit van haar dienstverlening middels         handelsregister, raden we aan om ook een
+          een                       geïmplementeerd          geldige inschrijving KvK te eisen. Het KvK-
+5.        kwaliteitsmanagementsysteem. Dit kan               uittreksel kan worden gebruikt om vast te
+          bijvoorbeeld worden aangetoond door                stellen of de aanbieding rechtsgeldig is
+          certificering op basis van ISO9001 of              ondertekend. Bovendien is een Euro-
+          gelijkwaardig.                                     vergunning vijf jaar geldig, sinds de uitgifte
+                                                             is er mogelijk een wijziging opgetreden in de
+     4.   Arbeidsvoorwaarden        conform       cao:       inschrijving KvK.
+          dienstverlener garandeert dat de vigerende
+          cao Beroepsgoederenvervoer over de weg
+          wordt nageleefd, zowel met betrekking tot
+                                                          In de publieke sector kan gekozen worden voor een
+          eigen medewerkers als ingehuurde krachten
+                                                          procedure met of zonder preselectie. In beide
+          en onderaannemers, en dat hij voldoet aan de
+                                                          gevallen worden via de geschiktheidseisen
+          verplichtingen ten aanzien van afdracht en
+                                                          minimale eisen aan potentiële inschrijvers
+          betaling van de geldende sociale premies.
+                                                          opgelegd. De keuze voor openbaar of niet
+                                                          openbaar wordt vooral – in het kader van
+     5.   Ervaring met vergelijkbare opdrachten:
+                                                          administratieve lastenverlichting – bepaald door
+          dienstverlener toont aan dat hij een
+                                                          het te verwachten aantal inschrijvers. Is dat aantal
+          vergelijkbare opdracht (naar omvang, risico
+                                                          groot, dan is een preselectie aan te bevelen.
+          en complexiteit) succesvol heeft uitgevoerd.
+          Definieer kerncompetenties en vraag (een)
+          referentie(s) op. De kerncompetenties
+          kunnen bijvoorbeeld zien op verhuizingen van
+          een bepaalde omvang (max. 60% van de te
+          verwachten opdrachtwaarde), inventaris van
+          vergelijkbare aard, leveren van vergelijkbare
+          speciale diensten en onder vergelijkbare
+          werkafspraken over regievoering.
+
+
+
+
+     2 www.erkendeverhuizers.nl
+3. Formuleren van kwaliteitscriteria en daar
+   op beoordelen
+
+   Om na het selecteren van geschikte dienstverleners de best passende aanbieding te kunnen
+   kiezen, moeten eisen en gunningscriteria worden geformuleerd. De eisen, gezamenlijk het
+   programma van eisen, geven aan waar de dienstverlening in ieder geval aan moet voldoen. Dit is
+   het minimumniveau voor de kwaliteit en iedere dienstverlener moet zich hieraan committeren.
+   Eisen hebben daarmee een knock-outwerking. Gunningscriteria zien toe op prijs en kwaliteit, en
+   daar kunnen dienstverleners meer of minder goed op scoren. Deze gunningscriteria bepalen
+   uiteindelijk het verschil tussen de dienstverleners.
+
+   In dit hoofdstuk gaan we in op gunningscriteria voor kwaliteit, de kwaliteitscriteria.
+   Kwaliteitscriteria zijn wensen en dienstverleners zullen daar in meer of mindere mate aan voldoen.
+   Ze kunnen betrekking hebben op dezelfde onderwerpen als de gestelde eisen.
+
+
+
+   3.1       Kwaliteitscriteria                          3.1.1     Plan van aanpak
+
+   Kies voor kwaliteitscriteria waar dienstverleners     Wat vraag je uit?
+   zich op kunnen onderscheiden. Omschrijf als
+   opdrachtgever      altijd   duidelijk   wat     de    Met een plan van aanpak kan een dienstverlener
+   verhuisbehoefte is en benoem de aspecten              laten zien op welke manier zij invulling gaat geven
+   waarop in de beoordeling wordt gelet. Ervaringen      aan het programma van eisen en de
+   uit het verleden van zowel eigen medewerkers als      kwaliteitscriteria. Het plan van aanpak kan een        6.
+   van medewerkers van ingezette verhuisbedrijven        belangrijk onderdeel van de aanbieding zijn: de
+   kunnen hierbij waardevolle input zijn. Alleen op      dienstverlener moet hiermee het vertrouwen
+   basis van een volledige en duidelijke omschrijving    wekken dat hij de opdracht begrepen heeft en de
+   kunnen verhuisbedrijven hun best passende             gewenste kwaliteit zal worden gehaald. Hoed je
+   inschrijving doen en zich daarmee onderscheiden       wel voor “mooie teksten”, al dan niet gemaakt door
+   op kwaliteit.                                         een tekstschrijver of via ChatGPT.
+
+   We raden aan om de volgende kwaliteitscriteria te     U kunt dienstverleners vragen hun werkwijze
+   hanteren:                                             duidelijk te maken voor het hele proces vanaf de
+                                                         aanvraag voor verhuisdiensten tot en met de
+   1.    Plan van aanpak                                 nazorg en evaluatie daarvan. Geef aan dat ze hierbij
+   2.    Communicatie                                    moeten omschrijven hoe ze ervoor zorgen dat de
+                                                         verhuisdiensten voldoen aan de concrete
+   3.    Goed werkgeverschap                             opdrachtomschrijving, waarin u onder andere
+   4.    Duurzaamheid                                    heeft omschreven wat relevante omstandigheden
+                                                         zijn.
+   Voor elk van de kwaliteitscriteria geldt dat zij op
+   basis van de opdrachtomschrijving en de doel-         Maak duidelijk welke aspecten u belangrijk vindt en
+   stellingen die de inkopende organisatie heeft,        benadruk dat dienstverleners in hun plan van
+   verder gespecificeerd moeten worden. Dit zal          aanpak concreet moeten maken hoe ze die
+   enerzijds over de vakinhoudelijke kwaliteit van de    aspecten gaan invullen.          Betreft het een
+   dienstverlening gaan en anderzijds over de            aanbesteding voor een raamovereenkomst, dan
+   aansluiting op de projectomgeving. Hieronder          kan toevoeging van een of meerdere casussen de
+   lichten we de criteria en de beoordeling daarop       basis zijn voor de inschrijver om aan te geven hoe
+   toe.                                                  hij de dienstverlening gaat invullen.
+     Aspecten die vaak belangrijk worden gevonden en        communicatie wel als apart kwaliteitscriterium te
+     waarop      dienstverleners     zich     kunnen        hanteren om het belang ervan te benadrukken.
+     onderscheiden, zijn bijvoorbeeld de mate waarin
+     c.q. de manier waarop een dienstverlener
+     respectievelijk haar personeel:                        3.1.3   Aandacht en respect voor in te
+                                                            zetten medewerkers
+     a.   In staat is om snel en met voldoende
+          capaciteit beschikbaar te zijn                    Wat vraag je uit
+
+     b.   Flexibel om kan gaan met wijzigingen in           Aandacht en respect voor haar medewerkers is bij
+          planning en omvang van verhuisopdrachten.         uitstek een criterium om inzicht te krijgen in de
+                                                            mate waarin dienstverlener werkt conform de
+     c.   De impact minimaliseert van verhuis-              doelstellingen van de Code Verantwoordelijk
+          werkzaamheden op de bedrijfsvoering van           Marktgedrag. Hij kan laten zien hoe hij werkt aan
+          opdrachtgever.                                    duurzame inzetbaarheid. Om aanbiedingen op dit
+                                                            kwaliteitscriterium te beoordelen, kunnen vragen
+     d.   Borgen van een dienstbare en proactieve           worden gesteld, zoals: in hoeverre gaat u verder
+          opstelling en respectvol omgaan met               dan…
+          medewerkers en eigendommen van de
+                                                            a.   Hoe bewaakt u het welzijn van de tijdens de
+          inkopende organisatie.
+                                                                 contractuitvoering in te zetten medewerkers
+                                                                 en hoe zorgt u er daarbij voor dat zij zich
+     e.   Investeert in innovatieve oplossingen.
+                                                                 gerespecteerd en gewaardeerd voelen voor
+                                                                 hun werkzaamheden?
+     f.   Indien van toepassing: Omgaat met de
+          bijzondere     omstandigheden,      zoals
+                                                            b.   Hoe zorgt dienstverlener ervoor dat de
+          omschreven in de offerteaanvraag. Dit kan
+                                                                 tijdens de contractuitvoering in te zetten
+          bijvoorbeeld gaan om lastig bereikbare
+                                                                 medewerkers goed opgeleid zijn en blijven
+          locaties.
+                                                                 gedurende de looptijd van de overeenkomst?
+
+7.                                                          c.   Hoe meet u de medewerkerstevredenheid
+     3.1.2     Communicatie                                      onder de tijdens de contractuitvoering in te
+                                                                 zetten medewerkers en wat onderneemt u
+     Wat vraag je uit                                            concreet om deze tevredenheid hoog te laten
+                                                                 zijn?
+     Heldere en duidelijke communicatie tussen
+     opdrachtgever en opdrachtnemer is belangrijk.          d.   Wat is uw gezondheidsbeleid voor de tijdens
+     Vooral de communicatie met de persoon die de                de contractuitvoering in te zetten
+     leiding heeft over de uitvoerende werkzaamheden             medewerkers, welke doelen streeft u
+     heeft significante invloed op de tevredenheid van           hiermee na en wat merken zij hiervan in de
+     opdrachtgevers. Die leidinggevende is meestal de            praktijk?
+     voorman.
+                                                            e.   Wat verwacht u van opdrachtgever met
+     We adviseren om dienstverleners in een voorstel
+                                                                 betrekking tot de tevredenheid en duurzame
+     te laten omschrijven hoe zij de communicatie
+                                                                 inzetbaarheid voor de door u in te zetten
+     organiseren tijdens het hele verhuisproces, en wie
+                                                                 medewerkers, zowel eigen medewerkers als
+     daarin welke rol heeft. Vanaf de voorbereiding tot
+                                                                 in de keten (dus ook bij onderaannemers).
+     en met de nazorg en zowel over de reguliere zaken
+     als op het moment dat er onverwachte en/of
+     dringende issues zijn. We raden aan het voorstel       Bij het beantwoorden van deze vragen kan
+     aan te vullen met een interview met (in ieder geval)   bijvoorbeeld worden ingegaan op gemiddeld
+     de persoon die tijdens contractuitvoering de rol       aantal dienstjaren, gemiddeld aantal werknemers
+     van voorman zal hebben. In het interview kan een       met een vast contract, voorwaarden rondom
+     toelichting worden gevraagd op het plan van            ziekte, opleidingsplannen en de aanpak voor
+     aanpak met specifieke vragen over het voorstel         onderzoek naar medewerkerstevredenheid en de
+     voor communicatie.                                     opvolging daarvan.
+
+     De manier waarop de dienstverlener de
+     communicatie vormgeeft kan, in plaats van het
+     apart aan te laten leveren, ook onderdeel worden
+     gemaakt van het plan van aanpak. We adviseren
+Vraag om een concrete omschrijving waaruit niet
+alleen blijkt dat er beleid is, maar vooral wat de          Afval en afgedankt materiaal, zoals:
+maatregelen zijn om het beleid uit te voeren en wat              Hoe beperkt u de milieu-impact van af te
+de te verwachten resultaten zijn.                                 voeren verpakkings- en beschermings-
+                                                                  materiaal. Gaat u bijvoorbeeld in op
+                                                                  recycling.
+
+3.1.4       Duurzaamheid                                    Wat biedt u aan voor het circulair inzetten van
+                                                             af te voeren inventaris. Hier kan eventueel
+Wat vraag je uit                                             om een percentage minimaal te hergebruiken
+                                                             inventaris worden gevraagd (alleen mogelijk
+Duurzaamheid is een relevant kwaliteitscriterium             na een schouw).
+omdat er zowel sprake is van transport
+(brandstofverbruik, CO2 uitstoot) als van verbruik          Met betrekking tot CSRD adviseren wij om de
+van materialen(afval) en in voorkomende                      relevante meetpunten nadrukkelijk samen
+opdrachten ook van af te voeren inventaris.                  met de brancheorganisatie te ontwikkelen,
+Bovendien     is   de    arbeidscomponent        in          om wildgroei en zware administratieve lasten
+verhuisdiensten substantieel, waardoor een                   te vermijden.
+criterium met betrekking tot social return mogelijk
+kan zijn.
+                                                        Social return
+Vraag de dienstverleners met welke concrete             In relatie tot social return kan de inkopende
+maatregelen en met welke resultaten zij zullen          organisatie de eigen doelstellingen delen en
+bijdragen aan uw duurzaamheidsdoelstellingen.           bijvoorbeeld vragen naar:
+
+Neem als opdrachtgever de volgende twee punten              Social return: de maatregelen die
+                                                             dienstverlener neemt om werkgelegenheid te
+in acht om te bepalen welke kwaliteitscriteria
+                                                             creëren voor mensen met een afstand tot de
+relevant en proportioneel zijn:
+                                                             arbeidsmarkt. Vraag bijvoorbeeld naar:
+      Wat zijn de duurzaamheidsdoelen van uw                    De maatregelen om invulling te geven
+                                                                  aan social return.
+       eigen organisatie? Pas de criteria daarop aan.
+                                                                 De acties om doorgroei van mensen uit         8.
+       Dienstverleners kunnen dan toelichten hoe zij
+                                                                  de doelgroep te bevorderen.
+       uw organisatie gaan helpen om juist deze
+                                                                 Het percentage van de loonsom van de
+       duurzaamheidsdoelstellingen te realiseren.
+                                                                  opdracht dat voor social return zal
+                                                                  worden ingezet.
+      Vanuit         de      Rijksoverheid      zijn
+       duurzaamheidseisen           en      -wensen
+                                                            Andere oplossingen die dienstverlener
+       geformuleerd voor verhuisdiensten, de MVI-
+                                                             aanbiedt. Stel hiervoor een open vraag, zoals
+       criteria 3. Inkopende organisaties putten hier        ‘Hoe kunt u (verder nog) bijdragen aan het
+       vaak uit. Het is belangrijk om deze eisen en          realiseren van onze doelstellingen voor
+       wensen niet klakkeloos over te nemen. Zorg            verduurzaming en welke resultaten mogen
+       voor proportionaliteit: de criteria moeten in         we hiervan verwachten’.
+       verhouding staan tot aard en omvang van de
+       opdracht. Als er bijvoorbeeld relatief weinig
+       sprake zal zijn van transport, wees dan          Er is een energietransitie gaande. Nog niet alle
+       terughoudend met criteria die daar direct        dienstverleners zijn overgegaan tot de aanschaf
+                                                        van elektrische voertuigen.
+       verband mee houden en geef deze een
+       passende weegfactor.                             Bedenk als opdrachtgever vooraf goed of het
+                                                        belangrijk is dat een dienstverlener het contract
+Milieu-impact
+                                                        direct vanaf de start zero emissie uitvoert, of dat
+Deel de eigen organisatiedoelstellingen voor            zij een (beperkte) termijn krijgt om tot zero emissie
+                                                        contractuitvoering te komen.
+milieu-impact en vraag hoe dienstverlener hieraan
+gaat bijdragen, bijvoorbeeld in relatie tot:
+
+      Transport: minimaliseren CO2-uitstoot. Hier
+       kunnen dienstverleners bijvoorbeeld ingaan
+       op de inzet van elektrisch aangedreven
+       verhuiswagens en zuinig brandstofverbruik.
+
+
+3
+    Zie www.mvicriteria.nl
+     3.1.5 Waar let je op bij het beoordelen?
+
+     Bij het beoordelen van een plan van aanpak gaat
+     het erom vast te stellen in hoeverre u vindt dat:
+
+         De aanpak is efficiënt en realistisch, volledig
+          en concreet. Aannemelijk is gemaakt dat de
+          met het plan beoogde resultaten behaald
+          worden en bijdragen meetbaar, realistisch en
+          tijdgebonden zijn.
+
+         Welke     verantwoordelijkheden         moet
+          opdrachtgever zelf invullen om tot een goede
+          samenwerking te komen en op welke manier
+          neemt opdrachtnemer een proactieve
+          houding aan?
+
+          Er rekening wordt gehouden met de
+          opgegeven     doelstellingen,  belangrijke
+          aspecten en eventuele randvoorwaarden.
+
+         De dienstverlener met het plan meerwaarde
+          creëert.
+
+         Zijn genoemde maatregelen en resultaten
+          goed onderbouwd. Waarom worden deze
+          maatregelen genomen, en waaruit blijkt dat
+          ze tot het geclaimde resultaat leiden?
+
+     Bij een combinatie met een interview kunt u
+9.   aanvullend letten op:
+
+         Vaardigheid van de geïnterviewden om te
+          luisteren en concrete antwoorden te geven.
+
+         Mate waarin geïnterviewden er blijk van
+          geven op de hoogte te zijn van de eisen en
+          wensen van de inkopende organisatie.
+
+         Eis bij voorkeur dat de toekomstig
+          contactpersoon van de organisatie bij het
+          interview aanwezig is. Om inschrijvers uit de
+          dagen is het een optie om kort vóór het
+          interview een of meer cases ter hand te
+          stellen waar in het interview nader op
+          ingegaan moet worden.
+4. Vormgeven van de prijsaanbieding
+
+   Als er een concreet verhuisproject in de markt wordt gezet, raden we aan een totaalprijs te laten
+   aanbieden. Een alternatief is om zelf het budget voor het verhuisproject vast te stellen, mits goed
+   onderbouwd, en dienstverleners alleen op kwaliteit te laten concurreren. Om dienstverleners in
+   staat te stellen om een goede aanbieding te doen, is een goede opdrachtomschrijving plus een
+   schouw nodig.
+
+   Als er (ook) sprake is van verhuiswerkzaamheden waarvan de precieze aard en omvang nog niet
+   bekend zijn, is het uitvragen van een totaalprijs uiteraard niet mogelijk. In dit hoofdstuk geven we
+   adviezen over het vormgeven van de prijsaanbieding in dat geval.
+
+
+
+   4.1        Uitvragen van de prijsaanbieding           4.1.1       Tarieven voor personeel
+
+   De prijsaanbieding bestaat uit drie onderwerpen:      Om de aangeboden tarieven te kunnen beoordelen,
+   prijs voor personeel, prijs voor materiaal en prijs   is het raadzaam om uurtarieven te vragen voor een
+   voor transport. Desgewenst voegt u hier een prijs     vast aantal functies. De meeste functieprofielen
+   voor opslag aan toe. Voorkom verwarring achteraf      die in de verhuisbranche worden gebruikt, zijn
+   over meerwerk door duidelijk te zijn over wat in de   opgenomen        in    het     systeem       voor
+   tarieven moet zijn inbegrepen.                        functiewaardering van de transportsector4. Hierin
+                                                         zijn onder andere afspraken vastgelegd m.b.t.
+   Leg in de overeenkomst de procesafspraken vast        opleiding, behaalde certificaten, aantal aan te
+   voor het indexeren van overeengekomen tarieven,       sturen personen en mogen besturen van
+   inclusief de te hanteren prijsindex of prijsindexen   verhuiswagens. Afhankelijk van aard en omvang         10.
+   met hun relatieve weging.                             van de uit te voeren verhuizingen, kunnen voor
+                                                         meer of minder functies uurtarieven worden
+        Houd steeds 1 januari aan als ingangsdatum
+                                                         uitgevraagd. Bijvoorbeeld:
+         voor geïndexeerde tarieven.
+                                                                Verhuizer
+        Er is geen formeel vastgelegde prijsindex die
+                                                                Voorman, geeft leiding aan 5 of meer
+         gehanteerd moet worden. We raden aan een
+                                                                 personen.
+         gewogen prijsindex te hanteren, waarin een
+         index voor loonkosten en een index voor
+                                                         Werknemers in de verhuisbranche hebben recht
+         overige kosten worden gecombineerd. Cao-        op arbeidsvoorwaarden conform de cao voor het
+         afspraken over loonaanpassingen kunnen in
+                                                         beroepsgoederenvervoer over de weg5. De
+         de index voor loonkosten zijn verwerkt, of
+                                                         prijsdruk in deze markt is hoog. Dienstverleners
+         apart worden doorberekend.                      moeten een balans vinden tussen het aanbieden
+                                                         van concurrerende tarieven en de kosten die daar
+        Het CBS hanteert prijsindex 494 voor            tegenover staan, zoals een passende beloning van
+         goederenwegvervoer en verhuizingen. Deze
+                                                         hun personeel. Inkopende organisaties kunnen
+         index bevat echter geen component voor
+                                                         hier als volgt aan bijdragen:
+         overige kosten en niet alle relevante
+         loongerelateerde ontwikkelingen worden                 Hanteer de geschiktheidseis omtrent
+         structureel     verwerkt.       De     CBS-             arbeidsvoorwaarden conform de cao, zie 2.2.
+         consumentenprijsindex is niet geschikt,                 Aan     geschiktheidseisen    moet     een
+         omdat hierin geen ontwikkelingen worden                 dienstverlener niet alleen voldoen op het
+         verwerkt die specifiek zijn voor de branche.            moment dat de offerte wordt ingeleverd,
+         We verwijzen hier graag naar de handreiking             maar gedurende de gehele looptijd van de te
+         indexafspraken op de site van de Code.                  gunnen overeenkomst. Leg dit ook vast als
+                                                                 voorwaarde in de overeenkomst.
+
+
+
+   44 Zie stlwerkt.nl, navigeer naar weten /             5 https://www.fnv.nl/cao-
+
+   werken-en-leidinggeven / functiewaardering /          sector/vervoer/transport-logistiek/cao-
+   boek-functietyperingen                                beroepsgoederenvervoer-tln
+          Wijs de dienstverleners op het feit dat            4.1.3     Tarieven voor transport
+           overtreden      van       bovengenoemde
+           contractvoorwaarde reden is voor contract-         Bij verhuizingen naar andere locatie(s) is ook de
+           beëindiging.                                       inzet van verhuiswagens nodig. De prijsaanbieding
+                                                              voor transport kan grofweg op twee manieren
+          Houd rekening met indexering en in de cao          worden uitgevraagd: middels een uurtarief of
+           vastgelegde      aanpassingen           van        middels een kilometervergoeding. In beide
+           arbeidsvoorwaarden, geef hier ruimte voor in       gevallen geldt dat de tarieven zowel de uren dat
+           de overeenkomst.                                   een verhuiswagen wordt ingezet (laden, rijden,
+                                                              lossen) als de kosten van het feitelijke rijden type
+          Houd rekening met toeslagen voor
+                                                              fossiele    brandstof    dan      wel     elektrisch
+           werkzaamheden buiten reguliere werktijden,
+                                                              aangedreven) moeten omvatten. We raden aan om
+           zoals vastgelegd in de cao. Vraag de
+           uurtarieven buiten de reguliere werktijden         een uurtarief uit te vragen per ingezette
+           apart uit.                                         verhuiswagen. Uurtarieven houden directer
+                                                              verband met het werkelijke gebruik van
+          Vraag de uurtarieven uit inclusief ge- en          verhuiswagens dan het aantal gereden kilometers.
+           verbruik van materialen, zie 4.1.2.                Bij de inzet van een verhuiswagen staat deze het
+                                                             grootste deel van de tijd stil en het aantal
+          Mix geen variabelen, bv. opslag en handeling.      kilometers is sterk afhankelijk van de af te leggen
+           Omdat van tevoren niet bekend is van hoeveel       afstanden. Eventueel specificeert u naar afmeting
+           en hoe lang opslag gevraagd is, wordt het          van de wagen(s). Geef aan dat het tarief inclusief
+           lastig de arbeidscomponent hierin te               bijkomende kosten, zoals voorrijkosten, moet zijn.
+           verrekenen.
+
+
+      4.1.2     Tarieven voor materiaal                          Aanvullende prijsafspraken in de
+                                                                 overeenkomst
+      Bij een verhuizing zijn diverse materialen nodig.
+      Enerzijds zijn dit hulpmiddelen die herbruikbaar           In de overeenkomst kan worden vastgelegd
+      zijn, zoals gereedschap, verhuisliften en bakken.          dat opdrachtnemer marktconforme prijzen
+11.   Anderzijds gaat het om materiaal dat grotendeels           in rekening zal brengen voor de eventuele
+      eenmalig wordt gebruikt zoals verpakkings- en              inzet van functies, materialen en
+      beschermingsmateriaal en in het geval van (ICT-)           transportmiddelen waarvoor geen tarief is
+      werkplekverhuizingen klein materiaal zoals                 overeengekomen, waarbij opdrachtgever
+      tiewraps. Door hiervoor tarieven uit te vragen,            het recht heeft de marktconformiteit te
+      kunnen deze in de overeenkomst worden                      verifiëren.
+      opgenomen.
+      Dit geeft geen zekerheid over de werkelijke
+      kosten, die immers afhangen van de afgenomen            Transport en duurzaamheid
+      hoeveelheden, maar de kosten per item zijn dan
+      wel duidelijk.                                          Veel inkopende organisaties hanteren eisen en
+                                                              wensen op het gebied van duurzaamheid. De in te
+      Gebruikelijk is om voor de inzet van meterbakken,       zetten vervoermiddelen kunnen hieraan bijdragen,
+      rolcontainers en pc-kratten een gebruiksduur te         bijvoorbeeld als deze elektrisch zijn aangedreven.
+      benoemen die in de uurtarieven voor personeel is        Een       dienstverlener      die      duurzamere
+      inbegrepen en voor extra dagen een huurtarief af        transportmiddelen inzet dan een ander, kan
+      te spreken. Bijvoorbeeld: vanaf vijf dagen voor de      hiervoor worden beloond met een hogere score op
+      feitelijke verhuizing tot en met vijf dagen daarna is   het criterium ‘duurzaamheid’. De kosten voor
+      inbegrepen, meer dan vijf dagen ervoor en/of erna       elektrische verhuiswagens liggen in de huidige
+      wordt aanvullend in rekening gebracht. Voor dozen       markt echter hoger dan die voor wagens op
+      moet u kiezen tussen huur en koop.                      fossiele brandstof. Dit kan tot uiting komen in de
+                                                              aangeboden tarieven: die liggen dan hoger voor
+                                                              elektrische wagens. Dit leidt tot een lagere score
+                                                              op de prijsaanbieding voor transport. Zorg er
+                                                              daarom als opdrachtgever voor dat een hogere
+                                                              score op duurzaamheid een lagere score op prijs
+                                                              (deels) compenseert.
+4.2        Weegfactoren in
+           prijsaanbiedingen
+
+In veel inkooptrajecten zien we dat er weeg-
+factoren worden gehanteerd voor de uitgevraagde
+items. Dit zien we zowel bij de uurtarieven voor
+personeel als bij de tarieven voor materialen en
+verhuiswagens. Bijvoorbeeld: het tarief voor een
+verhuizer wordt vijf keer meegewogen en de
+tarieven voor een voorman en een uitvoerder elk
+één keer en het tarief voor kleine verhuiswagens
+weegt vaker mee dan het tarief voor grotere
+verhuiswagens, of juist andersom. Dit heeft tot
+gevolg dat dienstverleners gaan ‘puzzelen’ op de
+ideale combinatie van tarieven om een zo hoog
+mogelijke puntenscore te verdienen.
+
+Dit werkt in de hand dat items met een lage
+weegfactor een relatief hoog tarief krijgen en
+items met een hoge weegfactor een relatief laag
+tarief. We raden het hanteren van weegfactoren
+voor verschillende prijselementen af wegens
+mogelijke ongewenste effecten:
+
+     Dienstverleners moeten de ‘korting’ op de
+      goedkopere       items  in    de    praktijk
+      compenseren. Bijvoorbeeld, in relatie tot
+      personeel, door de duurdere functies relatief
+      vaak in te zetten.
+
+     Schijnzekerheid over de uiteindelijke kosten    12.
+      omdat vooraf niet inzichtelijk is hoeveel van
+      welk item daadwerkelijk zal worden ingezet.
+
+
+Meer over het opzetten en uitvoeren van
+beoordelingen leest u in onze Handreiking “De
+beste inschrijving kiezen”.
+      5. Contractmanagement
+         Om uitvoering te geven aan de overeengekomen contractafspraken, moeten dienstverleners
+         inspanningen leveren. Soms zijn ook investeringen nodig, bijvoorbeeld in duurzamere
+         oplossingen. De kosten die hiermee samenhangen zijn verdisconteerd in de tarieven. Hanteer dus
+         alleen eisen en wensen die echt belangrijk zijn en richt contractmanagement in om te controleren
+         of gemaakte afspraken worden waargemaakt. Stel bijvoorbeeld dat ‘duurzaamheid’ een gunnings-
+         criterium was en de gecontracteerde dienstverlener dat invulling geeft door met elektrische
+         wagens te rijden, controleer dan ook of dat gebeurt.
+
+
+
+                                                             De winnende aanbieding wordt onderdeel van de
+           Eenzijdig opleggen van ongewijzigde eigen         afgesloten overeenkomst. Door er tijdens het
+           voorwaarden kan strijdig zijn met gezond          inkooptraject voor te zorgen dat dienstverleners
+           marktgedrag                                       concrete plannen, maatregelen en resultaten
+                                                             aanbieden, kan tijdens de contractuitvoering de
+           In de praktijk leeft bij veel inkopers en         realisatie daarvan één-op- één worden bewaakt.
+           contractmanagers het beeld dat ARVODI-
+           voorwaarden       uitsluitend     ongewijzigd     Als de gecontracteerde dienstverlener de
+                                                             overeengekomen kwaliteit niet levert, betaalt de
+           mogen        worden         toegepast      bij
+                                                             opdrachtgever strikt genomen te veel. Hiervoor
+           aanbestedingen van verhuisdiensten. Dit is
+                                                             kan in de overeenkomst een compensatieregeling
+           echter een misvatting die gezond
+                                                             worden opgenomen.         Als het afgesproken
+           marktgedrag          kan         belemmeren.
+                                                             kwaliteitsniveau niet wordt gehaald, wordt een
+           Opdrachtgever en opdrachtnemer hebben             bedrag ingehouden op de factuur. Dit verkleint het
+           de ruimte om, mits goed vastgelegd in de          risico dat in aanbiedingen loze beloftes worden
+           Nota        van         Inlichtingen       en     gedaan.
+           aanbestedingsstukken, afspraken te maken
+13.                                                          Er is dan een duidelijke afspraak nodig voor het
+           over            aanpassingen              van
+           contractvoorwaarden,               waaronder      bepalen van de hoogte van de compensatie. Tal
+           aansprakelijkheid. Het vasthouden aan             van manieren zijn mogelijk. Een voorbeeld is om de
+           standaardvoorwaarden, vaak uit tijdsdruk          geleverde kwaliteit te beoordelen zoals ook de
+                                                             aangeboden kwaliteit is beoordeeld. Het verschil
+           of gebrek aan kennis, leidt tot een
+                                                             in punten tussen deze twee beoordelingen kan
+           eenzijdige risicotoedeling en kan de
+                                                             worden vertaald naar een geldbedrag. Een ander
+           concurrentie en kwaliteit in de markt
+                                                             voorbeeld is een vast boetebedrag.
+           negatief beïnvloeden. Juist het zorgvuldig
+           afstemmen van contractvoorwaarden,                Bij wanprestatie is het mogelijk een contract te
+           ondersteund door juridisch advies en              ontbinden. Bedenk daarbij dat dan ook de
+           gedragen door alle betrokken partijen,            inkopende partij opnieuw een
+           draagt bij aan een eerlijke en duurzame           inkoop/aanbestedingstraject in moet gaan. Om
+           relatie    tussen      opdrachtgever       en     die extra inspanning te voorkomen kan een
+           opdrachtnemer. Dit sluit aan bij de               zogenaamde “wachtkamerovereenkomst” worden
+           doelstelling van verantwoord marktgedrag:         gesloten met de als 2e geëindigde dienstverlener.
+           het realiseren van een overeenkomst die           Zo’n overeenkomst houdt in dat de dienstverlener
+                                                             in de wachtkamer het contract overneemt als
+           waarde biedt voor alle betrokkenen, met
+                                                             daartoe aanleiding is. Die aanleiding moet dan wel
+           ruimte voor maatwerk en respect voor de
+                                                             heel concreet worden beschreven in het contract
+           belangen van zowel opdrachtgever als
+                                                             met de dienstverlener die als 1e is geëindigd.
+           opdrachtnemer.
+

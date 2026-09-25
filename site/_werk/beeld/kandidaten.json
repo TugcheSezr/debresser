@@ -1,0 +1,2726 @@
+{
+ "hero-bg": [
+  {
+   "slot": "hero-bg",
+   "id": "laaddok",
+   "default": true,
+   "opm": "Echte foto (2021-10_TOPMOVERS-56): open bakwagen aan een laaddok bij een bedrijfspand, drie verhuizers in TM-polo met witte TM-dozen. Opschaling 1,07x naar 1920.",
+   "bestanden": {
+    "1920": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/laaddok-1920.webp",
+     "w": 1920,
+     "h": 1280,
+     "crop": [
+      0,
+      0,
+      1800,
+      1200
+     ],
+     "schaal": 1.067
+    },
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/laaddok-1280.webp",
+     "w": 1280,
+     "h": 853,
+     "crop": [
+      0,
+      0,
+      1800,
+      1200
+     ],
+     "schaal": 0.711
+    },
+    "mobiel": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/laaddok-mobiel.webp",
+     "w": 900,
+     "h": 1200,
+     "crop": [
+      439,
+      0,
+      1339,
+      1200
+     ],
+     "schaal": 1.0
+    }
+   },
+   "cutout": false,
+   "bron": 22,
+   "bronbestand": "2021-10_TOPMOVERS-56.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "hero-bg",
+   "id": "landweg",
+   "default": false,
+   "opm": "Marketingcomposiet (2026-01_lets-move-to-zero): TM-truck frontaal op een landweg tussen bloemenvelden; geen elektrisch-tekst zichtbaar, wel campagnebeeld van de elektrische truck. Verkleind vanaf 3077px.",
+   "bestanden": {
+    "1920": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/landweg-1920.webp",
+     "w": 1920,
+     "h": 1280,
+     "crop": [
+      244,
+      0,
+      2833,
+      1726
+     ],
+     "schaal": 0.742
+    },
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/landweg-1280.webp",
+     "w": 1280,
+     "h": 853,
+     "crop": [
+      244,
+      0,
+      2833,
+      1726
+     ],
+     "schaal": 0.494
+    },
+    "mobiel": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/landweg-mobiel.webp",
+     "w": 900,
+     "h": 1200,
+     "crop": [
+      892,
+      0,
+      2186,
+      1726
+     ],
+     "schaal": 0.696
+    }
+   },
+   "cutout": false,
+   "bron": 76,
+   "bronbestand": "2026-01_lets-move-to-zero.png",
+   "bronmaat": [
+    3077,
+    1726
+   ]
+  },
+  {
+   "slot": "hero-bg",
+   "id": "verhuislift",
+   "default": false,
+   "opm": "Echte foto (2021-10_Verhuur-verhuislift): Sprinter met verhuislift bij een flat, topmovers.nl op de motorkap; exact 1920x1280. Claim '35 meter werkhoogte' op de lift, klein.",
+   "bestanden": {
+    "1920": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/verhuislift-1920.webp",
+     "w": 1920,
+     "h": 1280,
+     "crop": [
+      0,
+      0,
+      1920,
+      1280
+     ],
+     "schaal": 1.0
+    },
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/verhuislift-1280.webp",
+     "w": 1280,
+     "h": 853,
+     "crop": [
+      0,
+      0,
+      1920,
+      1280
+     ],
+     "schaal": 0.667
+    },
+    "mobiel": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/verhuislift-mobiel.webp",
+     "w": 900,
+     "h": 1200,
+     "crop": [
+      326,
+      0,
+      1286,
+      1280
+     ],
+     "schaal": 0.938
+    }
+   },
+   "cutout": false,
+   "bron": 28,
+   "bronbestand": "2021-10_Verhuur-verhuislift-verhuur-topmovers-56s.jpg",
+   "bronmaat": [
+    1920,
+    1280
+   ]
+  },
+  {
+   "slot": "hero-bg",
+   "id": "ai-header-afgekeurd",
+   "default": false,
+   "opm": "AFGEKEURD: de kandidaat uit de brief (2026-08_tm-header-3) is AI-gegenereerd: dozentekst en kenteken zijn wartaal op 100%. Alleen ter vergelijking in de galerij.",
+   "bestanden": {
+    "1920": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/ai-header-afgekeurd-1920.webp",
+     "w": 1920,
+     "h": 1280,
+     "crop": [
+      201,
+      0,
+      1715,
+      1009
+     ],
+     "schaal": 1.268
+    },
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/ai-header-afgekeurd-1280.webp",
+     "w": 1280,
+     "h": 853,
+     "crop": [
+      201,
+      0,
+      1715,
+      1009
+     ],
+     "schaal": 0.845
+    },
+    "mobiel": {
+     "pad": "_werk/beeld/kandidaten/hero-bg/ai-header-afgekeurd-mobiel.webp",
+     "w": 900,
+     "h": 1200,
+     "crop": [
+      484,
+      0,
+      1241,
+      1009
+     ],
+     "schaal": 1.189
+    }
+   },
+   "cutout": false,
+   "bron": 85,
+   "bronbestand": "2026-08_tm-header-3.webp",
+   "bronmaat": [
+    1916,
+    1009
+   ]
+  }
+ ],
+ "team-cutout": [
+  {
+   "slot": "team-cutout",
+   "id": "bank-echt-heupen",
+   "default": true,
+   "opm": "Echte foto (2025-11_TopMovers-mannen-header3): drie verhuizers op een bank met een witte TM-doos ('aanpakkers met impact!'), TM-logo op de polo's; uitgesneden van kruin tot net onder de doos en de handen (heuphoogte), bank en benen weg.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/bank-echt-heupen-1600.webp",
+     "w": 1600,
+     "h": 925,
+     "crop": [
+      1040,
+      592
+     ],
+     "schaal": 1.538
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/bank-echt-heupen-900.webp",
+     "w": 900,
+     "h": 526,
+     "crop": [
+      1040,
+      592
+     ],
+     "schaal": 0.865
+    }
+   },
+   "cutout": true,
+   "bron": 66,
+   "bronbestand": "2025-11_TopMovers-mannen-header3-groot.jpeg",
+   "bronmaat": [
+    1280,
+    861
+   ]
+  },
+  {
+   "slot": "team-cutout",
+   "id": "bank-outpaint-heupen",
+   "default": false,
+   "opm": "Zelfde opname, maar 2026-08_TopMovers-header1 is een AI-outpaint van 66 (correlatie 0,96 op schaal 0,93); met de heupsnede zit er geen bijgetekend deel meer in, wel iets meer lucht rond de figuren.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/bank-outpaint-heupen-1600.webp",
+     "w": 1600,
+     "h": 933,
+     "crop": [
+      968,
+      556
+     ],
+     "schaal": 1.653
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/bank-outpaint-heupen-900.webp",
+     "w": 900,
+     "h": 531,
+     "crop": [
+      968,
+      556
+     ],
+     "schaal": 0.93
+    }
+   },
+   "cutout": true,
+   "bron": 81,
+   "bronbestand": "2026-08_TopMovers-header1.webp",
+   "bronmaat": [
+    1980,
+    1105
+   ]
+  },
+  {
+   "slot": "team-cutout",
+   "id": "trio-heupen",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-12_Alkmaar-1): drie mannen in TM-polo/sweater met duim omhoog, afgesneden op de heupen.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/trio-heupen-1600.webp",
+     "w": 1600,
+     "h": 922,
+     "crop": [
+      1399,
+      794
+     ],
+     "schaal": 1.144
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/team-cutout/trio-heupen-900.webp",
+     "w": 900,
+     "h": 525,
+     "crop": [
+      1399,
+      794
+     ],
+     "schaal": 0.643
+    }
+   },
+   "cutout": true,
+   "bron": 67,
+   "bronbestand": "2025-12_Alkmaar-1-scaled-1.jpg",
+   "bronmaat": [
+    2560,
+    1920
+   ]
+  }
+ ],
+ "dienst-compleet": [
+  {
+   "slot": "dienst-compleet",
+   "id": "kast-dragen",
+   "default": true,
+   "opm": "Echte foto (2021-09_unnamed-file): twee verhuizers dragen een kast door een woonkamer, TM-doos op de voorgrond. Crop houdt de ledennaam 'Holverda' en het EPV-logo onderaan de doos buiten beeld. Opschaling 1,19x.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/kast-dragen-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      60,
+      0,
+      1003,
+      540
+     ],
+     "schaal": 1.188
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/kast-dragen-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      60,
+      0,
+      1003,
+      540
+     ],
+     "schaal": 0.806
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/kast-dragen-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      60,
+      0,
+      1003,
+      540
+     ],
+     "schaal": 0.424
+    }
+   },
+   "cutout": false,
+   "bron": 3,
+   "bronbestand": "2021-09_unnamed-file.jpg",
+   "bronmaat": [
+    1080,
+    720
+   ]
+  },
+  {
+   "slot": "dienst-compleet",
+   "id": "lift-balkon",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-51): verhuislift naar een balkon, verhuizer neemt een kist aan, TM-bakwagen met 'Erkende Verhuizers'. Crop laat de ledennaam rechtsonder buiten beeld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/lift-balkon-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      100,
+      1400,
+      901
+     ],
+     "schaal": 0.8
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/lift-balkon-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      100,
+      1400,
+      901
+     ],
+     "schaal": 0.543
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/lift-balkon-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      100,
+      1400,
+      901
+     ],
+     "schaal": 0.286
+    }
+   },
+   "cutout": false,
+   "bron": 39,
+   "bronbestand": "2021-10_topmovers-51.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dienst-compleet",
+   "id": "laadklep-kast",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-12_GLR2): twee verhuizers rijden een kast op een hondje bij de laadklep, tweede TM-truck erachter. RETOUCHE: ledenlogo 'VAN DER ENT' op een doos op de klep weggevuld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/laadklep-kast-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      1,
+      100,
+      1601,
+      1016
+     ],
+     "schaal": 0.7
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/laadklep-kast-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      1,
+      100,
+      1601,
+      1016
+     ],
+     "schaal": 0.475
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-compleet/laadklep-kast-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      1,
+      100,
+      1601,
+      1016
+     ],
+     "schaal": 0.25
+    }
+   },
+   "cutout": false,
+   "bron": 72,
+   "bronbestand": "2025-12_GLR2.jpg",
+   "bronmaat": [
+    1920,
+    1079
+   ]
+  }
+ ],
+ "dienst-inpak": [
+  {
+   "slot": "dienst-inpak",
+   "id": "plant-inpakken",
+   "default": true,
+   "opm": "Echte foto (2021-10_TOPMOVERS-ZAKELIJK): verhuizer pakt een plant in noppenfolie, collega vult een TM-doos, stapel witte TM-dozen ('max. 20 kg', klein Erkende Verhuizers-logo). RETOUCHE: EU-keurmerklogo op de bovenste doos weggevuld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      620,
+      500,
+      1800,
+      1175
+     ],
+     "schaal": 0.949
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      620,
+      500,
+      1800,
+      1175
+     ],
+     "schaal": 0.644
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      620,
+      500,
+      1800,
+      1175
+     ],
+     "schaal": 0.339
+    }
+   },
+   "cutout": false,
+   "bron": 25,
+   "bronbestand": "2021-10_TOPMOVERS-ZAKELIJK.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dienst-inpak",
+   "id": "plant-inpakken-breed",
+   "default": false,
+   "opm": "Zelfde opstelling als 25, ander kader (2021-10_TM-zakelijk). Niet samen met 25 op een pagina gebruiken.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-breed-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      60,
+      500,
+      1240,
+      1175
+     ],
+     "schaal": 0.949
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-breed-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      60,
+      500,
+      1240,
+      1175
+     ],
+     "schaal": 0.644
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/plant-inpakken-breed-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      60,
+      500,
+      1240,
+      1175
+     ],
+     "schaal": 0.339
+    }
+   },
+   "cutout": false,
+   "bron": 14,
+   "bronbestand": "2021-10_TM-zakelijk.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dienst-inpak",
+   "id": "doos-dragen",
+   "default": false,
+   "opm": "Echte foto (2021-09_topmovers-9): verhuizer draagt een witte TM-'VERHUISDOOS' naar binnen; EU-keurmerklogo onderaan de doos valt buiten de crop, kleine gedraaide EPV-regel op de bovenkant van de doos is op tegelmaat onleesbaar.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/doos-dragen-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      150,
+      300,
+      1650,
+      1158
+     ],
+     "schaal": 0.747
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/doos-dragen-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      150,
+      300,
+      1650,
+      1158
+     ],
+     "schaal": 0.507
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-inpak/doos-dragen-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      150,
+      300,
+      1650,
+      1159
+     ],
+     "schaal": 0.267
+    }
+   },
+   "cutout": false,
+   "bron": 2,
+   "bronbestand": "2021-09_topmovers-9.jpg",
+   "bronmaat": [
+    2000,
+    1333
+   ]
+  }
+ ],
+ "dienst-montage": [
+  {
+   "slot": "dienst-montage",
+   "id": "lamp-ophangen",
+   "default": true,
+   "opm": "Echte foto (2021-10_TOPMOVERS-39, 6000px): verhuizer hangt een hanglamp op onder een open trap, groene fauteuils, houten kisten. Geen logo's in beeld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-ophangen-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      1898,
+      98,
+      5398,
+      2102
+     ],
+     "schaal": 0.32
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-ophangen-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      1898,
+      98,
+      5398,
+      2102
+     ],
+     "schaal": 0.217
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-ophangen-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      1898,
+      98,
+      5398,
+      2102
+     ],
+     "schaal": 0.114
+    }
+   },
+   "cutout": false,
+   "bron": 19,
+   "bronbestand": "2021-10_TOPMOVERS-39.jpg",
+   "bronmaat": [
+    6000,
+    4000
+   ]
+  },
+  {
+   "slot": "dienst-montage",
+   "id": "lamp-bank",
+   "default": false,
+   "opm": "Echte foto (2026-02_Handyman2): zelfde ruimte, verhuizer hangt een lamp op naast een gele bank.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-bank-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      349,
+      0,
+      1628,
+      732
+     ],
+     "schaal": 0.876
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-bank-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      349,
+      0,
+      1628,
+      732
+     ],
+     "schaal": 0.594
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-bank-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      349,
+      0,
+      1628,
+      732
+     ],
+     "schaal": 0.313
+    }
+   },
+   "cutout": false,
+   "bron": 77,
+   "bronbestand": "2026-02_Handyman2.jpg",
+   "bronmaat": [
+    1920,
+    732
+   ]
+  },
+  {
+   "slot": "dienst-montage",
+   "id": "lamp-onder",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-37): kikvorsperspectief, verhuizer draait een lamp vast onder de trap.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-onder-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      61,
+      1800,
+      1091
+     ],
+     "schaal": 0.622
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-onder-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      61,
+      1800,
+      1091
+     ],
+     "schaal": 0.422
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-montage/lamp-onder-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      61,
+      1800,
+      1091
+     ],
+     "schaal": 0.222
+    }
+   },
+   "cutout": false,
+   "bron": 18,
+   "bronbestand": "2021-10_TOPMOVERS-37.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "dienst-opslag": [
+  {
+   "slot": "dienst-opslag",
+   "id": "container-open",
+   "default": true,
+   "opm": "Echte foto (2021-10_opslag-TOPMOVERS-44): open opslagcontainer in een loods, deuren met 'Erkende Verhuizers', binnenin TM-dozen (o.a. 'SCHILDERIJBOX') en ingepakte inboedel. RETOUCHE: adreslabel van een ander lid (P.A. van Rooyen, Uithoorn) op de schilderijbox weggevuld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-open-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.622
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-open-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.422
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-open-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.222
+    }
+   },
+   "cutout": false,
+   "bron": 31,
+   "bronbestand": "2021-10_opslag-TOPMOVERS-44.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dienst-opslag",
+   "id": "container-kraan",
+   "default": false,
+   "opm": "Echte foto (2021-10_opslag-46weglogo): TM-container hangt aan de loodskraan tussen gestapelde containers.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-kraan-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      91,
+      1920,
+      1189
+     ],
+     "schaal": 0.583
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-kraan-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      91,
+      1920,
+      1189
+     ],
+     "schaal": 0.396
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-kraan-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      90,
+      1920,
+      1190
+     ],
+     "schaal": 0.208
+    }
+   },
+   "cutout": false,
+   "bron": 33,
+   "bronbestand": "2021-10_opslag-TOPMOVERS-46weglogo-s.jpg",
+   "bronmaat": [
+    1920,
+    1280
+   ]
+  },
+  {
+   "slot": "dienst-opslag",
+   "id": "container-nieuw-logo",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-44new-logos): dezelfde open container als 31 met nieuwere logo's.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-nieuw-logo-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      91,
+      1920,
+      1189
+     ],
+     "schaal": 0.583
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-nieuw-logo-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      91,
+      1920,
+      1189
+     ],
+     "schaal": 0.396
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-opslag/container-nieuw-logo-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      90,
+      1920,
+      1190
+     ],
+     "schaal": 0.208
+    }
+   },
+   "cutout": false,
+   "bron": 21,
+   "bronbestand": "2021-10_TOPMOVERS-44new-logos.jpg",
+   "bronmaat": [
+    1920,
+    1280
+   ]
+  }
+ ],
+ "dienst-zakelijk": [
+  {
+   "slot": "dienst-zakelijk",
+   "id": "kratten-kantoor",
+   "default": true,
+   "opm": "Echte foto (2021-10_TOPMOVERS-21): verhuizer duwt een rolwagen met drie groene verhuiskratten door een kantoor. Crop laat de klantnaam op de muur links buiten beeld.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/kratten-kantoor-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      299,
+      60,
+      1799,
+      919
+     ],
+     "schaal": 0.747
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/kratten-kantoor-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      299,
+      60,
+      1799,
+      919
+     ],
+     "schaal": 0.507
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/kratten-kantoor-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      299,
+      60,
+      1799,
+      919
+     ],
+     "schaal": 0.267
+    }
+   },
+   "cutout": false,
+   "bron": 15,
+   "bronbestand": "2021-10_TOPMOVERS-21.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dienst-zakelijk",
+   "id": "handdruk-kratten",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-02_IMG_0045): overdracht met handdruk bij stapels groene kratten, twee TM-medewerkers en twee klanten.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/handdruk-kratten-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      290,
+      3264,
+      2158
+     ],
+     "schaal": 0.343
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/handdruk-kratten-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      290,
+      3264,
+      2158
+     ],
+     "schaal": 0.233
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/handdruk-kratten-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      290,
+      3264,
+      2158
+     ],
+     "schaal": 0.123
+    }
+   },
+   "cutout": false,
+   "bron": 53,
+   "bronbestand": "2025-02_IMG_0045.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "slot": "dienst-zakelijk",
+   "id": "ict-kabels",
+   "default": false,
+   "opm": "Echte foto (2021-10_ICT-TOPMOVERS-11): handen bundelen netwerkkabels (ICT-verhuizing).",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/ict-kabels-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.622
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/ict-kabels-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.422
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-zakelijk/ict-kabels-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      85,
+      1800,
+      1115
+     ],
+     "schaal": 0.222
+    }
+   },
+   "cutout": false,
+   "bron": 11,
+   "bronbestand": "2021-10_ICT-TOPMOVERS-11.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "dienst-plan": [
+  {
+   "slot": "dienst-plan",
+   "id": "handdruk-gang",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-12_Alkmaar2): verhuisadviseur in TM-polo schudt een klant de hand, beiden duim omhoog, in een kantoorgang met ingepakte meubels.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/handdruk-gang-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      131,
+      2560,
+      1597
+     ],
+     "schaal": 0.438
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/handdruk-gang-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      131,
+      2560,
+      1597
+     ],
+     "schaal": 0.297
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/handdruk-gang-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      131,
+      2560,
+      1597
+     ],
+     "schaal": 0.156
+    }
+   },
+   "cutout": false,
+   "bron": 68,
+   "bronbestand": "2025-12_Alkmaar2-scaled-1.jpg",
+   "bronmaat": [
+    2560,
+    1920
+   ]
+  },
+  {
+   "slot": "dienst-plan",
+   "id": "overleg-tafel",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-11_TopMovers-mannen-header): twee TM-medewerkers aan een tafel in een hal vol verhuismaterieel.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/overleg-tafel-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      0,
+      64,
+      1280,
+      797
+     ],
+     "schaal": 0.875
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/overleg-tafel-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      0,
+      64,
+      1280,
+      797
+     ],
+     "schaal": 0.594
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/overleg-tafel-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      0,
+      64,
+      1280,
+      797
+     ],
+     "schaal": 0.312
+    }
+   },
+   "cutout": false,
+   "bron": 64,
+   "bronbestand": "2025-11_TopMovers-mannen-header-groot.jpeg",
+   "bronmaat": [
+    1280,
+    861
+   ]
+  },
+  {
+   "slot": "dienst-plan",
+   "id": "zwaaien-truck",
+   "default": false,
+   "opm": "Echte foto (2025-06_facilitair-regisseur): medewerker zwaait vanuit de deur van de wagen; kijkt in de lens.",
+   "bestanden": {
+    "1120": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/zwaaien-truck-1120.webp",
+     "w": 1120,
+     "h": 641,
+     "crop": [
+      168,
+      0,
+      1920,
+      1003
+     ],
+     "schaal": 0.639
+    },
+    "760": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/zwaaien-truck-760.webp",
+     "w": 760,
+     "h": 435,
+     "crop": [
+      168,
+      0,
+      1920,
+      1003
+     ],
+     "schaal": 0.434
+    },
+    "400": {
+     "pad": "_werk/beeld/kandidaten/dienst-plan/zwaaien-truck-400.webp",
+     "w": 400,
+     "h": 229,
+     "crop": [
+      168,
+      0,
+      1920,
+      1003
+     ],
+     "schaal": 0.228
+    }
+   },
+   "cutout": false,
+   "bron": 57,
+   "bronbestand": "2025-06_facilitair-regisseur.jpg",
+   "bronmaat": [
+    1920,
+    1003
+   ]
+  }
+ ],
+ "dozen-vak": [
+  {
+   "slot": "dozen-vak",
+   "id": "dozen-laadklep",
+   "default": true,
+   "opm": "Echte foto (2025-12_header-verhuisdozen): kraft TM-verhuisdozen (bij-logo, 'Aangesloten BIJ erkende verhuizers') op de laadklep van de verhuislift, verhuizer ernaast.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/dozen-laadklep-1100.webp",
+     "w": 1100,
+     "h": 1100,
+     "crop": [
+      301,
+      0,
+      1481,
+      1180
+     ],
+     "schaal": 0.932
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/dozen-laadklep-700.webp",
+     "w": 700,
+     "h": 700,
+     "crop": [
+      301,
+      0,
+      1481,
+      1180
+     ],
+     "schaal": 0.593
+    }
+   },
+   "cutout": false,
+   "bron": 75,
+   "bronbestand": "2025-12_header-verhuisdozen.jpg",
+   "bronmaat": [
+    1920,
+    1180
+   ]
+  },
+  {
+   "slot": "dozen-vak",
+   "id": "doos-gevel",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-4): witte TM-doos op het liftplateau, grachtenpand erachter.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/doos-gevel-1100.webp",
+     "w": 1100,
+     "h": 1100,
+     "crop": [
+      500,
+      0,
+      1700,
+      1200
+     ],
+     "schaal": 0.917
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/doos-gevel-700.webp",
+     "w": 700,
+     "h": 700,
+     "crop": [
+      500,
+      0,
+      1700,
+      1200
+     ],
+     "schaal": 0.583
+    }
+   },
+   "cutout": false,
+   "bron": 36,
+   "bronbestand": "2021-10_topmovers-4.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "dozen-vak",
+   "id": "dozen-containers",
+   "default": false,
+   "opm": "Echte foto (2026-03_TopMovers_CTWC, 4000x6000): verhuizer sluit een kraft TM-doos (flappen in elkaar, geen plakband) tussen zeecontainers, collega stapelt; is de standaard voor duo-opslag, dus alleen hier als die wisselt. Klein ledenlabel 'VAN DER ENT' op een container linksboven.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/dozen-containers-1100.webp",
+     "w": 1100,
+     "h": 1100,
+     "crop": [
+      0,
+      1402,
+      4000,
+      5402
+     ],
+     "schaal": 0.275
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/dozen-vak/dozen-containers-700.webp",
+     "w": 700,
+     "h": 700,
+     "crop": [
+      0,
+      1402,
+      4000,
+      5402
+     ],
+     "schaal": 0.175
+    }
+   },
+   "cutout": false,
+   "bron": 78,
+   "bronbestand": "2026-03_TopMovers_CTWC_12september2023-9.jpg",
+   "bronmaat": [
+    4000,
+    6000
+   ]
+  }
+ ],
+ "duo-opslag": [
+  {
+   "slot": "duo-opslag",
+   "id": "kraftdozen-duo",
+   "default": true,
+   "opm": "Echte foto (2026-03_TopMovers_CTWC, 4000x6000): verhuizer vouwt de flappen van een kraft TM-doos in elkaar (kliksluiting, geen plakband), collega stapelt er nog zes ('TOP MOVERS' met bij, 'Max. 20 kg', 'Aangesloten BIJ erkende verhuizers'); zeecontainers op de achtergrond zijn weggesneden. Verkleind 0,45x. Uitgesneden met ../cutout_mat.py (BiRefNet + closed-form matting + randdecontaminatie, 28-aug): zachte rand 2,5%, randhelderheid gelijk aan het binnenwerk. De eerdere Vision-uitsnede (cutout.py) had een zachte rand van 8% met lichte halo en hield witte container tussen mouw en doos en vloer onder de dozen vast.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/duo-opslag/kraftdozen-duo-1600.webp",
+     "w": 1600,
+     "h": 1663,
+     "crop": [
+      3473,
+      3567
+     ],
+     "schaal": 0.461
+    },
+    "1000": {
+     "pad": "_werk/beeld/kandidaten/duo-opslag/kraftdozen-duo-1000.webp",
+     "w": 1000,
+     "h": 1039,
+     "crop": [
+      3473,
+      3567
+     ],
+     "schaal": 0.288
+    }
+   },
+   "cutout": true,
+   "bron": 78,
+   "bronbestand": "2026-03_TopMovers_CTWC_12september2023-9.jpg",
+   "bronmaat": [
+    4000,
+    6000
+   ]
+  },
+  {
+   "slot": "duo-opslag",
+   "id": "laaddok-duo",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-56): verhuizer met TM-doos in de laadbak en collega leunend op een stapel witte TM-dozen; derde man in de bak viel weg. LET OP: bron is maar 831x835 op dit uitsnijgebied, 1600-variant is 1,9x opgeschaald (bij voorkeur niet kiezen).",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/duo-opslag/laaddok-duo-1600.webp",
+     "w": 1600,
+     "h": 1663,
+     "crop": [
+      752,
+      756
+     ],
+     "schaal": 2.128
+    },
+    "1000": {
+     "pad": "_werk/beeld/kandidaten/duo-opslag/laaddok-duo-1000.webp",
+     "w": 1000,
+     "h": 1039,
+     "crop": [
+      752,
+      756
+     ],
+     "schaal": 1.33
+    }
+   },
+   "cutout": true,
+   "bron": 22,
+   "bronbestand": "2021-10_TOPMOVERS-56.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "figuur-tafel": [
+  {
+   "slot": "figuur-tafel",
+   "id": "handdruk-vier",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-02_IMG_0045): vier personen, twee TM-medewerkers (zwarte polo, bruine TM-jas) en twee klanten (roze trui, donkerblauwe trui) schudden elkaar de hand; groene kratten zijn weggesneden; afgesneden op de knieen (beeldrand).",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/handdruk-vier-1100.webp",
+     "w": 1322,
+     "h": 1100,
+     "crop": [
+      2064,
+      1541
+     ],
+     "schaal": 0.641
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/handdruk-vier-700.webp",
+     "w": 841,
+     "h": 700,
+     "crop": [
+      2064,
+      1541
+     ],
+     "schaal": 0.407
+    }
+   },
+   "cutout": true,
+   "bron": 53,
+   "bronbestand": "2025-02_IMG_0045.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "slot": "figuur-tafel",
+   "id": "doos-aangeven",
+   "default": false,
+   "opm": "Echte foto (2021-10_Home-part-topmovers-14): verhuizer bukt over de liftrand en geeft een witte TM-'VERHUISDOOS' aan een lachende collega. LET OP: de rug van de bovenste man is aan de rechterkant recht afgesneden door de beeldrand.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/doos-aangeven-1100.webp",
+     "w": 1322,
+     "h": 1100,
+     "crop": [
+      1177,
+      1051
+     ],
+     "schaal": 1.047
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/doos-aangeven-700.webp",
+     "w": 841,
+     "h": 700,
+     "crop": [
+      1177,
+      1051
+     ],
+     "schaal": 0.666
+    }
+   },
+   "cutout": true,
+   "bron": 9,
+   "bronbestand": "2021-10_Home-part-topmovers-14.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "figuur-tafel",
+   "id": "laaddok-duo",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-56): twee verhuizers met witte TM-dozen. LET OP: 1,3x opgeschaald op de 1100-variant.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/laaddok-duo-1100.webp",
+     "w": 1322,
+     "h": 1100,
+     "crop": [
+      752,
+      756
+     ],
+     "schaal": 1.455
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-tafel/laaddok-duo-700.webp",
+     "w": 841,
+     "h": 700,
+     "crop": [
+      752,
+      756
+     ],
+     "schaal": 0.926
+    }
+   },
+   "cutout": true,
+   "bron": 22,
+   "bronbestand": "2021-10_TOPMOVERS-56.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "wagen-heerlijkthuis": [
+  {
+   "slot": "wagen-heerlijkthuis",
+   "id": "volvo-driekwart",
+   "default": true,
+   "opm": "Echte foto (2021-10_topmovers-47-NO-NAME-vrij): witte Volvo FL bakwagen driekwart van voren, 'TOP MOVERS' groot op de laadbak, klein 'Erkende Verhuizers'-logo op de hoek, kenteken 27-BKK-9, chauffeur in TM-polo achter het raam. RETOUCHE: CO2-Neutraal-logo en kleine EPV-tekst op de cabinezijde deterministisch weggevuld (De Kievit voert die niet). Uitgesneden met ../cutout_mat.py (BiRefNet + closed-form matting, 28-aug): randhelderheid 128 tegen binnenwerk 130, waar de Vision-uitsnede een lichte halo van +35 rond de hele wagen had. ONDERKANT 29-aug hersteld met wagen_onderkant.py: in een band van 16 px rond de BiRefNet-contour (bron y >= 880) vervangt het geblurde BiRefNet-masker de matting-alfa, die onder de banden de JPEG-blokken van de grondschaduw volgde (trapjes) en schaduwmist onder chassis en rolluikbox vasthield; knikken in de onderrand 126 naar 35, mistpixels 7.033 naar 3.900, op de pagina op 200% schoon.",
+   "bestanden": {
+    "1400": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/volvo-driekwart-1400.webp",
+     "w": 1400,
+     "h": 883,
+     "crop": [
+      1227,
+      1004
+     ],
+     "schaal": 0.879
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/volvo-driekwart-900.webp",
+     "w": 900,
+     "h": 568,
+     "crop": [
+      1227,
+      1004
+     ],
+     "schaal": 0.566
+    }
+   },
+   "cutout": true,
+   "bron": 37,
+   "bronbestand": "2021-10_topmovers-47-NO-NAME-vrij.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "wagen-heerlijkthuis",
+   "id": "volvo-front",
+   "default": false,
+   "opm": "Marketingcomposiet (2026-01_lets-move-to-zero): TM-truck frontaal, 'TOP MOVERS' op het dak en 'topmovers.nl' op de zonneklep, chauffeur zichtbaar.",
+   "bestanden": {
+    "1400": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/volvo-front-1400.webp",
+     "w": 1400,
+     "h": 883,
+     "crop": [
+      883,
+      1024
+     ],
+     "schaal": 0.862
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/volvo-front-900.webp",
+     "w": 900,
+     "h": 568,
+     "crop": [
+      883,
+      1024
+     ],
+     "schaal": 0.555
+    }
+   },
+   "cutout": true,
+   "bron": 76,
+   "bronbestand": "2026-01_lets-move-to-zero.png",
+   "bronmaat": [
+    3077,
+    1726
+   ]
+  },
+  {
+   "slot": "wagen-heerlijkthuis",
+   "id": "actros-front",
+   "default": false,
+   "opm": "Echte foto (2021-09_TM-truck.png, 947px): Mercedes Actros frontaal met 'topmovers.nl' en kenteken 'LET'S MOVE!'; klein bestand, alleen voor de 900-variant scherp genoeg.",
+   "bestanden": {
+    "1400": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/actros-front-1400.webp",
+     "w": 1400,
+     "h": 883,
+     "crop": [
+      788,
+      873
+     ],
+     "schaal": 1.011
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/wagen-heerlijkthuis/actros-front-900.webp",
+     "w": 900,
+     "h": 568,
+     "crop": [
+      788,
+      873
+     ],
+     "schaal": 0.651
+    }
+   },
+   "cutout": true,
+   "bron": 0,
+   "bronbestand": "2021-09_TM-truck.png",
+   "bronmaat": [
+    947,
+    1021
+   ]
+  }
+ ],
+ "team-boog": [
+  {
+   "slot": "team-boog",
+   "id": "lachen-magazijn",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-09_lachen, 3024x4032): twee lachende mannen in een magazijn met stellingen, een in TM-polo, een in oranje veiligheidshesje (klant/magazijnmedewerker).",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/team-boog/lachen-magazijn-1200.webp",
+     "w": 1200,
+     "h": 1789,
+     "crop": [
+      160,
+      0,
+      2864,
+      4032
+     ],
+     "schaal": 0.444
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/team-boog/lachen-magazijn-800.webp",
+     "w": 800,
+     "h": 1193,
+     "crop": [
+      160,
+      0,
+      2864,
+      4032
+     ],
+     "schaal": 0.296
+    }
+   },
+   "cutout": false,
+   "bron": 61,
+   "bronbestand": "2025-09_lachen.jpg",
+   "bronmaat": [
+    3024,
+    4032
+   ]
+  },
+  {
+   "slot": "team-boog",
+   "id": "laden-stelling",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-04_Snel-en-efficient-laden): verhuizer schuift materiaal in de stellingen van de laadbak, verhuisdekens op de voorgrond. Opschaling 1,12x.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/team-boog/laden-stelling-1200.webp",
+     "w": 1200,
+     "h": 1789,
+     "crop": [
+      64,
+      0,
+      1136,
+      1600
+     ],
+     "schaal": 1.119
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/team-boog/laden-stelling-800.webp",
+     "w": 800,
+     "h": 1193,
+     "crop": [
+      64,
+      0,
+      1136,
+      1600
+     ],
+     "schaal": 0.746
+    }
+   },
+   "cutout": false,
+   "bron": 56,
+   "bronbestand": "2025-04_Snel-en-efficient-laden.jpg",
+   "bronmaat": [
+    1200,
+    1600
+   ]
+  },
+  {
+   "slot": "team-boog",
+   "id": "team-trap-nap",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-09_IMG_0207): vier mannen (drie in TM-shirt) poseren op een trap naast een NAP-meetlat.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/team-boog/team-trap-nap-1200.webp",
+     "w": 1200,
+     "h": 1789,
+     "crop": [
+      1366,
+      0,
+      3008,
+      2448
+     ],
+     "schaal": 0.731
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/team-boog/team-trap-nap-800.webp",
+     "w": 800,
+     "h": 1193,
+     "crop": [
+      1366,
+      0,
+      3008,
+      2448
+     ],
+     "schaal": 0.487
+    }
+   },
+   "cutout": false,
+   "bron": 59,
+   "bronbestand": "2025-09_IMG_0207.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  }
+ ],
+ "verhuisteam": [
+  {
+   "slot": "verhuisteam",
+   "id": "overleg-tafel",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-11_TopMovers-mannen-header): twee TM-medewerkers in grijze TM-jassen aan een tafel in een hal vol verhuismaterieel (rolcontainers, dozen). Verkleind 0,94x.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/overleg-tafel-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      0,
+      4,
+      1280,
+      857
+     ],
+     "schaal": 0.938
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/overleg-tafel-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      0,
+      4,
+      1280,
+      857
+     ],
+     "schaal": 0.625
+    }
+   },
+   "cutout": false,
+   "bron": 64,
+   "bronbestand": "2025-11_TopMovers-mannen-header-groot.jpeg",
+   "bronmaat": [
+    1280,
+    861
+   ]
+  },
+  {
+   "slot": "verhuisteam",
+   "id": "trio-duim",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-12_Alkmaar-1): drie TM-medewerkers met duim omhoog in een kantoorgang.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/trio-duim-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      0,
+      107,
+      2560,
+      1813
+     ],
+     "schaal": 0.469
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/trio-duim-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      0,
+      107,
+      2560,
+      1813
+     ],
+     "schaal": 0.312
+    }
+   },
+   "cutout": false,
+   "bron": 67,
+   "bronbestand": "2025-12_Alkmaar-1-scaled-1.jpg",
+   "bronmaat": [
+    2560,
+    1920
+   ]
+  },
+  {
+   "slot": "verhuisteam",
+   "id": "lachen-liggend",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-09_lachen), liggende crop van de twee lachende mannen (standaard van team-boog, dus niet samen kiezen).",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/lachen-liggend-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      0,
+      403,
+      3024,
+      2419
+     ],
+     "schaal": 0.397
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/verhuisteam/lachen-liggend-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      0,
+      404,
+      3024,
+      2419
+     ],
+     "schaal": 0.265
+    }
+   },
+   "cutout": false,
+   "bron": 61,
+   "bronbestand": "2025-09_lachen.jpg",
+   "bronmaat": [
+    3024,
+    4032
+   ]
+  }
+ ],
+ "figuur-piano": [
+  {
+   "slot": "figuur-piano",
+   "id": "kratten-rolwagen",
+   "default": true,
+   "opm": "Echte foto (2021-10_TOPMOVERS-21): verhuizer in TM-polo duwt een rolwagen met drie groene verhuiskratten (label 'PLAATS LABEL HIER'), ten voeten uit.",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/kratten-rolwagen-1100.webp",
+     "w": 808,
+     "h": 1100,
+     "crop": [
+      368,
+      974
+     ],
+     "schaal": 1.129
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/kratten-rolwagen-700.webp",
+     "w": 514,
+     "h": 700,
+     "crop": [
+      368,
+      974
+     ],
+     "schaal": 0.719
+    }
+   },
+   "cutout": true,
+   "bron": 15,
+   "bronbestand": "2021-10_TOPMOVERS-21.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "figuur-piano",
+   "id": "doos-dragen",
+   "default": false,
+   "opm": "Echte foto (2021-09_topmovers-9): lachende verhuizer met bril draagt een witte TM-'VERHUISDOOS'. RETOUCHE: EU-keurmerklogo onderaan de doos weggevuld; kleine gedraaide EPV-regel op de bovenkant blijft (op figuurmaat onleesbaar).",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/doos-dragen-1100.webp",
+     "w": 808,
+     "h": 1100,
+     "crop": [
+      1109,
+      1147
+     ],
+     "schaal": 0.729
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/doos-dragen-700.webp",
+     "w": 514,
+     "h": 700,
+     "crop": [
+      1109,
+      1147
+     ],
+     "schaal": 0.463
+    }
+   },
+   "cutout": true,
+   "bron": 2,
+   "bronbestand": "2021-09_topmovers-9.jpg",
+   "bronmaat": [
+    2000,
+    1333
+   ]
+  },
+  {
+   "slot": "figuur-piano",
+   "id": "stofzuigen",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-25): verhuizer stofzuigt het tapijt van een kantoor (oplevering).",
+   "bestanden": {
+    "1100": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/stofzuigen-1100.webp",
+     "w": 808,
+     "h": 1100,
+     "crop": [
+      334,
+      909
+     ],
+     "schaal": 1.21
+    },
+    "700": {
+     "pad": "_werk/beeld/kandidaten/figuur-piano/stofzuigen-700.webp",
+     "w": 514,
+     "h": 700,
+     "crop": [
+      334,
+      909
+     ],
+     "schaal": 0.77
+    }
+   },
+   "cutout": true,
+   "bron": 16,
+   "bronbestand": "2021-10_TOPMOVERS-25.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "trap-scene": [
+  {
+   "slot": "trap-scene",
+   "id": "doos-aangeven-lift",
+   "default": true,
+   "opm": "Echte foto (2021-10_Home-part-topmovers-14): verhuizer geeft een witte TM-'VERHUISDOOS' aan zijn collega bij de verhuislift, bewoner kijkt toe vanaf het bordes van een grachtenpand. Opschaling 1,12x. Klein Erkende Verhuizers-logo op de doos.",
+   "bestanden": {
+    "1000": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/doos-aangeven-lift-1000.webp",
+     "w": 1000,
+     "h": 1339,
+     "crop": [
+      848,
+      0,
+      1744,
+      1200
+     ],
+     "schaal": 1.116
+    },
+    "640": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/doos-aangeven-lift-640.webp",
+     "w": 640,
+     "h": 857,
+     "crop": [
+      848,
+      0,
+      1744,
+      1200
+     ],
+     "schaal": 0.714
+    }
+   },
+   "cutout": false,
+   "bron": 9,
+   "bronbestand": "2021-10_Home-part-topmovers-14.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "trap-scene",
+   "id": "doos-gevel",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-4): witte TM-doos op het liftplateau, grachtenpand erachter.",
+   "bestanden": {
+    "1000": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/doos-gevel-1000.webp",
+     "w": 1000,
+     "h": 1339,
+     "crop": [
+      632,
+      0,
+      1528,
+      1200
+     ],
+     "schaal": 1.116
+    },
+    "640": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/doos-gevel-640.webp",
+     "w": 640,
+     "h": 857,
+     "crop": [
+      632,
+      0,
+      1528,
+      1200
+     ],
+     "schaal": 0.714
+    }
+   },
+   "cutout": false,
+   "bron": 36,
+   "bronbestand": "2021-10_topmovers-4.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "trap-scene",
+   "id": "lift-balkon",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-51): verhuislift naar een balkon, verhuizer neemt een kist aan; ledennaam rechtsonder buiten de crop.",
+   "bestanden": {
+    "1000": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/lift-balkon-1000.webp",
+     "w": 1000,
+     "h": 1339,
+     "crop": [
+      362,
+      0,
+      1258,
+      1200
+     ],
+     "schaal": 1.116
+    },
+    "640": {
+     "pad": "_werk/beeld/kandidaten/trap-scene/lift-balkon-640.webp",
+     "w": 640,
+     "h": 857,
+     "crop": [
+      362,
+      0,
+      1258,
+      1200
+     ],
+     "schaal": 0.714
+    }
+   },
+   "cutout": false,
+   "bron": 39,
+   "bronbestand": "2021-10_topmovers-51.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ],
+ "familie": [
+  {
+   "slot": "familie",
+   "id": "laadklep-kast",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-12_GLR2): twee verhuizers rijden een kast op een hondje bij de laadklep van de TM-bakwagen, kantoorspullen op de klep, tweede TM-truck erachter; past bij 'Ook voor uw bedrijfsverhuizing'. RETOUCHE: ledenlogo 'VAN DER ENT' op een doos op de klep weggevuld.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/familie/laadklep-kast-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      1,
+      6,
+      1601,
+      1073
+     ],
+     "schaal": 0.75
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/familie/laadklep-kast-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      1,
+      6,
+      1601,
+      1072
+     ],
+     "schaal": 0.5
+    }
+   },
+   "cutout": false,
+   "bron": 72,
+   "bronbestand": "2025-12_GLR2.jpg",
+   "bronmaat": [
+    1920,
+    1079
+   ]
+  },
+  {
+   "slot": "familie",
+   "id": "kantoor-inpakken",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-ZAKELIJK): inpakken op kantoor, TM-dozen; is de standaard van dienst-inpak, dus niet samen kiezen.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/familie/kantoor-inpakken-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      300,
+      200,
+      1800,
+      1200
+     ],
+     "schaal": 0.8
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/familie/kantoor-inpakken-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      300,
+      201,
+      1800,
+      1200
+     ],
+     "schaal": 0.533
+    }
+   },
+   "cutout": false,
+   "bron": 25,
+   "bronbestand": "2021-10_TOPMOVERS-ZAKELIJK.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  },
+  {
+   "slot": "familie",
+   "id": "handdruk-kratten",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-02_IMG_0045): overdracht met handdruk bij groene kratten.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/familie/handdruk-kratten-1200.webp",
+     "w": 1200,
+     "h": 800,
+     "crop": [
+      0,
+      136,
+      3264,
+      2312
+     ],
+     "schaal": 0.368
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/familie/handdruk-kratten-800.webp",
+     "w": 800,
+     "h": 533,
+     "crop": [
+      0,
+      137,
+      3264,
+      2311
+     ],
+     "schaal": 0.245
+    }
+   },
+   "cutout": false,
+   "bron": 53,
+   "bronbestand": "2025-02_IMG_0045.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  }
+ ],
+ "huisje": [
+  {
+   "slot": "huisje",
+   "id": "landweg",
+   "default": true,
+   "opm": "Marketingcomposiet (2026-01_lets-move-to-zero): TM-truck frontaal op een landweg tussen bloemenvelden, 'topmovers.nl' op de zonneklep; is ook hero-alternatief, dus niet samen kiezen.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/huisje/landweg-1200.webp",
+     "w": 1200,
+     "h": 900,
+     "crop": [
+      388,
+      0,
+      2689,
+      1726
+     ],
+     "schaal": 0.522
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/huisje/landweg-800.webp",
+     "w": 800,
+     "h": 600,
+     "crop": [
+      388,
+      0,
+      2689,
+      1726
+     ],
+     "schaal": 0.348
+    }
+   },
+   "cutout": false,
+   "bron": 76,
+   "bronbestand": "2026-01_lets-move-to-zero.png",
+   "bronmaat": [
+    3077,
+    1726
+   ]
+  },
+  {
+   "slot": "huisje",
+   "id": "truck-pand",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-09_IMG_0179): TM-bakwagen ('TOP MOVERS', 'Erkende Verhuizers') met laadklep bij een bakstenen pand.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/huisje/truck-pand-1200.webp",
+     "w": 1200,
+     "h": 900,
+     "crop": [
+      0,
+      0,
+      3264,
+      2448
+     ],
+     "schaal": 0.368
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/huisje/truck-pand-800.webp",
+     "w": 800,
+     "h": 600,
+     "crop": [
+      0,
+      0,
+      3264,
+      2448
+     ],
+     "schaal": 0.245
+    }
+   },
+   "cutout": false,
+   "bron": 58,
+   "bronbestand": "2025-09_IMG_0179.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "slot": "huisje",
+   "id": "gracht-bovenaf",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-28-header): van bovenaf langs de verhuislift op een TM-bakwagen aan een gracht.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/huisje/gracht-bovenaf-1200.webp",
+     "w": 1200,
+     "h": 900,
+     "crop": [
+      107,
+      0,
+      1813,
+      1280
+     ],
+     "schaal": 0.703
+    },
+    "800": {
+     "pad": "_werk/beeld/kandidaten/huisje/gracht-bovenaf-800.webp",
+     "w": 800,
+     "h": 600,
+     "crop": [
+      107,
+      0,
+      1813,
+      1280
+     ],
+     "schaal": 0.469
+    }
+   },
+   "cutout": false,
+   "bron": 35,
+   "bronbestand": "2021-10_topmovers-28-header-s.jpg",
+   "bronmaat": [
+    1920,
+    1280
+   ]
+  }
+ ],
+ "figuur-wasmachine-v2": [
+  {
+   "slot": "figuur-wasmachine-v2",
+   "id": "medaillon-1910-wagen",
+   "default": true,
+   "opm": "Historische foto van De Kievit (fotos-kievit, zwart-wit): paard en wagen met kinderen erop en een jongen ernaast voor het pand 'W. de Kievit Expeditie en Verhuizingen'; als ovaal medaillon met zachte rand voor de gouden cirkel bij 'Meer dan honderd jaar verhuizen vanuit Venlo'.",
+   "bestanden": {
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/figuur-wasmachine-v2/medaillon-1910-wagen-1280.webp",
+     "w": 1280,
+     "h": 1278,
+     "crop": [
+      579,
+      62,
+      1879,
+      1360
+     ],
+     "schaal": 0.985
+    },
+    "820": {
+     "pad": "_werk/beeld/kandidaten/figuur-wasmachine-v2/medaillon-1910-wagen-820.webp",
+     "w": 820,
+     "h": 819,
+     "crop": [
+      579,
+      62,
+      1879,
+      1360
+     ],
+     "schaal": 0.631
+    }
+   },
+   "cutout": true,
+   "bron": 90,
+   "bronbestand": "2024-07_12239250_1157422357620783_6411693261208133292_o.jpg",
+   "bronmaat": [
+    2048,
+    1360
+   ]
+  },
+  {
+   "slot": "figuur-wasmachine-v2",
+   "id": "medaillon-oude-trucks",
+   "default": false,
+   "opm": "Historische foto (fotos-kievit, zwart-wit): twee vrachtwagens 'Firma W. de Kievit & Zonen, intern. transporten en verhuizingen, Venlo' bij flats; ovaal medaillon.",
+   "bestanden": {
+    "1280": {
+     "pad": "_werk/beeld/kandidaten/figuur-wasmachine-v2/medaillon-oude-trucks-1280.webp",
+     "w": 1280,
+     "h": 1278,
+     "crop": [
+      272,
+      2,
+      1704,
+      1433
+     ],
+     "schaal": 0.894
+    },
+    "820": {
+     "pad": "_werk/beeld/kandidaten/figuur-wasmachine-v2/medaillon-oude-trucks-820.webp",
+     "w": 820,
+     "h": 819,
+     "crop": [
+      272,
+      2,
+      1704,
+      1433
+     ],
+     "schaal": 0.573
+    }
+   },
+   "cutout": true,
+   "bron": 89,
+   "bronbestand": "2024-07_11041591_1000998836596470_7213051551904365439_o.png",
+   "bronmaat": [
+    1976,
+    1433
+   ]
+  }
+ ],
+ "leadblock-plant": [
+  {
+   "slot": "leadblock-plant",
+   "id": "trio-duim-staand",
+   "default": true,
+   "opm": "Echte telefoonfoto (2025-12_Alkmaar-1): drie TM-medewerkers (grijze sweater, zwarte polo's met TM-logo) met duim omhoog in een kantoorgang met glaswand. Staande crop, koppen bovenin (object-position center top).",
+   "bestanden": {
+    "1240": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/trio-duim-staand-1240.webp",
+     "w": 1240,
+     "h": 1848,
+     "crop": [
+      746,
+      236,
+      1876,
+      1920
+     ],
+     "schaal": 1.097
+    },
+    "820": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/trio-duim-staand-820.webp",
+     "w": 820,
+     "h": 1222,
+     "crop": [
+      746,
+      236,
+      1876,
+      1920
+     ],
+     "schaal": 0.726
+    }
+   },
+   "cutout": false,
+   "bron": 67,
+   "bronbestand": "2025-12_Alkmaar-1-scaled-1.jpg",
+   "bronmaat": [
+    2560,
+    1920
+   ]
+  },
+  {
+   "slot": "leadblock-plant",
+   "id": "handdruk-staand",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-02_IMG_0045): handdruk bij groene kratten, staande crop op de handdruk.",
+   "bestanden": {
+    "1240": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/handdruk-staand-1240.webp",
+     "w": 1240,
+     "h": 1848,
+     "crop": [
+      941,
+      0,
+      2584,
+      2448
+     ],
+     "schaal": 0.755
+    },
+    "820": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/handdruk-staand-820.webp",
+     "w": 820,
+     "h": 1222,
+     "crop": [
+      941,
+      0,
+      2584,
+      2448
+     ],
+     "schaal": 0.499
+    }
+   },
+   "cutout": false,
+   "bron": 53,
+   "bronbestand": "2025-02_IMG_0045.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "slot": "leadblock-plant",
+   "id": "laden-stelling",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-04_Snel-en-efficient-laden): verhuizer in de stellingen van de laadbak. Opschaling 1,16x.",
+   "bestanden": {
+    "1240": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/laden-stelling-1240.webp",
+     "w": 1240,
+     "h": 1848,
+     "crop": [
+      64,
+      0,
+      1136,
+      1600
+     ],
+     "schaal": 1.157
+    },
+    "820": {
+     "pad": "_werk/beeld/kandidaten/leadblock-plant/laden-stelling-820.webp",
+     "w": 820,
+     "h": 1222,
+     "crop": [
+      64,
+      0,
+      1136,
+      1600
+     ],
+     "schaal": 0.765
+    }
+   },
+   "cutout": false,
+   "bron": 56,
+   "bronbestand": "2025-04_Snel-en-efficient-laden.jpg",
+   "bronmaat": [
+    1200,
+    1600
+   ]
+  }
+ ],
+ "footer-avond": [
+  {
+   "slot": "footer-avond",
+   "id": "truck-avondlucht",
+   "default": true,
+   "opm": "Echte foto (2021-10_100-elektrisch-Top-Mover-truck): TM-bakwagen driekwart op een landweg onder een oranje-blauwe avondlucht, 'TOP MOVERS' groot op de bak, klein Erkende Verhuizers-logo. RETOUCHE: '100% elektrisch' op de deur en '100% elektrische verhuizingen' op de dorpel deterministisch weggevuld.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/truck-avondlucht-1600.webp",
+     "w": 1600,
+     "h": 1073,
+     "crop": [
+      7,
+      0,
+      1793,
+      1198
+     ],
+     "schaal": 0.896
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/truck-avondlucht-900.webp",
+     "w": 900,
+     "h": 604,
+     "crop": [
+      7,
+      0,
+      1793,
+      1198
+     ],
+     "schaal": 0.504
+    }
+   },
+   "cutout": false,
+   "bron": 6,
+   "bronbestand": "2021-10_100-elektrisch-Top-Mover-truck.jpg",
+   "bronmaat": [
+    1800,
+    1198
+   ]
+  },
+  {
+   "slot": "footer-avond",
+   "id": "truck-pand",
+   "default": false,
+   "opm": "Echte telefoonfoto (2025-09_IMG_0179): TM-bakwagen ('TOP MOVERS' groot op de zijkant, klein 'Erkende Verhuizers'-logo) met laadklep bij een bakstenen bedrijfspand, daglicht; cabine schuilt achter de hoek van het pand. Geen ledennaam, EPV of CO2 in beeld. Was 28-aug kort de default toen de avondtruck nog in de hero-video zat; sinds de video zonder wagen speelt is bron 6 weer de footer.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/truck-pand-1600.webp",
+     "w": 1600,
+     "h": 1073,
+     "crop": [
+      0,
+      7,
+      3264,
+      2196
+     ],
+     "schaal": 0.49
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/truck-pand-900.webp",
+     "w": 900,
+     "h": 604,
+     "crop": [
+      0,
+      6,
+      3264,
+      2197
+     ],
+     "schaal": 0.276
+    }
+   },
+   "cutout": false,
+   "bron": 58,
+   "bronbestand": "2025-09_IMG_0179.jpg",
+   "bronmaat": [
+    3264,
+    2448
+   ]
+  },
+  {
+   "slot": "footer-avond",
+   "id": "gracht-bovenaf",
+   "default": false,
+   "opm": "Echte foto (2021-10_topmovers-28-header): van bovenaf langs de verhuislift op een TM-bakwagen aan een gracht.",
+   "bestanden": {
+    "1600": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/gracht-bovenaf-1600.webp",
+     "w": 1600,
+     "h": 1073,
+     "crop": [
+      6,
+      0,
+      1914,
+      1280
+     ],
+     "schaal": 0.839
+    },
+    "900": {
+     "pad": "_werk/beeld/kandidaten/footer-avond/gracht-bovenaf-900.webp",
+     "w": 900,
+     "h": 604,
+     "crop": [
+      6,
+      0,
+      1914,
+      1280
+     ],
+     "schaal": 0.472
+    }
+   },
+   "cutout": false,
+   "bron": 35,
+   "bronbestand": "2021-10_topmovers-28-header-s.jpg",
+   "bronmaat": [
+    1920,
+    1280
+   ]
+  }
+ ],
+ "og": [
+  {
+   "slot": "og",
+   "id": "team-doos",
+   "default": true,
+   "opm": "Echte foto (2025-11_TopMovers-mannen-header3): drie verhuizers op een bank met TM-doos ('aanpakkers met impact!') voor een Mercedes Actros met 'topmovers.nl', liggende social-crop. RETOUCHE: jubileumlogo '100 Van der Ent Group' (ander lid) op de cabinedeur weggevuld.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/og/team-doos-1200.jpg",
+     "w": 1200,
+     "h": 630,
+     "crop": [
+      0,
+      51,
+      1280,
+      723
+     ],
+     "schaal": 0.938
+    }
+   },
+   "cutout": false,
+   "bron": 66,
+   "bronbestand": "2025-11_TopMovers-mannen-header3-groot.jpeg",
+   "bronmaat": [
+    1280,
+    861
+   ]
+  },
+  {
+   "slot": "og",
+   "id": "laaddok",
+   "default": false,
+   "opm": "Echte foto (2021-10_TOPMOVERS-56): drie verhuizers met TM-dozen bij de laadbak aan het dok.",
+   "bestanden": {
+    "1200": {
+     "pad": "_werk/beeld/kandidaten/og/laaddok-1200.jpg",
+     "w": 1200,
+     "h": 630,
+     "crop": [
+      0,
+      68,
+      1800,
+      1012
+     ],
+     "schaal": 0.667
+    }
+   },
+   "cutout": false,
+   "bron": 22,
+   "bronbestand": "2021-10_TOPMOVERS-56.jpg",
+   "bronmaat": [
+    1800,
+    1200
+   ]
+  }
+ ]
+}

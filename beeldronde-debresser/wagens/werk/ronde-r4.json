@@ -1,0 +1,50 @@
+{
+  "naam": "wagen-debresser-r4",
+  "titel": "De Bresser-vrachtwagen met belettering (ronde 4)",
+  "plek": "Nog geen vast vak toegewezen: losse vrachtwagen zonder mensen, liggend 3:2, voor een brede fotoplek of paginahero op de nieuwe De Bresser-site",
+  "lead": "Versie 2 en 3 uit ronde 3, met de notities van de gebruiker. Versie 2: \"still not centered, more to the left.\" Versie 3: \"still not centered, more to the left.\" Gelezen als: schuif het logo naar links. Het midden is nu de as van de wagen zelf: het Renault-logo, de donkere sleuf direct onder de witte plaat en de grille liggen in beide beelden op een verticale lijn, en het hele logo (naam en beeldmerk samen) staat nu op die lijn gecentreerd. In ronde 3 stond het op het midden van de witte plaat, maar die plaat is in deze gegenereerde wagens niet symmetrisch: het midden ervan ligt 75 px (versie 2) en 49 px (versie 3) rechts van de as. Onder elk beeld staan de fronten van ronde 3 en ronde 4 naast elkaar; de rode lijn is de as. Versie 2: as op x 605; logo was x 556-779, is nu 497-713. Versie 3: as op x 830; logo was x 762-984, is nu 720-940. Het logo valt nu precies boven de donkere sleuf (versie 2: sleuf 503-708; versie 3: 720-939). Het is even hoog en door het perspectief een paar pixels smaller. Alleen het front is veranderd; de zijkant is pixel voor pixel die van ronde 2 en 3. Er is niets opnieuw gegenereerd. OPEN, nog steeds niet beslist: (1) de vestigingen: Venlo, Brussel en Reeuwijk ontbreken; (2) het nummer van Breda: 076 - 8200233 op de wagen, 076 52 24 100 op /contact/; (3) de regel 'FULL SERVICE IN LOGISTIEK', terwijl de logistieke tak in 2024 verkocht is. Voorlopig staat er wat er nu op de echte wagen staat.",
+  "ratio": "3:2",
+  "grootte": "2K",
+  "basis": false,
+  "regels": [
+    "wagen-debresser.txt"
+  ],
+  "regels_na": [
+    "licht-camera-wagen.txt"
+  ],
+  "refs": [
+    {
+      "pad": "ref-debresser-wagen-parijs-zonder-tekst.jpg",
+      "wat": "the De Bresser moving truck with its green band, green cubes and green cab block; the printed lettering has been removed from this photo on purpose, so copy the truck, its proportions and the green shapes, not the Paris background"
+    }
+  ],
+  "stijl": "Photorealistic documentary photograph of one moving truck, aspect ratio {ratio}, full-frame camera, natural colours.",
+  "versies": [
+    {
+      "nr": 2,
+      "naam": "Driekwart voor, bij de loods",
+      "scene": "The truck stands on grey brick pavers at the company depot on a business park, in front of a dark grey corrugated steel warehouse with a large closed roller door. Seen from the front three-quarter, from the front left corner, so the cab front and the whole left side of the box with the green band are visible, the box running away to the right. A pale blue sky with some light cloud above the warehouse roof. Afternoon sun from the right, the cab front in soft light."
+    },
+    {
+      "nr": 3,
+      "naam": "Onderweg in Brabant",
+      "scene": "The truck drives along a straight two-lane provincial road through the Brabant countryside, flat green fields and a row of tall poplars along the road, a red-brick farmhouse far off. Seen from the verge at a slight angle from the front, the left side of the box with the green band toward the camera. The truck is sharp, the wheels show a little motion, the road surface grey asphalt with white edge lines. Bright midday light under thin high cloud."
+    }
+  ],
+  "lagen": [
+    {
+      "patroon": "versie-{nr}-merk",
+      "label": "met belettering",
+      "klasse": "klaar"
+    },
+    {
+      "patroon": "versie-{nr}",
+      "label": "ruw uit de generator",
+      "klasse": "ruw"
+    }
+  ],
+  "crop": {
+    "patroon": "controle/versie-{nr}-front-r3-r4",
+    "label": "het front: links ronde 3, rechts ronde 4; de rode lijn is het midden van de wagen"
+  }
+}

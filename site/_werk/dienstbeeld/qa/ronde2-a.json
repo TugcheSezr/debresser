@@ -1,0 +1,44 @@
+{
+ "ant3-kunstkist-schuim": {
+  "oordeel": "let",
+  "tekst": "Paneel dekkend wit met noppenfolie, kist zonder opdruk, borstprint correct, gezicht en handen goed, NL straat en stopcontact. Enige punt: kenteken van de auto buiten het raam is leesbaar (JP-17S-R).",
+  "retouche": "Kenteken op de zwarte auto buiten het raam (x 140-250, y 1060-1100) onscherp maken of leeg geel maken.",
+  "opnieuw": ""
+ },
+ "inp1-borden-rechtop": {
+  "oordeel": "goed",
+  "tekst": "Borden rechtop in papier, open doos met flappen naar buiten, doosopdruk als referentie, borstprint correct, gezicht en handen goed, NL keuken. Smallere uitsnede snijdt de doosopdruk rechtsonder aan.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "inp4-televisie-deken": {
+  "oordeel": "fout",
+  "tekst": "Man, tv en deken goed, maar borstprint met gele bij en groene strepen i.p.v. swoosh; doos hoog-smal met donkere lijn-zeshoeken en zonder swoosh; handschrift op de bovenflap.",
+  "retouche": "Alternatief voor opnieuw: borstprint (x 650-870, y 960-1130) vervangen door het polo-lockup; handschrift op de bovenflap (x 1060-1510, y 1240-1275) wegpoetsen; zeshoekenband links (x 1010-1080, y 1235-2140) teal/geel vullen en een swoosh onder MOVERS zetten.",
+  "opnieuw": "Doos en polo wijken nog af. Prompt: 'the box is wider than tall; hexagons are FILLED teal-green and yellow in small clusters, never outlined; teal swoosh under MOVERS; no handwriting or marks on any box; the polo print has NO bee and NO lines, only the thin teal swoosh'. Zet de doos kleiner en verder van de camera."
+ },
+ "inp6-team-woonkamer-breed": {
+  "oordeel": "fout",
+  "tekst": "Glazen en dozen nu goed, maar beide mannen lachen breed met tanden, hoofd links in de bovenste band (11-26% hoogte), print rechts leest 'HAVERS', zwarte plug in oor rechts, tekstlabel op flap tafeldoos.",
+  "retouche": "",
+  "opnieuw": "Monden: 'mouths CLOSED, no teeth visible, a faint smile only'. Compositie: 'camera lower and a step further back, both heads between 30% and 70% of the frame height'. Verder: 'no earring', 'the second mover's print reads MOVERS', 'no label or sticker on any flap'."
+ },
+ "int1-duitse-straat-laadklep": {
+  "oordeel": "goed",
+  "tekst": "Duits pand, klep achterop, wagen: TOP boven, MOVERS eronder, letters een kleur, swoosh onder, achterkant kaal teal; dozen herkenbaar, regels zacht en onleesbaar; bord en belplaat onleesbaar; gezicht en handen goed.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "int4-laadbak-vol-lange-rit": {
+  "oordeel": "let",
+  "tekst": "Europese wagen, kale teal achterkant, leeg kenteken, dekens los, dozen als referentie. Nog: 3 stukjes plakband op dekens, label 'MeK' op bovenflap van de doos in zijn hand, polo leest 'MAVERS', letterresten op bumper.",
+  "retouche": "Plakband weghalen: linkerdeken x 190-250 y 1060-1110 en y 1625-1675, rechterdeken x 1305-1350 y 880-995. Label op bovenflap x 860-980 y 1335-1380 (deels onder zijn vingers) wegpoetsen. Borstprint x 870-1000 y 1020-1130 vervangen door polo-lockup. Witte letterresten op de bumper x 330-430 en x 1250-1350, y 2290-2335 dekkend maken.",
+  "opnieuw": ""
+ },
+ "int6-snelweg-wagen": {
+  "oordeel": "let",
+  "tekst": "Nieuwe versie (14:53): lockup nu TOP boven, MOVERS eronder, swoosh onder met pijlpunt; klep, teal achterkant, kenteken en NL landschap goed. Nog: O van TOP is teal, blauw bord links leest 'Storn / praffio: Soon'.",
+  "retouche": "O van TOP (x 1180-1370, y 490-750) in dezelfde donkere kleur als T en P; tekst op het blauwe bord linksboven (x 0-140, y 745-847) weg, of het bord wegcroppen (staat aan de linkerrand).",
+  "opnieuw": ""
+ }
+}

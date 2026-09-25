@@ -1,0 +1,35 @@
+route,huidige_robots,beoogde_eindstatus,bron_eigenaar,bronbestand,batch,canonical_nu,title_lengte,description_lengte,bytes,vrijgave_voorwaarde
+/,"index, follow","index,follow",T1,build_kievit.py (uit mijnheerlijkthuis-bron),,(geen),86,269,86479,reeds indexeerbaar; blijft index
+/algemene-voorwaarden/,(geen),"index,follow",T3,site/_werk/paginas/algemene-voorwaarden.html,,(geen),45,0,189859,reeds indexeerbaar; blijft index
+/antiek-en-kunst-verhuizen/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-antiek-en-kunst-verhuizen.html (na extractie, Fase 0)",batch C,(geen),40,0,66947,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/certificeringen/,(geen),"index,follow",T3,site/_werk/paginas/certificeringen.html,,(geen),40,0,73167,reeds indexeerbaar; blijft index
+/contact/,(geen),"index,follow",T3,site/_werk/paginas/contact.html,,(geen),32,0,61819,reeds indexeerbaar; blijft index
+/cookiebeleid/,(geen),"index,follow",T3,site/_werk/paginas/cookiebeleid.html,,(geen),37,0,32973,reeds indexeerbaar; blijft index
+/diensten/,(geen),"index,follow",T2,site/_werk/paginas/diensten.html,,(geen),45,0,70076,reeds indexeerbaar; blijft index
+/disclaimer/,(geen),"index,follow",T3,site/_werk/paginas/disclaimer.html,,(geen),35,0,34913,reeds indexeerbaar; blijft index
+/dozencalculator/,(geen),"index,follow",T2,site/_werk/paginas/dozencalculator.html,,(geen),40,0,66181,reeds indexeerbaar; blijft index
+/duurzaamheid/,(geen),"index,follow",T3,site/_werk/paginas/duurzaamheid.html,,(geen),37,0,60336,reeds indexeerbaar; blijft index
+/erkende-verhuizer/,(geen),"index,follow",T3,site/_werk/paginas/erkende-verhuizer.html,,(geen),42,0,78486,reeds indexeerbaar; blijft index
+/inboedelopslag/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-inboedelopslag.html (na extractie, Fase 0)",batch A,(geen),39,0,66958,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/inpakservice/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-inpakservice.html (na extractie, Fase 0)",batch B,(geen),37,0,66904,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/inpaktips/,(geen),"index,follow",T2,site/_werk/paginas/inpaktips.html,,(geen),34,0,62321,reeds indexeerbaar; blijft index
+/internationale-verhuizing/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-internationale-verhuizing.html (na extractie, Fase 0)",batch A,(geen),50,0,66989,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/kantoorverhuizing/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-kantoorverhuizing.html (na extractie, Fase 0)",batch A,(geen),42,0,67022,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/klachtenregeling/,(geen),"index,follow",T3,site/_werk/paginas/klachtenregeling.html,,(geen),41,0,53505,reeds indexeerbaar; blijft index
+/klantervaringen/,(geen),"index,follow",T3,site/_werk/paginas/klantervaringen.html,,(geen),40,0,79215,reeds indexeerbaar; blijft index
+/m3-calculator/,(geen),"index,follow",T2,site/_werk/paginas/m3-calculator.html,,(geen),38,0,136637,reeds indexeerbaar; blijft index
+/montage-demontage/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-montage-demontage.html (na extractie, Fase 0)",batch B,(geen),45,0,66931,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/over-ons/,(geen),"index,follow",T3,site/_werk/paginas/over-ons.html,,(geen),33,0,66523,reeds indexeerbaar; blijft index
+/particulier-verhuizen/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-particulier-verhuizen.html (na extractie, Fase 0)",batch A,(geen),48,0,66988,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/piano-verhuizen/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-piano-verhuizen.html (na extractie, Fase 0)",batch C,(geen),40,0,66959,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/privacybeleid/,(geen),"index,follow",T3,site/_werk/paginas/privacybeleid.html,,(geen),38,0,40890,reeds indexeerbaar; blijft index
+/seniorenverhuizing/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-seniorenverhuizing.html (na extractie, Fase 0)",batch B,(geen),43,0,66992,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/sitemap/,(geen),"index,follow",T1,"site/_werk/paginas/sitemap.html (nog gegenereerd, geen handlaag)",,(geen),32,0,27629,reeds indexeerbaar; blijft index
+/spoedverhuizing/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-spoedverhuizing.html (na extractie, Fase 0)",batch B,(geen),40,0,66921,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)
+/toegankelijkheid/,(geen),"index,follow",T3,site/_werk/paginas/toegankelijkheid.html,,(geen),41,0,47173,reeds indexeerbaar; blijft index
+/vacatures/,(geen),"index,follow",T2,site/_werk/paginas/vacatures.html,,(geen),45,0,55726,reeds indexeerbaar; blijft index
+/veelgestelde-vragen/,(geen),"index,follow",T2,site/_werk/paginas/veelgestelde-vragen.html,,(geen),44,0,60177,reeds indexeerbaar; blijft index
+/verhuischecklist/,(geen),"index,follow",T2,site/_werk/paginas/verhuischecklist.html,,(geen),41,0,78319,reeds indexeerbaar; blijft index
+/verzekering/,(geen),"index,follow",T3,site/_werk/paginas/verzekering.html,,(geen),36,0,55013,reeds indexeerbaar; blijft index
+/werkwijze/,(geen),"index,follow",T2,site/_werk/paginas/werkwijze.html,,(geen),39,0,57741,reeds indexeerbaar; blijft index
+/zorgverhuizing/,"noindex, nofollow","index,follow",T2,"site/_werk/paginas/dienst-zorgverhuizing.html (na extractie, Fase 0)",batch C,(geen),39,0,66991,T2 CONTENT + T3 CLAIMS + T4 QA + STAKEHOLDER (case/toestemming)

@@ -1,0 +1,38 @@
+{
+ "team-wagen": {
+  "bron": "08-doos-aangeven",
+  "mobiel": [
+   1250,
+   40,
+   2150,
+   1074
+  ]
+ },
+ "keukentafel": {
+  "bron": "10-plan-keukentafel",
+  "mobiel": [
+   1550,
+   310,
+   2450,
+   1344
+  ]
+ },
+ "adviseur-deur": {
+  "bron": "06-opname-handdruk",
+  "mobiel": [
+   1250,
+   44,
+   2380,
+   1344
+  ]
+ },
+ "inpakken-keuken": {
+  "bron": "04-inpakken-keuken",
+  "mobiel": [
+   1400,
+   0,
+   2530,
+   1300
+  ]
+ }
+}

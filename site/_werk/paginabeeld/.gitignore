@@ -1,0 +1,12 @@
+# Zelfde opzet als site/_werk/dienstbeeld/.gitignore: de bronplaten en de tussenstappen blijven lokaal, de
+# geleverde webp's (web/, contact-web/), de referenties en de scripts gaan wel mee. Zonder deze regels zou deze
+# map 226 MB aan PNG-masters in de repo zetten voor een keuzeronde die al geleverd is.
+raw/
+edit/
+klaar/
+contact-raw/
+contact-cut/
+contact-edit/
+contact-klaar/
+__pycache__/
+*.log

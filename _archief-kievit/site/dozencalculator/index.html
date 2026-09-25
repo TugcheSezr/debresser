@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Dozencalculator | De Kievit Verhuizingen</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="description" content="Reken uit hoeveel verhuisdozen u ongeveer nodig heeft voor uw woning en inboedel. Waar dat getal vandaan komt en wat de calculator niet ziet, staat erbij.">
+<link rel="canonical" href="https://www.de-kievit.nl/dozencalculator/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.de-kievit.nl/dozencalculator/#pagina","url":"https://www.de-kievit.nl/dozencalculator/","name":"Dozencalculator","isPartOf":{"@id":"https://www.de-kievit.nl/#website"},"about":{"@id":"https://www.de-kievit.nl/#bedrijf"},"inLanguage":"nl-NL","breadcrumb":{"@id":"https://www.de-kievit.nl/dozencalculator/#kruimels"}},{"@type":"BreadcrumbList","@id":"https://www.de-kievit.nl/dozencalculator/#kruimels","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.de-kievit.nl/"},{"@type":"ListItem","position":2,"name":"Dozencalculator","item":"https://www.de-kievit.nl/dozencalculator/"}]}]}</script>
+<meta name="theme-color" content="#00A19B">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/notosans-300-700-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260924-1716">
+<script src="/assets/js/kievit.js?v=20260924-1716" defer></script>
+</head>
+<body>
+<!-- lege pagina, gegenereerd door _werk/build_paginas.py -->
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884a9.82 9.82 0 0 1 6.988 2.896 9.83 9.83 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.8 11.8 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.82 11.82 0 0 0 20.465 3.488"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.6 15.6 0 006.6 6.6l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.6 21 3 13.4 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.02l-2.22 2.2z"/></symbol>
+  <symbol id="i-caret" viewBox="0 0 24 24"><path fill="currentColor" d="M8.5 5.5l7 6.5-7 6.5z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
+  <symbol id="ik-rating" viewBox="0 0 100 100"><path style="fill:var(--ik-b,#DBC096)" d="M 40.9 37.6 C 41.34 37.96 41.53 38.55 41.39 39.1 L 39.01 48.28 C 38.68 49.57 40.1 50.6 41.22 49.88 L 44.33 47.9 C 44.57 45.06 46.89 42.8 49.75 42.64 L 49.8 42.63 L 50.3 42.63 L 50.34 42.64 C 51.78 42.7 53.12 43.29 54.14 44.31 C 55.15 45.31 55.75 46.63 55.83 48.05 L 58.74 49.9 C 59.88 50.61 61.29 49.59 60.96 48.3 L 58.59 39.15 C 58.44 38.61 58.63 38.01 59.08 37.65 L 66.39 31.63 C 67.42 30.78 66.88 29.11 65.55 29.03 L 56.12 28.46 C 55.55 28.43 55.05 28.06 54.85 27.53 L 51.38 18.72 C 50.89 17.47 49.14 17.47 48.64 18.72 L 45.2 27.51 C 44.98 28.04 44.48 28.4 43.92 28.44 L 34.46 29 C 33.12 29.08 32.57 30.75 33.61 31.6 L 40.9 37.6"/><path style="fill:var(--ik-b,#DBC096)" d="M 33.26 38.46 L 25.28 37.98 C 24.8 37.95 24.37 37.64 24.2 37.2 L 21.26 29.73 C 20.85 28.68 19.37 28.68 18.95 29.73 L 16.03 37.17 C 15.85 37.62 15.43 37.92 14.95 37.95 L 6.94 38.44 C 5.82 38.51 5.36 39.92 6.23 40.64 L 12.4 45.71 C 12.77 46.02 12.93 46.52 12.81 46.98 L 10.8 54.75 C 10.51 55.84 11.72 56.71 12.67 56.11 L 19.4 51.81 C 19.81 51.55 20.33 51.55 20.74 51.81 L 27.5 56.12 C 28.45 56.73 29.66 55.86 29.37 54.76 L 27.36 47.03 C 27.24 46.56 27.4 46.06 27.78 45.76 L 33.97 40.66 C 34.84 39.95 34.38 38.53 33.26 38.46"/><path style="fill:var(--ik-b,#DBC096)" d="M 93.77 40.66 C 94.64 39.95 94.18 38.53 93.06 38.46 L 85.08 37.98 C 84.6 37.95 84.18 37.64 84 37.2 L 81.07 29.73 C 80.65 28.68 79.17 28.68 78.75 29.73 L 75.83 37.17 C 75.66 37.62 75.23 37.92 74.75 37.95 L 66.74 38.44 C 65.62 38.51 65.16 39.92 66.03 40.64 L 72.2 45.71 C 72.57 46.02 72.74 46.52 72.61 46.98 L 70.6 54.75 C 70.32 55.84 71.52 56.71 72.47 56.11 L 79.21 51.81 C 79.61 51.55 80.14 51.55 80.54 51.81 L 87.3 56.12 C 88.25 56.73 89.46 55.86 89.17 54.76 L 87.16 47.03 C 87.04 46.56 87.2 46.06 87.58 45.76 L 93.77 40.66"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 66.66 60.33 C 65.59 60.33 64.66 60.9 64.13 61.74 L 64.13 61.66 C 64.13 60.02 62.78 58.68 61.14 58.68 C 60.07 58.68 59.13 59.24 58.6 60.08 L 58.6 60.01 C 58.6 58.36 57.26 57.02 55.61 57.02 C 54.54 57.02 53.61 57.59 53.08 58.43 L 53.07 48.4 C 53.07 47.6 52.75 46.85 52.18 46.28 C 51.62 45.72 50.87 45.41 50.07 45.41 C 50.07 45.41 50.07 45.41 50.06 45.41 C 48.42 45.42 47.08 46.77 47.08 48.41 L 47.11 67.98 C 47.11 68.15 47.02 68.29 46.86 68.36 C 46.7 68.43 46.53 68.4 46.41 68.27 L 43.37 65.26 C 42.34 64.24 40.73 64.09 39.53 64.9 C 38.83 65.38 38.35 66.14 38.23 66.99 C 38.11 67.83 38.36 68.69 38.9 69.35 L 46.47 78.46 C 48.61 81.05 51.76 82.53 55.12 82.52 L 59.83 82.51 C 62.46 82.51 64.93 81.48 66.79 79.62 C 68.65 77.75 69.67 75.28 69.67 72.64 L 69.65 63.31 C 69.65 61.67 68.3 60.33 66.66 60.33"/></symbol>
+  <symbol id="ik-medaille" viewBox="0 0 100 100"><path style="fill:var(--ik-a,#3D3B3A)" d="M 43.63 70.48 L 39.05 71.99 C 38.63 72.11 38.19 72.18 37.75 72.18 C 36.16 72.18 34.73 71.3 34.02 69.9 L 31.82 65.6 L 30.01 65.46 L 20.9 84.82 C 20.2 86.29 21.48 87.92 23.08 87.62 L 29.63 86.4 C 30.47 86.24 31.33 86.62 31.75 87.38 L 34.96 93.22 C 35.75 94.64 37.82 94.57 38.53 93.1 L 47.6 73.83 C 47.49 73.76 47.39 73.69 47.28 73.6 L 43.63 70.48"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 69.99 65.46 L 68.13 65.6 L 65.95 69.9 C 65.24 71.3 63.8 72.18 62.22 72.18 C 61.78 72.18 61.34 72.11 60.92 71.99 L 56.36 70.5 L 52.72 73.6 C 52.62 73.69 52.51 73.76 52.41 73.83 L 61.48 93.1 C 62.16 94.57 64.24 94.64 65.03 93.22 L 68.25 87.38 C 68.67 86.62 69.52 86.24 70.38 86.4 L 76.92 87.62 C 78.52 87.92 79.78 86.29 79.1 84.82 L 69.99 65.46"/><path style="fill:var(--ik-b,#DBC096)" d="M 60.89 35.31 L 56.52 40 C 56.38 40.15 56.31 40.36 56.34 40.57 L 57.12 46.93 C 57.18 47.48 56.62 47.9 56.11 47.66 L 50.3 44.96 C 50.11 44.87 49.89 44.87 49.7 44.96 L 43.89 47.66 C 43.38 47.9 42.81 47.48 42.88 46.93 L 43.66 40.57 C 43.69 40.36 43.62 40.15 43.48 40 L 39.11 35.31 C 38.73 34.9 38.94 34.23 39.49 34.13 L 45.78 32.9 C 45.99 32.86 46.17 32.73 46.27 32.55 L 49.38 26.95 C 49.65 26.46 50.35 26.46 50.62 26.95 L 53.73 32.55 C 53.83 32.73 54.01 32.86 54.22 32.9 L 60.51 34.13 C 61.05 34.23 61.27 34.9 60.89 35.31 Z M 50 19.38 C 39.49 19.38 30.94 27.93 30.94 38.44 C 30.94 48.96 39.49 57.5 50 57.5 C 60.51 57.5 69.06 48.96 69.06 38.44 C 69.06 27.93 60.51 19.38 50 19.38"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 50 60.66 C 37.75 60.66 27.78 50.69 27.78 38.44 C 27.78 26.19 37.75 16.22 50 16.22 C 62.25 16.22 72.22 26.19 72.22 38.44 C 72.22 50.69 62.25 60.66 50 60.66 Z M 82.76 39.11 C 83.09 38.73 83.09 38.16 82.76 37.77 L 78.85 33.2 C 78.61 32.93 78.54 32.56 78.65 32.22 L 80.5 26.54 C 80.66 26.06 80.44 25.53 79.99 25.3 L 74.66 22.6 C 74.34 22.43 74.13 22.12 74.1 21.76 L 73.63 15.75 C 73.6 15.25 73.19 14.85 72.69 14.81 L 66.68 14.34 C 66.32 14.31 66.01 14.1 65.84 13.78 L 63.13 8.45 C 62.9 8 62.38 7.78 61.9 7.94 L 56.22 9.79 C 55.88 9.9 55.51 9.82 55.23 9.59 L 50.67 5.69 C 50.29 5.36 49.71 5.36 49.33 5.69 L 44.76 9.6 C 44.48 9.83 44.11 9.91 43.77 9.8 L 38.06 7.94 C 37.58 7.78 37.06 8 36.83 8.45 L 34.12 13.78 C 33.95 14.1 33.64 14.32 33.28 14.34 L 27.31 14.81 C 26.81 14.85 26.4 15.25 26.36 15.75 L 25.9 21.74 C 25.87 22.1 25.66 22.41 25.34 22.58 L 19.98 25.3 C 19.52 25.53 19.3 26.06 19.46 26.54 L 21.32 32.25 C 21.43 32.59 21.36 32.97 21.12 33.24 L 17.24 37.77 C 16.91 38.16 16.91 38.73 17.24 39.11 L 21.13 43.66 C 21.37 43.93 21.44 44.3 21.33 44.65 L 19.46 50.37 C 19.3 50.86 19.52 51.38 19.98 51.61 L 25.34 54.34 C 25.66 54.5 25.87 54.82 25.9 55.18 L 26.36 61.13 C 26.4 61.64 26.81 62.04 27.31 62.08 L 33.26 62.54 C 33.62 62.57 33.94 62.78 34.1 63.1 L 36.83 68.46 C 37.06 68.92 37.58 69.13 38.06 68.97 L 43.79 67.11 C 44.13 67 44.51 67.07 44.78 67.31 L 49.33 71.2 C 49.71 71.53 50.29 71.53 50.67 71.2 L 55.21 67.32 C 55.48 67.08 55.86 67.01 56.2 67.12 L 61.9 68.97 C 62.38 69.13 62.9 68.92 63.13 68.46 L 65.86 63.1 C 66.02 62.78 66.34 62.57 66.7 62.54 L 72.69 62.08 C 73.19 62.04 73.6 61.64 73.63 61.13 L 74.1 55.16 C 74.13 54.8 74.34 54.48 74.66 54.32 L 79.99 51.61 C 80.44 51.38 80.66 50.86 80.5 50.37 L 78.64 44.68 C 78.53 44.34 78.61 43.96 78.84 43.69 L 82.76 39.11"/></symbol>
+  <symbol id="ik-huis" viewBox="0 0 100 100"><path style="fill:var(--ik-b,#DBC096)" d="M 91.71 41.49 L 77.93 31.55 L 77.93 18.79 C 77.93 17.43 76.83 16.32 75.46 16.32 L 69.8 16.32 C 68.43 16.32 67.32 17.43 67.32 18.79 L 67.32 23.9 L 52.76 13.39 C 51.11 12.2 48.89 12.2 47.24 13.39 L 8.29 41.49 C 5.81 43.29 5.36 46.81 7.31 49.17 C 9.09 51.33 12.24 51.73 14.5 50.1 L 50 24.47 L 85.5 50.1 C 87.77 51.73 90.92 51.33 92.7 49.17 C 94.64 46.81 94.19 43.29 91.71 41.49"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 51.38 55.32 C 53.4 53.31 56.52 52.63 59.04 53.97 C 63.17 56.16 63.73 61.39 60.72 64.41 L 51.41 73.72 C 50.63 74.49 49.38 74.49 48.61 73.72 L 39.42 64.53 C 37.41 62.52 36.73 59.39 38.07 56.87 C 40.26 52.74 45.5 52.19 48.51 55.2 L 50.01 56.7 Z M 18.66 54.61 L 18.66 85.36 C 18.66 86.72 19.75 87.8 21.14 87.8 L 78.86 87.8 C 80.22 87.8 81.34 86.72 81.34 85.36 L 81.34 54.61 L 50 31.99 L 18.66 54.61"/></symbol>
+  <symbol id="ik-team" viewBox="0 0 100 100"><path style="fill:var(--ik-a,#3D3B3A)" d="M 93.64 74.41 L 84.91 63.41 C 84.86 63.47 84.8 63.52 84.75 63.57 L 80.65 67.41 L 89.08 78.03 C 89.66 78.75 90.51 79.14 91.36 79.14 C 92 79.14 92.63 78.93 93.16 78.49 C 94.42 77.5 94.64 75.67 93.64 74.41"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 76.86 67.47 L 83 61.71 C 84.04 60.73 84.24 59.17 83.44 57.98 L 77.14 47.79 C 76.65 46.98 75.84 46.43 74.91 46.24 C 73.98 46.07 73.02 46.3 72.28 46.89 L 68.36 49.95 L 63.01 51.48 L 56.81 51.01 L 55.49 55.81 L 63.1 56.34 C 63.37 56.36 63.65 56.33 63.93 56.26 L 70.12 54.49 L 75.25 60.99 L 71.35 64.64 C 70.44 65.5 70.17 66.84 70.7 67.99 L 75.02 77.45 C 75.52 78.52 76.57 79.15 77.67 79.15 C 78.08 79.15 78.49 79.06 78.89 78.88 C 80.34 78.21 80.98 76.49 80.32 75.02 L 76.86 67.47"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 61.68 45.2 C 62.89 47.74 65.94 48.82 68.48 47.61 C 71.03 46.4 72.11 43.35 70.9 40.81 C 69.69 38.26 66.64 37.18 64.1 38.39 C 61.55 39.61 60.47 42.65 61.68 45.2"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 18.57 52.44 L 16.55 65.76 L 22.51 65.76 L 24.2 54.54 L 20.28 53.3 C 19.67 53.11 19.09 52.81 18.57 52.44"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 13.2 45.4 C 13.42 45.46 13.65 45.5 13.87 45.5 C 14.93 45.5 15.91 44.79 16.22 43.72 L 17.57 39.03 L 20.18 37.77 L 19.22 47.17 C 19.07 48.56 19.92 49.85 21.25 50.27 L 29.36 52.84 L 29.48 59.96 L 35.35 59.96 L 35.2 50.64 C 35.18 49.38 34.35 48.26 33.15 47.88 L 28.01 46.26 L 29.48 39.79 L 31.94 42.98 C 32.54 43.75 33.54 44.08 34.49 43.84 L 40.07 42.41 C 41.38 42.08 42.17 40.74 41.83 39.43 C 41.5 38.12 40.16 37.33 38.85 37.67 L 34.82 38.7 L 31.75 34.72 C 31.66 34.61 31.55 34.49 31.43 34.39 C 30.62 33.67 29.62 33.17 28.55 32.94 L 23.96 31.97 C 22.6 31.69 21.16 31.87 19.91 32.47 L 14.46 35.1 C 13.83 35.41 13.35 35.96 13.16 36.63 L 11.51 42.37 C 11.14 43.67 11.89 45.02 13.2 45.4"/><path style="fill:var(--ik-a,#3D3B3A)" d="M 28.25 31.16 C 31.1 31.16 33.4 28.85 33.4 26.01 C 33.4 23.16 31.1 20.85 28.25 20.85 C 25.4 20.85 23.1 23.16 23.1 26.01 C 23.1 28.85 25.4 31.16 28.25 31.16"/><path style="fill:var(--ik-b,#DBC096)" d="M 62.52 34.38 C 63.5 34.65 64.37 33.68 64 32.73 L 60.52 23.79 C 60.21 23 59.24 22.74 58.58 23.27 L 51.1 29.27 C 50.3 29.91 50.57 31.18 51.55 31.45 L 55.18 32.42 L 48.43 57.01 L 40.6 57 C 39.58 57 38.76 57.82 38.76 58.83 L 38.76 62.79 L 28.36 62.79 C 27.34 62.79 26.52 63.62 26.52 64.63 L 26.52 68.59 L 16.11 68.59 C 15.09 68.59 14.27 69.41 14.27 70.43 L 14.27 75.47 L 7.19 75.47 C 6.18 75.47 5.36 76.29 5.36 77.31 C 5.36 78.32 6.18 79.14 7.19 79.14 L 16.11 79.14 C 17.13 79.14 17.95 78.32 17.95 77.31 L 17.95 72.26 L 28.36 72.26 C 29.37 72.26 30.19 71.44 30.19 70.43 L 30.19 66.47 L 40.6 66.47 C 41.61 66.47 42.44 65.64 42.44 64.63 L 42.44 60.67 L 49.82 60.67 C 50.65 60.67 51.37 60.12 51.59 59.32 L 58.72 33.37 L 62.52 34.38"/></symbol>
+</svg>
+
+<a class="skiplink" href="#top">Direct naar de inhoud</a>
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="topbar__logo" href="/" aria-label="De Kievit Verhuizingen, naar de homepage">
+      <img src="/assets/img/deco/logo-kievit-wit.svg" alt="" width="1520" height="1040">
+      <img src="/assets/img/deco/logo-kievit-navy.svg" alt="" width="1520" height="1040">
+    </a>
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <ul class="nav__links">
+        <li class="has-mega">
+          <a class="nav__trigger" href="/over-ons/" aria-expanded="false">Over ons<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--3">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">De Kievit sinds 1910</p>
+                <ul>
+                  <li><a href="/over-ons/">Over De Kievit</a></li>
+                  <li><a href="/werkwijze/">Onze werkwijze</a></li>
+                  <li><a href="/duurzaamheid/">Duurzaamheid</a></li>
+                  <li><a href="/vacatures/">Werken bij De Kievit</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Zekerheid</p>
+                <ul>
+                  <li><a href="/erkende-verhuizer/">Erkende Verhuizer</a></li>
+                  <li><a href="/certificeringen/">Certificeringen</a></li>
+                  <li><a href="/verzekering/">Verzekering</a></li>
+                  <li><a href="/klachtenregeling/">Klachtenregeling</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Ervaringen</p>
+                <ul>
+                  <li><a href="/klantervaringen/">Klantervaringen</a></li>
+                  <li><a href="/veelgestelde-vragen/">Veelgestelde vragen</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/over-ons/">Uw Venlose vakverhuizer sinds 1910<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a class="nav__trigger" href="/diensten/" aria-expanded="false">Verhuizen<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--3">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">Verhuizen</p>
+                <ul>
+                  <li><a href="/particulier-verhuizen/">Particuliere verhuizing</a></li>
+                  <li><a href="/internationale-verhuizing/">Internationale verhuizing</a></li>
+                  <li><a href="/seniorenverhuizing/">Seniorenverhuizing</a></li>
+                  <li><a href="/spoedverhuizing/">Spoedverhuizing</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Verhuisdiensten</p>
+                <ul>
+                  <li><a href="/inpakservice/">Inpakservice</a></li>
+                  <li><a href="/montage-demontage/">Montage en demontage</a></li>
+                  <li><a href="/inboedelopslag/">Inboedelopslag</a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="mega__label">Specialistisch</p>
+                <ul>
+                  <li><a href="/zorgverhuizing/">Zorgverhuizing</a></li>
+                  <li><a href="/piano-verhuizen/">Piano verhuizen</a></li>
+                  <li><a href="/antiek-en-kunst-verhuizen/">Antiek en kunst</a></li>
+                  <li><a href="/kantoorverhuizing/">Kantoorverhuizing</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/diensten/">Bekijk alle diensten<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-mega">
+          <a class="nav__trigger" href="/verhuischecklist/" aria-expanded="false">Voorbereiden<svg class="nav__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="mega mega--1">
+            <div class="mega__grid">
+              <div class="mega__col">
+                <p class="mega__label">Zelf voorbereiden</p>
+                <ul>
+                  <li><a href="/verhuischecklist/">Verhuischecklist</a></li>
+                  <li><a href="/inpaktips/">Inpaktips</a></li>
+                  <li><a href="/dozencalculator/" aria-current="page">Dozencalculator</a></li>
+                  <li><a href="/m3-calculator/">M3-calculator</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="topbar__actions">
+      <a class="topbar__reviews" href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow" aria-label="Beoordeeld met een 9,4 uit 10, 779 beoordelingen op Klantenvertellen"><svg class="topbar__g" aria-hidden="true" viewBox="0 0 100 100"><use href="#ik-rating"/></svg><span class="topbar__rv"><span class="topbar__sterren" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><b>9,4</b><small>779 beoordelingen op Klantenvertellen</small></span></a>
+      <a class="topbar__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <a class="btn btn--wa" href="https://wa.me/31773232100?text=Hallo%20De%20Kievit%2C%20ik%20heb%20een%20vraag%20over%20verhuizen." target="_blank" rel="noopener" aria-label="App ons via WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span class="lbl">App ons</span></a>
+      <a class="btn btn--goud btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="navDrawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="navDrawer" aria-hidden="true">
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__head">
+      <a class="drawer__logo" href="/" aria-label="De Kievit Verhuizingen, naar de homepage">
+        <img src="/assets/img/deco/logo-kievit-navy.svg" alt="" width="1520" height="1040">
+      </a>
+      <button class="drawer__close" id="navClose" aria-label="Menu sluiten">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer__nav" aria-label="Mobiele navigatie">
+        <details class="drawer__group">
+          <summary>Over ons</summary>
+          <a href="/over-ons/">Over De Kievit</a>
+          <a href="/werkwijze/">Onze werkwijze</a>
+          <a href="/duurzaamheid/">Duurzaamheid</a>
+          <a href="/vacatures/">Werken bij De Kievit</a>
+          <a href="/erkende-verhuizer/">Erkende Verhuizer</a>
+          <a href="/certificeringen/">Certificeringen</a>
+          <a href="/verzekering/">Verzekering</a>
+          <a href="/klachtenregeling/">Klachtenregeling</a>
+          <a href="/klantervaringen/">Klantervaringen</a>
+          <a href="/veelgestelde-vragen/">Veelgestelde vragen</a>
+        </details>
+        <details class="drawer__group">
+          <summary>Verhuizen</summary>
+          <a href="/particulier-verhuizen/">Particuliere verhuizing</a>
+          <a href="/internationale-verhuizing/">Internationale verhuizing</a>
+          <a href="/seniorenverhuizing/">Seniorenverhuizing</a>
+          <a href="/spoedverhuizing/">Spoedverhuizing</a>
+          <a href="/inpakservice/">Inpakservice</a>
+          <a href="/montage-demontage/">Montage en demontage</a>
+          <a href="/inboedelopslag/">Inboedelopslag</a>
+          <a href="/zorgverhuizing/">Zorgverhuizing</a>
+          <a href="/piano-verhuizen/">Piano verhuizen</a>
+          <a href="/antiek-en-kunst-verhuizen/">Antiek en kunst</a>
+          <a href="/kantoorverhuizing/">Kantoorverhuizing</a>
+        </details>
+        <details class="drawer__group">
+          <summary>Voorbereiden</summary>
+          <a href="/verhuischecklist/">Verhuischecklist</a>
+          <a href="/inpaktips/">Inpaktips</a>
+          <a href="/dozencalculator/" aria-current="page">Dozencalculator</a>
+          <a href="/m3-calculator/">M3-calculator</a>
+        </details>
+        <a class="drawer__link" href="/contact/">Contact</a>
+    </nav>
+    <div class="drawer__foot">
+      <a class="btn btn--goud btn--groen drawer__cta" href="#offerte">Vrijblijvende verhuisofferte</a>
+      <a class="drawer__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <a class="drawer__wa" href="https://wa.me/31773232100" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons via WhatsApp</a>
+    </div>
+  </div>
+  <button class="drawer__scrim" id="navScrim" tabindex="-1" aria-hidden="true"></button>
+</div>
+
+<main id="top" tabindex="-1">
+
+<section class="hero hero--pagina" aria-labelledby="hero-titel">
+  <picture class="hero__bg">
+    <source media="(max-width:760px)" srcset="/assets/img/hero-inpakken-keuken-mobiel.webp" width="900" height="1034">
+    <img src="/assets/img/hero-inpakken-keuken-1920.webp" srcset="/assets/img/hero-inpakken-keuken-1280.webp 1280w, /assets/img/hero-inpakken-keuken-1920.webp 1920w" sizes="100vw" width="1920" height="815" alt="Verhuizer van De Kievit pakt lachend servies in een Top Movers-verhuisdoos in een zonnige keuken, de klant met een kop koffie ernaast" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero__content">
+      <nav class="pk__kruim" aria-label="Kruimelpad">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li><a href="/verhuischecklist/">Voorbereiden</a></li>
+          <li><span aria-current="page">Dozencalculator</span></li>
+        </ol>
+      </nav>
+      <h1 class="hero__title" id="hero-titel">Dozencalculator</h1>
+    </div>
+  </div>
+  <img src="/assets/img/deco/checklist.svg" alt="" width="70" height="84" loading="lazy" decoding="async" class="art-v1">
+</section>
+
+<section class="offerte-overlay" id="prijs" aria-label="Offerte aanvragen">
+  <div class="of-wrap">
+    <div class="of-box">
+      <div class="of-trust keurmerken" data-reveal-groep aria-label="Beoordelingen en keurmerk">
+        <a class="keurmerk keurmerk--kv keurmerk--score" href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow" aria-label="9,4 op Klantenvertellen"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Beoordeeld op Klantenvertellen" width="322" height="159"><span class="keurmerk__cijfer">9,4</span></a>
+        <a class="keurmerk keurmerk--ev" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="400" height="200"></a>
+        <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">779</span><span class="keurmerk__sub">beoordelingen, 99% beveelt aan</span></span>
+      </div>
+      <h2 class="of-title">Uw offerte, gratis en vrijblijvend</h2>
+      <p class="of-sub">Een persoonlijke prijs van het verhuisbedrijf dat Venlo al sinds 1910 kent. Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer u de sleutel krijgt, dan nemen wij binnen 24 uur contact met u op en ontvangt u een offerte waarin precies staat wat wij doen en wat het kost.</p>
+      <form class="of-form" id="ofForm" action="#offerte">
+        <div class="of-pill">
+          <label class="of-field"><span>Van</span><input id="of-van" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Naar</span><input id="of-naar" type="text" placeholder="Postcode + huisnummer" autocomplete="street-address"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Wanneer</span><input id="of-datum" type="date" aria-label="Wanneer, gewenste verhuisdatum"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Type woning</span>
+            <select id="of-woning" aria-label="Type woning">
+              <option value="">Kies woning</option>
+              <option>Appartement</option>
+              <option>Eengezinswoning</option>
+              <option>Studio / kamer</option>
+              <option>Tussenwoning</option>
+              <option>Vrijstaande woning</option>
+              <option>Kantoor / bedrijf</option>
+              <option>Anders</option>
+            </select>
+          </label>
+          <button class="of-cta" type="submit">Offerte aanvragen<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="trust" aria-label="Kerncijfers">
+  <div class="wrap trust__in">
+    <div class="trust__item"><span class="trust__ico"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#ik-rating"/></svg></span><span><b>9,4 op Klantenvertellen</b>779 beoordelingen, 99% beveelt aan</span></div>
+    <div class="trust__item"><span class="trust__ico"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#ik-medaille"/></svg></span><span><b>Erkende Verhuizer</b>Garantiecertificaat en verzekerde inboedel</span></div>
+    <div class="trust__item"><span class="trust__ico"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#ik-huis"/></svg></span><span><b>Sinds 1910 in Venlo</b>meer dan honderd jaar verhuiservaring</span></div>
+    <div class="trust__item"><span class="trust__ico"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#ik-team"/></svg></span><span><b>Lid van Top Movers</b>landelijk netwerk van erkende verhuizers</span></div>
+  </div>
+</section>
+
+<style>
+  /* Alleen voor /dozencalculator/ (prefix dzc): de iconen in de usps-rij komen uit de Shutterstock-bibliotheek
+     (icoon-skill), uitgeknipt en gerecolord naar navy/teal; ze staan als <img> in het ronde vlak van .usps .ico. */
+  .usps .ico img{width:30px;height:30px;display:block}
+</style>
+
+<section class="sectie" id="rekenen" aria-labelledby="rekenen-kop">
+  <div class="wrap">
+    <div class="werkwijze__top">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Dozen tellen</p>
+        <h2 class="kop" id="rekenen-kop">Zo weet u vooraf hoeveel dozen er moeten komen</h2>
+        <p class="intro">Dat u dozen tekort komt merkt u zelden op een handig moment. Meestal staat u er halverwege de zolder achter, op een avond dat de winkel net dicht is. Vul hieronder in hoe u woont en hoeveel spullen u heeft, dan staat er een richtgetal voor uw hele inboedel. De dozen zelf brengen wij ruim voor de verhuisdag bij u langs en na afloop halen wij ze weer op.</p>
+      </div>
+      <figure class="werkwijze__wagen" data-reveal aria-hidden="true">
+        <img src="/assets/img/figuur-duo-dozen-1600.webp" srcset="/assets/img/figuur-duo-dozen-900.webp 900w, /assets/img/figuur-duo-dozen-1600.webp 1600w" sizes="(max-width:900px) 88vw, 46vw" width="1600" height="976" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="calc dzc-solo" id="calc" aria-label="Verhuisdozen berekenen">
+  <div class="wrap">
+    <div class="calc__card" data-reveal>
+      <div class="calc__intro">
+        <h3>Hoeveel dozen heeft u nodig?</h3>
+        <p>Een schatting op basis van uw woning en inboedel. Reken gerust wat ruimer, dan komt u niet tekort: een doos te veel kost u niets, een doos te weinig kost u tijd op de verhuisdag. Bij de opname aan huis neemt onze verhuisadviseur de schatting samen met u door en past hij hem aan als dat nodig is.</p>
+      </div>
+      <div class="calc__velden">
+        <label class="calc__veld"><span>Woonoppervlak</span><input id="c-m2" type="number" inputmode="numeric" value="90" min="10" max="600" step="1"><i>m&sup2;</i></label>
+        <label class="calc__veld"><span>Kamers</span><input id="c-kamers" type="number" inputmode="numeric" value="3" min="0" max="20"></label>
+        <label class="calc__veld"><span>Bewoners</span><input id="c-bewoners" type="number" inputmode="numeric" value="2" min="1" max="15"></label>
+        <label class="calc__veld calc__veld--sel"><span>Hoeveel spullen</span>
+          <select id="c-pack"><option value="licht">Weinig</option><option value="gemiddeld" selected>Gemiddeld</option><option value="zwaar">Veel</option></select></label>
+      </div>
+      <fieldset class="calc__extras">
+        <legend>Heeft u veel van dit?</legend>
+        <label><input type="checkbox" value="boeken"><span>Boeken</span></label>
+        <label><input type="checkbox" value="kleding"><span>Kleding</span></label>
+        <label><input type="checkbox" value="bergruimte"><span>Zolder of berging vol</span></label>
+        <label><input type="checkbox" value="hobby"><span>Hobbyspullen</span></label>
+      </fieldset>
+      <div class="calc__uit" role="status" aria-live="polite">
+        <span class="calc__label">U heeft ongeveer nodig</span>
+        <strong class="calc__getal" id="c-getal">-</strong>
+        <span class="calc__bereik" id="c-bereik"></span>
+        <span class="calc__detail" id="c-detail"></span>
+        <a class="btn btn--goud" id="c-naar-offerte" href="#offerte">Offerte met deze gegevens<svg aria-hidden="true"><use href="#i-caret"/></svg></a>
+        <a class="btn btn--wa btn--groen" href="https://wa.me/31773232100?text=Hallo%2C%20volgens%20de%20dozencalculator%20heb%20ik%20ongeveer%20...%20verhuisdozen%20nodig.%20Klopt%20die%20schatting%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons deze schatting</a>
+        <a class="calc__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Of bel 077 - 32 32 100</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="aannames" aria-labelledby="aannames-kop">
+  <div class="wrap">
+    <div class="blok blok--stapel blok--paneel">
+      <div class="blok__boven">
+        <div class="blok__tekst" data-reveal style="min-width:0">
+          <p class="label">Open kaart</p>
+          <h2 class="kop" id="aannames-kop">Waar dit getal vandaan komt</h2>
+          <p class="intro">Een calculator die niet vertelt wat hij optelt is een gok met een knop eromheen. Daarom staat de hele rekensom hier. Alles wat u ziet is uitgedrukt in dozen.</p>
+          <p class="dzc-cap" id="dzc-cap" style="margin-top:1.4rem">Basis van de schatting, per eenheid</p>
+          <div class="dzc-tabelvak">
+            <table class="dzc-tabel" aria-describedby="dzc-cap" style="min-width:0">
+              <thead>
+                <tr><th scope="col">Telt mee</th><th scope="col">Weinig</th><th scope="col">Gemiddeld</th><th scope="col">Veel</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Per m&sup2; woonoppervlak</th><td>0,35</td><td>0,5</td><td>0,65</td></tr>
+                <tr><th scope="row">Per kamer</th><td>6</td><td>9</td><td>12</td></tr>
+                <tr><th scope="row">Per bewoner</th><td>3</td><td>5</td><td>7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="blok__foto" data-reveal>
+          <img src="/assets/img/dozen-stapel-1140.webp" srcset="/assets/img/dozen-stapel-760.webp 760w, /assets/img/dozen-stapel-1140.webp 1140w" sizes="(max-width:860px) 90vw, 520px" width="1140" height="1710" alt="Stapels grote en kleine verhuisdozen van Top Movers in een lege woonkamer" loading="lazy" decoding="async">
+          <figcaption>Grote dozen voor licht, kleine voor zwaar</figcaption>
+        </figure>
+      </div>
+      <ul class="usps usps--rij" data-reveal>
+        <li><span class="ico"><img src="/assets/img/icoon/bewoners.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Extra's per bewoner</h3><p>Kruist u een categorie aan, dan komt er per bewoner nog wat bij: boeken 4 dozen, kleding 2,5 en hobbyspullen 3. Voor een volle zolder of berging rekent hij 0,08 doos per vierkante meter.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/doos-inpakken.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Garderobedozen apart</h3><p>Vinkt u kleding aan, dan noemt de uitslag daarnaast garderobedozen: anderhalve per bewoner, afgerond op hele dozen en altijd minstens een. Daar hangt uw kleding in, zonder vouwen.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/rekenen.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Marge en afronding</h3><p>Over de uitkomst gaat een marge van 0,9 tot 1,15 keer. Het getal dat groot in beeld staat is het midden van die marge; boven de vijftig dozen ronden wij af op vijftallen.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/checklist.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Nagelopen bij de opname</h3><p>Het blijft rekenen met gemiddelden, en uw kasten hebben dat gemiddelde nooit gelezen. Bij de opname aan huis loopt onze verhuisadviseur de schatting samen met u langs en past hij hem aan. Dit is versie 1 van het model, nagelopen op 30 augustus 2026. Het is niet getoetst aan afgeronde verhuizingen, dus er zit geen terugkoppeling in van wat er achteraf werkelijk aan dozen nodig bleek.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" id="missers" aria-labelledby="missers-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Let hierop</p>
+      <h2 class="kop" id="missers-kop">Wat de calculator niet ziet</h2>
+      <p class="intro">Vier dingen waar de rekensom niets van weet, terwijl ze op de verhuisdag wel in de wagen moeten.</p>
+    </div>
+    <div class="tips-grid" data-reveal-groep>
+      <div class="tip"><div><strong>De zolder, de berging en de garage</strong><span>Woonoppervlak is niet hetzelfde als wat er mee moet. Een schuur vol gereedschap of een zolder met dozen van de vorige verhuizing staat in geen enkele rekensom, maar neemt wel plek in. Vink daarom eerlijk aan dat uw bergruimte vol is.</span></div></div>
+      <div class="tip"><div><strong>Wat u nog gaat wegdoen</strong><span>Reken met wat er vandaag staat, niet met wat u van plan bent op te ruimen. Houdt u aan het eind een stapel lege dozen over, dan zijn dat precies de dozen die u niet hoefde te vullen.</span></div></div>
+      <div class="tip"><div><strong>Spullen die nooit in een doos gaan</strong><span>Planten, schilderijen, de televisie en de lamp boven de eettafel pakt u anders in. Ze tellen niet mee in dit getal, maar wel in de ruimte die uw inboedel vraagt. Daarvoor is de <a href="/m3-calculator/">m3-calculator</a>.</span></div></div>
+      <div class="tip"><div><strong>Een tweede adres of een tussenperiode</strong><span>Gaat een deel van uw inboedel tijdelijk naar opslag en de rest meteen naar het nieuwe adres, dan pakt u in twee stromen. Reken dan liever iets ruimer en houd de dozen per bestemming bij elkaar.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="dozen-service" aria-labelledby="dozen-service-kop">
+  <div class="wrap">
+    <div class="blok blok--stapel blok--navy">
+      <div class="blok__boven">
+        <figure class="blok__foto" data-reveal>
+          <img src="/assets/img/dozen-bezorging-1140.webp" srcset="/assets/img/dozen-bezorging-760.webp 760w, /assets/img/dozen-bezorging-1140.webp 1140w" sizes="(max-width:860px) 90vw, 520px" width="1140" height="1710" alt="Verhuizer brengt verhuisdozen van Top Movers op een steekwagen naar de voordeur" loading="lazy" decoding="async">
+          <figcaption>Wij brengen de dozen ruim voor de verhuisdag</figcaption>
+        </figure>
+        <div class="blok__tekst" data-reveal>
+          <p class="label">Verhuisdozen en inpakken</p>
+          <h2 class="kop" id="dozen-service-kop">Verhuisdozen krijgt u van ons</h2>
+          <p class="intro">U hoeft niet zelf naar dozen te zoeken. Wij brengen stevige verhuisdozen ruim voor de verhuizing bij u langs, met etiketten voor de kamer waar ze heen moeten, en halen ze na afloop weer op. Wilt u het inpakken ook uit handen geven, dan pakt ons team al uw spullen zorgvuldig in. Op de verhuisdag staat alles klaar en gaat het veilig mee in de wagen.</p>
+          <div class="knoprij" data-reveal><a class="btn btn--goud btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Vraag een offerte aan</a><a class="btn btn--wa" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20wil%20verhuisdozen%20van%20De%20Kievit.%20Ik%20denk%20dat%20ik%20er%20ongeveer%20...%20nodig%20heb." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App uw aantal dozen</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie ring sectie--creme2" id="vragen" aria-labelledby="vragen-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Veelgestelde vragen</p>
+      <h2 class="kop" id="vragen-kop">Over dozen, en wat erbij hoort</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Wat is het verschil met de m3-calculator?<span class="faq__tk" aria-hidden="true"></span></summary><p>Deze pagina telt kartonnen dozen: hoeveel heeft u er nodig om uw spullen in te pakken. De <a href="/m3-calculator/">m3-calculator</a> doet iets anders en schat het volume van uw hele inboedel in kubieke meters, dus inclusief kasten, bedden en witgoed. Dat volume bepaalt hoeveel ruimte er in de wagen nodig is. Voor uw offerte is die tweede het belangrijkst; het aantal dozen bepaalt vooral hoeveel u zelf te pakken heeft.</p></details>
+      <details><summary>Krijg ik de dozen van De Kievit?<span class="faq__tk" aria-hidden="true"></span></summary><p>Ja. Wij brengen ze ruim voor de verhuisdag bij u langs, met etiketten voor de kamer waar ze heen moeten, en na de verhuizing halen wij ze weer op. Wilt u het pakken helemaal uit handen geven, dan doet ons team dat. Wat het een en het ander kost, staat in uw offerte.</p></details>
+      <details><summary>Tellen meubels mee in dit getal?<span class="faq__tk" aria-hidden="true"></span></summary><p>Nee. Een kast, een bed of een bank gaat niet in een doos, dus die staan er niet in. Wat wel meetelt is alles wat uit die meubels moet voordat ze de trap af kunnen: de inhoud van de kledingkast, de boeken uit de wandkast en de laden van het dressoir.</p></details>
+      <details><summary>Ik kom dozen tekort, wat nu?<span class="faq__tk" aria-hidden="true"></span></summary><p>Bel 077 - 32 32 100 of app ons, dan kijken wij wat er nog nodig is. Merkt u tijdens het pakken dat het krap wordt, laat het dan liever een dag te vroeg weten dan op de ochtend van de verhuizing.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="offerte-cta" aria-labelledby="cta-kop">
+  <div class="wrap">
+    <div class="werkwijze__top" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Verder dan dozen</p>
+        <h2 class="kop" id="cta-kop">Een prijs die bij uw inboedel past</h2>
+        <p class="intro">Het aantal dozen is een begin. Wat uw verhuizing kost hangt daarnaast af van de verdieping, het trapgat, de afstand en of u het inpakken zelf doet. Vul het formulier in, dan bellen wij u om die punten door te nemen. De Kievit verhuist sinds 1910 vanuit Venlo en werkt in heel Noord- en Midden-Limburg.</p>
+      </div>
+      <figure class="werkwijze__wagen" data-reveal aria-hidden="true">
+        <img src="/assets/img/wagen-werkwijze-1400.webp" srcset="/assets/img/wagen-werkwijze-900.webp 900w, /assets/img/wagen-werkwijze-1400.webp 1400w" sizes="(max-width:900px) 88vw, 46vw" width="1400" height="883" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <ol class="stappen" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <li class="stap" data-reveal><span class="stap__nr" aria-hidden="true">01</span><h3>Reken het uit</h3><p>Vul de calculator bovenaan in. Het getal dat u ziet is een richtgetal voor uw hele inboedel, met een marge eromheen. Reken gerust wat ruimer.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.06s"><span class="stap__nr" aria-hidden="true">02</span><h3>Vraag een offerte aan</h3><p>Vul het formulier in of bel 077 - 32 32 100. Onze verhuisadviseur komt bij u langs, loopt de schatting met u na en legt alles vast in een gratis en vrijblijvende offerte.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.12s"><span class="stap__nr" aria-hidden="true">03</span><h3>De dozen komen</h3><p>Wij brengen de dozen ruim voor de verhuisdag bij u thuis, met etiketten voor de kamer waar ze heen moeten. Komt u toch tekort, bel of app ons, dan kijken wij wat er nog nodig is.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.18s"><span class="stap__nr" aria-hidden="true">04</span><h3>Pakken op uw tempo</h3><p>U pakt in wanneer het u uitkomt, of u laat het aan ons inpakteam over. Na de verhuizing halen wij de lege dozen weer bij u op.</p></li>
+    </ol>
+    <div class="knoprij dzc-midden" data-reveal>
+      <a class="btn btn--goud btn--groen" href="#offerte">Offerte aanvragen</a>
+      <a class="btn btn--lijn" href="tel:0773232100">Bel 077 - 32 32 100</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// Verhuisdozen-calculator: twee bedieningen op een rekenkern.
+// Rekenmodel van studentverhuisservice.nl: m2 x factor per pakgedrag + opslag per kamer en per bewoner,
+// bandbreedte 0,9x tot 1,15x, advies is het midden. Extra's schalen mee met bewoners (boeken, kleding,
+// hobby) of met m2 (volle berging). Boven de 50 afgerond op vijftallen.
+(function(){
+  var FACTOR={licht:.35,gemiddeld:.5,zwaar:.65},KAMER={licht:6,gemiddeld:9,zwaar:12},BEWONER={licht:3,gemiddeld:5,zwaar:7};
+  var clamp=function(n,a,b){return Math.max(a,Math.min(b,n))};
+  function bereken(inv){
+    var basis=inv.m2*FACTOR[inv.pack]+inv.kamers*KAMER[inv.pack]+inv.bewoners*BEWONER[inv.pack];
+    var TOESLAG={boeken:4*inv.bewoners,kleding:2.5*inv.bewoners,hobby:3*inv.bewoners,bergruimte:.08*inv.m2};
+    inv.extras.forEach(function(k){basis+=TOESLAG[k]||0});
+    var min=Math.round(clamp(basis*.9,5,300)),max=Math.round(clamp(basis*1.15,8,400)),ruw=(min+max)/2;
+    var advies=ruw>=50?Math.round(ruw/5)*5:Math.round(ruw);
+    return {advies:advies,min:min,max:max,boeken:Math.max(1,Math.round(advies*.25)),garderobe:inv.extras.indexOf('kleding')>-1?Math.max(1,Math.round(inv.bewoners*1.5)):0};
+  }
+  function lees(pre,wortel){
+    var g=function(n,val){var e=document.getElementById(pre+n);var v=parseInt(e&&e.value,10);return isNaN(v)?val:v};
+    var sel=document.getElementById(pre+'pack');
+    return {m2:g('m2',90),kamers:g('kamers',3),bewoners:g('bewoners',2),pack:sel?sel.value:'gemiddeld',spullen:sel?sel.selectedOptions[0].textContent.toLowerCase():'gemiddeld',extras:Array.from(wortel.querySelectorAll('input[type=checkbox]:checked')).map(function(c){return c.value})};
+  }
+  function zin(inv,r){return inv.m2+' m\u00b2, '+inv.kamers+' kamer'+(inv.kamers===1?'':'s')+', '+inv.bewoners+' bewoner'+(inv.bewoners===1?'':'s')+', inboedel '+inv.spullen+(inv.extras.length?', veel '+inv.extras.join(' en '):'')+', ongeveer '+r.advies+' dozen ('+r.min+' tot '+r.max+')'}
+  var verborgen=document.getElementById('lf-calc');
+  function zetVerborgen(waarde){if(!verborgen)return;verborgen.value=waarde||'';if(waarde)verborgen.setAttribute('name','Inschatting via dozencalculator');else verborgen.removeAttribute('name')}
+  var blok=document.querySelector('.calc__card'),laatsteBlok=null;
+  if(blok){
+    var toonBlok=function(){
+      var inv=lees('c-',blok),r=bereken(inv);
+      document.getElementById('c-getal').textContent=r.advies+' dozen';
+      document.getElementById('c-bereik').textContent='reken op '+r.min+' tot '+r.max;
+      document.getElementById('c-detail').textContent='Waarvan ongeveer '+r.boeken+' boekendozen'+(r.garderobe?' en '+r.garderobe+' garderobedozen':'')+'. Dit is een indicatie.';
+      laatsteBlok={inv:inv,r:r};
+    };
+    ['input','change'].forEach(function(e){blok.addEventListener(e,function(ev){if(ev.target.matches('input,select'))toonBlok()})});
+    toonBlok();
+  }
+  var uitklap=document.getElementById('lfcalc'),titel=document.getElementById('lfcalc-titel'),okKnop=document.getElementById('lfcalc-ok'),wisKnop=document.getElementById('lfcalc-wis');
+  var STANDAARDTITEL='Ik weet nog niet hoeveel dozen ik nodig heb';
+  function huidig(){var inv=lees('lf-',uitklap);return {inv:inv,r:bereken(inv)}}
+  function markeer(aan,advies){uitklap.classList.toggle('is-toegevoegd',!!aan);wisKnop.hidden=!aan;okKnop.textContent=aan?'Toegevoegd':'Schatting toevoegen aan mijn aanvraag';titel.textContent=aan?'Schatting toegevoegd: ongeveer '+advies+' dozen. Klik om aan te passen.':STANDAARDTITEL}
+  function toonForm(){
+    if(!uitklap)return;var h=huidig();
+    document.getElementById('lfcalc-uit').innerHTML='U heeft ongeveer <strong>'+h.r.advies+' dozen</strong> nodig, reken op '+h.r.min+' tot '+h.r.max+'. Waarvan ongeveer '+h.r.boeken+' boekendozen'+(h.r.garderobe?' en '+h.r.garderobe+' garderobedozen':'')+'.';
+    if(uitklap.classList.contains('is-toegevoegd')){zetVerborgen('');markeer(false)}
+  }
+  function voegToe(sluiten){var h=huidig();zetVerborgen(zin(h.inv,h.r));markeer(true,h.r.advies);if(sluiten)uitklap.open=false}
+  if(uitklap){
+    ['input','change'].forEach(function(e){uitklap.addEventListener(e,function(ev){if(ev.target.matches('input,select'))toonForm()})});
+    uitklap.addEventListener('toggle',function(){if(uitklap.open)toonForm()});
+    okKnop.addEventListener('click',function(){voegToe(true)});
+    wisKnop.addEventListener('click',function(){zetVerborgen('');markeer(false)});
+    toonForm();
+  }
+  // Komt de bezoeker van /dozencalculator/, dan staat zijn invoer in de URL: uitklap vullen en de schatting meteen toevoegen.
+  var q=new URLSearchParams(location.search);
+  if(uitklap&&q.get('m2')){
+    ['m2','kamers','bewoners','pack'].forEach(function(k){var el=document.getElementById('lf-'+k);if(el&&q.get(k))el.value=q.get(k)});
+    var ex=(q.get('extras')||'').split(',');uitklap.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=ex.indexOf(c.value)>-1});
+    toonForm();voegToe(true);
+  }
+  // Komt de bezoeker van /m3-calculator/, dan staat het volume in de URL: als schatting in de aanvraag zetten.
+  if(verborgen&&q.get('m3')){verborgen.value='Inboedel ongeveer '+q.get('m3')+' m3 volgens de m3-calculator';verborgen.setAttribute('name','Inschatting via m3-calculator')}
+  var knop=document.getElementById('c-naar-offerte');
+  if(knop)knop.addEventListener('click',function(e){
+    e.preventDefault();
+    if(laatsteBlok&&uitklap){
+      var i=laatsteBlok.inv;
+      document.getElementById('lf-m2').value=i.m2;document.getElementById('lf-kamers').value=i.kamers;document.getElementById('lf-bewoners').value=i.bewoners;document.getElementById('lf-pack').value=i.pack;
+      uitklap.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=i.extras.indexOf(c.value)>-1});
+      toonForm();voegToe(true);
+    }
+    var doel=document.getElementById('offerte');
+    if(!doel&&laatsteBlok){var i2=laatsteBlok.inv,q2=new URLSearchParams({m2:i2.m2,kamers:i2.kamers,bewoners:i2.bewoners,pack:i2.pack,extras:i2.extras.join(',')});location.href='/?'+q2.toString()+'#offerte';return}
+    if(doel)doel.scrollIntoView({behavior:'smooth',block:'start'});
+    var naam=document.getElementById('lf-naam');if(naam)setTimeout(function(){naam.focus({preventScroll:true})},600);
+  });
+})();
+</script>
+
+
+
+<section class="leadblock" id="offerte">
+  <div class="wrap">
+    <div class="leadblock__card" data-reveal>
+      <div class="leadblock__media">
+        <img src="/assets/img/leadblock-plant-1240.webp" srcset="/assets/img/leadblock-plant-820.webp 820w, /assets/img/leadblock-plant-1240.webp 1240w" sizes="(max-width:820px) 100vw, 42vw" alt="Drie medewerkers van Top Movers met de duim omhoog in een kantoorgang" width="1240" height="1848" loading="lazy" decoding="async">
+      </div>
+      <div class="leadblock__panel">
+        <span class="eyebrow">Vraag uw offerte aan</span>
+        <h2>Klaar om zorgeloos te verhuizen?</h2>
+        <p class="lead-p">Vul uw gegevens in, dan ontvangt u een gratis en vrijblijvende offerte. Hoe meer u kwijt kunt over uw woning en inboedel, hoe preciezer de prijs.</p>
+        <a class="lead-google" href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow" aria-label="9,4 op Klantenvertellen uit 779 beoordelingen">
+          <svg class="lead-google__logo" aria-hidden="true" viewBox="0 0 100 100"><use href="#ik-rating"/></svg>
+          <span class="lead-google__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <strong>9,4</strong>
+          <span class="lead-google__cnt">uit 779 beoordelingen op Klantenvertellen</span>
+        </a>
+        <form class="lf" id="lfForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f013806d-8e11-45d3-ba3e-9f4cb07a72c8">
+          <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Kievit Verhuizingen">
+          <input type="hidden" name="from_name" value="De Kievit Verhuizingen offerteformulier">
+          <label class="lf__hp">Laat dit veld leeg <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+          <input type="hidden" id="lf-calc" value="">
+          <div class="lf__row">
+            <div class="lf__field lf__adres">
+              <label for="lf-van">Van</label>
+              <div class="lf__adresveld">
+                <input id="lf-van" name="Verhuizen van" required type="text" placeholder="Postcode + huisnummer" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="lf-van-keuzes">
+                <ul class="lf__keuzes" id="lf-van-keuzes" role="listbox" aria-label="Gevonden adressen" hidden></ul>
+              </div>
+            </div>
+            <div class="lf__field lf__adres">
+              <label for="lf-naar">Naar</label>
+              <div class="lf__adresveld">
+                <input id="lf-naar" name="Verhuizen naar" required type="text" placeholder="Postcode + huisnummer" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="lf-naar-keuzes">
+                <ul class="lf__keuzes" id="lf-naar-keuzes" role="listbox" aria-label="Gevonden adressen" hidden></ul>
+              </div>
+              <label class="lf__optie"><input type="checkbox" id="lf-geenadres" name="Bestemming onbekend of buitenland" value="ja"><span>Nog onbekend of buitenland</span></label>
+            </div>
+          </div>
+          <div class="lf__row">
+            <div class="lf__field"><label for="lf-datum">Wanneer</label>
+              <input id="lf-datum" name="Gewenste datum" type="date" aria-label="Wanneer, gewenste verhuisdatum">
+              <label class="lf__optie"><input type="checkbox" id="lf-geendatum" name="Datum nog onbekend" value="ja"><span>Weet ik nog niet</span></label>
+            </div>
+            <label class="lf__field lf__field--sel"><span>Type woning</span>
+              <select id="lf-woning" name="Type woning of pand" aria-label="Type woning">
+                <option value="">Kies woning</option>
+                <option>Appartement</option>
+                <option>Eengezinswoning</option>
+                <option>Studio / kamer</option>
+                <option>Tussenwoning</option>
+                <option>Vrijstaande woning</option>
+                <option>Kantoor / bedrijf</option>
+                <option>Anders</option>
+              </select>
+            </label>
+          </div>
+          <div class="lf__row">
+            <label class="lf__field"><span>Naam</span><input id="lf-naam" name="Naam" required type="text" placeholder="Uw naam" autocomplete="name"></label>
+            <label class="lf__field"><span>Telefoon</span><input id="lf-tel" name="Telefoon" required type="tel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></label>
+          </div>
+          <label class="lf__field"><span>E-mail</span><input id="lf-mail" name="E-mail" required type="email" placeholder="u@email.nl" autocomplete="email"></label>
+          <label class="lf__field lf__field--sel"><span>Hoe heeft u ons gevonden? (optioneel)</span>
+            <select name="Hoe heeft u ons gevonden" aria-label="Hoe heeft u ons gevonden">
+              <option value="">Kies, mag u overslaan</option>
+              <option>Via Google</option>
+              <option>Familie, vriend of kennis</option>
+              <option>Ik zag een verhuiswagen van De Kievit</option>
+              <option>Via Top Movers of Erkende Verhuizers</option>
+              <option>Via de makelaar of een bedrijf</option>
+              <option>Via Facebook, Instagram of LinkedIn</option>
+              <option>Ik ben al eerder klant geweest</option>
+              <option>Anders</option>
+            </select>
+          </label>
+          <details class="lfcalc" id="lfcalc">
+            <summary class="lfcalc__knop">
+              <span class="lfcalc__titel" id="lfcalc-titel">Ik weet nog niet hoeveel dozen ik nodig heb</span>
+              <span class="lfcalc__chev" aria-hidden="true"></span>
+            </summary>
+            <div class="lfcalc__paneel">
+              <div class="lfcalc__velden">
+                <label class="lf__field"><span>Woonoppervlak</span><input id="lf-m2" type="number" inputmode="numeric" value="90"></label>
+                <label class="lf__field"><span>Kamers</span><input id="lf-kamers" type="number" inputmode="numeric" value="3"></label>
+                <label class="lf__field"><span>Bewoners</span><input id="lf-bewoners" type="number" inputmode="numeric" value="2"></label>
+                <label class="lf__field lf__field--sel"><span>Hoeveel spullen</span>
+                  <select id="lf-pack"><option value="licht">Weinig</option><option value="gemiddeld" selected>Gemiddeld</option><option value="zwaar">Veel</option></select></label>
+              </div>
+              <fieldset class="lfcalc__extras">
+                <legend>Heeft u veel van dit?</legend>
+                <label><input type="checkbox" value="boeken"><span>Boeken</span></label>
+                <label><input type="checkbox" value="kleding"><span>Kleding</span></label>
+                <label><input type="checkbox" value="bergruimte"><span>Zolder of berging vol</span></label>
+                <label><input type="checkbox" value="hobby"><span>Hobbyspullen</span></label>
+              </fieldset>
+              <p class="lfcalc__uit" id="lfcalc-uit" role="status" aria-live="polite"></p>
+              <div class="lfcalc__acties">
+                <button type="button" class="lfcalc__ok" id="lfcalc-ok">Schatting toevoegen aan mijn aanvraag</button>
+                <button type="button" class="lfcalc__wis" id="lfcalc-wis" hidden>Verwijderen</button>
+              </div>
+            </div>
+          </details>
+          <div class="lf__actions">
+            <button class="btn btn--lijn btn--lg btn--groen" type="submit">Vraag uw vrijblijvende offerte aan<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
+          </div>
+          <div class="lf__fout lf__foutlijst" id="lf-foutlijst" role="alert" hidden tabindex="-1" style="margin:0;background:#fff;border-radius:12px;padding:.8rem 1rem;color:var(--fout);font-weight:600">
+            <p style="margin:0 0 .4rem">Er ontbreekt nog iets. Controleer deze velden:</p>
+            <ul class="lf__fout--velden" id="lf-foutvelden"></ul>
+          </div>
+          <p class="lf__fout" id="lf-fout" role="alert" hidden style="margin:0;background:#fff;border-radius:12px;padding:.8rem 1rem;color:var(--fout);font-weight:600">Het versturen is niet gelukt. Bel ons op <a href="tel:0773232100">077 - 32 32 100</a> of mail naar <a href="mailto:info@de-kievit.nl">info@de-kievit.nl</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__media" aria-hidden="true">
+    <img src="/assets/img/footer-avond-1600.webp" srcset="/assets/img/footer-avond-900.webp 900w, /assets/img/footer-avond-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1073" loading="lazy" decoding="async">
+  </div>
+  <div class="wrap">
+    <div class="footer__claim">
+      <p class="eyebrow">De Kievit Verhuizingen</p>
+      <h2>Zorgeloos verhuizen begint met een belletje</h2>
+      <p>Vertel waar u vandaan komt en waar u heen gaat, dan rekenen wij de rest uit. Weet u nog niet alles zeker? Vul in wat u wel weet, de rest nemen wij telefonisch met u door.</p>
+      <a class="footer__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>077 - 32 32 100</a>
+      <div class="footer__knoppen">
+        <a class="btn btn--goud btn--lg" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="btn btn--wa btn--lg btn--groen" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20stuur%20u%20foto%27s%20van%20mijn%20woning%20voor%20een%20prijsindicatie." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons de foto's</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__onder">
+    <div class="wrap">
+      <div class="footer__rooster">
+        <div>
+          <p>De Kievit Verhuizingen is Erkende Verhuizer en aangesloten bij Top Movers, een landelijk samenwerkingsverband van erkende verhuisbedrijven. Sinds 1 juni 2024 onderdeel van De Bresser Verhuizingen.</p>
+        </div>
+        <div>
+          <h2>Venlo</h2>
+          <address>De Kievit Verhuizingen<br>Van Coehoornstraat 11<br>5916 PH Venlo<br><a href="mailto:info@de-kievit.nl">info@de-kievit.nl</a></address>
+          <p>ma t/m vr 08:00 - 17:00<br>verhuizen in het weekend in overleg</p>
+        </div>
+        <div>
+          <h2>Diensten</h2>
+          <ul>
+            <li><a href="/particulier-verhuizen/">Particuliere verhuizing</a></li>
+            <li><a href="/kantoorverhuizing/">Kantoorverhuizing</a></li>
+            <li><a href="/inboedelopslag/">Inboedelopslag</a></li>
+            <li><a href="/inpakservice/">Inpakservice</a></li>
+            <li><a href="/montage-demontage/">Montage en demontage</a></li>
+            <li><a href="/internationale-verhuizing/">Internationale verhuizing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Meer</h2>
+          <ul>
+            <li><a href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow">Ledenpagina Erkende Verhuizers</a></li>
+            <li><a href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow">Reviews op Klantenvertellen</a></li>
+            <li><a href="https://www.topmovers.nl/" target="_blank" rel="noopener">Top Movers</a></li>
+            <li><a href="https://www.debresser.nl/" target="_blank" rel="noopener">De Bresser Verhuizingen</a></li>
+            <li><a href="https://nl.linkedin.com/company/de-kievit-verhuizingen" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__merken">
+        <a class="merk merk--ev" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow"><img src="/assets/img/keurmerk/erkende-verhuizers-mono.svg" alt="Erkende Verhuizers, ledenpagina De Kievit" width="165" height="80" loading="lazy" decoding="async"></a>
+        <span class="merk merk--kievit"><img src="/assets/img/deco/logo-kievit-wit.svg" alt="De Kievit Verhuizingen" width="1520" height="1040" loading="lazy" decoding="async"></span>
+        <a class="merk merk--tm" href="https://www.topmovers.nl/" target="_blank" rel="noopener"><img src="/assets/img/deco/logo-topmovers-wit.svg" alt="Top Movers" width="813" height="387" loading="lazy" decoding="async"></a>
+        <a class="merk merk--niwo" href="/certificeringen/"><img src="/assets/img/keurmerk/niwo-wit.webp" alt="NIWO, Eurovergunning op naam van De Bresser Verhuizingen" width="249" height="102" loading="lazy" decoding="async"></a>
+        <a class="merk merk--vca" href="/certificeringen/"><img src="/assets/img/keurmerk/vca-wit.webp" alt="VCA, binnen het certificeringstraject van Top Movers" width="267" height="120" loading="lazy" decoding="async"></a>
+        <a class="merk merk--iso" href="/certificeringen/"><img src="/assets/img/keurmerk/iso9001-wit.webp" alt="ISO 9001, certificaat op naam van Top Movers Nederland" width="174" height="174" loading="lazy" decoding="async"></a>
+        <a class="merk merk--iso" href="/certificeringen/"><img src="/assets/img/keurmerk/iso14001-wit.webp" alt="ISO 14001, certificaat op naam van Top Movers Nederland" width="174" height="174" loading="lazy" decoding="async"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__balk">
+    <div class="wrap">
+      <small>&copy; 2026 De Kievit Verhuizingen &middot; Onderdeel van De Bresser Verhuizingen B.V. &middot; KvK 18014730 &middot; Btw-id NL0055.15.452.B.01 &middot; Uw Venlose vakverhuizer sinds 1910</small>
+      <div class="footer__legal">
+        <a href="/algemene-voorwaarden/">Algemene voorwaarden</a>
+        <a href="/privacybeleid/">Privacybeleid</a>
+        <a href="/cookiebeleid/">Cookiebeleid</a>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="/toegankelijkheid/">Toegankelijkheid</a>
+        <a href="/sitemap/">Sitemap</a>
+        <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
+      </div>
+    </div>
+  </div>
+  <img src="/assets/img/deco/bij.svg" alt="" width="133" height="68" loading="lazy" decoding="async" class="art-6">
+</footer>
+
+<div class="mcta" aria-label="Snel contact">
+  <a class="btn btn--lijn" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bellen</a>
+  <a class="btn btn--ant btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte</a>
+</div>
+
+<script>
+// Reveal zodra een blok in beeld komt.
+(function(){
+  var el=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  var gr=[].slice.call(document.querySelectorAll('[data-reveal-groep]'));
+  function aan(){el.forEach(function(e){e.classList.add('in')});gr.forEach(function(g){[].forEach.call(g.children,function(k){k.classList.add('in')})})}
+  if(!('IntersectionObserver' in window)){aan();return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  el.forEach(function(e){io.observe(e)});
+  var ioG=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;[].forEach.call(x.target.children,function(k,i){k.style.transitionDelay=Math.min(i*70,560)+'ms';k.classList.add('in')});ioG.unobserve(x.target)})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  gr.forEach(function(g){ioG.observe(g)});
+})();
+// Balk wordt solide zodra je scrolt (zelfde regel als op de homepage).
+(function(){var b=document.getElementById('topbar');
+ var f=function(){b.classList.toggle('is-stuck',window.scrollY>40)};f();addEventListener('scroll',f,{passive:true})})();
+</script>
+</body>
+</html>

@@ -1,0 +1,778 @@
+[
+ {
+  "soort": "img",
+  "naam": "Aanhalingstekens geel",
+  "bestand": "aanhalingstekens-geel.svg",
+  "b": 100,
+  "h": 64,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Aanhalingstekens wit",
+  "bestand": "aanhalingstekens-wit.svg",
+  "b": 100,
+  "h": 64,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Aanhalingstekens",
+  "bestand": "aanhalingstekens.svg",
+  "b": 100,
+  "h": 64,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-beeldmerk navy",
+  "bestand": "beeldmerk-topmovers-navy.svg",
+  "b": 813,
+  "h": 225,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-beeldmerk wit",
+  "bestand": "beeldmerk-topmovers-wit.svg",
+  "b": 813,
+  "h": 225,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-beeldmerk teal",
+  "bestand": "beeldmerk-topmovers.svg",
+  "b": 813,
+  "h": 225,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Bij met vluchtlijn",
+  "bestand": "bij-vlucht.svg",
+  "b": 820,
+  "h": 170,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Bij",
+  "bestand": "bij.svg",
+  "b": 133,
+  "h": 68,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Boog dik",
+  "bestand": "boog-dik.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Boog dun wit",
+  "bestand": "boog-dun-wit.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Boog dun",
+  "bestand": "boog-dun.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Boog gestippeld wit",
+  "bestand": "boog-gestippeld-wit.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Boog gestippeld",
+  "bestand": "boog-gestippeld.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Chat-ballon geel",
+  "bestand": "chat-ballon-geel.svg",
+  "b": 90,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Chat-ballon",
+  "bestand": "chat-ballon.svg",
+  "b": 90,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Checklist",
+  "bestand": "checklist.svg",
+  "b": 70,
+  "h": 84,
+  "breed": 133
+ },
+ {
+  "soort": "img",
+  "naam": "Cirkel lijn wit",
+  "bestand": "cirkel-lijn-wit.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Cirkel lijn",
+  "bestand": "cirkel-lijn.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Cirkel teal",
+  "bestand": "cirkel-vlak-teal.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Cirkel navy",
+  "bestand": "cirkel-vlak.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Doos open",
+  "bestand": "doos-open.svg",
+  "b": 90,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Dozenstapel",
+  "bestand": "dozenstapel.svg",
+  "b": 90,
+  "h": 84,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Driehoek",
+  "bestand": "driehoek.svg",
+  "b": 340,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Duim omhoog",
+  "bestand": "duim.svg",
+  "b": 24,
+  "h": 24,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Envelop",
+  "bestand": "envelop.svg",
+  "b": 90,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Golf",
+  "bestand": "golf.svg",
+  "b": 600,
+  "h": 160,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Halve cirkel",
+  "bestand": "halve-cirkel.svg",
+  "b": 400,
+  "h": 200,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Hangslot",
+  "bestand": "hangslot.svg",
+  "b": 70,
+  "h": 84,
+  "breed": 133
+ },
+ {
+  "soort": "img",
+  "naam": "Huis met hart",
+  "bestand": "hart-huis.svg",
+  "b": 90,
+  "h": 84,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Honingraat klein",
+  "bestand": "honingraat-klein.svg",
+  "b": 160,
+  "h": 150,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Honingraat",
+  "bestand": "honingraat.svg",
+  "b": 400,
+  "h": 280,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Van huis naar huis",
+  "bestand": "huis-pijl.svg",
+  "b": 110,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Internationaal",
+  "bestand": "internationaal.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Katrol",
+  "bestand": "katrol.svg",
+  "b": 40,
+  "h": 51,
+  "breed": 124
+ },
+ {
+  "soort": "img",
+  "naam": "Kievit-vogel wit",
+  "bestand": "kievit-vogel-wit.svg",
+  "b": 724,
+  "h": 539,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kievit-vogel navy",
+  "bestand": "kievit-vogel.svg",
+  "b": 724,
+  "h": 539,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Klok",
+  "bestand": "klok.svg",
+  "b": 80,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kruisjes",
+  "bestand": "kruisjes.svg",
+  "b": 300,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Krul-pijl teal",
+  "bestand": "krul-pijl-teal.svg",
+  "b": 160,
+  "h": 120,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Krul-pijl geel",
+  "bestand": "krul-pijl.svg",
+  "b": 160,
+  "h": 120,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kunst verhuizen",
+  "bestand": "kunst.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kwart vlak",
+  "bestand": "kwart-vlak.svg",
+  "b": 300,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Lamp",
+  "bestand": "lamp.svg",
+  "b": 70,
+  "h": 90,
+  "breed": 124
+ },
+ {
+  "soort": "img",
+  "naam": "Lockup wit",
+  "bestand": "lockup-kievit-topmovers-wit.svg",
+  "b": 1000,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Lockup navy",
+  "bestand": "lockup-kievit-topmovers.svg",
+  "b": 1000,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kievit-logo navy",
+  "bestand": "logo-kievit-navy.svg",
+  "b": 1520,
+  "h": 1040,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Kievit-logo wit",
+  "bestand": "logo-kievit-wit.svg",
+  "b": 1520,
+  "h": 1040,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-logo navy",
+  "bestand": "logo-topmovers-navy.svg",
+  "b": 813,
+  "h": 387,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-logo teal",
+  "bestand": "logo-topmovers-teal.svg",
+  "b": 813,
+  "h": 387,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-logo wit",
+  "bestand": "logo-topmovers-wit.svg",
+  "b": 813,
+  "h": 387,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Top Movers-logo kleur",
+  "bestand": "logo-topmovers.svg",
+  "b": 813,
+  "h": 387,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Medaille",
+  "bestand": "medaille.svg",
+  "b": 70,
+  "h": 90,
+  "breed": 124
+ },
+ {
+  "soort": "img",
+  "naam": "Montage",
+  "bestand": "montage.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "NL-kaart met Venlo",
+  "bestand": "nl-kaart.svg",
+  "b": 1227,
+  "h": 1425,
+  "breed": 138
+ },
+ {
+  "soort": "img",
+  "naam": "Onderstreping teal",
+  "bestand": "onderstreping-teal.svg",
+  "b": 300,
+  "h": 40,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Onderstreping geel",
+  "bestand": "onderstreping.svg",
+  "b": 300,
+  "h": 40,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Inboedelopslag",
+  "bestand": "opslag.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ovaal-kader geel",
+  "bestand": "ovaal-kader-geel.svg",
+  "b": 300,
+  "h": 120,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ovaal-kader wit",
+  "bestand": "ovaal-kader-wit.svg",
+  "b": 300,
+  "h": 120,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ovaal-kader teal",
+  "bestand": "ovaal-kader.svg",
+  "b": 300,
+  "h": 120,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Weg-pijl",
+  "bestand": "pijl-weg.svg",
+  "b": 20,
+  "h": 13,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Logo-pijlpunt",
+  "bestand": "pijlpunt.svg",
+  "b": 798,
+  "h": 568,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Locatie-pin geel",
+  "bestand": "pin-geel.svg",
+  "b": 60,
+  "h": 80,
+  "breed": 120
+ },
+ {
+  "soort": "img",
+  "naam": "Locatie-pin",
+  "bestand": "pin.svg",
+  "b": 60,
+  "h": 80,
+  "breed": 120
+ },
+ {
+  "soort": "img",
+  "naam": "Prijskaartje",
+  "bestand": "prijskaartje.svg",
+  "b": 90,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ring dubbel wit",
+  "bestand": "ring-dubbel-wit.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ring dubbel",
+  "bestand": "ring-dubbel.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Rooster",
+  "bestand": "rooster.svg",
+  "b": 300,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Route van A naar B",
+  "bestand": "route.svg",
+  "b": 120,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Schild verzekerd",
+  "bestand": "schild-vinkje.svg",
+  "b": 70,
+  "h": 80,
+  "breed": 140
+ },
+ {
+  "soort": "img",
+  "naam": "Sleuteloverdracht",
+  "bestand": "sleutel.svg",
+  "b": 100,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Sparkles teal",
+  "bestand": "sparkles-teal.svg",
+  "b": 100,
+  "h": 100,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Sparkles geel",
+  "bestand": "sparkles.svg",
+  "b": 100,
+  "h": 100,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Steekwagen",
+  "bestand": "steekwagen.svg",
+  "b": 80,
+  "h": 84,
+  "breed": 152
+ },
+ {
+  "soort": "img",
+  "naam": "Stempel Erkende Verhuizer",
+  "bestand": "stempel-erkend.webp",
+  "b": 480,
+  "h": 480,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Stempel De Kievit",
+  "bestand": "stempel-kievit.webp",
+  "b": 480,
+  "h": 480,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Stempel Top Movers",
+  "bestand": "stempel-topmovers.webp",
+  "b": 480,
+  "h": 480,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ster met bij en tekst",
+  "bestand": "ster-1910.webp",
+  "b": 900,
+  "h": 991,
+  "breed": 145
+ },
+ {
+  "soort": "img",
+  "naam": "Ster geel",
+  "bestand": "ster-geel.svg",
+  "b": 80,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ster Gratis offerte",
+  "bestand": "ster-gratis-offerte.webp",
+  "b": 1040,
+  "h": 1040,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Ster Sinds 1910",
+  "bestand": "ster-sinds-1910.webp",
+  "b": 1040,
+  "h": 1040,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Stip",
+  "bestand": "stip-groot.svg",
+  "b": 200,
+  "h": 200,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Stippen",
+  "bestand": "stippen.svg",
+  "b": 300,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Strepen",
+  "bestand": "strepen.svg",
+  "b": 300,
+  "h": 300,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Telefoon",
+  "bestand": "telefoon.svg",
+  "b": 24,
+  "h": 24,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Trap",
+  "bestand": "trap.svg",
+  "b": 90,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Verhuisdatum",
+  "bestand": "verhuisdatum.svg",
+  "b": 80,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Verhuisdoos",
+  "bestand": "verhuisdoos.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Verhuislift",
+  "bestand": "verhuislift.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Verhuiswagen",
+  "bestand": "verhuiswagen.svg",
+  "b": 70,
+  "h": 66,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Vierkant gedraaid",
+  "bestand": "vierkant-gedraaid.svg",
+  "b": 400,
+  "h": 400,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Vijf sterren",
+  "bestand": "vijf-sterren.svg",
+  "b": 200,
+  "h": 40,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Vinkje geel",
+  "bestand": "vinkje-cirkel-geel.svg",
+  "b": 80,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Vinkje teal",
+  "bestand": "vinkje-cirkel.svg",
+  "b": 80,
+  "h": 80,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Zakelijk",
+  "bestand": "zakelijk.svg",
+  "b": 25,
+  "h": 24,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Zigzag geel",
+  "bestand": "zigzag-geel.svg",
+  "b": 300,
+  "h": 60,
+  "breed": 160
+ },
+ {
+  "soort": "img",
+  "naam": "Zigzag teal",
+  "bestand": "zigzag.svg",
+  "b": 300,
+  "h": 60,
+  "breed": 160
+ }
+]

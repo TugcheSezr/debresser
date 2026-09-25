@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historie-variant 4: archief</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-1645">
+<style>
+/* ===== variant 4: archief (extra CSS, alleen tokens uit style.css) ===== */
+.hist4{position:relative;overflow:hidden;background:var(--creme);color:var(--ant);padding-block:clamp(3.5rem,7vw,6rem)}
+.hist4__in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.hist4__beeld{margin:0}
+.hist4__stapel{position:relative;padding:0 3rem 2.6rem 0}
+.hist4__foto{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 60%;border-radius:var(--r);display:block;box-shadow:var(--schaduw);filter:grayscale(1) contrast(1.06)}
+.hist4__knipsel{position:absolute;right:0;bottom:0;width:min(34%,200px);background:var(--wit);padding:.45rem;border-radius:8px;box-shadow:var(--schaduw-lg)}
+.hist4__knipsel img{display:block;width:100%;height:auto;border-radius:4px}
+.hist4__beeld figcaption{margin-top:.9rem;font-size:.86rem;line-height:1.45;color:var(--ant-zacht);max-width:52ch}
+.hist4 .intro{font-size:1.1rem;max-width:50ch}
+.hist4__feiten{display:grid;grid-template-columns:.85fr .85fr 1.3fr;gap:1.2rem;margin:1.6rem 0 1.9rem;padding-top:1.3rem;border-top:1px solid var(--lijn)}
+.hist4__feiten div{margin:0}
+.hist4__feiten dt{font:700 2.5rem/1 var(--font-display);color:var(--goud-diep);margin:0 0 .35rem;letter-spacing:-.01em}
+.hist4__feiten dd{margin:0;font-size:.9rem;line-height:1.4;color:var(--ant-zacht)}
+@media (max-width:900px){
+  .hist4__in{grid-template-columns:1fr;gap:1.8rem}
+  .hist4__stapel{padding:0 2rem 2.2rem 0}
+  .hist4__knipsel{width:min(36%,180px)}
+}
+@media (max-width:560px){
+  .hist4__feiten{grid-template-columns:1fr;gap:.9rem}
+  .hist4__feiten div{display:grid;grid-template-columns:5.4rem minmax(0,1fr);align-items:baseline;gap:.8rem}
+  .hist4__feiten dt{margin:0;font-size:2.1rem}
+}
+.ctx{height:56px}.ctx--boven{background:var(--creme-2)}.ctx--onder{background:var(--creme)}
+</style>
+</head>
+<body>
+<div class="ctx ctx--boven" aria-hidden="true"></div>
+
+<section class="hist4" id="historie" aria-labelledby="hist-kop">
+  <div class="wrap hist4__in">
+    <figure class="hist4__beeld">
+      <div class="hist4__stapel">
+      <img class="hist4__foto" src="/_werk/historie-varianten/img/trucks-breed-1600.webp" srcset="/_werk/historie-varianten/img/trucks-breed-960.webp 960w, /_werk/historie-varianten/img/trucks-breed-1600.webp 1600w" sizes="(max-width:900px) 94vw, 640px" width="1600" height="900" alt="Historische foto: twee vrachtwagens van Firma W. de Kievit en Zonen, internationale transporten en verhuizingen, Venlo" loading="lazy" decoding="async">
+      <div class="hist4__knipsel"><img src="/_werk/historie-varianten/img/advertentie-1910-300.webp" width="300" height="475" alt="Krantenadvertentie uit 1910: H. de Kievit en Zoon, expediteur te Venlo, maakt bekend dat hij een grote meubelwagen heeft aangeschaft" loading="lazy" decoding="async"></div>
+      </div>
+      <figcaption>De vrachtwagens van Firma W. de Kievit &amp; Zonen, en de advertentie van 12 maart 1910 waarmee het begon.</figcaption>
+    </figure>
+    <div class="hist4__tekst">
+      <p class="label">Sinds 1910</p>
+      <h2 class="kop" id="hist-kop">Al meer dan honderd jaar thuis in Venlo</h2>
+      <p class="intro">Op 12 maart 1910 schafte H. de Kievit &amp; Zoon een grote meubelwagen aan en beval zich aan voor verhuizingen en transporten, binnen- en buitenlands. Vijf generaties lang bleef De Kievit een familiebedrijf. Wat bleef: de verhuizers die u aan de deur ziet, en de werkwijze van een Erkende Verhuizer.</p>
+      <dl class="hist4__feiten">
+        <div><dt data-jaren>116</dt><dd>jaar verhuizen vanuit Venlo</dd></div>
+        <div><dt>5</dt><dd>generaties lang een familiebedrijf</dd></div>
+        <div><dt>2024</dt><dd>samen met De Bresser Verhuizingen, familiebedrijf sinds 1923</dd></div>
+      </dl>
+      <div class="knoprij"><a class="btn btn--goud btn--groen" href="#offerte">Vrijblijvende verhuisofferte</a></div>
+    </div>
+  </div>
+</section>
+<script>
+/* houdt het aantal jaren sinds 1910 actueel; de HTML bevat 116 (2026) als vaste waarde */
+(function(){var j=new Date().getFullYear()-1910,e=document.querySelector('[data-jaren]');if(e&&j>100)e.textContent=j;})();
+</script>
+
+<div class="ctx ctx--onder" aria-hidden="true"></div>
+</body>
+</html>

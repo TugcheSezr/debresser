@@ -1,0 +1,965 @@
+<!-- ============ /m3-calculator/: GEGENEREERD door _werk/blok_m3.py, niet met de hand bewerken ============
+     Kamers en de inhoud per item staan in het script; de tekst hieronder ook. Wijzigen: script aanpassen en
+     opnieuw draaien, daarna python3 site/_werk/build_paginas.py. -->
+<style>
+  /* Alleen voor /m3-calculator/ (prefix m3): stappen, kamertabs, tellers, de plakkende samenvatting en de
+     rekenverantwoording. Gedeelde klassen (sectie, wrap, label, kop, intro, blok, usps, faq, btn) uit style.css. */
+  .m3stappen{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:.9rem;counter-reset:m3stap}
+  .m3stappen li{counter-increment:m3stap;background:var(--wit);border:1px solid var(--lijn);border-radius:var(--r);padding:1.1rem 1.2rem 1.1rem 3.6rem;position:relative;box-shadow:var(--schaduw-kaart)}
+  .m3stappen li::before{content:counter(m3stap);position:absolute;left:1.1rem;top:1rem;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--goud-licht);color:var(--goud-diep);font:700 .95rem/1.8rem var(--font-titel);text-align:center}
+  .m3stappen b{display:block;font-family:var(--font-titel);font-size:1.02rem;color:var(--ant)}
+  .m3stappen span{display:block;margin-top:.2rem;font-size:.95rem;color:var(--ant-zacht);line-height:1.5}
+
+  .m3{padding-block:0 clamp(2.6rem,5vw,4rem)}
+  .m3__grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:clamp(1.2rem,2.5vw,2rem);align-items:start}
+  .m3__aanname{margin:1.4rem 0 0;padding:1rem 1.2rem;border-left:4px solid var(--goud);background:var(--wit);border-radius:0 12px 12px 0;font-size:.92rem;line-height:1.6;color:var(--ant-zacht)}
+  .m3__aanname b{color:var(--ant)}
+  .m3__aanname a,.m3fout__bron a{color:var(--goud-diep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+  .m3tabs{display:flex;flex-wrap:wrap;gap:.5rem}
+  .m3tab{display:inline-flex;align-items:center;gap:.55rem;padding:.42rem .48rem .42rem .95rem;border:1px solid var(--lijn);border-radius:999px;
+    background:var(--wit);font:inherit;font-weight:700;font-size:.92rem;color:var(--ant);cursor:pointer;box-shadow:var(--schaduw-kaart);
+    transition:border-color .15s var(--ease),color .15s var(--ease)}
+  .m3tab:hover{border-color:var(--goud);color:var(--goud-diep)}
+  .m3tab__som{font-size:.76rem;font-weight:700;color:var(--ant-zacht);background:var(--creme-2);border-radius:999px;padding:.26rem .6rem}
+  .m3tab__som.is-actief{color:var(--goud-diep);background:var(--goud-licht)}
+  .m3tab[aria-selected="true"]{background:var(--goud-diep);border-color:var(--goud-diep);color:var(--wit)}
+  .m3tab[aria-selected="true"] .m3tab__som{background:rgba(255,255,255,.2);color:var(--wit)}
+
+  .m3paneel{background:var(--wit);border:1px solid var(--lijn);border-radius:var(--r);box-shadow:var(--schaduw-kaart);margin-top:1rem;padding:.4rem 1.3rem 1.1rem}
+  .m3paneel__hulp{margin:.7rem 0 0;font-size:.88rem;color:var(--ant-zacht)}
+  .m3paneel__rijen{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+  .m3rij{display:flex;align-items:center;gap:.8rem;padding:.52rem 0;border-top:1px solid var(--lijn)}
+  .m3paneel__rijen .m3rij:nth-child(-n+2){border-top:0}
+  .m3rij__wat{display:flex;flex-direction:column;gap:.05rem;min-width:0}
+  .m3rij__naam{font-weight:600;font-size:.95rem;color:var(--ant)}
+  .m3rij__maat{font-size:.78rem;color:var(--ant-zacht)}
+  .m3rij__tel{margin-left:auto;flex:none;display:flex;align-items:center;gap:.3rem}
+  .m3rij__knop{width:32px;height:32px;border:1px solid var(--lijn);border-radius:10px;background:var(--wit);color:var(--ant);display:grid;place-items:center;cursor:pointer;
+    transition:border-color .15s var(--ease),color .15s var(--ease)}
+  .m3rij__knop:hover{border-color:var(--goud);color:var(--goud-diep)}
+  .m3rij__knop svg{width:14px;height:14px}
+  .m3rij__tel input{width:44px;height:32px;border:1px solid var(--lijn);border-radius:10px;text-align:center;font:inherit;font-weight:700;color:var(--ant);background:var(--wit);
+    -moz-appearance:textfield;appearance:textfield}
+  .m3rij__tel input::-webkit-outer-spin-button,.m3rij__tel input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .m3rij.is-actief .m3rij__naam{color:var(--goud-diep)}
+  .m3rij.is-actief input{border-color:var(--goud);color:var(--goud-diep)}
+
+  .m3sum{position:sticky;top:96px;background:var(--bruin);color:var(--creme);border-radius:var(--r);box-shadow:var(--schaduw);padding:clamp(1.3rem,2.5vw,1.7rem)}
+  .m3sum .label{color:var(--teal-op-navy);margin:0}
+  .m3sum__cijfer{display:flex;align-items:baseline;gap:.4rem;margin-top:.6rem}
+  .m3sum__cijfer b{font-family:var(--font-display);font-weight:700;line-height:1;font-size:clamp(2.6rem,5vw,3.4rem);color:var(--teal-op-navy)}
+  .m3sum__cijfer span{font-size:1.15rem;font-weight:700;color:rgba(246,244,236,.75)}
+  .m3sum__lijst{list-style:none;margin:1rem 0 0;padding:0}
+  .m3sum__lijst li{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-top:1px solid rgba(246,244,236,.18);font-size:.9rem}
+  .m3sum__lijst li span:first-child{color:rgba(246,244,236,.8)}
+  .m3sum__lijst li span:last-child{font-weight:700;white-space:nowrap}
+  .m3sum__leeg{margin:1rem 0 0;padding-top:.6rem;border-top:1px solid rgba(246,244,236,.18);font-size:.9rem;color:rgba(246,244,236,.7)}
+  .m3sum__acties{display:flex;flex-direction:column;gap:.6rem;margin-top:1.3rem}
+  .m3sum__acties .btn{width:100%}
+  .m3sum__wis{margin-top:1rem;background:none;border:0;padding:0;cursor:pointer;font:inherit;font-size:.85rem;color:rgba(246,244,236,.7);text-decoration:underline}
+  .m3sum__wis:hover{color:var(--creme)}
+
+  .m3cijfers{margin-top:clamp(2rem,4vw,3rem)}
+  .m3fout__bron{margin:1.4rem 0 0;font-size:.95rem;color:var(--ant-zacht);max-width:70ch}
+  .m3sum--slot{position:static;align-self:center}
+
+  @media (max-width:1000px){.m3__grid{grid-template-columns:1fr}.m3sum{position:static}}
+  @media (max-width:720px){.m3paneel__rijen{grid-template-columns:1fr}.m3paneel__rijen .m3rij:nth-child(2){border-top:1px solid var(--lijn)}}
+</style>
+
+<section class="sectie" aria-labelledby="m3-intro-kop">
+  <div class="wrap">
+    <div class="blok blok--vlak">
+      <figure class="blok__foto" data-reveal>
+        <img src="/assets/img/m3-laadbak-1140.webp" srcset="/assets/img/m3-laadbak-760.webp 760w, /assets/img/m3-laadbak-1140.webp 1140w" sizes="(max-width:860px) 90vw, 560px" width="1140" height="1710" alt="Volle laadbak van een verhuiswagen met dozen tot het dak en meubels in verhuisdekens" decoding="async">
+        <figcaption>Uw kubieke meters, in de wagen</figcaption>
+      </figure>
+      <div class="blok__tekst" data-reveal>
+        <p class="label">Inboedel in kubieke meters</p>
+        <h2 class="kop" id="m3-intro-kop">Hoeveel kubieke meter is uw inboedel?</h2>
+        <p class="intro">Verhuizers rekenen in kubieke meters: het laadvolume bepaalt welke wagen er komt en met hoeveel mensen wij
+        staan. Met deze calculator loopt u uw huis kamer voor kamer door en telt u wat er mee moet. Het totaal groeit mee terwijl u
+        telt. Zoekt u het aantal verhuisdozen in plaats van het volume? Daarvoor is er de
+        <a href="/dozencalculator/">dozencalculator</a>.</p>
+        <ol class="m3stappen">
+          <li><b>Kies een kamer</b><span>Woonkamer, slaapkamer, keuken, schuur, zolder: elke kamer heeft een eigen tab met de spullen die er meestal staan.</span></li>
+          <li><b>Tel wat mee gaat</b><span>Met de plus en de min, of typ het aantal. Wat u wegdoet of verkoopt, laat u op nul staan.</span></li>
+          <li><b>Neem het getal mee</b><span>Uw totaal gaat met een klik mee in uw offerteaanvraag of in een WhatsApp-bericht aan ons.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m3" aria-label="Inboedel berekenen in kubieke meters">
+  <div class="wrap">
+    <div class="m3__grid">
+      <div class="m3__kamers" data-reveal>
+        <div class="m3tabs" role="tablist" aria-label="Kamers">
+      <button type="button" class="m3tab" role="tab" id="tab-woonkamer" aria-controls="paneel-woonkamer" aria-selected="true"><span>Woonkamer</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-slaapkamer" aria-controls="paneel-slaapkamer" aria-selected="false"><span>Slaapkamer</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-badkamer" aria-controls="paneel-badkamer" aria-selected="false"><span>Badkamer</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-studeerkamer" aria-controls="paneel-studeerkamer" aria-selected="false"><span>Studeerkamer</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-keuken" aria-controls="paneel-keuken" aria-selected="false"><span>Keuken</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-schuur" aria-controls="paneel-schuur" aria-selected="false"><span>Schuur</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-tuin" aria-controls="paneel-tuin" aria-selected="false"><span>Tuin</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-zolder" aria-controls="paneel-zolder" aria-selected="false"><span>Zolder</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+      <button type="button" class="m3tab" role="tab" id="tab-anders" aria-controls="paneel-anders" aria-selected="false"><span>Anders</span><span class="m3tab__som" data-kamersom>0 m&sup3;</span></button>
+        </div>
+
+    <div class="m3paneel" role="tabpanel" id="paneel-woonkamer" aria-labelledby="tab-woonkamer" data-kamer="Woonkamer">
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">2-zitsbank</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 2-zitsbank minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal 2-zitsbank">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 2-zitsbank meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">3-zitsbank</span><span class="m3rij__maat">1,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 3-zitsbank minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal 3-zitsbank">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 3-zitsbank meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Armstoel</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Armstoel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Armstoel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Armstoel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Bijzettafel</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Bijzettafel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Bijzettafel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Bijzettafel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Bureau</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Bureau minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Bureau">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Bureau meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dressoir</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dressoir minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dressoir">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dressoir meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.75">
+          <div class="m3rij__wat"><span class="m3rij__naam">Eettafel</span><span class="m3rij__maat">0,75 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Eettafel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Eettafel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Eettafel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Fauteuil</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Fauteuil minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Fauteuil">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Fauteuil meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Meubel klein</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Meubel klein minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Meubel klein">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Meubel klein meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Planten</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Planten minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Planten">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Planten meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.4">
+          <div class="m3rij__wat"><span class="m3rij__naam">Salontafel</span><span class="m3rij__maat">0,4 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Salontafel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Salontafel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Salontafel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.15">
+          <div class="m3rij__wat"><span class="m3rij__naam">Schilderijen</span><span class="m3rij__maat">0,15 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Schilderijen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Schilderijen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Schilderijen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Secretaire</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Secretaire minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Secretaire">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Secretaire meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Stoel</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Stoel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Stoel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Stoel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.4">
+          <div class="m3rij__wat"><span class="m3rij__naam">TV</span><span class="m3rij__maat">0,4 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 TV minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal TV">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 TV meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Vloerkleed</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Vloerkleed minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Vloerkleed">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Vloerkleed meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Wandmeubel</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Wandmeubel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Wandmeubel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Wandmeubel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-slaapkamer" aria-labelledby="tab-slaapkamer" data-kamer="Slaapkamer" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">1-persoons bed</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 1-persoons bed minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal 1-persoons bed">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 1-persoons bed meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.7">
+          <div class="m3rij__wat"><span class="m3rij__naam">2-persoons bed</span><span class="m3rij__maat">0,7 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 2-persoons bed minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal 2-persoons bed">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 2-persoons bed meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Babybad</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Babybad minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Babybad">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Babybad meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Box</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Box minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Box">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Box meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Bureau</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Bureau minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Bureau">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Bureau meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Commode</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Commode minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Commode">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Commode meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.6">
+          <div class="m3rij__wat"><span class="m3rij__naam">Garderobe groot</span><span class="m3rij__maat">0,6 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Garderobe groot minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Garderobe groot">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Garderobe groot meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.4">
+          <div class="m3rij__wat"><span class="m3rij__naam">Garderobe klein</span><span class="m3rij__maat">0,4 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Garderobe klein minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Garderobe klein">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Garderobe klein meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Groot speelgoed</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Groot speelgoed minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Groot speelgoed">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Groot speelgoed meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.6">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kaptafel</span><span class="m3rij__maat">0,6 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kaptafel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kaptafel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kaptafel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.15">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kinderstoel</span><span class="m3rij__maat">0,15 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kinderstoel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kinderstoel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kinderstoel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.4">
+          <div class="m3rij__wat"><span class="m3rij__naam">Ledikant</span><span class="m3rij__maat">0,4 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Ledikant minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Ledikant">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Ledikant meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Linnenkast 2-deurs</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Linnenkast 2-deurs minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Linnenkast 2-deurs">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Linnenkast 2-deurs meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Linnenkast 3-deurs</span><span class="m3rij__maat">2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Linnenkast 3-deurs minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Linnenkast 3-deurs">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Linnenkast 3-deurs meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Matras</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Matras minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Matras">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Matras meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Nachtkast</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Nachtkast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Nachtkast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Nachtkast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Ombouw</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Ombouw minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Ombouw">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Ombouw meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Stereo</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Stereo minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Stereo">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Stereo meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Stoel</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Stoel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Stoel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Stoel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.4">
+          <div class="m3rij__wat"><span class="m3rij__naam">TV</span><span class="m3rij__maat">0,4 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 TV minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal TV">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 TV meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-badkamer" aria-labelledby="tab-badkamer" data-kamer="Badkamer" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.6">
+          <div class="m3rij__wat"><span class="m3rij__naam">Droger</span><span class="m3rij__maat">0,6 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Droger minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Droger">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Droger meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.6">
+          <div class="m3rij__wat"><span class="m3rij__naam">Wasmachine</span><span class="m3rij__maat">0,6 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Wasmachine minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Wasmachine">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Wasmachine meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-studeerkamer" aria-labelledby="tab-studeerkamer" data-kamer="Studeerkamer" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Boekenkast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Boekenkast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Boekenkast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Boekenkast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Bureau</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Bureau minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Bureau">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Bureau meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.25">
+          <div class="m3rij__wat"><span class="m3rij__naam">Computer</span><span class="m3rij__maat">0,25 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Computer minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Computer">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Computer meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.2">
+          <div class="m3rij__wat"><span class="m3rij__naam">Stoel</span><span class="m3rij__maat">0,2 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Stoel minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Stoel">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Stoel meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-keuken" aria-labelledby="tab-keuken" data-kamer="Keuken" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Afwasmachine</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Afwasmachine minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Afwasmachine">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Afwasmachine meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Buffetkast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Buffetkast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Buffetkast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Buffetkast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Eethoek</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Eethoek minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Eethoek">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Eethoek meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Fornuis</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Fornuis minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Fornuis">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Fornuis meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Koelkast</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Koelkast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Koelkast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Koelkast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Magnetron</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Magnetron minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Magnetron">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Magnetron meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Oven</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Oven minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Oven">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Oven meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Vriezer</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Vriezer minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Vriezer">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Vriezer meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-schuur" aria-labelledby="tab-schuur" data-kamer="Schuur" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Fiets groot</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Fiets groot minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Fiets groot">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Fiets groot meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Fiets klein</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Fiets klein minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Fiets klein">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Fiets klein meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Ladder</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Ladder minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Ladder">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Ladder meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Tuingereedschap</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Tuingereedschap minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Tuingereedschap">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Tuingereedschap meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Werkbank</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Werkbank minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Werkbank">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Werkbank meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-tuin" aria-labelledby="tab-tuin" data-kamer="Tuin" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Hout</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Hout minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Hout">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Hout meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Plantenbak</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Plantenbak minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Plantenbak">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Plantenbak meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.75">
+          <div class="m3rij__wat"><span class="m3rij__naam">Tuintafels</span><span class="m3rij__maat">0,75 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Tuintafels minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Tuintafels">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Tuintafels meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-zolder" aria-labelledby="tab-zolder" data-kamer="Zolder" hidden>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Dozen</span><span class="m3rij__maat">0,1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Dozen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Dozen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Dozen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.3">
+          <div class="m3rij__wat"><span class="m3rij__naam">Bed</span><span class="m3rij__maat">0,3 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Bed minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Bed">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Bed meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kampeerspullen</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kampeerspullen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kampeerspullen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kampeerspullen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kast</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kast minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kast">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kast meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Kerstspullen</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Kerstspullen minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Kerstspullen">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Kerstspullen meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Wieg</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Wieg minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Wieg">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Wieg meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m3paneel" role="tabpanel" id="paneel-anders" aria-labelledby="tab-anders" data-kamer="Anders" hidden>
+      <p class="m3paneel__hulp">Tel hier wat nergens anders past: klein is een halve kuub, groot een hele.</p>
+      <div class="m3paneel__rijen">
+        <div class="m3rij" data-m3="0.5">
+          <div class="m3rij__wat"><span class="m3rij__naam">Diversen klein</span><span class="m3rij__maat">0,5 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Diversen klein minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Diversen klein">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Diversen klein meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+        <div class="m3rij" data-m3="1">
+          <div class="m3rij__wat"><span class="m3rij__naam">Diversen groot</span><span class="m3rij__maat">1 m&sup3; per stuk</span></div>
+          <div class="m3rij__tel">
+            <button type="button" class="m3rij__knop" data-stap="-1" aria-label="1 Diversen groot minder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+            <input type="number" inputmode="numeric" min="0" max="99" value="0" aria-label="Aantal Diversen groot">
+            <button type="button" class="m3rij__knop" data-stap="1" aria-label="1 Diversen groot meer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+
+      <aside class="m3sum" data-reveal aria-label="Uw schatting">
+        <p class="label">Uw schatting</p>
+        <div class="m3sum__cijfer" aria-live="polite">
+          <b data-m3totaal>0</b><span>m&sup3;</span>
+        </div>
+        <ul class="m3sum__lijst" data-m3lijst hidden></ul>
+        <p class="m3sum__leeg" data-m3leeg>Nog niets geteld. Kies een kamer en tel uw spullen; hier verschijnt dan de verdeling.</p>
+        <div class="m3sum__acties">
+          <a class="btn btn--goud btn--groen" data-m3offerte href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte met deze schatting</a>
+          <a class="btn btn--wa" data-m3wa href="https://wa.me/31773232100" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App uw schatting door</a>
+        </div>
+        <button type="button" class="m3sum__wis" data-m3wis>Alles op nul zetten</button>
+      </aside>
+    </div>
+
+    <p class="m3__aanname" data-reveal><b>Zo rekent de calculator.</b> Elk item heeft een vaste inhoud in kubieke meters, die staat er steeds bij
+    (een 3-zitsbank telt voor 1,5 m&sup3;, een verhuisdoos voor 0,1 m&sup3;). De calculator vermenigvuldigt het aantal met die inhoud, telt per kamer en
+    in totaal op en rondt af op twee decimalen. De inhoud per item komt uit het rekenmodel van
+    <a href="https://www.studentverhuisservice.nl/" target="_blank" rel="noopener nofollow">studentverhuisservice.nl</a>. Het is een schatting van het
+    laadvolume, geen meting; de opname door onze verhuisadviseur is bepalend voor de offerte.</p>
+  </div>
+</section>
+
+<section class="sectie" aria-labelledby="m3-opname-kop">
+  <div class="wrap">
+    <div class="blok blok--paneel">
+      <div class="blok__tekst" data-reveal>
+        <p class="label">Wat wij met uw getal doen</p>
+        <h2 class="kop" id="m3-opname-kop">Van uw schatting naar een offerte op maat</h2>
+        <p class="intro">Het getal uit de calculator is een startpunt. Daarna maakt onze verhuisadviseur zelf een inventarisatie van uw
+        inboedel in kubieke meters: bij u thuis, of als u dat handiger vindt via een videogesprek. Dat gesprek is gratis
+        en vrijblijvend, en pas daarna staat het volume vast waarop de offerte is gebaseerd.</p>
+        <p>De calculator rekent met een vaste inhoud per item, opgeteld over de items die u aanvinkt en afgerond op twee
+        decimalen. Dit is versie 1 van dat model, nagelopen op 30 augustus 2026. De inhoudsmaten zijn kentallen en zijn
+        niet getoetst aan afgeronde verhuizingen, dus voor uw eigen inboedel telt de inventarisatie, niet dit getal.</p>
+        <ul class="d4">
+          <li><img src="/assets/img/deco/verhuiswagen.svg" alt="" width="70" height="67" loading="lazy" decoding="async"><div><b>Wagen en team</b><span>het volume bepaalt de wagen en het aantal verhuizers</span></div></li>
+          <li><img src="/assets/img/deco/checklist.svg" alt="" width="70" height="84" loading="lazy" decoding="async"><div><b>Opname op uw manier</b><span>bij u thuis of per videogesprek</span></div></li>
+          <li><img src="/assets/img/deco/verhuisdoos.svg" alt="" width="70" height="67" loading="lazy" decoding="async"><div><b>Dozen erbij</b><span><a href="/dozencalculator/">reken uit hoeveel</a> u er nodig heeft</span></div></li>
+          <li><img src="/assets/img/deco/opslag.svg" alt="" width="70" height="67" loading="lazy" decoding="async"><div><b>Past ook in opslag</b><span>in houten kisten of een 20 ft- of 25 ft-container</span></div></li>
+        </ul>
+      </div>
+      <figure class="blok__foto" data-reveal>
+        <img src="/assets/img/m3-opname-1140.webp" srcset="/assets/img/m3-opname-760.webp 760w, /assets/img/m3-opname-1140.webp 1140w" sizes="(max-width:860px) 90vw, 560px" width="1140" height="1710" alt="Verhuisadviseur van De Kievit neemt met een klant de inboedel in de woonkamer op" loading="lazy" decoding="async">
+        <figcaption>De adviseur telt het samen met u na</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" aria-labelledby="m3-fout-kop">
+  <div class="wrap">
+    <div class="sectiekop" data-reveal>
+      <p class="label">Scherper schatten</p>
+      <h2 class="kop" id="m3-fout-kop">Vier dingen die bijna iedereen vergeet</h2>
+    </div>
+    <ul class="usps usps--rij" data-reveal>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-home"/></svg></span><div><h3>Wat het getal niet zegt</h3><p>Een piano, een kluis of een aquarium neemt weinig kuub in, maar vraagt om ander materieel en meer handen dan het volume doet vermoeden. Noem zulke stukken bij de opname, dan houdt de adviseur er in de planning rekening mee.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-box"/></svg></span><div><h3>De dozen zelf</h3><p>Een doos telt voor 0,1 m&sup3;. Veertig dozen zijn dus vier kuub, ongeveer evenveel als een complete slaapkamer aan meubels.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><h3>De grote stukken</h3><p>Een linnenkast met drie deuren is 2 m&sup3;, een boekenkast of wandmeubel 1 m&sup3;. Twee kasten van drie deuren tellen samen al voor 4 m&sup3;, evenveel als veertig verhuisdozen.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-plan"/></svg></span><div><h3>Wat niet mee gaat</h3><p>Verkoopt of weggeeft u iets voor de verhuizing, laat het dan op nul staan. Twijfelt u, tel het mee: een schatting die iets ruimer is, geeft op de verhuisdag geen verrassingen.</p></div></li>
+    </ul>
+    <div class="trust__in m3cijfers" data-reveal-groep>
+      <div class="trust__item"><span class="trust__ico"><img src="/assets/img/deco/verhuiswagen.svg" alt="" width="40" height="38" loading="lazy" decoding="async"></span><span><b>25 m&sup3;</b>een gemiddelde inboedelverhuizing volgens Erkende Verhuizers</span></div>
+      <div class="trust__item"><span class="trust__ico"><img src="/assets/img/deco/hart-huis.svg" alt="" width="40" height="37" loading="lazy" decoding="async"></span><span><b>Ongeveer 7 m&sup3;</b>een studio met een bed, een bank, een kast, een eettafel en dertig dozen</span></div>
+      <div class="trust__item"><span class="trust__ico"><img src="/assets/img/deco/verhuisdoos.svg" alt="" width="40" height="38" loading="lazy" decoding="async"></span><span><b>0,1 m&sup3;</b>een verhuisdoos; veertig dozen zijn samen vier kuub</span></div>
+      <div class="trust__item"><span class="trust__ico"><img src="/assets/img/deco/montage.svg" alt="" width="40" height="38" loading="lazy" decoding="async"></span><span><b>2 m&sup3;</b>een linnenkast met drie deuren; twee van die kasten zijn al vier kuub</span></div>
+    </div>
+    <p class="m3fout__bron" data-reveal>Het gemiddelde komt van de Organisatie voor Erkende Verhuizers (<a href="https://www.erkendeverhuizers.nl/kosten-verhuisbedrijf/" target="_blank" rel="noopener nofollow">bron: erkendeverhuizers.nl</a>); de andere getallen zijn de rekenwaarden van deze calculator.</p>
+  </div>
+</section>
+
+<section class="sectie ring" aria-labelledby="m3-faq-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Veelgestelde vragen</p>
+      <h2 class="kop" id="m3-faq-kop">Over het berekenen van uw inboedel</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Hoe nauwkeurig is deze schatting?<span class="faq__tk" aria-hidden="true"></span></summary><p>Het is een schatting op basis van een vaste inhoud per item, geen meting. Voor een eerste indruk en voor uw offerteaanvraag is dat ruim voldoende. Het definitieve volume bepaalt onze verhuisadviseur bij de opname, en dat getal staat in de offerte.</p></details>
+      <details><summary>Hoeveel kubieke meter is een gemiddelde inboedel?<span class="faq__tk" aria-hidden="true"></span></summary><p>De Organisatie voor Erkende Verhuizers noemt op basis van haar statistieken ongeveer 25 m&sup3; als gemiddelde inboedelverhuizing. Uw eigen getal kan daar flink van afwijken: een studio met een bed, een bank, een kast, een eettafel en dertig dozen komt in deze calculator op ongeveer 7 m&sup3;; bij een gezinswoning met meer kamers, grote kasten en veel meer dozen loopt het getal snel op.</p></details>
+      <details><summary>Tellen de verhuisdozen ook mee in het volume?<span class="faq__tk" aria-hidden="true"></span></summary><p>Ja. Elke kamer heeft bovenaan een rij Dozen, en een doos telt voor 0,1 m&sup3;. Weet u nog niet hoeveel dozen u nodig heeft, gebruik dan eerst de <a href="/dozencalculator/">dozencalculator</a> en vul het aantal daarna hier in.</p></details>
+      <details><summary>Moet ik alles tellen, ook wat ik nog wegdoe?<span class="faq__tk" aria-hidden="true"></span></summary><p>Nee, tel alleen wat er mee gaat naar het nieuwe adres. Spullen die u verkoopt, weggeeft of naar de milieustraat brengt, laat u op nul staan. Weet u het van iets nog niet zeker, tel het dan wel mee.</p></details>
+      <details><summary>Kan de verhuisadviseur mijn inboedel ook op afstand opnemen?<span class="faq__tk" aria-hidden="true"></span></summary><p>Ja. De opname kan bij u thuis, maar ook via een videogesprek: u laat dan uw kamers zien en de adviseur maakt daarmee de inventarisatie. Aanvragen en het gesprek zijn gratis en vrijblijvend.</p></details>
+      <details><summary>Wat gebeurt er met mijn schatting als ik een offerte aanvraag?<span class="faq__tk" aria-hidden="true"></span></summary><p>Klikt u op de knop Offerte met deze schatting, dan gaat het totaal mee naar het offerteformulier en komt het als "inschatting via m3-calculator" in uw aanvraag te staan. Onze binnendienst en de verhuisadviseur gebruiken dat getal als vertrekpunt voor het gesprek.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" aria-labelledby="m3-slot-kop">
+  <div class="wrap">
+    <div class="blok">
+      <div class="blok__tekst" data-reveal>
+        <p class="label">Klaar met tellen?</p>
+        <h2 class="kop" id="m3-slot-kop">Vraag een offerte aan met uw schatting erbij</h2>
+        <p class="intro">Uw totaal gaat mee in de aanvraag, zodat wij het gesprek kunnen beginnen met een beeld van uw inboedel. Liever niet
+        tellen? Stuur een paar foto's van uw kamers via WhatsApp, dan maken wij de eerste inschatting voor u.</p>
+        <div class="knoprij blok__cta">
+          <a class="btn btn--wa" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20stuur%20u%20foto%27s%20van%20mijn%20woning%20voor%20een%20inschatting%20van%20de%20inboedel." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Foto's appen</a>
+          <a class="btn btn--lijn" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bel 077 - 32 32 100</a>
+        </div>
+      </div>
+      <aside class="m3sum m3sum--slot" data-reveal aria-label="Uw schatting">
+        <p class="label">Uw schatting</p>
+        <div class="m3sum__cijfer" aria-live="polite">
+          <b data-m3totaal>0</b><span>m&sup3;</span>
+        </div>
+        <ul class="m3sum__lijst" data-m3lijst hidden></ul>
+        <p class="m3sum__leeg" data-m3leeg>Nog niets geteld. Kies een kamer en tel uw spullen; hier verschijnt dan de verdeling.</p>
+        <div class="m3sum__acties">
+          <a class="btn btn--goud btn--groen" data-m3offerte href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte met deze schatting</a>
+          <a class="btn btn--wa" data-m3wa href="https://wa.me/31773232100" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App uw schatting door</a>
+        </div>
+        <button type="button" class="m3sum__wis" data-m3wis>Alles op nul zetten</button>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Rekenkern van de m3-calculator: som van aantal maal m3 per item, per kamer en totaal afgerond op 2 decimalen.
+   Tabs en panelen staan in dezelfde volgorde, dus de koppeling loopt op index. */
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.m3tab'));
+  var panelen = Array.prototype.slice.call(document.querySelectorAll('.m3paneel'));
+  // de samenvatting staat twee keer op de pagina (naast de calculator en in het slotblok), dus alles per lijst
+  var alle = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+  var totaalEls = alle('[data-m3totaal]'), lijstEls = alle('[data-m3lijst]'), leegEls = alle('[data-m3leeg]');
+  var waEls = alle('[data-m3wa]'), offerteEls = alle('[data-m3offerte]');
+  // Sinds 29-08 zet build_paginas.py het offerteformulier ook op deze pagina (PILL_PAGINAS). Staat het er, dan
+  // moeten de knoppen NAAR BENEDEN springen in plaats van naar de homepage, en zetten we de schatting zelf in het
+  // verborgen veld; zelfde veld en zelfde zin als het formulierscript bij ?m3= gebruikt, zodat de aanvraag er
+  // hetzelfde uitziet waar de bezoeker ook vandaan komt. Zonder formulier blijft de oude route via de URL.
+  // Elke keer opzoeken en niet een keer bovenaan: dit script staat VOOR het leadblock in de HTML, dus bij de
+  // eerste aanroep bestaat #offerte nog niet.
+  function lokaalVeldVan() { return document.getElementById('offerte') && document.getElementById('lf-calc'); }
+  var WA = 'https://wa.me/31773232100';
+  function fmt(v) { return (Math.round(v * 100) / 100).toLocaleString('nl-NL'); }
+  function herbereken() {
+    var totaal = 0, regels = [];
+    panelen.forEach(function (paneel, i) {
+      var som = 0;
+      paneel.querySelectorAll('.m3rij').forEach(function (rij) {
+        var n = parseInt(rij.querySelector('input').value, 10) || 0;
+        som += n * parseFloat(rij.dataset.m3);
+        rij.classList.toggle('is-actief', n > 0);
+      });
+      som = Math.round(som * 100) / 100;
+      totaal += som;
+      var chip = tabs[i].querySelector('[data-kamersom]');
+      chip.innerHTML = fmt(som) + ' m&sup3;';
+      chip.classList.toggle('is-actief', som > 0);
+      if (som > 0) regels.push([paneel.dataset.kamer, som]);
+    });
+    totaal = Math.round(totaal * 100) / 100;
+    var lijstHtml = regels.map(function (r) { return '<li><span>' + r[0] + '</span><span>' + fmt(r[1]) + ' m&sup3;</span></li>'; }).join('');
+    totaalEls.forEach(function (el) { el.textContent = fmt(totaal); });
+    lijstEls.forEach(function (el) { el.innerHTML = lijstHtml; el.hidden = regels.length === 0; });
+    leegEls.forEach(function (el) { el.hidden = regels.length > 0; });
+    var tekst = 'Hallo, volgens de m3-calculator op uw site is mijn inboedel ongeveer ' + fmt(totaal) + ' m3. Kan ik hiervoor een offerte krijgen?';
+    waEls.forEach(function (a) { a.href = totaal > 0 ? WA + '?text=' + encodeURIComponent(tekst) : WA; });
+    var lokaalVeld = lokaalVeldVan();
+    if (lokaalVeld) {
+      if (totaal > 0) {
+        lokaalVeld.value = 'Inboedel ongeveer ' + fmt(totaal) + ' m3 volgens de m3-calculator';
+        lokaalVeld.setAttribute('name', 'Inschatting via m3-calculator');
+      } else {
+        lokaalVeld.value = '';
+        lokaalVeld.removeAttribute('name');
+      }
+      offerteEls.forEach(function (a) { a.href = '#offerte'; });
+    } else {
+      // geen formulier op deze pagina: het formulier op de homepage leest ?m3= en zet de schatting in de aanvraag
+      var doel = totaal > 0 ? '/?m3=' + encodeURIComponent(fmt(totaal)) + '#offerte' : '/#offerte';
+      offerteEls.forEach(function (a) { a.href = doel; });
+    }
+  }
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); panelen[j].hidden = j !== i; });
+    });
+  });
+  document.addEventListener('click', function (e) {
+    var knop = e.target.closest('.m3rij__knop');
+    if (!knop) return;
+    var invoer = knop.parentElement.querySelector('input');
+    var n = (parseInt(invoer.value, 10) || 0) + parseInt(knop.dataset.stap, 10);
+    invoer.value = Math.min(99, Math.max(0, n));
+    herbereken();
+  });
+  document.addEventListener('input', function (e) {
+    if (e.target.matches('.m3rij__tel input')) {
+      var n = parseInt(e.target.value, 10);
+      if (!isNaN(n)) e.target.value = Math.min(99, Math.max(0, n));
+      herbereken();
+    }
+  });
+  alle('[data-m3wis]').forEach(function (knop) {
+    knop.addEventListener('click', function () {
+      document.querySelectorAll('.m3rij__tel input').forEach(function (i) { i.value = 0; });
+      herbereken();
+    });
+  });
+  herbereken();
+  // het leadblock staat na dit script in de HTML; na het laden nog een keer, zodat de knoppen meteen goed staan
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', herbereken);
+})();
+</script>

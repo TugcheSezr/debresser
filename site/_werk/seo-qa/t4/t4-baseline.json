@@ -1,0 +1,3722 @@
+{
+ "basis": "http://127.0.0.1:4740",
+ "gemeten_op": "2026-08-30T02:36:25+0200",
+ "duur_s": 1.3,
+ "telling": {
+  "routes_totaal": 34,
+  "routes_bestandssysteem": 34,
+  "routes_linkcrawl": 34,
+  "status_200": 34,
+  "noindex": 11,
+  "indexeerbaar": 23,
+  "met_canonical": 23,
+  "met_description": 23,
+  "met_jsonld": 23,
+  "assets_uniek": 225,
+  "assets_kapot": 0
+ },
+ "verschil_fs_crawl": {
+  "alleen_op_schijf": [],
+  "alleen_in_crawl": []
+ },
+ "verschil_navigatie": {
+  "navigatie_noemt_maar_bestaat_niet": []
+ },
+ "noindex_routes": [
+  "/antiek-en-kunst-verhuizen/",
+  "/inboedelopslag/",
+  "/inpakservice/",
+  "/internationale-verhuizing/",
+  "/kantoorverhuizing/",
+  "/montage-demontage/",
+  "/particulier-verhuizen/",
+  "/piano-verhuizen/",
+  "/seniorenverhuizing/",
+  "/spoedverhuizing/",
+  "/zorgverhuizing/"
+ ],
+ "dode_interne_links": [],
+ "wezen": [],
+ "kapot_in_crawl": [],
+ "duplicatie_paren_vanaf_0.30": [],
+ "probes": {
+  "/robots.txt": {
+   "status": 200,
+   "x_robots_tag": null
+  },
+  "/sitemap.xml": {
+   "status": 200,
+   "x_robots_tag": null
+  },
+  "/llms.txt": {
+   "status": 404,
+   "x_robots_tag": null
+  },
+  "/favicon.ico": {
+   "status": 200,
+   "x_robots_tag": null
+  },
+  "/deze-route-bestaat-niet-t4/": {
+   "status": 404,
+   "x_robots_tag": null
+  },
+  "/contact": {
+   "status": 200,
+   "x_robots_tag": null
+  },
+  "/CONTACT/": {
+   "status": 200,
+   "x_robots_tag": null
+  }
+ },
+ "assets": {
+  "/assets/css/style.min.css": {
+   "status": 200,
+   "bytes": 22067,
+   "gebruikt_op": 34
+  },
+  "/assets/fonts/notosans-300-700-latin.woff2": {
+   "status": 200,
+   "bytes": 35856,
+   "gebruikt_op": 34
+  },
+  "/assets/fonts/poppins-700-latin.woff2": {
+   "status": 200,
+   "bytes": 7848,
+   "gebruikt_op": 34
+  },
+  "/assets/img/ant-1-1140.webp": {
+   "status": 200,
+   "bytes": 143430,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ant-1-760.webp": {
+   "status": 200,
+   "bytes": 70042,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ant-2-1140.webp": {
+   "status": 200,
+   "bytes": 191670,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ant-2-760.webp": {
+   "status": 200,
+   "bytes": 82782,
+   "gebruikt_op": 1
+  },
+  "/assets/img/apple-touch-icon.png": {
+   "status": 200,
+   "bytes": 4027,
+   "gebruikt_op": 34
+  },
+  "/assets/img/checklist-dozen-1140.webp": {
+   "status": 200,
+   "bytes": 125650,
+   "gebruikt_op": 1
+  },
+  "/assets/img/checklist-dozen-760.webp": {
+   "status": 200,
+   "bytes": 61468,
+   "gebruikt_op": 1
+  },
+  "/assets/img/checklist-keukentafel-1140.webp": {
+   "status": 200,
+   "bytes": 286634,
+   "gebruikt_op": 1
+  },
+  "/assets/img/checklist-keukentafel-760.webp": {
+   "status": 200,
+   "bytes": 111792,
+   "gebruikt_op": 1
+  },
+  "/assets/img/contact-bel-man-1100.webp": {
+   "status": 200,
+   "bytes": 265166,
+   "gebruikt_op": 3
+  },
+  "/assets/img/contact-bel-man-700.webp": {
+   "status": 200,
+   "bytes": 86578,
+   "gebruikt_op": 3
+  },
+  "/assets/img/contact-bel-vrouw-1100.webp": {
+   "status": 200,
+   "bytes": 284930,
+   "gebruikt_op": 3
+  },
+  "/assets/img/contact-bel-vrouw-700.webp": {
+   "status": 200,
+   "bytes": 90118,
+   "gebruikt_op": 3
+  },
+  "/assets/img/contact-pc-man-1100.webp": {
+   "status": 200,
+   "bytes": 211902,
+   "gebruikt_op": 2
+  },
+  "/assets/img/contact-pc-man-700.webp": {
+   "status": 200,
+   "bytes": 58148,
+   "gebruikt_op": 2
+  },
+  "/assets/img/deco/beeldmerk-topmovers.svg": {
+   "status": 200,
+   "bytes": 1592,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/bij.svg": {
+   "status": 200,
+   "bytes": 4482,
+   "gebruikt_op": 34
+  },
+  "/assets/img/deco/checklist.svg": {
+   "status": 200,
+   "bytes": 272,
+   "gebruikt_op": 4
+  },
+  "/assets/img/deco/dozenstapel.svg": {
+   "status": 200,
+   "bytes": 207,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/duim.svg": {
+   "status": 200,
+   "bytes": 231,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/envelop.svg": {
+   "status": 200,
+   "bytes": 193,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/hart-huis.svg": {
+   "status": 200,
+   "bytes": 174,
+   "gebruikt_op": 2
+  },
+  "/assets/img/deco/honingraat-klein.svg": {
+   "status": 200,
+   "bytes": 247,
+   "gebruikt_op": 12
+  },
+  "/assets/img/deco/honingraat.svg": {
+   "status": 200,
+   "bytes": 361,
+   "gebruikt_op": 3
+  },
+  "/assets/img/deco/huis-pijl.svg": {
+   "status": 200,
+   "bytes": 220,
+   "gebruikt_op": 13
+  },
+  "/assets/img/deco/internationaal.svg": {
+   "status": 200,
+   "bytes": 345,
+   "gebruikt_op": 12
+  },
+  "/assets/img/deco/kievit-vogel-wit.svg": {
+   "status": 200,
+   "bytes": 2634,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/kievit-vogel.svg": {
+   "status": 200,
+   "bytes": 2635,
+   "gebruikt_op": 2
+  },
+  "/assets/img/deco/klok.svg": {
+   "status": 200,
+   "bytes": 199,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/logo-kievit-navy.svg": {
+   "status": 200,
+   "bytes": 5777,
+   "gebruikt_op": 34
+  },
+  "/assets/img/deco/logo-kievit-wit.svg": {
+   "status": 200,
+   "bytes": 5776,
+   "gebruikt_op": 34
+  },
+  "/assets/img/deco/logo-topmovers-navy.svg": {
+   "status": 200,
+   "bytes": 3909,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/logo-topmovers-wit.svg": {
+   "status": 200,
+   "bytes": 3897,
+   "gebruikt_op": 34
+  },
+  "/assets/img/deco/medaille.svg": {
+   "status": 200,
+   "bytes": 262,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/montage.svg": {
+   "status": 200,
+   "bytes": 482,
+   "gebruikt_op": 2
+  },
+  "/assets/img/deco/nl-kaart.svg": {
+   "status": 200,
+   "bytes": 11054,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/opslag.svg": {
+   "status": 200,
+   "bytes": 394,
+   "gebruikt_op": 14
+  },
+  "/assets/img/deco/pijl-weg.svg": {
+   "status": 200,
+   "bytes": 199,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/pin.svg": {
+   "status": 200,
+   "bytes": 172,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/schild-vinkje.svg": {
+   "status": 200,
+   "bytes": 205,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/steekwagen.svg": {
+   "status": 200,
+   "bytes": 210,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/stempel-topmovers.webp": {
+   "status": 200,
+   "bytes": 39320,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/telefoon.svg": {
+   "status": 200,
+   "bytes": 237,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/verhuisdatum.svg": {
+   "status": 200,
+   "bytes": 234,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/verhuisdoos.svg": {
+   "status": 200,
+   "bytes": 835,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/verhuiswagen.svg": {
+   "status": 200,
+   "bytes": 815,
+   "gebruikt_op": 13
+  },
+  "/assets/img/deco/vijf-sterren.svg": {
+   "status": 200,
+   "bytes": 274,
+   "gebruikt_op": 11
+  },
+  "/assets/img/deco/vinkje-cirkel.svg": {
+   "status": 200,
+   "bytes": 184,
+   "gebruikt_op": 1
+  },
+  "/assets/img/deco/zakelijk.svg": {
+   "status": 200,
+   "bytes": 357,
+   "gebruikt_op": 12
+  },
+  "/assets/img/dienst-compleet-1120.webp": {
+   "status": 200,
+   "bytes": 36070,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-compleet-400.webp": {
+   "status": 200,
+   "bytes": 13502,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-compleet-760.webp": {
+   "status": 200,
+   "bytes": 33984,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-inpak-1120.webp": {
+   "status": 200,
+   "bytes": 115572,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-inpak-400.webp": {
+   "status": 200,
+   "bytes": 18044,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-inpak-760.webp": {
+   "status": 200,
+   "bytes": 62940,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-montage-1120.webp": {
+   "status": 200,
+   "bytes": 38506,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-montage-400.webp": {
+   "status": 200,
+   "bytes": 10892,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-montage-760.webp": {
+   "status": 200,
+   "bytes": 26358,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-opslag-1120.webp": {
+   "status": 200,
+   "bytes": 74460,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-opslag-400.webp": {
+   "status": 200,
+   "bytes": 16118,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-opslag-760.webp": {
+   "status": 200,
+   "bytes": 44300,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-plan-1120.webp": {
+   "status": 200,
+   "bytes": 82322,
+   "gebruikt_op": 3
+  },
+  "/assets/img/dienst-plan-400.webp": {
+   "status": 200,
+   "bytes": 21222,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-plan-760.webp": {
+   "status": 200,
+   "bytes": 54622,
+   "gebruikt_op": 3
+  },
+  "/assets/img/dienst-zakelijk-1120.webp": {
+   "status": 200,
+   "bytes": 80076,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-zakelijk-400.webp": {
+   "status": 200,
+   "bytes": 21526,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dienst-zakelijk-760.webp": {
+   "status": 200,
+   "bytes": 43972,
+   "gebruikt_op": 2
+  },
+  "/assets/img/dozen-bezorging-1140.webp": {
+   "status": 200,
+   "bytes": 404486,
+   "gebruikt_op": 1
+  },
+  "/assets/img/dozen-bezorging-760.webp": {
+   "status": 200,
+   "bytes": 169468,
+   "gebruikt_op": 1
+  },
+  "/assets/img/dozen-stapel-1140.webp": {
+   "status": 200,
+   "bytes": 193198,
+   "gebruikt_op": 1
+  },
+  "/assets/img/dozen-stapel-760.webp": {
+   "status": 200,
+   "bytes": 80086,
+   "gebruikt_op": 1
+  },
+  "/assets/img/duo-opslag-1000.webp": {
+   "status": 200,
+   "bytes": 128584,
+   "gebruikt_op": 16
+  },
+  "/assets/img/duo-opslag-1600.webp": {
+   "status": 200,
+   "bytes": 181876,
+   "gebruikt_op": 16
+  },
+  "/assets/img/erkend/dozen-wagen-1200.webp": {
+   "status": 200,
+   "bytes": 77294,
+   "gebruikt_op": 1
+  },
+  "/assets/img/erkend/dozen-wagen-800.webp": {
+   "status": 200,
+   "bytes": 53100,
+   "gebruikt_op": 1
+  },
+  "/assets/img/erkend/inpakken-600.webp": {
+   "status": 200,
+   "bytes": 39462,
+   "gebruikt_op": 1
+  },
+  "/assets/img/erkend/inpakken-900.webp": {
+   "status": 200,
+   "bytes": 53184,
+   "gebruikt_op": 1
+  },
+  "/assets/img/erkend/schilderij-1000.webp": {
+   "status": 200,
+   "bytes": 193894,
+   "gebruikt_op": 1
+  },
+  "/assets/img/erkend/schilderij-700.webp": {
+   "status": 200,
+   "bytes": 105670,
+   "gebruikt_op": 1
+  },
+  "/assets/img/familie-1200.webp": {
+   "status": 200,
+   "bytes": 140350,
+   "gebruikt_op": 10
+  },
+  "/assets/img/familie-800.webp": {
+   "status": 200,
+   "bytes": 77602,
+   "gebruikt_op": 10
+  },
+  "/assets/img/favicon-32.png": {
+   "status": 200,
+   "bytes": 729,
+   "gebruikt_op": 34
+  },
+  "/assets/img/favicon.svg": {
+   "status": 200,
+   "bytes": 983,
+   "gebruikt_op": 34
+  },
+  "/assets/img/figuur-duo-dozen-1600.webp": {
+   "status": 200,
+   "bytes": 108502,
+   "gebruikt_op": 3
+  },
+  "/assets/img/figuur-duo-dozen-900.webp": {
+   "status": 200,
+   "bytes": 45882,
+   "gebruikt_op": 3
+  },
+  "/assets/img/figuur-duo-lachen-1100.webp": {
+   "status": 200,
+   "bytes": 104884,
+   "gebruikt_op": 4
+  },
+  "/assets/img/figuur-duo-lachen-700.webp": {
+   "status": 200,
+   "bytes": 54812,
+   "gebruikt_op": 4
+  },
+  "/assets/img/footer-avond-1600.webp": {
+   "status": 200,
+   "bytes": 136002,
+   "gebruikt_op": 34
+  },
+  "/assets/img/footer-avond-900.webp": {
+   "status": 200,
+   "bytes": 57766,
+   "gebruikt_op": 34
+  },
+  "/assets/img/hero-adviseur-deur-1280.webp": {
+   "status": 200,
+   "bytes": 91918,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-adviseur-deur-1920.webp": {
+   "status": 200,
+   "bytes": 201614,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-adviseur-deur-mobiel.webp": {
+   "status": 200,
+   "bytes": 175424,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-bg-1280.webp": {
+   "status": 200,
+   "bytes": 110784,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-bg-1920.webp": {
+   "status": 200,
+   "bytes": 174868,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-bg-mobiel.webp": {
+   "status": 200,
+   "bytes": 76312,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-inpakken-keuken-1280.webp": {
+   "status": 200,
+   "bytes": 60630,
+   "gebruikt_op": 13
+  },
+  "/assets/img/hero-inpakken-keuken-1920.webp": {
+   "status": 200,
+   "bytes": 115010,
+   "gebruikt_op": 13
+  },
+  "/assets/img/hero-inpakken-keuken-mobiel.webp": {
+   "status": 200,
+   "bytes": 70570,
+   "gebruikt_op": 13
+  },
+  "/assets/img/hero-venlo-1280.webp": {
+   "status": 200,
+   "bytes": 120244,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-venlo-1920.webp": {
+   "status": 200,
+   "bytes": 237816,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-venlo-mobiel.webp": {
+   "status": 200,
+   "bytes": 182200,
+   "gebruikt_op": 1
+  },
+  "/assets/img/hero-zor-1280.webp": {
+   "status": 200,
+   "bytes": 48802,
+   "gebruikt_op": 11
+  },
+  "/assets/img/hero-zor-1920.webp": {
+   "status": 200,
+   "bytes": 82292,
+   "gebruikt_op": 11
+  },
+  "/assets/img/hero-zor-mobiel.webp": {
+   "status": 200,
+   "bytes": 65298,
+   "gebruikt_op": 11
+  },
+  "/assets/img/historie-advertentie-300.webp": {
+   "status": 200,
+   "bytes": 45262,
+   "gebruikt_op": 1
+  },
+  "/assets/img/historie-kar-staand-1000.webp": {
+   "status": 200,
+   "bytes": 107672,
+   "gebruikt_op": 2
+  },
+  "/assets/img/historie-kar-staand-600.webp": {
+   "status": 200,
+   "bytes": 58042,
+   "gebruikt_op": 2
+  },
+  "/assets/img/historie-trucks-1600.webp": {
+   "status": 200,
+   "bytes": 114236,
+   "gebruikt_op": 2
+  },
+  "/assets/img/historie-trucks-960.webp": {
+   "status": 200,
+   "bytes": 67592,
+   "gebruikt_op": 2
+  },
+  "/assets/img/huisje-1200.webp": {
+   "status": 200,
+   "bytes": 80962,
+   "gebruikt_op": 14
+  },
+  "/assets/img/huisje-800.webp": {
+   "status": 200,
+   "bytes": 45936,
+   "gebruikt_op": 14
+  },
+  "/assets/img/icoon/beoordeling.svg": {
+   "status": 200,
+   "bytes": 2438,
+   "gebruikt_op": 2
+  },
+  "/assets/img/icoon/bewoners.svg": {
+   "status": 200,
+   "bytes": 1885,
+   "gebruikt_op": 6
+  },
+  "/assets/img/icoon/checklist.svg": {
+   "status": 200,
+   "bytes": 1906,
+   "gebruikt_op": 7
+  },
+  "/assets/img/icoon/communicatie.svg": {
+   "status": 200,
+   "bytes": 863,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/datum-wijzigen.svg": {
+   "status": 200,
+   "bytes": 1211,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/doos-inpakken.svg": {
+   "status": 200,
+   "bytes": 859,
+   "gebruikt_op": 7
+  },
+  "/assets/img/icoon/gediplomeerd.svg": {
+   "status": 200,
+   "bytes": 3097,
+   "gebruikt_op": 1
+  },
+  "/assets/img/icoon/generaties.svg": {
+   "status": 200,
+   "bytes": 1394,
+   "gebruikt_op": 1
+  },
+  "/assets/img/icoon/meedenken.svg": {
+   "status": 200,
+   "bytes": 1621,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/mensen.svg": {
+   "status": 200,
+   "bytes": 1749,
+   "gebruikt_op": 4
+  },
+  "/assets/img/icoon/op-tijd.svg": {
+   "status": 200,
+   "bytes": 772,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/oplevering.svg": {
+   "status": 200,
+   "bytes": 1883,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/partnership.svg": {
+   "status": 200,
+   "bytes": 2810,
+   "gebruikt_op": 1
+  },
+  "/assets/img/icoon/plan.svg": {
+   "status": 200,
+   "bytes": 1534,
+   "gebruikt_op": 2
+  },
+  "/assets/img/icoon/rekenen.svg": {
+   "status": 200,
+   "bytes": 1713,
+   "gebruikt_op": 7
+  },
+  "/assets/img/icoon/standplaats.svg": {
+   "status": 200,
+   "bytes": 781,
+   "gebruikt_op": 3
+  },
+  "/assets/img/icoon/steekwagen.svg": {
+   "status": 200,
+   "bytes": 2223,
+   "gebruikt_op": 2
+  },
+  "/assets/img/icoon/verzekerd.svg": {
+   "status": 200,
+   "bytes": 1525,
+   "gebruikt_op": 2
+  },
+  "/assets/img/icoon/vinkje-teal.svg": {
+   "status": 200,
+   "bytes": 610,
+   "gebruikt_op": 4
+  },
+  "/assets/img/inp-1-1140.webp": {
+   "status": 200,
+   "bytes": 115374,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inp-1-760.webp": {
+   "status": 200,
+   "bytes": 60888,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inp-2-1140.webp": {
+   "status": 200,
+   "bytes": 136970,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inp-2-760.webp": {
+   "status": 200,
+   "bytes": 74326,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inp-3-1140.webp": {
+   "status": 200,
+   "bytes": 124218,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inp-3-760.webp": {
+   "status": 200,
+   "bytes": 66838,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inpak-borden-1140.webp": {
+   "status": 200,
+   "bytes": 81610,
+   "gebruikt_op": 2
+  },
+  "/assets/img/inpak-borden-760.webp": {
+   "status": 200,
+   "bytes": 44752,
+   "gebruikt_op": 2
+  },
+  "/assets/img/inpak-service-1140.webp": {
+   "status": 200,
+   "bytes": 158626,
+   "gebruikt_op": 1
+  },
+  "/assets/img/inpak-service-760.webp": {
+   "status": 200,
+   "bytes": 83546,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-1-1140.webp": {
+   "status": 200,
+   "bytes": 114010,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-1-760.webp": {
+   "status": 200,
+   "bytes": 55420,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-2-1140.webp": {
+   "status": 200,
+   "bytes": 187140,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-2-760.webp": {
+   "status": 200,
+   "bytes": 87822,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-3-1140.webp": {
+   "status": 200,
+   "bytes": 117278,
+   "gebruikt_op": 1
+  },
+  "/assets/img/int-3-760.webp": {
+   "status": 200,
+   "bytes": 63926,
+   "gebruikt_op": 1
+  },
+  "/assets/img/kaart-nederland.webp": {
+   "status": 200,
+   "bytes": 113452,
+   "gebruikt_op": 1
+  },
+  "/assets/img/kaart-venlo.svg": {
+   "status": 200,
+   "bytes": 46288,
+   "gebruikt_op": 1
+  },
+  "/assets/img/kan-1-1140.webp": {
+   "status": 200,
+   "bytes": 149102,
+   "gebruikt_op": 1
+  },
+  "/assets/img/kan-1-760.webp": {
+   "status": 200,
+   "bytes": 73612,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/co2-prestatieladder-navy.webp": {
+   "status": 200,
+   "bytes": 13584,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/co2-prestatieladder-wit.webp": {
+   "status": 200,
+   "bytes": 13706,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/erkende-verhuizers-mono.svg": {
+   "status": 200,
+   "bytes": 2146,
+   "gebruikt_op": 34
+  },
+  "/assets/img/keurmerk/erkende-verhuizers-wit.svg": {
+   "status": 200,
+   "bytes": 2153,
+   "gebruikt_op": 27
+  },
+  "/assets/img/keurmerk/erkende-verhuizers.svg": {
+   "status": 200,
+   "bytes": 2155,
+   "gebruikt_op": 4
+  },
+  "/assets/img/keurmerk/google-g.svg": {
+   "status": 200,
+   "bytes": 395,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/google.svg": {
+   "status": 200,
+   "bytes": 837,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/iso14001-navy.webp": {
+   "status": 200,
+   "bytes": 12170,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/iso14001-wit.webp": {
+   "status": 200,
+   "bytes": 12286,
+   "gebruikt_op": 34
+  },
+  "/assets/img/keurmerk/iso9001-navy.webp": {
+   "status": 200,
+   "bytes": 11974,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/iso9001-wit.webp": {
+   "status": 200,
+   "bytes": 12096,
+   "gebruikt_op": 34
+  },
+  "/assets/img/keurmerk/klantenvertellen.svg": {
+   "status": 200,
+   "bytes": 3892,
+   "gebruikt_op": 27
+  },
+  "/assets/img/keurmerk/niwo-navy.webp": {
+   "status": 200,
+   "bytes": 3736,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/niwo-wit.webp": {
+   "status": 200,
+   "bytes": 3862,
+   "gebruikt_op": 34
+  },
+  "/assets/img/keurmerk/vca-navy.webp": {
+   "status": 200,
+   "bytes": 5020,
+   "gebruikt_op": 1
+  },
+  "/assets/img/keurmerk/vca-wit.webp": {
+   "status": 200,
+   "bytes": 5178,
+   "gebruikt_op": 34
+  },
+  "/assets/img/leadblock-plant-1240.webp": {
+   "status": 200,
+   "bytes": 123512,
+   "gebruikt_op": 27
+  },
+  "/assets/img/leadblock-plant-820.webp": {
+   "status": 200,
+   "bytes": 123136,
+   "gebruikt_op": 27
+  },
+  "/assets/img/logo-topmovers-wit.svg": {
+   "status": 200,
+   "bytes": 3897,
+   "gebruikt_op": 13
+  },
+  "/assets/img/logo-topmovers.svg": {
+   "status": 200,
+   "bytes": 3905,
+   "gebruikt_op": 2
+  },
+  "/assets/img/m3-laadbak-1140.webp": {
+   "status": 200,
+   "bytes": 300992,
+   "gebruikt_op": 1
+  },
+  "/assets/img/m3-laadbak-760.webp": {
+   "status": 200,
+   "bytes": 138258,
+   "gebruikt_op": 1
+  },
+  "/assets/img/m3-opname-1140.webp": {
+   "status": 200,
+   "bytes": 132876,
+   "gebruikt_op": 1
+  },
+  "/assets/img/m3-opname-760.webp": {
+   "status": 200,
+   "bytes": 60244,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mark-wit.svg": {
+   "status": 200,
+   "bytes": 1591,
+   "gebruikt_op": 14
+  },
+  "/assets/img/mon-1-1140.webp": {
+   "status": 200,
+   "bytes": 168214,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mon-1-760.webp": {
+   "status": 200,
+   "bytes": 70120,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mon-2-1140.webp": {
+   "status": 200,
+   "bytes": 115344,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mon-2-760.webp": {
+   "status": 200,
+   "bytes": 54064,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mon-3-1140.webp": {
+   "status": 200,
+   "bytes": 98838,
+   "gebruikt_op": 1
+  },
+  "/assets/img/mon-3-760.webp": {
+   "status": 200,
+   "bytes": 53572,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ops-1-1140.webp": {
+   "status": 200,
+   "bytes": 84516,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ops-1-760.webp": {
+   "status": 200,
+   "bytes": 50298,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ops-2-1140.webp": {
+   "status": 200,
+   "bytes": 119474,
+   "gebruikt_op": 1
+  },
+  "/assets/img/ops-2-760.webp": {
+   "status": 200,
+   "bytes": 68352,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-1-1140.webp": {
+   "status": 200,
+   "bytes": 125046,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-1-760.webp": {
+   "status": 200,
+   "bytes": 61972,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-2-1140.webp": {
+   "status": 200,
+   "bytes": 230072,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-2-760.webp": {
+   "status": 200,
+   "bytes": 106850,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-3-1140.webp": {
+   "status": 200,
+   "bytes": 260918,
+   "gebruikt_op": 1
+  },
+  "/assets/img/par-3-760.webp": {
+   "status": 200,
+   "bytes": 146994,
+   "gebruikt_op": 1
+  },
+  "/assets/img/pia-1-1140.webp": {
+   "status": 200,
+   "bytes": 82540,
+   "gebruikt_op": 1
+  },
+  "/assets/img/pia-1-760.webp": {
+   "status": 200,
+   "bytes": 44008,
+   "gebruikt_op": 1
+  },
+  "/assets/img/pia-2-1140.webp": {
+   "status": 200,
+   "bytes": 123280,
+   "gebruikt_op": 2
+  },
+  "/assets/img/pia-2-760.webp": {
+   "status": 200,
+   "bytes": 67444,
+   "gebruikt_op": 2
+  },
+  "/assets/img/reviews-pc-man-1100.webp": {
+   "status": 200,
+   "bytes": 277904,
+   "gebruikt_op": 1
+  },
+  "/assets/img/reviews-pc-man-700.webp": {
+   "status": 200,
+   "bytes": 89162,
+   "gebruikt_op": 1
+  },
+  "/assets/img/sen-1-1140.webp": {
+   "status": 200,
+   "bytes": 254006,
+   "gebruikt_op": 1
+  },
+  "/assets/img/sen-1-760.webp": {
+   "status": 200,
+   "bytes": 120972,
+   "gebruikt_op": 1
+  },
+  "/assets/img/sen-2-1140.webp": {
+   "status": 200,
+   "bytes": 241728,
+   "gebruikt_op": 1
+  },
+  "/assets/img/sen-2-760.webp": {
+   "status": 200,
+   "bytes": 121074,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-1-1140.webp": {
+   "status": 200,
+   "bytes": 204012,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-1-760.webp": {
+   "status": 200,
+   "bytes": 75920,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-2-1140.webp": {
+   "status": 200,
+   "bytes": 88448,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-2-760.webp": {
+   "status": 200,
+   "bytes": 46190,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-3-1140.webp": {
+   "status": 200,
+   "bytes": 193668,
+   "gebruikt_op": 1
+  },
+  "/assets/img/spo-3-760.webp": {
+   "status": 200,
+   "bytes": 51944,
+   "gebruikt_op": 1
+  },
+  "/assets/img/team-cutout-trio-g4-1600.webp": {
+   "status": 200,
+   "bytes": 168172,
+   "gebruikt_op": 2
+  },
+  "/assets/img/team-cutout-trio-g4-900.webp": {
+   "status": 200,
+   "bytes": 63046,
+   "gebruikt_op": 2
+  },
+  "/assets/img/tomas-brands-220.webp": {
+   "status": 200,
+   "bytes": 12118,
+   "gebruikt_op": 1
+  },
+  "/assets/img/tomas-brands-368.webp": {
+   "status": 200,
+   "bytes": 22762,
+   "gebruikt_op": 1
+  },
+  "/assets/img/trap-scene-1000.webp": {
+   "status": 200,
+   "bytes": 105268,
+   "gebruikt_op": 1
+  },
+  "/assets/img/trap-scene-640.webp": {
+   "status": 200,
+   "bytes": 70858,
+   "gebruikt_op": 1
+  },
+  "/assets/img/verhuisteam-1200.webp": {
+   "status": 200,
+   "bytes": 98656,
+   "gebruikt_op": 2
+  },
+  "/assets/img/verhuisteam-800.webp": {
+   "status": 200,
+   "bytes": 53058,
+   "gebruikt_op": 2
+  },
+  "/assets/img/wagen-heerlijkthuis-1400.webp": {
+   "status": 200,
+   "bytes": 102020,
+   "gebruikt_op": 11
+  },
+  "/assets/img/wagen-heerlijkthuis-900.webp": {
+   "status": 200,
+   "bytes": 51300,
+   "gebruikt_op": 11
+  },
+  "/assets/img/zor-1-1140.webp": {
+   "status": 200,
+   "bytes": 76222,
+   "gebruikt_op": 1
+  },
+  "/assets/img/zor-1-760.webp": {
+   "status": 200,
+   "bytes": 43856,
+   "gebruikt_op": 1
+  },
+  "/assets/img/zor-2-1140.webp": {
+   "status": 200,
+   "bytes": 92556,
+   "gebruikt_op": 1
+  },
+  "/assets/img/zor-2-760.webp": {
+   "status": 200,
+   "bytes": 54042,
+   "gebruikt_op": 1
+  },
+  "/assets/js/kievit.js": {
+   "status": 200,
+   "bytes": 4965,
+   "gebruikt_op": 34
+  }
+ },
+ "paginas": {
+  "/": {
+   "status": 200,
+   "bytes_over_de_lijn": 23177,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Verhuisbedrijf Venlo | De Kievit Verhuizingen, Erkende Verhuizer en lid van Top Movers",
+   "titel_lengte": 86,
+   "beschrijving": "Erkende Verhuizer in Venlo voor Noord- en Midden-Limburg: particuliere en zakelijke verhuizingen, inpakservice, montage en inboedelopslag. Klantcijfer 9,4.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 6,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:Organization",
+    "graph:MovingCompany",
+    "graph:WebSite",
+    "graph:WebPage"
+   ],
+   "h1": [
+    "De Kievit Verhuizingen"
+   ],
+   "koppen_totaal": 36,
+   "links_totaal": 131,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/particulier-verhuizen/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/contact/",
+    "/diensten/",
+    "/klantervaringen/",
+    "/over-ons/",
+    "/particulier-verhuizen/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 52,
+   "sha256": "74b97eb96492eac774c7ed38eed8b6a9e77021a609f568af8e6476655be689bb"
+  },
+  "/algemene-voorwaarden/": {
+   "status": 200,
+   "bytes_over_de_lijn": 55450,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Algemene voorwaarden | De Kievit Verhuizingen",
+   "titel_lengte": 45,
+   "beschrijving": "Dit zijn geen eigen kleine lettertjes van De Kievit.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/algemene-voorwaarden/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Algemene voorwaarden"
+   ],
+   "koppen_totaal": 131,
+   "links_totaal": 112,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/diensten/",
+    "/disclaimer/",
+    "/klachtenregeling/",
+    "/m3-calculator/",
+    "/toegankelijkheid/",
+    "/verzekering/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 654,
+   "sha256": "2201cceff97c3cd3ba186b2c8cd67de2a438d9be4989621d2dc0b8ed2daa95c9"
+  },
+  "/antiek-en-kunst-verhuizen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 22203,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Antiek en kunst | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Antiek en kunst"
+   ],
+   "koppen_totaal": 73,
+   "links_totaal": 126,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/internationale-verhuizing/",
+    "/kantoorverhuizing/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/piano-verhuizen/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/inpaktips/",
+    "/internationale-verhuizing/",
+    "/kantoorverhuizing/",
+    "/klachtenregeling/",
+    "/piano-verhuizen/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 108,
+   "sha256": "94e15fa7950ffbbd2cb13240e41484513d1bd3500fe8bb16a88d2fbe57be867a"
+  },
+  "/certificeringen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 19834,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Certificeringen | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": "Verhuizers zetten graag een rij logo's onder aan hun website.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/certificeringen/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Certificeringen"
+   ],
+   "koppen_totaal": 22,
+   "links_totaal": 131,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/diensten/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/klachtenregeling/",
+    "/over-ons/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 75,
+   "sha256": "f8bf65c5d5da36bca6846322a56ff138d592ce81dd94e06a5742c7ee023bd6ee"
+  },
+  "/contact/": {
+   "status": 200,
+   "bytes_over_de_lijn": 18288,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Contact | De Kievit Verhuizingen",
+   "titel_lengte": 32,
+   "beschrijving": "Vanuit Venlo rijden onze wagens de hele regio door: van Venray en Horst tot Tegelen, Reuver en Roermond, en over de grens in Duitsland en België.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/contact/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Contact"
+   ],
+   "koppen_totaal": 16,
+   "links_totaal": 118,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/contact/",
+    "/diensten/",
+    "/veelgestelde-vragen/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 25,
+   "sha256": "7cebeeb6bc6def5c180e90c7eada3c37dfe1904eadced00424f13821ee1c496e"
+  },
+  "/cookiebeleid/": {
+   "status": 200,
+   "bytes_over_de_lijn": 10190,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Cookiebeleid | De Kievit Verhuizingen",
+   "titel_lengte": 37,
+   "beschrijving": "Deze website zet geen cookies.  Niet om te meten, niet om te adverteren en ook niet om instellingen te onthouden.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/cookiebeleid/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Cookiebeleid"
+   ],
+   "koppen_totaal": 15,
+   "links_totaal": 114,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/contact/",
+    "/dozencalculator/",
+    "/m3-calculator/",
+    "/privacybeleid/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 34,
+   "sha256": "164c2f8f8129c8b7549a7963426acb781898b52d7dad9d8cf40ebcd95b03ca6b"
+  },
+  "/diensten/": {
+   "status": 200,
+   "bytes_over_de_lijn": 16891,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Onze verhuisdiensten | De Kievit Verhuizingen",
+   "titel_lengte": 45,
+   "beschrijving": "Of u nu binnen Venlo verhuist, kleiner gaat wonen of de grens over gaat: het begint altijd met een opname aan huis.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/diensten/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Onze verhuisdiensten"
+   ],
+   "koppen_totaal": 24,
+   "links_totaal": 121,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/antiek-en-kunst-verhuizen/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inboedelopslag/",
+    "/inpakservice/",
+    "/inpaktips/",
+    "/internationale-verhuizing/",
+    "/kantoorverhuizing/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/montage-demontage/",
+    "/over-ons/",
+    "/particulier-verhuizen/",
+    "/piano-verhuizen/",
+    "/privacybeleid/",
+    "/seniorenverhuizing/",
+    "/sitemap/",
+    "/spoedverhuizing/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/",
+    "/zorgverhuizing/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/antiek-en-kunst-verhuizen/",
+    "/contact/",
+    "/diensten/",
+    "/inboedelopslag/",
+    "/inpakservice/",
+    "/internationale-verhuizing/",
+    "/kantoorverhuizing/",
+    "/montage-demontage/",
+    "/particulier-verhuizen/",
+    "/piano-verhuizen/",
+    "/seniorenverhuizing/",
+    "/spoedverhuizing/",
+    "/veelgestelde-vragen/",
+    "/zorgverhuizing/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 22,
+   "sha256": "486fa6009a1d8760d3648fc22e69d716dde4582882fdd54ec0d3d4b6c0a3ec05"
+  },
+  "/disclaimer/": {
+   "status": 200,
+   "bytes_over_de_lijn": 10517,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Disclaimer | De Kievit Verhuizingen",
+   "titel_lengte": 35,
+   "beschrijving": "Op deze website staan teksten, foto's, rekenhulpen en lijsten die u helpen bij het voorbereiden van uw verhuizing.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/disclaimer/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Disclaimer"
+   ],
+   "koppen_totaal": 17,
+   "links_totaal": 127,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/dozencalculator/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/privacybeleid/",
+    "/verhuischecklist/",
+    "/verzekering/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 45,
+   "sha256": "b19382ef5a2e175ea4ba4395f49d376ed069a395c3f4062b4ca800e01228ed08"
+  },
+  "/dozencalculator/": {
+   "status": 200,
+   "bytes_over_de_lijn": 19427,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Dozencalculator | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": "Dat u dozen tekort komt merkt u zelden op een handig moment.  Meestal staat u er halverwege de zolder achter, op een avond dat de winkel net dicht is.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/dozencalculator/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Dozencalculator"
+   ],
+   "koppen_totaal": 22,
+   "links_totaal": 113,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/m3-calculator/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 26,
+   "sha256": "42031bce7d4a903c40194904bba19e4734f3c5c731857ada2b27de9d4d142755"
+  },
+  "/duurzaamheid/": {
+   "status": 200,
+   "bytes_over_de_lijn": 17512,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Duurzaamheid | De Kievit Verhuizingen",
+   "titel_lengte": 37,
+   "beschrijving": "Duurzaamheid is in de verhuisbranche een woord waar veel mee geschoven wordt.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/duurzaamheid/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Duurzaamheid"
+   ],
+   "koppen_totaal": 17,
+   "links_totaal": 111,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/certificeringen/",
+    "/over-ons/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 29,
+   "sha256": "254784e57a32d2b3fdebfbfa9ea2d72b654186f1e1ae1e659b4a95ee820d153d"
+  },
+  "/erkende-verhuizer/": {
+   "status": 200,
+   "bytes_over_de_lijn": 22619,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Erkende Verhuizer | De Kievit Verhuizingen",
+   "titel_lengte": 42,
+   "beschrijving": "De Kievit Verhuizingen staat in het ledenregister van de Organisatie voor Erkende Verhuizers.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/erkende-verhuizer/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Erkende Verhuizer"
+   ],
+   "koppen_totaal": 15,
+   "links_totaal": 114,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/klachtenregeling/",
+    "/verzekering/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 43,
+   "sha256": "d9eb2e4912ac7711570e03b5ec0c10fb8d16f951128500cacc1a953185bace11"
+  },
+  "/inboedelopslag/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21704,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Inboedelopslag | De Kievit Verhuizingen",
+   "titel_lengte": 39,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Inboedelopslag"
+   ],
+   "koppen_totaal": 63,
+   "links_totaal": 120,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/diensten/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 109,
+   "sha256": "09bdde43325587d9c1a31f089309e5a4c2a9ff23023d8b3104ab0292457a8eea"
+  },
+  "/inpakservice/": {
+   "status": 200,
+   "bytes_over_de_lijn": 23960,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Inpakservice | De Kievit Verhuizingen",
+   "titel_lengte": 37,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Inpakservice"
+   ],
+   "koppen_totaal": 69,
+   "links_totaal": 124,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/contact/",
+    "/diensten/",
+    "/dozencalculator/",
+    "/inpaktips/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 115,
+   "sha256": "3c5cd5b2477cb921e34d37239757f8fa1aa2bab473e57f500eeccd1f1288fac9"
+  },
+  "/inpaktips/": {
+   "status": 200,
+   "bytes_over_de_lijn": 17678,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Inpaktips | De Kievit Verhuizingen",
+   "titel_lengte": 34,
+   "beschrijving": "Hieronder staat hoe u het wel doet, van het materiaal tot de laatste doos.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/inpaktips/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Inpaktips"
+   ],
+   "koppen_totaal": 30,
+   "links_totaal": 108,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 41,
+   "sha256": "5c427f68bab5d2ff89f9df16ceca8ae2245db3a5c1cbb08d9307b68eb4aead71"
+  },
+  "/internationale-verhuizing/": {
+   "status": 200,
+   "bytes_over_de_lijn": 22572,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Internationale verhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 50,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Internationale verhuizing"
+   ],
+   "koppen_totaal": 70,
+   "links_totaal": 122,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/diensten/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 117,
+   "sha256": "cdb6ace0feaa56b28e491b17dd7ee9ba656794e3ebaf6c6964b7c77ff94eb4bb"
+  },
+  "/kantoorverhuizing/": {
+   "status": 200,
+   "bytes_over_de_lijn": 20928,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Kantoorverhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 42,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Kantoorverhuizing"
+   ],
+   "koppen_totaal": 54,
+   "links_totaal": 124,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/diensten/",
+    "/duurzaamheid/",
+    "/klantervaringen/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 93,
+   "sha256": "5540aa4155711a24186403da9a919ec1d8bb20fb3d621615dc28deebd607e3e0"
+  },
+  "/klachtenregeling/": {
+   "status": 200,
+   "bytes_over_de_lijn": 16021,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Klachtenregeling | De Kievit Verhuizingen",
+   "titel_lengte": 41,
+   "beschrijving": "Dan horen wij dat liever meteen dan over een half jaar via een omweg.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/klachtenregeling/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Klachtenregeling"
+   ],
+   "koppen_totaal": 13,
+   "links_totaal": 111,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/erkende-verhuizer/",
+    "/over-ons/",
+    "/verzekering/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 26,
+   "sha256": "9dff813266b1786493ebff34c0a230f9a54a664697a42a807a78367808a81767"
+  },
+  "/klantervaringen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21270,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Klantervaringen | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": "Elke beoordeling op deze pagina is woord voor woord overgenomen van ons profiel op Klantenvertellen.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/klantervaringen/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Klantervaringen"
+   ],
+   "koppen_totaal": 24,
+   "links_totaal": 118,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/erkende-verhuizer/",
+    "/over-ons/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 58,
+   "sha256": "f9abb7bc58a56c6f1dd66d3d9792961a61d1ef7645f9d64d1a6f304996513a75"
+  },
+  "/m3-calculator/": {
+   "status": 200,
+   "bytes_over_de_lijn": 23152,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "M3-calculator | De Kievit Verhuizingen",
+   "titel_lengte": 38,
+   "beschrijving": "Verhuizers rekenen in kubieke meters: het laadvolume bepaalt welke wagen er komt en met hoeveel mensen wij staan.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/m3-calculator/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "M3-calculator"
+   ],
+   "koppen_totaal": 16,
+   "links_totaal": 115,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/dozencalculator/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 37,
+   "sha256": "65b6d0b1acabbd15404b84a99552adb2ebc61f36d10680d0cd67537e29baba0e"
+  },
+  "/montage-demontage/": {
+   "status": 200,
+   "bytes_over_de_lijn": 22881,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Montage en demontage | De Kievit Verhuizingen",
+   "titel_lengte": 45,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Montage en demontage"
+   ],
+   "koppen_totaal": 66,
+   "links_totaal": 120,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/klantervaringen/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 107,
+   "sha256": "3f94e3dfc8a9af3dd7cd08ec0dec38b5e7314b71bdceab5da3315808ece66dcc"
+  },
+  "/over-ons/": {
+   "status": 200,
+   "bytes_over_de_lijn": 19458,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Over ons | De Kievit Verhuizingen",
+   "titel_lengte": 33,
+   "beschrijving": "Een verhuisbedrijf uitkiezen betekent iemand binnenlaten die uw hele huis inpakt en de wagen in draagt.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/over-ons/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Over ons"
+   ],
+   "koppen_totaal": 25,
+   "links_totaal": 108,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/erkende-verhuizer/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 47,
+   "sha256": "3a353fa0f919718c0ac97af49df92c72d938f3708219636b71e1967945081075"
+  },
+  "/particulier-verhuizen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 24678,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Particuliere verhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 48,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Particuliere verhuizing"
+   ],
+   "koppen_totaal": 69,
+   "links_totaal": 134,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/dozencalculator/",
+    "/erkende-verhuizer/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 121,
+   "sha256": "60f584176bba915f2e60ad7a269ca72224d57eb75e972a314de8d0ecda354e70"
+  },
+  "/piano-verhuizen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 22449,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Piano verhuizen | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Piano verhuizen"
+   ],
+   "koppen_totaal": 71,
+   "links_totaal": 122,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/antiek-en-kunst-verhuizen/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/antiek-en-kunst-verhuizen/",
+    "/contact/",
+    "/diensten/",
+    "/klachtenregeling/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 110,
+   "sha256": "f09c0eb4d69d8aef0d3318ad87b65f080c6c117b30f61b2534d556c7dd65280f"
+  },
+  "/privacybeleid/": {
+   "status": 200,
+   "bytes_over_de_lijn": 12499,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Privacybeleid | De Kievit Verhuizingen",
+   "titel_lengte": 38,
+   "beschrijving": "Wij verhuizen huizen en kantoren, en daar hebben wij vooral een adres, een datum en een telefoonnummer voor nodig.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/privacybeleid/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Privacybeleid"
+   ],
+   "koppen_totaal": 21,
+   "links_totaal": 124,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/dozencalculator/",
+    "/klachtenregeling/",
+    "/m3-calculator/",
+    "/verhuischecklist/",
+    "/verzekering/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 77,
+   "sha256": "ebcbdaadfea71fd53aec9eec79c1195598106cfcbcb3abf2ae81f580fd38fc6a"
+  },
+  "/seniorenverhuizing/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21885,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Seniorenverhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 43,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Seniorenverhuizing"
+   ],
+   "koppen_totaal": 77,
+   "links_totaal": 124,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/piano-verhuizen/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/",
+    "/zorgverhuizing/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/klantervaringen/",
+    "/piano-verhuizen/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/",
+    "/zorgverhuizing/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 111,
+   "sha256": "1904034d6759e0b4bcbf3629bd7862d5e506e6b1bea58a46a2334db71122c17a"
+  },
+  "/sitemap/": {
+   "status": 200,
+   "bytes_over_de_lijn": 7359,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Sitemap | De Kievit Verhuizingen",
+   "titel_lengte": 32,
+   "beschrijving": "Alle pagina's van deze site op een rij, in dezelfde volgorde als het menu bovenaan.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/sitemap/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Sitemap"
+   ],
+   "koppen_totaal": 11,
+   "links_totaal": 139,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 2,
+   "sha256": "ce1e101b0d83399db20b1a9d753984d3efe1597ecd5c71394dfecfe9b338fc18"
+  },
+  "/spoedverhuizing/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21177,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Spoedverhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 40,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Spoedverhuizing"
+   ],
+   "koppen_totaal": 69,
+   "links_totaal": 123,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inboedelopslag/",
+    "/inpaktips/",
+    "/kantoorverhuizing/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/inboedelopslag/",
+    "/kantoorverhuizing/",
+    "/veelgestelde-vragen/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 108,
+   "sha256": "8fcc37a54b34aa292e552407a64a7c5f7ab63fbd8734887b49832a260e2581eb"
+  },
+  "/toegankelijkheid/": {
+   "status": 200,
+   "bytes_over_de_lijn": 14797,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Toegankelijkheid | De Kievit Verhuizingen",
+   "titel_lengte": 41,
+   "beschrijving": "Deze pagina gaat over de bruikbaarheid van deze website voor bezoekers die hem anders bedienen dan met een muis op een groot scherm.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/toegankelijkheid/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Toegankelijkheid"
+   ],
+   "koppen_totaal": 26,
+   "links_totaal": 116,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/dozencalculator/",
+    "/klachtenregeling/",
+    "/m3-calculator/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/verhuischecklist/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 90,
+   "sha256": "452d489f0708943a6e333c5e70087a030eb275829eced5f59fa52f92d2655130"
+  },
+  "/vacatures/": {
+   "status": 200,
+   "bytes_over_de_lijn": 10909,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Werken bij De Kievit | De Kievit Verhuizingen",
+   "titel_lengte": 45,
+   "beschrijving": "Verhuizen is geen sjouwwerk waar iedereen zomaar in past.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/vacatures/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Werken bij De Kievit"
+   ],
+   "koppen_totaal": 16,
+   "links_totaal": 101,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/over-ons/"
+   ],
+   "formulieren": [],
+   "inhoudseenheden": 24,
+   "sha256": "749dfb870465f811d85b80a375242fd0b984fd980b1ef41f38243e9c3f23ec68"
+  },
+  "/veelgestelde-vragen/": {
+   "status": 200,
+   "bytes_over_de_lijn": 18390,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Veelgestelde vragen | De Kievit Verhuizingen",
+   "titel_lengte": 44,
+   "beschrijving": "Hieronder staan 28 vragen die ons vaak gesteld worden, gegroepeerd van offerte tot opslag.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/veelgestelde-vragen/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Veelgestelde vragen"
+   ],
+   "koppen_totaal": 15,
+   "links_totaal": 131,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/diensten/",
+    "/dozencalculator/",
+    "/klachtenregeling/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 69,
+   "sha256": "f4f149a999028e25ebc544919f1e14a48e66ed853fd3af7f05d02ed4344d76ba"
+  },
+  "/verhuischecklist/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21320,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Verhuischecklist | De Kievit Verhuizingen",
+   "titel_lengte": 41,
+   "beschrijving": "Verhuizen is voor het grootste deel onthouden.  Zet hieronder uw verhuisdatum neer, dan rekent de lijst per fase uit wanneer u aan de beurt bent.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/verhuischecklist/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Verhuischecklist"
+   ],
+   "koppen_totaal": 26,
+   "links_totaal": 109,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/dozencalculator/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 35,
+   "sha256": "35e986c3227de25f837491619984ab76361b688072106d329e93e9b41219eff0"
+  },
+  "/verzekering/": {
+   "status": 200,
+   "bytes_over_de_lijn": 16707,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Verzekering | De Kievit Verhuizingen",
+   "titel_lengte": 36,
+   "beschrijving": "U hoeft hiervoor niets te regelen.  Bij elke verhuizing die wij met een particulier afspreken vragen wij een Garantiecertificaat aan.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/verzekering/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Verzekering"
+   ],
+   "koppen_totaal": 16,
+   "links_totaal": 109,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/diensten/",
+    "/klachtenregeling/",
+    "/over-ons/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 33,
+   "sha256": "9d9a32068a7697cdc8834f8d7a47e1382b474cd03a47ba0da181c687c4706fbe"
+  },
+  "/werkwijze/": {
+   "status": 200,
+   "bytes_over_de_lijn": 16474,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Onze werkwijze | De Kievit Verhuizingen",
+   "titel_lengte": 39,
+   "beschrijving": "De meeste mensen verhuizen een paar keer in hun leven, wij doen het elke week.",
+   "meta_robots": [
+    "index, follow, max-snippet:-1, max-image-preview:large"
+   ],
+   "canonical": [
+    "https://www.de-kievit.nl/werkwijze/"
+   ],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 1,
+   "jsonld_typen": [
+    "GEEN-@type",
+    "graph:WebPage",
+    "graph:BreadcrumbList"
+   ],
+   "h1": [
+    "Onze werkwijze"
+   ],
+   "koppen_totaal": 21,
+   "links_totaal": 107,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/sitemap/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/over-ons/",
+    "/verzekering/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 33,
+   "sha256": "5faee9ca66221c8248be6ef088a4366ea657557f0bc02707e29c64b26ed3d865"
+  },
+  "/zorgverhuizing/": {
+   "status": 200,
+   "bytes_over_de_lijn": 21404,
+   "bron_fs": true,
+   "bron_crawl": true,
+   "titel": "Zorgverhuizing | De Kievit Verhuizingen",
+   "titel_lengte": 39,
+   "beschrijving": null,
+   "meta_robots": [
+    "noindex, nofollow"
+   ],
+   "canonical": [],
+   "lang": "nl",
+   "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+   "og_aantal": 0,
+   "jsonld_blokken": 0,
+   "jsonld_typen": [],
+   "h1": [
+    "Zorgverhuizing"
+   ],
+   "koppen_totaal": 68,
+   "links_totaal": 122,
+   "links_intern": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/certificeringen/",
+    "/contact/",
+    "/cookiebeleid/",
+    "/diensten/",
+    "/disclaimer/",
+    "/dozencalculator/",
+    "/duurzaamheid/",
+    "/erkende-verhuizer/",
+    "/inpaktips/",
+    "/kantoorverhuizing/",
+    "/klachtenregeling/",
+    "/klantervaringen/",
+    "/m3-calculator/",
+    "/over-ons/",
+    "/privacybeleid/",
+    "/seniorenverhuizing/",
+    "/sitemap/",
+    "/spoedverhuizing/",
+    "/toegankelijkheid/",
+    "/vacatures/",
+    "/veelgestelde-vragen/",
+    "/verhuischecklist/",
+    "/verzekering/",
+    "/werkwijze/"
+   ],
+   "links_intern_in_main": [
+    "/",
+    "/algemene-voorwaarden/",
+    "/contact/",
+    "/diensten/",
+    "/kantoorverhuizing/",
+    "/klantervaringen/",
+    "/privacybeleid/",
+    "/seniorenverhuizing/",
+    "/spoedverhuizing/",
+    "/veelgestelde-vragen/",
+    "/werkwijze/"
+   ],
+   "formulieren": [
+    {
+     "id": "ofForm",
+     "action": "#offerte",
+     "method": "get"
+    },
+    {
+     "id": "lfForm",
+     "action": "https://api.web3forms.com/submit",
+     "method": "post"
+    }
+   ],
+   "inhoudseenheden": 110,
+   "sha256": "7472c135143431bcefaafe2f43e2af46e63fd05d5220ae985dbd31010da69f36"
+  }
+ }
+}

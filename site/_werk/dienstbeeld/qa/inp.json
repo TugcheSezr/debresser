@@ -1,0 +1,44 @@
+{
+ "inp1-borden-rechtop": {
+  "oordeel": "fout",
+  "tekst": "Scene sterk (borden rechtop, papier, gezicht, handen), maar de doos is een lijntekening: bij zonder geel, lijn-zeshoeken, geen vliegbaan, geen twee regels. Borstprint: MOVERS teal, bij op shirt, geen swoosh.",
+  "retouche": "Alternatief: doosfront (x100-730,y1500-1920) volledig vervangen door de referentie-opdruk; borstprint (x1020-1250,y1200-1400) vervangen door het polo-lockup (wit TOP/wit MOVERS, teal boog, geen bij).",
+  "opnieuw": "Doos en polo wijken allebei af. Herhaal met ref-dozen.jpg als eerste ref plus: 'the bee is yellow with dark stripes and a dashed flight path, the hexagons are filled teal-green and yellow, two small lines under MOVERS' en 'the polo print has NO bee, MOVERS is white'."
+ },
+ "inp2-boeken-boekendoos": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: knielt, boeken rechtop, twee dichte dozen, licht van rechts; dozen goed (bij, swoosh, hexclusters, geen tape), ruggen onleesbaar. Gele bij op de borstprint; streepje na MOVERS op de dozen achter.",
+  "retouche": "Bij naast TOP op de borstprint weghalen (x960-1160,y1090-1260); streepje na MOVERS op de twee dozen achter (x1270-1650,y1230-1450 en y1580-1810) wegpoetsen.",
+  "opnieuw": ""
+ },
+ "inp3-garderobedoos-hangers": {
+  "oordeel": "let",
+  "tekst": "Garderobedoos exact als referentie (bij, vliegbaan, twee regels, Max. 20 kg); klant in gewone kleding, beiden op de kleding gericht. Bij op de borstprint. Geen rail in de doos: hangers hangen aan een clipje in zijn hand.",
+  "retouche": "Gele bij naast TOP op de borstprint (x1100-1280,y830-970) weghalen. Lach van beiden met tanden, aan de vrolijke kant maar niet breed: laten.",
+  "opnieuw": "Alleen als de rail-logica stoort: 'a fixed metal rail spans the top of the wardrobe box and the hangers hook onto that rail; the mover holds one hanger, never the rail'."
+ },
+ "inp4-televisie-deken": {
+  "oordeel": "fout",
+  "tekst": "Man, tv en deken goed, maar de doos is een fantasiedoos: hoog smal, TOP in teal letters, lijn-zeshoeken over de bovenhelft, flaplabel 'SZLF LOGKIMS', teal band met 'www.topmove' onderaan. Polo-swoosh is een dikke haak.",
+  "retouche": "Alternatief: doos links (x140-700,y1250-2230) volledig vervangen door een referentiedoos; borstprint (x1000-1200,y980-1150) vervangen door het polo-lockup.",
+  "opnieuw": "Doos wijkt op vijf punten af. Prompt: 'the box beside him is a standard Top Movers box exactly as the first reference, wider than tall, dark-grey TOP, yellow bee, hexagon clusters only along the vertical edges, NO label on the flap, NO web address, NO coloured band'."
+ },
+ "inp5-kratten-keuken": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: groene krat met beide armen voor het lijf, open kratten met pannen en potten, doos op de vloer, NL-stopcontacten; polo, gezicht, handen goed. Bovenflap doos leest 'Aangesloten BIJ duurzame verhuizers'.",
+  "retouche": "Regel op de bovenflap van de doos rechtsonder (x1500-1696,y1780-2060) wegpoetsen of 'duurzame' naar 'erkende'; grijs kladje op de bovenste aanrechtkrat links (x270-430,y1440-1570) wegpoetsen.",
+  "opnieuw": ""
+ },
+ "inp6-team-woonkamer-breed": {
+  "oordeel": "fout",
+  "tekst": "Man links pakt drie BRILLEN i.p.v. drinkglazen, lacht breed, hoofd boven de middenbaan, onderarm uitgebrand; alle 11 dozen dragen het polo-lockup zonder bij en hexclusters. Man rechts: zwarte plug in oor.",
+  "retouche": "",
+  "opnieuw": "Opnieuw: 'drinking glasses (tumblers), never spectacles'; 'every box has the yellow bee, teal-green and yellow hexagon clusters along the vertical edges and the two small lines, never the polo lockup'; 'light smile, mouth closed'; 'both heads in the middle band of the height'; 'no ear jewellery'."
+ },
+ "inp7-uitpakken-nieuwe-keuken": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: verhuizer zet glazen in de kast, klant in gewone kleding vouwt flappen, dozen als referentie, licht van rechts. Borstprint MOVERS verhaspeld; voorgronddoos leest 'Max. 30 kg'; noppenfolie in doos.",
+  "retouche": "Borstprint (x1140-1290,y650-760) vervangen door het polo-lockup; 'Max. 30 kg' op de voorgronddoos (x1700-1830,y1370-1450) naar 'Max. 20 kg'; noppenfolie in de aanrechtdoos (x530-910,y720-890) desgewenst door inpakpapier. Gezichten op 17-34% hoogte: bannercrop hoog leggen.",
+  "opnieuw": ""
+ }
+}

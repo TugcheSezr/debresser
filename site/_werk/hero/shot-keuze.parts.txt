@@ -1,0 +1,2 @@
+site/_werk/hero/shot-keuze.part0.png
+site/_werk/hero/shot-keuze.part1.png

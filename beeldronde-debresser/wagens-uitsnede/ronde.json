@@ -1,0 +1,21 @@
+{
+  "titel": "Vrijstaande verhuiswagen voor sectie 2, Vanuit onze vestigingen",
+  "plek": "/contact/, sectie 2 \"Vanuit onze vestigingen\" (locations-plate-truck). Het dak van de wagen steekt boven een donkerblauwe band uit; een witte plaat met de vestigingen ligt over de wielen.",
+  "lead": "Keuze 25-09-2026: wagen 3 (onderweg in Brabant) is goedgekeurd en staat op /contact/ in sectie 2; wagen 2 viel af en de uitsnede daarvan is verwijderd. Het goedgekeurde originele wagenbeeld 2 in beeldronde-debresser/wagens/ blijft staan. Twee vrijstaande uitsneden van de goedgekeurde wagenbeelden 2 en 3. Het beeld zelf is niet veranderd, alleen de achtergrond is weg: geen weg, geen lucht, geen schaduw. Elke uitsnede staat op donkerblauw (#020D41, de kleur van de band) en eronder op licht (#F4F6F9). De drie open tekstpunten op de wagen zijn dus ook niet veranderd: de vestigingenlijst mist Venlo, Brussel en Reeuwijk; het nummer van Breda is 076 - 8200233 op de wagen en 076 52 24 100 op /contact/; de slogan is \"FULL SERVICE IN LOGISTIEK\". Beslis je over een van die punten, dan komt er eerst een nieuw wagenbeeld en daarna een nieuwe uitsnede.",
+  "eenheid": "Wagen",
+  "ratio": "3:2",
+  "versies": [
+    {
+      "nr": 3,
+      "naam": "onderweg in Brabant",
+      "scene": "Uit het goedgekeurde wagen-3-onderweg-in-brabant.png met site/_werk/cutout_mat.py (BiRefNet-masker, closed-form matting, randkleur schoongemaakt, marge 40), daarna werk/schoon.py: rand strakker (de lichte pluizen van lucht en bomen langs het cabinedak en de antenne zijn weg), wegschaduw en schaduwpunten naast de banden weg."
+    }
+  ],
+  "lagen": [
+    {
+      "patroon": "wagen-{nr}-onderweg-in-brabant-uitsnede",
+      "label": "op donkerblauw #020D41",
+      "klasse": ""
+    }
+  ]
+}

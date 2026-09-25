@@ -1,0 +1,157 @@
+<style>
+  /* Cutouts naast de koppen van #dz-start en #dz-slot (29-08). Zonder deze regels bepaalt de figuur zelf
+     de rijhoogte: gemeten 540x821 naast 593 tekst, en bij het slotblok 540x762 naast maar 395 tekst, dus
+     bijna twee keer zo hoog als waar hij bij hoort. Nu vult de figuur de hoogte van de tekstkolom en
+     schaalt het beeld daarbinnen mee, met de heupsnede op de onderrand. */
+  @media(min-width:901px){
+    .dz-fig{align-self:stretch;position:relative;min-height:clamp(300px,26vw,420px)}
+    .dz-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+  }
+</style>
+
+<style>
+  /* Alleen voor /duurzaamheid/ (prefix dzt). De bij van Let's Move To Zero staat in het gedeelde .tm-blok op
+     `display:none` onder 900px (style.css regel 1259): daar staat hij absoluut op bottom 7 procent en dat valt op
+     een gestapeld blok midden in de laatste kaart. Shahab vroeg juist om die bij, dus hier zetten wij hem op mobiel
+     in de flow onder de kaarten in plaats van hem te verbergen. Het gedeelde component blijft ongemoeid, dus het
+     blok op /certificeringen/ verandert niet. */
+  @media(max-width:900px){
+    #dz-koepel .tm__bij{display:block;position:static;width:88px;margin:1.5rem auto 0}
+  }
+</style>
+
+<section class="sectie" id="dz-start" aria-labelledby="dz-start-kop">
+  <div class="wrap">
+    <div class="werkwijze__top">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Met oog voor morgen</p>
+        <h2 class="kop" id="dz-start-kop">Wat duurzaam verhuizen bij ons wel en niet betekent</h2>
+        <p class="intro">Duurzaamheid is in de verhuisbranche een woord waar veel mee geschoven wordt. Wij houden het daarom bij wat wij zelf doen en bij wat aantoonbaar op papier staat, en wij zetten erbij op wiens naam dat papier staat. Welke keurmerken dat zijn en wie de houder is, staat op <a href="/certificeringen/">certificeringen</a>. Bij een verhuizing van De Kievit letten wij op het verpakkingsmateriaal dat wij gebruiken, op hoeveel afval er overblijft en op hoe efficient wij rijden. Daaronder ligt het programma van De Bresser, waar wij sinds 1 juni 2024 deel van uitmaken, en van Top Movers, het samenwerkingsverband waar wij bij zijn aangesloten.</p>
+      </div>
+      <!-- .werkwijze__wagen is de vrijstaande-cutout-figuur van de homepage; --staand omdat deze
+           figuren staand zijn en 88% in de eenkolomsstand ze anders onwerkbaar hoog maakt -->
+      <figure class="werkwijze__wagen werkwijze__wagen--staand dz-fig" data-reveal aria-hidden="true">
+        <img src="/assets/img/contact-bel-man-1100.webp" srcset="/assets/img/contact-bel-man-700.webp 700w, /assets/img/contact-bel-man-1100.webp 1100w" sizes="(max-width:900px) 88vw, 46vw" width="1100" height="1672" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <ul class="usps usps--rij" data-reveal>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-box"/></svg></span><div><h3>Dozen die rondgaan</h3><p>Wij brengen de verhuisdozen bij u langs en halen ze na afloop weer op, zodat dezelfde dozen bij de volgende verhuizing opnieuw de wagen in gaan in plaats van bij het oud papier te belanden.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-plan"/></svg></span><div><h3>Ritten die kloppen</h3><p>Een opname aan huis levert een plan op waarin staat wat er mee moet en welke wagen daarbij hoort. Dat scheelt ritten, en de rit die niet gereden wordt is de schoonste.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-home"/></svg></span><div><h3>Minder restafval</h3><p>Wij kijken bij de opname wat er echt mee gaat. Wat u niet meeneemt hoeft niet ingepakt, niet vervoerd en niet weggegooid te worden, en dat scheelt aan beide kanten.</p></div></li>
+      <li><span class="ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span><div><h3>Meubels een tweede leven</h3><p>Voor kantoorinrichting werken wij met assetmanagement: inventariseren, opslaan en waar het kan opknappen en opnieuw plaatsen, in plaats van afvoeren en nieuw kopen.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" id="dz-wie" aria-labelledby="dz-wie-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Op wiens naam</p>
+      <h2 class="kop" id="dz-wie-kop">Wat van ons is en wat van de organisatie erboven</h2>
+      <p class="intro">Een certificaat van een koepel is niet hetzelfde als een eigen keurmerk. Daarom hieronder precies wie waarvan de houder is, zodat u weet waar u naar kijkt als u ergens een logo ziet staan.</p>
+    </div>
+    <div class="dz-vak" data-reveal>
+      <table class="dz-tabel">
+        <caption>Duurzaamheidsprogramma's rond De Kievit en hun houder</caption>
+        <thead><tr><th scope="col">Wat</th><th scope="col">Staat op naam van</th><th scope="col">Wat het voor u betekent</th></tr></thead>
+        <tbody>
+          <tr><td>Verpakkingsmateriaal, afval en transport bij uw verhuizing</td><td>De Kievit Verhuizingen, Venlo</td><td>Dit is het deel dat wij zelf in de hand hebben en waar u ons op kunt aanspreken.</td></tr>
+          <tr><td>De Duurzame werkomgeving: gebouwbeheer en assetmanagement met meubelpaspoort</td><td>De Bresser Verhuizingen</td><td>Sinds onze integratie op 1 juni 2024 kunt u deze diensten ook via ons afnemen.</td></tr>
+          <tr><td><a href="/certificeringen/#co2">CO2-Prestatieladder, niveau 3</a></td><td>Top Movers Nederland B.V.</td><td>Onze vestiging valt hieronder via De Bresser. Het certificaat staat op naam van het samenwerkingsverband, omdat een CO2-managementsysteem voor het geheel wordt gecertificeerd en niet per vestiging.</td></tr>
+          <tr><td>VCA**, veilig werken</td><td>De Kievit, binnen het landelijke certificeringstraject van Top Movers</td><td>Onze mensen werken volgens een gecertificeerd veiligheidssysteem. De looptijd is drie jaar, met jaarlijks een tussentijdse toetsing.</td></tr>
+          <tr><td>Let's Move To Zero, het doel van nul uitstoot en nul afval</td><td>Top Movers</td><td>Een programma van de koepel waar wij aan meedoen, geen belofte die wij per verhuizing waarmaken.</td></tr>
+          <tr><td>Steun aan Stichting CliniClowns sinds 2021</td><td>Top Movers en de aangesloten leden</td><td>Transport en opslag voor de Alpentocht en inzamelpunten op de vestigingen.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="dz-bresser" aria-labelledby="dz-bresser-kop">
+  <div class="wrap">
+    <div class="blok blok--paneel">
+      <div class="blok__tekst" data-reveal>
+        <p class="label">Onze moederorganisatie</p>
+        <h2 class="kop" id="dz-bresser-kop">Wat De Bresser over 2025 rapporteert</h2>
+        <p class="intro">De Kievit maakt sinds 1 juni 2024 deel uit van De Bresser Verhuizingen; wat dat voor ons betekent staat bij <a href="/over-ons/">over ons</a>. Wat daar gebeurt, werkt door in hoe wij werken, van het materiaal dat wij inkopen tot de hubs waar onze wagens langs kunnen. De cijfers hieronder gelden voor De Bresser als geheel en zijn niet uitgesplitst naar de Venlose vestiging.</p>
+        <ul class="d4">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>36 procent minder afval</b><span>gerealiseerd in 2025 ten opzichte van 2024</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-box"/></svg><div><b>35.000 dozen bespaard</b><span>door dozen te hergebruiken in plaats van te vervangen</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-plan"/></svg><div><b>Ruim 15 procent elektrisch</b><span>van het totale wagenpark, in 2025 met drie voertuigen uitgebreid</span></div></li>
+          <li><svg aria-hidden="true"><use href="#i-home"/></svg><div><b>Zes hubs</b><span>in Nederland en Belgie, waardoor leveringen gebundeld kunnen worden</span></div></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:.95rem;color:var(--ant-zacht)">Over elektrische voertuigen of zonnepanelen op onze eigen locatie aan de Van Coehoornstraat doen wij geen uitspraak, want daar hebben wij geen cijfers over die wij hard kunnen maken.</p>
+      </div>
+      <figure class="blok__foto" data-reveal>
+        <img src="/assets/img/huisje-1200.webp" srcset="/assets/img/huisje-800.webp 800w, /assets/img/huisje-1200.webp 1200w" sizes="(max-width:860px) 90vw, 560px" alt="Verhuiswagen van Top Movers op een landweg" width="1200" height="900" loading="lazy" decoding="async">
+        <figcaption>Minder ritten, beter beladen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Top Movers-blok in de campagnestijl van Let's Move To Zero (honingraat en bij), 29-08 op verzoek Shahab in
+     plaats van het navy blok met de avondfoto. Component .tm komt uit blok-certificeringen.html, ongewijzigd; alleen
+     de tekst is die van deze pagina. Feiten uit onderzoek/05-duurzaamheid-mvo-werkgever.md: CO2-Prestatieladder
+     niveau 3 op naam van Top Movers Nederland B.V., zonder nummer of einddatum op de pagina (besluit 30-08), reductiedoel 25 procent in
+     2026 t.o.v. 2021, Let's Move To Zero, VCA** met driejarige looptijd en jaarlijkse tussentijdse toetsing. -->
+<section class="tm" id="dz-koepel" aria-labelledby="dz-koepel-kop">
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="tm-hex" viewBox="0 0 64 64"><polygon points="32,3 57,17.5 57,46.5 32,61 7,46.5 7,17.5" fill="#00A19B"/><path d="M21 33l7.5 7.5L44 25" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <div class="tm__raat" aria-hidden="true"><img src="/assets/img/deco/honingraat.svg" alt="" width="400" height="280" loading="lazy"></div>
+  <div class="wrap tm__in">
+    <div class="tm__tekst" data-reveal>
+      <img class="tm__logo" src="/assets/img/logo-topmovers.svg" alt="Top Movers" width="813" height="225" loading="lazy">
+      <p class="label">Top Movers</p>
+      <h2 class="kop" id="dz-koepel-kop">De norm waar Top Movers binnen stuurt</h2>
+      <p class="intro">Onze vestiging valt onder het duurzaamheidsprogramma van het samenwerkingsverband. Dat de papieren op naam van Top Movers Nederland staan en niet op die van De Kievit, komt doordat zo'n managementsysteem voor het geheel wordt gecertificeerd en niet per vestiging.</p>
+      <div class="tm__cta">
+        <a class="btn btn--goud btn--groen" href="#offerte">Vrijblijvende verhuisofferte</a>
+        <a class="tm__link" href="https://www.topmovers.nl/lets-move-to-zero/" target="_blank" rel="noopener nofollow">Lees over Let's Move To Zero</a>
+      </div>
+    </div>
+    <ul class="tm__lijst" data-reveal-groep>
+      <li><span class="tm__hex"><svg aria-hidden="true"><use href="#tm-hex"/></svg></span><div><b>CO2-Prestatieladder, niveau 3</b><p>Top Movers Nederland B.V. is houder van een CO2-bewust certificaat op niveau 3. Onze vestiging valt daaronder via De Bresser.</p></div></li>
+      <li><span class="tm__hex"><svg aria-hidden="true"><use href="#tm-hex"/></svg></span><div><b>Let's Move To Zero: nul uitstoot, nul afval</b><p>De campagne van het samenwerkingsverband, met daaronder een reductiedoelstelling van 25 procent minder CO2 in 2026 ten opzichte van 2021. Een doel van de koepel, geen belofte die wij per verhuizing waarmaken.</p></div></li>
+      <li><span class="tm__hex"><svg aria-hidden="true"><use href="#tm-hex"/></svg></span><div><b>VCA**, veilig werken</b><p>Binnen hetzelfde traject geregeld: het veiligheidscertificaat waaronder onze mensen werken, met een looptijd van drie jaar en jaarlijks een tussentijdse toetsing.</p></div></li>
+    </ul>
+  </div>
+  <div class="tm__bij" aria-hidden="true"><img src="/assets/img/deco/bij.svg" alt="" width="133" height="68" loading="lazy"></div>
+</section>
+
+<section class="sectie ring" id="dz-faq" aria-labelledby="dz-faq-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Veelgestelde vragen</p>
+      <h2 class="kop" id="dz-faq-kop">Vragen over duurzaam verhuizen</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Is De Kievit CO2-gecertificeerd?<span class="faq__tk" aria-hidden="true"></span></summary><p>Onze vestiging valt eronder via De Bresser, maar wij zijn niet zelf de houder. Het certificaat staat op naam van Top Movers Nederland B.V., het samenwerkingsverband waar wij bij zijn aangesloten, omdat zo'n CO2-managementsysteem voor het geheel wordt gecertificeerd en niet per vestiging. Wij schrijven dat er eerlijk bij, zodat u weet naar welk papier u kijkt. Een overzicht van alles wat er geldt staat op de pagina certificeringen.</p></details>
+      <details><summary>Rijden jullie elektrisch in Venlo?<span class="faq__tk" aria-hidden="true"></span></summary><p>Over het wagenpark op onze eigen vestiging doen wij geen uitspraak, omdat wij daar geen cijfer over hebben dat wij hard kunnen maken. Wat wij wel kunnen zeggen: De Bresser, waar wij deel van uitmaken, meldt over 2025 dat ruim 15 procent van het totale wagenpark elektrisch is en dat daar in dat jaar drie voertuigen bij zijn gekomen. Vraagt u ernaar bij de opname, dan vertelt de verhuisadviseur u welke wagen er voor uw verhuizing gepland staat.</p></details>
+      <details><summary>Wat doen jullie met spullen die ik niet meeneem?<span class="faq__tk" aria-hidden="true"></span></summary><p>Bespreek dat bij de opname aan huis, dan nemen wij het mee in het plan. Voor kantoorinrichting hebben wij assetmanagement: inventariseren, opslaan en waar het kan opknappen en opnieuw plaatsen, zodat meubilair een tweede leven krijgt in plaats van afgevoerd te worden. Voor een particuliere inboedel kijken wij per geval wat er mogelijk is.</p></details>
+      <details><summary>Wat is een meubelpaspoort?<span class="faq__tk" aria-hidden="true"></span></summary><p>Een registratie van een meubelstuk met daarin de materiaalsamenstelling, het productiejaar en de eventuele onderhoudshistorie. Het hoort bij De Duurzame werkomgeving, het concept voor gebouwbeheer en assetmanagement dat wij sinds de integratie met De Bresser op 1 juni 2024 ook aanbieden. Met die registratie is later te bepalen of een stuk opgeknapt, hergebruikt of gerecycled kan worden.</p></details>
+      <details><summary>Kan ik een CO2-rapportage van mijn verhuizing krijgen?<span class="faq__tk" aria-hidden="true"></span></summary><p>Voor projecten met assetmanagement hoort rapportage bij het systeem waarin de meubels geregistreerd staan. Voor een gewone woningverhuizing kunnen wij dat niet standaard leveren. Heeft u het nodig voor uw eigen verslaglegging, leg de vraag dan bij de aanvraag neer, dan zoeken wij uit wat er mogelijk is voordat u beslist.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="dz-slot" aria-labelledby="dz-slot-kop">
+  <div class="wrap">
+    <div class="werkwijze__top">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Aan de slag</p>
+        <h2 class="kop" id="dz-slot-kop">Liever een verhuizing met zo min mogelijk restafval?</h2>
+        <p class="intro">Zeg het bij de aanvraag, dan houdt de verhuisadviseur er bij de opname rekening mee: welk materiaal wij meebrengen, wat er hergebruikt kan worden en wat er niet mee hoeft. Dat staat daarna gewoon in uw offerte.</p>
+      </div>
+      <!-- .werkwijze__wagen is de vrijstaande-cutout-figuur van de homepage; --staand omdat deze
+           figuren staand zijn en 88% in de eenkolomsstand ze anders onwerkbaar hoog maakt -->
+      <figure class="werkwijze__wagen werkwijze__wagen--staand dz-fig" data-reveal aria-hidden="true">
+        <img src="/assets/img/duo-opslag-1600.webp" srcset="/assets/img/duo-opslag-1000.webp 1000w, /assets/img/duo-opslag-1600.webp 1600w" sizes="(max-width:900px) 88vw, 46vw" width="1600" height="1663" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="knoprij blok__cta" data-reveal><a class="btn btn--goud btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Vraag een offerte aan</a><a class="btn btn--lijn" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Bel 077 - 32 32 100</a></div>
+  </div>
+</section>

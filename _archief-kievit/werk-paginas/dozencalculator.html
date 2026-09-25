@@ -1,0 +1,254 @@
+<!-- Dozencalculator. Het rekenblok en het script komen uit _werk/blok-dozencalculator.html (dat bestand
+     wordt door build_kievit.py overschreven, dus hier staat de kopie die deze pagina gebruikt). De
+     aannames van het rekenmodel staan zichtbaar op de pagina in de sectie "Waar dit getal vandaan komt".
+     Herontwerp 29-aug-2026 (brief _werk/paginabeeld/BRIEF-HERONTWERP.md): elk tekstblok heeft een visuele
+     partner uit de homepage (blok--paneel, usps-rij, blok--navy, tips-grid, stappen), twee foto's
+     (dozen-stapel rechts, dozen-bezorging links); script en calculator-markup ongewijzigd.
+     Ronde 2 (BRIEF-BEELD-RONDE2.md): twee cutouts rechts naast een kop via .werkwijze__top van de homepage:
+     duo met dozen bij de intro, wagen bij de CTA (kop daar van gecentreerd naar links). -->
+<style>
+  /* Alleen voor /dozencalculator/ (prefix dzc): de iconen in de usps-rij komen uit de Shutterstock-bibliotheek
+     (icoon-skill), uitgeknipt en gerecolord naar navy/teal; ze staan als <img> in het ronde vlak van .usps .ico. */
+  .usps .ico img{width:30px;height:30px;display:block}
+</style>
+
+<section class="sectie" id="rekenen" aria-labelledby="rekenen-kop">
+  <div class="wrap">
+    <div class="werkwijze__top">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Dozen tellen</p>
+        <h2 class="kop" id="rekenen-kop">Zo weet u vooraf hoeveel dozen er moeten komen</h2>
+        <p class="intro">Dat u dozen tekort komt merkt u zelden op een handig moment. Meestal staat u er halverwege de zolder achter, op een avond dat de winkel net dicht is. Vul hieronder in hoe u woont en hoeveel spullen u heeft, dan staat er een richtgetal voor uw hele inboedel. De dozen zelf brengen wij ruim voor de verhuisdag bij u langs en na afloop halen wij ze weer op.</p>
+      </div>
+      <!-- .werkwijze__wagen is de vrijstaande-cutout-figuur van de homepage, hier met mensen (duo met TM-dozen), geen wagen -->
+      <figure class="werkwijze__wagen" data-reveal aria-hidden="true">
+        <img src="/assets/img/figuur-duo-dozen-1600.webp" srcset="/assets/img/figuur-duo-dozen-900.webp 900w, /assets/img/figuur-duo-dozen-1600.webp 1600w" sizes="(max-width:900px) 88vw, 46vw" width="1600" height="976" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="calc dzc-solo" id="calc" aria-label="Verhuisdozen berekenen">
+  <div class="wrap">
+    <div class="calc__card" data-reveal>
+      <div class="calc__intro">
+        <h3>Hoeveel dozen heeft u nodig?</h3>
+        <p>Een schatting op basis van uw woning en inboedel. Reken gerust wat ruimer, dan komt u niet tekort: een doos te veel kost u niets, een doos te weinig kost u tijd op de verhuisdag. Bij de opname aan huis neemt onze verhuisadviseur de schatting samen met u door en past hij hem aan als dat nodig is.</p>
+      </div>
+      <div class="calc__velden">
+        <label class="calc__veld"><span>Woonoppervlak</span><input id="c-m2" type="number" inputmode="numeric" value="90" min="10" max="600" step="1"><i>m&sup2;</i></label>
+        <label class="calc__veld"><span>Kamers</span><input id="c-kamers" type="number" inputmode="numeric" value="3" min="0" max="20"></label>
+        <label class="calc__veld"><span>Bewoners</span><input id="c-bewoners" type="number" inputmode="numeric" value="2" min="1" max="15"></label>
+        <label class="calc__veld calc__veld--sel"><span>Hoeveel spullen</span>
+          <select id="c-pack"><option value="licht">Weinig</option><option value="gemiddeld" selected>Gemiddeld</option><option value="zwaar">Veel</option></select></label>
+      </div>
+      <fieldset class="calc__extras">
+        <legend>Heeft u veel van dit?</legend>
+        <label><input type="checkbox" value="boeken"><span>Boeken</span></label>
+        <label><input type="checkbox" value="kleding"><span>Kleding</span></label>
+        <label><input type="checkbox" value="bergruimte"><span>Zolder of berging vol</span></label>
+        <label><input type="checkbox" value="hobby"><span>Hobbyspullen</span></label>
+      </fieldset>
+      <div class="calc__uit" role="status" aria-live="polite">
+        <span class="calc__label">U heeft ongeveer nodig</span>
+        <strong class="calc__getal" id="c-getal">-</strong>
+        <span class="calc__bereik" id="c-bereik"></span>
+        <span class="calc__detail" id="c-detail"></span>
+        <a class="btn btn--goud" id="c-naar-offerte" href="#offerte">Offerte met deze gegevens<svg aria-hidden="true"><use href="#i-caret"/></svg></a>
+        <a class="btn btn--wa btn--groen" href="https://wa.me/31773232100?text=Hallo%2C%20volgens%20de%20dozencalculator%20heb%20ik%20ongeveer%20...%20verhuisdozen%20nodig.%20Klopt%20die%20schatting%3F" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App ons deze schatting</a>
+        <a class="calc__tel" href="tel:0773232100"><svg aria-hidden="true"><use href="#i-phone"/></svg>Of bel 077 - 32 32 100</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="aannames" aria-labelledby="aannames-kop">
+  <div class="wrap">
+    <div class="blok blok--stapel blok--paneel">
+      <div class="blok__boven">
+        <div class="blok__tekst" data-reveal style="min-width:0">
+          <p class="label">Open kaart</p>
+          <h2 class="kop" id="aannames-kop">Waar dit getal vandaan komt</h2>
+          <p class="intro">Een calculator die niet vertelt wat hij optelt is een gok met een knop eromheen. Daarom staat de hele rekensom hier. Alles wat u ziet is uitgedrukt in dozen.</p>
+          <p class="dzc-cap" id="dzc-cap" style="margin-top:1.4rem">Basis van de schatting, per eenheid</p>
+          <div class="dzc-tabelvak">
+            <table class="dzc-tabel" aria-describedby="dzc-cap" style="min-width:0">
+              <thead>
+                <tr><th scope="col">Telt mee</th><th scope="col">Weinig</th><th scope="col">Gemiddeld</th><th scope="col">Veel</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Per m&sup2; woonoppervlak</th><td>0,35</td><td>0,5</td><td>0,65</td></tr>
+                <tr><th scope="row">Per kamer</th><td>6</td><td>9</td><td>12</td></tr>
+                <tr><th scope="row">Per bewoner</th><td>3</td><td>5</td><td>7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <figure class="blok__foto" data-reveal>
+          <img src="/assets/img/dozen-stapel-1140.webp" srcset="/assets/img/dozen-stapel-760.webp 760w, /assets/img/dozen-stapel-1140.webp 1140w" sizes="(max-width:860px) 90vw, 520px" width="1140" height="1710" alt="Stapels grote en kleine verhuisdozen van Top Movers in een lege woonkamer" loading="lazy" decoding="async">
+          <figcaption>Grote dozen voor licht, kleine voor zwaar</figcaption>
+        </figure>
+      </div>
+      <ul class="usps usps--rij" data-reveal>
+        <li><span class="ico"><img src="/assets/img/icoon/bewoners.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Extra's per bewoner</h3><p>Kruist u een categorie aan, dan komt er per bewoner nog wat bij: boeken 4 dozen, kleding 2,5 en hobbyspullen 3. Voor een volle zolder of berging rekent hij 0,08 doos per vierkante meter.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/doos-inpakken.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Garderobedozen apart</h3><p>Vinkt u kleding aan, dan noemt de uitslag daarnaast garderobedozen: anderhalve per bewoner, afgerond op hele dozen en altijd minstens een. Daar hangt uw kleding in, zonder vouwen.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/rekenen.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Marge en afronding</h3><p>Over de uitkomst gaat een marge van 0,9 tot 1,15 keer. Het getal dat groot in beeld staat is het midden van die marge; boven de vijftig dozen ronden wij af op vijftallen.</p></div></li>
+        <li><span class="ico"><img src="/assets/img/icoon/checklist.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Nagelopen bij de opname</h3><p>Het blijft rekenen met gemiddelden, en uw kasten hebben dat gemiddelde nooit gelezen. Bij de opname aan huis loopt onze verhuisadviseur de schatting samen met u langs en past hij hem aan. Dit is versie 1 van het model, nagelopen op 30 augustus 2026. Het is niet getoetst aan afgeronde verhuizingen, dus er zit geen terugkoppeling in van wat er achteraf werkelijk aan dozen nodig bleek.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" id="missers" aria-labelledby="missers-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Let hierop</p>
+      <h2 class="kop" id="missers-kop">Wat de calculator niet ziet</h2>
+      <p class="intro">Vier dingen waar de rekensom niets van weet, terwijl ze op de verhuisdag wel in de wagen moeten.</p>
+    </div>
+    <div class="tips-grid" data-reveal-groep>
+      <div class="tip"><div><strong>De zolder, de berging en de garage</strong><span>Woonoppervlak is niet hetzelfde als wat er mee moet. Een schuur vol gereedschap of een zolder met dozen van de vorige verhuizing staat in geen enkele rekensom, maar neemt wel plek in. Vink daarom eerlijk aan dat uw bergruimte vol is.</span></div></div>
+      <div class="tip"><div><strong>Wat u nog gaat wegdoen</strong><span>Reken met wat er vandaag staat, niet met wat u van plan bent op te ruimen. Houdt u aan het eind een stapel lege dozen over, dan zijn dat precies de dozen die u niet hoefde te vullen.</span></div></div>
+      <div class="tip"><div><strong>Spullen die nooit in een doos gaan</strong><span>Planten, schilderijen, de televisie en de lamp boven de eettafel pakt u anders in. Ze tellen niet mee in dit getal, maar wel in de ruimte die uw inboedel vraagt. Daarvoor is de <a href="/m3-calculator/">m3-calculator</a>.</span></div></div>
+      <div class="tip"><div><strong>Een tweede adres of een tussenperiode</strong><span>Gaat een deel van uw inboedel tijdelijk naar opslag en de rest meteen naar het nieuwe adres, dan pakt u in twee stromen. Reken dan liever iets ruimer en houd de dozen per bestemming bij elkaar.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="dozen-service" aria-labelledby="dozen-service-kop">
+  <div class="wrap">
+    <div class="blok blok--stapel blok--navy">
+      <div class="blok__boven">
+        <figure class="blok__foto" data-reveal>
+          <img src="/assets/img/dozen-bezorging-1140.webp" srcset="/assets/img/dozen-bezorging-760.webp 760w, /assets/img/dozen-bezorging-1140.webp 1140w" sizes="(max-width:860px) 90vw, 520px" width="1140" height="1710" alt="Verhuizer brengt verhuisdozen van Top Movers op een steekwagen naar de voordeur" loading="lazy" decoding="async">
+          <figcaption>Wij brengen de dozen ruim voor de verhuisdag</figcaption>
+        </figure>
+        <div class="blok__tekst" data-reveal>
+          <p class="label">Verhuisdozen en inpakken</p>
+          <h2 class="kop" id="dozen-service-kop">Verhuisdozen krijgt u van ons</h2>
+          <p class="intro">U hoeft niet zelf naar dozen te zoeken. Wij brengen stevige verhuisdozen ruim voor de verhuizing bij u langs, met etiketten voor de kamer waar ze heen moeten, en halen ze na afloop weer op. Wilt u het inpakken ook uit handen geven, dan pakt ons team al uw spullen zorgvuldig in. Op de verhuisdag staat alles klaar en gaat het veilig mee in de wagen.</p>
+          <div class="knoprij" data-reveal><a class="btn btn--goud btn--groen" href="#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Vraag een offerte aan</a><a class="btn btn--wa" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20wil%20verhuisdozen%20van%20De%20Kievit.%20Ik%20denk%20dat%20ik%20er%20ongeveer%20...%20nodig%20heb." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>App uw aantal dozen</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie ring sectie--creme2" id="vragen" aria-labelledby="vragen-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Veelgestelde vragen</p>
+      <h2 class="kop" id="vragen-kop">Over dozen, en wat erbij hoort</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Wat is het verschil met de m3-calculator?<span class="faq__tk" aria-hidden="true"></span></summary><p>Deze pagina telt kartonnen dozen: hoeveel heeft u er nodig om uw spullen in te pakken. De <a href="/m3-calculator/">m3-calculator</a> doet iets anders en schat het volume van uw hele inboedel in kubieke meters, dus inclusief kasten, bedden en witgoed. Dat volume bepaalt hoeveel ruimte er in de wagen nodig is. Voor uw offerte is die tweede het belangrijkst; het aantal dozen bepaalt vooral hoeveel u zelf te pakken heeft.</p></details>
+      <details><summary>Krijg ik de dozen van De Kievit?<span class="faq__tk" aria-hidden="true"></span></summary><p>Ja. Wij brengen ze ruim voor de verhuisdag bij u langs, met etiketten voor de kamer waar ze heen moeten, en na de verhuizing halen wij ze weer op. Wilt u het pakken helemaal uit handen geven, dan doet ons team dat. Wat het een en het ander kost, staat in uw offerte.</p></details>
+      <details><summary>Tellen meubels mee in dit getal?<span class="faq__tk" aria-hidden="true"></span></summary><p>Nee. Een kast, een bed of een bank gaat niet in een doos, dus die staan er niet in. Wat wel meetelt is alles wat uit die meubels moet voordat ze de trap af kunnen: de inhoud van de kledingkast, de boeken uit de wandkast en de laden van het dressoir.</p></details>
+      <details><summary>Ik kom dozen tekort, wat nu?<span class="faq__tk" aria-hidden="true"></span></summary><p>Bel 077 - 32 32 100 of app ons, dan kijken wij wat er nog nodig is. Merkt u tijdens het pakken dat het krap wordt, laat het dan liever een dag te vroeg weten dan op de ochtend van de verhuizing.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sectie" id="offerte-cta" aria-labelledby="cta-kop">
+  <div class="wrap">
+    <div class="werkwijze__top" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Verder dan dozen</p>
+        <h2 class="kop" id="cta-kop">Een prijs die bij uw inboedel past</h2>
+        <p class="intro">Het aantal dozen is een begin. Wat uw verhuizing kost hangt daarnaast af van de verdieping, het trapgat, de afstand en of u het inpakken zelf doet. Vul het formulier in, dan bellen wij u om die punten door te nemen. De Kievit verhuist sinds 1910 vanuit Venlo en werkt in heel Noord- en Midden-Limburg.</p>
+      </div>
+      <figure class="werkwijze__wagen" data-reveal aria-hidden="true">
+        <img src="/assets/img/wagen-werkwijze-1400.webp" srcset="/assets/img/wagen-werkwijze-900.webp 900w, /assets/img/wagen-werkwijze-1400.webp 1400w" sizes="(max-width:900px) 88vw, 46vw" width="1400" height="883" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <ol class="stappen" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <li class="stap" data-reveal><span class="stap__nr" aria-hidden="true">01</span><h3>Reken het uit</h3><p>Vul de calculator bovenaan in. Het getal dat u ziet is een richtgetal voor uw hele inboedel, met een marge eromheen. Reken gerust wat ruimer.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.06s"><span class="stap__nr" aria-hidden="true">02</span><h3>Vraag een offerte aan</h3><p>Vul het formulier in of bel 077 - 32 32 100. Onze verhuisadviseur komt bij u langs, loopt de schatting met u na en legt alles vast in een gratis en vrijblijvende offerte.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.12s"><span class="stap__nr" aria-hidden="true">03</span><h3>De dozen komen</h3><p>Wij brengen de dozen ruim voor de verhuisdag bij u thuis, met etiketten voor de kamer waar ze heen moeten. Komt u toch tekort, bel of app ons, dan kijken wij wat er nog nodig is.</p></li>
+      <li class="stap" data-reveal style="transition-delay:.18s"><span class="stap__nr" aria-hidden="true">04</span><h3>Pakken op uw tempo</h3><p>U pakt in wanneer het u uitkomt, of u laat het aan ons inpakteam over. Na de verhuizing halen wij de lege dozen weer bij u op.</p></li>
+    </ol>
+    <div class="knoprij dzc-midden" data-reveal>
+      <a class="btn btn--goud btn--groen" href="/#offerte">Offerte aanvragen</a>
+      <a class="btn btn--lijn" href="tel:0773232100">Bel 077 - 32 32 100</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// Verhuisdozen-calculator: twee bedieningen op een rekenkern.
+// Rekenmodel van studentverhuisservice.nl: m2 x factor per pakgedrag + opslag per kamer en per bewoner,
+// bandbreedte 0,9x tot 1,15x, advies is het midden. Extra's schalen mee met bewoners (boeken, kleding,
+// hobby) of met m2 (volle berging). Boven de 50 afgerond op vijftallen.
+(function(){
+  var FACTOR={licht:.35,gemiddeld:.5,zwaar:.65},KAMER={licht:6,gemiddeld:9,zwaar:12},BEWONER={licht:3,gemiddeld:5,zwaar:7};
+  var clamp=function(n,a,b){return Math.max(a,Math.min(b,n))};
+  function bereken(inv){
+    var basis=inv.m2*FACTOR[inv.pack]+inv.kamers*KAMER[inv.pack]+inv.bewoners*BEWONER[inv.pack];
+    var TOESLAG={boeken:4*inv.bewoners,kleding:2.5*inv.bewoners,hobby:3*inv.bewoners,bergruimte:.08*inv.m2};
+    inv.extras.forEach(function(k){basis+=TOESLAG[k]||0});
+    var min=Math.round(clamp(basis*.9,5,300)),max=Math.round(clamp(basis*1.15,8,400)),ruw=(min+max)/2;
+    var advies=ruw>=50?Math.round(ruw/5)*5:Math.round(ruw);
+    return {advies:advies,min:min,max:max,boeken:Math.max(1,Math.round(advies*.25)),garderobe:inv.extras.indexOf('kleding')>-1?Math.max(1,Math.round(inv.bewoners*1.5)):0};
+  }
+  function lees(pre,wortel){
+    var g=function(n,val){var e=document.getElementById(pre+n);var v=parseInt(e&&e.value,10);return isNaN(v)?val:v};
+    var sel=document.getElementById(pre+'pack');
+    return {m2:g('m2',90),kamers:g('kamers',3),bewoners:g('bewoners',2),pack:sel?sel.value:'gemiddeld',spullen:sel?sel.selectedOptions[0].textContent.toLowerCase():'gemiddeld',extras:Array.from(wortel.querySelectorAll('input[type=checkbox]:checked')).map(function(c){return c.value})};
+  }
+  function zin(inv,r){return inv.m2+' m\u00b2, '+inv.kamers+' kamer'+(inv.kamers===1?'':'s')+', '+inv.bewoners+' bewoner'+(inv.bewoners===1?'':'s')+', inboedel '+inv.spullen+(inv.extras.length?', veel '+inv.extras.join(' en '):'')+', ongeveer '+r.advies+' dozen ('+r.min+' tot '+r.max+')'}
+  var verborgen=document.getElementById('lf-calc');
+  function zetVerborgen(waarde){if(!verborgen)return;verborgen.value=waarde||'';if(waarde)verborgen.setAttribute('name','Inschatting via dozencalculator');else verborgen.removeAttribute('name')}
+  var blok=document.querySelector('.calc__card'),laatsteBlok=null;
+  if(blok){
+    var toonBlok=function(){
+      var inv=lees('c-',blok),r=bereken(inv);
+      document.getElementById('c-getal').textContent=r.advies+' dozen';
+      document.getElementById('c-bereik').textContent='reken op '+r.min+' tot '+r.max;
+      document.getElementById('c-detail').textContent='Waarvan ongeveer '+r.boeken+' boekendozen'+(r.garderobe?' en '+r.garderobe+' garderobedozen':'')+'. Dit is een indicatie.';
+      laatsteBlok={inv:inv,r:r};
+    };
+    ['input','change'].forEach(function(e){blok.addEventListener(e,function(ev){if(ev.target.matches('input,select'))toonBlok()})});
+    toonBlok();
+  }
+  var uitklap=document.getElementById('lfcalc'),titel=document.getElementById('lfcalc-titel'),okKnop=document.getElementById('lfcalc-ok'),wisKnop=document.getElementById('lfcalc-wis');
+  var STANDAARDTITEL='Ik weet nog niet hoeveel dozen ik nodig heb';
+  function huidig(){var inv=lees('lf-',uitklap);return {inv:inv,r:bereken(inv)}}
+  function markeer(aan,advies){uitklap.classList.toggle('is-toegevoegd',!!aan);wisKnop.hidden=!aan;okKnop.textContent=aan?'Toegevoegd':'Schatting toevoegen aan mijn aanvraag';titel.textContent=aan?'Schatting toegevoegd: ongeveer '+advies+' dozen. Klik om aan te passen.':STANDAARDTITEL}
+  function toonForm(){
+    if(!uitklap)return;var h=huidig();
+    document.getElementById('lfcalc-uit').innerHTML='U heeft ongeveer <strong>'+h.r.advies+' dozen</strong> nodig, reken op '+h.r.min+' tot '+h.r.max+'. Waarvan ongeveer '+h.r.boeken+' boekendozen'+(h.r.garderobe?' en '+h.r.garderobe+' garderobedozen':'')+'.';
+    if(uitklap.classList.contains('is-toegevoegd')){zetVerborgen('');markeer(false)}
+  }
+  function voegToe(sluiten){var h=huidig();zetVerborgen(zin(h.inv,h.r));markeer(true,h.r.advies);if(sluiten)uitklap.open=false}
+  if(uitklap){
+    ['input','change'].forEach(function(e){uitklap.addEventListener(e,function(ev){if(ev.target.matches('input,select'))toonForm()})});
+    uitklap.addEventListener('toggle',function(){if(uitklap.open)toonForm()});
+    okKnop.addEventListener('click',function(){voegToe(true)});
+    wisKnop.addEventListener('click',function(){zetVerborgen('');markeer(false)});
+    toonForm();
+  }
+  // Komt de bezoeker van /dozencalculator/, dan staat zijn invoer in de URL: uitklap vullen en de schatting meteen toevoegen.
+  var q=new URLSearchParams(location.search);
+  if(uitklap&&q.get('m2')){
+    ['m2','kamers','bewoners','pack'].forEach(function(k){var el=document.getElementById('lf-'+k);if(el&&q.get(k))el.value=q.get(k)});
+    var ex=(q.get('extras')||'').split(',');uitklap.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=ex.indexOf(c.value)>-1});
+    toonForm();voegToe(true);
+  }
+  // Komt de bezoeker van /m3-calculator/, dan staat het volume in de URL: als schatting in de aanvraag zetten.
+  if(verborgen&&q.get('m3')){verborgen.value='Inboedel ongeveer '+q.get('m3')+' m3 volgens de m3-calculator';verborgen.setAttribute('name','Inschatting via m3-calculator')}
+  var knop=document.getElementById('c-naar-offerte');
+  if(knop)knop.addEventListener('click',function(e){
+    e.preventDefault();
+    if(laatsteBlok&&uitklap){
+      var i=laatsteBlok.inv;
+      document.getElementById('lf-m2').value=i.m2;document.getElementById('lf-kamers').value=i.kamers;document.getElementById('lf-bewoners').value=i.bewoners;document.getElementById('lf-pack').value=i.pack;
+      uitklap.querySelectorAll('input[type=checkbox]').forEach(function(c){c.checked=i.extras.indexOf(c.value)>-1});
+      toonForm();voegToe(true);
+    }
+    var doel=document.getElementById('offerte');
+    if(!doel&&laatsteBlok){var i2=laatsteBlok.inv,q2=new URLSearchParams({m2:i2.m2,kamers:i2.kamers,bewoners:i2.bewoners,pack:i2.pack,extras:i2.extras.join(',')});location.href='/?'+q2.toString()+'#offerte';return}
+    if(doel)doel.scrollIntoView({behavior:'smooth',block:'start'});
+    var naam=document.getElementById('lf-naam');if(naam)setTimeout(function(){naam.focus({preventScroll:true})},600);
+  });
+})();
+</script>

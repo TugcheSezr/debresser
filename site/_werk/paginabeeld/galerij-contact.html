@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contactpagina: drie figuren om uit te knippen</title>
+<style>
+  :root{--navy:#22314E;--teal:#00A19B;--teal-diep:#006C68;--creme:#F6F4EC;--licht:#E5F3F3;--lijn:#C4E4E4;--geel:#FFD500;--ant:#1D1D1B}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--creme);color:var(--ant);font:400 16px/1.55 "Noto Sans",system-ui,sans-serif}
+  header{background:var(--navy);color:#fff;padding:1.6rem clamp(1rem,4vw,3rem)}
+  header h1{margin:0 0 .5rem;font:700 1.6rem/1.2 Poppins,system-ui,sans-serif}
+  header p{margin:.4rem 0;max-width:80ch;color:#DCE6E6;font-size:.95rem}
+  header b{color:var(--geel)}
+  header code{background:rgba(255,255,255,.14);color:#fff;padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+  .schakel{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;align-items:center}
+  .schakel span{font:700 .74rem/1 "Noto Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#9FB4C4;margin-right:.3rem}
+  .schakel button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:50px;
+    padding:.45rem 1rem;font:700 .78rem/1 "Noto Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .schakel button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#04302E}
+  section{padding:2rem clamp(1rem,4vw,3rem) .5rem}
+  section h2{margin:0 0 .2rem;font:700 1.35rem/1.2 Poppins,system-ui,sans-serif;color:var(--teal-diep)}
+  section > p.pad{margin:0 0 1.2rem;font-size:.9rem;color:#4B4B49;max-width:80ch}
+  .rij{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.1rem}
+  figure{margin:0;background:#fff;border:1px solid var(--lijn);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .vak{position:relative;background:var(--vlak,#22314E);aspect-ratio:3/4;display:flex;align-items:flex-end;justify-content:center;transition:background .2s}
+  .vak img{max-width:100%;max-height:100%;display:block;object-fit:contain}
+  .nr{position:absolute;left:.55rem;top:.55rem;background:rgba(29,29,27,.78);color:#fff;border-radius:8px;
+    padding:.2rem .55rem;font:700 .78rem/1.4 Poppins,sans-serif;letter-spacing:.04em}
+  figcaption{padding:.7rem .8rem .9rem;font-size:.85rem;flex:1}
+  figcaption b{display:block;font:700 .95rem/1.3 Poppins,sans-serif;color:var(--navy);margin-bottom:.25rem}
+  .qa{display:block;margin-top:.45rem;font-size:.78rem;line-height:1.45;border-top:1px dashed var(--lijn);padding-top:.4rem}
+  .qa.goed{color:var(--teal-diep)}
+  .qa.let{color:#8A5A00}
+  footer{padding:2rem clamp(1rem,4vw,3rem) 3rem;font-size:.85rem;color:#4B4B49;max-width:82ch}
+  footer code{background:var(--licht);color:var(--ant);padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+</style>
+
+<header>
+  <h1>Contactpagina: drie figuren, drie varianten elk</h1>
+  <p>Negen platen, gegenereerd op magenta met Nano Banana Pro preview en daarna uitgesneden met de
+     macOS Vision-route plus keykleur-decontaminatie. Wat u hier ziet is de ECHTE cutout met
+     transparantie, niet de bronplaat, dus u beoordeelt meteen wat er op de pagina komt.</p>
+  <p><b>Alle negen borstprints zijn op 100% gelezen en lezen correct TOP MOVERS</b> met de teal
+     swoosh, één keer, niet gespiegeld. Dat lukte door de figuren vanaf de HEUPEN te kadreren in
+     plaats van vanaf de knieën: de print wordt daardoor groot genoeg om foutloos te renderen.</p>
+  <p><b>Let op bij de vrouw:</b> de gezichten-mixbibliotheek bevat 42 koppen en die zijn allemaal
+     man. De drie vrouwen hebben daarom geen gezichtsreferentie gekregen; het model heeft hun gezicht
+     verzonnen. Dat gebruikt niemands gelijkenis, maar het wijkt af van beeldregel 4 en u moet het
+     weten.</p>
+  <div class="schakel" role="group" aria-label="Achtergrond">
+    <span>Achtergrond</span>
+    <button data-vlak="#22314E" aria-pressed="true">Navy</button>
+    <button data-vlak="#F6F4EC" aria-pressed="false">Crème</button>
+    <button data-vlak="#E5F3F3" aria-pressed="false">Lichtteal</button>
+    <button data-vlak="#00A19B" aria-pressed="false">Teal</button>
+    <button data-vlak="#C8009B" aria-pressed="false">Fel (randtest)</button>
+  </div>
+</header>
+
+<section>
+  <h2>1. Man aan de telefoon</h2>
+  <p class="pad">Smartphone aan het oor, lachend in de lens, Top Movers-polo.</p>
+  <div class="rij" id="man"></div>
+</section>
+
+<section>
+  <h2>2. Vrouw aan de telefoon</h2>
+  <p class="pad">Zelfde opzet. Gezichten zijn verzonnen, zie de melding hierboven.</p>
+  <div class="rij" id="vrouw"></div>
+</section>
+
+<section>
+  <h2>3. Man achter de pc</h2>
+  <p class="pad">Een pc is voor een cutout het lastigste onderwerp: een bureau of monitor is breed en
+     duwt de figuur naar de rand. Deze drie houden het apparaat zo veel mogelijk binnen de eigen
+     schouderbreedte.</p>
+  <div class="rij" id="pc"></div>
+</section>
+
+<footer>
+  <p><b>Hoe kiezen:</b> geef per figuur het nummer door. De gekozen platen zet ik dan op de exacte
+     maten voor de contactpagina zodra die is opgebouwd; de pagina is nu nog leeg.</p>
+  <p><b>Vier alternatieven</b> die het niet in deze negen haalden staan wel in de map, voor het geval
+     u ze wilt zien: <code>bel-man-b2</code> (hand wel binnen het kader, maar de uitsnede is ruiger),
+     <code>pc-man-a</code> en <code>pc-man-b</code> (laptop respectievelijk bureau tot buiten het
+     kader) en <code>pc-man-c2</code> (laptop onder de arm, maar met een merklogo dat er niet uit te
+     krijgen was).</p>
+  <p><b>Bronnen:</b> platen in <code>_werk/paginabeeld/contact-raw/</code>, uitsnedes in
+     <code>contact-cut/</code>, prompts in <code>gen_contact.py</code>, uitsnijden met
+     <code>_werk/cut_situatie.py</code>.</p>
+</footer>
+
+<script>
+const KAARTEN = [
+ ["man","bel-man-a","Kaal, rode baard","Vrije hand ontspannen langs het lichaam. Rustigste van de drie.","goed","Schone uitsnede, zachte rand 1,1%, raakt geen enkele rand. Halo-telling 52 randpixels, grootste cluster 24: schoon."],
+ ["man","bel-man-b","Grijs, brede lach","De breedste, meest open lach van de hele serie; vrije hand pratend omhoog.","let","Mooiste expressie, maar de elleboog raakt links en de vingers rechts de rand: bij plaatsing is er geen marge over."],
+ ["man","bel-man-c","Donker, opgeschoren knot","Notitieblok laag in de hand, lachend aan de telefoon.","goed","Schone uitsnede, zachte rand 1,3%, raakt geen enkele rand. Halo-telling 135, cluster 22: schoon."],
+
+ ["vrouw","bel-vrouw-a","Paardenstaart, eind twintig","Staat iets verder van de camera, dus meer lichaam en een rustiger beeld.","let","Schone uitsnede, maar ze staat verder weg: de borstprint is kleiner dan bij de andere twee."],
+ ["vrouw","bel-vrouw-b","Bob, begin veertig","Lachend, vrije hand in een klein open gebaar. Print groot en scherp.","goed","Schone uitsnede, zachte rand 1,1%, raakt geen enkele rand, hand volledig binnen het kader. Halo-telling 208, cluster 73: schoon."],
+ ["vrouw","bel-vrouw-c","Grijsblond met bril, midden vijftig","Notitieblok in de hand, warme lach.","goed","Schone uitsnede, raakt geen enkele rand. De halo-telling geeft hier 1.241 randpixels met een cluster van 603, hoger dan bij de rest; dat is haar lichte grijsblonde haar, dat nu eenmaal lichter is dan de donkere kleding ernaast. Op zowel navy als creme op weergavegrootte gecontroleerd en niets te zien."],
+
+ ["pc","pc-man-a2","Laptop tegen de borst","Zittend op een bureaustoel, laptop hoog tegen het lichaam. Smalste silhouet van de drie.","let","Op het deksel stond een merklogo van derden; weggehaald met een NBP-edit, er staat nog een zeer flauwe schim. Verder schoon, raakt geen rand."],
+ ["pc","pc-man-b2","Hand op de monitor","Monitor met de achterkant naar de camera, dus geen scherm en geen tekst in beeld.","let","Schone uitsnede, maar de monitorvoet raakt de linkerrand; links dus geen marge."],
+ ["pc","pc-man-c","Staand bij de monitor","Leunend, telefoon in de andere hand. Meest zelfverzekerde houding.","let","Geen merklogo's, wel raken figuur en monitor links en rechts de rand. Op de achterkant van de monitor zit een klein generiek label."],
+];
+const tel = {};
+for (const [groep, id, titel, tekst, klas, qa] of KAARTEN) {
+  tel[groep] = (tel[groep] || 0) + 1;
+  const f = document.createElement('figure');
+  f.innerHTML = `<div class="vak"><span class="nr">${groep.toUpperCase()}-${tel[groep]}</span>
+      <img src="contact-web/${id}-760.webp" alt="${titel}" loading="lazy"></div>
+    <figcaption><b>${titel}</b>${tekst}<span class="qa ${klas}">${klas === 'goed' ? 'Controle: ' : 'Let op: '}${qa}</span></figcaption>`;
+  document.getElementById(groep).appendChild(f);
+}
+document.querySelectorAll('.schakel button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.schakel button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.vak').forEach(v => v.style.background = b.dataset.vlak);
+}));
+</script>
+</html>

@@ -1,0 +1,7 @@
+# Werkmap: generatoren, briefings, claimsregister, open punten en ruwe databronnen.
+# Die horen in de repo maar NIET op de website. Zonder deze regel liften ze mee met
+# elke deploy: op 31-08-2026 was _werk/claims-register.md live opvraagbaar met
+# HTTP 200, net als open-punten.md en twee reviewdumps met naam en woonplaats.
+# robots.txt heeft wel Disallow op /_werk/, maar dat is een crawlinstructie en geen
+# slot: de bestanden bleven gewoon te downloaden.
+_werk

@@ -1,0 +1,44 @@
+{
+  "pia6-vleugel-op-hondje-breed": {
+    "oordeel": "fout",
+    "tekst": "Weer vijf poten: twee zwarte poten zitten er nog aan en staan met hun wieltje op de vloer naast het hondje, plus drie ingepakte poten ernaast. Ook twee pedaallieren: een vast onder de vleugel, een los op de vloer.",
+    "retouche": "",
+    "opnieuw": "Vleugel ligt nu wel op zijn kant op het hondje, maar poten en lier zitten er half aan. Prompt: 'the underside of the grand piano is completely bare: NO legs, NO castors and NO pedal lyre attached anywhere, the rim rests directly on the green dolly; on the floor beside it lie exactly three wrapped legs and one wrapped pedal lyre, nothing else'. Daarnaast is de borstprint van de rechter man verhaspeld (leest 70P boven mens, swoosh dwars door de letters); zet daar exact de polo-referentie neer."
+  },
+  "sen4-boeken-nieuw-appartement": {
+    "oordeel": "fout",
+    "tekst": "Doos staat nu rechtop op de vloer, maar draagt leesbare tekst 'Aangesloten BIJ erkende verhuizers' (op drie dozen), een FSC-logo, een QR-code en een balk 'Max. 20 kg'. Mevrouw kijkt in de lens en lacht met open mond.",
+    "retouche": "",
+    "opnieuw": "Keurmerkclaim (De Kievit voert geen EPV), certificeringslogo en blik in de lens tegelijk. Prompt: 'the two small lines under MOVERS are an unreadable soft grey blur, never sharp letters, never a slogan, never a claim; no FSC or other certification logo, no QR code, no weight bar, no sticker and no label anywhere on any box' plus 'the elderly lady looks at the bookshelf where the books go, never at the camera, lips closed, a light smile'. Ze wijst nu bovendien van de boekenkast af, naar het raam."
+  },
+  "sen6-koffie-fotoalbum": {
+    "oordeel": "fout",
+    "tekst": "Mensen, licht en doosvorm zijn goed (honingraat, gele bij, geen plakband), maar elk doosvlak draagt scherpe leesbare tekst: 'Aangesloten BIJ erkende verhuizers', 'Een BIJzondere duurzame verhuisdoos', 'Mox. 20 kg'.",
+    "retouche": "",
+    "opnieuw": "Zeven doosvlakken met leesbare slogans, waaronder een duurzaamheidsclaim en een keurmerkclaim die De Kievit niet voert, plus verhaspelingen ('Aangaslaten ... verhulzers'). Prompt: 'the two small lines under MOVERS are an unreadable soft grey blur, never sharp letters, never a slogan, never a sustainability or certification claim; no weight bar, no seal, no QR code and no black label on any box'. De rest van de foto kan zo blijven."
+  },
+  "sen7-bungalow-wagen-breed": {
+    "oordeel": "fout",
+    "tekst": "Woord 'lockup' is weg, laadbak leeg, kenteken onleesbaar. Maar boven de achterdeur staat 'TOP MOVERS' op een regel, op de cabinedeur 'TOP NOVERS' met verhaspeld logo, en de borstprint vooraan leest 'TYE'.",
+    "retouche": "",
+    "opnieuw": "Drie merkfouten op de wagen plus een verhaspelde borstprint. Prompt: 'the white panel above the rear door is completely blank, no lettering and no swoosh; the cab doors are plain white with no lettering, no logo and no small text; the lockup appears exactly once, on the side of the box body'. Ook de dozen wijken af: zwarte honingraatband onderlangs in plaats van teal-gele hexagons langs de verticale randen, een donkere vlieg in plaats van de gele bij, en 'MOVERS' met een accent op de E."
+  },
+  "spo6-twee-wagens-straat": {
+    "oordeel": "fout",
+    "tekst": "Spanbanden zijn weg en de dozen hebben nu honingraat en bij. Maar twee verhuizers dragen een grote TOP MOVERS-print op de RUG (een leest 'MOIIERS'), en elke doos heeft scherpe onzintekst 'Anngbesten ... veartuizers'.",
+    "retouche": "",
+    "opnieuw": "Rugprint en doostekst stonden beide al in de vorige prompt-aanpassing en komen allebei terug. Prompt: 'every polo is completely plain charcoal on the back; the print exists ONLY on the left chest, and any mover seen from behind shows a bare back' plus 'the two small lines under MOVERS are an unreadable soft grey blur, never sharp letters'. Haal ook de rode en witte etiketten op de dozen in de laadbak weg."
+  },
+  "zor6-wagen-zorgcentrum-breed": {
+    "oordeel": "let",
+    "tekst": "Alle drie de fouten van ronde 1 zijn weg: lockup klopt (O van TOP zwart, swoosh met pijlpunt), cabinedeuren effen wit, ruggen zonder print, gele reling op de laadklep, kenteken blanco. Rest: gele spanband in de laadbak.",
+    "retouche": "Gele spanband met zwarte ratel die aan de sjorrail hangt tegen de rechterwand van de laadbak (ongeveer op 51% van de breedte, tussen 33% en 44% van de hoogte, net links van de rolcontainer) wegwerken tot effen witte bakwand.",
+    "opnieuw": ""
+  },
+  "zor7-plattegrond-manager": {
+    "oordeel": "fout",
+    "tekst": "Rugprints zijn weg, plattegrond onleesbaar, manager in zakelijke kleding, gezichten lager in beeld. Maar de projectleider lacht nog steeds met open mond en zichtbare boventanden; 'lippen dicht' is niet gehaald.",
+    "retouche": "",
+    "opnieuw": "Alleen de lach blokkeert nog, en een mond is niet klein te retoucheren. Prompt: 'his mouth is completely closed, the lips touch each other, NO teeth are visible at all, only the corners of the mouth turn up a little while he looks down at the plan'. Bijvangst voor dezelfde run: de voorste verhuizer in de gang loopt met zijn rug naar de ingepakte bank en houdt hem met een arm achter zich; laat beide dragers de last voor het lichaam houden."
+  }
+}

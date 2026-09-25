@@ -1,0 +1,44 @@
+{
+ "mon1-bed-demonteren": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: verhuizer op de knie bij het bedframe, matras in hoes, lattenbodem op z'n kant. Borstprint correct, gezicht en handen goed, NL-kamer. Enige smet: leesbare merknaam 'Makita' op de boormachine.",
+  "retouche": "Merknaam 'Makita' op de boormachine (op de body naast zijn linkerhand, en klein op de accu, rond x 560-800 / y 1560-1900 op 2K) wegpoetsen.",
+  "opnieuw": ""
+ },
+ "mon2-kast-opbouwen": {
+  "oordeel": "fout",
+  "tekst": "Dozen wijken af van de referentie: slotjes-icoon, honingraat over het hele vlak, geen gele bij bij het lockup, geen swoosh. Beide borstprints hebben een teal wig rechts van TOP i.p.v. de swoosh. Jongen grijnst.",
+  "retouche": "",
+  "opnieuw": "Drie dozen en twee prints tegelijk fout, te veel voor retouche. Prompt: 'boxes EXACTLY as the attached box reference: kraft, hexagons only along the edges, TOP MOVERS with the yellow bee and the teal swoosh under the letters, NO padlock or other icons; chest print exactly as the polo reference, swoosh below the letters, nothing beside TOP; the young mover smiles with closed mouth; unbranded drill'."
+ },
+ "mon3-wasmachine-aansluiten": {
+  "oordeel": "let",
+  "tekst": "Scene en handeling kloppen (slang op de kraan, doos rechtop naast hem), borstprint en doosopdruk goed (bij, swoosh, Max. 20 kg, echte icoontjes, geen tape). Muur boven de wasmachine heeft gele vlekken en een afdruk.",
+  "retouche": "Gele vlekken, vierkante afdruk en scheurlijn op de muur boven en rechts van de wasmachine egaliseren; letters 'ofis' op het blauwe pak rechts op de bovenste plank onleesbaar maken; optioneel het gedrukte tekstblok op de bovenflap van de doos zachter.",
+  "opnieuw": ""
+ },
+ "mon4-tafelpoten-los": {
+  "oordeel": "let",
+  "tekst": "Print, gezicht, kamer en licht goed, maar de demontage klopt niet: moer bovenop een omgekeerde poot die los op de tafel staat, linkerpoot ook omgekeerd met de bout omhoog, en 5 poten (2 staand, 3 liggend).",
+  "retouche": "Derde liggende poot (rechtsonder, de langste met het gat aan het uiteinde, x 1350-1600 / y 1900-2400 op 2K) wegpoetsen zodat het er 4 zijn; bout bovenop de linker staande poot weghalen. De sleutel op de moer bovenop de poot blijft een vakfout die niet te retoucheren is.",
+  "opnieuw": "Alleen als toch opnieuw: 'the leg is still attached at the table corner, its hanger bolt goes INTO the apron; the mover turns the whole leg loose by hand or undoes the wing nut inside the apron; exactly three loose legs lie on the blanket'."
+ },
+ "mon5-handen-scharnier": {
+  "oordeel": "let",
+  "tekst": "Handen, scharnier, gereedschapskist en doos kloppen; doosopdruk is de echte (bij, swoosh, tagline, geen tape). Maar de polo aan de rechterrand toont toch een borstprint, met een gele bij erin.",
+  "retouche": "Borstprint met bij op de polo aan de rechter beeldrand (borsthoogte, x 1470-1600 / y 340-490 op 2K) wegpoetsen tot effen antracietgrijs; de scene vroeg om een polo zonder print.",
+  "opnieuw": ""
+ },
+ "mon6-boxspring-deur": {
+  "oordeel": "let",
+  "tekst": "Tilhouding en rollen kloppen (buik naar de last, armen voor het lichaam), gezichten goed, niemand in de lens. Print van de blonde verhuizer verhaspeld: MOVERS leest als 'MOI9RS', swoosh loopt als ellips om het woord.",
+  "retouche": "Borstprint blonde verhuizer (rechts, x 1820-1930 / y 670-750 op 2K) vervangen door het juiste lockup. Voeten van de voorste verhuizer vallen buiten de onderrand; hoofden zitten hoog (bovenkant op 13% van de hoogte), bannercrop iets boven het midden leggen.",
+  "opnieuw": ""
+ },
+ "mon7-dressoir-klaar": {
+  "oordeel": "let",
+  "tekst": "Verhaal klopt: verhuizer checkt de dressoirdeur, klant in gewone kleding zet een plant neer, doos bij de deur correct (bij, swoosh, icoontjes). Klein embleem op de linkermouw van de polo; glimlach klant breed met tanden.",
+  "retouche": "Rond embleem op de linkermouw/schouder van de verhuizer (x 800-845 / y 400-440 op 2K) wegpoetsen. Hoofden zitten hoog (bovenkant klant op 13% van de hoogte), bannercrop iets boven het midden leggen. Thermostaat en display tonen alleen onleesbare tekens, prima.",
+  "opnieuw": ""
+ }
+}

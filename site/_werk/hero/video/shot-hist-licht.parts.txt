@@ -1,0 +1,15 @@
+site/_werk/hero/video/shot-hist-licht.part0.png
+site/_werk/hero/video/shot-hist-licht.part1.png
+site/_werk/hero/video/shot-hist-licht.part2.png
+site/_werk/hero/video/shot-hist-licht.part3.png
+site/_werk/hero/video/shot-hist-licht.part4.png
+site/_werk/hero/video/shot-hist-licht.part5.png
+site/_werk/hero/video/shot-hist-licht.part6.png
+site/_werk/hero/video/shot-hist-licht.part7.png
+site/_werk/hero/video/shot-hist-licht.part8.png
+site/_werk/hero/video/shot-hist-licht.part9.png
+site/_werk/hero/video/shot-hist-licht.part10.png
+site/_werk/hero/video/shot-hist-licht.part11.png
+site/_werk/hero/video/shot-hist-licht.part12.png
+site/_werk/hero/video/shot-hist-licht.part13.png
+site/_werk/hero/video/shot-hist-licht.part14.png

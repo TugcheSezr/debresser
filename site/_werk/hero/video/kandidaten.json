@@ -1,0 +1,51 @@
+[
+  {
+    "id": "V1",
+    "bron": "Echte Top Movers-beelden: topmovers.nl-mediabibliotheek (TopMover-School-verhuizing-HR, 2025-03) en YouTube-kanaal Top Movers Nederland B.V. (Professionele meubelmontage bij Noordwest Ziekenhuisgroep Alkmaar, K3uYDRFFoSU)",
+    "mp4": "/_werk/hero/video/hero-echt-1920.mp4",
+    "mp4mobiel": "/_werk/hero/video/hero-echt-1280.mp4",
+    "poster": "/_werk/hero/video/hero-echt-poster.jpg",
+    "pos": "center",
+    "lengte": "14,7 s, 30 fps, loop met crossfades van 0,45 s, zonder geluid",
+    "grootte": "1920x1080: 5,9 MB (H.264 CRF 29); 1280x720: 2,9 MB; poster 66 KB",
+    "shots": [
+      "Verhuizer loopt met een steekwagen door een ziekenhuisgang, TOP MOVERS-ruglogo (NWZ 22-25 s)",
+      "Verhuizer rolt een groene krat door een schoolgang naar de camera (School 8,8-11,2 s)",
+      "Montage van bureaus met accuboormachine bij het raam (NWZ 26-29 s)",
+      "Verhuizer met kratwagen langs tafels in de schoolbibliotheek (School 14,4-16,6 s)",
+      "Twee verhuizers monteren stoelen en bureaus (NWZ 30,4-33 s)",
+      "Twee verhuizers met een verhuiswagen-kar in de gang (NWZ 33-35,2 s)",
+      "Twee verhuizers dragen een gele kast door een deur (School 5,6-7,6 s)"
+    ],
+    "opmerking": "Echte verhuizers aan het werk, alle shots zonder ledennamen, keurmerken of claims; alleen TOP MOVERS op kleding. De wagen-shots uit dezelfde video's zijn NIET gebruikt: daar staat pavanrooyen, Stammis of Boudesteijn op de deur. Handheld telefoonbeeld (1080p), onder de donkere hero-veil goed genoeg; het is Top Movers-materiaal van andere leden, dus geen Venlo of Kievit-wagen in beeld."
+  },
+  {
+    "id": "V2",
+    "bron": "Echte Top Movers-foto (topmovers/fotos/2021-10_100-elektrisch-Top-Mover-truck.jpg) tot leven gebracht met Google Veo 3.1 (image-to-video, 8 s, 1080p); vooraf deterministisch geretoucheerd: '100% elektrisch', '100% elektrische verhuizingen', het stekker-logo, het dienstenlijstje en het kleine EV-logo weggehaald",
+    "mp4": "/_werk/hero/video/hero-wagen-b-1920.mp4",
+    "mp4mobiel": "/_werk/hero/video/hero-wagen-b-1280.mp4",
+    "poster": "/_werk/hero/video/hero-wagen-b-poster.jpg",
+    "pos": "center",
+    "lengte": "8 s, 24 fps, loop (harde overgang aan het eind: de wagen rijdt weg en staat weer stil), zonder geluid",
+    "grootte": "1920x1080: ca. 3,4 MB (H.264 CRF 27); 1280x720: ca. 1,4 MB",
+    "shots": [
+      "Top Movers-wagen bij zonsondergang op een polderweg trekt op en rijdt langs de camera weg"
+    ],
+    "opmerking": "AI-animatie van een echte Top Movers-foto: geen ledennaam, geen claims, geen keurmerk meer in beeld; TOP MOVERS-belettering blijft leesbaar, voorwand en dorpel blank (nagekeken op 1 fps en op 100% op 4,5 s). Alleen de wagen, geen verhuizers. Wil je de wagen langer in beeld, dan kan Veo een vervolgclip van 8 s maken (extend) of maak ik een langere loop met een langzame zoom op het stilstaande beginbeeld."
+  },
+  {
+    "id": "V3",
+    "bron": "Combinatie op verzoek van Shahab: eerst V2 (Veo-wagen, 8 s), crossfade 0,6 s, dan V1 (echte verhuizers) op 50% snelheid",
+    "mp4": "/_werk/hero/video/hero-combi50-1920.mp4",
+    "mp4mobiel": "/_werk/hero/video/hero-combi50-1280.mp4",
+    "poster": "/_werk/hero/video/hero-combi50-poster.jpg",
+    "pos": "center",
+    "lengte": "36,8 s (8 s wagen + 29,4 s verhuizers op halve snelheid), 30 fps, zonder geluid; elk uitvoerframe is een echt bronframe (bron 60 fps), dus geen dubbele of verzonnen frames",
+    "grootte": "1920x1080: 14,7 MB (H.264 CRF 27); 1280x720: 7,1 MB; poster 293 KB",
+    "shots": [
+      "Top Movers-wagen bij zonsondergang rijdt op en langs de camera (Veo, 8 s)",
+      "Daarna de zeven verhuizers-shots van V1 op halve snelheid: steekwagen, krat, montage, kratwagen, stoelen, kar, kast"
+    ],
+    "opmerking": "Eerdere versie op 75% leek nog versneld: het bronmateriaal van Top Movers is zelf al versneld gemonteerd, dus 75% daarvan blijft rap. Nu 50%. Zwaarste kandidaat (14,7 MB desktop, 7,1 MB op 1280): wil je hem lichter, dan laat ik twee of drie shots vallen of zet ik CRF 30; zeg het maar."
+  }
+]

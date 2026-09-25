@@ -1,0 +1,52 @@
+/* ---------- artifacts (28-aug, sessie dienstenblok): Top Movers-vormen als design-aanvulling ----------
+   Bron van dit blok: site/_werk/artifacts.css (verdwijnt het hier, plak het per append terug).
+   Bij en pijlen uit topmovers/iconen (2025-11), pijlpunt = de pijl uit het Top Movers-logo, ster = de vorm van
+   de LMTZ-ster met claim-veilige tekst, honingraat en NL-kaart zelf getekend (kaart getraceerd uit
+   topmovers/graphics/map-nederland.png), Kievit-logo getraceerd uit de eigen promobeelden van de-kievit.nl.
+   Bestanden in assets/img/deco/. */
+.ster{display:grid;place-content:center;text-align:center;width:8.4rem;aspect-ratio:1;clip-path:polygon(50.0% 0.0%,60.4% 11.4%,75.0% 6.7%,78.3% 21.7%,93.3% 25.0%,88.6% 39.6%,100.0% 50.0%,88.6% 60.4%,93.3% 75.0%,78.3% 78.3%,75.0% 93.3%,60.4% 88.6%,50.0% 100.0%,39.6% 88.6%,25.0% 93.3%,21.7% 78.3%,6.7% 75.0%,11.4% 60.4%,0.0% 50.0%,11.4% 39.6%,6.7% 25.0%,21.7% 21.7%,25.0% 6.7%,39.6% 11.4%);font:700 .68rem/1.15 var(--font-kop);letter-spacing:.12em;text-transform:uppercase;pointer-events:none}
+.ster b{display:block;font:700 1.7rem/1 var(--font-display);letter-spacing:0;text-transform:none}
+.ster small{display:block;font-size:inherit}
+.ster--teal{background:var(--teal-paneel);color:var(--wit)}
+.ster--geel{background:var(--geel);color:var(--ant)}
+.ster--foto{position:absolute;bottom:4rem;right:1rem;z-index:2;transform:rotate(8deg)}
+.leadblock__panel .ster--lead{position:absolute;top:-.4rem;right:1.1rem;z-index:2;transform:rotate(8deg)}
+.leadblock__panel h2{max-width:calc(100% - 7.6rem)}
+@media(max-width:820px){.leadblock__panel .ster--lead{top:-7.4rem;right:.8rem}.leadblock__panel h2{max-width:none}}
+/* dozenkaart: de bij vliegt over de foto (de dozen van Top Movers dragen dezelfde bij) */
+.dozen__bij{position:absolute;z-index:2;left:-2%;top:3%;width:64%;height:auto;pointer-events:none}
+/* werkgebied: NL-kaartje met Venlo als sticker in de onderhoek van de foto (de boog knipt de bovenhoeken weg) */
+.kaartje{position:absolute;bottom:1rem;right:1rem;z-index:2;display:grid;justify-items:center;gap:.25rem;width:clamp(96px,21%,140px);padding:.6rem .6rem .55rem;background:var(--wit);border-radius:8px;box-shadow:var(--schaduw-kaart)}
+.kaartje img{position:static;inset:auto;display:block;width:100%;height:auto;object-fit:contain}
+.kaartje b{font:700 .64rem/1 var(--font-kop);letter-spacing:.16em;text-transform:uppercase;color:var(--goud-diep)}
+/* footer: eigen Kievit-logo boven het Top Movers-logo */
+.footer__kievit{display:block;height:84px;width:auto;margin-bottom:1.1rem}
+.footer__logo{height:50px}
+
+/* ---------- LMTZ-compositie (28-aug, wens Shahab): ster met de bij op de punt en gestapelde tekst, claim-veilig.
+   Staat in de marges naast de trust-strip; onder 1660px is er geen marge en verdwijnt hij, de honingraat ook. */
+.tmster{position:relative;width:var(--w,300px);aspect-ratio:1;pointer-events:none}
+.tmster__ster{width:100%;height:100%;clip-path:polygon(50.0% 0.0%,60.4% 11.4%,75.0% 6.7%,80.0% 20.0%,93.3% 25.0%,88.6% 39.6%,100.0% 50.0%,88.6% 60.4%,93.3% 75.0%,80.0% 80.0%,75.0% 93.3%,60.4% 88.6%,50.0% 100.0%,39.6% 88.6%,25.0% 93.3%,20.0% 80.0%,6.7% 75.0%,11.4% 60.4%,0.0% 50.0%,11.4% 39.6%,6.7% 25.0%,20.0% 20.0%,25.0% 6.7%,39.6% 11.4%);background:var(--teal-paneel);color:var(--wit);display:grid;place-content:center;text-align:center;font-family:var(--font-titel);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:.01em}
+.tmster__ster span{display:block;font-size:calc(var(--w,300px) * .085)}
+.tmster__ster .tmster__m{font-size:calc(var(--w,300px) * .15)}
+.tmster__ster .tmster__xl{font-size:calc(var(--w,300px) * .23);font-family:var(--font-display);line-height:.95}
+.tmster__bij{position:absolute;left:50%;top:0;width:46%;height:auto;transform:translate(-38%,-46%)}
+.trust{position:relative}
+.trust__deco{position:absolute;inset:0;pointer-events:none;z-index:7}
+.trust__deco .tmster{position:absolute;right:28px;top:-160px;--w:300px}
+.trust__deco .honing{position:absolute;left:32px;top:-24px;width:270px;height:auto;opacity:.75}
+@media(max-width:1859px){.trust__deco .tmster{--w:220px;top:-120px;right:20px}.trust__deco .honing{width:200px;left:20px}}
+@media(max-width:1659px){.trust__deco{display:none}}
+
+/* ---------- artifacts-plaatsing 28-aug (logo-lockup, stempels, diensticonen) ---------- */
+/* footer: de co-brandingformule "<Naam> Top Movers" als een lockup in plaats van twee losse logo's */
+.footer__lockup{display:block;width:min(300px,84%);height:auto;margin-bottom:1.1rem}
+/* stempels op de twee figuurvakken; ze staan op de foto, dus altijd boven .ringen__duo (z-index 2) */
+.zegel{position:absolute;z-index:3;width:132px;height:auto;filter:drop-shadow(0 10px 24px rgba(29,29,27,.28))}
+.ringen__zegel{left:0;bottom:12%}
+.vierkant__zegel{left:0;bottom:6%}
+@media(max-width:900px){.zegel{width:96px}.ringen__zegel{left:2%;bottom:4%}.vierkant__zegel{left:2%;bottom:4%}}
+/* d4-lijst: de Top Movers-diensticonen in plaats van de generieke set */
+.d4 li img{width:30px;height:30px;flex:none}
+/* werkgebied: de route-tekening boven de plaatsenlijst */
+.route-lijn{display:block;width:min(320px,72%);height:auto;margin:1.4rem 0 -.2rem}

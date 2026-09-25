@@ -1,0 +1,20 @@
+{
+ "mon2-kast-opbouwen": {
+  "oordeel": "let",
+  "tekst": "Kleuren gefixt: TOP en MOVERS beide donkergrijs op alle 5 dozen en beide wit op beide polo's, swoosh onder de letters zonder een letter te raken, boor zonder merknaam, bovenflappen kaal. Nog 2 kleine tekstfoutjes.",
+  "retouche": "1) Bovenste doos: het label leest 'Mox.20 kg', de o moet een a worden (x135-275, y730-775). 2) Oudere verhuizer: klein verhaspeld teal woordje rechts van de P van TOP op de polo (x1210-1250, y1080-1110) wegpoetsen. Optioneel: de gele bij ontbreekt op alle 5 dozen (staat wel op de referentiedoos); de teal boog zit op de plek van de bij.",
+  "opnieuw": ""
+ },
+ "par5-laadbak-inladen": {
+  "oordeel": "fout",
+  "tekst": "De swoosh is nog steeds de dikke Amazon-glimlach, op circa 16 dozen, de polo en de wagenzijkant. Borstprint leest '1OP AOVEBS', extra teal swoosh op de mouw, pijl-omhoog-tekens en invulkader op de doos in zijn hand.",
+  "retouche": "",
+  "opnieuw": "Beschrijf de swoosh als VORM, niet als woord, en zet ref-dozen.jpg als EERSTE ref: 'the teal mark is TWO separate thin pieces: a short comma-shaped stroke to the LEFT of the letters and a separate small solid arrowhead to the RIGHT of MOVERS, with an empty gap between them; it is never one continuous curve under the words, never a smile, never the Amazon arrow'. Verder: 'every box carries FILLED teal-green and yellow hexagons along the vertical edges and a yellow cartoon bee to the right of TOP'; 'no up-arrow symbols, no printed form, table or ruled lines, no tape on any seam'; 'the chest print is exactly the polo reference, exactly once, and the sleeves are plain'; 'no lettering under or beside the licence plate'; 'no strap hangs on the lashing rails in the cargo bay'."
+ },
+ "par6-straat-wagen-breed": {
+  "oordeel": "fout",
+  "tekst": "De naam staat 2x op de wagen (zijkant plus achterpaneel), beide met de dikke Amazon-pijl, net als op alle dozen. Borstprint links leest 'GJD BOKTVB', verhaspelde tekst op de 2 markeringsborden en 'GtSH' op de cabine.",
+  "retouche": "",
+  "opnieuw": "Rugprint, laadbak en blik in de lens zijn gefixt, de merkvoering niet. Prompt: 'the name appears exactly ONCE, on the SIDE of the box body; the panel above the rear shutter and the cab are plain white with no lettering and no logo'. Swoosh als vorm: 'two separate thin teal pieces, a short stroke left of the letters and a loose arrowhead right of MOVERS, never one continuous curve with a head, never the Amazon arrow'. Verder: 'the red and white marker boards carry no text at all'; 'the near mover is seen from directly behind so his chest is away from the camera'; dozen: 'hexagons are FILLED teal-green and yellow in clusters along the vertical edges, plus a yellow cartoon bee, never empty kraft outlines scattered over the face'."
+ }
+}

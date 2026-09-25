@@ -1,0 +1,35 @@
+<!-- Offerteformulier in de header (goedgekeurd 25-09-2026: header-formulier ronde 2, versie 1). Sinds 25-09-2026
+     op elke pagina behalve /offerte/ (wens gebruiker: "all page headers should have the form"); build_paginas.py zet
+     het direct na de hero, die dan de klasse hf1-hero krijgt. Het blauwe paneel valt over de onderrand van de hero. Zonder script gaat het formulier als GET naar /offerte/; site.js
+     stuurt alleen de ingevulde velden mee en vult ze daar in het offerteformulier in. -->
+<section class="offerte-overlay hf1" id="prijs" aria-label="Offerte aanvragen">
+  <div class="of-wrap">
+    <div class="of-box">
+      <!-- Keurmerkenlabel uit Tugches header (.of-trust.keurmerken), 25-09-2026 op wens van de gebruiker: "keep the form
+           from mine but add the verzekerde verhuizers and klanten vertellen block from tugche". Cijfers uit navigatie.KV_*
+           (profiel 1038076, nagekeken 25-09); Top Movers staat in de footer en op home in de kerncijfers. -->
+      <div class="of-trust keurmerken" role="group" aria-label="Beoordelingen en keurmerk">
+        <a class="keurmerk keurmerk--kv keurmerk--score" href="{{KV_URL}}" target="_blank" rel="noopener" aria-label="Beoordeeld met een {{KV_CIJFER}} uit 10 op Klantenvertellen (opent in een nieuw tabblad)"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="" width="322" height="159"><span class="keurmerk__cijfer">{{KV_CIJFER}}</span></a>
+        <a class="keurmerk keurmerk--ev" href="https://www.erkendeverhuizers.nl/lid/de-bresser-verhuizingen-b-v-2/" target="_blank" rel="noopener"><img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers (opent in een nieuw tabblad)" width="165" height="80"></a>
+        <span class="keurmerk keurmerk--tekst"><span class="keurmerk__kop">{{KV_AANTAL}}</span><span class="keurmerk__sub">beoordelingen,<br> {{KV_AANBEVELING}}% beveelt aan</span></span>
+      </div>
+      <h2 class="of-title">Vraag vrijblijvend een offerte aan</h2>
+      <p class="of-sub">Vertel kort waar u vandaan komt, waar u naartoe gaat en wanneer. Daarna bespreken wij de offerte met u: telefonisch, via een videocall of met een adviseur bij u thuis.</p>
+      <form class="of-form" id="ofForm" action="/offerte/#offerte" method="get">
+        <div class="of-pill">
+          <label class="of-field"><span>Van</span><input id="of-van" name="van" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Naar</span><input id="of-naar" name="naar" type="text" placeholder="Postcode + huisnummer" autocomplete="off"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Wanneer</span><input id="of-datum" name="datum" type="date" aria-label="Wanneer, gewenste verhuisdatum"></label>
+          <span class="of-divider" aria-hidden="true"></span>
+          <label class="of-field"><span>Type woning</span>
+            <select id="of-woning" name="woning" aria-label="Type woning"><option value="">Kies woning</option><option>Appartement</option><option>Eengezinswoning</option><option>Studio / kamer</option><option>Tussenwoning</option><option>Vrijstaande woning</option><option>Kantoor / bedrijf</option><option>Anders</option></select>
+          </label>
+          <button class="of-cta" type="submit">Offerte aanvragen<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
+        </div>
+      </form>
+      <p class="hf1-tel">U hoort binnen 24 uur van ons. Liever bellen? <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
+    </div>
+  </div>
+</section>

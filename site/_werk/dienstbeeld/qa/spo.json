@@ -1,0 +1,44 @@
+{
+ "spo1-planner-telefoon": {
+  "oordeel": "goed",
+  "tekst": "Planner met bril en telefoon, borstprint TOP/MOVERS wit met teal swoosh correct, wandplanner en papieren onleesbaar, NL-stopcontacten, geconcentreerd gezicht, handen kloppen, niemand afgesneden. Zo te gebruiken.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "spo2-snel-laden-laadklep": {
+  "oordeel": "let",
+  "tekst": "Wagen-lockup, gezichten en dozen-ontwerp goed, maar: blauwe spanband in de laadbak, MOVERS op beide borstprints teal en verhaspeld, onzinregels op 4 dozen, kenteken auto leesbaar; man loopt de klep AF (leest als lossen).",
+  "retouche": "1) blauwe spanband die in de lege laadbak hangt (links achter de linker man) weghalen; 2) borstprint beide mannen: MOVERS-regel wit en leesbaar maken (nu teal, leest als 'EMEMOR' en 'ADBEBES'); 3) doosregels: bovenste 2 dozen op de steekwagen 'Aangpelokan / erloiide verhousim', bovenste stoepdoos 'Aangesleten Hol', zwarte strip op de onderste stoepdoos 'DANST NEIR' -> 'Aangesloten BIJ erkende verhuizers' resp. 'Max. 20 kg', of vervagen; 4) kenteken blauwe auto rechts ('BF 38322') vervagen.",
+  "opnieuw": ""
+ },
+ "spo3-klant-belt-opgelucht": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: klant in gewone kleding, lichte glimlach, 3 dozen bij de deur, open doos op tafel, jas over de stoel. Wel: zwarte filmrand rondom, onderste doos 'duurzerne verhuisdeos', boekruggen met onzintekst.",
+  "retouche": "1) zwarte filmrand met lichte buitenrand aan alle vier de zijden wegsnijden (ca. 20 px, 1,5%); 2) onderste doos rechts, tweede regel 'duurzerne verhuisdeos' -> 'duurzame verhuisdoos' of vervagen; 3) boekruggen op tafel ('CNOSTIDES TORECIRES') vervagen tot onleesbaar.",
+  "opnieuw": ""
+ },
+ "spo4-team-stapt-af": {
+  "oordeel": "let",
+  "tekst": "Dekens, steekwagen, gele reling, teal achterkant goed. Fouten: 90 graden gedraaid lockup op het bovenpaneel van de wagen, borstprint midden 'MOVEGS' met extra regeltje, linker man grijnst breed, steekwagen staat los.",
+  "retouche": "1) gedraaid TOP/MOVERS-lockup op het witte bovenpaneel boven de laadruimte (rechtsboven) wit overschilderen; 2) borstprint middelste man: 'MOVEGS' -> MOVERS en het extra teal regeltje onder MOVERS weg; 3) borstprint linker man: extra teal regeltje onder MOVERS weg.",
+  "opnieuw": "Alleen als de brede glimlach van de linker man te veel is: hergenereren met 'the second mover pulls the hand truck with one hand, all faces turned to the building, closed-mouth light smiles, the white upper front panel of the box body carries no lettering'."
+ },
+ "spo5-smalle-trap-doos": {
+  "oordeel": "let",
+  "tekst": "Trap-scene klopt: buik naar de doos, armen voor het lichaam, van onderaf, doosopdruk correct. Fouten: gele bij op de borstprint, collega-doos rechtsboven met tapestrip en gekrabbeld '573', glimstrip op de grote doos.",
+  "retouche": "1) borstprint: gele bij rechts van TOP weghalen (ref-polo heeft geen bij); 2) doos van de collega rechtsboven, onderste helft: verticale doorzichtige tapestrip, gekrabbeld '573' en streepjescode-krabbel wegpoetsen tot kaal kraft; 3) verticale glimmende strip (tape-achtig) op de rechter zijkant van de grote doos onder de icoontjes weghalen.",
+  "opnieuw": ""
+ },
+ "spo6-twee-wagens-straat": {
+  "oordeel": "fout",
+  "tekst": "Te veel merkfouten voor retouche: ca. 15 dozen in verkeerd ontwerp (geen honingraat, zwarte lijnbij), spanbanden om de dekenwikkel, print op de RUG van de rechter man, 'TOP MOVERS' op een regel op beide bovenpanelen.",
+  "retouche": "",
+  "opnieuw": "Hergenereren; ook 2 borstprints verhaspeld, badge-tekst rechtsboven op wagen 1, linker man kijkt richting lens, geheel iets render-achtig. Prompt-aanpassing: 'every box is EXACTLY the attached box reference (kraft, honeycomb hexagons along the edges, TOP over MOVERS with the yellow bee), all boxes identical'; 'the blanket-wrapped furniture is held by hand, NO straps, bands, ropes or tape'; 'the polo print is ONLY on the left chest, the backs of the polos are plain'; 'the white upper front panel of each box body carries NO lettering; the only lettering on each truck is the side lockup as in the truck reference, no small text or badges anywhere on the trucks'; 'all movers seen from behind or in profile, nobody facing the camera'."
+ },
+ "spo7-laatste-doos-lege-kamer": {
+  "oordeel": "let",
+  "tekst": "Lege kamer, klant in gewone kleding met lichte glimlach, verhuizer met de doos tegen de buik, borstprint correct, NL-stopcontacten. Smet: donkere gedrukte strepen op de bovenflap van de doos, leest als stiftkrabbel.",
+  "retouche": "Bovenkant van de doos: de twee donkere regels op de bovenflap (naast de linkerarm van de verhuizer) wegpoetsen tot kaal kraft; verder niets.",
+  "opnieuw": ""
+ }
+}

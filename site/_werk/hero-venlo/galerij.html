@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero dienstenpagina: zes varianten Venlo</title>
+<style>
+ body{margin:0;background:#F6F4EC;color:#1D1D1B;font:400 16px/1.6 system-ui,sans-serif}
+ header{padding:2rem clamp(16px,4vw,40px) .5rem;max-width:1240px;margin-inline:auto}
+ h2{margin:0 0 .3rem;font-size:1.6rem}
+ header p{margin:.2rem 0;color:#4B4B49;max-width:70ch}
+ .kaart{margin:2.2rem auto;max-width:1240px;padding-inline:clamp(16px,4vw,40px)}
+ figcaption{display:flex;gap:.8rem;align-items:baseline;flex-wrap:wrap;margin-bottom:.5rem}
+ figcaption span{color:#4B4B49;font-size:.92rem}
+ /* zelfde verhouding als de echte hero: 1920 breed bij 498 hoog */
+ .band{position:relative;aspect-ratio:1920/498;overflow:hidden;border-radius:18px;background:#1D1D1B}
+ .band>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+ .veil{position:absolute;inset:0;background:radial-gradient(120% 90% at 70% 18%,rgba(29,29,27,0) 30%,rgba(29,29,27,.55) 100%),linear-gradient(180deg,rgba(29,29,27,.62) 0%,rgba(29,29,27,.18) 26%,rgba(29,29,27,.3) 58%,rgba(29,29,27,.92) 100%)}
+ .tekst{position:absolute;inset:auto 0 0 0;padding:0 0 1.6rem;text-align:center;color:#fff}
+ .tekst nav{font-size:.82rem;color:rgba(246,244,236,.72);margin-bottom:.4rem}
+ .tekst h1{margin:0;font-size:clamp(1.6rem,3.2vw,2.6rem);text-shadow:0 4px 30px rgba(0,0,0,.35)}
+ details{margin-top:.5rem} summary{cursor:pointer;font-size:.9rem;color:#006C68}
+ .vol{width:100%;height:auto;border-radius:12px;margin-top:.5rem}
+</style></head><body>
+<header>
+  <h2>Hero dienstenpagina: zes varianten</h2>
+  <p>De band toont exact wat er straks in beeld staat: 1920 bij 498, met de sluier en een voorbeeldkop
+  eroverheen. Klap "hele beeld" open om de volledige generatie te zien.</p>
+  <p><b>Alle zes hebben dezelfde fout:</b> de twee kleine regels onder het TOP MOVERS-logo op de dozen
+  zijn verhaspeld ("erkande verhulkers"). Het logo zelf klopt. Dat is op het gekozen beeld (a2)
+  hersteld met _werk/hero-venlo/retouche.py; de andere vijf zijn onbewerkt.</p>
+</header>
+  <figure class="kaart">
+    <figcaption><b>1. d1-markt-avondlicht</b><span>Markt in avondlicht: stadhuis, dozen, verhuizer bij de wagen</span></figcaption>
+    <div class="band">
+      <img src="d1-markt-avondlicht-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="d1-markt-avondlicht-1600.webp" alt=""></details>
+  </figure>
+  <figure class="kaart">
+    <figcaption><b>2. a2-markt-verhuizer - GEKOZEN, staat op alle dienstenpagina's</b><span>Zicht op de Markt vanuit een zijstraat, verhuizer met steekwagen</span></figcaption>
+    <div class="band">
+      <img src="a2-markt-verhuizer-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="a2-markt-verhuizer-1600.webp" alt=""></details>
+  </figure>
+  <figure class="kaart">
+    <figcaption><b>3. c1-oude-binnenstad</b><span>Oude binnenstad met de kerktoren, dozen in de steeg</span></figcaption>
+    <div class="band">
+      <img src="c1-oude-binnenstad-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="c1-oude-binnenstad-1600.webp" alt=""></details>
+  </figure>
+  <figure class="kaart">
+    <figcaption><b>4. b1-maasboulevard</b><span>Maasboulevard: de Maas en de brug, dozen op de kade</span></figcaption>
+    <div class="band">
+      <img src="b1-maasboulevard-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="b1-maasboulevard-1600.webp" alt=""></details>
+  </figure>
+  <figure class="kaart">
+    <figcaption><b>5. e1-q4-kade</b><span>Q4 aan het water, dozen groot in beeld</span></figcaption>
+    <div class="band">
+      <img src="e1-q4-kade-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="e1-q4-kade-1600.webp" alt=""></details>
+  </figure>
+  <figure class="kaart">
+    <figcaption><b>6. a1-markt-stadhuis</b><span>Stadhuis frontaal (LET OP: dit beeld kwam als tweeluik uit de generator)</span></figcaption>
+    <div class="band">
+      <img src="a1-markt-stadhuis-1600.webp" alt="">
+      <div class="veil"></div>
+      <div class="tekst"><nav>Home / Verhuizen / Particuliere verhuizing</nav><h1>Particuliere verhuizing</h1></div>
+    </div>
+    <details><summary>hele beeld</summary><img class="vol" src="a1-markt-stadhuis-1600.webp" alt=""></details>
+  </figure>
+</body></html>

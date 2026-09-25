@@ -1,0 +1,224 @@
+{
+ "overflow": {
+  "/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/algemene-voorwaarden/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/antiek-en-kunst-verhuizen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/certificeringen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/contact/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/cookiebeleid/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/diensten/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/disclaimer/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/dozencalculator/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/duurzaamheid/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/erkende-verhuizer/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/inboedelopslag/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/inpakservice/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/inpaktips/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/internationale-verhuizing/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/kantoorverhuizing/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/klachtenregeling/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/klantervaringen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/m3-calculator/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/montage-demontage/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/over-ons/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/particulier-verhuizen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/piano-verhuizen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/privacybeleid/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/seniorenverhuizing/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/sitemap/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/spoedverhuizing/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/toegankelijkheid/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/vacatures/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/veelgestelde-vragen/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/verhuischecklist/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/verzekering/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/werkwijze/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  },
+  "/zorgverhuizing/": {
+   "over": 0,
+   "breedte": 390,
+   "schuldig": []
+  }
+ },
+ "lcp": {
+  "/": {
+   "mediaan": 1632,
+   "runs": [
+    1624,
+    1632,
+    1636
+   ]
+  },
+  "/diensten/": {
+   "mediaan": 1796,
+   "runs": [
+    1792,
+    1796,
+    1808
+   ]
+  },
+  "/piano-verhuizen/": {
+   "mediaan": 1264,
+   "runs": [
+    1252,
+    1264,
+    1272
+   ]
+  },
+  "/contact/": {
+   "mediaan": 2432,
+   "runs": [
+    2428,
+    2432,
+    2432
+   ]
+  },
+  "/m3-calculator/": {
+   "mediaan": 1444,
+   "runs": [
+    1432,
+    1444,
+    1444
+   ]
+  },
+  "/klantervaringen/": {
+   "mediaan": 1256,
+   "runs": [
+    1248,
+    1256,
+    1260
+   ]
+  }
+ }
+}

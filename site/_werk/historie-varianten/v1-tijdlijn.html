@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historie-variant 1: tijdlijn</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-1645">
+<style>
+/* ===== variant 1: tijdlijn (extra CSS, alleen tokens uit style.css) ===== */
+.hist1{position:relative;overflow:hidden;background:var(--bruin);color:var(--creme);padding-block:clamp(3.5rem,7vw,6rem)}
+.hist1__in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,5vw,5rem);align-items:stretch}
+.hist1 .label{color:var(--teal-op-navy)}
+.hist1 .label::before{background:var(--teal-op-navy)}
+.hist1 .kop{color:var(--creme)}
+.hist1 .intro{color:rgba(246,244,236,.82);max-width:54ch;font-size:1.12rem}
+.hist1__tl{list-style:none;margin:1.9rem 0 2rem;padding:0;position:relative;display:grid;gap:1.15rem}
+.hist1__tl::before{content:"";position:absolute;left:calc(5.4rem + 4px);top:.6rem;bottom:.6rem;width:1px;background:rgba(246,244,236,.22)}
+.hist1__tl li{position:relative;display:grid;grid-template-columns:5.4rem minmax(0,1fr);gap:1.4rem;align-items:start}
+.hist1__tl li::before{content:"";position:absolute;left:5.4rem;top:.5rem;width:9px;height:9px;border-radius:50%;background:var(--goud)}
+.hist1__jaar{font:700 1.55rem/1 var(--font-display);color:var(--teal-op-navy);padding-top:.05rem}
+.hist1__tl h3{font:700 1.02rem/1.3 var(--font-titel);color:var(--creme);margin:0 0 .2rem;letter-spacing:0}
+.hist1__tl p{margin:0;font-size:.95rem;line-height:1.55;color:rgba(246,244,236,.78);max-width:48ch}
+.hist1__fig{margin:0;display:flex;flex-direction:column;min-height:100%}
+.hist1__fig img{flex:1;width:100%;min-height:0;object-fit:cover;object-position:50% 30%;border-radius:var(--r);display:block;filter:grayscale(1) contrast(1.05)}
+.hist1__fig figcaption{margin-top:.8rem;font-size:.86rem;line-height:1.45;color:rgba(246,244,236,.68)}
+@media (max-width:900px){
+  .hist1__in{grid-template-columns:1fr;gap:1.8rem}
+  .hist1__fig{order:-1;min-height:0}
+  .hist1__fig img{aspect-ratio:3/2;height:auto;flex:none}
+  .hist1__tl li{grid-template-columns:4.2rem minmax(0,1fr);gap:1.1rem}
+  .hist1__tl::before{left:calc(4.2rem + 4px)}
+  .hist1__tl li::before{left:4.2rem}
+  .hist1__jaar{font-size:1.3rem}
+}
+/* alleen voor deze losse voorbeeldpagina: bandjes van de buursecties */
+.ctx{height:56px}.ctx--boven{background:var(--creme-2)}.ctx--onder{background:var(--creme)}
+</style>
+</head>
+<body>
+<div class="ctx ctx--boven" aria-hidden="true"></div>
+
+<section class="hist1" id="historie" aria-labelledby="hist-kop">
+  <div class="wrap hist1__in">
+    <div class="hist1__tekst">
+      <p class="label">Sinds 1910</p>
+      <h2 class="kop" id="hist-kop">Meer dan honderd jaar verhuizen vanuit Venlo</h2>
+      <p class="intro">Het begon op 12 maart 1910 met een grote meubelwagen. Vijf generaties lang bleef De Kievit een familiebedrijf, en wat in al die jaren bleef zijn de verhuizers die u aan de deur ziet en de werkwijze van een Erkende Verhuizer.</p>
+      <ol class="hist1__tl">
+        <li><span class="hist1__jaar">1910</span><div><h3>Een grote meubelwagen</h3><p>Op 12 maart 1910 beveelt H. de Kievit &amp; Zoon zich in Venlo aan voor verhuizingen en transporten, binnen- en buitenlands.</p></div></li>
+        <li><span class="hist1__jaar">1923</span><div><h3>De Bresser begint</h3><p>In Brabant start het familiebedrijf De Bresser Verhuizingen, ruim een eeuw later de nieuwe thuisbasis van De Kievit.</p></div></li>
+        <li><span class="hist1__jaar">2024</span><div><h3>Samen verder met De Bresser</h3><p>Sinds 1 juni 2024 maakt De Kievit deel uit van De Bresser Verhuizingen. Het hele Venlose team ging daarbij mee over.</p></div></li>
+        <li><span class="hist1__jaar">Nu</span><div><h3>Erkende Verhuizer in Venlo</h3><p>Dezelfde verhuizers aan uw deur, de werkwijze van een Erkende Verhuizer en lid van Top Movers.</p></div></li>
+      </ol>
+      <div class="knoprij"><a class="btn btn--goud btn--groen" href="#offerte">Vrijblijvende verhuisofferte</a></div>
+    </div>
+    <figure class="hist1__fig">
+      <picture>
+        <source media="(max-width:900px)" srcset="/_werk/historie-varianten/img/kar-32-700.webp 700w, /_werk/historie-varianten/img/kar-32-1200.webp 1200w" sizes="94vw">
+        <img src="/_werk/historie-varianten/img/kar-staand-1000.webp" srcset="/_werk/historie-varianten/img/kar-staand-600.webp 600w, /_werk/historie-varianten/img/kar-staand-1000.webp 1000w" sizes="(max-width:900px) 94vw, 520px" width="1000" height="1250" alt="Historische foto: een jongen trekt een kar met kinderen erop, naast het paard voor het pand van W. de Kievit, Expeditie en Verhuizingen" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>Paard en wagen voor het pand van W. de Kievit, Expeditie en Verhuizingen in Venlo.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="ctx ctx--onder" aria-hidden="true"></div>
+</body>
+</html>

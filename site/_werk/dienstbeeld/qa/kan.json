@@ -1,0 +1,44 @@
+{
+ "kan1-rolcontainers-kantoortuin": {
+  "oordeel": "let",
+  "tekst": "Verhaal en vakregels kloppen: rolcontainers rechtop op vier wielen, kratten dicht, monitors uit, ordners blanco, beide borstprints goed. Alleen een leesbaar DELL-logo op de linker monitor en een groen schouderlabel.",
+  "retouche": "DELL-logo op de onderrand van de linker monitor (links, halverwege) weghalen; klein lichtgroen label op de rechterschouder (links in beeld) van de achterste verhuizer weghalen. Kratlabels zijn onleesbaar en mogen blijven.",
+  "opnieuw": ""
+ },
+ "kan2-computerbox-monitor": {
+  "oordeel": "let",
+  "tekst": "Monitor gaat in de computerbox, tweede box dicht met kabels opgerold, NL-straat, kenteken en papieren onleesbaar, handen goed. Borstprint fout: teal streep door de O van TOP, teal balk onder MOVERS, geen pijlpunt.",
+  "retouche": "Borstprint links op de borst vervangen door het juiste lockup: wit TOP boven wit MOVERS, teal swoosh ONDER de letters met pijlpunt rechts van MOVERS. Nu loopt de teal streep door de O van TOP en staat er een teal balk onder MOVERS.",
+  "opnieuw": ""
+ },
+ "kan3-bureau-bureauroller": {
+  "oordeel": "let",
+  "tekst": "Bureau op zijn kant OP de bureauroller, sturen en duwen klopt, gezichten geconcentreerd, NL-stopcontacten. Beide borstprints fout: 'Top Movers' in ander lettertype met tagline, geen swoosh; extra teal logo op de mouw.",
+  "retouche": "Borstprint van beide verhuizers vervangen door het juiste lockup (wit TOP en MOVERS in kapitalen, teal swoosh onder, pijlpunt rechts), tagline eronder weg; teal chevron op de rechtermouw van de voorste verhuizer (links in beeld) weghalen. Plafondlampen branden bij daglicht, mag blijven.",
+  "opnieuw": ""
+ },
+ "kan4-archief-archiefbox": {
+  "oordeel": "let",
+  "tekst": "Archiefruimte, ordnerruggen blanco, borstprint correct, gezicht geconcentreerd, handen om de beugels, rolcontainer eronder. Enige punt: de archiefbox is leeg (bodem zichtbaar), dus 'archief inpakken' klopt niet helemaal.",
+  "retouche": "Groene archiefbox vullen met staande ordners of hangmappen tot net onder de rand, zodat hij met inhoud van de plank naar de rolcontainer gaat. Label op de kopse kant rechts is onleesbaar en mag blijven.",
+  "opnieuw": ""
+ },
+ "kan5-projectleider-officemanager": {
+  "oordeel": "fout",
+  "tekst": "Rollen kloppen (projectleider in polo, officemanager in pak, twee verhuizers achter), maar de achterste verhuizer heeft een grote TOP MOVERS-print op zijn RUG en de projectleider draagt een kale bruine doos met tape.",
+  "retouche": "Als redding i.p.v. opnieuw: rugprint van de linker achtergrondverhuizer wegwerken naar effen antraciet; bruine doos ombouwen naar Top Movers-doos (kraft, honingraat, lockup met bij) en de tape op de rechterzijkant en -hoek weghalen.",
+  "opnieuw": "Rugprint en kale doos met plakband zijn beide harde regels en de doos stond niet in de scene. In de prompt: de projectleider draagt NIETS (handen vrij, of een tablet schuin gezien), geen kartonnen doos in beeld, en de twee verhuizers op de achtergrond dragen polo's met een EFFEN rug zonder print."
+ },
+ "kan6-wagen-kantoorpand-breed": {
+  "oordeel": "let",
+  "tekst": "Wagenlockup goed: TOP boven MOVERS, letters zwart, swoosh onder met pijlpunt, verder geen tekst; laadklep achterop. Wel blauwe spanband en zwarte lus in de laadbak, kleine borstprints verhaspeld, geen gele reling.",
+  "retouche": "Blauwe spanband tegen de linker binnenwand van de laadbak en de zwarte lus bovenin de laadopening weghalen; de twee kleine borstprints (MOVERS onleesbaar) bijwerken of accepteren als vlek op bannerformaat; modelbadge op de cabinedeur uiterst rechts vervagen. Kratopdruk is onleesbaar en mag blijven.",
+  "opnieuw": "Alleen als de gele reling op de laadklep verplicht is: opnieuw met 'tail lift lowered at the back, with its yellow safety railing'; verder is dit beeld bruikbaar."
+ },
+ "kan7-nieuw-kantoor-maandag": {
+  "oordeel": "let",
+  "tekst": "Kantoor met plant en koffiemachine klopt, kratten dicht en rechtop, gezichten licht positief, handen goed. Beide borstprints fout: O van TOP is een teal ring met haak, teal tagline onder MOVERS; voeten net afgesneden.",
+  "retouche": "Borstprint van beide verhuizers vervangen door het juiste lockup: alle letters wit, O van TOP wit en geen ring, teal swoosh onder de letters met pijlpunt rechts van MOVERS, tagline eronder weg. Bannercrop uit de middenbaan lost de afgesneden voeten onderaan op.",
+  "opnieuw": ""
+ }
+}

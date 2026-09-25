@@ -1,0 +1,313 @@
+<!-- ============ /klantervaringen/: GEGENEREERD door _werk/blok_klantervaringen.py, niet met de hand bewerken ============
+     Alle reviews staan letterlijk in _werk/klantenvertellen-reviews-20260829.json (Klantenvertellen-profiel 1034282, alle pagina's)
+     en, voor de knop "Meer beoordelingen tonen", in assets/data/klantenvertellen-reviews.json. Google-score in
+     _werk/google-reviews-20260829.json. Trustoo en Trustpilot: geen profiel van De Kievit (29-08-2026). -->
+<style>
+  /* Alleen voor /klantervaringen/ (prefix kev): de vragenlijst, de citaatregels en het compacte reviewrooster.
+     De rest (reviews, rgrid, scorepaneel, usps, faq) komt uit style.css. */
+  .kev-lijst{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.5rem;counter-reset:kev}
+  .kev-lijst li{counter-increment:kev;position:relative;padding:.55rem .9rem .55rem 2.9rem;background:var(--wit);border:1px solid var(--lijn);border-radius:12px;font-size:.96rem;color:var(--ant)}
+  .kev-lijst li::before{content:counter(kev);position:absolute;left:.8rem;top:.5rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--goud-licht);color:var(--goud-diep);font:700 .82rem/1.5rem var(--font-titel);text-align:center}
+  .kev-citaat{display:block;margin-top:.5rem;font-size:.9rem;color:var(--goud-diep)}
+  .kev-citaat b{font-weight:600;color:var(--ant-zacht)}
+  .kev-slot{text-align:center;max-width:44rem;margin-inline:auto}
+  .kev-slot .knoprij{justify-content:center;margin-top:1.4rem}
+  .kev-3{grid-template-columns:repeat(3,1fr)}
+  .kev-3+.kev-3{margin-top:1.1rem}
+  .kev-leeg{color:var(--kv-ink2);font-style:italic}
+  .kev-meer{display:flex;justify-content:center;margin-top:1.4rem}
+  .kev-klaar{margin:1.2rem 0 0;text-align:center;color:var(--ant-zacht);font-size:.95rem}
+  /* De staande cutout naast de intro even hoog als de tekstkolom (Shahab 29-08: "veel te groot").
+     Het beeld is 1100x1512, dus op volle kolombreedte werd het 742 px hoog tegen 450 px tekst. Absoluut
+     plaatsen haalt het uit de flow: de rijhoogte komt dan alleen van de tekst en het beeld schaalt daarbinnen
+     (contain, onderaan uitgelijnd). Onder 900px is het een kolom en geldt de gewone plaatsing weer. */
+  .kev-fig{position:relative;align-self:stretch;min-height:0}
+  .kev-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom center}
+  @media(max-width:900px){
+    .kev-fig{position:static;align-self:auto}
+    .kev-fig img{position:static;width:auto;height:auto;max-height:26rem;margin-inline:auto}
+  }
+  /* Iconen komen uit de Shutterstock-bibliotheek (icoon-skill), uitgeknipt en gerecolord naar navy/teal:
+     zie assets/img/icoon/. Ze staan als <img> in het ronde vlak van .usps .ico. */
+  .usps .ico img{width:30px;height:30px;display:block}
+  .kev-g{width:18px;height:18px;flex:none}
+  .kev-merk1{grid-template-columns:1fr}
+  .kev-merk1 img{max-width:9.5rem}
+  .kev-vragen{row-gap:1.6rem}
+  .kev-vragen .stap__nr{font-size:2.1rem;margin-bottom:.45rem}
+  .kev-vragen .stap p{font-size:.95rem;line-height:1.5}
+  .reviews .reviews__hoofd .sectiekop{margin-bottom:0}
+  .reviews .scorepaneel .btn{margin-top:.2rem}
+  @media(max-width:1099.98px){.kev-3{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.kev-3{grid-template-columns:1fr}}
+</style>
+
+<section class="sectie" aria-labelledby="kev-intro-kop">
+  <div class="wrap">
+    <div class="werkwijze__top">
+    <div class="sectiekop" data-reveal>
+      <p class="label">Klantervaringen</p>
+      <h2 class="kop" id="kev-intro-kop">Wat zeggen klanten over hun verhuizing met De Kievit?</h2>
+      <p class="intro">Elke beoordeling op deze pagina is woord voor woord overgenomen van ons profiel op Klantenvertellen, met de
+      naam, de woonplaats, de datum en het cijfer dat de klant zelf gaf. Wij hebben er niets aan veranderd: ook een 7 en een
+      opmerking over een kras staan er gewoon in. U ziet eerst zes beoordelingen die wij zelf mooi vinden; met de knop eronder klapt u
+      alle andere uit, van de nieuwste terug tot de eerste uit 2013. Daaronder staan onze reviews op Google.</p>
+    </div>
+      <!-- .werkwijze__wagen is de vrijstaande-cutout-figuur van de homepage; hier een mensen-cutout -->
+      <figure class="werkwijze__wagen werkwijze__wagen--staand kev-fig" data-reveal aria-hidden="true">
+        <img src="/assets/img/reviews-pc-man-1100.webp" srcset="/assets/img/reviews-pc-man-700.webp 700w, /assets/img/reviews-pc-man-1100.webp 1100w" sizes="(max-width:900px) 88vw, 46vw" width="1100" height="1512" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sectie reviews" aria-labelledby="kev-reviews-kop">
+  <div class="wrap">
+    <div class="reviews__hoofd">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Klantenvertellen</p>
+        <h2 class="kop" id="kev-reviews-kop">Alle beoordelingen, onverkort</h2>
+        <p class="intro">Klantenvertellen is het onafhankelijke reviewplatform van <a href="/erkende-verhuizer/">Erkende Verhuizers</a>. Een klant beantwoordt daar na de
+        verhuizing een vaste vragenlijst; het cijfer en de aanbeveling komen daaruit voort. Klanten geven ons gemiddeld een 9,4
+        uit 779 beoordelingen en 99 procent beveelt ons aan; over de laatste twaalf maanden is het een 9,5.</p>
+      </div>
+      <aside class="scorepaneel" data-reveal style="transition-delay:.06s">
+        <p class="scorepaneel__cijfer"><b>9,4</b><span>uit 779 beoordelingen</span></p>
+        <span class="sterren" role="img" aria-label="9 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s sterren__s--half"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span>
+        <ul class="scorepaneel__feiten">
+          <li><b>99%</b> beveelt ons aan</li>
+          <li><b>9,5</b> laatste 12 maanden</li>
+          <li><b>60</b> beoordelingen in die 12 maanden</li>
+        </ul>
+        <div class="scorepaneel__keurmerken">
+          <a href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow" aria-label="Ons profiel op Klantenvertellen"><img src="/assets/img/keurmerk/klantenvertellen.svg" alt="Klantenvertellen" width="322" height="159" loading="lazy" decoding="async"></a>
+          <a href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow" aria-label="Onze ledenpagina bij Erkende Verhuizers"><img src="/assets/img/keurmerk/erkende-verhuizers.svg" alt="Erkende Verhuizers" width="165" height="80" loading="lazy" decoding="async"></a>
+        </div>
+      </aside>
+    </div>
+    <div class="rgrid kev-3">
+      <article class="review" data-reveal>
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>geweldige medewerkers bij dit top bedrijf.</h3>
+        <p class="review__tekst">wij zijn in 2 dagen verhuisd ivm de afstand, we kunnen niet anders zeggen dan dat we super tevreden zijn over beide teams die meegeholpen hebben met de verhuizing. de mannen hebben hard gewerkt, waren super netjes en vriendelijk.</p>
+        <p class="review__wie"><b>J., Sevenum/Hoogeveen</b><time datetime="2026-04-04">4 april 2026</time></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.06s">
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>Kievit verhuizingen komt afspraken na</h3>
+        <p class="review__tekst">Vanaf het eerste contact tot en met de uiteindelijke afhandeling komt Kievit verhuizingen hún afspraken na.<br>De medewerkers werken snel, zorgvuldig en zijn vriendelijk.<br>Al met al ben ik blij dat ik voor Kievit heb gekozen.</p>
+        <p class="review__wie"><b>Ben, Lomm</b><time datetime="2026-01-02">2 januari 2026</time></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.12s">
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>Snel en efficiënt</h3>
+        <p class="review__tekst">De verhuizers waren geweldig! Ruim op tijd, snel, efficiënt, voorzichtig met alles, behulpzaam en super vriendelijk!!!<br>Daarbij ook goed geholpen en geïnformeerd door kantoor!!!</p>
+        <p class="review__wie"><b>E. Billekens, Venlo</b><time datetime="2025-12-27">27 december 2025</time></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.18s">
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>De Kievit Top Movers zorgen voor Top Tevredenheid!!</h3>
+        <p class="review__tekst">Onze spullen werden opgehaald, daarna 20 maanden opgeslagen en vervolgens perfect weer afgeleverd.<br>Alles gebeurde door een team van echte vakmensen. Kortom, top tevredenheid van onze kant.</p>
+        <p class="review__wie"><b>M., Reuver</b><time datetime="2025-12-15">15 december 2025</time></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.24s">
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>Helden!</h3>
+        <p class="review__tekst">Na een intake kregen we de dozen en stipt op tijd kwam de vrachwagen met de verhuisploeg. Zeer ervaren en vriendelijke mensen die in een halve dag ins hele huis over hebben verhuisd. Ik had dit zelf niet voor elkaar gekregen.</p>
+        <p class="review__wie"><b>Bart, Venlo</b><time datetime="2025-10-24">24 oktober 2025</time></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.3s">
+        <p class="review__rate"><span class="sterren" role="img" aria-label="10 van de 10"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span><b>10</b></p>
+        <h3>Top verhuisbedrijf!</h3>
+        <p class="review__tekst">Op korte termijn verhuizing kunnen regelen. Goede, duidelijke communicatie. Goede service, correct omgaan met spullen. Verwachtingen meer dan waar gemaakt. Echt een aanrader!</p>
+        <p class="review__wie"><b>Esther, Echt</b><time datetime="2025-09-16">16 september 2025</time></p>
+      </article>
+    </div>
+    <div id="kev-kv-meer" hidden></div>
+    <div class="kev-meer" data-reveal><button type="button" class="btn btn--lijn" data-meer="kev-kv-meer" data-bron="/assets/data/klantenvertellen-reviews.json" data-soort="kv" data-stap="12" data-getoond="d2558735-8489-4eac-88c1-f1297a65532f,d3b28e55-3dd0-4cb9-ba13-7fcb9267b1c5,4e26e1b3-418f-4090-afa3-d2b08045177e,ab566d39-7bb0-492e-885e-ef7a58a014f6,5dabab50-2e7b-4ea8-81b9-bbde69ed03a5,05b6d1a7-0514-4159-b9cb-451400f9c55c">Meer beoordelingen tonen</button></div>
+    <div class="reviews__voet" data-reveal>
+      <p class="reviews__meer"><a href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow">Ons profiel op Klantenvertellen bekijken<svg aria-hidden="true"><use href="#i-caret"/></svg></a></p>
+      <div class="wa-rij"><a class="btn btn--wa btn--groen" href="https://wa.me/31773232100?text=Hallo%2C%20ik%20las%20de%20klantervaringen%20op%20uw%20site.%20Ik%20wil%20graag%20een%20offerte%20voor%20mijn%20verhuizing." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Stel uw vraag via WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sectie reviews sectie--creme2" aria-labelledby="kev-google-kop">
+  <div class="wrap">
+    <div class="reviews__hoofd">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Google</p>
+        <h2 class="kop" id="kev-google-kop">Onze beoordeling op Google</h2>
+        <p class="intro">Ook op Google beoordelen klanten ons. Daar staat De Kievit op 4,5 van de 5 sterren uit 42 reviews (peildatum 29 augustus 2026). Hieronder een selectie van zes, woord voor woord overgenomen; Google vermeldt bij een review alleen hoe lang geleden hij is geplaatst, gerekend vanaf die peildatum.</p>
+      </div>
+      <aside class="scorepaneel" data-reveal style="transition-delay:.06s">
+        <p class="scorepaneel__cijfer"><b>4,5</b><span>van de 5 sterren op Google</span></p>
+        <span class="sterren" role="img" aria-label="4,5 van de 5"><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span><span class="sterren__s sterren__s--half"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span></span>
+        <ul class="scorepaneel__feiten">
+          <li><b>42</b> reviews op Google</li>
+          <li><b>29 augustus 2026</b> peildatum</li>
+        </ul>
+        <div class="scorepaneel__keurmerken kev-merk1">
+          <a href="https://www.google.com/maps/place/De+Kievit+Verhuizingen+Top+Movers/@51.3891567,6.1853061,17z/data=!3m1!4b1!4m6!3m5!1s0x47c7453a2f05b673:0x4c3c65dfb57fe3f8!8m2!3d51.3891567!4d6.1853061!16s%2Fg%2F1tkqzh8l?hl=nl" target="_blank" rel="noopener nofollow" aria-label="Onze vermelding op Google"><img src="/assets/img/keurmerk/google.svg" alt="Google" width="272" height="92" loading="lazy" decoding="async"></a>
+        </div>
+        <a class="btn btn--goud" href="https://www.google.com/maps/place/De+Kievit+Verhuizingen+Top+Movers/@51.3891567,6.1853061,17z/data=!3m1!4b1!4m6!3m5!1s0x47c7453a2f05b673:0x4c3c65dfb57fe3f8!8m2!3d51.3891567!4d6.1853061!16s%2Fg%2F1tkqzh8l?hl=nl" target="_blank" rel="noopener nofollow">Bekijk op Google<svg aria-hidden="true"><use href="#i-caret"/></svg></a>
+      </aside>
+    </div>
+    <div class="rgrid kev-3">
+      <article class="review" data-reveal>
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">Wij zijn erg tevreden over verhuisbedrijf de Kievit. Ze waren keurig op tijd, vriendelijk in de omgang en hebben de verhuizing snel uitgevoerd. Daarnaast gingen ze zorgvuldig om met onze spullen, w. Alles verliep soepel en professioneel. Bedankt voor de goede service!</p>
+        <p class="review__wie"><b>kendra hendrikx</b><span>Op Google, 4 weken geleden</span></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.06s">
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">Zeer tevreden over de service en verhuizing! Vooraf kregen we tijdig de dozen om alles in te pakken. Ook nabestelling van extra dozen was geen enkel probleem. Op de verhuisdag zelf kwam een team van 5 mannen, ze waren keurig op tijd en zijn goed op elkaar ingespeeld. Heel fijn dat alles snel en effectief verlopen is!</p>
+        <p class="review__wie"><b>Laury Traksel | Grow4Flow</b><span>Op Google, 2 jaar geleden</span></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.12s">
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">Beste medewerkers van de kievit, wat n werk hebben jullie verricht, en in korte tijd alles verhuisd. Wij waren er blij mee, jullie stelden ons goed op ons gemak. Van ons krijgen jullie een 10. Wij zullen jullie zeker aanbevelen bij anderen. Bedankt voor de verrassing wat vandaag bezorgd werd. Groetjes hans en kikie hendriks</p>
+        <p class="review__wie"><b>Kikie Hendriks</b><span>Op Google, 2 jaar geleden</span></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.18s">
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">Dikke aanrader!!! Onze verhuizing vanuit Duitsland naar Spanje is zeer goed verlopen. Zeer betrouwbaar, zeer vriendelijk, goede samenwerking. Ze houden je goed op de hoogte hoe de reis verloopt. En ze zijn snel!!! Heel erg bedankt voor jullie goede dienstverlening! Groetjes Chris en Biri</p>
+        <p class="review__wie"><b>Bircan Gunturcun</b><span>Op Google, 4 jaar geleden</span></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.24s">
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">Top verhuizing!<br>Alles is snel en zorgvuldig verhuisd van oud naar nieuw adres! Zelfs kledingkasten en bedden werden in elkaar gezet. Ik zou verhuisbedrijf de Kievit dan ook bij iedereen aanraden!</p>
+        <p class="review__wie"><b>Rafke Manders-Deenen</b><span>Op Google, 5 jaar geleden</span></p>
+      </article>
+      <article class="review" data-reveal style="transition-delay:0.3s">
+        <p class="review__rate"><img class="kev-g" src="/assets/img/keurmerk/google-g.svg" alt="" width="18" height="18" loading="lazy" decoding="async"><b>Google</b></p>
+        <p class="review__tekst">De Kievit heeft voor ons de verhuizing naar volle tevredenheid uitgevoerd. Ongelofelijk hoe snel en secuur de verhuizers werken. Top gedaan en een absolute aanrader!</p>
+        <p class="review__wie"><b>N L</b><span>Op Google, 8 jaar geleden</span></p>
+      </article>
+    </div>
+    <div class="reviews__voet" data-reveal>
+      <p class="reviews__meer"><a href="https://www.google.com/maps/place/De+Kievit+Verhuizingen+Top+Movers/@51.3891567,6.1853061,17z/data=!3m1!4b1!4m6!3m5!1s0x47c7453a2f05b673:0x4c3c65dfb57fe3f8!8m2!3d51.3891567!4d6.1853061!16s%2Fg%2F1tkqzh8l?hl=nl" target="_blank" rel="noopener nofollow">Alle 42 reviews op Google lezen<svg aria-hidden="true"><use href="#i-caret"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sectie sectie--creme2" aria-labelledby="kev-vaak-kop">
+  <div class="wrap">
+    <div class="sectiekop" data-reveal>
+      <p class="label">Wat terugkomt</p>
+      <h2 class="kop" id="kev-vaak-kop">Wat klanten het vaakst noemen</h2>
+      <p class="intro">Drie dingen komen in de beoordelingen steeds terug: duidelijke communicatie, vriendelijke mensen en op tijd zijn. Hoe wij dat organiseren staat bij <a href="/werkwijze/">onze werkwijze</a>, en wie het uitvoert bij <a href="/over-ons/">over ons</a>.
+      Daarnaast valt op hoe vaak klanten schrijven over een verhuizing die anders liep dan gepland.</p>
+    </div>
+    <ul class="usps usps--rij" data-reveal>
+      <li><span class="ico"><img src="/assets/img/icoon/communicatie.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Duidelijke communicatie</h3><p>Afspraken over tijd, prijs en aanpak die vooraf helder zijn en op de dag kloppen.<span class="kev-citaat">"Duidelijke communicatie, afspraken nagekomen" <b>P, Venlo</b></span></p></div></li>
+      <li><span class="ico"><img src="/assets/img/icoon/mensen.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Vriendelijke mensen</h3><p>De verhuizers, de adviseur en de binnendienst: klanten noemen de omgang net zo vaak als het werk zelf.<span class="kev-citaat">"Correcte en vriendelijke medewerkers" <b>J., Horst</b></span></p></div></li>
+      <li><span class="ico"><img src="/assets/img/icoon/op-tijd.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Op de afgesproken tijd</h3><p>De wagen staat er wanneer het is afgesproken, en er wordt doorgewerkt tot alles op zijn plek staat.<span class="kev-citaat">"De mannen waren op de afgesproken tijd aanwezig" <b>Jan, Horst aan de Maas</b></span></p></div></li>
+      <li><span class="ico"><img src="/assets/img/icoon/meedenken.svg" alt="" width="30" height="30" loading="lazy" decoding="async"></span><div><h3>Meedenken als het anders loopt</h3><p>Een spoedverhuizing, een sterfgeval, veel meer spullen dan gedacht: juist dan telt hoe een team reageert.<span class="kev-citaat">"Tot zelfs op zondag was er contact" <b>Brigitte, Bilthoven</b></span></p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sectie" aria-labelledby="kev-hoe-kop">
+  <div class="wrap">
+    <div class="werkwijze__top" style="margin-bottom:clamp(1.6rem,3vw,2.4rem)">
+      <div class="sectiekop" data-reveal>
+        <p class="label">Hoe een beoordeling ontstaat</p>
+        <h2 class="kop" id="kev-hoe-kop">Twaalf vragen na elke verhuizing</h2>
+        <p class="intro">Klantenvertellen is het reviewplatform dat Erkende Verhuizers gebruiken. Een klant beoordeelt daar niet met
+        een enkel cijfer, maar beantwoordt een vaste vragenlijst over de hele verhuizing, van het eerste advies tot de factuur.
+        Het eindcijfer en het antwoord op de vraag of hij ons aanbeveelt komen daaruit voort. Dit zijn de vragen die elke klant krijgt.</p>
+      </div>
+      <!-- .werkwijze__wagen is de vrijstaande-cutout-figuur van de homepage, hier met mensen (klant en verhuizer) -->
+      <figure class="werkwijze__wagen" data-reveal aria-hidden="true">
+        <img src="/assets/img/figuur-duo-lachen-1100.webp" srcset="/assets/img/figuur-duo-lachen-700.webp 700w, /assets/img/figuur-duo-lachen-1100.webp 1100w" sizes="(max-width:900px) 88vw, 46vw" width="1100" height="907" alt="" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <ol class="stappen kev-vragen">
+      <li class="stap" data-reveal><span class="stap__nr" aria-hidden="true">01</span><p>Hoe beoordeelt u de voorbereiding van de verhuizing (advies, planning en afspraken vooraf)?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.04s"><span class="stap__nr" aria-hidden="true">02</span><p>Hoe beoordeelt u de communicatie met het verhuisbedrijf (bereikbaarheid, duidelijkheid en informatievoorziening)?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.08s"><span class="stap__nr" aria-hidden="true">03</span><p>In hoeverre heeft het verhuisbedrijf de gemaakte afspraken nagekomen?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.12s"><span class="stap__nr" aria-hidden="true">04</span><p>Hoe beoordeelt u de uitvoering van de verhuizing (vakmanschap, zorgvuldigheid en klantvriendelijkheid van het team)?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.16s"><span class="stap__nr" aria-hidden="true">05</span><p>Hoe beoordeelt u de flexibiliteit van het verhuisbedrijf bij wijzigingen of onvoorziene omstandigheden?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.2s"><span class="stap__nr" aria-hidden="true">06</span><p>Hoe beoordeelt u de duidelijkheid van de factuur en de aansluiting bij de vooraf gemaakte financi&euml;le afspraken?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.24s"><span class="stap__nr" aria-hidden="true">07</span><p>Hoe beoordeelt u de afhandeling van vragen, klachten en eventuele schade na afloop van de verhuizing?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.28s"><span class="stap__nr" aria-hidden="true">08</span><p>Hoe beoordeelt u de verhouding tussen prijs en geleverde kwaliteit?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.32s"><span class="stap__nr" aria-hidden="true">09</span><p>Wat is uw totaaloordeel over de dienstverlening van dit verhuisbedrijf?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.36s"><span class="stap__nr" aria-hidden="true">10</span><p>Ziet u nog verbeterpunten in de dienstverlening van het verhuisbedrijf?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.4s"><span class="stap__nr" aria-hidden="true">11</span><p>Bent u in de toekomst van plan om van deze diensten gebruik te maken?</p></li>
+      <li class="stap" data-reveal style="transition-delay:0.44s"><span class="stap__nr" aria-hidden="true">12</span><p>Waar kent u Erkende Verhuizers van?</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sectie ring sectie--creme2" aria-labelledby="kev-faq-kop">
+  <div class="wrap">
+    <div class="sectiekop sectiekop--midden" data-reveal>
+      <p class="label">Veelgestelde vragen</p>
+      <h2 class="kop" id="kev-faq-kop">Over deze beoordelingen</h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Zijn deze beoordelingen echt?<span class="faq__tk" aria-hidden="true"></span></summary><p>Ja. Ze staan op ons profiel bij Klantenvertellen, een platform dat losstaat van ons bedrijf, en wij nemen ze hier over zonder er een woord aan te veranderen. Controleer het gerust: elke beoordeling is daar met dezelfde naam, plaats en datum terug te vinden.</p></details>
+      <details><summary>Waarom staat er ook een 8 tussen?<span class="faq__tk" aria-hidden="true"></span></summary><p>Omdat wij niet alleen de hoogste cijfers laten zien. Een beoordeling met een 8 en een eerlijke opmerking over een kras zegt meer over ons dan een rij tienen zonder toelichting. Het gemiddelde over alle beoordelingen is een 9,4.</p></details>
+      <details><summary>Waar lees ik alle 779 beoordelingen?<span class="faq__tk" aria-hidden="true"></span></summary><p>Hier op deze pagina. Onder de zes beoordelingen staat de knop "Meer beoordelingen tonen"; elke klik laadt er twaalf bij, van de nieuwste tot en met de oudste uit 2013. Ze staan ook op <a href="https://www.klantenvertellen.nl/reviews/1034282/erkende_verhuizer_de_kievit_verhuizingen_top+movers" target="_blank" rel="noopener nofollow">ons profiel bij Klantenvertellen</a>, met per beoordeling de antwoorden op de hele vragenlijst.</p></details>
+      <details><summary>Kan ik na mijn verhuizing zelf een beoordeling schrijven?<span class="faq__tk" aria-hidden="true"></span></summary><p>Graag zelfs. Dat kan via hetzelfde profiel op Klantenvertellen. U beantwoordt dan de vragenlijst hierboven en uw beoordeling verschijnt daar met uw naam en woonplaats.</p></details>
+      <details><summary>Waarom staan er klanten uit Bilthoven, Asten en Hoogeveen tussen?<span class="faq__tk" aria-hidden="true"></span></summary><p>Onze thuisregio is Noord- en Midden-Limburg, maar een verhuizing begint of eindigt vaak buiten die regio. Als lid van Top Movers en als onderdeel van De Bresser verhuizen wij door het hele land, en zo nodig in twee dagen, zoals de klant uit Sevenum die naar Hoogeveen ging.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Sectiebibliotheek: split-contact-cta (../section-library/split-contact-cta), 24-09-2026. Vervangt het
+     slotblok met dezelfde kop, tekst en knoppen, plus het contactpaneel uit het patroon. -->
+<!-- De Bresser-feiten uit brandbook-debresser/bevindingen.md sectie 3 (24-09-2026); gaten staan er benoemd. -->
+<section class="sectie sb-kennis" aria-labelledby="kev-slot-kop">
+  <div class="wrap">
+    <div class="sb-kennis__kaart" data-reveal>
+      <div class="sb-kennis__wit">
+        <p class="label">Zelf ervaren?</p>
+        <h2 class="kop" id="kev-slot-kop">Vraag een offerte aan, dan hoort u snel van ons</h2>
+        <p>Telefonisch, via een videocall of met een adviseur bij u thuis: u kiest hoe wij uw verhuizing bekijken. U hoort binnen 24 uur van ons.</p>
+        <a class="btn btn--goud btn--groen" href="/#offerte"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <p class="sb-kennis__bel"><svg aria-hidden="true"><use href="#i-phone"/></svg>Liever eerst even bellen? <a href="tel:+31135282372">+31 (0)13 52 82 372</a></p>
+      </div>
+      <img class="sb-kennis__figuur" src="/assets/img/contact-bel-man-700.webp" srcset="/assets/img/contact-bel-man-700.webp 700w, /assets/img/contact-bel-man-1100.webp 1100w" sizes="260px" width="1100" height="1672" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="sb-kennis__navy">
+        <a class="sb-kennis__tel" href="tel:+31135282372"><svg aria-hidden="true"><use href="#i-phone"/></svg>+31 (0)13 52 82 372</a>
+        <ul class="sb-kennis__lijst">
+          <li><svg class="sb-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><a href="mailto:info@debresser.nl">info@debresser.nl</a></li>
+          <li><svg class="sb-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Herastraat 9<br>5047 TX Tilburg</span></li>
+          <li><svg class="sb-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="sb-gat__tekst">Openingstijden volgen</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+// "Meer beoordelingen tonen": laadt de JSON uit assets/data een keer en zet er per klik twaalf kaarten bij, letterlijk uit de bron.
+(function(){
+  var M=['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december'];
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function datum(iso){var d=iso.split('-');return parseInt(d[2],10)+' '+M[parseInt(d[1],10)-1]+' '+d[0]}
+  function sterren(c,label){var vol=Math.floor(c/2),half=c%2,s='';for(var i=0;i<5;i++){var k=i<vol?'':(half&&i===vol?' sterren__s--half':' sterren__s--leeg');s+='<span class="sterren__s'+k+'"><svg class="sterren__leeg"><use href="#i-star"/></svg><svg class="sterren__vol"><use href="#i-star"/></svg></span>'}return '<span class="sterren" role="img" aria-label="'+label+'">'+s+'</span>'}
+  function kaart(r,soort){
+    var t=r.tekst&&r.tekst.trim()?esc(r.tekst.trim()).replace(/\n+/g,'<br>'):'<span class="kev-leeg">Alleen een cijfer gegeven, zonder toelichting.</span>';
+    if(soort==='google'){var c=Math.round(parseFloat(String(r.sterren).replace(',','.'))*2);return '<article class="review"><p class="review__rate">'+sterren(c,r.sterren+' van de 5')+'<b>'+esc(r.sterren)+'/5</b></p><p class="review__tekst">'+t+'</p><p class="review__wie"><b>'+esc(r.naam)+'</b><time datetime="'+esc(r.datum)+'">'+datum(r.datum)+'</time></p></article>'}
+    return '<article class="review"><p class="review__rate">'+sterren(r.cijfer,r.cijfer+' van de 10')+'<b>'+r.cijfer+'</b></p>'+(r.titel?'<h3>'+esc(r.titel)+'</h3>':'')+'<p class="review__tekst">'+t+'</p><p class="review__wie"><b>'+esc(r.naam)+(r.plaats?', '+esc(r.plaats):'')+'</b><time datetime="'+esc(r.datum)+'">'+datum(r.datum)+'</time></p></article>';
+  }
+  document.querySelectorAll('[data-meer]').forEach(function(knop){
+    var doel=document.getElementById(knop.getAttribute('data-meer')),bron=knop.getAttribute('data-bron'),soort=knop.getAttribute('data-soort'),stap=parseInt(knop.getAttribute('data-stap'),10)||12;
+    var getoond=(knop.getAttribute('data-getoond')||'').split(','),lijst=null,i=0,label=knop.textContent;
+    function toon(){
+      var n=0,rij=document.createElement('div');rij.className='rgrid kev-3';
+      while(i<lijst.length&&n<stap){var r=lijst[i++];if(getoond.indexOf(r.id)>-1)continue;rij.insertAdjacentHTML('beforeend',kaart(r,soort));n++}
+      if(n){doel.appendChild(rij);doel.hidden=false}
+      if(i>=lijst.length){var p=document.createElement('p');p.className='kev-klaar';p.textContent='Dat waren ze allemaal, tot en met de oudste van '+datum(lijst[lijst.length-1].datum)+'.';doel.appendChild(p);knop.parentNode.hidden=true}
+    }
+    knop.addEventListener('click',function(){
+      if(lijst){toon();return}
+      knop.disabled=true;knop.textContent='Laden...';
+      fetch(bron).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(d){lijst=d.reviews||[];knop.disabled=false;knop.textContent=label;toon()})
+        .catch(function(){knop.disabled=false;knop.textContent='Laden mislukt, probeer het nog eens'});
+    });
+  });
+})();
+</script>

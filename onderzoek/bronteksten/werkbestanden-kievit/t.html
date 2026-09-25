@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+
+<html lang="">
+	<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.3",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseenter","mouseout","mouseleave","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input","visibilitychange"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),this.F("domReady"),await this.T(),await this.j(),await this.I(),this.F("windowLoad"),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise((t=>setTimeout(t,500-Date.now()+this.lastTouchEnd))),this.H(),this.F("all"),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))}),{isRocket:!0})}o(){window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0}),{isRocket:!0}),window.addEventListener("pagehide",(()=>{this.onFirstUserAction=null}),{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",(function i(o){Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1})),event.preventDefault(),window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}))}),{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),this.savedUserEvents.length>0&&(t.stopPropagation(),t.stopImmediatePropagation()),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach((t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})))}U(){this.userEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0}))),this.savedUserEvents.forEach((t=>{t.target.dispatchEvent(new window[t.constructor.name](t.type,t))}))}m(){this.eventsMutationObserver=new MutationObserver((t=>{const e="return false";for(const i of t){if("attributes"===i.type){const t=i.target.getAttribute(i.attributeName);t&&t!==e&&(i.target.setAttribute("data-rocket-"+i.attributeName,t),i.target["rocket"+i.attributeName]=new Function("event",t),i.target.setAttribute(i.attributeName,e))}"childList"===i.type&&i.addedNodes.forEach((t=>{if(t.nodeType===Node.ELEMENT_NODE)for(const i of t.attributes)this.attributeEvents.includes(i.name)&&i.value&&""!==i.value&&(t.setAttribute("data-rocket-"+i.name,i.value),t["rocket"+i.name]=new Function("event",i.value),t.setAttribute(i.name,e))}))}})),this.eventsMutationObserver.observe(document,{subtree:!0,childList:!0,attributeFilter:this.attributeEvents})}H(){this.eventsMutationObserver.disconnect(),this.attributeEvents.forEach((t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach((e=>{e.setAttribute(t,e.getAttribute("data-rocket-"+t)),e.removeAttribute("data-rocket-"+t)}))}))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o})},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}F(t){"all"===t&&(EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener),this.savedEventListeners=this.savedEventListeners.filter((e=>{let i=e.type,o=e.target||window;return"domReady"===t&&"DOMContentLoaded"!==i&&"readystatechange"!==i||("windowLoad"===t&&"load"!==i&&"readystatechange"!==i&&"pageshow"!==i||(this.B(i,o)&&(i="rocket-"+i),e.remove?o.removeEventListener(i,e.func,e.options):o.addEventListener(i,e.func,e.options),!1))}))}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,(()=>{e[t].forEach((t=>t()))}),{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout((()=>i.bind(document)(o))):i.bind(document)(o)}return t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise((t=>{this.userActionTriggered?t():this.onFirstUserAction=t}))}async L(){return new Promise((t=>{document.addEventListener("DOMContentLoaded",(()=>{this.realDomReadyFired=!0,t()}),{isRocket:!0})}))}async I(){return this.realWindowLoadedFired?Promise.resolve():new Promise((t=>{window.addEventListener("load",t,{isRocket:!0})}))}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver((t=>{for(const e of t)e.addedNodes.forEach((t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise((e=>{const i=()=>{const i=this.pendingScripts.findIndex((e=>e.script===t));i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)}))})}))})),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async j(){await this.J(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.j()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.N(t,"preconnect")}async $(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",(()=>{i.setAttribute("data-rocket-status","failed-network"),e()}),{isRocket:!0}),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.$(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())}),{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.$(e),this.C(t)):Promise.resolve()}O(){this.N([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}N(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach((t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}})),document.head.appendChild(o)}W(){this.trash.forEach((t=>t.remove()))}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async G(){Date.now()-this.lastBreath>45&&(await this.J(),this.lastBreath=Date.now())}async J(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+		
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://verhuis-gids.nl/xmlrpc.php" />
+
+<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>ᐅ Jac. de Kievit en Zn. BV uit Venlo ⇒ Verhuisspecialist [Bedrijfsinfo]!</title><link rel="preload" data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Inter%3A300%2C400%2C600%2C700%7CSource%20Serif%20Pro%3A400%2C600%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A300%2C400%2C600%2C700%7CSource%20Serif%20Pro%3A400%2C600%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A300%2C400%2C600%2C700%7CSource%20Serif%20Pro%3A400%2C600%2C700&#038;display=swap" /></noscript>
+	<meta name="description" content="Jac. de Kievit en Zn. BV in Venlo, Voltastraat 27 5928PC. ✅ Venlo, Limburg. ➥ KvK-nr. 12015298 ☎ Tel.nr 077-3232100 ✉ Contact!" />
+	<link rel="canonical" href="https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/" />
+	<meta property="og:locale" content="nl_NL" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="ᐅ Jac. de Kievit en Zn. BV uit Venlo ⇒ Verhuisspecialist [Bedrijfsinfo]!" />
+	<meta property="og:description" content="Jac. de Kievit en Zn. BV in Venlo, Voltastraat 27 5928PC. ✅ Venlo, Limburg. ➥ KvK-nr. 12015298 ☎ Tel.nr 077-3232100 ✉ Contact!" />
+	<meta property="og:url" content="https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/" />
+	<meta property="og:site_name" content="Verhuis Gids" />
+	<meta property="article:modified_time" content="2025-10-07T12:24:15+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/","url":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/","name":"ᐅ Jac. de Kievit en Zn. BV uit Venlo ⇒ Verhuisspecialist [Bedrijfsinfo]!","isPartOf":{"@id":"https:\/\/verhuis-gids.nl\/#website"},"datePublished":"2021-10-26T06:24:18+00:00","dateModified":"2025-10-07T12:24:15+00:00","description":"Jac. de Kievit en Zn. BV in Venlo, Voltastraat 27 5928PC. ✅ Venlo, Limburg. ➥ KvK-nr. 12015298 ☎ Tel.nr 077-3232100 ✉ Contact!","breadcrumb":{"@id":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/#breadcrumb"},"inLanguage":"nl-NL","potentialAction":[{"@type":"ReadAction","target":["https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/verhuis-gids.nl\/"},{"@type":"ListItem","position":2,"name":"Verhuisbedrijven in Venlo","item":"https:\/\/verhuis-gids.nl\/venlo\/"},{"@type":"ListItem","position":3,"name":"Jac. de Kievit en Zn. BV"}]},{"@type":"WebSite","@id":"https:\/\/verhuis-gids.nl\/#website","url":"https:\/\/verhuis-gids.nl\/","name":"Verhuis Gids","description":"Verhuis-gids.nl | Alle verhuisbedrijven in 1 overzicht!","publisher":{"@id":"https:\/\/verhuis-gids.nl\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/verhuis-gids.nl\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"nl-NL"},{"@type":"Organization","@id":"https:\/\/verhuis-gids.nl\/#organization","name":"Verhuis Gids","url":"https:\/\/verhuis-gids.nl\/","logo":{"@type":"ImageObject","inLanguage":"nl-NL","@id":"https:\/\/verhuis-gids.nl\/#\/schema\/logo\/image\/","url":"https:\/\/verhuis-gids.nl\/wp-content\/uploads\/cropped-Verhuisgids-x-avato-logo.png","contentUrl":"https:\/\/verhuis-gids.nl\/wp-content\/uploads\/cropped-Verhuisgids-x-avato-logo.png","width":300,"height":84,"caption":"Verhuis Gids"},"image":{"@id":"https:\/\/verhuis-gids.nl\/#\/schema\/logo\/image\/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Verhuis Gids &raquo; Jac. de Kievit en Zn. BV reacties feed" href="https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://verhuis-gids.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fverhuis-gids.nl%2Fvenlo%2Fjac-de-kievit-en-zn-bv%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://verhuis-gids.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fverhuis-gids.nl%2Fvenlo%2Fjac-de-kievit-en-zn-bv%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://verhuis-gids.nl/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-columns-inline-css">
+.wp-block-columns{box-sizing:border-box;display:flex;flex-wrap:wrap!important}@media (min-width:782px){.wp-block-columns{flex-wrap:nowrap!important}}.wp-block-columns{align-items:normal!important}.wp-block-columns.are-vertically-aligned-top{align-items:flex-start}.wp-block-columns.are-vertically-aligned-center{align-items:center}.wp-block-columns.are-vertically-aligned-bottom{align-items:flex-end}@media (max-width:781px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:100%!important}}@media (min-width:782px){.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis]{flex-grow:0}}.wp-block-columns.is-not-stacked-on-mobile{flex-wrap:nowrap!important}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column{flex-basis:0;flex-grow:1}.wp-block-columns.is-not-stacked-on-mobile>.wp-block-column[style*=flex-basis]{flex-grow:0}:where(.wp-block-columns){margin-bottom:1.75em}:where(.wp-block-columns.has-background){padding:1.25em 2.375em}.wp-block-column{flex-grow:1;min-width:0;overflow-wrap:break-word;word-break:break-word}.wp-block-column.is-vertically-aligned-top{align-self:flex-start}.wp-block-column.is-vertically-aligned-center{align-self:center}.wp-block-column.is-vertically-aligned-bottom{align-self:flex-end}.wp-block-column.is-vertically-aligned-stretch{align-self:stretch}.wp-block-column.is-vertically-aligned-bottom,.wp-block-column.is-vertically-aligned-center,.wp-block-column.is-vertically-aligned-top{width:100%}
+/*# sourceURL=https://verhuis-gids.nl/wp-includes/blocks/columns/style.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=https://verhuis-gids.nl/wp-includes/blocks/group/style.min.css */
+</style>
+
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--aspect-ratio--skyline: 32/9;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--brand-a: #007bff;--wp--preset--color--brand-b: #28a745;--wp--preset--color--brand-c: #1f1e1e;--wp--preset--color--brand-d: #ffba08;--wp--preset--color--base: #222222;--wp--preset--color--base-2: #555;--wp--preset--color--gray-1: #999999;--wp--preset--color--gray-2: #dddddd;--wp--preset--color--gray-3: #f6f6f6;--wp--preset--color--transparent: rgba(0, 0, 0, 0);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--gradient--black-transparent: linear-gradient(to right, #000000 10%, transparent);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--xs-3: 13px;--wp--preset--font-size--xs-2: 14px;--wp--preset--font-size--xs-1: 15px;--wp--preset--font-size--xs: 16px;--wp--preset--font-size--sm-1: 17px;--wp--preset--font-size--sm: 18px;--wp--preset--font-size--md: 20px;--wp--preset--font-size--lg: 24px;--wp--preset--font-size--xl: 32px;--wp--preset--font-size--xxl: 40px;--wp--preset--font-size--xxxl: 48px;--wp--preset--font-size--xxxxl: 64px;--wp--preset--font-family--open-sans: "Open Sans", sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--spacing--1: 4px;--wp--preset--spacing--2: 8px;--wp--preset--spacing--3: 12px;--wp--preset--spacing--4: 16px;--wp--preset--spacing--5: 24px;--wp--preset--spacing--6: 32px;--wp--preset--spacing--7: 40px;--wp--preset--spacing--8: 48px;--wp--preset--spacing--9: 64px;--wp--preset--spacing--10: 80px;--wp--preset--spacing--11: 120px;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);--wp--preset--shadow--xs: 0 0 16px rgba(0, 0, 0, .16);}:root { --wp--style--global--content-size: 890px;--wp--style--global--wide-size: 1216px; }:where(body) { margin: 0; }.wp-site-blocks { padding-top: var(--wp--style--root--padding-top); padding-bottom: var(--wp--style--root--padding-bottom); }.has-global-padding { padding-right: var(--wp--style--root--padding-right); padding-left: var(--wp--style--root--padding-left); }.has-global-padding > .alignfull { margin-right: calc(var(--wp--style--root--padding-right) * -1); margin-left: calc(var(--wp--style--root--padding-left) * -1); }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) { padding-right: 0; padding-left: 0; }.has-global-padding :where(:not(.alignfull.is-layout-flow) > .has-global-padding:not(.wp-block-block, .alignfull)) > .alignfull { margin-left: 0; margin-right: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{color: var(--wp--preset--color--base);font-family: var(--wp--preset--font-family--open-sans);font-size: 1rem;line-height: 1.5;margin-top: 0;margin-bottom: 0;--wp--style--root--padding-top: 0px;--wp--style--root--padding-right: 24px;--wp--style--root--padding-bottom: 0px;--wp--style--root--padding-left: 24px;}a:where(:not(.wp-element-button)){color: var(--wp--preset--color--brand-a);text-decoration: none;}h1, h2, h3, h4, h5, h6{font-weight: 400;line-height: 1.2;}h1{font-size: var(--wp--preset--font-size--xxl);}h2{font-size: var(--wp--preset--font-size--xl);}h3{font-size: var(--wp--preset--font-size--lg);}h4{font-size: var(--wp--preset--font-size--md);}h5{font-size: var(--wp--preset--font-size--sm);}h6{font-size: var(--wp--preset--font-size--xs);}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-radius: 8px;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: 400;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-brand-a-color{color: var(--wp--preset--color--brand-a) !important;}.has-brand-b-color{color: var(--wp--preset--color--brand-b) !important;}.has-brand-c-color{color: var(--wp--preset--color--brand-c) !important;}.has-brand-d-color{color: var(--wp--preset--color--brand-d) !important;}.has-base-color{color: var(--wp--preset--color--base) !important;}.has-base-2-color{color: var(--wp--preset--color--base-2) !important;}.has-gray-1-color{color: var(--wp--preset--color--gray-1) !important;}.has-gray-2-color{color: var(--wp--preset--color--gray-2) !important;}.has-gray-3-color{color: var(--wp--preset--color--gray-3) !important;}.has-transparent-color{color: var(--wp--preset--color--transparent) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-brand-a-background-color{background-color: var(--wp--preset--color--brand-a) !important;}.has-brand-b-background-color{background-color: var(--wp--preset--color--brand-b) !important;}.has-brand-c-background-color{background-color: var(--wp--preset--color--brand-c) !important;}.has-brand-d-background-color{background-color: var(--wp--preset--color--brand-d) !important;}.has-base-background-color{background-color: var(--wp--preset--color--base) !important;}.has-base-2-background-color{background-color: var(--wp--preset--color--base-2) !important;}.has-gray-1-background-color{background-color: var(--wp--preset--color--gray-1) !important;}.has-gray-2-background-color{background-color: var(--wp--preset--color--gray-2) !important;}.has-gray-3-background-color{background-color: var(--wp--preset--color--gray-3) !important;}.has-transparent-background-color{background-color: var(--wp--preset--color--transparent) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-brand-a-border-color{border-color: var(--wp--preset--color--brand-a) !important;}.has-brand-b-border-color{border-color: var(--wp--preset--color--brand-b) !important;}.has-brand-c-border-color{border-color: var(--wp--preset--color--brand-c) !important;}.has-brand-d-border-color{border-color: var(--wp--preset--color--brand-d) !important;}.has-base-border-color{border-color: var(--wp--preset--color--base) !important;}.has-base-2-border-color{border-color: var(--wp--preset--color--base-2) !important;}.has-gray-1-border-color{border-color: var(--wp--preset--color--gray-1) !important;}.has-gray-2-border-color{border-color: var(--wp--preset--color--gray-2) !important;}.has-gray-3-border-color{border-color: var(--wp--preset--color--gray-3) !important;}.has-transparent-border-color{border-color: var(--wp--preset--color--transparent) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-black-transparent-gradient-background{background: var(--wp--preset--gradient--black-transparent) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-xs-3-font-size{font-size: var(--wp--preset--font-size--xs-3) !important;}.has-xs-2-font-size{font-size: var(--wp--preset--font-size--xs-2) !important;}.has-xs-1-font-size{font-size: var(--wp--preset--font-size--xs-1) !important;}.has-xs-font-size{font-size: var(--wp--preset--font-size--xs) !important;}.has-sm-1-font-size{font-size: var(--wp--preset--font-size--sm-1) !important;}.has-sm-font-size{font-size: var(--wp--preset--font-size--sm) !important;}.has-md-font-size{font-size: var(--wp--preset--font-size--md) !important;}.has-lg-font-size{font-size: var(--wp--preset--font-size--lg) !important;}.has-xl-font-size{font-size: var(--wp--preset--font-size--xl) !important;}.has-xxl-font-size{font-size: var(--wp--preset--font-size--xxl) !important;}.has-xxxl-font-size{font-size: var(--wp--preset--font-size--xxxl) !important;}.has-xxxxl-font-size{font-size: var(--wp--preset--font-size--xxxxl) !important;}.has-open-sans-font-family{font-family: var(--wp--preset--font-family--open-sans) !important;}
+:root :where(.wp-block-columns-is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.wp-block-columns-is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.wp-block-columns-is-layout-flow) > *{margin-block-start: 32px;margin-block-end: 0;}:root :where(.wp-block-columns-is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.wp-block-columns-is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.wp-block-columns-is-layout-constrained) > *{margin-block-start: 32px;margin-block-end: 0;}:root :where(.wp-block-columns-is-layout-flex){gap: 32px;}:root :where(.wp-block-columns-is-layout-grid){gap: 32px;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link data-minify="1" rel='stylesheet' id='fontawesome-css' href='https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/plugins/dm-gravityforms.1.0.20-AkfrtA/assets/fontawesome/css/font-awesome.min.css?ver=1773821382' media='all' />
+<link data-minify="1" rel='stylesheet' id='dm-gravityforms-style-css' href='https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/plugins/dm-gravityforms.1.0.20-AkfrtA/css/style.css?ver=1773821382' media='all' />
+<link data-minify="1" rel='stylesheet' id='pronamic-maps-address-autocomplete-css' href='https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/plugins/pronamic-maps/css/pronamic-maps.css?ver=1773821382' media='all' />
+<link rel='stylesheet' id='cmplz-general-css' href='https://verhuis-gids.nl/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=1786695811' media='all' />
+<link rel='stylesheet' id='dmb-css' href='https://verhuis-gids.nl/wp-content/themes/dmb-2/css/style.min.css?ver=a5fbf04a' media='all' />
+<link rel='stylesheet' id='dmb-child-css' href='https://verhuis-gids.nl/wp-content/themes/dmb-2-child/css/style.css?ver=1.0.0' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='leaflet-css' href='https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/themes/dmb-2/assets/leaflet/leaflet.css?ver=1773821383' media='all' />
+<link data-minify="1" rel='stylesheet' id='cmplz-banner-1-optin-css' href='https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1785479028' media='all' />
+<script type="rocketlazyloadscript" async data-wp-strategy="async" id="monsterinsights-frontend-script-js" data-rocket-src="https://verhuis-gids.nl/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=11.1.2"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/verhuis-gids.nl","hash_tracking":"false","v4_id":"G-MT2L7QCMWE"};/* ]]> */
+</script>
+<script id="jquery-core-js" src="https://verhuis-gids.nl/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://verhuis-gids.nl/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://verhuis-gids.nl/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://verhuis-gids.nl/wp-json/wp/v2/pages/4554" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://verhuis-gids.nl/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://verhuis-gids.nl/?p=4554' />
+		<style type="text/css" media="screen">
+			
+				body .gform_wrapper .gform_button,
+				body .gform_wrapper .gform-button,
+				body .gform_wrapper .gform_page_footer .gform_next_button {
+					background-color: #37a000 !important;
+					background-image: none !important;
+				}
+
+				body .gform_wrapper .gf_page_steps .gf_step.gf_step_active .gf_step_number {
+					border-color: #37a000 !important;
+				}
+
+				body .dm-autocomplete-search__btn {
+					background-color: #37a000 !important;
+					border-color: #37a000 !important;
+				}
+
+			
+				
+			
+				body .gform_wrapper .gform_button:hover,
+				body .gform_wrapper .gform_button:focus,
+				body .gform_wrapper .gform_button:active,
+				body .gform_wrapper .gform-button:hover,
+				body .gform_wrapper .gform-button:focus,
+				body .gform_wrapper .gform-button:active,
+				body .gform_wrapper .gform_page_footer .gform_next_button:hover,
+				body .gform_wrapper .gform_page_footer .gform_next_button:focus,
+				body .gform_wrapper .gform_page_footer .gform_next_button:active {
+					background-color: #349103 !important;
+					background-image: none !important;
+				}
+
+				body .dm-autocomplete-search__btn:hover,
+				body .dm-autocomplete-search__btn:focus,
+				body .dm-autocomplete-search__btn:active {
+					background-color: #349103 !important;
+					border-color: #349103 !important;
+				}
+
+			
+					</style>
+
+					<style>.cmplz-hidden {
+					display: none !important;
+				}</style>
+				<style type="text/css" media="screen">
+	
+		body {
+			font-family: Inter;
+			font-weight: 300;
+		}
+
+	
+	
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .pt-sticky-cta__title {
+			font-family: Source Serif Pro;
+			font-weight: 700;
+		}
+
+		.pt-article-title {
+			font-family: Source Serif Pro;
+			font-weight: 700;
+		}
+
+	
+	
+		body {
+			--first-color: #006fd1;
+		}
+
+		.pt-boxed .pt-site-wrapper:after,
+		.pt-site-footer .pt-footer-widgets {
+			background-color: #006fd1;
+		}
+
+		.hentry .pt-company:hover {
+			border-color: #006fd1;
+		}
+
+		.pt-header-info	.pt-header-info-icon {
+			color: #006fd1;
+		}
+
+		a,
+		.pt-c-first,
+		.pt-rating-summary .pt-rating-summary__text {
+			color: #006fd1;
+		}
+
+		.btn.btn-default {
+			border-color: #006fd1;
+			color: #006fd1;
+		}
+
+		.btn.btn-default:hover,
+		.btn.btn-default:focus {
+			background-color: #006fd1;
+			border-color: #006fd1;
+		}
+
+		.btn.btn-primary {
+			background-color: #006fd1;
+			border-color: #006fd1;
+		}
+
+		.btn.btn-primary:hover,
+		.btn.btn-primary:focus {
+			background-color: #005bbd;
+			border-color: #005bbd;
+		}
+
+		.btn.pt-btn-inversed:hover,
+		.btn.pt-btn-inversed:focus,
+		.btn.pt-btn-inversed:active {
+			color: #006fd1;
+		}
+
+		.pt-bg-c-first {
+			background-color: #006fd1;
+		}
+
+		.megadropdown .pt-mega-sub-menu {
+			border-top-color: #006fd1;
+		}
+
+		.pt-primary-nav > div > ul > li.pt-has-button > a {
+			background-color: #006fd1;
+			border-color: #006fd1;
+		}
+
+		.pt-primary-nav .megadropdown .pt-mega-sub-menu .pt-sub-menu > li.pt-has-button a {
+			background-color: #006fd1;
+			border-color: #006fd1;
+		}
+
+		.pt-primary-nav .megadropdown .pt-mega-sub-menu a.pt-has-button {
+			background-color: #006fd1;
+			border-color: #006fd1;
+		}
+
+		.pt-sidebar .menu-item-has-children i {
+			color: #006fd1;
+		}
+
+		.avarage-price-container,
+		.fa-arrow-up,
+		.fa-arrow-down {
+			color: #006fd1;
+		}
+
+	
+	
+		.btn.pt-btn-secondary,
+		body .gform_wrapper .gform_next_button,
+		body .gform_wrapper .gform_page_footer .gform_next_button,
+		body .gform_wrapper .gform_page_footer input[type=submit] {
+			background-color: #37a000 !important;
+			border-color: #37a000 !important;
+		}
+
+		.btn.pt-btn-secondary:hover,
+		.btn.pt-btn-secondary:focus,
+		body .gform_wrapper .gform_next_button:hover,
+		body .gform_wrapper .gform_next_button:focus,
+		body .gform_wrapper .gform_page_footer input[type=submit]:hover,
+		body .gform_wrapper .gform_page_footer input[type=submit]:focus {
+			background-color: #238c00 !important;
+			border-color: #238c00 !important;
+		}
+
+		.pt-c-second {
+			color: #37a000;
+		}
+
+		.pt-bg-c-second,
+		.pt-icon {
+			background-color: #37a000;
+		}
+
+	
+	
+		.pt-c-third {
+			color: #006fd1;
+		}
+
+		.pt-bg-c-third {
+			background-color: #006fd1;
+		}
+
+		body .gform_wrapper:not(.pt-alternative_wrapper) .gf_page_steps .gf_step:not(.gf_step_active) {
+			background-color: #006fd1;
+		}
+
+		body .gform_wrapper:not(.pt-alternative_wrapper) .gf_page_steps .gf_step:not(.gf_step_active):after {
+			border-left-color: #006fd1;
+		}
+
+		body .gform_wrapper:not(.pt-alternative_wrapper) .gf_page_steps .gf_step .gf_step_number {
+			color: #006fd1;
+		}
+
+	
+	
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_completed .gf_step_number,
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_active .gf_step_number {
+			border-color: #37a000 !important;
+		}
+
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_completed .gf_step_number::after,
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_completed::after,
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_completed .gf_step_label,
+		body .pt-alternative_wrapper .gf_page_steps .gf_step_active .gf_step_label {
+			color: #37a000 !important;
+		}
+
+	
+	
+	
+	</style>
+		<script type="application/ld+json">
+			{"@context":"https://schema.org","@type":["LocalBusiness"],"@id":"https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/#localbusiness","name":"Jac. de Kievit en Zn. BV","url":"https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/","sameAs":["http://www.de-kievit.nl"],"foundingDate":"10/19/1973","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"08:30","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:30","closes":"17:30"}],"address":{"@type":"PostalAddress","streetAddress":"Voltastraat 27 ","postalCode":"5928PC","addressLocality":"Venlo","addressCountry":"NL"},"geo":{"@type":"GeoCoordinates","longitude":6.137315,"latitude":51.381169},"mainEntityOfPage":{"@type":"WebPage","@id":"https://verhuis-gids.nl/venlo/jac-de-kievit-en-zn-bv/"},"telephone":"077-3232100","email":"info@de-kievit.nl","image":{"@type":"ImageObject","url":"https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-41-720x480.jpg","width":720,"height":480}}		</script>
+
+		<style class="wp-fonts-local">
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:300;font-display:fallback;src:url('https://verhuis-gids.nl/wp-content/themes/dmb-2/fonts/OpenSans-Light.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:400;font-display:fallback;src:url('https://verhuis-gids.nl/wp-content/themes/dmb-2/fonts/OpenSans-Regular.woff2') format('woff2');font-stretch:normal;}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:700;font-display:fallback;src:url('https://verhuis-gids.nl/wp-content/themes/dmb-2/fonts/OpenSans-Bold.woff2') format('woff2');font-stretch:normal;}
+</style>
+<link rel="icon" href="https://verhuis-gids.nl/wp-content/uploads/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://verhuis-gids.nl/wp-content/uploads/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://verhuis-gids.nl/wp-content/uploads/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://verhuis-gids.nl/wp-content/uploads/cropped-favicon-270x270.png" />
+<style id="wp-custom-css">
+.input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
+	height: 58px;}
+
+/*Opmaak header titel*/
+p.h1 {
+font-size: 48px;
+line-height: 42px;
+font-weight: 700;
+letter-spacing: 0px;
+font-family: "Roboto", Arial, Tahoma, sans-serif;
+color: #fff;
+}
+
+/* Container holding the image and the text */
+.pakket {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 25px;
+  left: 50px;
+	color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 25px;
+  right: 50px;
+	color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Boventekst */
+.boventekst {
+  position: absolute;
+  top: px;
+  left: 50%;
+  transform: translate(-50%, -550%);
+	color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+/* Middeltekst */
+.middeltekst {
+  position: absolute;
+  top: px;
+  left: 50%;
+  transform: translate(-50%, -250%);
+	color: white;
+  text-shadow: 2px 2px 4px #000000;
+	font-size: 22px;
+	font-weight: 500
+}
+
+/* Prijzenbox */
+
+/* De kolommen */
+.kolommen {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* De 'lijst' stijl */
+.prijs {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Schaduw bij hover */
+.prijs:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Header van de kolom */
+.prijs .header {
+  background-color: #0859a6;
+  color: white;
+  font-size: 25px;
+}
+
+.prijs .header2 {
+  background-color: #35a608;
+  color: white;
+  font-size: 25px;
+}
+
+
+/* List items */
+.prijs li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Vakken andere kleur */
+.prijs .grijs {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* De knop */
+.knop {
+  background-color: #35a608;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.knop2 {
+  background-color: #0859a6;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Voor kleine schermen */
+@media only screen and (max-width: 600px) {
+  .kolommen {
+    width: 100%;
+  }
+}
+/* */ 
+
+
+/*COLORBOXES*/
+.colorbox {
+background: #cef2ce;
+padding: 20px 20px 20px 20px;
+border-radius: 5px;
+margin-bottom: 30px;
+margin-top: 10px;
+float:left;
+width:100%;
+}
+
+.colorbox.red
+{
+background:#f7e4e5;
+}
+
+.colorTextbox {
+float:left;
+width:85%;
+}
+
+.colorboxIcon {
+margin-right: 20px;
+float:left;
+}
+
+.color-accent {
+    color: #155765 !important;
+}
+
+p.h2 {
+font-family: Roboto;
+font-weight: 700;
+font-size: 26px;
+	text-align: center;
+}
+
+label 
+ {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 300!important;
+}
+
+
+.pt-box a,
+.navMenu li a,
+.content a.btn,
+.entry-content a.btn
+{
+text-decoration: none;
+}
+
+p.checkright {
+text-align: right;
+	margin-right:28px;
+}
+
+/* mobile devices (phones, 640px and down) */
+@media screen and (max-width: 640px) {	p.checkright {
+text-align: center;
+		margin-right: 0px;
+	}
+}
+
+
+.pt-quote-request .pt-request__subtitle i {
+    margin-right: 8px;
+    color: #1abd5e;
+}
+
+.pt-container-compact {
+    max-width: 1170px;
+}
+
+.video { 
+    max-width: 560px; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sg-popup-builder-content {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: rgb(204, 204, 204) 0px 10px 10px 0px;
+    overflow: auto;
+    padding: 20px 20px 20px 20px;
+}
+
+.content { 
+    max-width: 890px; 
+    margin: auto;
+}
+</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<style id="core-block-supports-inline-css">
+.wp-elements-5340c78f88b275584519bfdf98c70e63 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--gray-1);}.wp-container-core-column-is-layout-a7dce961 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-column-is-layout-a7dce961 > * + *{margin-block-start:0;margin-block-end:0;}.wp-container-core-columns-is-layout-5c385c3e{flex-wrap:nowrap;gap:32px var(--wp--preset--spacing--3);}.wp-container-core-group-is-layout-54d22900 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left:0 !important;}.wp-elements-9b68c4bf5df79269b50bf777fc9b82fe a:where(:not(.wp-element-button)){color:var(--wp--preset--color--gray-1);}.wp-container-core-group-is-layout-8110c6c7 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left:0 !important;}.wp-container-core-group-is-layout-8110c6c7 > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-8110c6c7 > * + *{margin-block-start:0;margin-block-end:0;}.wp-elements-442f6b0f221b86ed1984554db20fe9ae a:where(:not(.wp-element-button)){color:var(--wp--preset--color--brand-b);}.wp-elements-86b1c359500c3a20170f1cf0e32cad86 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--base-2);}.wp-container-core-group-is-layout-7512a68b{flex-wrap:nowrap;gap:var(--wp--preset--spacing--3);}.wp-container-core-group-is-layout-cded6238{gap:var(--wp--preset--spacing--9);}.wp-container-core-group-is-layout-f9ce6fcf > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left:0 !important;}.wp-container-core-group-is-layout-1ed6ec96{flex-wrap:nowrap;gap:var(--wp--preset--spacing--2);justify-content:flex-end;}.wp-container-core-group-is-layout-2cb2f6db > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left:0 !important;}.wp-container-core-group-is-layout-2cb2f6db > *{margin-block-start:0;margin-block-end:0;}.wp-container-core-group-is-layout-2cb2f6db > * + *{margin-block-start:var(--wp--preset--spacing--4);margin-block-end:0;}.wp-elements-a272fbf20f792c771662a4e7038fbe99 a:where(:not(.wp-element-button)){color:var(--wp--preset--color--gray-1);}.wp-container-core-group-is-layout-03dc6d34{flex-wrap:nowrap;gap:var(--wp--preset--spacing--3);justify-content:center;}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+<meta name="generator" content="WP Rocket 3.18.3" data-wpr-features="wpr_delay_js wpr_minify_js wpr_lazyload_images wpr_image_dimensions wpr_minify_css wpr_desktop" /></head>
+
+	<body data-rsssl=1 class="wp-singular page-template page-template-page-templates page-template-company page-template-page-templatescompany-php page page-id-4554 page-child parent-pageid-171 wp-custom-logo wp-theme-dmb-2 wp-child-theme-dmb-2-child no-js">
+		<div data-rocket-location-hash="6b88698170b9896e9b819dff0780111f" class="pt-off-canvas">
+	<div data-rocket-location-hash="72d7be6e13309c7a12d299037d75f8a7" class="pt-off-canvas-header clearfix">
+		<button type="button" class="close" aria-label="Sluit"><span aria-hidden="true">×</span></button>
+	</div>
+</div>
+
+
+<div data-rocket-location-hash="0d8c633f9d52ae68725abf43d8fba57c" class="pt-site-wrapper">
+		<div data-rocket-location-hash="3cbe3c112ff79a570dde9f23fead932b" class="">
+		
+			<header data-rocket-location-hash="efe7b7c6e8ce6d84587b3e7206281ded" class="pt-site-header">
+				<div data-rocket-location-hash="04b24f2a01e05ca636ff58e62299aa1e" class="container">
+					<div class="pt-head-row">
+						<div class="pt-head-col-a">
+							
+<div class="pt-site-title">
+	<a href="https://verhuis-gids.nl/" title="Verhuis Gids" rel="home">
+					<picture>
+<source type="image/webp" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/cropped-Verhuisgids-x-avato-logo.png.webp"/>
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/cropped-Verhuisgids-x-avato-logo.png"/><noscript><img src="https://verhuis-gids.nl/wp-content/uploads/cropped-Verhuisgids-x-avato-logo.png" alt=""/></noscript>
+</picture>
+
+
+			</a>
+</div>
+
+							<button type="button" class="navbar-toggle">
+								<span class="icon-bars">
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</span>
+							</button>
+						</div>
+
+						
+							<div class="pt-primary-nav-wrapper pt-primary-nav--inside">
+								<nav class="pt-primary-nav" role="navigation">
+									<div class="menu-primair-menu-container"><ul id="menu-primair-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children pt-icon-left"><a href="https://verhuis-gids.nl/">Home</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page pt-icon-left"><a href="https://verhuis-gids.nl/wie-zijn-wij/">Wie zijn wij</a></li>
+</ul>
+</li>
+<li class="megadropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children pt-icon-left"><a href="https://verhuis-gids.nl/gids/">Verhuisgids</a>
+<div class="pt-mega-sub-menu pt-full-width"><div data-rocket-location-hash="f117ee89930d3a249ddbfc02370ddefa" class="container"><div class="pt-mega-sub-menu__row">
+	<div class="pt-mega-sub-menu__col"><a href="https://verhuis-gids.nl/kosten-verhuisbedrijf/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children pt-icon-left">Kosten verhuisbedrijf</a>
+	<ul class="pt-sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuiskosten/">Verhuiskosten</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/goedkoop-verhuizen/">Goedkoop verhuizen</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuiskostenvergoeding-2021/">Verhuiskostenvergoeding</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuiskosten-aftrekbaar/">Verhuiskosten aftrekbaar</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page pt-icon-left"><a href="https://verhuis-gids.nl/verhuislift-prijs/">Verhuislift prijs</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuisofferte/">Verhuisofferte</a></li>
+	</ul>
+</div>
+	<div class="pt-mega-sub-menu__col"><a href="https://verhuis-gids.nl/verhuizen/" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children pt-icon-left">Verhuizen</a>
+	<ul class="pt-sub-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuizers/">Verhuizers</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/piano-verhuizen/">Piano verhuizen</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="https://verhuis-gids.nl/verhuisverzekering/">Verhuisverzekering</a></li>
+	</ul>
+</div>
+</div></div></div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children pt-icon-left"><a href="https://verhuis-gids.nl/locaties/">Locaties</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/noord-holland/">Noord-Holland</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/zuid-holland/">Zuid-Holland</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/noord-brabant/">Noord-Brabant</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/gelderland/">Gelderland</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/utrecht/">Utrecht</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/limburg/">Limburg</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/zeeland/">Zeeland</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/overijssel/">Overijssel</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/groningen/">Groningen</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/friesland/">Friesland</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/drenthe/">Drenthe</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom pt-icon-left"><a href="/flevoland/">Flevoland</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom pt-has-button pt-icon-left"><a href="https://verhuis-gids.nl/offerte-aanvragen/">Gratis offertes</a></li>
+</ul></div>								</nav>
+							</div>
+
+											</div>
+				</div>
+
+							</header>
+
+		
+<div data-rocket-location-hash="7c67eadbc38538c70d4525dbebc220a4" class="wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--11)">
+<div class="wp-block-group alignwide is-layout-flow wp-block-group-is-layout-flow">
+<div class="wp-block-group has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-54d22900 wp-block-group-is-layout-constrained">
+<div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-5c385c3e wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:40px"><div class="align is-style-company-logo-xs wp-block-dmb-company-logo">
+	<img width="740" height="480" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20740%20480'%3E%3C/svg%3E" alt="Jac. de Kievit en Zn. BV uit Venlo" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-36.jpg" /><noscript><img width="740" height="480" decoding="async" src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-36.jpg" alt="Jac. de Kievit en Zn. BV uit Venlo" /></noscript>
+</div>
+</div>
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-container-core-column-is-layout-a7dce961 wp-block-column-is-layout-flow">
+<p class="has-sm-1-font-size wp-block-paragraph" style="font-style:normal;font-weight:600">Jac. de Kievit en Zn. BV</p>
+
+
+<p class="has-gray-1-color has-text-color has-link-color has-xs-3-font-size wp-elements-5340c78f88b275584519bfdf98c70e63 wp-block-paragraph">Voltastraat 27, 5928PC Venlo</p>
+</div>
+</div>
+</div>
+
+
+<div class="wp-block-group has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-8110c6c7 wp-block-group-is-layout-constrained" style="margin-top:var(--wp--preset--spacing--7);margin-bottom:var(--wp--preset--spacing--7)">
+<p class="has-xl-font-size wp-block-paragraph" style="font-style:normal;font-weight:700">Vind het beste verhuisbedrijf voor jouw klus!</p>
+
+
+<p class="has-gray-1-color has-text-color has-link-color has-sm-font-size wp-elements-9b68c4bf5df79269b50bf777fc9b82fe wp-block-paragraph">Vergelijk <strong>gratis </strong>offertes van meerdere verhuisbedrijven uit <strong>Venlo</strong> en omgeving.</p>
+</div>
+
+
+<div class="wp-block-group has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-f9ce6fcf wp-block-group-is-layout-constrained" style="margin-top:var(--wp--preset--spacing--5);margin-bottom:var(--wp--preset--spacing--5)">
+<div class="wp-block-group mobile-gap-y-2 is-layout-flex wp-container-core-group-is-layout-cded6238 wp-block-group-is-layout-flex">
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-7512a68b wp-block-group-is-layout-flex">
+<p class="has-brand-b-color has-text-color has-link-color wp-elements-442f6b0f221b86ed1984554db20fe9ae wp-block-paragraph"><i class="fa fa-check " style=""></i>
+
+
+<p class="has-base-2-color has-text-color has-link-color wp-elements-86b1c359500c3a20170f1cf0e32cad86 wp-block-paragraph">Verhuisbedrijven in Venlo</p>
+</div>
+
+
+<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-7512a68b wp-block-group-is-layout-flex">
+<p class="has-brand-b-color has-text-color has-link-color wp-elements-442f6b0f221b86ed1984554db20fe9ae wp-block-paragraph"><i class="fa fa-check " style=""></i>
+
+
+<p class="wp-block-paragraph" style="font-style:normal;font-weight:300">Bespaar tot 40%</p>
+</div>
+</div>
+</div>
+
+
+<div class="wp-block-group has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-2cb2f6db wp-block-group-is-layout-constrained"><div class="align is-style-quote-request-lg wp-block-dmb-quote-request">
+	<form class="pt-quote-request-form" method="get" action="https://verhuis-gids.nl/offerte-aanvragen/">
+		<div class="flex flex-col sm-flex-row gap-2">
+			<input class="form-control js-postal-validation" type="text" name="zip_code" placeholder="Je postcode" />
+
+			<button class="btn pt-btn-secondary whitespace-nowrap px-4" type="submit">
+				Vergelijk offertes			</button>
+		</div>
+	</form>
+</div>
+
+
+<div class="wp-block-group mobile-justify-center is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-1ed6ec96 wp-block-group-is-layout-flex">
+<p class="has-brand-b-color has-text-color has-link-color wp-elements-442f6b0f221b86ed1984554db20fe9ae wp-block-paragraph"><i class="fa fa-check " style=""></i>
+
+
+<p class="has-xs-2-font-size wp-block-paragraph">Gratis &#8211; Vrijblijvend</p>
+</div>
+</div>
+
+
+<div class="wp-block-group sm-hidden has-global-padding is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-54d22900 wp-block-group-is-layout-constrained">
+<div class="wp-block-group has-gray-1-color has-text-color has-link-color wp-elements-a272fbf20f792c771662a4e7038fbe99 is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-03dc6d34 wp-block-group-is-layout-flex" style="margin-top:var(--wp--preset--spacing--8)">
+<p class="wp-block-paragraph"><a href="#over">Naar de bedrijfspagina</a></p>
+
+
+<p class="wp-block-paragraph"><i class="fa fa-chevron-down " style=""></i>
+</div>
+</div>
+</div>
+</div>
+<div data-rocket-location-hash="6aaa532e099553e1db89a9440303803c" class="pt-company-intro-wrapper">
+	<div class="container">
+		
+<div class="pt-company-intro">
+	<div class="sm-flex gap-3 justify-between mb-4">
+		<div class="mb-2 sm-mb-0">
+			<div class="pt-breadcrumbs"><span><span><a href="https://verhuis-gids.nl/">Home</a></span> » <span><a href="https://verhuis-gids.nl/venlo/">Verhuisbedrijven in Venlo</a></span> » <span class="breadcrumb_last" aria-current="page">Jac. de Kievit en Zn. BV</span></span></div>		</div>
+
+		<div class="text-xs sm-text-sm">
+				<a rel="nofollow" class="" href="https://verhuis-gids.nl/claim-bedrijf/?company_name=Jac.%20de%20Kievit%20en%20Zn.%20BV&#038;kvk_number=12015298">
+		Claim je bedrijf	</a>
+
+		</div>
+	</div>
+
+	<div class="pt-company-intro__grid">
+		<div class="pt-company-intro__image">
+			<figure class="pt-company-image">
+				<img width="740" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20740%20480'%3E%3C/svg%3E" alt="Jac. de Kievit en Zn. BV uit Venlo" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-23.jpg" /><noscript><img width="740" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-23.jpg" alt="Jac. de Kievit en Zn. BV uit Venlo" /></noscript>
+			<figure>
+		</div>
+
+		<div class="pt-company-intro__title">
+			<div class="flex gap-2">
+				<h1 class="mb-0 sm-mb-2">
+					Jac. de Kievit en Zn. BV				</h1>
+
+							</div>
+
+			<div class="mb-2">
+				<div class="entry-meta mb-0">
+	<i class="fa fa-map-marker" aria-hidden="true"></i> Voltastraat 27  5928PC Venlo</div>
+			</div>
+		</div>
+
+		<div class="pt-company-intro__meta">
+			<div class="sm-flex flex-wrap gap-x-4 mb-4 text-sm">
+			<div>
+			<i class="fa fa-users mr-2" aria-hidden="true"></i>
+
+			1 werknemer		</div>
+
+			<div>
+			<i class="fa fa-gavel mr-2" aria-hidden="true"></i>
+
+			Besloten Vennootschap		</div>
+
+			<div>
+			<i class="fa fa-calendar-o mr-2" aria-hidden="true"></i>
+
+			10/19/1973		</div>
+
+	</div>
+		</div>
+
+		<div class="pt-company-intro__ratings">
+						<div tabindex="0" class="mb-3 inline-block" title="Wat is de Verhuis-gids.nl score?" data-bs-toggle="popover" data-bs-content="De Verhuis-gids.nl score komt tot stand op basis van een aantal objectieve criteria. Een belangrijke rol is weggelegd voor de online reputatie van het bedrijf. Reviews spelen hierin een belangrijke rol. Daarnaast wordt er gekeken naar andere factoren zoals de volledigheid van het bedrijfsprofiel, ervaring en opleidingen.">
+					<div class="pt-rating-summary pt-rating-summary--featured">
+		<div class="flex items-center gap-2 sm-gap-3">
+			
+			<div class="pt-rating-summary__ratings pt-ratings pt-ratings--lg">
+				<span style="width: 0%" class="pt-ratings-rating"></span>
+			</div>
+
+			
+				<div class="pt-rating-summary__number">
+					(0)				</div>
+
+					</div>
+
+		
+		
+			<div class="text-sm mt-2 text-gray-600">
+				Dit bedrijf heeft nog geen beoordelingen.			</div>
+		
+			</div>
+
+				</div>
+
+			<div class="md-text-right">
+							</div>
+		</div>
+
+		<div class="pt-company-intro__buttons">
+			<div class="md-flex flex-wrap gap-x-3 gap-y-2 items-center mb-2">
+	<a class="btn btn-primary btn-xl pt-btn-with-arrow w-full md-w-auto mt-2" href="https://verhuis-gids.nl/offerte-aanvragen/">
+		Gratis offertes vergelijken	</a>
+
+	<div class="text-center mt-2 text-sm">
+		Vergelijk offertes en bespaar!	</div>
+</div>
+		</div>
+	</div>
+</div>
+	</div>
+</div>
+
+<div data-rocket-location-hash="fdb5ab5d4aa3f07babcd3949c758f3a7" class="container pt-navigation-tabs-container">
+	<div class="flex gap-4 pt-navigation-tabs">
+		<a class="pt-scroll pt-is-active" href="#over">
+			Over		</a>
+
+		<a class="pt-scroll" href="#bedrijfsgegevens">
+			Bedrijfsgegevens		</a>
+
+		<a class="pt-scroll" href="#contactgegevens">
+			Contactgegevens		</a>
+
+		
+			<a class="pt-scroll" href="#openingstijden">
+				Openingstijden			</a>
+
+		
+		
+		
+		<a class="pt-scroll" href="#reviews">
+			Reviews		</a>
+
+		<a class="pt-scroll" href="#faq">
+			FAQ		</a>
+	</div>
+</div>
+
+<div class="container">
+	<div class="md-flex gap-5">
+		<div class="md-w-66">
+			
+			
+			<div class="border-b border-gray-600 pb-4 mb-4" id="over">
+	<h2 class="mb-3">
+		Over Jac. de Kievit en Zn. BV	</h2>
+
+	<div class="pt-summary-content">
+		<p>Jac. de Kievit en Zn. BV is een <a href="https://verhuis-gids.nl/venlo/">verhuisspecialist uit Venlo</a> in de provincie <a href="https://verhuis-gids.nl/limburg/">Limburg</a>. De verhuizer is gevestigd op Voltastraat 27. Jac. de Kievit en Zn. BV is opgericht op 19-10-1973.</p>
+<p>Jac. de Kievit en Zn. BV is ingeschreven en geverifieerd bij de Kamer van Koophandel. Het bedrijf is bij de KvK bekend onder KvK-nummer 12015298. De ondernemingsvorm is een Besloten Vennootschap en de vestiging aan de Voltastraat telt 1 werknemer. Onderstaand op deze pagina vind je de contactgegevens en openingstijden van dit bedrijf.</p>
+<h3>Benieuwd naar de prijzen?</h3>
+<p>Op zoek naar een vakkundige, goedkope verhuizer bij jou in de buurt? <b><a href="/offerte-aanvragen/#offerte">Start nu je gratis offerteaanvraag</a></b> en je ontvangt spoedig reactie!</p>
+		<span class="pt-summary-content__more">
+			<button type="button">
+				Lees meer			</button>
+		</span>
+	</div>
+</div>
+
+
+<div class="grid sm-grid-cols-2 gap-5 border-b border-gray-600 pb-4 mb-4">
+	<div id="bedrijfsgegevens">
+	<h3 class="mb-3">
+		Bedrijfsgegevens	</h3>
+
+	<div>
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-star" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Bedrijfsnaam</div>
+					<div class="text-gray-600">Jac. de Kievit en Zn. BV</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-handshake-o" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>KvK nummer</div>
+					<div class="text-gray-600">12015298</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Oprichtingsdatum</div>
+					<div class="text-gray-600">19-10-1973</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-gavel" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Bedrijfsvorm</div>
+					<div class="text-gray-600">Besloten Vennootschap</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-users" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Aantal werknemers</div>
+					<div class="text-gray-600">1 werkzaam persoon</div>
+				</div>
+			</div>
+
+			</div>
+
+	</div>
+
+	<div id="address-details">
+	<div class="flex gap-2 mb-3">
+		<h3 class="mb-0">
+			Adresgegevens		</h3>
+
+				<button tabindex="0" class="pt-button-reset" data-bs-toggle="popover" data-bs-content="Wij publiceren alleen gegevens die publiekelijk bekend zijn, of waarvan de eigenaar ons toestemming heeft gegeven voor publicatie. Hoewel de gegevens handmatig met zorg zijn samengesteld kan het zijn dat gegevens niet juist of verouderd zijn. Heb je een foutje gezien? Meld het ons. Ben je de eigenaar van dit bedrijf? Claim dan gratis je bedrijfsvermelding.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+			</svg>
+		</button>
+	</div>
+
+	<div>
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-road" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Straat</div>
+					<div class="text-gray-600">
+						Voltastraat					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-home" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Huisnummer</div>
+					<div class="text-gray-600">
+						27					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-share" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Postcode</div>
+					<div class="text-gray-600">
+						5928PC					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-building" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Locatie</div>
+					<div class="text-gray-600">
+						Venlo					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Gemeente</div>
+					<div class="text-gray-600">
+						Venlo					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-map" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Regio</div>
+					<div class="text-gray-600">
+						Limburg					</div>
+				</div>
+			</div>
+
+		
+			<div class="flex gap-3 mb-2">
+				<div class="w-32 shrink-0">
+					<i class="fa fa-globe" aria-hidden="true"></i>
+				</div>
+
+				<div>
+					<div>Land</div>
+					<div class="text-gray-600">
+						NL					</div>
+				</div>
+			</div>
+
+			</div>
+</div>
+</div>
+
+<div class="grid sm-grid-cols-2 gap-5">
+	<div id="contactgegevens" class="mb-3">
+		<h2 class="h3 mb-3">
+			Contactgegevens		</h2>
+
+		
+			<div class="space-y-2">
+				
+					<button class="btn btn-neutral btn-block max-w-75" type="button" data-hidden="077-3232100">
+						<i class="fa fa-phone" aria-hidden="true"></i> Toon telefoonnummer					</button>
+
+				
+									<button class="btn btn-neutral btn-block max-w-75" type="button" data-hidden="&lt;a rel=&quot;nofollow&quot; target=&quot;_blank&quot; href=&quot;http://www.de-kievit.nl&quot;&gt;www.de-kievit.nl&lt;/a&gt;">
+						<i class="fa fa-globe" aria-hidden="true"></i> Bekijk website					</button>
+
+				
+									<button class="btn btn-neutral btn-block max-w-75" type="button" data-hidden="&lt;a href=&quot;mailto:info@de-kievit.nl&quot;&gt;info@de-kievit.nl&lt;/a&gt;">
+						<i class="fa fa-envelope" aria-hidden="true"></i> Stuur bericht					</button>
+
+							</div>
+
+			</div>
+
+	</div>
+
+
+<div class="grid sm-grid-cols-2 gap-5 border-b border-gray-600 pb-4 mb-4">
+	<div id="location-map">
+	<h3 class="mb-3">
+		Locatie	</h3>
+
+	<div class="">
+	<div id="map"></div>
+
+	<script type="rocketlazyloadscript">
+		function leafletMap() {
+			var mymap = L.map(
+				'map',
+				{
+					scrollWheelZoom: false,
+					tapHold: false
+				}
+			).setView( [51.381169, 6.137315], 15 );
+
+			L.tileLayer( 'https://api.mapbox.com/styles/v1/verhuis-gids/ckg9gh674017719lo6fuqjtug/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidmVyaHVpcy1naWRzIiwiYSI6ImNqdDVsMHRkajA2eW80OW13bmR2djMxZG0ifQ.Gt0b4xXMXbL7cERo3ilwng' ).addTo( mymap );
+
+			L.marker( [51.381169, 6.137315] ).addTo( mymap );
+		}
+
+		window.onload = leafletMap;
+	</script>
+</div>
+</div>
+
+	<div id="openingstijden">
+	<h3 class="mb-3">
+		Openingstijden	</h3>
+
+	<div class="pt-opening-hours">
+		<dl class="pt-data-list mb-3">
+			
+				<dt>Maandag</dt>
+				<dd>08.30 - 17.30</dd>
+
+			
+				<dt> Dinsdag</dt>
+				<dd>08.30 - 17.30</dd>
+
+			
+				<dt> Woensdag</dt>
+				<dd>08.30 - 17.30</dd>
+
+			
+				<dt> Donderdag</dt>
+				<dd>08.30 - 17.30</dd>
+
+			
+				<dt> Vrijdag</dt>
+				<dd>08.30 - 17.30</dd>
+
+			
+				<dt> Zaterdag</dt>
+				<dd>gesloten</dd>
+
+			
+				<dt> Zondag</dt>
+				<dd>gesloten</dd>
+
+					</dl>
+
+			</div>
+</div>
+</div>
+
+
+<div class="grid sm-grid-cols-2 gap-5 border-b border-gray-600 pb-4 mb-4">
+	
+	
+		<div id="external-links">
+			<h3 class="mb-3">
+				Externe links			</h3>
+
+			<div class="space-y-2">
+					<div>
+		<a rel="nofollow" class="flex gap-3 items-center" target="_blank" href="https://www.kvk.nl/bestellen/#/12015298000018538517">
+			<img width="44" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2044%2012'%3E%3C/svg%3E" alt="Jac. de Kievit en Zn. BV op kvk.nl" data-lazy-src="https://verhuis-gids.nl/wp-content/themes/dmb-2/images/logos/logo-kvk.svg" /><noscript><img width="44" height="12" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/images/logos/logo-kvk.svg" alt="Jac. de Kievit en Zn. BV op kvk.nl" /></noscript>
+
+			<span>Bekijk dit bedrijf op Kvk.nl <i class="fa fa-external-link"></i></span>
+		</a>
+	</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+<div class="border-b border-gray-600 pb-4 mb-4">	
+	<div id="reviews">
+	<div class="flex gap-2 mb-3">
+		<h2 class="mb-0">
+			Reviews Jac. de Kievit en Zn. BV		</h2>
+
+		<button tabindex="0" class="pt-button-reset" data-bs-toggle="popover" data-bs-content="De onderstaande reviews zijn niet geverifieerd. We voeren controles uit om nepreviews zoveel mogelijk tegen te gaan. Indien nepreviews worden gevonden verwijderen wij deze. Meer informatie vind je in het reviewbeleid.">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+				<path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+			</svg>
+		</button>
+	</div>
+
+	
+	<p>
+		Onderstaand een overzicht van beoordelingen van Jac. de Kievit en Zn. BV. Wat is jouw ervaring met Jac. de Kievit en Zn. BV? Laat een beoordeling achter en help andere bezoekers.	</p>
+
+	<a rel="nofollow" class="btn btn-lg btn-primary pt-mb-20" href="https://verhuis-gids.nl/review-toevoegen/?company_id=4554">
+	Schrijf een review</a>
+</div>
+
+	</div>
+
+
+<div class="mb-4" id="faq">
+	<h2 class="mb-3">
+		FAQ	</h2>
+
+	<div class="panel-group pt-accordion pt-faq" id="faq-accordion" role="tablist" aria-multiselectable="true" itemscope itemtype="https://schema.org/FAQPage">
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-0">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-0" aria-expanded="true" aria-controls="faq-collapse-0" class="collapsed">
+							<span itemprop="name">Is Jac. de Kievit en Zn. BV een betrouwbaar bedrijf?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<p>Jac. de Kievit en Zn. BV heeft nog geen beoordelingen.</p>
+					</div>
+				</div>
+			</div>
+
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-1">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-1" aria-expanded="true" aria-controls="faq-collapse-1" class="collapsed">
+							<span itemprop="name">Op welke dagen en tijden is dit bedrijf geopend?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<table class="table">
+<tr>
+<td>Maandag</td>
+<td>08.30 - 17.30</td>
+</tr>
+<tr>
+<td> Dinsdag</td>
+<td>08.30 - 17.30</td>
+</tr>
+<tr>
+<td> Woensdag</td>
+<td>08.30 - 17.30</td>
+</tr>
+<tr>
+<td> Donderdag</td>
+<td>08.30 - 17.30</td>
+</tr>
+<tr>
+<td> Vrijdag</td>
+<td>08.30 - 17.30</td>
+</tr>
+<tr>
+<td> Zaterdag</td>
+<td>gesloten</td>
+</tr>
+<tr>
+<td> Zondag</td>
+<td>gesloten</td>
+</tr>
+</table>
+					</div>
+				</div>
+			</div>
+
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-2">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-2" aria-expanded="true" aria-controls="faq-collapse-2" class="collapsed">
+							<span itemprop="name">Waar is dit bedrijf gevestigd?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<p>Het bedrijf is gevestigd aan Voltastraat 27  in Venlo.</p>
+					</div>
+				</div>
+			</div>
+
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-5">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-5" aria-expanded="true" aria-controls="faq-collapse-5" class="collapsed">
+							<span itemprop="name">Wat is het telefoonnummer van Jac. de Kievit en Zn. BV?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<p>Het bedrijf is bereikbaar via 077-3232100.</p>
+					</div>
+				</div>
+			</div>
+
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-6">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-6" aria-expanded="true" aria-controls="faq-collapse-6" class="collapsed">
+							<span itemprop="name">Wat is het emailadres van Jac. de Kievit en Zn. BV?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<p><a class="cursor-pointer" data-hidden="info@de-kievit.nl">Klik hier om het emailadres weer te geven.</a></p>
+					</div>
+				</div>
+			</div>
+
+					<div class="pt-faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+				<div class="panel-heading" role="tab" id="faq-heading-7">
+					<div class="panel-title">
+						<a role="button" data-bs-toggle="collapse" data-bs-parent="#faq-accordion" href="#faq-collapse-7" aria-expanded="true" aria-controls="faq-collapse-7" class="collapsed">
+							<span itemprop="name">Heeft het bedrijf een eigen website?</span>
+						</a>
+					</div>
+				</div>
+
+				<div id="faq-collapse-7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="faq-heading-7" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+					<div class="panel-body" itemprop="text">
+						<p>De website van dit bedrijf is http://www.de-kievit.nl.</p>
+					</div>
+				</div>
+			</div>
+
+			</div>
+</div>
+
+<div class="my-7 pt-nearby-companies">
+	<p class="h2 mb-3">
+		Bedrijven in de buurt	</p>
+
+	<div class="sm-flex flex-wrap gap-4">
+		<a class="pt-company flex-1 mb-2" href="https://verhuis-gids.nl/venlo/tomala/" title="Tomala">
+	<div class="pt-company-icon">
+		<figure class="pt-company-image">
+			<img width="740" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20740%20480'%3E%3C/svg%3E" alt="Tomala uit Venlo" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-27.jpg" /><noscript><img width="740" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-27.jpg" alt="Tomala uit Venlo" /></noscript>
+		</figure>
+	</div>
+
+	<div class="pt-content">
+		<h4 class="mb-1">
+			Tomala		</h4>
+
+			<div class="pt-rating-summary">
+		<div class="flex items-center gap-2 sm-gap-3">
+			
+			<div class="pt-rating-summary__ratings pt-ratings">
+				<span style="width: 0%" class="pt-ratings-rating"></span>
+			</div>
+
+					</div>
+
+		
+			</div>
+
+	
+		
+			<p class="entry-meta mb-2">
+				Op 0.5 km afstand			</p>
+
+		
+		<div class="btn btn-default btn-sm">
+			Toon profiel		</div>
+	</div>
+</a>
+<a class="pt-company flex-1 mb-2" href="https://verhuis-gids.nl/venlo/hermans-werk-b-v/" title="Hermans Werk B.V.">
+	<div class="pt-company-icon">
+		<figure class="pt-company-image">
+			<img width="740" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20740%20480'%3E%3C/svg%3E" alt="Hermans Werk B.V. uit Venlo" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-41.jpg" /><noscript><img width="740" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuisbedrijf-41.jpg" alt="Hermans Werk B.V. uit Venlo" /></noscript>
+		</figure>
+	</div>
+
+	<div class="pt-content">
+		<h4 class="mb-1">
+			Hermans Werk B.V.		</h4>
+
+			<div class="pt-rating-summary">
+		<div class="flex items-center gap-2 sm-gap-3">
+			
+			<div class="pt-rating-summary__ratings pt-ratings">
+				<span style="width: 0%" class="pt-ratings-rating"></span>
+			</div>
+
+					</div>
+
+		
+			</div>
+
+	
+		
+			<p class="entry-meta mb-2">
+				Op 1.2 km afstand			</p>
+
+		
+		<div class="btn btn-default btn-sm">
+			Toon profiel		</div>
+	</div>
+</a>
+	</div>
+
+	<a class="btn btn-default btn-lg btn-block mt-4" href="https://verhuis-gids.nl/venlo/">
+		Toon meer verhuisbedrijven in Venlo	</a>
+</div>
+		</div>
+
+		<div class="grow">
+			<div class="pt-sticky-cta pt-bg-c-light">
+	
+	<p class="pt-sticky-cta__title">
+		Gratis offertes vergelijken	</p>
+
+	<div class="pt-sticky-cta__description">
+		<p>Vind de beste verhuizer in je regio.</p>
+	</div>
+
+	<form method="get" action="https://verhuis-gids.nl/offerte-aanvragen/#offerte">
+		<input class="form-control" type="text" name="zip_code" placeholder="Je postcode" />
+		
+		<button class="btn pt-btn-secondary btn-lg pt-with-arrow w-full" type="submit">
+			Start nu!		</button>
+	</form>
+
+	<div class="pt-sticky-cta__tagline text-center text-sm mt-2">
+		<i class="fa fa-check-circle" style="color:#70b95c"></i><span style="color:#000">Gratis - Vrijblijvend</span>	</div>
+</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="my-6 p-6 bg-gray-900">
+		<p class="h2">
+	Specialisten in andere plaatsen</p>
+
+
+	<ul class="list grid sm-grid-cols-2 md-grid-cols-3 gap-x-4 sm-gap-x-6 mb-0">
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/venlo/">
+					<span class="text-black">
+						Verhuisbedrijven in Venlo					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/velden/">
+					<span class="text-black">
+						Verhuisbedrijven in Velden					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/tegelen/">
+					<span class="text-black">
+						Verhuisbedrijven in Tegelen					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/grubbenvorst/">
+					<span class="text-black">
+						Verhuisbedrijven in Grubbenvorst					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/steyl/">
+					<span class="text-black">
+						Verhuisbedrijven in Steyl					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/baarlo/">
+					<span class="text-black">
+						Verhuisbedrijven in Baarlo					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/maasbree/">
+					<span class="text-black">
+						Verhuisbedrijven in Maasbree					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/belfeld/">
+					<span class="text-black">
+						Verhuisbedrijven in Belfeld					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/lomm/">
+					<span class="text-black">
+						Verhuisbedrijven in Lomm					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/sevenum/">
+					<span class="text-black">
+						Verhuisbedrijven in Sevenum					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/lottum/">
+					<span class="text-black">
+						Verhuisbedrijven in Lottum					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/melderslo/">
+					<span class="text-black">
+						Verhuisbedrijven in Melderslo					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/horst/">
+					<span class="text-black">
+						Verhuisbedrijven in Horst					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/hegelsom/">
+					<span class="text-black">
+						Verhuisbedrijven in Hegelsom					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/kronenberg/">
+					<span class="text-black">
+						Verhuisbedrijven in Kronenberg					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/koningslust/">
+					<span class="text-black">
+						Verhuisbedrijven in Koningslust					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/arcen/">
+					<span class="text-black">
+						Verhuisbedrijven in Arcen					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/reuver/">
+					<span class="text-black">
+						Verhuisbedrijven in Reuver					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/meterik/">
+					<span class="text-black">
+						Verhuisbedrijven in Meterik					</span>
+				</a>
+			</li>
+
+					<li class="border-solid border-b border-gray-600">
+				<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/kessel/">
+					<span class="text-black">
+						Verhuisbedrijven in Kessel					</span>
+				</a>
+			</li>
+
+			</ul>
+
+
+
+	<div class="pt-entries" style="display: none;">
+		<ul class="list grid sm-grid-cols-2 md-grid-cols-3 gap-x-4 sm-gap-x-6 mb-0">
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/amsterdam/">
+						<span class="text-black">
+							Verhuisbedrijven in Amsterdam						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/rotterdam/">
+						<span class="text-black">
+							Verhuisbedrijven in Rotterdam						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/s-gravenhage/">
+						<span class="text-black">
+							Verhuisbedrijven in &#8216;s-Gravenhage						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/utrecht-stad/">
+						<span class="text-black">
+							Verhuisbedrijven in Utrecht-Stad						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/eindhoven/">
+						<span class="text-black">
+							Verhuisbedrijven in Eindhoven						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/tilburg/">
+						<span class="text-black">
+							Verhuisbedrijven in Tilburg						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/groningen-stad/">
+						<span class="text-black">
+							Verhuisbedrijven in Groningen-Stad						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/almere/">
+						<span class="text-black">
+							Verhuisbedrijven in Almere						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/breda/">
+						<span class="text-black">
+							Verhuisbedrijven in Breda						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/nijmegen/">
+						<span class="text-black">
+							Verhuisbedrijven in Nijmegen						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/enschede/">
+						<span class="text-black">
+							Verhuisbedrijven in Enschede						</span>
+					</a>
+				</li>
+
+				
+							<li class="border-solid border-b border-gray-600">
+					<a class="flex justify-between py-2 gap-2" href="https://verhuis-gids.nl/haarlem/">
+						<span class="text-black">
+							Verhuisbedrijven in Haarlem						</span>
+					</a>
+				</li>
+
+						</ul>
+	</div>
+
+	<button class="btn btn-default btn-lg btn-block pt-show-entries pt-mt-20">
+		Toon meer	</button>
+
+
+	</div>
+
+	
+<section class="pt-section pt-bg-c-light">
+	<div class="container">
+		<header class="pt-section-header">
+			<h2 class="pt-section-title">
+				Kennisbank			</h2>
+		</header>
+
+		
+	<div class="pt-article-row">
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/verhuiskosten/" title="Verhuiskosten">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20480'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="" decoding="async" fetchpriority="high" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-360x240.jpg 360w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten.jpg" /><noscript><img width="720" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten.jpg" class="img-responsive wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-360x240.jpg 360w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Verhuiskosten			</div>
+
+			</div>
+</a>
+			</div>
+
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/goedkoop-verhuizen/" title="Goedkoop verhuizen">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="460" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20460'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="Goedkoop verhuizen" decoding="async" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl-300x192.jpg 300w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl.jpg" /><noscript><img width="720" height="460" src="https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl.jpg" class="img-responsive wp-post-image" alt="Goedkoop verhuizen" decoding="async" srcset="https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/goedkoop-verhuizen-kl-300x192.jpg 300w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Goedkoop verhuizen			</div>
+
+			</div>
+</a>
+			</div>
+
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/verhuizen/" title="Verhuizen Info &#038; advies">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20480'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="" decoding="async" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/verhuizen.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuizen-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuizen-360x240.jpg 360w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuizen.jpg" /><noscript><img width="720" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuizen.jpg" class="img-responsive wp-post-image" alt="" decoding="async" srcset="https://verhuis-gids.nl/wp-content/uploads/verhuizen.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuizen-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuizen-360x240.jpg 360w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Verhuizen Info &#038; advies			</div>
+
+			</div>
+</a>
+			</div>
+
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/verhuizers/" title="Verhuizers inschakelen?">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20480'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="" decoding="async" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/verhuizers.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuizers-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuizers-360x240.jpg 360w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuizers.jpg" /><noscript><img width="720" height="480" src="https://verhuis-gids.nl/wp-content/uploads/verhuizers.jpg" class="img-responsive wp-post-image" alt="" decoding="async" srcset="https://verhuis-gids.nl/wp-content/uploads/verhuizers.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuizers-300x200.jpg 300w, https://verhuis-gids.nl/wp-content/uploads/verhuizers-360x240.jpg 360w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Verhuizers inschakelen?			</div>
+
+			</div>
+</a>
+			</div>
+
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/verhuiskosten-aftrekbaar/" title="Verhuiskosten aftrekbaar">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="460" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20460'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="" decoding="async" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl-300x192.jpg 300w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl.jpg" /><noscript><img width="720" height="460" src="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl.jpg" class="img-responsive wp-post-image" alt="" decoding="async" srcset="https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/verhuiskosten-aftrekbaar-kl-300x192.jpg 300w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Verhuiskosten aftrekbaar			</div>
+
+			</div>
+</a>
+			</div>
+
+		
+			<div class="pt-article-col">
+				<a class="pt-article" href="https://verhuis-gids.nl/piano-verhuizen/" title="Piano verhuizen">
+	
+		<div class="pt-image-holder">
+			<img width="720" height="460" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20720%20460'%3E%3C/svg%3E" class="img-responsive wp-post-image" alt="Piano verhuizen" decoding="async" data-lazy-srcset="https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl-300x192.jpg 300w" data-lazy-sizes="(max-width: 720px) 100vw, 720px" data-lazy-src="https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl.jpg" /><noscript><img width="720" height="460" src="https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl.jpg" class="img-responsive wp-post-image" alt="Piano verhuizen" decoding="async" srcset="https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl.jpg 720w, https://verhuis-gids.nl/wp-content/uploads/piano-verhuizen-kl-300x192.jpg 300w" sizes="(max-width: 720px) 100vw, 720px" /></noscript>		</div>
+
+	
+	<div class="pt-article-content">
+		
+			<div class="pt-article-title">
+				Piano verhuizen			</div>
+
+			</div>
+</a>
+			</div>
+
+			</div>
+
+	
+		<footer class="pt-section-footer text-center">
+			<a class="btn btn-default btn-lg" href="https://verhuis-gids.nl/kennisbank/">
+				Meer artikelen			</a>
+		</footer>
+
+	
+		</div>
+</section>
+
+</div>
+
+		
+			<footer data-rocket-location-hash="6c4a89c5d3674af2d08a08082f3f9907" class="pt-site-footer">
+				
+					<div class="pt-footer-widgets">
+						<div class="container">
+							<div class="pt-footer-row">
+								<div id="text-2" class="widget widget_text"><h3 class="widget-title">De beste verhuisbedrijven voor jou</h3>			<div class="textwidget"><p>Op onze gids vind je een overzicht van alle verhuisbedrijven in Nederland, zodat het voor jou makkelijk is om een geschikt verhuisbedrijf te vinden. Ons serviceteam heeft alle bedrijven handmatig voor je geselecteerd.</p>
+<p><i class="fa fa-arrow-right " style=""></i> <a href="/hulp-nodig/">Hulp nodig?</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/schilders-vergelijken/">Tips voor schilders vergelijken</a></p>
+<h3>Over ons</h3>
+<p><i class="fa fa-arrow-right " style=""></i> <a href="/wie-zijn-wij/">Over verhuis-gids.nl</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/hoe-het-werkt/">Over de offerteservice</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/kwaliteitseisen/">Onze kwaliteitseisen</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/onderzoek/">Onderzoek voor onze gids</a></p>
+</div>
+		</div><div id="text-3" class="widget widget_text"><h3 class="widget-title">Provincies</h3>			<div class="textwidget"><p><a href="/drenthe/">Drenthe</a><br />
+<a href="/flevoland/">Flevoland</a><br />
+<a href="/friesland/">Friesland</a><br />
+<a href="/gelderland/">Gelderland</a><br />
+<a href="/groningen/">Groningen</a><br />
+<a href="/overijssel/">Overijssel</a><br />
+<a href="/limburg/">Limburg</a><br />
+<a href="/noord-brabant/">Noord-Brabant</a><br />
+<a href="/noord-holland/">Noord-Holland</a><br />
+<a href="/utrecht/">Utrecht</a><br />
+<a href="/zuid-holland/">Zuid-Holland</a><br />
+<a href="/zeeland/">Zeeland</a><br />
+<a href="/locaties/">Alle steden</a></p>
+</div>
+		</div><div id="text-4" class="widget widget_text"><h3 class="widget-title">Verhuisbedrijf aanmelden</h3>			<div class="textwidget"><p>Meld je als verhuizer aan op Verhuis-gids.nl.</p>
+<p><i class="fa fa-arrow-right " style=""></i> <a href="/leads/">Verhuis leads kopen</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/bedrijf-aanmelden/">Bedrijf aanmelden</a></p>
+<h3>Hulp nodig?</h3>
+<p><a href="tel:085 005 0243"><i class="fa fa-phone " style=""></i> Bel 085 005 0243</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/contact/">Contact</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="https://verhuis-gids.nl/wie-zijn-wij/">Wie zijn wij?</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/veelgestelde-vragen-particulier/">Veelgestelde vragen: particulieren</a><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/veelgestelde-vragen-bedrijven/">Veelgestelde vragen: bedrijven</a></p>
+<p><strong>Bereken de prijs voor jouw verhuizing</strong><br />
+<i class="fa fa-arrow-right " style=""></i> <a href="/prijsadvies/">Prijsadvies</a></p>
+</div>
+		</div>							</div>
+						</div>
+					</div>
+
+				
+				<div class="pt-footer-assistent">
+					<div class="container">
+						<p>
+							<a href="/">Verhuis-gids.nl</a> |  <a href="/sitemap_index.xml">Sitemap</a> | <a href="/wp-content/uploads/privacyverklaring.pdf" rel="nofollow" target="_blank">Privacy Statement</a> | <a href="/wp-content/uploads/voorwaarden.pdf" rel="nofollow" target="_blank">Voorwaarden</a> | <a href="/wp-content/uploads/aansprakelijkheid.pdf" rel="nofollow" target="_blank">Disclaimer</a> | <a href="https://verhuis-gids.nl/reviewbeleid/" target="_blank">Reviewbeleid</a>						</p>
+
+											</div>
+				</div>
+			</footer>
+
+			</div>
+</div>
+
+<div data-rocket-location-hash="776f4d28833b1eac1ce8bb4f2f14c73e" class="modal fade" id="review-modal" tabindex="-1" aria-hidden="true">
+	<div data-rocket-location-hash="9ff8bd477cf308d4045fe4c0cc665cac" class="modal-dialog">
+		<div data-rocket-location-hash="426bf8baa5f345b1c76659b338ea2313" class="modal-content">
+			<div class="modal-header flex justify-end">
+				<button type="button" class="pt-button-reset" data-bs-dismiss="modal" aria-label="Sluit">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body"></div>
+		</div>
+	</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/dmb-2-child/*","/wp-content/themes/dmb-2/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container"><div id="cmplz-cookiebanner-1-optin" class="cmplz-cookiebanner cmplz-hidden banner-1 banner-a optin cmplz-bottom-right cmplz-categories-type-view-preferences" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Beheer toestemming</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="Dialoogvenster sluiten">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">Om de beste ervaringen te bieden, gebruiken wij technologieën zoals cookies om informatie over je apparaat op te slaan en/of te raadplegen. Door in te stemmen met deze technologieën kunnen wij gegevens zoals surfgedrag of unieke ID's op deze site verwerken. Als je geen toestemming geeft of uw toestemming intrekt, kan dit een nadelige invloed hebben op bepaalde functies en mogelijkheden.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<div class="cmplz-category cmplz-functional">
+				<div class="cmplz-category-header">
+					<span class="cmplz-category-title" id="cmplz-title-functional-1-optin">Functioneel</span>
+					<span class='cmplz-always-active'>
+						<span class="cmplz-banner-checkbox">
+							<input type="checkbox"
+									id="cmplz-functional-optin"
+									data-category="cmplz_functional"
+									class="cmplz-consent-checkbox cmplz-functional"
+									size="40"
+									value="1"/>
+							<label class="cmplz-label" for="cmplz-functional-optin"><span class="screen-reader-text">Functioneel</span></label>
+						</span>
+						Altijd actief					</span>
+					<button class="cmplz-category-toggle"
+							aria-expanded="false"
+							aria-controls="cmplz-desc-functional-1-optin"
+							aria-labelledby="cmplz-title-functional-1-optin">
+						<span class="cmplz-icon cmplz-open">
+							<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+						</span>
+					</button>
+				</div>
+				<div class="cmplz-description" id="cmplz-desc-functional-1-optin" hidden>
+					<span class="cmplz-description-functional">De technische opslag of toegang is strikt noodzakelijk voor het legitieme doel het gebruik mogelijk te maken van een specifieke dienst waarom de abonnee of gebruiker uitdrukkelijk heeft gevraagd, of met als enig doel de uitvoering van de transmissie van een communicatie over een elektronisch communicatienetwerk.</span>
+				</div>
+			</div>
+
+			<div class="cmplz-category cmplz-preferences">
+				<div class="cmplz-category-header">
+					<span class="cmplz-category-title" id="cmplz-title-preferences-1-optin">Voorkeuren</span>
+					<span class="cmplz-banner-checkbox">
+						<input type="checkbox"
+								id="cmplz-preferences-optin"
+								data-category="cmplz_preferences"
+								class="cmplz-consent-checkbox cmplz-preferences"
+								size="40"
+								value="1"/>
+						<label class="cmplz-label" for="cmplz-preferences-optin"><span class="screen-reader-text">Voorkeuren</span></label>
+					</span>
+					<button class="cmplz-category-toggle"
+							aria-expanded="false"
+							aria-controls="cmplz-desc-preferences-1-optin"
+							aria-labelledby="cmplz-title-preferences-1-optin">
+						<span class="cmplz-icon cmplz-open">
+							<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+						</span>
+					</button>
+				</div>
+				<div class="cmplz-description" id="cmplz-desc-preferences-1-optin" hidden>
+					<span class="cmplz-description-preferences">De technische opslag of toegang is noodzakelijk voor het legitieme doel voorkeuren op te slaan die niet door de abonnee of gebruiker zijn aangevraagd.</span>
+				</div>
+			</div>
+
+			<div class="cmplz-category cmplz-statistics">
+				<div class="cmplz-category-header">
+					<span class="cmplz-category-title" id="cmplz-title-statistics-1-optin">Statistieken</span>
+					<span class="cmplz-banner-checkbox">
+						<input type="checkbox"
+								id="cmplz-statistics-optin"
+								data-category="cmplz_statistics"
+								class="cmplz-consent-checkbox cmplz-statistics"
+								size="40"
+								value="1"/>
+						<label class="cmplz-label" for="cmplz-statistics-optin"><span class="screen-reader-text">Statistieken</span></label>
+					</span>
+					<button class="cmplz-category-toggle"
+							aria-expanded="false"
+							aria-controls="cmplz-desc-statistics-1-optin"
+							aria-labelledby="cmplz-title-statistics-1-optin">
+						<span class="cmplz-icon cmplz-open">
+							<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+						</span>
+					</button>
+				</div>
+				<div class="cmplz-description" id="cmplz-desc-statistics-1-optin" hidden>
+					<span class="cmplz-description-statistics">De technische opslag of toegang die uitsluitend voor statistische doeleinden wordt gebruikt.</span>
+					<span class="cmplz-description-statistics-anonymous">De technische opslag of toegang die uitsluitend wordt gebruikt voor anonieme statistische doeleinden. Zonder dagvaarding, vrijwillige naleving door je Internet Service Provider, of aanvullende gegevens van een derde partij, kan informatie die alleen voor dit doel wordt opgeslagen of opgehaald gewoonlijk niet worden gebruikt om je te identificeren.</span>
+				</div>
+			</div>
+
+			<div class="cmplz-category cmplz-marketing">
+				<div class="cmplz-category-header">
+					<span class="cmplz-category-title" id="cmplz-title-marketing-1-optin">Marketing</span>
+					<span class="cmplz-banner-checkbox">
+						<input type="checkbox"
+								id="cmplz-marketing-optin"
+								data-category="cmplz_marketing"
+								class="cmplz-consent-checkbox cmplz-marketing"
+								size="40"
+								value="1"/>
+						<label class="cmplz-label" for="cmplz-marketing-optin"><span class="screen-reader-text">Marketing</span></label>
+					</span>
+					<button class="cmplz-category-toggle"
+							aria-expanded="false"
+							aria-controls="cmplz-desc-marketing-1-optin"
+							aria-labelledby="cmplz-title-marketing-1-optin">
+						<span class="cmplz-icon cmplz-open">
+							<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18"><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+						</span>
+					</button>
+				</div>
+				<div class="cmplz-description" id="cmplz-desc-marketing-1-optin" hidden>
+					<span class="cmplz-description-marketing">De technische opslag of toegang is nodig om gebruikersprofielen op te stellen voor het verzenden van reclame, of om de gebruiker op een site of over verschillende sites te volgen voor soortgelijke marketingdoeleinden.</span>
+				</div>
+			</div>
+		</div><!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<ul>
+			<li><a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Beheer opties</a></li>
+			<li><a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Beheer diensten</a></li>
+			<li><a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Beheer {vendor_count} leveranciers</a></li>
+			<li><a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/" aria-label="Lees meer over TCF-doelen op Cookie Database">Lees meer over deze doeleinden</a></li>
+		</ul>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accepteren</button>
+		<button class="cmplz-btn cmplz-deny">Weigeren</button>
+		<button class="cmplz-btn cmplz-view-preferences">Bekijk voorkeuren</button>
+		<button class="cmplz-btn cmplz-save-preferences">Voorkeuren opslaan</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Bekijk voorkeuren</a>
+			</div>
+
+
+	<div class="cmplz-documents cmplz-links">
+		<ul>
+			<li><a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a></li>
+			<li><a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a></li>
+			<li><a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a></li>
+		</ul>
+			</div>
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1" aria-haspopup="dialog" aria-controls="cmplz-cookiebanner-1-optin">Beheer toestemming</button>
+
+</div><script id="jquery-ui-core-js" src="https://verhuis-gids.nl/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3"></script>
+<script id="jquery-ui-menu-js" src="https://verhuis-gids.nl/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.3"></script>
+<script id="wp-dom-ready-js" src="https://verhuis-gids.nl/wp-includes/js/dist/dom-ready.min.js?ver=a06281ae5cf5500e9317"></script>
+<script id="wp-hooks-js" src="https://verhuis-gids.nl/wp-includes/js/dist/hooks.min.js?ver=7496969728ca0f95732d"></script>
+<script id="wp-i18n-js" src="https://verhuis-gids.nl/wp-includes/js/dist/i18n.min.js?ver=781d11515ad3d91786ec"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script type="rocketlazyloadscript" id="wp-a11y-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2026-06-03 12:45:46+0000","generator":"GlotPress\/4.1.0","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"nl"},"Notifications":["Meldingen"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+//# sourceURL=wp-a11y-js-translations
+</script>
+<script id="wp-a11y-js" src="https://verhuis-gids.nl/wp-includes/js/dist/a11y.min.js?ver=af934e5259bc51b8718e"></script>
+<script id="jquery-ui-autocomplete-js" src="https://verhuis-gids.nl/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.13.3"></script>
+<script type="rocketlazyloadscript" id="dm-gravityforms-script-js" data-rocket-src="https://verhuis-gids.nl/wp-content/plugins/dm-gravityforms.1.0.20-AkfrtA/js/script.min.js?ver=1.0.20"></script>
+<script id="pronamic-maps-address-autocomplete-js-extra">
+var pronamic_maps = {"rest_url_address_autocomplete":"https://verhuis-gids.nl/wp-json/pronamic-maps/v1/address/autocomplete"};
+//# sourceURL=pronamic-maps-address-autocomplete-js-extra
+</script>
+<script type="rocketlazyloadscript" id="pronamic-maps-address-autocomplete-js" data-rocket-src="https://verhuis-gids.nl/wp-content/plugins/pronamic-maps/js/pronamic-maps.min.js?ver=1.0.0"></script>
+<script data-minify="1" id="leaflet-js" src="https://verhuis-gids.nl/wp-content/cache/min/1/wp-content/themes/dmb-2/assets/leaflet/leaflet.js?ver=1773821383"></script>
+<script id="popper-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/assets/popper/popper.min.js?ver=2.11.6"></script>
+<script id="bootstrap-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/assets/bootstrap/js/bootstrap.min.js?ver=5.2.2"></script>
+<script id="enquire-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/assets/enquire/enquire.min.js?ver=2.1.2"></script>
+<script id="flowtype-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/assets/flowtype/flowtype.min.js?ver=1.1.0"></script>
+<script id="maskedinput-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/assets/maskedinput/jquery.maskedinput.min.js?ver=1.4.1"></script>
+<script id="dmb-js-extra">
+var dmb = {"locale":"nl_NL","message_no_valid_postal":"Vul een geldige postcode in (bijv. 1234 AA)","message_no_digits_postal":"Vul een postcode in die begint met 4 cijfers.","review_rest_url":"https://verhuis-gids.nl/wp-json/wp/v2/review/"};
+//# sourceURL=dmb-js-extra
+</script>
+<script id="dmb-js" src="https://verhuis-gids.nl/wp-content/themes/dmb-2/js/script.min.js?ver=bf344559"></script>
+<script id="cmplz-cookiebanner-js-extra">
+var complianz = {"prefix":"cmplz_","debug":"","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"18","version":"7.5.2","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https://verhuis-gids.nl/wp-json/complianz/v1/","locale":"lang=nl&locale=nl_NL","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"22","cookie_path":"/","categories":{"statistics":"statistieken","marketing":"marketing"},"tcf_active":"","placeholdertext":"Klik om {category} cookies te accepteren en deze inhoud in te schakelen","css_file":"https://verhuis-gids.nl/wp-content/uploads/complianz/css/banner-{banner_id}-{type}.css?v=18","page_links":{"eu":{"cookie-statement":{"title":"Cookiebeleid ","url":"https://verhuis-gids.nl/cookiebeleid-eu/"},"privacy-statement":{"title":"Privacyverklaring","url":"https://verhuis-gids.nl/wp-content/uploads/privacyverklaring.pdf"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":"","aria_label":"Klik om {category} cookies te accepteren en deze inhoud in te schakelen","iapi_nav":"fallback"};
+//# sourceURL=cmplz-cookiebanner-js-extra
+</script>
+<script type="rocketlazyloadscript" defer id="cmplz-cookiebanner-js" data-rocket-src="https://verhuis-gids.nl/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=1786695812"></script>
+<script id="cmplz-cookiebanner-js-after">
+		
+			//store the container where gf recaptcha resides
+			let recaptcha_field = document.querySelector('.ginput_recaptcha');
+			if (recaptcha_field) {
+				let reCaptchaContainer = recaptcha_field.closest('.gfield');
+				let html = '<span class="cmplz-gf-recaptcha cmplz-accept-marketing">Klik om reCaptcha validatie te accepteren.</span>';
+				reCaptchaContainer.insertAdjacentHTML('beforeend', html);
+				document.addEventListener("cmplz_run_after_all_scripts", cmplz_cf7_fire_post_render);
+			}
+			function cmplz_cf7_fire_post_render() {
+				//fire a DomContentLoaded event, so the Contact Form 7 reCaptcha integration will work
+				window.document.dispatchEvent(new Event("gform_post_render", {
+					bubbles: true,
+					cancelable: true
+				}));
+				let obj = document.querySelector('.cmplz-gf-recaptcha');
+				if (obj){
+					obj.parentNode.removeChild(obj)
+				}
+			}
+		
+		
+//# sourceURL=cmplz-cookiebanner-js-after
+</script>
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v11.1.2 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script type="rocketlazyloadscript" data-rocket-src="//www.googletagmanager.com/gtag/js?id=G-MT2L7QCMWE"  data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript" async></script>
+			<script type="rocketlazyloadscript" data-cfasync="false" data-wpfc-render="false" data-rocket-type="text/javascript">
+				var mi_version = '11.1.2';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv\/"};
+								if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-MT2L7QCMWE',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-MT2L7QCMWE', {"forceSSL":"true","anonymize_ip":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+							<!-- / Google Analytics by MonsterInsights -->
+		<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://verhuis-gids.nl/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	<script>var rocket_beacon_data = {"ajax_url":"https:\/\/verhuis-gids.nl\/wp-admin\/admin-ajax.php","nonce":"68bd93fa0b","url":"https:\/\/verhuis-gids.nl\/venlo\/jac-de-kievit-en-zn-bv","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src='https://verhuis-gids.nl/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1787663194 -->

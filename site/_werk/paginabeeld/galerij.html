@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Beeldkeuze: Zelf voorbereiden (4 pagina's, 5 kandidaten per pagina)</title>
+<style>
+  :root{--navy:#22314E;--teal:#00A19B;--teal-diep:#006C68;--creme:#F6F4EC;--licht:#E5F3F3;--lijn:#C4E4E4;--geel:#FFD500;--ant:#1D1D1B}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--creme);color:var(--ant);font:400 16px/1.55 "Noto Sans",system-ui,sans-serif}
+  header{background:var(--navy);color:#fff;padding:1.6rem clamp(1rem,4vw,3rem)}
+  header h1{margin:0 0 .5rem;font:700 1.6rem/1.2 Poppins,system-ui,sans-serif}
+  header p{margin:.4rem 0;max-width:78ch;color:#DCE6E6;font-size:.95rem}
+  header b{color:var(--geel)}
+  .schakel{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+  .schakel button{border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:50px;
+    padding:.45rem 1rem;font:700 .78rem/1 "Noto Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .schakel button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#062}
+  section{padding:2rem clamp(1rem,4vw,3rem) .5rem}
+  section h2{margin:0 0 .2rem;font:700 1.35rem/1.2 Poppins,system-ui,sans-serif;color:var(--teal-diep)}
+  section > p.pad{margin:0 0 1.2rem;font-size:.9rem;color:#4B4B49}
+  .rij{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
+  figure{margin:0;background:#fff;border:1px solid var(--lijn);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .vak{position:relative;background:var(--licht);aspect-ratio:2/3}
+  .vak img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .nr{position:absolute;left:.55rem;top:.55rem;background:rgba(29,29,27,.78);color:#fff;border-radius:8px;
+    padding:.2rem .55rem;font:700 .78rem/1.4 Poppins,sans-serif;letter-spacing:.04em}
+  figcaption{padding:.7rem .8rem .9rem;font-size:.85rem;flex:1}
+  figcaption b{display:block;font:700 .95rem/1.3 Poppins,sans-serif;color:var(--navy);margin-bottom:.25rem}
+  .qa{display:block;margin-top:.45rem;font-size:.78rem;line-height:1.45;color:#4B4B49;border-top:1px dashed var(--lijn);padding-top:.4rem}
+  .qa.goed{color:var(--teal-diep)}
+  .qa.let{color:#8A5A00}
+  figure.gekozen{border:2px solid var(--teal);box-shadow:0 6px 22px rgba(0,161,155,.22)}
+  .keus{position:absolute;right:.55rem;top:.55rem;background:var(--teal);color:#04302E;border-radius:8px;
+    padding:.2rem .55rem;font:700 .72rem/1.4 Poppins,sans-serif;letter-spacing:.03em}
+  figure:not(.gekozen){opacity:.55}
+  figure:not(.gekozen):hover{opacity:1}
+  footer{padding:2rem clamp(1rem,4vw,3rem) 3rem;font-size:.85rem;color:#4B4B49;max-width:80ch}
+  code{background:var(--licht);color:var(--ant);padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+</style>
+
+<header>
+  <h1>Beeldkeuze: de vier pagina's onder "Zelf voorbereiden"</h1>
+  <p>20 kandidaten, 5 per pagina, gegenereerd met Nano Banana Pro preview (<code>gemini-3-pro-image-preview</code>),
+     2:3 staand op 2K. De dozen komen als referentie uit de echte Top Movers-fotografie; kliksluiting met
+     gevouwen flappen, <b>nergens plakband</b>.</p>
+  <p><b>Waarom staand?</b> Het fotovak op deze pagina's (<code>.blok__foto</code>) rekt mee met de tekstkolom.
+     Gemeten op de devserver: inpaktips 479x736 (1440px), 403x788 (1000px), 307x384 (390px); m3-calculator
+     524x917, 435x955, 358x448. Dus verhouding 0,46 tot 0,80, nergens liggend. De liggende dienstfoto's die
+     er nu staan verliezen daar ruim 60% van hun breedte.</p>
+  <div class="schakel" role="group" aria-label="Toon als">
+    <button data-ar="2/3" aria-pressed="true">Volledig beeld (2:3)</button>
+    <button data-ar="524/917" aria-pressed="false">Zoals in het vak, desktop</button>
+    <button data-ar="4/5" aria-pressed="false">Zoals in het vak, mobiel</button>
+  </div>
+</header>
+
+<section>
+  <h2>1. Verhuischecklist</h2>
+  <p class="pad">Plannen, data, wat wanneer. <code>/verhuischecklist/</code></p>
+  <div class="rij" id="chk"></div>
+</section>
+
+<section>
+  <h2>2. Inpaktips</h2>
+  <p class="pad">Zelf inpakken, kamer voor kamer. <code>/inpaktips/</code></p>
+  <div class="rij" id="inp"></div>
+</section>
+
+<section>
+  <h2>3. Dozencalculator</h2>
+  <p class="pad">Hoeveel dozen heeft u nodig. <code>/dozencalculator/</code></p>
+  <div class="rij" id="doz"></div>
+</section>
+
+<section>
+  <h2>4. M3-calculator</h2>
+  <p class="pad">Volume, wat gaat er mee. <code>/m3-calculator/</code></p>
+  <div class="rij" id="m3"></div>
+</section>
+
+<footer>
+  <p><b>Gekozen op 29-08:</b> de acht omkaderde platen. Ze staan geretoucheerd en op maat in
+     <code>site/assets/img/</code> als <code>&lt;naam&gt;-760.webp</code> (760x1140) en
+     <code>&lt;naam&gt;-1140.webp</code> (1140x1710). Vier sessies bouwen de pagina's er nu omheen,
+     volgens <code>_werk/paginabeeld/BRIEF-HERONTWERP.md</code>.</p>
+  <p><b>Bronnen:</b> volle platen in <code>_werk/paginabeeld/raw/</code>, prompts en scenes in
+     <code>_werk/paginabeeld/gen_pagina.py</code>. Gezichten komen uit de mixbibliotheek (kop-06, 09, 12, 14,
+     18, 19); in alle andere scenes staan mensen van achteren, in driekwart of buiten beeld gesneden.</p>
+</footer>
+
+<script>
+const KAARTEN = [
+ ["chk","chk1-keukentafel-planning","Aan de keukentafel","De checklist met de eigen data erbij, dozen naast de tafel, ochtendlicht.","goed","GERETOUCHEERD: het vel toont nu alleen liniatuur en lege vinkvakjes, geen enkel woord meer. NBP-edit plus regio-composit."],
+ ["chk","chk2-adviseur-opname","De adviseur neemt op","Verhuisadviseur in Top Movers-polo loopt met de klant langs de kast en noteert.","let","Borstprint is klein en verhaspeld; naretoucheren met het echte logo."],
+ ["chk","chk3-dozen-labels","Dozen met kamerlabels","Geen mensen: KEUKEN en SLAAPKAMER met stift, klembord bovenop, lang ochtendlicht.","goed","Doosopdruk 100% correct gelezen, inclusief 'Aangesloten BIJ erkende verhuizers'."],
+ ["chk","chk4-stel-lijst-hal","Met de lijst in de hal","De een leest de checklist, de ander tilt een doos. Verhuisdag-sfeer bij de voordeur.","let","Het A4 draagt onleesbare tekst; doosopdruk zelf is correct."],
+ ["chk","chk5-zolder-sorteren","Zolder opruimen","Wat gaat mee, wat gaat weg: sorteren onder het dakraam, doos in het licht.","goed","Schoon; geen tekst in beeld die kan verhaspelen."],
+
+ ["inp","inp1-borden-op-kant","Borden op hun kant","Handen wikkelen een bord in blanco papier, de borden staan rechtop in de doos.","goed","Doosopdruk correct en de borden staan echt op de kant, precies wat de tekst zegt."],
+ ["inp","inp2-stift-label","KEUKEN op de doos","Met een dikke stift de kamer op de zijkant schrijven; flappen dicht, geen tape.","let","Op de zijkant staat het lockup verticaal; op de echte doos staat het horizontaal."],
+ ["inp","inp3-garderobedoos","Garderobedoos","Kleding gaat op de hanger over, zonder vouwen en zonder strijken achteraf.","let","De kleding hangt aan een los rek naast de doos in plaats van in de garderobedoos."],
+ ["inp","inp4-glaswerk","Glaswerk rechtop","Glazen in papier gerold en rechtop in een kleine doos, papier tussen de gaten.","goed","Schoon; handen en contactpunten kloppen."],
+ ["inp","inp5-inpakservice","De inpakservice","Onze inpakker zet boeken rechtop in de boekendoos, van achteren gezien.","goed","Schoon; verhuizer in de charcoal polo, gezicht in profiel naar het werk."],
+
+ ["doz","doz1-stapel-woonkamer","Zoveel dozen worden het","Geen mensen: grote en kleine dozen door elkaar in een lege kamer, steekwagen ernaast.","let","GERETOUCHEERD: labels waren Nax. 38 kg / Nan. 25 bg en een MOV6RS, nu leest 4 van de 6 Max. 20 kg en MOVERS. Twee kleine labels wijken nog af (hg, Cyrillische M); op weergavegrootte 14 px breed."],
+ ["doz","doz2-bezorging-voordeur","Dozen komen langs","Wij brengen de dozen ruim voor de verhuisdag, op de steekwagen naar de voordeur.","goed","GERETOUCHEERD: alle gewichtslabels lezen nu Max. 20 kg, MOVEBS is MOVERS en de tagline klopt. Gezichten en haar komen onaangeroerd uit de bron."],
+ ["doz","doz3-twee-maten","Klein en groot","De twee maten naast elkaar: klein voor zwaar, groot voor licht en volumineus.","goed","Opdruk 100% correct, inclusief beide regels onder het woordmerk."],
+ ["doz","doz4-dragen-gang","Drie dozen door de gang","Buik naar de last, armen voor het lichaam, tegenlicht van de voordeur.","let","Op een doos staat 'Aangesieten' in plaats van 'Aangesloten'; klein, retouche is een minuut."],
+ ["doz","doz5-tellen-woonkamer","Dozen tellen","Halverwege het inpakken de stapels natellen, met de rug naar de camera.","goed","Schoon; 'Max. 20 kg' correct."],
+
+ ["m3","m31-laadbak-vol","De laadbak vol","Dat is uw kubieke meters: dozen tot het dak, meubels in verhuisdekens, klep achterop.","goed","Schoon; 'Max. 20 kg' op de doos op de klep correct."],
+ ["m3","m32-adviseur-woonkamer","Opname in de woonkamer","De adviseur loopt met u de kamer door en noteert wat er mee gaat.","goed","GERETOUCHEERD: borstprint is nu scherp TOP MOVERS met de teal swoosh. Alleen 0,3% van het beeld komt uit de edit, de rest is de bron."],
+ ["m3","m33-woonkamer-compleet","Alles wat mee moet","Geen mensen: de hele ingerichte kamer in een blik, twee dozen klaar bij de deur.","goed","Opdruk correct, inclusief beide regels."],
+ ["m3","m34-bank-dragen","De bank de deur uit","Met z'n tweeen, buik naar de last, deken om de hoeken van de bank.","let","Op de linker polo staat een bij; die hoort niet op de polo (alleen op de doos). Naretoucheren of opnieuw rollen."],
+ ["m3","m35-bakwagen-laadklep","Bakwagen met laadklep","Klep achterop, half geladen. Het zijpaneel is bewust blanco gelaten.","let","Blanco paneel = belettering er later deterministisch op plakken; de tweede regel op de doos is verhaspeld."],
+];
+const GEKOZEN = {
+ "chk1-keukentafel-planning": "checklist-keukentafel", "chk3-dozen-labels": "checklist-dozen",
+ "inp1-borden-op-kant": "inpak-borden", "inp5-inpakservice": "inpak-service",
+ "doz1-stapel-woonkamer": "dozen-stapel", "doz2-bezorging-voordeur": "dozen-bezorging",
+ "m31-laadbak-vol": "m3-laadbak", "m32-adviseur-woonkamer": "m3-opname",
+};
+const tel = {};
+for (const [groep, id, titel, tekst, klas, qa] of KAARTEN) {
+  tel[groep] = (tel[groep] || 0) + 1;
+  const f = document.createElement('figure');
+  if (GEKOZEN[id]) f.className = 'gekozen';
+  f.innerHTML = `<div class="vak"><span class="nr">${groep.toUpperCase()}-${tel[groep]}</span>
+      <img src="web/${id}-900.webp" alt="${titel}" loading="lazy" width="900" height="1350">
+      ${GEKOZEN[id] ? '<span class="keus">Gekozen &middot; ' + GEKOZEN[id] + '</span>' : ''}</div>
+    <figcaption><b>${titel}</b>${tekst}<span class="qa ${klas}">${klas === 'goed' ? 'Controle: ' : 'Let op: '}${qa}</span></figcaption>`;
+  document.getElementById(groep).appendChild(f);
+}
+document.querySelectorAll('.schakel button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.schakel button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.vak').forEach(v => v.style.aspectRatio = b.dataset.ar);
+}));
+</script>
+</html>

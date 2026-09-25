@@ -1,0 +1,45 @@
+                          CO2-FOOTPRINT                                                   202
+                     Top Movers Nederland B.V.                                              5
+SCOPE 1                                       OMVANG      EENHEID   EMISSIEFACTOR       TON CO2
+
+Gasverbruik                                   5653,04        m3            2134         12,06
+
+Brandstofverbruik - diesel                    72902,21      liter          3462         252,39
+
+Brandstofverbruik - benzine                   1443,06       liter          3059         4,41
+
+Verbruik Adblue                               16,10         liter           260         0,00
+
+                                                                       TOTAAL SCOPE 1           268,87
+
+
+
+SCOPE 2                                       OMVANG      EENHEID   EMISSIEFACTOR       TON CO2
+
+Elektriciteitsverbruik - grijze stroom        18772,26      kWh             498         9,35
+
+Elektriciteitsverbruik - groene stroom        118568,76     kWh              0          0,00
+
+Stadswarmte                                   10,94          GJ            55034        0,60
+
+                                                                       TOTAAL SCOPE 2             9,95
+
+
+
+BUSINESS TRAVEL                               OMVANG      EENHEID   EMISSIEFACTOR       TON CO2
+
+Zakelijk vervoer - gedeclareerde kilometers   13517,85       km             191         2,58
+
+Zakelijk vervoer - OV kilometers              0,00           km             14          0,00
+Vliegreizen > 2500                   4746,36   km            157       0,75
+
+                                                     TOTAAL BUSINESS
+                                                                                3,33
+                                                    TRAVEL
+
+
+
+
+TOTALE CO2-FOOTPRINT (SCOPE 1 & 2)
+                                                                              282,15
+

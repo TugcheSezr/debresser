@@ -1,0 +1,44 @@
+{
+ "pia1-piano-hondje-deur": {
+  "oordeel": "fout",
+  "tekst": "Voorste man loopt vooruit met zijn rug naar de piano en houdt hem achter zich vast: tegen de tilregel en de scene (achteruit, gezicht naar piano). Prints, dozen en hondje verder in orde; achterste borstprint verhaspeld.",
+  "retouche": "",
+  "opnieuw": "Houding voorste man. Prompt: 'the shaved-head mover at the front walks BACKWARDS toward the camera, seen over his shoulder, both hands on the piano, belly and face toward the piano, never with his back to it'. Kleine borstprint achterste man: MOVERS leesbaar houden."
+ },
+ "pia2-vleugel-inpakken": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: klep dicht, drie poten eraan, dekens zonder banden, gezichten naar de vleugel. Beide borstprints hebben een verkeerde swoosh (blad/7-vorm boven de letters) en er zitten teal mouwmerken op beide polo's.",
+  "retouche": "Borstprint oudere man (links) en jongere man (rechts) vervangen door de correcte lockup met de swoosh ONDER de letters; teal merkje op linker- en rechtermouw oudere man en grote teal swoosh op rechtermouw jongere man wegwerken. Glimlach jongere man zit aan de brede kant.",
+  "opnieuw": ""
+ },
+ "pia3-piano-laadklep": {
+  "oordeel": "let",
+  "tekst": "Wagen-lockup klopt (zwarte O, swoosh onder, pijl rechts), laadklep achterop, houding goed. Maar: dun koord om de deken van de piano, sjorbanden in de laadbak en beide borstprints verhaspeld. Hondje heeft een duwbeugel.",
+  "retouche": "Koord horizontaal over de deken (ca. 55% hoogte van de piano) wegwerken; zwarte sjorband met gesp aan het plafond en geel/groene band aan de linkerwand van de laadbak weg; borstprint links (MOVERS teal-verhaspeld) en rechts (swoosh loopt door MOVERS) vervangen; broeklabel 'VSE' rechter man weg. Duwbeugel hondje: laten of wegwerken.",
+  "opnieuw": ""
+ },
+ "pia4-piano-op-plek": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: verhuizer vouwt de laatste deken, klant zonder bedrijfskleding met de hand op de piano, piano in orde, klepmerk onleesbaar. Alleen de borstprint is fout: truck-icoon naast TOP en een derde teal tekstregel.",
+  "retouche": "Borstprint linkerborst vervangen door de correcte lockup: teal truck-icoon rechts van TOP en teal regel onder MOVERS weg, swoosh onder de letters.",
+  "opnieuw": ""
+ },
+ "pia5-eerste-noten": {
+  "oordeel": "let",
+  "tekst": "Sterk: meisje speelt, verhuizer vouwt onscherp op de achtergrond, licht en NL-interieur kloppen. Klein: borstprint achter verhaspeld (onscherp), twee blanco dozen zonder TOP MOVERS-opdruk, sokvoet net boven onderrand.",
+  "retouche": "Borstprint verhuizer (linkerborst, onscherp): MOVERS-regel netjes maken; dichte doos midden en open doos rechts eventueel TOP MOVERS-lockup geven; bij plaatsing de onderrand niet verder afsnijden (rechter sokvoet zit ca. 5 px van de rand).",
+  "opnieuw": ""
+ },
+ "pia6-vleugel-op-hondje-breed": {
+  "oordeel": "fout",
+  "tekst": "Vleugel staat rechtop in speelstand boven het hondje, twee ingepakte poten zitten er nog aan (een op het hondje, een op de vloer) plus drie losse op de vloer: vijf poten, lier steekt uit. Onmogelijk, tegen potenregel.",
+  "retouche": "",
+  "opnieuw": "Vleugel ligt niet op zijn kant en poten zitten half eraan. Prompt: 'the grand piano lies on its straight long side on the flat green dolly, lid toward the wall, underside toward the camera; NO legs and NO pedal lyre attached; exactly three wrapped legs lie on the floor beside it'. Borstprint rechter man verhaspeld (OWEAT), broekbadge weg."
+ },
+ "pia7-piano-straat-wagen": {
+  "oordeel": "let",
+  "tekst": "Sterk: wagen-lockup correct, laadklep achterop, hondje vlak, buik naar de piano, NL-straat. Retouche: twee sjorbanden aan de linkerwand van de laadbak, groen touw over de rolcontainer, beide borstprints verhaspeld.",
+  "retouche": "Oranje en blauwe sjorband aan de linker binnenwand van de laadbak wegwerken; groene band/touw diagonaal over de rolcontainer rechts in de laadbak weg; borstprint linker man (klein, TOP + smurrie) en rechter man (MOVERS verhaspeld) vervangen; gele reling op de laadklep ontbreekt (optioneel).",
+  "opnieuw": ""
+ }
+}

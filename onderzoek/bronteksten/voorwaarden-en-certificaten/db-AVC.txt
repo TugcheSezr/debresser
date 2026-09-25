@@ -1,0 +1,775 @@
+ Vervoeradres
+
+
+
+
+AVC
+Algemene Vervoercondities 2002
+Gedeponeerd bij de griffie van de rechtbank te Amsterdam onder nummer 81/2014
+en bij de griffie van de rechtbank te Rotterdam onder nummer 2/2015.
+In Stichting Vervoeradres, opgericht in 1946, werken samen:
+evofenedex, de ondernemersorganisatie voor logistiek en transport
+CBRB, Centraal Bureau voor de Rijn- & Binnenvaart
+Koninklijke BLN-Schuttevaer, de ketenbrede brancheorganisatie voor de binnenvaart
+Transport en Logistiek Nederland, de ondernemersorganisatie voor het goederenvervoer
+Goederenvervoer Nederland
+
+
+De Algemene Vervoercondities 2002 zijn gedeponeerd ter griffie van de rechtbank te Amsterdam onder
+depotnummer 81/2014 resp. van de rechtbank Rotterdam onder depotnummer 2/2015.
+
+
+© 2017, Stichting Vervoeradres
+Niets uit deze uitgave mag worden verveelvoudigd en (of) openbaar gemaakt door middel van druk, fotokopie,
+microfilm of op welke andere wijze ook, zonder voorafgaande toestemming van de uitgever.
+                                                                                    Inhoudsopgave
+
+Artikel 1    Definities                                                                         2
+Artikel 2    Elektronische berichten                                                            3
+Artikel 3    Werkingssfeer                                                                      3
+Artikel 4    Verplichtingen van de afzender; opzegging van de vervoerovereenkomst               3
+Artikel 5    De vrachtbrief                                                                     4
+Artikel 6    Bewijskracht van de vrachtbrief                                                    5
+Artikel 7    Vrachtbetaling                                                                     5
+Artikel 8    Instructies van de afzender                                                        6
+Artikel 9    Verplichtingen van de vervoerder                                                   6
+Artikel 10   Aansprakelijkheid van de vervoerder                                                7
+Artikel 11   Bijzondere risico’s                                                                7
+Artikel 12   Vermoeden van aansprakelijkheid bevrijdende omstandigheden                         8
+Artikel 13   Schadevergoeding                                                                   8
+Artikel 14   Opzet en bewuste roekeloosheid                                                     9
+Artikel 15   Kennisgeving van de schade                                                         9
+Artikel 16   Vorderingsrecht                                                                    9
+Artikel 17   Rembours                                                                           9
+Artikel 18   Voorbehouden van de vervoerder                                                    10
+Artikel 19   Verhindering na inontvangstneming                                                 10
+Artikel 20   Stapelvervoer; doorvervoer                                                        11
+Artikel 21   Opslag in geval van niet opkomen van de geadresseerde                             11
+Artikel 22   Opslag voor, tijdens en na het vervoer                                            12
+Artikel 23   Retentierecht                                                                     12
+Artikel 24   Pandrecht                                                                         12
+Artikel 25   Verloren zaken                                                                    13
+Artikel 26   Vrijwaring; Himalaya-clausule                                                     13
+Artikel 27   Vertragingsrente                                                                  13
+Artikel 28   Verjaring                                                                         13
+Artikel 29   Forumkeuze; rechtskeuze                                                           14
+
+
+
+
+                Vervoeradres
+Artikel 1
+Definities
+
+In deze condities wordt verstaan onder:
+
+1. Vervoerovereenkomst: de overeenkomst waarbij de vervoerder zich jegens de afzender verbindt tot het
+   vervoer van zaken over de weg.
+
+2. Afzender: de contractuele wederpartij van de vervoerder.
+   Vermelding van een afzender op de vrachtbrief houdt niet zonder meer in dat de aldus genoemde de
+   contractuele wederpartij van de vervoerder is.
+
+3. Geadresseerde: degene die uit hoofde van de vervoerovereenkomst jegens de vervoerder het recht heeft op
+   aflevering van de zaken.
+
+4. De vrachtbrief: het document opgemaakt in drie oorspronkelijke exemplaren waarvan een exemplaar (bewijs
+   van ontvangst) bestemd is voor de afzender, een exemplaar (bewijs van aflevering) bestemd is voor de
+   vervoerder en een exemplaar bestemd is voor de geadresseerde.
+
+5. Hulppersonen: ondergeschikten van de vervoerder alsmede personen van wier diensten de vervoerder ter
+   uitvoering van de vervoerovereenkomst gebruik maakt.
+
+6. Overmacht: omstandigheden, voor zover een zorgvuldig vervoerder deze niet heeft kunnen vermijden en voor
+   zover zulk een vervoerder de gevolgen daarvan niet heeft kunnen verhinderen.
+
+7. Vertragingsschade: vermogensschade ten gevolge van vertraagde aflevering van zaken.
+
+8. Schriftelijk: schriftelijk dan wel langs elektronische weg.
+
+9. BW: Burgerlijk Wetboek.
+
+10. CMR: het verdrag betreffende de overeenkomst tot internationaalvervoer van goederen over de weg (Genève
+    1956), zoals aangevuld door het protocol van 1978.
+
+11. Algemene Veerboot- en Beurtvaartcondities: de Algemene Veerboot- en Beurtvaartcondities, laatste versie,
+    gedeponeerd door Stichting vervoeradres ter griffie van de arrondissementsrechtbank te Amsterdam en
+    Rotterdam.
+
+12. Algemene Opslagvoorwaarden: de Algemene Opslagvoorwaarden, laatste versie, gedeponeerd door Stichting
+    vervoeradres ter griffie van de arrondissementsrechtbank te Amsterdam en Rotterdam.
+
+
+
+
+                 Vervoeradres                                                                                  2
+Artikel 2
+Elektronische berichten
+
+1. Indien gegevens, waaronder die met betrekking tot de vrachtbrief, langs elektronische weg worden
+   uitgewisseld, zullen partijen in geval van onderlinge geschillen de toelaatbaarheid van elektronische
+   berichten als bewijsmiddel niet betwisten.
+
+2. Elektronische berichten hebben dezelfde bewijskracht als geschriften, tenzij deze berichten niet op het
+   tussen partijen overeengekomen formaat en niveau van beveiliging alsmede niet op de overeengekomen
+   wijze zijn verzonden, opgeslagen en geregistreerd.
+
+3. Een vrachtbrief elektronisch opgemaakt en elektronisch ondertekend via het TransFollow-platform heeft
+   dezelfde bewijskracht als de vrachtbrief bedoeld in artikel 1. De elektronische handtekening gezet via het
+   TransFollow-platform geldt als voldoende betrouwbaar.
+
+
+Artikel 3
+Werkingssfeer
+
+De Algemene Vervoercondities zijn van toepassing op de vervoerovereenkomst van zaken over de weg; indien de
+CMR van toepassing is, zijn de Algemene Vervoercondities aanvullend van toepassing.
+
+
+Artikel 4
+Verplichtingen van de afzender; opzegging van de vervoerovereenkomst
+
+1. De afzender is verplicht:
+   a) de vervoerder omtrent de zaken alsmede omtrent de behandeling daarvan tijdig al die opgaven te
+       doen, waartoe hij in staat is of behoort te zijn, en waarvan hij weet of behoort te weten, dat zij voor de
+       vervoerder van belang zijn, tenzij hij mag aannemen dat de vervoerder deze gegevens kent;
+   b) de overeengekomen zaken op de overeengekomen plaats, tijd en wijze en vergezeld van de volgens
+       artikel 5 vereiste vrachtbrief en de door de wet van de zijde van de afzender overigens vereiste
+       documenten ter beschikking van de vervoerder te stellen;
+   c) elk te vervoeren collo duidelijk en doelmatig te adresseren en, indien hem zulks redelijkerwijs mogelijk is,
+       de vereiste gegevens en adressen op of aan de colli of hun verpakking aan te brengen op zodanige wijze,
+       dat zij in normale omstandigheden tot het einde van het vervoer leesbaar zullen blijven. De afzender kan
+       met de vervoerder schriftelijk overeenkomen, dat de adressering van de colli wordt vervangen door een
+       vermelding van cijfers, letters of andere symbolen;
+   d) het gezamenlijk gewicht van de te vervoeren zaken op de vrachtbrief te vermelden;
+   e) de overeengekomen zaken in of op het voertuig te laden, te stuwen en te doen lossen, tenzij partijen
+       anders overeenkomen of uit de aard van het voorgenomen vervoer, in aanmerking genomen de te
+       vervoeren zaken en het ter beschikking gestelde voertuig, anders voortvloeit.
+
+2. De afzender kan zich niet door een beroep op welke omstandigheid dan ook aan de in lid 1 onder a, b, c en d
+   genoemde verplichtingen onttrekken en de afzender is verplicht de vervoerder de schade te vergoeden die
+   door het niet nakomen van genoemde verplichtingen ontstaat.
+
+3. Onverminderd het in lid 2 bepaalde kan de vervoerder de overeenkomst zonder enige ingebrekestelling
+   opzeggen, wanneer de afzender niet aan zijn in lid 1 onder a en b vermelde verplichtingen voldeed, doch dit
+   slechts nadat hij de afzender schriftelijk een uiterste termijn heeft gesteld en de afzender bij afloop daarvan
+   nog niet aan zijn verplichting heeft voldaan. Indien door het stellen van een dergelijke termijn de exploitatie
+
+
+                Vervoeradres                                                                                         3
+   van zijn bedrijf op onredelijke wijze zou worden verstoord, kan de vervoerder ook zonder het verlenen van
+   genoemde termijn de overeenkomst opzeggen.
+   De afzender kan, indien hij niet aan zijn in lid 1 onder b vermelde verplichting voldeed, eveneens de
+   overeenkomst opzeggen. Opzegging geschiedt door een schriftelijke kennisgeving en de overeenkomst
+   eindigt op het ogenblik van ontvangst daarvan. Na opzegging is de afzender 75% van de overeengekomen
+   vracht aan de vervoerder verschuldigd zonder tot verdere schadevergoeding te zijn gehouden. Indien geen
+   vracht is overeengekomen, geldt als zodanig de vracht volgens recht, respectievelijk gebruik, respectievelijk
+   billijkheid.
+
+4. Eveneens kan de vervoerder de overeenkomst opzeggen, wanneer de belading en/of de stuwing gebrekkig
+   is of wanneer er overbelading is, maar niet nadat de afzender in de gelegenheid is gesteld het gebrek of
+   de overbelading ongedaan te maken. Indien de afzender weigert de gebrekkigheid van de belading en/
+   of de stuwing of overbelading ongedaan te maken kan de vervoerder de overeenkomst opzeggen dan wel
+   zelf de gebrekkigheid en/of de overbelading ongedaan maken; in beide gevallen is de afzender verplicht de
+   vervoerder een bedrag van € 500 te betalen, tenzij de vervoerder bewijst dat de daardoor geleden schade dit
+   bedrag te boven gaat; lid 3 is niet van toepassing.
+
+5. De afzender moet aan de vervoerder de aan deze terzake van over­belading opgelegde boete vergoeden, tenzij
+   de vervoerder tekort geschoten is in zijn ingevolge artikel 9 leden 1 en 5 op hem rustende verplichtingen of
+   de vervoerder de vervoerovereenkomst niet heeft opgezegd op grond van het vorige lid, onverminderd diens
+   beroep op kwade trouw van de afzender. Indien de afzender het bewijs kan overleggen van een beboeting
+   voor overtreding van art. 2.6 lid 2 uit de Wet Wegvervoer Goederen, dan vervalt deze bepaling.
+
+6. Onverminderd de overige leden van dit artikel, moet de afzender aan de vervoerder de door deze geleden
+   schade vergoeden voor zover deze het gevolg is van de omstandigheid, dat het vervoer van de zaken
+   van hogerhand geheel of ten dele verboden of beperkt is of zal worden; deze aansprakelijkheid bestaat
+   echter niet, indien de afzender bewijst dat dit verbod of deze beperking aan de vervoerder bekend was of
+   redelijkerwijs kon zijn bij het aangaan van de vervoerovereenkomst.
+
+
+Artikel 5
+De vrachtbrief
+
+1. De afzender is verplicht bij de ter beschikkingstelling van zaken aan de vervoerder een vrachtbrief
+   te overhandigen waarin vermeld staat dat deze Algemene Vervoercondities op de gesloten
+   vervoerovereenkomst van toepassing zijn.
+
+2. De afzender is verplicht de vrachtbrief volgens de daarop voorkomende aanwijzingen volledig en naar
+   waarheid in te vullen en hij staat op het ogenblik van de ter beschikkingstelling van de zaken in voor de
+   juistheid en volledigheid van de door hem verstrekte gegevens.
+
+3. De vervoerder is verplicht zich als vervoerder op de hem door de afzender aangeboden vrachtbrief duidelijk
+   kenbaar te maken en dit te ondertekenen en aan de afzender af te geven. Indien de vervoerder dit verlangt
+   is de afzender verplicht de vrachtbrief te ondertekenen. De ondertekening kan worden gedrukt of door een
+   stempel dan wel enig ander kenmerk van oorsprong worden vervangen.
+
+4. De vrachtbrief kan ook in de vorm van electronische berichten worden opgemaakt overeenkomstig het
+   tussen partijen overeengekomen formaat en niveau van beveiliging alsmede overeenkomstig de tussen
+   partijen overeengekomen wijze van verzenden, opslaan en registreren.
+
+
+
+
+                 Vervoeradres                                                                                      4
+Artikel 6
+Bewijskracht van de vrachtbrief
+
+1. De vervoerder is verplicht bij de inontvangstneming van de zaken de juistheid van de vermelding van
+   het aantal zaken op de vrachtbrief alsmede de uiterlijk goede staat van de zaken en hun verpakking te
+   controleren en in geval van afwijking daarvan aantekening te maken op de vrachtbrief. Deze verplichting
+   bestaat niet wanneer naar het oordeel van de vervoerder het vervoer daardoor aanmerkelijk zou worden
+   vertraagd.
+
+2. De vrachtbrief levert bewijs, behoudens tegenbewijs, van de voorwaarden der vervoerovereenkomst en
+   de partijen bij de vervoerovereenkomst, van de inontvangstneming van de zaken en hun verpakking in
+   uiterlijk goede staat, van het gewicht en van het aantal zaken. Indien de vervoerder geen redelijke middelen
+   ter beschikking staan om de juistheid van vermeldingen bedoeld in het eerste lid te controleren, levert de
+   vrachtbrief geen bewijs van die vermeldingen.
+
+
+Artikel 7
+Vrachtbetaling
+
+1. De afzender is verplicht op het ogenblik dat hij de vrachtbrief overhandigt, dan wel op het ogenblik dat de
+   zaken door de vervoerder in ontvangst zijn genomen, de vracht en verdere op de zaken drukkende kosten te
+   voldoen.
+
+2. Indien ongefrankeerde zending is overeengekomen, is de geadresseerde bij de aflevering van de zaken door
+   de vervoerder verplicht de vracht, het uit anderen hoofde terzake van het vervoer verschuldigde en verdere
+   op de zaken drukkende kosten te voldoen; indien hij deze op eerste aanmaning niet voldeed, is de afzender
+   hoofdelijk met hem tot betaling verplicht.
+   Indien de afzender bij ongefrankeerde verzending op de vrachtbrief heeft vermeld, dat zonder betaling van
+   de vracht, van het uit anderen hoofde terzake van het vervoer verschuldigde of van verdere op de zaken
+   drukkende kosten niet mag worden afgeleverd, moet de vervoerder, indien geen betaling plaatsvindt, de
+   afzender nadere instructies vragen die hij moet opvolgen, voor zover hem dit redelijkerwijs mogelijk is, tegen
+   vergoeding van kosten, schade en eventueel be­taling van een redelijke beloning, tenzij deze kosten door zijn
+   schuld zijn ontstaan.
+
+3. De vervoerder is gerechtigd om buitengerechtelijke en gerechtelijke kosten ter incasso van de vracht en
+   andere bedragen, zoals genoemd in leden 1 en 2, aan degene die gehouden is tot betaling van de vracht en
+   andere kosten, in rekening te brengen. De buitengerechtelijke incassokosten zijn verschuldigd vanaf het
+   moment dat de debiteur in verzuim is. De buitengerechtelijke incassokosten worden berekend aan de hand
+   van het Besluit vergoeding voor buitengerechtelijke incassokosten (Staatsblad 2012/141) of de laatste versie
+   van dat Besluit.
+
+4. De vracht, het uit anderen hoofde terzake van het vervoer verschuldigde en verdere op de zaken rustende
+   kosten zijn ook verschuldigd indien de zaken niet, slechts ten dele, beschadigd of met vertraging ter
+   bestemming worden afgeleverd.
+
+5. Beroep op verrekening van vorderingen tot betaling van vracht, van het uit anderen hoofde terzake van het
+   vervoer verschuldigde of van verdere op de zaken drukkende kosten met vorderingen uit anderen hoofde is
+   niet toegestaan.
+
+
+
+
+                 Vervoeradres                                                                                     5
+6. Indien de afzender niet aan zijn in het onderhavige artikel genoemde verplichtingen heeft voldaan, is de
+   vervoerder bevoegd het vertrek van het vervoermiddel op te schorten en alsdan wordt de hierdoor voor hem
+   ontstane schade als op de zaken drukkende kosten aangemerkt.
+
+
+Artikel 8
+Instructies van de afzender
+
+1. De afzender is bevoegd de plaats van terbeschikkingstelling van de zaken te wijzigen, zichzelf of een ander
+   als geadresseerde aan te wijzen, een gegeven aanduiding van de geadresseerde te wijzigen dan wel orders
+   omtrent de aflevering te geven of de plaats van aflevering te wijzigen, mits deze instructies de normale
+   bedrijfsvoering van de vervoerder niet beletten. Instructies betreffende niet-aflevering die de persoon die
+   deze moet uitvoeren, tijdig bereiken, moeten echter steeds worden uitgevoerd.
+
+2. Instructies kunnen worden gegeven ook nadat de vervoerder de zaken in ontvangst heeft genomen.
+
+3. De afzender is verplicht de vervoerder de door het opvolgen van de instructies veroorzaakte schade en
+   gemaakte kosten te vergoeden.
+   Wanneer het voertuig ten gevolge van de gegeven instructies naar een niet eerder overeengekomen plaats is
+   gereden, is de afzender verplicht, behalve vergoeding van geleden schade en gemaakte kosten, ook terzake
+   een redelijke vergoeding te voldoen.
+
+4. Het recht tot het geven van instructies vervalt naarmate de geadresseerde op de losplaats de zaken
+   aanneemt of de geadresseerde van de vervoerder schadevergoeding verlangt omdat deze de zaken niet
+   aflevert.
+
+
+Artikel 9
+Verplichtingen van de vervoerder
+
+1. De vervoerder is verplicht de overeengekomen zaken op de overeen­gekomen plaats, tijd en wijze in ontvangst
+   te nemen alsmede het laadvermogen van het voertuig aan de afzender mee te delen, tenzij aannemelijk is
+   dat de afzender daarvan op de hoogte is.
+
+2. De vervoerder is verplicht ten vervoer ontvangen zaken ter bestemming af te leveren in de staat waarin hij
+   deze heeft ontvangen.
+
+3. De vervoerder is verplicht de ten vervoer ontvangen zaken binnen een redelijke termijn ter bestemming
+   af te leveren; indien een termijn van aflevering schriftelijk is overeengekomen dient binnen deze termijn
+   afgeleverd te worden.
+
+4. Indien de vervoerder aan de verplichting genoemd in lid 1 niet voldoet, kunnen beide partijen de
+   overeenkomst met betrekking tot de zaken die de vervoerder niet in ontvangst heeft genomen, opzeggen. De
+   afzender kan dit echter slechts doen nadat hij de vervoerder schriftelijk een uiterste termijn heeft gesteld en
+   de vervoerder bij afloop daarvan nog niet aan zijn verplichting heeft voldaan.
+   De opzegging geschiedt door een schriftelijke mededeling aan de wederpartij en de overeenkomst eindigt op
+   het ogenblik, waarop deze mededeling wordt ontvangen.
+   Na opzegging is de vervoerder verplicht aan de afzender de schade te vergoeden die deze door de opzegging
+   heeft geleden. Deze schade­vergoeding beloopt echter niet meer dan tweemaal de vracht en de afzender is
+   geen vracht verschuldigd.
+
+
+
+                Vervoeradres                                                                                     6
+5. De vervoerder is verplicht de door of namens de afzender verrichte belading, stuwing en eventuele
+   overbelading te controleren indien en voorzover de omstandigheden zulks toelaten. Indien hij van oordeel is
+   dat de belading of stuwing gebrekkig is, is hij verplicht, onverminderd het in artikel 4 lid 4 bepaalde, dit op de
+   vrachtbrief aan te tekenen. Indien hij niet in staat of in de gelegenheid is aan zijn controleplicht te voldoen,
+   kan hij daarvan aantekening maken op de vrachtbrief.
+
+6. Indien aflevering aan huis is overeengekomen, moet de vervoerder de zaken bezorgen aan de deur van
+   het adres, dat op de vrachtbrief is vermeld of aan de deur van een adres, dat hem in plaats daarvan – met
+   inachtneming van artikel 8 – tijdig door de afzender is opgegeven. Wanneer het adres niet via een verharde
+   rijweg of anderszins redelijker­wijs bereikbaar is, moet afgeleverd worden op een plaats, die zo dicht mogelijk
+   bij het oorspronkelijk opgegeven adres ligt.
+
+
+Artikel 10
+Aansprakelijkheid van de vervoerder
+
+1. De vervoerder is, behoudens overmacht, aansprakelijk voor schade aan of verlies van de zaken en voor
+   vertragingsschade voor zover de vervoerder de in artikel 9 leden 2 en 3 genoemde verplichtingen niet is
+   nagekomen.
+
+2. De vervoerder is voor de gedragingen van zijn hulppersonen op gelijke wijze als voor eigen gedragingen
+   aansprakelijk.
+
+3. De vervoerder kan niet om zich van zijn aansprakelijkheid te ontheffen beroep doen op de gebrekkigheid
+   van het voertuig of van het materiaal waarvan hij zich bedient, tenzij dit laatste door de afzender, de
+   geadresseerde of de ontvanger te zijner beschikking is gesteld. Onder materiaal wordt niet begrepen een
+   schip of spoorwagon, waarop het voertuig zich bevindt.
+
+
+Artikel 11
+Bijzondere risico’s
+
+Onverminderd artikel 10 is de vervoerder, die de op hem uit hoofde van de artikel 9 leden 2 en 3 rustende
+verplichtingen niet nakwam, desalniettemin voor de daardoor ontstane schade niet aansprakelijk, voor
+zover dit niet nakomen het gevolg is van de bijzondere risico’s verbonden aan een of meer van de volgende
+omstandigheden:
+a) het vervoer van de zaken in een onoverdekt voertuig, wanneer dit uitdrukkelijk is overeengekomen en op de
+    vrachtbrief is vermeld;
+b) ontbreken of gebrekkigheid van de verpakking van de zaken die gelet op hun aard of de wijze van vervoer
+    voldoende verpakt hadden moeten zijn;
+c) behandeling, lading, stuwing of lossing van de zaken door de afzender, de geadresseerde of personen, die
+    voor rekening van de afzender of de geadresseerde handelen;
+d) de aard van bepaalde zaken zelf, die door met deze aard zelf samen­hangende oorzaken zijn blootgesteld
+    aan geheel of gedeeltelijk verlies of aan beschadiging, in het bijzonder door ontvlamming, ontploffing,
+    smelting, breuk, corrosie, bederf, uitdroging, lekkage, normaal kwaliteits­verlies of optreden van ongedierte of
+    knaagdieren;
+e) hitte, koude, temperatuurverschillen of vochtigheid van de lucht, doch slechts indien niet is overeengekomen
+    dat het vervoer zal plaatsvinden met een voertuig speciaal ingericht om de zaken aan invloed daarvan te
+    onttrekken;
+f) onvolledigheid of gebrekkigheid van de adressering, cijfers, letters of merken der colli;
+g) het feit dat het vervoer een levend dier betreft.
+
+
+                 Vervoeradres                                                                                           7
+Artikel 12
+Vermoeden van aansprakelijkheid bevrijdende omstandigheden
+
+1. Wanneer de vervoerder bewijst dat, gelet op de omstandigheden van het geval, het niet nakomen van de op
+   hem uit hoofde van artikel 9 leden 2 en 3 rustende verplichtingen een gevolg heeft kunnen zijn van een of
+   meer der in artikel 11 genoemde bijzondere risico’s, wordt vermoed, dat het niet nakomen daaruit voortvloeit.
+   Degene, die jegens de vervoerder recht heeft op de zaken, kan evenwel bewijzen, dat dit niet nakomen geheel
+   of gedeeltelijk niet door een van deze risico’s is veroorzaakt.
+
+2. Het hierboven genoemde vermoeden bestaat niet in het in artikel 11 onder a genoemde geval, indien zich een
+   ongewoon groot tekort voordoet dan wel een ongewoon groot verlies van colli.
+
+3. Indien in overeenstemming met het door partijen overeengekomene het vervoer plaatsvindt door
+   middel van een voertuig, speciaal ingericht om de zaken te onttrekken aan de invloed van hitte,
+   koude, temperatuurverschillen of vochtigheid van de lucht, kan de vervoerder ter ontheffing van zijn
+   aansprakelijkheid ten gevolge van deze invloed slechts een beroep doen op artikel 11 onder d, indien hij
+   bewijst, dat alle maatregelen waartoe hij, rekening houdende met de omstandigheden, verplicht was, zijn
+   genomen met betrekking tot de keuze, het onderhoud en het gebruik van deze inrichtingen en dat hij zich
+   heeft gericht naar de bijzondere instructies bedoeld in het vijfde lid.
+
+4. De vervoerder kan slechts beroep doen op artikel 11 onder g, indien hij bewijst dat alle maatregelen, waartoe
+   hij normaliter, rekening houdende met de omstandigheden, verplicht was, zijn genomen en dat hij zich heeft
+   gericht naar de bijzondere instructies bedoeld in het vijfde lid.
+
+5. De bijzondere instructies, bedoeld in het derde en het vierde lid van dit artikel, moeten aan de vervoerder vóór
+   de aanvang van het vervoer zijn gegeven, hij moet deze uitdrukkelijk hebben aanvaard en zij moeten, indien
+   voor dit vervoer een vrachtbrief is afgegeven, daarop zijn vermeld. De enkele vermelding op de vrachtbrief
+   levert te dezer zake geen bewijs op.
+
+
+Artikel 13
+Schadevergoeding
+
+1. De schadevergoeding die de vervoerder wegens het niet nakomen van de op hem uit hoofde van artikel 9
+   lid 2 rustende verplichting is verschuldigd, is beperkt tot een bedrag van € 3,40 per kilogram; voor andere
+   schade dan schade ten gevolge van verlies van of schade aan de zaken, zoals gevolgschade, bedrijfsstilstand
+   of immateriële schade, is de vervoerder uit hoofde van de vervoerovereenkomst niet aansprakelijk.
+
+2. Het aantal kilogrammen waarvan ter berekening van het in lid 1 ­genoemde bedrag wordt uitgegaan, is het op
+   de vrachtbrief vermelde gewicht van de beschadigde of niet afgeleverde zaak.
+
+3. Indien de vervoerder aansprakelijk is doordat hij niet afleverde ­binnen de redelijke termijn als genoemd in
+   artikel 9 lid 3, is de ­vertragingsschade beperkt tot eenmaal de vracht; indien de termijn, genoemd in artikel 9
+   lid 3, schriftelijk is overeengekomen, is de ­vertragingsschade beperkt tot tweemaal de vracht.
+
+4. Expertisekosten, beredderingskosten en andere kosten die zijn gemaakt om de waarde van de beschadigde
+   of verloren gegane dan wel met vertraging afgeleverde zaken vast te stellen en te realiseren, worden
+   aangemerkt als een waardevermindering van die zaak.
+
+5. Indien de vervoerder aansprakelijk is omdat hij een verplichting die op hem rust uit hoofde van de
+   artikelen 8:1115 lid 2 en 8:1118 lid 3 BW dan wel van de artikelen 6 lid 1, 19 lid 4, 21 of 25 van deze condities,
+
+
+                 Vervoeradres                                                                                       8
+   niet nakwam, zal een door hem terzake verschuldigde schadevergoeding niet meer bedragen dan wat hij in
+   geval van totaal verlies der betrokken zaken verschuldigd zou kunnen zijn.
+
+
+Artikel 14
+Opzet en bewuste roekeloosheid
+
+Een handeling of een nalaten van wie ook, behalve van de vervoerder zelf, geschied hetzij met het opzet
+de schade te veroorzaken, hetzij roekeloos en met de wetenschap dat die schade er waarschijnlijk uit
+zou voortvloeien, ontneemt de vervoerder niet het recht zich op enige uitsluiting of beperking van zijn
+aansprakelijkheid te beroepen.
+
+
+Artikel 15
+Kennisgeving van de schade
+
+1. Indien de zaken met uiterlijk zichtbare schade of verlies door de vervoerder worden afgeleverd zonder dat de
+   geadresseerde bij of dadelijk na aanneming van de zaken een schriftelijk voorbehoud, waarin de algemene
+   aard van de schade of het verlies is aangegeven, ter kennis van de vervoerder heeft gebracht, wordt de
+   vervoerder geacht de zaken in dezelfde staat te hebben afgeleverd als waarin hij deze heeft ontvangen.
+
+2. Indien de schade of het verlies niet uiterlijk waarneembaar is en de geadresseerde niet binnen één week na
+   aanneming van de zaken een schriftelijk voorbehoud, waarin de algemene aard van de schade of het verlies
+   is aangegeven, ter kennis van de vervoerder heeft gebracht, wordt de vervoerder eveneens geacht de zaken
+   in dezelfde staat te hebben afgeleverd als waarin hij deze heeft ontvangen.
+
+3. Indien de zaken niet binnen een redelijke of overeengekomen termijn worden afgeleverd zonder dat
+   de geadresseerde binnen één week na aanneming van de zaken een schriftelijk voorbehoud, waarin is
+   aangegeven dat de zaken niet binnen die termijn zijn afgeleverd, ter kennis van de vervoerder heeft gebracht,
+   wordt de vervoerder geacht de zaken binnen die termijn te hebben afgeleverd.
+
+
+Artikel 16
+Vorderingsrecht
+
+Zowel de afzender als de geadresseerde heeft jegens de vervoerder het recht aflevering van zaken
+overeenkomstig de op de vervoerder rustende verplichtingen te vorderen.
+
+
+Artikel 17
+Rembours
+
+1. Partijen kunnen overeenkomen, dat de zaken met een rembours zullen worden belast, dat echter niet hoger
+   zal zijn dan de factuurwaarde der zaken. In dat geval mag de vervoerder de zaken slechts afleveren tegen
+   voorafgaande betaling van het rembours in contant geld, tenzij de afzender de vervoerder heeft gemachtigd
+   een andere wijze van betaling te accepteren.
+
+2. Indien na kennisgeving van aankomst blijkt dat de geadresseerde het rembours niet overeenkomstig de door
+   de afzender aan de vervoerder voorgeschreven betalingswijze voldoet, moet de vervoerder aan de afzender
+   nadere instructies vragen. De kosten die samenhangen met het verzoek om instructies zijn voor rekening
+   van de afzender. De vervoerder moet de hem gegeven instructies opvolgen, voorzover hem dit redelijkerwijze
+
+
+                Vervoeradres                                                                                      9
+   mogelijk is, tegen vergoeding van kosten en eventueel betaling van een redelijke beloning, tenzij deze kosten
+   door zijn schuld zijn ontstaan.
+   Indien de afzender instructies geeft, die inhouden, dat er in afwijking van eerder gegeven betalingsinstructies
+   door de vervoerder moet worden afgeleverd, moeten deze schriftelijk aan de vervoerder worden gegeven.
+   Bij gebreke van instructies is het bepaalde in artikel 21 overeenkomstig van toepassing.
+
+3. De vervoerder is verplicht, nadat een zending onder rembours is afgeleverd en de gelden aan hem zijn
+   afgedragen, de desbetreffende remboursgelden onverwijld doch in ieder geval binnen twee weken aan de
+   afzender af te dragen dan wel op diens bank- of girorekening over te doen schrijven.
+
+4. De in lid 3 genoemde termijn van twee weken vangt aan op de dag, waarop de zaken zijn afgeleverd.
+
+5. De geadresseerde, die ten tijde van de aflevering weet dat een bedrag als rembours op de zaken drukt, is
+   verplicht aan de vervoerder het door deze aan de afzender verschuldigde bedrag te voldoen.
+
+6. Indien de zaken zonder voorafgaande inning van het rembours zijn afgeleverd, is de vervoerder verplicht aan
+   de afzender de schade ten hoogste tot het bedrag van het rembours te vergoeden, tenzij hij bewijst dat er
+   geen schuld van hem of van zijn ondergeschikten aanwezig was. Deze verplichting laat zijn recht op verhaal
+   tegen de geadresseerde onverlet.
+
+7. Verschuldigde remboursprovisie komt ten laste van de afzender.
+
+8. Alle vorderingen tegen de vervoerder uit hoofde van een remboursbeding verjaren door verloop van een jaar,
+   te rekenen met de aanvang van de dag volgende op de dag waarop de zaken werden afgeleverd of hadden
+   moeten zijn afgeleverd.
+
+
+Artikel 18
+Voorbehouden van de vervoerder
+
+De vervoerder behoudt onder de toepassing van deze condities zich het recht voor:
+a) de zaken in of door middel van die vervoermiddelen te vervoeren, welke hem dienstig zullen voorkomen
+    en de zaken zonodig te bewaren in zodanige vervoermiddelen, bergruimten of opslagplaatsen, als hij zal
+    goedvinden, onverschillig of deze vervoermiddelen, bergruimten of opslagplaatsen aan de vervoerder of aan
+    derden toebehoren;
+b) de te volgen route vrijelijk te bepalen, mitsdien ook van de gebruikelijke route af te wijken. Hij is tevens
+    gerechtigd die plaatsen aan te doen, waarvan hij dit voor de uitoefening van zijn bedrijf wenselijk acht.
+
+
+Artikel 19
+Verhindering na inontvangstneming
+
+1. Wanneer na het in ontvangst nemen van de zaken door de vervoerder het vervoer redelijkerwijs niet of niet
+   binnen redelijke tijd kan worden aangevangen, voortgezet of voltooid, is de vervoerder verplicht zulks aan
+   de afzender mede te delen. Vervoerder en afzender hebben alsdan de bevoegdheid de overeenkomst op te
+   zeggen.
+
+2. De opzegging geschiedt door een schriftelijke mededeling aan de wederpartij en de overeenkomst eindigt op
+   het ogenblik, waarop deze mededeling wordt ontvangen.
+
+
+
+
+                Vervoeradres                                                                                    10
+3. De vervoerder is niet verplicht voor het verdere vervoer naar de bestemmings­plaats zorg te dragen en is
+   bevoegd de zaken te lossen en op te slaan op een daartoe geschikte plaats; de afzender is bevoegd de zaken
+   tot zich te nemen. De in verband met de opzegging met betrekking tot de zaken gemaakte kosten komen,
+   onder voorbehoud van lid 4, ten laste van de afzender.
+
+4. Behoudens overmacht is de vervoerder verplicht de afzender de schade te vergoeden, die deze door de
+   opzegging van de overeenkomst heeft geleden.
+
+
+Artikel 20
+Stapelvervoer; doorvervoer
+
+1. Wanneer een deel van het vervoer, al dan niet na overlading van de zaken, geschiedt over de binnenwateren,
+   wordt voor dat deel de aansprakelijkheid van de vervoerder bepaald door de artikelen 9 en 13 van de
+   Algemene Veerboot- en Beurtvaartcondities.
+
+2. Wanneer de vervoerder zich, na aflevering van de door hem vervoerde zaken, verbindt tot het verder doen
+   vervoeren van die zaken, handelt hij daarbij in hoedanigheid van expediteur en is zijn aansprakelijkheid
+   in die hoedanigheid beperkt tot € 3,40 per kilogram van de beschadigde of verloren zaken; verdere
+   schadevergoeding voor welke schade dan ook is niet verschuldigd.
+
+
+Artikel 21
+Opslag in geval van niet opkomen van de geadresseerde
+
+1. Indien de geadresseerde na kennisgeving van aankomst van de zaken niet opkomt, indien hij het in
+   ontvangst nemen van de zaken niet aanvangt, indien hij dit niet regelmatig en met bekwame spoed voortzet,
+   indien hij weigert de zaken aan te nemen of voor ontvangst te tekenen, kunnen de zaken door de vervoerder
+   voor rekening en gevaar van de afzender op de door de vervoerder met inachtneming van redelijke zorg te
+   bepalen wijze en plaats worden opgeslagen – zo nodig ook in het vervoermiddel, waarin zij werden vervoerd –
+   of gestald; de vervoerder is verplicht de afzender op de hoogte te stellen.
+
+2. De vervoerder kan met inachtneming van lid 1 ook tot opslag of stalling overgaan, indien het stellen van
+   zekerheid als in artikel 23 lid 5 bedoeld, wordt geweigerd, of indien geschil ontstaat omtrent het bedrag of de
+   aard van de te stellen zekerheid.
+
+3. Behalve in geval van beslag kunnen de zaken, na verloop van één week na de aangetekende verzending
+   van een schriftelijke kennisgeving van de voorgenomen verkoop aan de afzender, door de vervoerder
+   voor rekening van de afzender publiekelijk of onderhands worden verkocht zonder dat enige rechterlijke
+   machtiging is vereist.
+
+4. De verkoop kan geschieden zonder inachtneming van enige termijn en zonder voorafgaande kennisgeving,
+   indien de zaken aan bederf onderhevig zijn of indien bewaring schadelijk zou kunnen zijn of schade of
+   gevaar voor de omgeving zou kunnen opleveren. Wanneer geen voorafgaande kennisgeving plaatsvond, is de
+   vervoerder verplicht na de verkoop daarvan kennis te geven aan de afzender.
+
+5. Ten aanzien van levende have bedraagt de in lid 3 bedoelde termijn drie dagen met dien verstande dat de
+   vervoerder zonder inachtneming van enige termijn en zonder voorafgaande kennisgeving tot verkoop mag
+   overgaan indien de toestand van de levende have zulks gewenst doet zijn. Wanneer geen voorafgaande
+   kennisgeving plaatsvond, is de vervoerder verplicht na de verkoop daarvan kennis te geven aan de afzender.
+
+
+
+                Vervoeradres                                                                                     11
+6. De vervoerder houdt de opbrengst van de verkochte zaken, na aftrek van het bedrag van een eventueel
+   rembours en een aan de vervoerder in verband daarmee toekomende commissie en van al hetgeen dat
+   terzake van het verkochte aan de vervoerder toekomt, zowel voor vracht als voor kosten van opslag of
+   stalling als voor andere kosten en schaden, gedurende zes maanden na de aanneming van de zaken ten
+   vervoer ter beschikking van de afzender, na verloop van welke termijn hij het ter beschikking gehouden
+   bedrag onder gerechtelijke bewaring zal stellen.
+
+
+Artikel 22
+Opslag voor, tijdens en na het vervoer
+
+Wanneer afzender en vervoerder overeenkomen dat de vervoerder voorafgaand aan of tijdens het
+overeengekomen vervoer dan wel na afloop van het vervoer de zaken in opslag zal nemen, geschiedt deze opslag
+onder toepasselijkheid van de Algemene Opslagvoorwaarden.
+Afzender en vervoerder worden dienovereenkomstig aangemerkt als bewaargever respectievelijk bewaarnemer.
+
+
+Artikel 23
+Retentierecht
+
+1. De vervoerder heeft jegens ieder, die daarvan afgifte verlangt, een retentierecht op zaken en documenten,
+   die hij in verband met de vervoerovereenkomst onder zich heeft. Dit recht komt hem niet toe indien hij op het
+   tijdstip dat hij de zaken ten vervoer ontving, reden had te twijfelen aan de bevoegdheid van de afzender de
+   zaken ten vervoer ter beschikking te stellen.
+
+2. Het retentierecht heeft mede betrekking op hetgeen bij wijze van rembours op de zaken drukt alsmede op de
+   hem in verband met het rembours toekomende provisie, waarvoor hij geen zekerheid behoeft te aanvaarden.
+
+3. Tegenover de afzender kan de vervoerder het retentierecht eveneens uitoefenen voor hetgeen hem nog
+   verschuldigd is in verband met voorgaande vervoerovereenkomsten.
+
+4. Tegenover de geadresseerde, die in die hoedanigheid tot voorgaande vervoerovereenkomsten toetrad, kan de
+   vervoerder het retentierecht eveneens uitoefenen voor hetgeen hem nog verschuldigd is in verband met die
+   overeenkomsten.
+
+5. Indien bij de afrekening geschil ontstaat over het verschuldigde bedrag of ter bepaling daarvan een niet
+   spoedig uit te voeren berekening nodig is, is hij die aflevering vordert, verplicht het gedeelte over welks
+   verschuldigdheid partijen het eens zijn, terstond te voldoen en voor de betaling van het door hem betwiste
+   gedeelte of van het gedeelte, waarvan het bedrag nog niet vaststaat, zekerheid te stellen.
+
+
+Artikel 24
+Pandrecht
+
+1. Alle zaken, documenten en gelden, die de vervoerder in verband met de vervoerovereenkomst onder zich
+   heeft, strekken hem tot pand voor alle vorderingen, die hij ten laste van de afzender heeft.
+
+2. Behoudens in de gevallen waarin de afzender in staat van faillissement verkeert, hem surséance van
+   betaling is verleend of ten aanzien van hem de schuldsaneringsregeling natuurlijke personen van toepassing
+   is verklaard, heeft de vervoerder nimmer het recht de verpande zaken te verkopen zonder toestemming van
+   de rechter overeenkomstig art. 3:248 lid 2 BW.
+
+
+                Vervoeradres                                                                                     12
+Artikel 25
+Verloren zaken
+
+Indien zaken niet zijn afgeleverd binnen dertig dagen na de dag, waarop zij ten vervoer werden aangenomen en
+het onbekend is waar zij zich bevinden worden zij als verloren aangemerkt.
+Indien binnen één jaar nadat de vervoerder aan degene, die jegens hem recht op aflevering van zaken heeft,
+schadevergoeding heeft uitgekeerd terzake van het niet afleveren van deze zaken, deze zaken of enige daarvan
+alsnog onder de vervoerder blijken te zijn (gekomen), is de vervoerder verplicht de afzender of de geadresseerde,
+die jegens hem daartoe schriftelijk het verlangen uitte, van deze omstandigheid schriftelijk op de hoogte te
+stellen en heeft de afzender respectievelijk de geadresseerde gedurende dertig dagen na ontvangst van deze
+mededeling het recht tegen verrekening van de door hem ontvangen schadevergoeding alsnog aflevering
+van deze zaken te verlangen. Hetzelfde geldt, indien de vervoerder terzake van het niet afleveren geen
+schadevergoeding heeft uitgekeerd, met dien verstande dat de termijn van één jaar begint met de aanvang van
+de dag volgende op die, waarop de zaken hadden moeten zijn afgeleverd. Wanneer de afzender respectievelijk de
+geadresseerde van zijn recht geen gebruik maakt, geldt het in artikel 21 bepaalde.
+
+
+Artikel 26
+Vrijwaring; Himalaya-clausule
+
+1. De afzender, die niet voldeed aan enige verplichting die de wet of deze condities hem opleggen, is verplicht
+   de vervoerder te vrijwaren voor alle schade, die deze tengevolge van het niet nakomen van die verplichting
+   mocht lijden, wanneer deze terzake van het vervoer van de zaken door een derde wordt aangesproken.
+
+2. Wanneer hulppersonen van de vervoerder terzake van het vervoer van de zaken worden aangesproken,
+   kunnen deze personen een beroep doen op iedere beperking en/of ontheffing van aansprakelijkheid, waarop
+   uit hoofde van deze condities of van enige andere wettelijke of contractuele bepaling de vervoerder een
+   beroep kan doen.
+
+
+Artikel 27
+Vertragingsrente
+
+Partijen zijn over een door hen verschuldigd bedrag wettelijke rente verschuldigd op voet van art. 6:119 BW.
+
+
+Artikel 28
+Verjaring
+
+1. Alle op de vervoerovereenkomst gegronde of met die overeenkomst verband houdende rechtsvorderingen
+   verjaren door verloop van een jaar.
+
+2. Voorzover een vervoerder verhaal zoekt op een persoon van wiens diensten de vervoerder ter uitvoering van
+   de vervoerovereenkomst gebruik heeft gemaakt voor hetgeen door hem aan de afzender of de geadresseerde
+   is verschuldigd, begint vanaf het moment als bepaald in art. 8:1720 lid 1 BW, een nieuwe termijn van
+   verjaring welke termijn drie maanden beloopt.
+
+
+
+
+                 Vervoeradres                                                                                     13
+Artikel 29
+Forumkeuze; rechtskeuze
+
+1. Alle geschillen die voortvloeien uit of samenhangen met een overeenkomst voor binnenlands vervoer over
+   de weg tussen partijen die in Nederland hun woonplaats hebben zullen uitsluitend worden beslecht door de
+   bevoegde rechter te Rotterdam, tenzij partijen schriftelijk anders zijn overeengekomen.
+
+2. Op alle rechtsverhoudingen voortvloeiende uit of verband houdende met de vervoerovereenkomst is
+   Nederlands recht van toepassing.
+
+
+
+Toelichting
+In plaats van een rechterlijke beslissing kunt u er ook voor kiezen om uw geschil te laten beslechten door
+arbitrage. Het arbitrage-instituut TAMARA is gespecialiseerd in het voeren van arbitrages op de terreinen
+transport, opslag, logistiek, internationale handel, scheepvaart en scheepsbouw. Om de belangen van het
+wegtransport en de logistieke dienstverlening te behartigen, zit Stichting vervoeradres in het bestuur van
+TAMARA. Sinds september 2011 is de mogelijkheid om arbitrages aan te melden bij de Stichting Arbitrage voor
+Logistiek vervallen.
+
+Wenst u voor het beslechten van geschillen gebruik te maken van TAMARA? Dan kunt u de volgende
+arbitrageclausule opnemen in de vervoerovereenkomst:
+
+‘Alle uit of in verband met deze overeenkomst voortvloeiende geschillen worden onderworpen aan Arbitrage te
+Rotterdam overeenkomstig het TAMARA Arbitragereglement. Art. 29 lid 1 AVC 2002 is niet van toepassing op deze
+overeenkomst.’
+
+Ook achteraf, als het geschil al ontstaan is, kunnen partijen zich verbinden om een geschil aan arbitrage te
+onderwerpen. Daartoe dient u een akte van compromis met de andere partij af te sluiten.
+
+
+
+
+                Vervoeradres                                                                                   14
+                 Vervoeradres
+
+Op onafhankelijke en onpartijdige wijze ondersteunt Stichting Vervoeradres de gemeenschappelijke belangen
+van verladers en vervoerders op privaatrechtelijk en publiekrechtelijk terrein. Door het aanbieden van
+standaarden voor juridische documenten (vrachtbrieven) en teksten (algemene voorwaarden en voorbeeld
+clausules / overeenkomsten) worden vervoerders en verladers ondersteund bij het op juridisch juiste en
+evenwichtige wijze sluiten van vervoerovereenkomsten. Gebruik van de standaarden vermindert het aantal
+conflicten over de feitelijke uitvoering van logistieke contracten. De standaarden dragen bij aan het voorkomen
+van inbreuken op de wet.
+
+
+
+
+Teneinde administratieve lasten terug te dringen in de logistieke sector faciliteert Beurtvaartadres haar klanten
+door optimale begeleiding bij het gebruik van haar dienstenpakket. Dit doet zij door de klant te ontzorgen met
+intuïtieve, digitale, oplossingen en kennissessies voor optimaal gebruik van de (standaard) documenten.
+
+De toekomst van Beurtvaartadres in de logistieke keten ligt besloten in het weten te realiseren van meerwaarde
+in de keten door het verzorgen, faciliteren, verstrekken, onderling uitwisselen en bewaren van (data)gegevens
+van logistieke transacties. Dit doen we als autoriteit in uitgifte van logistieke formulieren.
+
+
+
+
+In het praktijkboek “Toelichting op de AVC” vindt u een uitgebreide toelichting op de artikelen van de AVC. U kunt
+dit boek bestellen in de webshop van Beurtvaartadres (shop.beurtvaartadres.nl).
+
+
+
+                 Vervoeradres                                                                                        15
+Vervoeradres
+
+
+
+
+ KONINKLIJKE
+ BLN-SCHUTTEVAER
+
+
+
+
+                   Item number: 6010
+
+
+                   augustus 2017
+

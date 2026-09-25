@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approved trucks</title>
+<style>
+  :root { --bg: #f4f2ee; --card: #fff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e2dfd8; --warn: #8a4b00; --warnbg: #fff4e0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --card: #22221f; --ink: #eceae4; --muted: #a09e97; --line: #34332f; --warn: #ffc27a; --warnbg: #2e2416; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1240px; margin: 0 auto; padding: 28px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 16px; }
+  .open { background: var(--warnbg); color: var(--warn); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 0 0 24px; }
+  .open ol { margin: 6px 0 0; padding-left: 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 18px; }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+  figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure a { display: block; }
+  img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  figcaption { padding: 12px 14px 14px; display: flex; gap: 12px; align-items: baseline; }
+  .nr { font-weight: 700; font-size: 20px; min-width: 1.4em; }
+  .file { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Approved De Bresser trucks with lettering</h1>
+  <p class="sub">Two trucks, approved 24 Sep 2026 (round 4, versions 2 and 3) · no people · Nano Banana Pro (gemini-3-pro-image-preview), 3:2, 2K (2528×1696), generated without text from a real De Bresser truck photo · lettering placed afterwards from the real logo files with werk/merk-op-wagen.py, following the truck in perspective · front logo centred on the truck's axis (Renault badge, grille) · not yet on the site · prompts, lettering plan and md5s in prompts.md, raws and tooling in werk/ · click a truck to open it full size.</p>
+  <div class="open"><b>Still open, not yet decided by the user.</b> The approved images carry the text of the real truck today:
+    <ol>
+      <li>Branches: only Oisterwijk, Tilburg and Breda; Venlo, Brussel and Reeuwijk are missing.</li>
+      <li>Breda number: 076 - 8200233 as on the truck; /contact/ says 076 52 24 100.</li>
+      <li>"FULL SERVICE IN LOGISTIEK / GEWELDIG IN VERHUIZEN", while the logistics branch was sold in 2024.</li>
+    </ol>
+    Changing any of these makes it a new image that needs approval again.</div>
+  <div class="grid">
+    <figure><a href="wagen-2-bij-de-loods.png"><img src="wagen-2-bij-de-loods.png" alt="Truck 2, at the depot"></a>
+      <figcaption><span class="nr">2</span><span>Three-quarter front at the depot, in front of a dark grey warehouse, afternoon sun; cab front and the whole left side of the box.<span class="file">wagen-2-bij-de-loods.png</span></span></figcaption></figure>
+    <figure><a href="wagen-3-onderweg-in-brabant.png"><img src="wagen-3-onderweg-in-brabant.png" alt="Truck 3, on the road in Brabant"></a>
+      <figcaption><span class="nr">3</span><span>Driving along a provincial road with poplars in the Brabant countryside, seen slightly from the front; left side of the box toward the camera.<span class="file">wagen-3-onderweg-in-brabant.png</span></span></figcaption></figure>
+  </div>
+</main>
+</body>
+</html>

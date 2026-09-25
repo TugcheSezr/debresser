@@ -1,0 +1,173 @@
+<title>Livegang De Kievit: beslissingen</title>
+<style>
+:root{--ink:#1d2b1a;--pap:#faf7f0;--lijn:#ddd5c6;--groen:#00706b;--geel:#f5c518;--rood:#a8321e;--grijs:#6b6558}
+*{box-sizing:border-box}
+body{margin:0;background:var(--pap);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--ink);color:var(--pap);padding:1rem 1.4rem;
+  display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+header h1{margin:0;font-size:1.15rem;letter-spacing:.01em}
+header .tel{margin-left:auto;font-size:.9rem;opacity:.85}
+main{max-width:none;padding:1.4rem}
+.wrap{max-width:1080px;margin:0 auto}
+.groep{margin:2rem 0 .6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grijs)}
+.kaart{background:#fff;border:1px solid var(--lijn);border-radius:12px;padding:1.1rem 1.2rem;margin-bottom:.9rem}
+.kaart.klaar{border-color:var(--groen);box-shadow:inset 3px 0 0 var(--groen)}
+.rij{display:flex;gap:.7rem;align-items:baseline;flex-wrap:wrap}
+.nr{font-weight:700;color:var(--grijs);font-variant-numeric:tabular-nums}
+.zwaar{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.16rem .5rem;border-radius:99px;white-space:nowrap}
+.z-blok{background:#f6dcd6;color:var(--rood)}
+.z-snel{background:#fdf0c6;color:#7a5c00}
+.z-cos{background:#e3e9e2;color:var(--grijs)}
+h2{margin:.35rem 0 .3rem;font-size:1.06rem}
+.van{font-size:.82rem;color:var(--grijs);margin:0 0 .5rem}
+.uitleg{margin:.35rem 0 .8rem}
+.opties{display:grid;gap:.4rem}
+label.optie{display:flex;gap:.6rem;align-items:flex-start;padding:.5rem .65rem;border:1px solid var(--lijn);
+  border-radius:8px;cursor:pointer;background:#fdfcf9}
+label.optie:hover{border-color:var(--groen)}
+label.optie:has(input:checked){border-color:var(--groen);background:#eef6f4;box-shadow:inset 2px 0 0 var(--groen)}
+label.optie input{margin-top:.25rem}
+.letter{font-weight:700;min-width:1.1em}
+.kost{display:block;font-size:.8rem;color:var(--grijs);margin-top:.15rem}
+footer{position:sticky;bottom:0;background:var(--ink);color:var(--pap);padding:.9rem 1.4rem;display:flex;
+  gap:1rem;align-items:center;flex-wrap:wrap}
+button{font:inherit;font-weight:600;padding:.55rem 1rem;border-radius:8px;border:0;cursor:pointer}
+#kopieer{background:var(--geel);color:var(--ink)}
+#reset{background:transparent;color:var(--pap);border:1px solid rgba(255,255,255,.35)}
+#stand{margin-left:auto;font-size:.9rem}
+#uitvoer{width:100%;max-width:1080px;margin:1rem auto 3rem;display:block;min-height:8rem;font:13px/1.5 ui-monospace,Menlo,monospace;
+  padding:.8rem;border:1px solid var(--lijn);border-radius:10px;background:#fff;color:var(--ink)}
+</style>
+<header>
+  <h1>Livegang De Kievit &mdash; beslissingen</h1>
+  <span class="tel">8 punten &middot; kies per punt A, B, C of D (D = negeren)</span>
+</header>
+<main><div class="wrap">
+
+<p class="groep">Moet snel</p>
+<div class="kaart" data-id="01">
+<div class="rij"><span class="nr">01</span><span class="zwaar z-snel">moet snel</span></div>
+<h2>34 tekst-achtergrondparen halen de contrasteis niet</h2>
+<p class="van">a7</p>
+<p class="uitleg">Geen enkele op de elf dienstpagina's; het zit geconcentreerd op twee routes. <b>/erkende-verhuizer/</b>: <code>.ev-accent</code> 2,32 tot 2,58:1 op 44,8 en 59,2px (eis 3 voor grote tekst, zes paren) en <code>.ev-eyebrow</code> 3,61 tot 4,24:1 op 17,3px (eis 4,5, zeven paren). <b>/certificeringen/</b> en <b>/duurzaamheid/</b>: creme op teal 3,74 tot 4,37:1. Plus twee routes met geel op teal 2,98:1 en /m3-calculator/ op 4,13:1. Veel hiervan is marginaal (4,13 tot 4,37 tegen 4,5), maar <code>.ev-accent</code> zit er duidelijk onder. <b>Belangrijk: deze klassen staan in geen van de twee contrastdossiers. Ze zijn dus niet afgekeurd maar nooit meegenomen.</b></p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b01" value="A" data-kort="Alles repareren tot boven de eis"><span class="letter">A</span><span><b>Alles repareren tot boven de eis</b><span class="kost">Raakt vooral /erkende-verhuizer/ en /certificeringen/. Kleuren aanpassen, niet de opmaak.</span></span></label>
+<label class="optie"><input type="radio" name="b01" value="B" data-kort="Alleen de duidelijke gevallen"><span class="letter">B</span><span><b>Alleen de duidelijke gevallen</b><span class="kost">De zes .ev-accent-paren onder 2,6 en het geel op teal. De marginale 4,1 tot 4,4 laten staan.</span></span></label>
+<label class="optie"><input type="radio" name="b01" value="C" data-kort="Alleen meten en vastleggen"><span class="letter">C</span><span><b>Alleen meten en vastleggen</b><span class="kost">In het contrastdossier zetten zodat ze niet opnieuw ontdekt worden, verder niets wijzigen.</span></span></label>
+<label class="optie"><input type="radio" name="b01" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<div class="kaart" data-id="02">
+<div class="rij"><span class="nr">02</span><span class="zwaar z-snel">moet snel</span></div>
+<h2>De toegankelijkheidsverklaring belooft meer dan er gemeten is</h2>
+<p class="van">a7</p>
+<p class="uitleg">Er staat: "Wij hebben de kleurcombinaties van deze site nagerekend tegen de eis van 4,5 op 1 voor gewone tekst en 3 op 1 voor grote tekst en vormen." De pagina claimt netjes geen WCAG-niveau en beschrijft de uitzonderingen eerlijk (menubalk, het 99%-regeltje, de gele knop), maar die ene zin is nu breder dan wat er feitelijk is nagerekend: de 34 paren uit punt 1 zaten er nooit in. <b>Deze keuze hangt aan punt 1: repareer je die paren, dan wordt de zin vanzelf waar.</b></p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b02" value="A" data-kort="Zin bijstellen naar wat er echt gemeten is"><span class="letter">A</span><span><b>Zin bijstellen naar wat er echt gemeten is</b><span class="kost">Eerlijk en meteen klaar, ook als punt 1 blijft liggen.</span></span></label>
+<label class="optie"><input type="radio" name="b02" value="B" data-kort="Laten staan en punt 1 repareren"><span class="letter">B</span><span><b>Laten staan en punt 1 repareren</b><span class="kost">Dan klopt de zin weer. Alleen in die volgorde.</span></span></label>
+<label class="optie"><input type="radio" name="b02" value="C" data-kort="Zin helemaal weghalen"><span class="letter">C</span><span><b>Zin helemaal weghalen</b><span class="kost">Minder belofte, minder risico, maar ook minder informatie.</span></span></label>
+<label class="optie"><input type="radio" name="b02" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<div class="kaart" data-id="03">
+<div class="rij"><span class="nr">03</span><span class="zwaar z-snel">moet snel</span></div>
+<h2>Drie feiten die 9f bewust niet gebruikt heeft</h2>
+<p class="van">9f, van gisteravond</p>
+<p class="uitleg">Bij het schrijven van de dienstpagina's hield 9f zich aan mijn briefing dat feiten uitsluitend uit het claimsregister mochten komen, en liet daarom drie dingen liggen die wel in de gepubliceerde voorwaarden staan: de <b>voortaxatie van drie jaar</b>, de <b>grens van 25.000 euro</b> voor handels- en beroepsdoeleinden, en het <b>opdrachtgeverregime bij een zorginstelling</b>. Mijn briefing was op dat punt te strak: bij a7 heb ik later geoordeeld dat onze eigen voorwaardenpagina een geldige bron is. Het zijn drie sterke zinnen voor antiek, senioren en zorg. <b>Wel met de les van de pianozin: de aanhef meelezen tot en met het werkwoord waar de opsomming aan hangt.</b></p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b03" value="A" data-kort="Alle drie erin, met contextcontrole"><span class="letter">A</span><span><b>Alle drie erin, met contextcontrole</b><span class="kost">Elke bepaling eerst in zijn geheel gelezen, dan pas geschreven.</span></span></label>
+<label class="optie"><input type="radio" name="b03" value="B" data-kort="Alleen de voortaxatie en de 25.000-grens"><span class="letter">B</span><span><b>Alleen de voortaxatie en de 25.000-grens</b><span class="kost">Die twee zijn feitelijk het duidelijkst; het opdrachtgeverregime is subtieler.</span></span></label>
+<label class="optie"><input type="radio" name="b03" value="C" data-kort="Nu niet, later in een aparte ronde"><span class="letter">C</span><span><b>Nu niet, later in een aparte ronde</b><span class="kost">De pagina&#x27;s zijn af; dit is verrijking, geen reparatie.</span></span></label>
+<label class="optie"><input type="radio" name="b03" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<p class="groep">Cosmetisch</p>
+<div class="kaart" data-id="04">
+<div class="rij"><span class="nr">04</span><span class="zwaar z-cos">cosmetisch</span></div>
+<h2>Mobiele LCP zit net onder de grens</h2>
+<p class="van">a7</p>
+<p class="uitleg">Home 2,42 / 2,35 / 2,38 seconden bij drie schone metingen, tegen een grens van 2,5. De dienstpagina's zitten rond 2,03. Lighthouse mobiel 96, 97, 96. De twee kansen die overblijven: renderblokkerende CSS van ongeveer 460 tot 510ms, en beelden die responsiever kunnen voor 77 tot 98 kB. <b>Let op: dit is gemeten op localhost met een TTFB van 3 tot 4ms. De echte hosting komt daar nog bovenop, dus in het veld staat home dichter bij de grens dan deze cijfers suggereren.</b></p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b04" value="A" data-kort="Allebei aanpakken"><span class="letter">A</span><span><b>Allebei aanpakken</b><span class="kost">Kritieke CSS inlijnen en de beelden responsiever maken.</span></span></label>
+<label class="optie"><input type="radio" name="b04" value="B" data-kort="Alleen de renderblokkerende CSS"><span class="letter">B</span><span><b>Alleen de renderblokkerende CSS</b><span class="kost">De grootste van de twee, en die raakt elke pagina.</span></span></label>
+<label class="optie"><input type="radio" name="b04" value="C" data-kort="Eerst op de echte hosting meten"><span class="letter">C</span><span><b>Eerst op de echte hosting meten</b><span class="kost">Nu optimaliseren op een localhost-cijfer is gokken.</span></span></label>
+<label class="optie"><input type="radio" name="b04" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<div class="kaart" data-id="05">
+<div class="rij"><span class="nr">05</span><span class="zwaar z-cos">cosmetisch</span></div>
+<h2>Twaalf descriptions zitten tussen 74 en 103 tekens</h2>
+<p class="van">ik</p>
+<p class="uitleg">inpaktips 74, duurzaamheid 77, werkwijze 78, cookiebeleid 81, sitemap 87, dozencalculator 88, veelgestelde-vragen 90, toegankelijkheid 92, erkende-verhuizer 93, verzekering 97, klantervaringen 100, over-ons 103. Ze zijn niet fout en ze stonden niet op de lijst, want 05 flagde alleen de vier onder de 70. Een zoekresultaat heeft ruimte tot ongeveer 155, dus er blijft ruimte liggen. Het gereedschap ligt er al: dezelfde BESCHRIJVING-constante die de vier van gisteren heeft opgelost.</p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b05" value="A" data-kort="Alle twaalf een eigen BESCHRIJVING"><span class="letter">A</span><span><b>Alle twaalf een eigen BESCHRIJVING</b><span class="kost">Twaalf zinnen schrijven, tegen de pagina zelf gelegd.</span></span></label>
+<label class="optie"><input type="radio" name="b05" value="B" data-kort="Alleen de kortste vijf"><span class="letter">B</span><span><b>Alleen de kortste vijf</b><span class="kost">Onder de 90 tekens: inpaktips, duurzaamheid, werkwijze, cookiebeleid, sitemap.</span></span></label>
+<label class="optie"><input type="radio" name="b05" value="C" data-kort="Laten staan"><span class="letter">C</span><span><b>Laten staan</b><span class="kost">Ze zijn kort maar kloppen, en kort wordt niet afgestraft.</span></span></label>
+<label class="optie"><input type="radio" name="b05" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<div class="kaart" data-id="06">
+<div class="rij"><span class="nr">06</span><span class="zwaar z-cos">cosmetisch</span></div>
+<h2>De 404-pagina hoort in een generator of niet</h2>
+<p class="van">ik</p>
+<p class="uitleg">05 heeft <code>404.html</code> eenmalig samengesteld uit sitemap/index.html, zodat menu, sprite en voetlijst geen tweede waarheid krijgen. Het bestand komt uit geen enkele bouwer. Ik heb er een hook bij gezet die alleen de cachebuster gelijktrekt, dus dat loopt niet meer achter. Maar verandert straks het menu of de voetlijst, dan loopt de 404 stil achter zonder dat iemand het merkt. 05 heeft het samenstelscript nog in zijn scratchpad staan. Bijvangst: die pagina draagt als enige nog een intern comment van 461 tekens, want de comment-strip zit in de bouwers en die raken dit bestand niet.</p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b06" value="A" data-kort="Het script in de repo en aan de bouw hangen"><span class="letter">A</span><span><b>Het script in de repo en aan de bouw hangen</b><span class="kost">Dan volgt de 404 het menu vanzelf, en het comment verdwijnt mee.</span></span></label>
+<label class="optie"><input type="radio" name="b06" value="B" data-kort="Script in de repo, handmatig draaien"><span class="letter">B</span><span><b>Script in de repo, handmatig draaien</b><span class="kost">Wel reproduceerbaar, geen automatische koppeling.</span></span></label>
+<label class="optie"><input type="radio" name="b06" value="C" data-kort="Laten zoals het is"><span class="letter">C</span><span><b>Laten zoals het is</b><span class="kost">Werkt nu; iemand moet er zelf aan denken bij een menuwijziging.</span></span></label>
+<label class="optie"><input type="radio" name="b06" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<div class="kaart" data-id="07">
+<div class="rij"><span class="nr">07</span><span class="zwaar z-cos">cosmetisch</span></div>
+<h2>De sterrenrij haalt de contrasteis niet, en dat mag</h2>
+<p class="van">a7</p>
+<p class="uitleg">De vijf sterretjes staan op 1,71:1 (geel op wit, 12px) op 27 routes. a7 heeft dit expliciet als GEEN fout gemarkeerd: de rij draagt <code>aria-hidden="true"</code> en de waarde staat er als tekst naast, "9,4 uit 779 beoordelingen op Klantenvertellen". Decoratief, en er gaat geen informatie verloren. Ik zet het er alleen op zodat het niet bij de volgende controle opnieuw als vondst terugkomt.</p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b07" value="A" data-kort="Vastleggen als bewuste uitzondering"><span class="letter">A</span><span><b>Vastleggen als bewuste uitzondering</b><span class="kost">In het contrastdossier, met de reden erbij.</span></span></label>
+<label class="optie"><input type="radio" name="b07" value="B" data-kort="Sterretjes toch donkerder maken"><span class="letter">B</span><span><b>Sterretjes toch donkerder maken</b><span class="kost">Kost de herkenbare Google-look van dat blok.</span></span></label>
+<label class="optie"><input type="radio" name="b07" value="C" data-kort="Niets doen en niet vastleggen"><span class="letter">C</span><span><b>Niets doen en niet vastleggen</b><span class="kost">Dan komt hij bij de volgende audit weer boven.</span></span></label>
+<label class="optie"><input type="radio" name="b07" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+<p class="groep">Blijft openstaan</p>
+<div class="kaart" data-id="08">
+<div class="rij"><span class="nr">08</span><span class="zwaar z-snel">moet snel</span></div>
+<h2>De Web3Forms-sleutel staat erin, de verzendtest nog niet</h2>
+<p class="van">buiten de audit gehouden</p>
+<p class="uitleg">Je leverde de sleutel op 07-09-2026 aan en hij staat nu op alle 27 formulieren; de placeholder is weg. Daarmee is dit geen blokkade meer. Wat nog ontbreekt is het bewijs dat er ook echt post AANKOMT. <b>Van Top Feestzaal weten we dat een sleutel invullen nog niet betekent dat het werkt: daar is de verzendtest nooit gedaan, en er kan een domeinwhitelist op het formulier staan.</b> Een whitelist faalt pas op de echte host, dus die test hoort na de DNS-omzetting op www.de-kievit.nl.</p>
+<div class="opties">
+<label class="optie"><input type="radio" name="b08" value="A" data-kort="Verzendtest doen zodra het domein om is"><span class="letter">A</span><span><b>Verzendtest doen zodra het domein om is</b><span class="kost">Een aanvraag in een gewone browser, daarna kijken of info@de-kievit.nl hem heeft.</span></span></label>
+<label class="optie"><input type="radio" name="b08" value="B" data-kort="Domeinwhitelist in Web3Forms nakijken"><span class="letter">B</span><span><b>Domeinwhitelist in Web3Forms nakijken</b><span class="kost">Staat er een lijst, dan moet www.de-kievit.nl erin.</span></span></label>
+<label class="optie"><input type="radio" name="b08" value="C" data-kort="Niets doen"><span class="letter">C</span><span><b>Niets doen</b><span class="kost">Dan weet je pas bij de eerste echte klant of het werkt.</span></span></label>
+<label class="optie"><input type="radio" name="b08" value="D" data-kort="Negeren"><span class="letter">D</span><span><b>Negeren</b><span class="kost"></span></span></label>
+</div></div>
+</div></main>
+<div class="wrap"><textarea id="uitvoer" readonly placeholder="Je keuzes verschijnen hier zodra je iets aanklikt. Plak dit terug in de chat."></textarea></div>
+<footer>
+  <button id="kopieer">Kopieer mijn keuzes</button>
+  <button id="reset">Wis alles</button>
+  <span id="stand"></span>
+</footer>
+<script>
+const SLEUTEL='kievit-besluiten-r2';
+const bewaard=JSON.parse(localStorage.getItem(SLEUTEL)||'{}');
+document.querySelectorAll('input[type=radio]').forEach(r=>{
+  if(bewaard[r.name]===r.value) r.checked=true;
+  r.addEventListener('change',()=>{bewaard[r.name]=r.value;localStorage.setItem(SLEUTEL,JSON.stringify(bewaard));ververs();});
+});
+function ververs(){
+  const kaarten=[...document.querySelectorAll('.kaart')];
+  let regels=[],gedaan=0;
+  kaarten.forEach(k=>{
+    const naam=k.dataset.id, gekozen=k.querySelector('input:checked');
+    k.classList.toggle('klaar',!!gekozen);
+    if(gekozen){gedaan++;regels.push(naam+': '+gekozen.value+' = '+gekozen.dataset.kort);}
+  });
+  document.getElementById('stand').textContent=gedaan+' van '+kaarten.length+' gekozen';
+  document.getElementById('uitvoer').value=regels.length?regels.join('\n'):'';
+}
+document.getElementById('kopieer').addEventListener('click',async()=>{
+  const t=document.getElementById('uitvoer');
+  t.select(); try{await navigator.clipboard.writeText(t.value);}catch(e){document.execCommand('copy');}
+  const b=document.getElementById('kopieer'); b.textContent='Gekopieerd'; setTimeout(()=>b.textContent='Kopieer mijn keuzes',1400);
+});
+document.getElementById('reset').addEventListener('click',()=>{
+  localStorage.removeItem(SLEUTEL);
+  document.querySelectorAll('input[type=radio]').forEach(r=>r.checked=false); ververs();
+});
+ververs();
+</script>

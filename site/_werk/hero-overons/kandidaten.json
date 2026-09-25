@@ -1,0 +1,142 @@
+[
+ {
+  "nr": 1,
+  "id": "01-briefing-laadklep",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "07",
+   "13",
+   "06"
+  ],
+  "scene": "Scene: early on a moving day in a residential street of Dutch brick terraced houses in Venlo. The open rear of a plain white moving truck with its tail lift down stands at the kerb on the left. In the right half three mo"
+ },
+ {
+  "nr": 2,
+  "id": "02-dozen-bezorgen",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "09"
+  ],
+  "scene": "Scene: the front door of a 1930s Dutch brick house with a small front garden in Venlo, a bicycle against the fence. A mover wheels a hand truck stacked with three Top Movers boxes up the garden path to the open front doo"
+ },
+ {
+  "nr": 3,
+  "id": "03-dekens-vouwen",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "02",
+   "15"
+  ],
+  "scene": "Scene: beside the open rear of a plain white moving truck on a sunny Dutch street, two movers fold a big grey quilted moving blanket between them, each holding two corners, a stack of already folded blankets and four Top"
+ },
+ {
+  "nr": 4,
+  "id": "04-inpakken-keuken",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "11"
+  ],
+  "scene": "Scene: a bright Dutch kitchen with sun streaming through a large window, a wooden table with plates, glasses and sheets of white packing paper, two open Top Movers boxes on the table. A mover wraps a plate in paper and l"
+ },
+ {
+  "nr": 5,
+  "id": "05-kast-laadklep",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "17",
+   "18"
+  ],
+  "scene": "Scene: two movers carry a tall wooden cabinet wrapped in grey quilted moving blankets up the tail lift of a plain white moving truck, bellies toward the cabinet, arms in front, fingers visibly gripping; both grin broadly"
+ },
+ {
+  "nr": 6,
+  "id": "06-opname-handdruk",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "14"
+  ],
+  "scene": "Scene: the doorstep of a Dutch brick house in the sun. A moving adviser in the Top Movers polo shakes hands with a customer in plain clothes in the open doorway; the adviser looks into the lens laughing, the customer lau"
+ },
+ {
+  "nr": 7,
+  "id": "07-team-straat",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "01",
+   "08",
+   "12"
+  ],
+  "scene": "Scene: three movers walk toward the camera along a sunlit street of old Dutch brick houses in the centre of Venlo, one pushing a hand truck with three Top Movers boxes, one carrying a single Top Movers box in front of hi"
+ },
+ {
+  "nr": 8,
+  "id": "08-doos-aangeven",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "03",
+   "16"
+  ],
+  "scene": "Scene: at the open rear of a plain white moving truck in the sun, one mover stands on the tail lift and takes a Top Movers box that his colleague on the street hands up to him, both gripping the box with visible tension;"
+ },
+ {
+  "nr": 9,
+  "id": "09-koffie-laadklep",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "04",
+   "10",
+   "19"
+  ],
+  "scene": "Scene: before the work starts, three movers sit and stand on the lowered tail lift of a plain white moving truck in the morning sun with paper coffee cups, a thermos and a bag of bread rolls beside them, a stack of Top M"
+ },
+ {
+  "nr": 10,
+  "id": "10-plan-keukentafel",
+  "ok": true,
+  "maat": [
+   3168,
+   1344
+  ],
+  "koppen": [
+   "05",
+   "13"
+  ],
+  "scene": "Scene: a sunny living room half packed for a move, Top Movers boxes stacked along the wall, a sofa under a grey blanket. At a dining table by the window a moving adviser and a colleague sit with a customer in plain cloth"
+ }
+]

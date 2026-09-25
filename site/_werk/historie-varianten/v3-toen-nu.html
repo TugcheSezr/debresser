@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historie-variant 3: toen en nu</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-1645">
+<style>
+/* ===== variant 3: toen en nu (extra CSS, alleen tokens uit style.css) ===== */
+.hist3{position:relative;overflow:hidden;background:var(--teal-paneel);color:var(--wit);padding-block:clamp(3.5rem,7vw,6rem)}
+.hist3 .label{color:var(--wit)}
+.hist3 .label::before{background:var(--wit)}
+.hist3 .kop{color:var(--wit)}
+.hist3 .intro{color:rgba(255,255,255,.88);max-width:58ch}
+.hist3__rij{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(.9rem,1.8vw,1.5rem);margin:clamp(1.8rem,3vw,2.6rem) 0}
+.hist3__paneel{margin:0}
+.hist3__paneel img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);display:block}
+.hist3__paneel--toen img{filter:grayscale(1) contrast(1.05)}
+.hist3__paneel figcaption{margin-top:.85rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.35);font-size:.92rem;line-height:1.45;color:rgba(255,255,255,.9)}
+.hist3__jaar{display:block;font:700 1.4rem/1.1 var(--font-display);color:var(--wit);margin-bottom:.2rem}
+.hist3 .btn--goud{background:var(--oranje);border-color:var(--oranje)}
+@media (max-width:900px){
+  .hist3__rij{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);gap:.8rem;margin-inline:calc(-1 * var(--pad));padding-inline:var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .hist3__rij::-webkit-scrollbar{display:none}
+  .hist3__paneel{flex:0 0 78%;scroll-snap-align:start}
+}
+.ctx{height:56px}.ctx--boven{background:var(--creme-2)}.ctx--onder{background:var(--creme)}
+</style>
+</head>
+<body>
+<div class="ctx ctx--boven" aria-hidden="true"></div>
+
+<section class="hist3" id="historie" aria-labelledby="hist-kop">
+  <div class="wrap">
+    <p class="label">Sinds 1910</p>
+    <h2 class="kop" id="hist-kop">Van paard en wagen tot vandaag</h2>
+    <p class="intro">Het begon op 12 maart 1910, toen H. de Kievit &amp; Zoon in Venlo een grote meubelwagen aanschafte. Vijf generaties lang bleef het een familiebedrijf; sinds 1 juni 2024 hoort De Kievit bij De Bresser Verhuizingen, zelf een familiebedrijf sinds 1923, en het hele Venlose team ging daarbij mee over.</p>
+    <div class="hist3__rij">
+      <figure class="hist3__paneel hist3__paneel--toen">
+        <img src="/_werk/historie-varianten/img/kar-32-1200.webp" srcset="/_werk/historie-varianten/img/kar-32-700.webp 700w, /_werk/historie-varianten/img/kar-32-1200.webp 1200w" sizes="(max-width:900px) 78vw, 380px" width="1200" height="800" alt="Historische foto: paard en wagen met kinderen voor het pand van W. de Kievit, Expeditie en Verhuizingen" loading="lazy" decoding="async">
+        <figcaption><span class="hist3__jaar">1910</span>Paard en wagen voor het pand van W. de Kievit, Expeditie en Verhuizingen in Venlo.</figcaption>
+      </figure>
+      <figure class="hist3__paneel hist3__paneel--toen">
+        <img src="/_werk/historie-varianten/img/trucks-32-1200.webp" srcset="/_werk/historie-varianten/img/trucks-32-700.webp 700w, /_werk/historie-varianten/img/trucks-32-1200.webp 1200w" sizes="(max-width:900px) 78vw, 380px" width="1200" height="800" alt="Historische foto: twee vrachtwagens van Firma W. de Kievit en Zonen, internationale transporten en verhuizingen, Venlo" loading="lazy" decoding="async">
+        <figcaption><span class="hist3__jaar">Later</span>De vrachtwagens van Firma W. de Kievit &amp; Zonen: internationale transporten en verhuizingen vanuit Venlo.</figcaption>
+      </figure>
+      <figure class="hist3__paneel">
+        <img src="/assets/img/hero-bg-1280.webp" srcset="/assets/img/hero-bg-1280.webp 1280w, /assets/img/hero-bg-1920.webp 1920w" sizes="(max-width:900px) 78vw, 380px" width="1280" height="853" alt="Verhuizers laden witte Top Movers-dozen in een verhuiswagen aan een laaddok" loading="lazy" decoding="async">
+        <figcaption><span class="hist3__jaar">Vandaag</span>Erkende Verhuizer en lid van Top Movers, met dezelfde werkwijze en de verhuizers die u aan de deur ziet.</figcaption>
+      </figure>
+    </div>
+    <div class="knoprij"><a class="btn btn--goud btn--groen" href="#offerte">Vrijblijvende verhuisofferte</a></div>
+  </div>
+</section>
+
+<div class="ctx ctx--onder" aria-hidden="true"></div>
+</body>
+</html>

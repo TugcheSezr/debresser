@@ -1,0 +1,52 @@
+{
+ "naam": "footer-wagen-groen-r2",
+ "titel": "De Bresser-vrachtwagen in het groen, voor de footer (ronde 2: belettering)",
+ "plek": "De footer van elke pagina. Desktop: een brede band over de hele breedte (ongeveer 1440x322, 4,5:1, uit het midden gesneden) onder een navy laag, met de tekst over de linkerhelft. Telefoon (tot 700 px): een band van 1,9:1 boven de tekst, zonder tekst erover. Bron liggend 21:9, 4K.",
+ "lead": "Versie 2 uit ronde 1, met jouw notitie: \"add the branding on the truck\". De belettering is dezelfde als op de goedgekeurde wagens 2 en 3, met dezelfde logobestanden en dezelfde indeling: op de laadbak Erkende Verhuizers, De Bresser Group of Companies, Top Movers, de slogan in de groene band (\"Ons vervoer wordt enkel uitgevoerd met de schoonste motoren!!!\"), het grote De Bresser-logo met \"Full service in logistiek / Geweldig in verhuizen\" en de vestigingen Oisterwijk, Tilburg en Breda met hun nummers; op de deur De Bresser met de twee regels; achter de deur het beeldmerk; op het front De Bresser Group of Companies, gecentreerd op de as van de wagen (Renault-logo, grille en kenteken, x 3437). Er is niets opnieuw gegenereerd: de wagen en de omgeving zijn pixel voor pixel die van ronde 1. Onder het beeld: het front ruw en met merk, de rode lijn is de as. Onderaan de pagina staat de wagen in de footer zoals hij nu gebouwd is, op 1440 en 390 breed, met een lichtere navy laag (0,65 in plaats van 0,75; de tekst haalt dan nog WCAG 4,5). OPEN, nog steeds niet beslist, net als op de goedgekeurde wagens: (1) de vestigingen: Venlo, Brussel en Reeuwijk ontbreken; (2) het nummer van Breda: 076 - 8200233 op de wagen, 076 52 24 100 op /contact/; (3) de regel \"FULL SERVICE IN LOGISTIEK\", terwijl de logistieke tak in 2024 verkocht is.",
+ "ratio": "21:9",
+ "grootte": "4K",
+ "basis": false,
+ "regels": [
+  "footer-wagen-groen-wagen.txt"
+ ],
+ "regels_na": [
+  "footer-wagen-groen-kader.txt",
+  "footer-wagen-groen-licht-camera.txt"
+ ],
+ "refs": [
+  {
+   "pad": "../beeldronde-debresser/wagens/werk/versie-2.jpg",
+   "wat": "the approved De Bresser moving truck, generated earlier without lettering: copy this exact truck, its cab, box body, proportions, side skirt and the green band, cubes and cab block; ignore the warehouse, the paving and the sky"
+  },
+  {
+   "pad": "../beeldronde-debresser/wagens/werk/ref-debresser-wagen-parijs-zonder-tekst.jpg",
+   "wat": "a real photograph of the same De Bresser truck from the side; the printed lettering has been removed from this photo on purpose, so copy the truck, its proportions and the green shapes, not the Paris background"
+  }
+ ],
+ "stijl": "Photorealistic documentary photograph of one moving truck in a green Dutch landscape, aspect ratio {ratio}, full-frame camera, natural colours.",
+ "versies": [
+  {
+   "nr": 2,
+   "naam": "Bosrand bij Oisterwijk, zacht licht",
+   "scene": "A quiet asphalt road runs along the edge of the woods near Oisterwijk. The truck stands parked at the side of the road in the right half of the picture, its rear doors well away from the right edge. Behind it, and filling the whole left half of the picture, a dense wall of mixed forest in full leaf: tall Scots pines with orange-brown upper trunks, oaks and silver birches, a band of ferns and tall grass at the foot of the trees, the shade between the trunks deep green. The camera stands back on the opposite verge, so the bottom third of the picture is a broad strip of grass and ferns in the foreground and the near half of the road. Seen almost side-on with a slight angle from the front. Bright soft light under thin high cloud, the sun as a gentle glow from the upper right, soft shadows under the truck.",
+   "extra": "CHECK THE FRAMING: the truck is small in the frame, seen from further away. From the top of its roof to the bottom of its tyres it is less than a third of the picture height, and it stands in the vertical middle: the roof is below the upper third line and the tyres rest ABOVE the lower third line of the picture, with a broad strip of road edge, verge or grass in the foreground below it. Nose to tail the truck lies between 58 and 88 percent of the picture width, so its rear is well away from the right edge.\nCHECK THE DIRECTION: we see the LEFT side of the truck. Its cab and nose point to the LEFT of the picture, toward the middle, and its rear doors point toward the right edge.\nCHECK THE BAND: one single band in the same bright light green as the reference images (#3DE55A), never a dark green, starting at the front edge of the box right behind the cab and crumbling into cubes a little past the middle of the box; the rear third of the box is empty white.\nCHECK THE TRUCK: it is exactly the truck of the FIRST attached image, only smaller in the frame and in this green setting: the same rigid truck with two axles (not a tractor with a semi-trailer), the same tall Renault T cab, the same bright light green band ending in loose cubes, the same lime block on the upper rear corner of the cab side, and an all-white cab front."
+  }
+ ],
+ "datum": "20260925",
+ "lagen": [
+  {
+   "patroon": "versie-{nr}-merk",
+   "label": "met belettering",
+   "klasse": "klaar"
+  },
+  {
+   "patroon": "versie-{nr}",
+   "label": "ruw uit de generator",
+   "klasse": "ruw"
+  }
+ ],
+ "crop": {
+  "patroon": "controle/versie-{nr}-front-as",
+  "label": "het front: links ruw, rechts met merk; de rode lijn is de as van de wagen"
+ }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approved faces</title>
+<style>
+  :root { --bg: #f4f2ee; --card: #fff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e2dfd8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --card: #22221f; --ink: #eceae4; --muted: #a09e97; --line: #34332f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1240px; margin: 0 auto; padding: 28px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 18px; }
+  figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  figure a { display: block; }
+  img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+  figcaption { padding: 12px 14px 14px; display: flex; gap: 12px; align-items: baseline; }
+  .nr { font-weight: 700; font-size: 20px; min-width: 1.4em; }
+  .file { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Approved faces for generated people</h1>
+  <p class="sub">Final set of 6, approved 24 Sep 2026 (2, 4, 5 from round 1; 8, 9, 11 from round 2) · Nano Banana Pro (gemini-3-pro-image-preview), 4:5, 2K (1856×2304) · prompts in prompts.json · click a face to open it full size.</p>
+  <div class="grid">
+    <figure><a href="gezicht-02-rood-haar-sproeten.jpg"><img src="gezicht-02-rood-haar-sproeten.jpg" alt="Face 2"></a>
+      <figcaption><span class="nr">2</span><span>Man, about 23, lean, messy copper-red hair, pale freckled skin, light stubble, a few spots on the chin.<span class="file">gezicht-02-rood-haar-sproeten.jpg</span></span></figcaption></figure>
+    <figure><a href="gezicht-04-twists-snor.jpg"><img src="gezicht-04-twists-snor.jpg" alt="Face 4"></a>
+      <figcaption><span class="nr">4</span><span>Man, about 32, Afro-Surinamese Dutch, slim athletic build, short twists, thin moustache, deep brown skin, small moles on one cheek.<span class="file">gezicht-04-twists-snor.jpg</span></span></figcaption></figure>
+    <figure><a href="gezicht-05-kaal-bril-sik.jpg"><img src="gezicht-05-kaal-bril-sik.jpg" alt="Face 5"></a>
+      <figcaption><span class="nr">5</span><span>Man, about 48, stocky, clipper-shaved head, thin metal glasses, sandy-grey goatee, fair pinkish skin.<span class="file">gezicht-05-kaal-bril-sik.jpg</span></span></figcaption></figure>
+    <figure><a href="gezicht-08-halflang-blond-smal.jpg"><img src="gezicht-08-halflang-blond-smal.jpg" alt="Face 8"></a>
+      <figcaption><span class="nr">8</span><span>Man, about 36, Dutch, lanky with a long narrow face, chin-length dirty-blond hair, blond stubble, fair skin with a red nose.<span class="file">gezicht-08-halflang-blond-smal.jpg</span></span></figcaption></figure>
+    <figure><a href="gezicht-09-grijze-strepen-achterover.jpg"><img src="gezicht-09-grijze-strepen-achterover.jpg" alt="Face 9"></a>
+      <figcaption><span class="nr">9</span><span>Man, about 56, Indo-Dutch, wiry, black hair with grey streaks combed back, clean-shaven, light-brown skin, mole near the mouth.<span class="file">gezicht-09-grijze-strepen-achterover.jpg</span></span></figcaption></figure>
+    <figure><a href="gezicht-11-snor-kalend.jpg"><img src="gezicht-11-snor-kalend.jpg" alt="Face 11"></a>
+      <figcaption><span class="nr">11</span><span>Man, about 45, Limburger, lean, short thinning dark hair, big dark moustache with grey in it, tanned lined skin.<span class="file">gezicht-11-snor-kalend.jpg</span></span></figcaption></figure>
+  </div>
+</main>
+</body>
+</html>

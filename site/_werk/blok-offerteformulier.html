@@ -1,0 +1,169 @@
+<section class="leadblock" id="offerte">
+  <div class="wrap">
+    <div class="leadblock__card" data-reveal>
+      <div class="leadblock__media">
+        <img src="/assets/img/beeld/werker-tablet-1240.webp" srcset="/assets/img/beeld/werker-tablet-820.webp 820w, /assets/img/beeld/werker-tablet-1240.webp 1240w" sizes="(max-width:820px) 100vw, 42vw" alt="Verhuizer van De Bresser met een tablet in de hand" width="1240" height="1848" loading="lazy" decoding="async">
+      </div>
+      <div class="leadblock__panel">
+        <span class="eyebrow">Vraag uw offerte aan</span>
+        <h2>Vraag vrijblijvend een offerte aan</h2>
+        <p class="lead-p">Vul uw gegevens in, dan nemen wij contact met u op voor een vrijblijvende offerte. Liever eerst overleggen? Bel <a href="tel:+31135282372">+31 (0)13 52 82 372</a>.</p>
+        <form class="lf" id="lfForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f013806d-8e11-45d3-ba3e-9f4cb07a72c8">
+          <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Bresser">
+          <input type="hidden" name="from_name" value="De Bresser offerteformulier">
+          <label class="lf__hp">Laat dit veld leeg <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+          <!-- Welke groep bij welke dienst hoort (data-lf-groep) regelt site.js; zonder script staat alles open. -->
+          <div class="lf__field lf__field--sel">
+            <label for="lf-dienst">Dienst</label>
+            <select id="lf-dienst" name="Dienst" required>
+              <option value="">Kies waarvoor u een offerte wilt</option>
+              <option>Particuliere verhuizing</option>
+              <option>Zakelijke verhuizing</option>
+              <option>Verhuizing en opslag (full service)</option>
+              <option>Particuliere opslag</option>
+              <option>Zakelijke opslag</option>
+              <option>Transport</option>
+              <option>Gebouwbeheer</option>
+              <option>Assetmanagement</option>
+            </select>
+          </div>
+          <div class="lf__row" data-lf-groep="verhuis">
+            <div class="lf__field lf__adres">
+              <label for="lf-van">Van</label>
+              <div class="lf__adresveld">
+                <input id="lf-van" name="Verhuizen van" required type="text" placeholder="Postcode + huisnummer" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="lf-van-keuzes">
+                <ul class="lf__keuzes" id="lf-van-keuzes" role="listbox" aria-label="Gevonden adressen" hidden></ul>
+              </div>
+            </div>
+            <div class="lf__field lf__adres">
+              <label for="lf-naar">Naar</label>
+              <div class="lf__adresveld">
+                <input id="lf-naar" name="Verhuizen naar" required type="text" placeholder="Postcode + huisnummer" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-controls="lf-naar-keuzes">
+                <ul class="lf__keuzes" id="lf-naar-keuzes" role="listbox" aria-label="Gevonden adressen" hidden></ul>
+              </div>
+              <label class="lf__optie"><input type="checkbox" id="lf-geenadres" name="Bestemming onbekend of buitenland" value="ja"><span>Nog onbekend of buitenland</span></label>
+            </div>
+          </div>
+          <div class="lf__row">
+            <div class="lf__field" data-lf-groep="datum"><label for="lf-datum">Wanneer</label>
+              <input id="lf-datum" name="Gewenste datum" type="date" aria-label="Wanneer, gewenste datum">
+              <label class="lf__optie"><input type="checkbox" id="lf-geendatum" name="Datum nog onbekend" value="ja"><span>Weet ik nog niet</span></label>
+            </div>
+            <label class="lf__field lf__field--sel" data-lf-groep="verhuis"><span>Type woning</span>
+              <select id="lf-woning" name="Type woning of pand" aria-label="Type woning">
+                <option value="">Kies woning</option>
+                <option>Appartement</option>
+                <option>Eengezinswoning</option>
+                <option>Studio / kamer</option>
+                <option>Tussenwoning</option>
+                <option>Vrijstaande woning</option>
+                <option>Kantoor / bedrijf</option>
+                <option>Anders</option>
+              </select>
+            </label>
+          </div>
+          <fieldset class="lf__groep" data-lf-groep="verhuis">
+            <legend>Extra opties</legend>
+            <div class="lf__chips">
+              <label><input type="checkbox" name="Extra: inpakken" value="ja"><span>Inboedel inpakken</span></label>
+              <label><input type="checkbox" name="Extra: demonteren" value="ja"><span>Meubels demonteren</span></label>
+              <label data-lf-groep="extra-opslag"><input type="checkbox" id="lf-extra-opslag" name="Extra: opslag" value="ja"><span>Spullen tijdelijk opslaan</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="lf__groep" data-lf-groep="opslag">
+            <legend>Opslag</legend>
+            <div class="lf__row">
+              <div class="lf__field lf__field--sel"><label for="lf-container">Container</label>
+                <select id="lf-container" name="Opslagcontainer">
+                  <option value="">Kies een container</option>
+                  <option>8 m³</option>
+                  <option>16 m³</option>
+                  <option>33 m³</option>
+                  <option>48 m³</option>
+                  <option>Weet ik nog niet</option>
+                </select>
+              </div>
+              <div class="lf__field lf__field--sel"><label for="lf-duur">Hoe lang</label>
+                <select id="lf-duur" name="Opslagduur">
+                  <option value="">Kies een periode</option>
+                  <option>1 tot 4 weken</option>
+                  <option>1 tot 2 maanden</option>
+                  <option>2 tot 3 maanden</option>
+                  <option>Langer dan 3 maanden</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+          <div class="lf__row">
+            <label class="lf__field"><span>Naam</span><input id="lf-naam" name="Naam" required type="text" placeholder="Uw naam" autocomplete="name"></label>
+            <label class="lf__field"><span>Telefoon</span><input id="lf-tel" name="Telefoon" required type="tel" placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></label>
+          </div>
+          <label class="lf__field"><span>E-mail</span><input id="lf-mail" name="E-mail" required type="email" placeholder="u@email.nl" autocomplete="email"></label>
+          <fieldset class="lf__groep">
+            <legend>Hoe wilt u de offerte bespreken?</legend>
+            <div class="lf__chips">
+              <label><input type="radio" name="Offerte bespreken" value="Telefonisch"><span>Telefonisch</span></label>
+              <label><input type="radio" name="Offerte bespreken" value="Videogesprek"><span>Videogesprek</span></label>
+              <label><input type="radio" name="Offerte bespreken" value="Adviseur aan huis"><span>Adviseur aan huis</span></label>
+              <label><input type="radio" name="Offerte bespreken" value="Per mail"><span>Per mail</span></label>
+            </div>
+          </fieldset>
+          <div class="lf__field"><label for="lf-opmerkingen">Opmerkingen (optioneel)</label>
+            <textarea id="lf-opmerkingen" name="Opmerkingen" rows="4" placeholder="Bijvoorbeeld de datum die u het beste uitkomt voor een videogesprek, of bijzondere stukken"></textarea>
+          </div>
+          <label class="lf__field lf__field--sel"><span>Hoe heeft u ons gevonden? (optioneel)</span>
+            <select name="Hoe heeft u ons gevonden" aria-label="Hoe heeft u ons gevonden">
+              <option value="">Kies, mag u overslaan</option>
+              <option>Via Google</option>
+              <option>Familie, vriend of kennis</option>
+              <option>Ik zag een verhuiswagen van De Bresser</option>
+              <option>Via Top Movers of Erkende Verhuizers</option>
+              <option>Via de makelaar of een bedrijf</option>
+              <option>Via Facebook, Instagram of LinkedIn</option>
+              <option>Ik ben al eerder klant geweest</option>
+              <option>Anders</option>
+            </select>
+          </label>
+          <details class="lfcalc" id="lfcalc" data-lf-groep="verhuis">
+            <summary class="lfcalc__knop">
+              <span class="lfcalc__titel" id="lfcalc-titel">Ik weet nog niet hoeveel dozen ik nodig heb</span>
+              <span class="lfcalc__chev" aria-hidden="true"></span>
+            </summary>
+            <div class="lfcalc__paneel">
+              <!-- Hier en niet los bovenin: verbergt de dienstkeuze de uitklapper, dan gaat de schatting niet mee. -->
+              <input type="hidden" id="lf-calc" value="">
+              <div class="lfcalc__velden">
+                <label class="lf__field"><span>Woonoppervlak</span><input id="lf-m2" type="number" inputmode="numeric" value="90"></label>
+                <label class="lf__field"><span>Kamers</span><input id="lf-kamers" type="number" inputmode="numeric" value="3"></label>
+                <label class="lf__field"><span>Bewoners</span><input id="lf-bewoners" type="number" inputmode="numeric" value="2"></label>
+                <label class="lf__field lf__field--sel"><span>Hoeveel spullen</span>
+                  <select id="lf-pack"><option value="licht">Weinig</option><option value="gemiddeld" selected>Gemiddeld</option><option value="zwaar">Veel</option></select></label>
+              </div>
+              <fieldset class="lfcalc__extras">
+                <legend>Heeft u veel van dit?</legend>
+                <label><input type="checkbox" value="boeken"><span>Boeken</span></label>
+                <label><input type="checkbox" value="kleding"><span>Kleding</span></label>
+                <label><input type="checkbox" value="bergruimte"><span>Zolder of berging vol</span></label>
+                <label><input type="checkbox" value="hobby"><span>Hobbyspullen</span></label>
+              </fieldset>
+              <p class="lfcalc__uit" id="lfcalc-uit" role="status" aria-live="polite"></p>
+              <div class="lfcalc__acties">
+                <button type="button" class="lfcalc__ok" id="lfcalc-ok">Schatting toevoegen aan mijn aanvraag</button>
+                <button type="button" class="lfcalc__wis" id="lfcalc-wis" hidden>Verwijderen</button>
+              </div>
+            </div>
+          </details>
+          <div class="lf__actions">
+            <button class="btn btn--offerte btn--lg" type="submit">Vraag uw vrijblijvende offerte aan<svg aria-hidden="true"><use href="#i-caret"/></svg></button>
+          </div>
+          <div class="lf__fout lf__foutlijst" id="lf-foutlijst" role="alert" hidden tabindex="-1" style="margin:0;background:#fff;border-radius:12px;padding:.8rem 1rem;color:var(--fout);font-weight:600">
+            <p style="margin:0 0 .4rem">Er ontbreekt nog iets. Controleer deze velden:</p>
+            <ul class="lf__fout--velden" id="lf-foutvelden"></ul>
+          </div>
+          <p class="lf__fout" id="lf-fout" role="alert" hidden style="margin:0;background:#fff;border-radius:12px;padding:.8rem 1rem;color:var(--fout);font-weight:600">Het versturen is niet gelukt. Bel ons op <a href="tel:+31135282372">+31 (0)13 52 82 372</a> of mail naar <a href="mailto:info@debresser.nl">info@debresser.nl</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

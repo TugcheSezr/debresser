@@ -1,0 +1,44 @@
+{
+ "kan5-projectleider-officemanager": {
+  "oordeel": "goed",
+  "tekst": "Versie 14:53 beoordeeld. Projectleider met tablet, officemanager in blazer wijst naar de bureaus, twee verhuizers op de rug met effen polo. Borstprint TOP/MOVERS met swoosh en pijl klopt, geen doos, niemand in de lens.",
+  "retouche": "",
+  "opnieuw": ""
+ },
+ "mon2-kast-opbouwen": {
+  "oordeel": "fout",
+  "tekst": "Op alle 4 dozen is TOP wit en MOVERS zwart, de swoosh loopt DOOR de T en de O, geen pijl; beide borstprints: swoosh door de T, geen pijl. Boor leest 2x 'Makita'. Poses, gezichten (jongen mond dicht) en kamer zijn goed.",
+  "retouche": "Redding zou zijn: 4 doos-lockups en 2 borstprints overschilderen, Makita-opdruk op boor en accu weg, printfragment op de bovenflap van de bovenste doos (x300-450,y1170-1230) weg. Te veel voor retouche.",
+  "opnieuw": "Lockup fout op alle dozen en polo's. Prompt: 'TOP and MOVERS are BOTH dark grey on the boxes and BOTH white on the polos; the thin teal swoosh lies entirely BELOW the letters, starts left of MOVERS and ends in an arrow point right of MOVERS, it never touches or crosses a letter'; ref-logo.jpg als extra ref meegeven; 'the cordless drill is plain, no brand name on tool or battery'; 'nothing printed on the top flaps'."
+ },
+ "ops1-containers-deur-sluiten": {
+  "oordeel": "let",
+  "tekst": "Containerdeur: TOP/MOVERS zwart, swoosh onder, pijl rechts, geen codes op de deuren. Borstprint links correct, gezicht naar de deur. Alleen op de container linksboven een verticale code 'EHO 2' plus gele sticker.",
+  "retouche": "Container linksboven (x0-150, y190-400): verticale lettercode en gele ruitsticker wegwerken naar effen wit. Optioneel: fabrikantlabel op de gele kraanbalk (x700-780, y880-910) wegpoetsen. Bij een smallere crop de pijlpunt rechts (x~1620) heel houden.",
+  "opnieuw": ""
+ },
+ "ops7-laaddok-wagen": {
+  "oordeel": "let",
+  "tekst": "Wagenlockup compleet, letters zwart; verhuizer in profiel op het dok, voeten en wielen in beeld; containers correct belet. Wel grijze blur-vlakken op beide containerdeuren en mini-label op onderste doos.",
+  "retouche": "Beide containers: grijze blur-vlakken (x240-330 en x405-500 bij y735-790, en bij y1095-1140) plus tekstregeltje x415-495,y780-790 wit maken. Zwart labeltje bovenrand onderste doos x1640-1680,y1225-1240 weg. E in MOVERS op beide dozen vervormd (leest MOV2RS), bij 100% nauwelijks zichtbaar. Wagen staat langs het dok i.p.v. achteruit ertegen, acceptabel.",
+  "opnieuw": ""
+ },
+ "par5-laadbak-inladen": {
+  "oordeel": "fout",
+  "tekst": "Kenteken leest 'TOP MOVS', webadres-fragment op de wagenzijkant; alle dozen (wand + grote doos) en de polo dragen een dikke Amazon-achtige glimlach als swoosh, gele hexagons op de hoeken. Verhuizer kijkt van de dozen af.",
+  "retouche": "Mocht het beeld toch door: kenteken x296-435,y1675-1765 onleesbaar maken; tekst op wagenzijkant x1640-1696,y1335-1400 weg; witte tape/labelstrookjes op de dozenwand (o.a. x1180-1200,y870-900) weg.",
+  "opnieuw": "Swoosh op elke doos is een Amazon-glimlach, niet te retoucheren. Prompt: ref-dozen.jpg als EERSTE ref, 'the swoosh on every box and on the polo is the thin two-part teal curve of the box reference with a small arrow point right of MOVERS, never a thick smile; hexagons only along the vertical edges'; 'the licence plate is blank yellow'; 'no small lettering anywhere on the truck side'; 'the mover looks at the box wall'."
+ },
+ "par6-straat-wagen-breed": {
+  "oordeel": "fout",
+  "tekst": "Grote TOP MOVERS-print op de RUG van de voorste verhuizer; regels onder de lockup zijn leesbare onzin op alle dozen ('Anagetietta erkende verkui'); QR/pictogrammen op dozen; spanband in de laadbak; hi-vis-bies op kragen.",
+  "retouche": "",
+  "opnieuw": "Rugprint is een harde regel. Prompt: 'both movers seen from behind or in profile, the BACK of every polo is plain charcoal with no print, collars plain charcoal without yellow piping'; dozen: 'under TOP MOVERS nothing is printed, no lines, no pictograms, no QR code'; 'no straps, ratchets or paper sheets hanging in the cargo bay'; 'the mover on the lift looks at his boxes, not toward the camera'. Wagenlockup zelf is goed (1x op de zijkant, cabine en achterkant kaal); borstprint verhuizer 2 verhaspeld."
+ },
+ "pia1-piano-hondje-deur": {
+  "oordeel": "let",
+  "tekst": "Tilhouding gefixt: voorste man staat zijdelings, buik en gezicht naar de piano, hand erop, niet met de rug ernaar; collega duwt achter; hondje onder de piano; achterste print correct. Wel grijze spanband om de piano.",
+  "retouche": "Grijze spanband om de piano (van de deken bij x620,y1330 onder de rechterarm door, schuin omlaag tot x~1010,y1680) wegwerken naar deken en zwart lak. Optioneel: teal pijl van de voorste borstprint staat naast TOP i.p.v. rechts van MOVERS (x420-480,y870-930), een regel lager zetten.",
+  "opnieuw": ""
+ }
+}

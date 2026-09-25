@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blok: Erkende Verhuizer (De Kievit)</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-1825">
+<style>
+/* ===== blok Erkende Verhuizer, huisstijl De Kievit (alleen tokens uit style.css) ===== */
+.zeker{padding-block:clamp(2.6rem,5vw,4.2rem);background:var(--creme)}
+.zeker__card{position:relative;overflow:hidden;background:var(--bruin);color:var(--creme);border-radius:var(--r);padding:clamp(1.6rem,3.4vw,2.8rem);box-shadow:var(--schaduw-lg)}
+.zeker__card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--goud-diep) 0 30%,var(--goud) 30% 72%,var(--teal-op-navy) 72%)}
+.zeker__head{display:flex;flex-wrap:wrap;gap:clamp(1.2rem,2.5vw,2.2rem);align-items:center}
+.zeker__logo{flex:none;display:block;width:clamp(190px,20vw,260px);padding:0;background:none;border-radius:0}
+.zeker__logo img{display:block;width:100%;height:auto}
+.zeker__intro{flex:1 1 26ch;min-width:0}
+.zeker__intro .eyebrow{color:var(--teal-op-navy);margin-bottom:.7rem}
+.zeker__intro .eyebrow::before{background:var(--teal-op-navy)}
+.zeker__intro h2{color:var(--creme);font-size:clamp(1.5rem,2.8vw,2.2rem);max-width:24ch;margin:0}
+.zeker__intro p{margin:.8rem 0 0;color:rgba(246,244,236,.88);max-width:64ch}
+.zeker__merk{flex:none;align-self:center;margin-left:auto;display:block;width:auto;height:clamp(112px,11vw,144px)}
+.zeker__list{list-style:none;margin:clamp(1.6rem,3vw,2.2rem) 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem clamp(1.4rem,3vw,2.6rem)}
+.zeker__list li{display:flex;gap:.85rem;align-items:flex-start;padding-top:1rem;border-top:1px solid rgba(246,244,236,.15)}
+.zeker__ok{flex:none;width:1.6rem;height:1.6rem;margin-top:.05rem;border-radius:50%;background:var(--goud);display:grid;place-items:center}
+.zeker__ok svg{width:.95rem;height:.95rem;stroke:var(--bruin);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.zeker__list b{display:block;font:700 .98rem/1.3 var(--font-titel);letter-spacing:0;margin-bottom:.15rem;color:var(--creme)}
+.zeker__list li span:last-child{font-size:.92rem;line-height:1.5;color:rgba(246,244,236,.84)}
+.zeker__cta{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;margin-top:clamp(1.6rem,3vw,2.2rem)}
+.zeker__link{color:var(--creme);font-weight:600;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
+.zeker__bron{margin:1.4rem 0 0;font-size:.78rem;color:rgba(246,244,236,.58)}
+@media (max-width:900px){
+  .zeker__logo{width:165px;padding:0}
+  .zeker__merk{order:-1;margin-left:0;align-self:flex-start;height:90px}
+  .zeker__intro{flex-basis:100%}
+  .zeker__list{grid-template-columns:1fr;gap:.8rem}
+  .zeker__cta .btn{padding:.98rem 1.5rem;font-size:.8rem}   /* anders breekt het label op 390 over twee regels */
+}
+.ctx{height:56px}.ctx--onder{background:var(--creme)}
+</style>
+</head>
+<body>
+
+<section class="zeker" aria-labelledby="zeker-kop">
+  <svg style="display:none" aria-hidden="true"><symbol id="z-ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+  <div class="wrap">
+    <div class="zeker__card">
+      <div class="zeker__head">
+        <a class="zeker__logo" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow" aria-label="De Kievit Verhuizingen in het register van Erkende Verhuizers">
+          <img src="/_werk/keurmerk-blokken/img/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80" loading="lazy">
+        </a>
+        <div class="zeker__intro">
+          <span class="eyebrow">Wij zijn Erkende Verhuizer</span>
+          <h2 id="zeker-kop">Acht zekerheden die u er gratis bij krijgt</h2>
+          <p>Erkende Verhuizers is de brancheorganisatie van de Nederlandse verhuisbranche. Het keurmerk mag alleen worden gevoerd door bedrijven die aan de eisen voldoen, en De Kievit Verhuizingen staat in het ledenregister. Wat dat u oplevert, staat hieronder.</p>
+        </div>
+        <img class="zeker__merk" src="/assets/img/deco/logo-kievit-wit.svg" alt="De Kievit Verhuizingen" width="1520" height="1040" loading="lazy">
+      </div>
+      <ol class="zeker__list">
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>In het register van Erkende Verhuizers</b>Met een eigen vermelding in het ledenregister van de Organisatie voor Erkende Verhuizers.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Garantiecertificaat bij elke verhuizing</b>Verplicht bij elke particuliere verhuizing, en tegelijk uw verzekeringspolis.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Verzekerd tot 100.000 euro</b>Uw verhuisgoederen zijn binnen Nederland verzekerd op nieuwwaarde.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Veilige aanbetaling</b>Tot 25 procent, met een maximum van 1.000 euro binnen Nederland en 2.000 euro binnen Europa.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Uw verhuizing gaat door</b>Bij een faillissement neemt een andere Erkende Verhuizer de verhuizing over.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Opslag meeverzekerd</b>Bij een verhuizing binnen Nederland is opslag de eerste twaalf maanden verzekerd als tijdens de verhuizing.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Onafhankelijke geschillencommissie</b>De Geschillencommissie Verhuizen, met nakomingsgarantie tot 10.000 euro per bindend advies.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Ook net over de grens</b>Verhuizingen naar Nedersaksen en Noordrijn-Westfalen vallen onder het Nederlandse Garantiecertificaat.</span></li>
+      </ol>
+      <div class="zeker__cta">
+        <a class="btn btn--goud btn--groen btn--lg" href="#offerte">Vrijblijvende verhuisofferte</a>
+        <a class="zeker__link" href="https://www.erkendeverhuizers.nl/waarom-erkende-verhuizer/" target="_blank" rel="noopener nofollow">Lees meer over het keurmerk</a>
+      </div>
+      <p class="zeker__bron">Volgens de Algemene Voorwaarden Verhuizingen (AVVV 2025) en het Garantiecertificaat van de Organisatie voor Erkende Verhuizers.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ctx ctx--onder" aria-hidden="true"></div>
+</body>
+</html>

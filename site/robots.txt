@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_werk/
+
+Sitemap: https://www.debresser.nl/sitemap.xml

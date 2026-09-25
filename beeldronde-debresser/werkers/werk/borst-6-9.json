@@ -1,0 +1,38 @@
+{
+ "6": {
+  "knoop": [
+   805,
+   700
+  ],
+  "schouder": 445,
+  "draai": -19,
+  "uit": "werker-6-doos.png"
+ },
+ "7": {
+  "knoop": [
+   830,
+   682
+  ],
+  "schouder": 560,
+  "draai": 0,
+  "uit": "werker-7-steekwagen.png"
+ },
+ "8": {
+  "knoop": [
+   905,
+   700
+  ],
+  "schouder": 490,
+  "draai": 10,
+  "uit": "werker-8-dekens.png"
+ },
+ "9": {
+  "knoop": [
+   925,
+   712
+  ],
+  "schouder": 495,
+  "draai": 17,
+  "uit": "werker-9-accuboor.png"
+ }
+}

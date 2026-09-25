@@ -1,0 +1,377 @@
+<!-- /erkende-verhuizer/ in de huisstijl van de Organisatie voor Erkende Verhuizers (opdracht Shahab 29-08-2026).
+     Bronnen tekst: onderzoek-erkende-verhuizers/01-organisatie-en-keurmerk.md (OEV, reglement EV 2024 art. 2.1 t/m
+     2.13 en 3.1 t/m 3.3) en 06-de-kievit-status-en-nieuwe-site.md (ledenpagina De Kievit, KvK 18014730, geen
+     EPV-label); het klantcijfer 9,5 staat op https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/
+     (opgehaald 29-08-2026). Grens met de zusterpagina's: hier het keurmerk en het lidmaatschap, de dekking staat op
+     /verzekering/, de klachtroute op /klachtenregeling/.
+     Huisstijl: kleuren zijn de CSS-variabelen uit erkendeverhuizers.nl/assets/oev/dist/assets/styles-CEwQz4M7.css
+     (brand #323286, hover #23235d, pressed #151538, light #ececf8, borders #c7c7ea; brand2 #ff9f1a, hover #e68500,
+     light #fff9e5; geel #ffba16; cyaan #09b7dd; tekst-oranje #b26a07). Hun fonts (Mozaic Geo, Gelica) zijn
+     Adobe-fonts op hun eigen licentie; hier Poppins voor de koppen en Fraunces Italic (OFL, self-hosted in
+     assets/fonts) voor het oranje accentwoord, zoals zij Gelica gebruiken. Beeld: originele campagnefoto's van de
+     "Zeker bij"-campagne van de OEV (ledenmateriaal), verkleind naar assets/img/erkend/, elk met bijschrift.
+     Alle stijl staat hieronder met prefix ev-; style.css is niet aangeraakt. -->
+<style>
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:600;font-display:swap;src:url(/assets/fonts/fraunces-600i-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--ev-indigo:#323286;--ev-indigo-h:#23235d;--ev-ink:#151538;--ev-indigo-l:#ececf8;--ev-lijn:#c7c7ea;--ev-oranje:#ff9f1a;--ev-oranje-h:#e68500;--ev-oranje-t:#b26a07;--ev-geel-l:#fff9e5;--ev-geel:#ffba16;--ev-cyaan:#09b7dd;--ev-grijs:#737373;--ev-r:32px;--ev-rs:18px;--ev-accent:'Fraunces',Georgia,'Times New Roman',serif;--ev-schaduw:0 30px 70px -34px rgba(21,21,56,.45)}
+
+/* ---- de kop van deze pagina: de campagnefoto met het stel op de bank (keuze Shahab 29-08), in OEV-kleuren.
+   De pagina kan twee koppen krijgen: de navy paginakop (.pk) van build_paginas.py, of de dienst-hero
+   (.hero--pagina) die sessie -39 op 29-08 15:04 over Voorbereiden en Over ons uitrolde. Shahab heeft daarna
+   besloten dat deze pagina de EV-hero houdt, dus -39 haalt /erkende-verhuizer/ weer uit HERO_PAGINAS en dan is
+   .pk hier de kop. Beide selectors staan hieronder samen: zo klopt de pagina voor en na die build en staat de
+   foto op een plek. De drie formaten hangen aan een variabele, dus de media-queries staan er maar een keer. ---- */
+main{--ev-hero:url(/assets/img/erkend/hero-gezin-1920.webp);--ev-hero-pos:center 42%;--ev-hero-h:clamp(480px,46vw,640px)}
+@media(min-width:621px) and (max-width:1300px){main{--ev-hero:url(/assets/img/erkend/hero-gezin-1280.webp)}}
+@media(max-width:620px){main{--ev-hero:url(/assets/img/erkend/hero-gezin-mobiel-900.webp);--ev-hero-pos:center 28%;--ev-hero-h:540px}}
+main>.pk,main>.hero--pagina{background:var(--ev-indigo) var(--ev-hero) var(--ev-hero-pos)/cover no-repeat;min-height:var(--ev-hero-h);display:flex;flex-direction:column;justify-content:flex-end}
+main>.pk h1,main>.hero--pagina .hero__title{font-family:var(--font-titel);font-size:clamp(2.5rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:-.015em;color:#fff;max-width:14ch;text-shadow:0 2px 24px rgba(21,21,56,.45)}
+main>.pk .pk__kruim,main>.pk .pk__kruim a,main>.hero--pagina .pk__kruim,main>.hero--pagina .pk__kruim a{color:rgba(255,255,255,.85);text-shadow:none}
+main>.pk .pk__kruim a:hover,main>.hero--pagina .pk__kruim a:hover{color:#fff}
+/* de indigo waas: .pk heeft geen eigen laag, de dienst-hero wel (.hero__veil met de navy verloop van de site) */
+main>.pk::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,21,56,.58) 0%,rgba(50,50,134,.22) 42%,rgba(21,21,56,.78) 100%)}
+main>.pk>.wrap{position:relative;z-index:1;width:100%}
+main>.pk{padding-bottom:clamp(6.5rem,10vw,9rem)}
+main>.hero--pagina .hero__veil{background:linear-gradient(180deg,rgba(21,21,56,.58) 0%,rgba(50,50,134,.22) 42%,rgba(21,21,56,.78) 100%)}
+main>.hero--pagina .hero__bg{display:none}   /* zolang de mapping nog een Top Movers-plaat geeft; die wordt dan wel opgehaald, vandaar dat -39 hem eruit haalt */
+main>.hero--pagina .hero__content{max-width:none;margin:0;text-align:left;padding-block:clamp(9rem,12vw,11rem) clamp(6.5rem,10vw,9rem)}
+main>.hero--pagina .pk__kruim ol{justify-content:flex-start}
+main>.pk,main>.hero--pagina{position:relative}
+main>.pk::after,main>.hero--pagina::after{content:"Campagnebeeld Erkende Verhuizers";position:absolute;z-index:2;right:max(var(--pad),calc(50% - var(--maxw)/2));top:calc(var(--pk-bar,130px) + .8rem);padding:.4rem .8rem;border-radius:999px;background:rgba(21,21,56,.72);color:#fff;font:700 .64rem/1.2 var(--font-kop);letter-spacing:.1em;text-transform:uppercase;backdrop-filter:blur(6px)}
+@media(max-width:560px){main>.pk::after,main>.hero--pagina::after{right:auto;left:var(--pad)}}
+@media(max-width:620px){main>.pk{padding-bottom:7.5rem}main>.hero--pagina .hero__content{padding-bottom:7.5rem}}
+
+/* ---- de offertepill die sessie -39 op 29-08 aan deze pagina toevoegde (PILL_PAGINAS) staat in de Kievit-huisstijl:
+   teal paneel met gele knop, pal onder een OEV-hero. Op DEZE pagina alleen de kleuren omzetten naar indigo en
+   oranje; markup, maten en gedrag blijven van de generator, dus een wijziging daar werkt gewoon door.
+   Contrast nagerekend: wit op #323286 is 10,4:1 en #151538 op #ff9f1a is 8,7:1, allebei ruim AA. ---- */
+main>.offerte-overlay{background:var(--ev-indigo-l)}
+main>.offerte-overlay .of-box{background:var(--ev-indigo)}
+main>.offerte-overlay .of-cta{background:var(--ev-oranje);color:var(--ev-ink)}
+main>.offerte-overlay .of-cta:hover{background:var(--ev-oranje-h)}
+main>.offerte-overlay .of-field input:focus-visible,main>.offerte-overlay .of-field select:focus-visible{outline-color:var(--ev-cyaan)}
+
+/* zelfde verhaal voor het offerteformulier onderaan (.leadblock, ook door -39 toegevoegd): alleen de kleuren. */
+main>.leadblock .leadblock__panel{background:linear-gradient(140deg,var(--ev-indigo-h) 0%,var(--ev-indigo) 60%,var(--ev-ink) 100%)}
+main>.leadblock .leadblock__panel .btn--lijn{background:var(--ev-oranje);border-color:var(--ev-oranje);color:var(--ev-ink)}
+main>.leadblock .leadblock__panel .btn--lijn:hover{background:var(--ev-oranje-h);border-color:var(--ev-oranje-h);color:var(--ev-ink)}
+
+/* ---- basis ---- */
+.ev{color:var(--ev-ink);font-family:var(--font-tekst)}
+.ev p{margin:0;font-size:1.05rem;line-height:1.65;color:var(--ev-ink)}
+.ev p+p{margin-top:1rem}
+.ev a{color:inherit}
+.ev-sectie{padding-block:clamp(3.2rem,6.5vw,5.75rem)}
+.ev-sectie--licht{background:var(--ev-indigo-l)}
+.ev-sectie--geel{background:var(--ev-geel-l)}
+.ev .ev-eyebrow{display:block;margin:0 0 .7rem;font:italic 600 1.08rem/1.3 var(--ev-accent);color:var(--ev-oranje-t);letter-spacing:.01em}
+.ev-kop{margin:0;font-family:var(--font-titel);font-weight:700;color:var(--ev-indigo);font-size:clamp(1.9rem,3.3vw,2.8rem);line-height:1.1;letter-spacing:-.015em;text-wrap:balance}
+.ev-kop--xl{font-size:clamp(2.4rem,4.6vw,3.7rem);line-height:1.04}
+.ev-accent{font-family:var(--ev-accent);font-style:italic;font-weight:600;color:var(--ev-oranje-h);letter-spacing:0}
+.ev-kop--wit,.ev-kop--wit .ev-accent{color:#fff}
+.ev-kop--wit .ev-accent{color:var(--ev-oranje)}
+.ev-lead{font-size:1.12rem}
+.ev-knoppen{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.ev-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.55rem;border-radius:999px;background:var(--ev-oranje);border:2px solid var(--ev-oranje);color:var(--ev-ink);font:700 .92rem/1.2 var(--font-titel);text-decoration:none;white-space:nowrap;transition:background .2s var(--ease),border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+.ev-btn svg{width:.8em;height:.8em;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ev-btn:hover{background:var(--ev-oranje-h);border-color:var(--ev-oranje-h);transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(230,133,0,.7)}
+.ev-btn--lijn{background:#fff;border-color:var(--ev-indigo);color:var(--ev-indigo)}
+.ev-btn--lijn:hover{background:var(--ev-indigo-l);border-color:var(--ev-indigo);box-shadow:none}
+.ev-btn--ghost{background:transparent;border-color:rgba(255,255,255,.7);color:#fff}
+.ev-btn--ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;box-shadow:none}
+.ev-btn:focus-visible{outline:3px solid var(--ev-cyaan);outline-offset:3px}
+.ev-foto{position:relative;margin:0;border-radius:var(--ev-r);overflow:hidden;background:var(--ev-indigo-l)}
+.ev-foto img{display:block;width:100%;height:100%;object-fit:cover}
+.ev-foto__cap{position:absolute;left:1rem;bottom:1rem;margin:0;padding:.42rem .8rem;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ev-indigo);font:700 .68rem/1.2 var(--font-kop);letter-spacing:.1em;text-transform:uppercase}
+
+/* ---- keurmerkkaart die over de onderrand van de hero valt ---- */
+.ev-kaartrij{position:relative;padding-bottom:clamp(1rem,2vw,1.5rem)}
+/* de kaart valt over de kop heen, maar alleen als hij er direct op volgt. Sinds sessie -39 de offerte-pill op
+   deze pagina zet (PILL_PAGINAS) staat daar een blok tussen; dan sneed de negatieve marge het keurmerklogo af. */
+.offerte-overlay ~ .ev-kaartrij{padding-top:clamp(2rem,4vw,3rem)}
+.offerte-overlay ~ .ev-kaartrij .ev-keurkaart{margin-top:0}
+.ev-keurkaart{position:relative;z-index:2;margin-top:calc(-1 * clamp(4.2rem,6.6vw,5.6rem));background:#fff;border-radius:var(--ev-r);box-shadow:var(--ev-schaduw);padding:clamp(1.4rem,3vw,2.1rem) clamp(1.4rem,3.4vw,2.6rem);display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:clamp(1.2rem,3vw,2.6rem);align-items:center}
+.ev-keurkaart__logo{display:block;flex:none;width:clamp(150px,14vw,190px)}
+.ev-keurkaart__logo img{display:block;width:100%;height:auto}
+.ev-keurkaart__tekst p{font-size:1rem;line-height:1.55}
+.ev-keurkaart__tekst b{color:var(--ev-indigo)}
+.ev-score{display:flex;align-items:center;gap:.85rem}
+.ev-score__cijfer{flex:none;width:66px;height:66px;border-radius:50%;background:#fff;border:4px solid var(--ev-oranje);box-shadow:0 0 0 4px #fff,0 0 0 5px var(--ev-lijn);display:grid;place-items:center;font:700 1.35rem/1 var(--font-titel);color:var(--ev-indigo)}
+.ev-score__uitleg{font-size:.82rem;line-height:1.35;color:var(--ev-grijs);max-width:16ch}
+.ev-score__uitleg b{display:block;color:var(--ev-indigo);font-size:.9rem}
+
+/* ---- intro "Zeker bij" ---- */
+.ev-intro__in{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.ev-intro__in .ev-kop--xl{position:sticky;top:120px}
+
+/* ---- het bestaande zekerheden-blok, van navy en teal naar indigo en oranje ---- */
+.zeker{background:#fff;padding-block:clamp(.5rem,1.5vw,1rem) clamp(3.2rem,6.5vw,5.75rem)}
+.zeker__card{background:var(--ev-indigo);color:#fff;border-radius:var(--ev-r);box-shadow:0 44px 90px -44px rgba(21,21,56,.65)}
+.zeker__card::before{background:linear-gradient(90deg,var(--ev-oranje) 0 64%,var(--ev-geel) 64%)}
+.zeker__intro .eyebrow{color:var(--ev-oranje);font:italic 600 1.05rem/1.3 var(--ev-accent);letter-spacing:.01em;text-transform:none}
+.zeker__intro .eyebrow::before{background:var(--ev-oranje)}
+.zeker__intro h2{color:#fff;font-family:var(--font-titel);letter-spacing:-.01em}
+.zeker__intro p{color:rgba(255,255,255,.86)}
+.zeker__list li{border-top-color:rgba(255,255,255,.16)}
+.zeker__ok{background:var(--ev-oranje)}
+.zeker__ok svg{stroke:var(--ev-ink)}
+.zeker__list b{color:#fff}
+.zeker__list li span:last-child{color:rgba(255,255,255,.82)}
+.zeker__cta .btn{background:var(--ev-oranje);border-color:var(--ev-oranje);color:var(--ev-ink);border-radius:999px;font-family:var(--font-titel);letter-spacing:0;font-size:.92rem;text-transform:none}
+.zeker__cta .btn:hover{background:var(--ev-oranje-h);border-color:var(--ev-oranje-h);color:var(--ev-ink)}
+.zeker__link{color:#fff}
+.zeker__link:hover{color:var(--ev-oranje)}
+.zeker__bron{color:rgba(255,255,255,.62)}
+
+/* ---- organisatie: foto links, tekst en drie feitkaarten rechts ---- */
+.ev-twee{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.ev-twee .ev-foto{aspect-ratio:4/3}
+.ev-feiten{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem}
+.ev-feiten li{position:relative;background:#fff;border:1px solid var(--ev-lijn);border-radius:var(--ev-rs);padding:1.1rem 1.1rem 1.1rem;box-shadow:0 14px 30px -24px rgba(21,21,56,.35)}
+.ev-feiten b{display:block;font:700 2rem/1 var(--font-titel);color:var(--ev-indigo);letter-spacing:-.02em;margin-bottom:.45rem}
+.ev-feiten span{display:block;font-size:.86rem;line-height:1.45;color:var(--ev-grijs)}
+.ev-feiten li::after{content:"";position:absolute;right:.9rem;top:.9rem;width:.55rem;height:.55rem;border-radius:50%;background:var(--ev-cyaan)}
+
+/* ---- toetsing: lichtgeel paneel met oranje duimen, foto steekt rechts uit het paneel ---- */
+.ev-paneel{position:relative;background:var(--ev-geel-l);border-radius:var(--ev-r);padding:clamp(1.8rem,4vw,3.4rem) clamp(1.4rem,4vw,3.4rem);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+.ev-paneel__kop{margin-bottom:1.6rem;max-width:60ch}
+.ev-paneel__kop p{margin-top:.8rem}
+.ev-duimen{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.6rem}
+.ev-duimen li{display:grid;grid-template-columns:2.2rem 1fr;gap:.9rem;align-items:start}
+.ev-duimen svg{width:2rem;height:2rem;fill:var(--ev-oranje);margin-top:.1rem}
+.ev-duimen b{display:block;font:700 1.02rem/1.3 var(--font-titel);color:var(--ev-indigo);margin-bottom:.25rem}
+.ev-duimen span{display:block;font-size:.93rem;line-height:1.5;color:var(--ev-ink)}
+.ev-paneel .ev-foto{aspect-ratio:4/5;align-self:start;position:sticky;top:calc(var(--pk-bar,130px) + 1.2rem);margin-right:calc(-1 * (clamp(1.4rem,4vw,3.4rem) + var(--pad)));box-shadow:var(--ev-schaduw)}
+
+/* ---- procedure: vier stappen als tijdlijn met oranje nummers ---- */
+.ev-stappen{list-style:none;margin:clamp(1.8rem,3vw,2.6rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.4rem;counter-reset:evstap;position:relative}
+.ev-stappen::before{content:"";position:absolute;left:1.5rem;right:1.5rem;top:1.55rem;border-top:2px dashed var(--ev-lijn)}
+.ev-stappen li{counter-increment:evstap;position:relative;padding-top:4.2rem}
+.ev-stappen li::before{content:counter(evstap,decimal-leading-zero);position:absolute;left:0;top:0;width:3.1rem;height:3.1rem;border-radius:50%;background:var(--ev-oranje);color:var(--ev-ink);display:grid;place-items:center;font:700 1rem/1 var(--font-titel);box-shadow:0 0 0 6px #fff}
+.ev-stappen b{display:block;font:700 1.15rem/1.3 var(--font-titel);color:var(--ev-indigo);margin-bottom:.4rem}
+.ev-stappen span{display:block;font-size:.95rem;line-height:1.55;color:var(--ev-ink)}
+
+/* ---- indigo cta-kaart met foto rechts ---- */
+.ev-cta{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);background:var(--ev-indigo);color:#fff;border-radius:var(--ev-r);overflow:hidden;box-shadow:0 44px 90px -44px rgba(21,21,56,.65)}
+.ev-cta__tekst{padding:clamp(1.8rem,4vw,3.4rem)}
+.ev-cta__tekst .ev-eyebrow{color:var(--ev-oranje)}
+.ev-cta__tekst p{color:rgba(255,255,255,.86);max-width:56ch}
+.ev-cta .ev-foto{border-radius:0;min-height:100%}
+.ev-cta .ev-foto img{position:absolute;inset:0}
+
+/* ---- faq in OEV-kleuren ---- */
+.ev-faq .faq details{border-color:var(--ev-lijn)}
+.ev-faq .faq summary{font-family:var(--font-titel);color:var(--ev-indigo)}
+.ev-faq .faq summary:hover,.ev-faq .faq details[open] summary{color:var(--ev-indigo-h)}
+.ev-faq .faq summary::before{color:var(--ev-oranje-t);font-family:var(--ev-accent);font-style:italic;font-weight:600;letter-spacing:0;font-size:1.05rem}
+.ev-faq .faq__tk::before,.ev-faq .faq__tk::after{background:var(--ev-oranje)}
+.ev-faq .faq details p{color:var(--ev-ink)}
+.ev-faq .faq details p a{color:var(--ev-indigo);font-weight:700}
+
+/* ---- afsluiter ---- */
+.ev-slot{text-align:center;max-width:46rem;margin-inline:auto}
+.ev-slot .ev-knoppen{justify-content:center}
+.ev-slot .ev-score{justify-content:center;margin-top:2rem}
+.ev-slot .ev-score__uitleg{text-align:left}
+
+@media(max-width:1000px){
+  .ev-keurkaart{grid-template-columns:auto minmax(0,1fr);gap:1.2rem 1.8rem}
+  .ev-keurkaart .ev-btn{grid-column:2}
+}
+@media(max-width:860px){
+  .ev-intro__in,.ev-twee,.ev-paneel,.ev-cta{grid-template-columns:1fr}
+  .ev-intro__in .ev-kop--xl{position:static}
+  .ev-twee .ev-foto{order:-1;aspect-ratio:4/3}
+  .ev-feiten{grid-template-columns:1fr 1fr}
+  .ev-paneel{padding:1.5rem 1.2rem}
+  .ev-paneel .ev-foto{margin-right:0;aspect-ratio:16/10;position:static}
+  .ev-duimen{grid-template-columns:1fr}
+  .ev-stappen{grid-template-columns:1fr 1fr}
+  .ev-stappen::before{display:none}
+  .ev-cta .ev-foto{order:-1;aspect-ratio:16/10;min-height:0}
+  .ev-cta .ev-foto img{position:static}
+}
+@media(max-width:560px){
+  .ev-keurkaart{grid-template-columns:1fr;text-align:left}
+  .ev-keurkaart .ev-btn{grid-column:auto;justify-self:start}
+  .ev-feiten,.ev-stappen{grid-template-columns:1fr}
+}
+</style>
+<svg style="display:none" aria-hidden="true">
+  <symbol id="ev-duim" viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></symbol>
+  <symbol id="ev-pijl" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+</svg>
+
+<section class="ev ev-kaartrij" aria-label="Keurmerk en klantcijfer">
+  <div class="wrap">
+    <div class="ev-keurkaart" data-reveal>
+      <a class="ev-keurkaart__logo" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow" aria-label="De Kievit Verhuizingen in het register van Erkende Verhuizers"><img src="/assets/img/keurmerk/erkende-verhuizers.svg" width="165" height="80" alt="Keurmerk Erkende Verhuizers"></a>
+      <div class="ev-keurkaart__tekst">
+        <p class="ev-eyebrow">Wij zijn Erkende Verhuizer</p>
+        <p><b>De Kievit Verhuizingen staat in het ledenregister</b> van de Organisatie voor Erkende Verhuizers, met een eigen ledenpagina en een eigen klantcijfer, op KvK 18014730.</p>
+      </div>
+      <div class="ev-score"><span class="ev-score__cijfer">9,5</span><span class="ev-score__uitleg"><b>Klantcijfer</b>op onze ledenpagina bij Erkende Verhuizers</span></div>
+      <a class="ev-btn" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow">Onze ledenpagina<svg aria-hidden="true"><use href="#ev-pijl"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie" id="wat" aria-labelledby="wat-kop">
+  <div class="wrap ev-intro__in">
+    <h2 class="ev-kop ev-kop--xl" id="wat-kop" data-reveal><span class="ev-accent">Zeker bij</span><br>De Kievit Verhuizingen</h2>
+    <div data-reveal>
+      <p class="ev-eyebrow">Het keurmerk</p>
+      <p class="ev-lead">Iedereen mag zich verhuizer noemen. Een bestelbus en een advertentie zijn genoeg. Erkende Verhuizer mag u alleen heten als een branchevereniging uw bedrijf heeft getoetst en u zich aan haar regels houdt, en u raakt het predicaat kwijt als u dat niet doet. Op deze pagina staat wie dat toetst, waarop, en wat dat voor u betekent als u ons inhuurt.</p>
+      <p>De Kievit staat in het ledenregister van de Organisatie voor Erkende Verhuizers met een eigen ledenpagina en een eigen klantcijfer. De erkenning staat op KvK 18014730, het nummer van De Bresser Verhuizingen, waar De Kievit sinds 1 juni 2024 onderdeel van is.</p>
+      <div class="ev-knoppen">
+        <a class="ev-btn" href="/#offerte">Offerte aanvragen<svg aria-hidden="true"><use href="#ev-pijl"/></svg></a>
+        <a class="ev-btn ev-btn--lijn" href="https://www.erkendeverhuizers.nl/ledenregister/" target="_blank" rel="noopener nofollow">Controleer het ledenregister</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zeker" aria-labelledby="zeker-kop">
+  <svg style="display:none" aria-hidden="true"><symbol id="z-ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol></svg>
+  <div class="wrap">
+    <div class="zeker__card" data-reveal>
+      <div class="zeker__head">
+        <a class="zeker__logo" href="https://www.erkendeverhuizers.nl/lid/de-kievit-verhuizingen-top-movers/" target="_blank" rel="noopener nofollow" aria-label="De Kievit Verhuizingen in het register van Erkende Verhuizers">
+          <img src="/assets/img/keurmerk/erkende-verhuizers-wit.svg" alt="Erkende Verhuizers" width="165" height="80" loading="lazy">
+        </a>
+        <div class="zeker__intro">
+          <span class="eyebrow">Wij zijn Erkende Verhuizer</span>
+          <h2 id="zeker-kop">Acht zekerheden die u er gratis bij krijgt</h2>
+          <p>Erkende Verhuizers is de brancheorganisatie van de Nederlandse verhuisbranche. Het keurmerk mag alleen worden gevoerd door bedrijven die aan de eisen voldoen, en De Kievit Verhuizingen staat in het ledenregister. Wat dat u oplevert, staat hieronder.</p>
+        </div>
+        <img class="zeker__merk" src="/assets/img/deco/logo-kievit-wit.svg" alt="De Kievit Verhuizingen" width="1520" height="1040" loading="lazy">
+      </div>
+      <ol class="zeker__list">
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>In het register van Erkende Verhuizers</b>Met een eigen vermelding in het ledenregister van de Organisatie voor Erkende Verhuizers.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Garantiecertificaat bij elke verhuizing</b>Verplicht bij elke particuliere verhuizing, en tegelijk uw verzekeringspolis.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Verzekerd tot 100.000 euro</b>Uw verhuisgoederen zijn binnen Nederland verzekerd op nieuwwaarde.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Aanbetaling terug bij faillissement</b>Tot 25 procent van de verhuisprijs: maximaal 1.000 euro binnen Nederland en 2.000 euro binnen Europa.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Uw verhuizing gaat door</b>Voor consumenten binnen Nederland: gaan wij failliet, dan wijst de organisatie een andere Erkende Verhuizer aan.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Opslag meeverzekerd</b>Bij een verhuizing binnen Nederland is opslag de eerste twaalf maanden verzekerd als tijdens de verhuizing.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Onafhankelijke geschillencommissie</b>De Geschillencommissie Verhuizen, met voor consumenten binnen Nederland een nakomingsgarantie tot 10.000 euro per bindend advies.</span></li>
+        <li><span class="zeker__ok"><svg aria-hidden="true"><use href="#z-ok"/></svg></span><span><b>Ook net over de grens</b>Verhuizingen naar Nedersaksen en Noordrijn-Westfalen vallen onder het Nederlandse Garantiecertificaat.</span></li>
+      </ol>
+      <div class="zeker__cta">
+        <a class="btn btn--goud btn--groen btn--lg" href="#offerte">Vrijblijvende verhuisofferte</a>
+        <a class="zeker__link" href="https://www.erkendeverhuizers.nl/waarom-erkende-verhuizer/" target="_blank" rel="noopener nofollow">Lees meer over het keurmerk</a>
+      </div>
+      <p class="zeker__bron">Volgens de Algemene Voorwaarden Verhuizingen (AVVV 2025) en het Garantiecertificaat van de Organisatie voor Erkende Verhuizers.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie ev-sectie--licht" id="wie" aria-labelledby="wie-kop">
+  <div class="wrap ev-twee">
+    <figure class="ev-foto" data-reveal>
+      <img src="/assets/img/erkend/dozen-wagen-1200.webp" srcset="/assets/img/erkend/dozen-wagen-800.webp 800w, /assets/img/erkend/dozen-wagen-1200.webp 1200w" sizes="(max-width:860px) 92vw, 520px" width="1200" height="900" alt="Campagnebeeld van Erkende Verhuizers: een vrouw pakt een verhuisdoos met het keurmerk uit een stapel in de laadbak" loading="lazy" decoding="async">
+      <figcaption class="ev-foto__cap">Campagnebeeld Erkende Verhuizers</figcaption>
+    </figure>
+    <div data-reveal>
+      <p class="ev-eyebrow">De organisatie erachter</p>
+      <h2 class="ev-kop" id="wie-kop">Wie dat <span class="ev-accent">predicaat</span> uitdeelt</h2>
+      <p style="margin-top:1rem">De Organisatie voor Erkende Verhuizers in Zoetermeer is de brancheorganisatie voor de Nederlandse verhuisbranche en beheert twee keurmerken: Erkende Verhuizers voor inboedels en Erkende Projectverhuizers voor grote en complexe bedrijfsverhuizingen. De vereniging heeft geen winstoogmerk en telde op 25 augustus 2026 in totaal 197 leden. Woord- en beeldmerk zijn gedeponeerd bij het Benelux Merkenbureau, dus een bedrijf dat het logo voert zonder lid te zijn, is in overtreding.</p>
+      <ul class="ev-feiten" data-reveal-groep>
+        <li><b>197</b><span>leden in het register, stand 25 augustus 2026</span></li>
+        <li><b>3 jaar</b><span>maximale looptijd van een erkenning, daarna opnieuw beoordeeld</span></li>
+        <li><b>83%</b><span>van de consumenten kent het keurmerk, volgens de organisatie zelf</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie" id="eisen" aria-labelledby="eisen-kop">
+  <div class="wrap">
+    <div class="ev-paneel" data-reveal>
+      <div>
+        <div class="ev-paneel__kop">
+          <p class="ev-eyebrow">De toetsing</p>
+          <h2 class="ev-kop" id="eisen-kop">Waarop een verhuisbedrijf wordt <span class="ev-accent">nagelopen</span></h2>
+          <p>Het erkenningsreglement is geen intentieverklaring maar een lijst met controleerbare eisen. Dit zijn de zes die u als klant het hardst raken.</p>
+        </div>
+        <ul class="ev-duimen" data-reveal-groep>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>Het bedrijf bestaat echt en betaalt zijn rekeningen</b><span>Minimaal twee jaar ingeschreven bij de Kamer van Koophandel met verhuisvervoer als eerste activiteit, een geldige vergunning voor goederenvervoer over de weg, en een verklaring betalingsgedrag van de Belastingdienst die niet ouder is dan drie maanden.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>De mensen aan uw deur zijn opgeleid</b><span>Het keurmerk eist dat van het team dat inpakt, ophaalt en aflevert minstens de helft een door de organisatie erkend verhuisdiploma heeft, en dat wie langer dan twee jaar in dienst is het sowieso heeft. Bij ons zijn het er alle: onze verhuizers zijn gediplomeerd. Een leerling loopt mee en haalt het diploma bij ons, maar de verantwoordelijkheid ligt bij de vaste mensen. De voorman is in dienst en volgt vakopleidingen.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>Uw afspraak staat op papier</b><span>Een verhuisovereenkomst mag niet mondeling. Meerwerk staat in de overeenkomst of op een werkbon die u zelf aftekent. De actuele algemene voorwaarden horen erbij en krijgt u uiterlijk bij het sluiten van de overeenkomst.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>De aansprakelijkheid is verzekerd</b><span>Het bedrijf verzekert zijn aansprakelijkheid voor verhuizen en bewaren voor minimaal 23.000 euro per overeenkomst, met een eigen risico van hoogstens 1.000 euro, plus een bedrijfsaansprakelijkheidsverzekering van minimaal 2,5 miljoen euro per gebeurtenis.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>Uw oordeel wordt geteld, niet gekozen</b><span>Deelname aan het collectieve klanttevredenheidsonderzoek is verplicht. De uitnodiging gaat automatisch na afloop de deur uit en de uitkomst moet openbaar op de eigen site staan, met een cijfer dat actueel is. Een bedrijf kan dus geen recensies wegdrukken.</span></div></li>
+          <li><svg aria-hidden="true"><use href="#ev-duim"/></svg><div><b>Schade en klachten kennen een plafond</b><span>Het schadepercentage mag over vier jaar gemeten niet boven de 2,5 procent uitkomen, gegronde klachten niet boven de 5 procent van de uitgevoerde verhuizingen, en niet meer dan twee daarvan per jaar mogen bij de geschillencommissie gegrond zijn verklaard. Uitkeringen gaan binnen veertien dagen door naar de klant.</span></div></li>
+        </ul>
+      </div>
+      <figure class="ev-foto">
+        <img src="/assets/img/erkend/schilderij-1000.webp" srcset="/assets/img/erkend/schilderij-700.webp 700w, /assets/img/erkend/schilderij-1000.webp 1000w" sizes="(max-width:860px) 92vw, 380px" width="1000" height="1000" alt="Campagnebeeld van Erkende Verhuizers: een verhuizer in blauwe polo hangt een schilderij op, met verhuisdozen met het keurmerk ernaast" loading="lazy" decoding="async">
+        <figcaption class="ev-foto__cap">Campagnebeeld Erkende Verhuizers</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie ev-sectie--licht" id="route" aria-labelledby="route-kop">
+  <div class="wrap">
+    <div data-reveal style="max-width:60ch">
+      <p class="ev-eyebrow">De procedure</p>
+      <h2 class="ev-kop" id="route-kop">Hoe een erkenning <span class="ev-accent">tot stand komt</span></h2>
+      <p style="margin-top:1rem">Niet met een formulier en een factuur. Het loopt via een besluitvormingsorgaan, en de branche zelf kijkt mee.</p>
+    </div>
+    <ol class="ev-stappen" data-reveal-groep>
+      <li><b>Aanvraag</b><span>Het bedrijf dient een aanvraag in bij het bureau van de organisatie. Die wordt pas behandeld als de aanvraagkosten betaald zijn, ongeacht de uitkomst.</span></li>
+      <li><b>Publicatie</b><span>De aanvraag wordt gepubliceerd in het vakblad Verhuizen. Andere Erkende Verhuizers hebben dertig dagen om gemotiveerd bezwaar te maken.</span></li>
+      <li><b>Bedrijfsbezoek</b><span>Er volgt een bezoek ter plaatse om te verifieren wat er in de aanvraag staat. Inzage in de bedrijfsadministratie kan worden gevorderd.</span></li>
+      <li><b>Besluit</b><span>Het Certificatie Besluitvormingsorgaan besluit over verlening, verlenging en intrekking. Een erkenning geldt voor maximaal drie jaar en vervalt bij overname; de nieuwe eigenaar moet zelf opnieuw aanvragen.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="ev ev-sectie" id="grens" aria-labelledby="grens-kop">
+  <div class="wrap">
+    <div class="ev-cta" data-reveal>
+      <div class="ev-cta__tekst">
+        <p class="ev-eyebrow">Wat het u oplevert</p>
+        <h2 class="ev-kop ev-kop--wit" id="grens-kop">Het keurmerk is de <span class="ev-accent">sleutel</span>, niet het slot</h2>
+        <p style="margin-top:1rem">Aan de erkenning hangt een reeks harde afspraken, maar die staan in twee andere documenten. Voor elke verhuizing die wij met een consument afspreken vragen wij een Garantiecertificaat aan. Dat papier is tegelijk uw verzekeringspolis en uw garantie dat de verhuizing doorgaat, ook als het met ons misgaat. Wat er precies onder valt en tot welk bedrag leest u op de verzekeringspagina. Wat u doet als er toch iets sneuvelt of als wij er samen niet uitkomen, staat op de klachtenpagina.</p>
+        <div class="ev-knoppen">
+          <a class="ev-btn" href="/verzekering/">Waarvoor u verzekerd bent<svg aria-hidden="true"><use href="#ev-pijl"/></svg></a>
+          <a class="ev-btn ev-btn--ghost" href="/klachtenregeling/">Als er iets misgaat</a>
+        </div>
+      </div>
+      <figure class="ev-foto">
+        <img src="/assets/img/erkend/inpakken-900.webp" srcset="/assets/img/erkend/inpakken-600.webp 600w, /assets/img/erkend/inpakken-900.webp 900w" sizes="(max-width:860px) 92vw, 480px" width="900" height="1201" alt="Campagnebeeld van Erkende Verhuizers: een verhuizer in blauwe polo pakt een verhuisdoos in" loading="lazy" decoding="async">
+        <figcaption class="ev-foto__cap">Campagnebeeld Erkende Verhuizers</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie ev-faq" id="vragen" aria-labelledby="vragen-kop">
+  <div class="wrap">
+    <div data-reveal style="max-width:60ch;margin-bottom:clamp(1.6rem,3vw,2.4rem)">
+      <p class="ev-eyebrow">Veelgestelde vragen</p>
+      <h2 class="ev-kop" id="vragen-kop">Over erkenning en <span class="ev-accent">lidmaatschap</span></h2>
+    </div>
+    <div class="faq" data-reveal>
+      <details><summary>Hoe controleer ik zelf of een verhuizer erkend is?<span class="faq__tk" aria-hidden="true"></span></summary><p>Zoek het bedrijf op in het ledenregister op erkendeverhuizers.nl. Staat het er niet in, dan is het geen Erkende Verhuizer, hoe het logo op de bus er ook uitziet. Het woord- en beeldmerk is gedeponeerd, en alleen leden mogen de beschermde algemene voorwaarden voor verhuizen en bewaren gebruiken. Onze eigen ledenpagina staat op naam van de Kievit Verhuizingen Top Movers.</p></details>
+      <details><summary>Is De Kievit zelfstandig erkend of via De Bresser?<span class="faq__tk" aria-hidden="true"></span></summary><p>De erkenning is verbonden aan een inschrijving bij de Kamer van Koophandel en is niet overdraagbaar. De Kievit heeft een eigen ledenpagina met een eigen klantcijfer, en die staat op KvK 18014730, hetzelfde nummer als De Bresser Verhuizingen. Sinds 1 juni 2024 zijn wij daar onderdeel van. Aan uw kant verandert dat niets: u sluit de overeenkomst met het bedrijf dat de verhuizing uitvoert, en dat is het Venlose team.</p></details>
+      <details><summary>Geldt het keurmerk ook voor mijn kantoorverhuizing?<span class="faq__tk" aria-hidden="true"></span></summary><p>Voor bedrijfsverhuizingen gelden andere voorwaarden dan voor inboedels, en daarvoor bestaat een apart keurmerk: Erkende Projectverhuizers, sinds 1999, voor grootschalig en complex werk. Dat label staat niet op onze ledenpagina. Wij voeren zakelijke verhuizingen uit onder de algemene voorwaarden voor bedrijfsverhuizingen; vraag ernaar bij de offerte, dan sturen wij de geldende tekst mee.</p></details>
+      <details><summary>Wat gebeurt er als een erkende verhuizer zich niet aan de regels houdt?<span class="faq__tk" aria-hidden="true"></span></summary><p>Het besluitvormingsorgaan dat de erkenning verleent, kan hem ook intrekken. Daarnaast gelden er harde grenzen aan schade en aan gegronde klachten, en moet een bedrijf een bindende uitspraak van de geschillencommissie binnen veertien dagen nakomen. Wie daar structureel onder blijft presteren, raakt het predicaat kwijt.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="ev ev-sectie ev-sectie--geel" id="afsluiter" aria-labelledby="afsluiter-kop">
+  <div class="wrap">
+    <div class="ev-slot" data-reveal>
+      <p class="ev-eyebrow">Zullen we kennismaken</p>
+      <h2 class="ev-kop" id="afsluiter-kop">Liever gewoon even <span class="ev-accent">een mens</span> spreken</h2>
+      <p style="margin-top:1rem">Een keurmerk zegt iets over hoe een bedrijf is ingericht. Of het klikt merkt u pas als er iemand bij u aan tafel zit. Onze verhuisadviseur komt langs, kijkt wat er mee moet en zet het in een offerte met de voorwaarden erbij.</p>
+      <div class="ev-knoppen">
+        <a class="ev-btn" href="/#offerte">Offerte aanvragen<svg aria-hidden="true"><use href="#ev-pijl"/></svg></a>
+        <a class="ev-btn ev-btn--lijn" href="tel:0773232100">Bel 077 - 32 32 100</a>
+      </div>
+      <div class="ev-score"><span class="ev-score__cijfer">9,5</span><span class="ev-score__uitleg"><b>Klantcijfer</b>op onze ledenpagina bij Erkende Verhuizers</span></div>
+    </div>
+  </div>
+</section>

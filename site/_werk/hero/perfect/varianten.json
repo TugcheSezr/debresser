@@ -1,0 +1,44 @@
+[
+ {
+  "id": "C1",
+  "bestand": "team-cutout-trio-master.png",
+  "label": "Vision + kleurgeleide rand (native)",
+  "uitleg": "Apple Vision instancemasker en persoonsmatte, alfa met een kleurgeleid filter langs de echte contour, rand aangescherpt tot 1-2 px, lichte randkleur weggerekend. Dit is de versie die nu in de hero staat."
+ },
+ {
+  "id": "C2",
+  "bestand": "cut-A2-heup.png",
+  "label": "Vision op 2x resolutie",
+  "uitleg": "Zelfde pijplijn, maar op een 2x opgeschaalde bron gerekend en daarna terug naar native: gladdere subpixelrand op haar, bril en vingers."
+ },
+ {
+  "id": "C3",
+  "bestand": "cut-C3-heup.png",
+  "label": "Closed-form matting (trimap uit Vision) met voorgrondschatting",
+  "uitleg": "Klassieke closed-form matting: de alfa in een band van 16 px rond het Vision-masker wordt uit de kleurstatistiek van de foto zelf opgelost, en de voorgrondkleur langs de rand wordt apart geschat (geen achtergrondbesmetting). Zachtere, natuurlijke overgang op haar en huid."
+ },
+ {
+  "id": "G1",
+  "bestand": "../ai67/cut/trio67-01-heup.png",
+  "label": "Gegenereerd op magenta (trio67-01), chroma-key",
+  "uitleg": "Zelfde drie mannen, kleding en houding, opnieuw gefotografeerd door het model op een egale magenta plaat; daardoor is de uitsnede tussen armen en lijven per definitie schoon. Gelijkenis en borstprint op 100% gecontroleerd."
+ },
+ {
+  "id": "G2",
+  "bestand": "../ai67/cut/trio67-02-heup.png",
+  "label": "Gegenereerd op magenta (trio67-02), chroma-key",
+  "uitleg": "Zelfde drie mannen, kleding en houding, opnieuw gefotografeerd door het model op een egale magenta plaat; daardoor is de uitsnede tussen armen en lijven per definitie schoon. Gelijkenis en borstprint op 100% gecontroleerd."
+ },
+ {
+  "id": "G3",
+  "bestand": "../ai67/cut/trio67-03-heup.png",
+  "label": "Gegenereerd op magenta (trio67-03), chroma-key",
+  "uitleg": "Zelfde drie mannen, kleding en houding, opnieuw gefotografeerd door het model op een egale magenta plaat; daardoor is de uitsnede tussen armen en lijven per definitie schoon. Gelijkenis en borstprint op 100% gecontroleerd."
+ },
+ {
+  "id": "G4",
+  "bestand": "../ai67/cut/trio67-04-heup.png",
+  "label": "Gegenereerd op magenta (trio67-04), chroma-key",
+  "uitleg": "Zelfde drie mannen, kleding en houding, opnieuw gefotografeerd door het model op een egale magenta plaat; daardoor is de uitsnede tussen armen en lijven per definitie schoon. Gelijkenis en borstprint op 100% gecontroleerd."
+ }
+]

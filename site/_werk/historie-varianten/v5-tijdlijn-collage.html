@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historie-variant 5: tijdlijn met polaroidstapel</title>
+<link rel="stylesheet" href="/assets/css/style.css?v=20260828-1645">
+<style>
+/* ===== variant 1: tijdlijn (extra CSS, alleen tokens uit style.css) ===== */
+.hist5{position:relative;overflow:hidden;background:var(--bruin);color:var(--creme);padding-block:clamp(3.5rem,7vw,6rem)}
+.hist5__in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(2rem,5vw,5rem);align-items:stretch}
+.hist5 .label{color:var(--teal-op-navy)}
+.hist5 .label::before{background:var(--teal-op-navy)}
+.hist5 .kop{color:var(--creme);font-size:clamp(1.9rem,2.9vw,2.4rem);margin-bottom:.5em}
+.hist5 .intro{color:rgba(246,244,236,.82);max-width:54ch;font-size:1.08rem;margin:0 0 1.2rem}
+.hist5__tl{list-style:none;margin:0 0 1.5rem;padding:0;position:relative;display:grid;gap:.75rem}
+.hist5__tl::before{content:"";position:absolute;left:calc(4.6rem + 4px);top:.6rem;bottom:.6rem;width:1px;background:rgba(246,244,236,.22)}
+.hist5__tl li{position:relative;display:grid;grid-template-columns:4.6rem minmax(0,1fr);gap:1.2rem;align-items:start}
+.hist5__tl li::before{content:"";position:absolute;left:4.6rem;top:.5rem;width:9px;height:9px;border-radius:50%;background:var(--goud)}
+.hist5__jaar{font:700 1.4rem/1 var(--font-display);color:var(--teal-op-navy);padding-top:.05rem}
+.hist5__tl h3{font:700 1rem/1.3 var(--font-titel);color:var(--creme);margin:0 0 .1rem;letter-spacing:0}
+.hist5__tl p{margin:0;font-size:.93rem;line-height:1.45;color:rgba(246,244,236,.78);max-width:48ch}
+/* polaroidstapel: Woodler-verhoudingen letterlijk (pro.woodler.nl .hero-art: vak 1/0.96, pv 88% linksboven,
+   p2 46% rechts op 20%, p3 onderaan vanaf 24%), zwaar overlappend tot EEN groep; hover = recht, 3% groter, naar voren */
+.hist5__in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+/* hoogte via padding-bottom (98% van de breedte) in plaats van aspect-ratio: als grid-item kreeg het vak anders een grotere automatische hoogte */
+.hist5__stapel{position:relative;align-self:center;width:calc(100% + var(--pad));margin:0 calc(-1 * var(--pad)) 0 0;height:0;min-height:0;padding-bottom:calc(98% + var(--pad));perspective:1200px}
+/* LET OP bij integratie: dit blok VERVANGT het ronde-2-blok dat nu achteraan style.css staat (.hist5__stapel min-height:640px, align-self:stretch, .pol--* posities); niet erbij plakken */
+.pol{position:absolute;margin:0;background:var(--wit);padding:14px 14px 50px;border-radius:2px;box-shadow:0 22px 50px -18px rgba(29,29,27,.55),0 6px 14px -6px rgba(29,29,27,.3);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.pol img{display:block;width:100%;height:auto;filter:grayscale(1) contrast(1.05)}
+.pol figcaption{position:absolute;left:14px;right:14px;bottom:14px;text-align:center;font:700 .95rem/1.2 var(--font-display);color:var(--ant);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pol--trucks{top:0;left:0;right:auto;bottom:auto;width:88%;transform:rotate(-2.5deg);z-index:1}
+.pol--trucks figcaption{text-align:left;padding-left:4px}
+.pol--kar{top:20%;right:0;left:auto;bottom:auto;width:46%;transform:rotate(6deg);z-index:2}
+.pol--ad{bottom:0;left:28%;top:auto;right:auto;width:36%;padding-bottom:62px;transform:rotate(-3deg);z-index:3}
+.pol--ad figcaption{white-space:normal;line-height:1.15;bottom:12px}
+.pol:hover{transform:rotate(0deg) scale(1.03);z-index:10;box-shadow:0 30px 70px -20px rgba(29,29,27,.7)}
+@media (prefers-reduced-motion:reduce){.pol{transition:none}}
+@media (max-width:900px){
+  .hist5__in{grid-template-columns:1fr;gap:1.8rem}
+  /* mobiel als Woodler: dezelfde groep, gecentreerd op max 480px */
+  .hist5__stapel{order:-1;width:100%;max-width:480px;margin:0 auto .6rem;padding-bottom:98%}
+  .pol--kar{padding-bottom:46px}
+  .pol--kar figcaption{white-space:normal;line-height:1.15;bottom:8px}
+  .pol{padding:10px 10px 40px}
+  .pol figcaption{left:10px;right:10px;bottom:10px;font-size:.84rem}
+  .pol--kar{right:0}
+  .pol--ad{left:4%}
+  .pol--ad{padding-bottom:46px}
+  .pol--ad figcaption{bottom:8px}
+  .hist5__tl li{grid-template-columns:4.2rem minmax(0,1fr);gap:1.1rem}
+  .hist5__tl::before{left:calc(4.2rem + 4px)}
+  .hist5__tl li::before{left:4.2rem}
+  .hist5__jaar{font-size:1.3rem}
+}
+/* alleen voor deze losse voorbeeldpagina: bandjes van de buursecties */
+.ctx{height:56px}.ctx--boven{background:var(--creme-2)}.ctx--onder{background:var(--creme)}
+</style>
+</head>
+<body>
+<div class="ctx ctx--boven" aria-hidden="true"></div>
+
+<section class="hist5" id="historie" aria-labelledby="hist-kop">
+  <div class="wrap hist5__in">
+    <div class="hist5__tekst">
+      <p class="label">Sinds 1910</p>
+      <h2 class="kop" id="hist-kop">Meer dan honderd jaar verhuizen vanuit Venlo</h2>
+      <p class="intro">Het begon op 12 maart 1910 met een grote meubelwagen. Vijf generaties lang bleef De Kievit een familiebedrijf.</p>
+      <ol class="hist5__tl">
+        <li><span class="hist5__jaar">1910</span><div><h3>Een grote meubelwagen</h3><p>H. de Kievit &amp; Zoon beveelt zich in Venlo aan voor verhuizingen en transporten, binnen- en buitenlands.</p></div></li>
+        <li><span class="hist5__jaar">1923</span><div><h3>De Bresser begint</h3><p>In Brabant start het familiebedrijf dat ruim een eeuw later De Kievit overneemt.</p></div></li>
+        <li><span class="hist5__jaar">2024</span><div><h3>Samen verder met De Bresser</h3><p>Sinds 1 juni deel van De Bresser Verhuizingen; het hele Venlose team ging mee.</p></div></li>
+        <li><span class="hist5__jaar">Nu</span><div><h3>Erkende Verhuizer in Venlo</h3><p>Dezelfde verhuizers aan uw deur, lid van Top Movers.</p></div></li>
+      </ol>
+      <div class="knoprij"><a class="btn btn--goud btn--groen" href="#offerte">Vrijblijvende verhuisofferte</a></div>
+    </div>
+    <div class="hist5__stapel" aria-label="Drie beelden uit het archief van De Kievit">
+      <figure class="pol pol--trucks">
+        <img src="/_werk/historie-varianten/img/trucks-breed-960.webp" srcset="/_werk/historie-varianten/img/trucks-breed-960.webp 960w, /_werk/historie-varianten/img/trucks-breed-1600.webp 1600w" sizes="(max-width:900px) 94vw, 580px" width="1600" height="900" alt="Historische foto: twee vrachtwagens van Firma W. de Kievit en Zonen, internationale transporten en verhuizingen, Venlo" loading="lazy" decoding="async">
+        <figcaption>Firma W. de Kievit &amp; Zonen</figcaption>
+      </figure>
+      <figure class="pol pol--kar">
+        <img src="/_werk/historie-varianten/img/kar-staand-600.webp" srcset="/_werk/historie-varianten/img/kar-staand-600.webp 600w, /_werk/historie-varianten/img/kar-staand-1000.webp 1000w" sizes="(max-width:900px) 46vw, 300px" width="1000" height="1250" alt="Historische foto: een jongen trekt een kar met kinderen erop, naast het paard voor het pand van W. de Kievit, Expeditie en Verhuizingen" loading="lazy" decoding="async">
+        <figcaption>Paard en wagen voor de zaak</figcaption>
+      </figure>
+      <figure class="pol pol--ad">
+        <img src="/_werk/historie-varianten/img/advertentie-1910-300.webp" width="300" height="475" alt="Krantenadvertentie uit 1910: H. de Kievit en Zoon, expediteur te Venlo, maakt bekend dat hij een grote meubelwagen heeft aangeschaft" loading="lazy" decoding="async">
+        <figcaption>Advertentie, 12 maart 1910</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="ctx ctx--onder" aria-hidden="true"></div>
+</body>
+</html>

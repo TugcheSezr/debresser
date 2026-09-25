@@ -1,0 +1,44 @@
+{
+ "ops1-containers-deur-sluiten": {
+  "oordeel": "fout",
+  "tekst": "Print zit op de RUG, geen borstprint; containerbelettering fout: petrol letters, teal chevrons i.p.v. swoosh, MOVERS leest MOWERS; containercodes op vrijwel elke deur (MOW 664883, ICEU 75988, LGBP 226465).",
+  "retouche": "",
+  "opnieuw": "Rugprint, verkeerd lockup op alle containers en codes overal zijn niet te retoucheren. Prompt: verhuizer driekwart naar de camera gedraaid bij de deur zodat de borstprint links zichtbaar is, expliciet 'no print on the back of the polo'; containers: 'letters near-black, ONE teal swoosh BELOW the letters ending in an arrow right of MOVERS, no chevrons, no container numbers, codes, plates or stickers on any door'; ref-container.jpg als eerste ref meegeven en de scene tot heup zichtbaar houden."
+ },
+ "ops2-container-inladen": {
+  "oordeel": "let",
+  "tekst": "Sterke scene, containerlockups kloppen, tilt met de buik naar de doos. Klein: bij op borstprint, tape over bovenhoek doos, 2 banden om meubel, code 61017 op deurrand, bij-fragment op container, rommel op vloer.",
+  "retouche": "1) bij naast TOP op de borstprint (x1095-1130,y1450-1485) weg; 2) transparante tape over de linker bovenhoek van de gedragen doos (x835-870,y1600-1700) weg; 3) twee witte banden om het ingepakte meubel in de container (y~1370 en y~1565, x140-450) weg; 4) verticale code 61017 op de binnenrand van de linker deur (x700-720,y1010-1140) weg; 5) zwart bij-fragment rechts van TOP op de onderste container aan de rechterrand (x1650-1696,y1180-1320) weg of ca. 60 px van rechts afsnijden; 6) folie/rommel op de vloer linksonder (x400-520,y2260-2340) weg; onderrand snijdt door de linkerschoen: liever uitsnijden tot bovenbeen.",
+  "opnieuw": ""
+ },
+ "ops3-fauteuil-opslagkist": {
+  "oordeel": "let",
+  "tekst": "Beste scene: containerlockups exact goed, kist zonder tekst, houding goed. Maar leesbare onzin onder het lockup op 4 dozen ('erkende verhulsers'), bij op borstprint, bij + code op linker container, band om fauteuil.",
+  "retouche": "1) twee regels onder het lockup onleesbaar maken op de bovenste doos (x1285-1440,y1450-1495), middelste doos (x1320-1480,y1685-1725) en de twee half verborgen dozen links (x1070-1140,y1690-1725 en y1910-1950); 2) gele bij naast TOP op de borstprint (x865-895,y1070-1100) weg; 3) gele bij en verticale code 4841 71635 op de container links achter de fauteuil (x440-590,y920-1110) weg; 4) beige band over de deken links op de fauteuil (x230-420,y1510-1560) weg; 5) wit labeltje linksboven op de zijkant van de bovenste doos (x1130-1165,y1280-1305) weg.",
+  "opnieuw": ""
+ },
+ "ops4-inventaris-tablet": {
+  "oordeel": "let",
+  "tekst": "Borstprint schoon, tablet afgewend, gezicht geconcentreerd. Retouche: folie-band om meubel in container, half leesbare regels op 4 dozen, tweede man half afgesneden aan rechterrand, merklogootje op broek.",
+  "retouche": "1) lichte folie/tape-band dwars over de grijze deken in de container (x390-590,y1695-1720) weg; 2) de twee regels 'Aangesisten Bil / enlaile verhalaens' onder het lockup op alle 4 dozen (x390-720; y1395-1430, y1665-1695, y1885-1900 en de onderste doos rond y2230) zachter/onleesbaar; 3) man aan de rechterrand (x1600-1696,y1300-1920) wegpoetsen of ca. 110 px van rechts afsnijden; 4) teal merklogootje op de rechter broekzak (x1240-1325,y2315-2350) weg.",
+  "opnieuw": ""
+ },
+ "ops5-klant-haalt-doos": {
+  "oordeel": "let",
+  "tekst": "Scene klopt: klant in gewone kleren wijst, verhuizer tilt met de buik naar de doos, borstprint en containerlockup goed. Retouche: tape over bovenhoek doos, code GEU op container, 3 zwarte bijen op doos.",
+  "retouche": "1) transparante tape over de linker bovenhoek van de doos (x860-900,y1670-1745) weg; 2) verticale code 'GEU..' en '120..' op de container rechtsboven (x1460-1540,y560-700) weg; 3) zwarte lijn-bijen linksboven (x1055-1125,y1715-1780), rechtsonder (x1425-1480,y1915-1970) en op de zijkant bij de linkerhand (x985-1020,y2005-2045) weg, of er een gele bij naast TOP van maken; onderrand snijdt de benen op de schenen: strakker snijden tot bovenbeen kan.",
+  "opnieuw": ""
+ },
+ "ops6-loods-overzicht-breed": {
+  "oordeel": "let",
+  "tekst": "Overzicht klopt: containers, kraan, licht, hoofdverhuizer goed. Retouche fors: borstprint leest TOP WINERS, onzinregels op beide dozen, 2 achtergrondverhuizers kijken in de lens, sticker, kraanlabel, broekpatch.",
+  "retouche": "1) borstprint tweede regel leest WINERS (x1230-1320,y830-895): vervangen door schone TOP/MOVERS-print; 2) regels 'Aangezluten MJ / orkunde verhulsers' op de bovenste doos (x775-895,y1160-1200) en 'erkende verhuiters' op de onderste (x665-815,y1385-1430) onleesbaar maken, plus zijlabels INACHY 6X (x1010-1090,y1050-1070) en KAILER 8K (x965-1020,y1275-1305) weg; 3) achtergrondverhuizer midden die recht in de lens kijkt (x1500-1620,y900-1120) en verre verhuizer (x1750-1870,y920-1150) wegpoetsen, de rechter bij de dozenstapel mag blijven; 4) wit/blauw stickertje op de container linksonder (x525-555,y1255-1275) weg; 5) blauw kraanlabel 'SPPD' (x1640-1780,y400-440) onleesbaar; 6) oranje merkpatch op de broekzak (x1310-1340,y1210-1235) weg.",
+  "opnieuw": ""
+ },
+ "ops7-laaddok-wagen": {
+  "oordeel": "fout",
+  "tekst": "Wagenlockup half buiten beeld (TO/MOV), verhuizer rolt op straat VAN het dok af i.p.v. de hal in, voeten afgesneden, borstprint leest TOP NUUOO, onzinregels en gewichtslabels op 6 dozen, containercode, banden om meubels.",
+  "retouche": "",
+  "opnieuw": "Compositie en verhaal zijn niet te retoucheren. Prompt: 'the whole TOP MOVERS lettering on the truck fully inside the frame with clear space to the right, truck backed up to the dock with its rear at the dock', verhuizer in profiel OP het dokplatform rollend van de open wagen naar de haldeur; 'on the boxes only the lockup with one bee, the two lines under it soft and unreadable, no weight labels or codes on the box sides'; 'no straps, ropes or tape on the wrapped furniture; no numbers, plates or stickers on the containers'; onderwerp tot en met de wielen in beeld. Restpunten mocht het beeld toch gebruikt worden: code op hoekpaal x1105-1130,y795-925; sticker x735-760,y815-840; banden y~950/1075 (x930-1120) en y~1455-1490 (x0-330)."
+ }
+}

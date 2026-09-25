@@ -1,0 +1,64 @@
+{
+ "par": [
+  "par2-woonkamer-doos-tillen",
+  "par5-laadbak-inladen",
+  "par4-voordeur-nieuw-huis",
+  "par7-gezin-dozen-woonkamer"
+ ],
+ "int": [
+  "int3-adviseur-tafel-stel",
+  "int4-laadbak-vol-lange-rit",
+  "int2-exportkist-inpakken",
+  "int6-snelweg-wagen"
+ ],
+ "sen": [
+  "sen3-fauteuil-bungalow",
+  "sen5-rollator-entree",
+  "sen6-koffie-fotoalbum"
+ ],
+ "spo": [
+  "spo3-klant-belt-opgelucht",
+  "spo5-smalle-trap-doos",
+  "spo1-planner-telefoon",
+  "spo6-twee-wagens-straat",
+  "spo7-laatste-doos-lege-kamer"
+ ],
+ "inp": [
+  "inp1-borden-rechtop",
+  "inp2-boeken-boekendoos",
+  "inp4-televisie-deken",
+  "inp7-uitpakken-nieuwe-keuken"
+ ],
+ "mon": [
+  "mon1-bed-demonteren",
+  "mon2-kast-opbouwen",
+  "mon5-handen-scharnier",
+  "mon6-boxspring-deur"
+ ],
+ "ops": [
+  "ops1-containers-deur-sluiten",
+  "ops4-inventaris-tablet",
+  "ops7-laaddok-wagen",
+  "ops6-loods-overzicht-breed"
+ ],
+ "zor": [
+  "zor5-kratten-gezondheidscentrum",
+  "zor1-ziekenhuisbed-gang",
+  "zor7-plattegrond-manager",
+  "zor6-wagen-zorgcentrum-breed"
+ ],
+ "pia": [
+  "pia5-eerste-noten",
+  "pia2-vleugel-inpakken",
+  "pia7-piano-straat-wagen"
+ ],
+ "ant": [
+  "ant1-schilderij-ingepakt",
+  "ant4-delftse-vaas",
+  "ant7-kunstkist-grachtenpand-wagen"
+ ],
+ "kan": [
+  "kan5-projectleider-officemanager",
+  "kan7-nieuw-kantoor-maandag"
+ ]
+}

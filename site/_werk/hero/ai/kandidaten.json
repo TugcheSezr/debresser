@@ -1,0 +1,62 @@
+[
+ {
+  "id": "AI-01",
+  "bron": "Nano Banana Pro 2K, 16:9, magenta-plaat, gezichten uit de mixbibliotheek (kop-09 + kop-13), polo en doos van echte Top Movers-foto's als referentie",
+  "origineel": "origineel/hero-01.jpg",
+  "cutout1600": "cutouts/hero-01-1600.webp",
+  "cutout900": "cutouts/hero-01-900.webp",
+  "breedte": 1600,
+  "hoogte": 1024,
+  "personen": "2",
+  "omschrijving": "Duo: verhuizer met een witte Top Movers-doos voor de borst, collega met twee gestapelde dozen",
+  "opmerking": "Gegenereerd beeld (geen echte Kievit-medewerkers); borstprint en dozenlogo op 100% gecontroleerd: TOP MOVERS correct, teal swoosh; Vision-cutout met chroma-key en gaten-fix; heupversie. LET OP (Shahab 28-08): de dozen zijn met tape dichtgeplakt, echte Top Movers-dozen hebben een kliksluiting zonder tape; bij keuze van een AI-variant eerst hergenereren."
+ },
+ {
+  "id": "AI-02",
+  "bron": "Nano Banana Pro 2K, 16:9, magenta-plaat, gezichten uit de mixbibliotheek (kop-18 + kop-02), polo en doos van echte Top Movers-foto's als referentie",
+  "origineel": "origineel/hero-02.jpg",
+  "cutout1600": "cutouts/hero-02-1600.webp",
+  "cutout900": "cutouts/hero-02-900.webp",
+  "breedte": 1600,
+  "hoogte": 975,
+  "personen": "2",
+  "omschrijving": "Duo: verhuizer met een doos voor de borst, collega met twee gestapelde dozen (andere gezichten)",
+  "opmerking": "Gegenereerd beeld (geen echte Kievit-medewerkers); borstprint en dozenlogo op 100% gecontroleerd: TOP MOVERS correct, teal swoosh; Vision-cutout met chroma-key en gaten-fix; heupversie. LET OP (Shahab 28-08): de dozen zijn met tape dichtgeplakt, echte Top Movers-dozen hebben een kliksluiting zonder tape; bij keuze van een AI-variant eerst hergenereren."
+ },
+ {
+  "id": "AI-03",
+  "bron": "Nano Banana Pro 2K, 16:9, magenta-plaat, gezichten uit de mixbibliotheek (kop-02 + kop-15 + kop-11), polo en doos van echte Top Movers-foto's als referentie",
+  "origineel": "origineel/hero-03.jpg",
+  "cutout1600": "cutouts/hero-03-1600.webp",
+  "cutout900": "cutouts/hero-03-900.webp",
+  "breedte": 1600,
+  "hoogte": 844,
+  "personen": "3",
+  "omschrijving": "Trio: steekwagen met twee dozen, doos in het midden, rechts verhuisdeken en tape",
+  "opmerking": "Gegenereerd beeld (geen echte Kievit-medewerkers); borstprint en dozenlogo op 100% gecontroleerd: TOP MOVERS correct, teal swoosh; Vision-cutout met chroma-key en gaten-fix; heupversie. LET OP (Shahab 28-08): de dozen zijn met tape dichtgeplakt, echte Top Movers-dozen hebben een kliksluiting zonder tape; bij keuze van een AI-variant eerst hergenereren."
+ },
+ {
+  "id": "AI-05",
+  "bron": "Nano Banana Pro 2K, 16:9, magenta-plaat, gezichten uit de mixbibliotheek (kop-11 + kop-15), polo en doos van echte Top Movers-foto's als referentie",
+  "origineel": "origineel/hero-05.jpg",
+  "cutout1600": "cutouts/hero-05-1600.webp",
+  "cutout900": "cutouts/hero-05-900.webp",
+  "breedte": 1600,
+  "hoogte": 981,
+  "personen": "2",
+  "omschrijving": "Duo: doos op de heup en doos voor de borst, ontspannen houding",
+  "opmerking": "Gegenereerd beeld (geen echte Kievit-medewerkers); borstprint en dozenlogo op 100% gecontroleerd: TOP MOVERS correct, teal swoosh; Vision-cutout met chroma-key en gaten-fix; heupversie. LET OP (Shahab 28-08): de dozen zijn met tape dichtgeplakt, echte Top Movers-dozen hebben een kliksluiting zonder tape; bij keuze van een AI-variant eerst hergenereren."
+ },
+ {
+  "id": "AI-06",
+  "bron": "Nano Banana Pro 2K, 16:9, magenta-plaat, gezichten uit de mixbibliotheek (kop-06 + kop-18), polo en doos van echte Top Movers-foto's als referentie",
+  "origineel": "origineel/hero-06.jpg",
+  "cutout1600": "cutouts/hero-06-1600.webp",
+  "cutout900": "cutouts/hero-06-900.webp",
+  "breedte": 1600,
+  "hoogte": 1095,
+  "personen": "2",
+  "omschrijving": "Duo: doos op de heup en een grote doos voor de borst (andere gezichten)",
+  "opmerking": "Gegenereerd beeld (geen echte Kievit-medewerkers); borstprint en dozenlogo op 100% gecontroleerd: TOP MOVERS correct, teal swoosh; Vision-cutout met chroma-key en gaten-fix; heupversie. LET OP (Shahab 28-08): de dozen zijn met tape dichtgeplakt, echte Top Movers-dozen hebben een kliksluiting zonder tape; bij keuze van een AI-variant eerst hergenereren."
+ }
+]

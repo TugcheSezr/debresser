@@ -1,0 +1,3 @@
+[
+  {"id": "T1", "bron": "test", "origineel": "/assets/img/team-cutout-1600.webp", "cutout1600": "/assets/img/team-cutout-1600.webp", "cutout900": "/assets/img/team-cutout-900.webp", "breedte": 1600, "hoogte": 925, "personen": 3, "omschrijving": "Testkandidaat: de huidige team-cutout", "opmerking": "Alleen om de keuzepagina te testen (?test=1)."}
+]

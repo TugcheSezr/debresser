@@ -1,0 +1,44 @@
+{
+ "int1-duitse-straat-laadklep": {
+  "oordeel": "fout",
+  "tekst": "Verzonnen huisstijl overal: wagen (achter en zij), polo en 3 dozen tonen TOP wit/MOVERS teal in koffer-icoon op zwart paneel; webadres op skirt en onder zijlockup; dozen met leesbare slogan, pijlen en schrijflijnen.",
+  "retouche": "",
+  "opnieuw": "Model negeerde ref-wagen/ref-logo/ref-dozen. Benoem het lockup als EXACT de logo-referentie: TOP boven, MOVERS eronder, alle letters zwart, EEN teal swoosh onder de letters met pijlpunt rechts; geen icoon, kader, paneel, slogan of webadres. Wagen wit met teal skirt en gele klepreling. Dozen: geen slogan-regel, geen pijlen, geen lijnen. Toon de wagen van opzij; de achterkant lokt verzonnen panelen uit."
+ },
+ "int2-exportkist-inpakken": {
+  "oordeel": "let",
+  "tekst": "Scene klopt, lockup met bij en honingraat goed, kunst dicht ingepakt. Borstprint heeft een bij (mag niet). Regels onder lockup op beide dozen scherp en verhaspeld ('Aangesioten'/'Aangesløten'). Schoen 10 px van de rand.",
+  "retouche": "1) bij uit de borstprint halen (links op de borst, rechts in beeld); 2) tekstregels onder het lockup op beide dozen corrigeren naar 'Aangesloten BIJ / erkende verhuizers' of verzachten; 3) bij smallere crop de rechterschoen (rechtsonder) niet afsnijden.",
+  "opnieuw": ""
+ },
+ "int3-adviseur-tafel-stel": {
+  "oordeel": "let",
+  "tekst": "Sterk beeld: adviseur in polo, stel in gewone kleding, vellen en boekruggen onleesbaar, niemand in de lens. Apple-logo op de laptopdeksel. Vrouw glimlacht met tanden, net acceptabel. R van MOVERS op borst zwak.",
+  "retouche": "Apple-logo op de laptopdeksel (midden, boven de tafel) weghalen; borstprint (links op de borst) mag scherper: de R van MOVERS leest op 100% als P.",
+  "opnieuw": ""
+ },
+ "int4-laadbak-vol-lange-rit": {
+  "oordeel": "fout",
+  "tekst": "Dozen zonder bij/honingraat/swoosh, tape over de naad, leesbare onzin plus webadres; spanbanden om de dekens en hangende band; bedrijfsnaam, nummer en webadres op achterbumper; Amerikaanse wagen; polo zonder swoosh.",
+  "retouche": "",
+  "opnieuw": "Alle doosopdruk exact als referentie met bij, honingraat, swoosh en zachte regels; expliciet: geen tape op naden, geen spanbanden, ratelbanden of hangende banden, dekens los ingestopt; achterkant wagen kaal teal zonder tekst, gele reling op de klep. Beter: minder dozen in beeld (2-3 dicht bij de verhuizer), de rest onder dekens."
+ },
+ "int5-belgische-straat-trap": {
+  "oordeel": "let",
+  "tekst": "Antwerpse straat, buik naar de doos, klant in gewone kleding, wagen teal achter, klep achterop. Smetten: label 'tteet zhwig' op dooszijkant, borstprint verhaspeld, TOP op wagenzij vaal, laadbakdozen met handschrift.",
+  "retouche": "1) label linksboven op de zijkant van de gedragen doos ('tteet zhwig') weg of naar 'Max. 20 kg'; 2) borstprint (links op de borst) vervangen, leest 'TOR/DEMS'; 3) twee regels onder het lockup op de doosvoorkant verzachten ('Acingejlieliei'); 4) TOP op de wagenzij even donker als MOVERS en het kleine donkere stickertje onder de swoosh weg; 5) dozen achter in de laadbak (linksboven) zonder handschrift of vreemde opdruk.",
+  "opnieuw": ""
+ },
+ "int6-snelweg-wagen": {
+  "oordeel": "fout",
+  "tekst": "Hoofdlockup fout: TOP MOVERS op EEN regel met dubbele teal pijlboog erboven en eronder; achterlockup met vage cirkelpijlen. Rest sterk: teal skirt en achterkant, klep achterop, kenteken en bord onleesbaar, NL landschap.",
+  "retouche": "Alternatief voor opnieuw: lockup uit ref-logo in perspectief op het vlakke witte zijpaneel plakken (TOP boven, MOVERS eronder, swoosh onder) en de vage cirkelpijlen achter het achterlockup wegpoetsen.",
+  "opnieuw": "Lockup-vorm benoemen: TOP op de bovenste regel, MOVERS op de regel eronder iets naar rechts, EEN teal swoosh die alleen ONDER de letters loopt en rechts in een pijlpunt eindigt; nooit op een regel, nooit een boog erboven, nooit twee pijlen of een cirkel; hetzelfde lockup klein op de achterkant."
+ },
+ "int7-gezin-vertrek-tuin": {
+  "oordeel": "let",
+  "tekst": "Klopt: gezin in gewone kleding, verhuizer klapt de klep achterop in. Swoosh loopt als ellips ook boven TOP; borstprint leest 'TOT' met teal MOVERS; een koffer i.p.v. twee; Nike op schoen jongen; lockup hoog voor banner.",
+  "retouche": "1) bovenste teal boog boven TOP op het zijpaneel wegpoetsen zodat alleen de swoosh onder MOVERS met pijlpunt blijft; 2) borstprint (klein, links op de borst) vervangen; 3) Nike-swoosh op de linkerschoen van de jongen weghalen.",
+  "opnieuw": ""
+ }
+}
