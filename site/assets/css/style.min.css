@@ -1505,7 +1505,7 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-toennu__beeld{position:relative}
 .sb-toennu__raam{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:8px}
 .sb-toennu__nu :is(.sb-toennu__foto,.sb-toennu__uit){position:absolute;left:-3.968%;top:-53.84%;width:158.73%;max-width:none;height:auto;aspect-ratio:auto;border-radius:0;object-fit:fill}
-.sb-toennu__nu .sb-toennu__uit{z-index:2;pointer-events:none;clip-path:inset(0 0 10.8% 0);filter:drop-shadow(8px 6px 7px rgba(2,13,65,.45)) drop-shadow(1px 1px 2px rgba(2,13,65,.3))}
+.sb-toennu__nu .sb-toennu__uit{left:0;width:100%;z-index:2;pointer-events:none;clip-path:inset(0 0 10.8% 0);filter:drop-shadow(8px 6px 7px rgba(2,13,65,.45)) drop-shadow(1px 1px 2px rgba(2,13,65,.3))}
 .sb-kennis__kaart{position:relative;display:grid;grid-template-columns:1.15fr .9fr;margin-top:3rem;border-radius:var(--r);background:#fff;box-shadow:var(--schaduw)}
 .sb-kennis__wit{min-width:0;padding:clamp(1.6rem,4vw,2.8rem);padding-right:clamp(7rem,15vw,11.5rem)}
 .sb-kennis__wit .kop{font-size:clamp(1.7rem,2.8vw,2.3rem)}
@@ -2278,6 +2278,15 @@ section>.wrap>.sectiekop:last-child{margin-bottom:0}
 @media(min-width:861px){.sb-diensten__grid--3:has(>li:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
 .sb-team{padding-block:clamp(3rem,5vw,4.5rem)}
 .sb-team .sectiekop{margin-bottom:clamp(1.25rem,2.5vw,2rem)}
+.sb-reviews .sb-review{background:var(--wit);border-color:var(--wit)}
+.sb-reviews .sb-review__top{color:var(--bruin)}
+.sb-reviews .sb-review__top::after{color:var(--goud-diep)}
+.sb-reviews .sb-review .sb-sterren{background:linear-gradient(90deg,#B98200 var(--vul),#8A94A6 0)}
+.sb-reviews .sb-review blockquote p{color:var(--ant-zacht)}
+.sb-reviews .sb-review__wie{border-top-color:var(--lijn)}
+.sb-reviews .sb-review__wie b{color:var(--bruin)}
+.sb-reviews .sb-review__wie small{color:var(--ant-zacht)}
+.sb-reviews .sb-review:nth-child(3) .sb-review__letter{background:var(--bruin);color:var(--wit)}
 .sb-stappen__stap{background:var(--bruin);box-shadow:0 1px 2px rgba(2,13,65,.12),0 16px 34px -18px rgba(2,13,65,.6)}
 .sb-stappen__stap h3{color:var(--wit)}
 .sb-stappen__stap p{color:var(--licht-hover)}
@@ -2860,4 +2869,46 @@ top:var(--band-top);height:var(--band-h);clip-path:polygon(0 var(--band-schuin),
 .sb-reviews .wrap::after{content:"";position:absolute;z-index:-1;left:50%;width:100vw;margin-left:-50vw;bottom:-1.5rem;height:62%;pointer-events:none;
 background:#00498f;clip-path:polygon(0 70px,100% 0,100% calc(100% - 70px),0 100%);}
 .sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:none}
+}
+main > .sectie.sb-diensten:has(.sb-diensten__grid--wit){background-color:var(--goud-diep)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label{color:var(--goud-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label::before{background:var(--goud-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .kop{color:var(--wit)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .intro{color:var(--licht-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sb-diensten__kop .sb-pijllink{color:var(--wit);border-bottom-color:rgba(255,255,255,.35)}
+.sb-diensten__grid--wit{--dk-r:4px;row-gap:calc(30px + .35rem);margin-top:calc(30px + .35rem)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst{background:var(--wit);border-radius:var(--dk-r);overflow:visible;
+box-shadow:0 1px 2px rgba(2,13,65,.25),0 18px 34px -18px rgba(2,13,65,.75)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst:focus-within{outline-color:var(--wit)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst h3{color:var(--bruin)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst p{color:var(--ant-zacht)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--goud-licht);color:var(--goud-diep)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst:hover .sb-dienst__pijl{background:var(--goud-diep);color:var(--wit)}
+}
+.sb-diensten__grid--wit .sb-dienst__beeld{border-radius:var(--dk-r) var(--dk-r) 0 0}
+.sb-diensten__grid--wit .sb-dienst__ico{border-radius:var(--dk-r)}
+.sb-dpop{--fa:3.15;container-type:inline-size;aspect-ratio:var(--fa);
+--p:clamp(30px,100cqw / var(--fa) * .16,40px);
+--ph:max((100cqw / var(--fa) + var(--p)) / (1 - var(--d0)),100cqw / var(--ar));
+--pw:calc(var(--ph) * var(--ar));
+--pt:calc(-1 * (var(--d0) * var(--ph) + var(--p)));
+--pl:clamp(100cqw - var(--pw),50cqw - var(--mid) * var(--pw),0px)}
+.sb-dpop__raam{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.sb-dpop__boven{position:absolute;left:0;right:0;bottom:100%;height:calc(var(--p) + 40px);overflow:hidden;pointer-events:none}
+.sb-diensten__grid--3 .sb-dpop .sb-dienst__foto,.sb-dpop__boven>img{position:absolute;right:auto;bottom:auto;left:var(--pl);
+width:var(--pw);height:var(--ph);max-width:none;aspect-ratio:auto;object-fit:fill;border-radius:0}
+.sb-diensten__grid--3 .sb-dpop .sb-dienst__foto{top:var(--pt)}
+.sb-dpop__boven>img{top:calc(var(--pt) + var(--p) + 40px);
+filter:drop-shadow(0 10px 12px rgba(2,13,65,.3)) drop-shadow(0 2px 3px rgba(2,13,65,.22))}
+.sb-dpop--verhuizen{--d0:.067;--mid:.832;--ar:1.3333}
+.sb-dpop--opslag{--d0:.288;--mid:.643;--ar:1.3333}
+.sb-dpop--meubelprojecten{--d0:.106;--mid:.573;--ar:1.4993}
+.sb-dpop--gebouwbeheer{--d0:.103;--mid:.335;--ar:1.5}
+.sb-dpop--assetmanagement{--d0:.111;--mid:.487;--ar:1.3333}
+.sb-dpop--duurzame-werkomgeving{--d0:.286;--mid:.256;--ar:1.3712}
+@media(max-width:620px){
+.sb-diensten__grid--wit{row-gap:calc(30px + .45rem);margin-top:calc(30px + .45rem)}
+.sb-dpop{--fa:2}
+.sb-diensten__grid--wit>li:last-child:nth-child(odd) .sb-dpop{--fa:4}
 }

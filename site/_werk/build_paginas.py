@@ -568,6 +568,7 @@ def pagina(href):
               .replace("{{VESTIGINGEN_PERSONEN}}", vestigingen_html(personen=True))
               .replace("{{VESTIGINGEN}}", vestigingen_html()).replace("{{WERKGEBIED}}", werkgebied_html())
               .replace("{{BLOG}}", blog_html())
+              .replace("{{DIENSTEN_WIT}}", (WERK / "blok-dienstkaarten-wit.html").read_text(encoding="utf-8").strip())
               .replace("{{DIENSTEN}}", (WERK / "blok-dienstkaarten.html").read_text(encoding="utf-8").strip())
               .replace("{{KV_URL}}", nav.KV_URL).replace("{{KV_CIJFER}}", nav.KV_CIJFER)
               .replace("{{KV_STERREN}}", nav.KV_STERREN).replace("{{KV_AANTAL}}", nav.KV_AANTAL)

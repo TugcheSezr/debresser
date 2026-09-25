@@ -2180,14 +2180,15 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 /* Vandaag: het kantoor steekt uit de lijst (8d 25-09). Effect "pand-uit" van Tugches Over ons (debresser-github,
    css/over-ons-pand.css), wens gebruiker 25-09: "use the out of the border effect on the vandaag image like in tugche
    Over ons section". In het fotovak (16:10) staat oisterwijk-1000 vanaf rij 212 van 667 (net onder de dakrand van het
-   kantoor), kolommen 25-655. Daarover ligt de uitsnede van het kantoorblok uit dezelfde foto (oisterwijk-kantoor-uit-1000
-   = de bovenste 240 rijen, zelfde uitlijning), alleen zichtbaar boven het fotovak en over de witte rand. Alle maten in %
-   van het fotovak, dus het klopt op elke breedte. Er beweegt niets. De marge boven de foto's geeft het dak ruimte. */
+   kantoor), kolommen 25-655. Daarover ligt de uitsnede van het kantoorblok uit dezelfde foto (oisterwijk-kantoor-uit-630
+   = rijen 0-240 en precies die kolommen 25-655, zelfde uitlijning; een bredere uitsnede liet de pagina op de telefoon
+   opzij scrollen), alleen zichtbaar boven het fotovak en over de witte rand. Alle maten in % van het fotovak, dus het
+   klopt op elke breedte. Er beweegt niets. De marge boven de foto's geeft het dak ruimte. */
 .sb-toennu__fotos{margin-top:clamp(2.4rem,4.6vw,3.6rem)}
 .sb-toennu__beeld{position:relative}
 .sb-toennu__raam{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:8px}
 .sb-toennu__nu :is(.sb-toennu__foto,.sb-toennu__uit){position:absolute;left:-3.968%;top:-53.84%;width:158.73%;max-width:none;height:auto;aspect-ratio:auto;border-radius:0;object-fit:fill}
-.sb-toennu__nu .sb-toennu__uit{z-index:2;pointer-events:none;clip-path:inset(0 0 10.8% 0);filter:drop-shadow(8px 6px 7px rgba(2,13,65,.45)) drop-shadow(1px 1px 2px rgba(2,13,65,.3))}
+.sb-toennu__nu .sb-toennu__uit{left:0;width:100%;z-index:2;pointer-events:none;clip-path:inset(0 0 10.8% 0);filter:drop-shadow(8px 6px 7px rgba(2,13,65,.45)) drop-shadow(1px 1px 2px rgba(2,13,65,.3))}
 
 /* ---- split-contact-cta: wit, figuur, navy (/klantervaringen/) ---- */
 .sb-kennis__kaart{position:relative;display:grid;grid-template-columns:1.15fr .9fr;margin-top:3rem;border-radius:var(--r);background:#fff;box-shadow:var(--schaduw)}
@@ -3202,6 +3203,21 @@ section>.wrap>.sectiekop:last-child{margin-bottom:0}
 /* Persoonkaarten (.sb-team: /contact/ #wie-u-spreekt en /over-ons/ #het-team): past op 1440x900 (was 864). */
 .sb-team{padding-block:clamp(3rem,5vw,4.5rem)}
 .sb-team .sectiekop{margin-bottom:clamp(1.25rem,2.5vw,2rem)}
+/* ---------- Home #reviews: witte reviewkaarten (d1 25-09) ---------- */
+/* Wens gebruiker 25-09 (via d8): "Klanten zijn blij met ons - customer review blocks should be white". Uitzondering op
+   dc's navy kaarten (.sb-review in dc's blok), net als de witte #diensten- en #blog-kaarten op home. Alleen de kaarten:
+   de schuine band, het Klantenvertellen-blok en de uitsnede van 7a blijven. .sb-reviews komt alleen op home voor.
+   (0,2,0) en hoger wint van dc's (0,1,0)-regels, waar ze ook staan. Contrast op wit (AA): tekst #2F2F2F 13,4:1,
+   aanhalingsteken --goud-diep 8,9:1, sterren #B98200 3,4:1 en leeg deel #8A94A6 3,1:1 (niet-tekst, minstens 3:1). */
+.sb-reviews .sb-review{background:var(--wit);border-color:var(--wit)}
+.sb-reviews .sb-review__top{color:var(--bruin)}
+.sb-reviews .sb-review__top::after{color:var(--goud-diep)}
+.sb-reviews .sb-review .sb-sterren{background:linear-gradient(90deg,#B98200 var(--vul),#8A94A6 0)}
+.sb-reviews .sb-review blockquote p{color:var(--ant-zacht)}
+.sb-reviews .sb-review__wie{border-top-color:var(--lijn)}
+.sb-reviews .sb-review__wie b{color:var(--bruin)}
+.sb-reviews .sb-review__wie small{color:var(--ant-zacht)}
+.sb-reviews .sb-review:nth-child(3) .sb-review__letter{background:var(--bruin);color:var(--wit)}
 /* ==== sectiebibliotheek d1 25-09: end ==== */
 
 /* ---------- sb-stappen: donkerblauwe stapkaarten (dc, 25-09-2026; d1's blok blijft ongewijzigd). Wens gebruiker:
@@ -3981,3 +3997,65 @@ main > .sb-fs .sb-fs__alt a{color:var(--wit)}
   .sb-reviews__kaarten::before,.sb-reviews__kaarten::after{content:none}
 }
 /* ==== home #reviews werkers 7a 25-09: end ==== */
+
+/* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: start ====
+   Wens gebruiker 25-09: "for onze diensten add the less round corner and the parts of the image sticking out to mine
+   Waarmee wij u helpen section, make it be white blocks back". Daarna: "focus only on homepage", dus alleen waar de
+   kaarten .sb-diensten__grid--wit hebben (blok-dienstkaarten-wit.html, plaatshouder DIENSTEN_WIT, nu alleen home).
+   Uitbreiden naar een andere pagina: daar de plaatshouder DIENSTEN vervangen door DIENSTEN_WIT (een regel).
+   - Witte kaarten met de kleine hoek van Tugches #diensten (4px) op een diepblauwe band: wit op een lichte band steekt
+     niet af (dc, blokcontrast). De band wijkt af van de lichte buren; de randen tekent dc's tab (background inherit).
+   - Foto-pop als bij Tugche (js/main.js "Mensen en wagens uit de foto"), maar zonder JS: de foto in een raam dat op het
+     kader afsnijdt, de uitsnede (zelfde maat en plek) in een strook boven het kader, zodat alleen de kruin erboven
+     uitsteekt. De maten rekent de CSS met containereenheden (100cqw = breedte van het fotovak):
+     --fa kader (breedte/hoogte), --p uitsteek, --ph/--pw maat van de foto, --pt/--pl plek; per foto --d0 (bovenkant van
+     mensen of ding, deel van de hoogte), --mid (hun midden, deel van de breedte) en --ar (verhouding van het bestand).
+     Uitsnedes: beeld/dienst-<naam>-uit.webp (Tugches uitsnedes op onze foto gelegd; verhuizen zelf gemaakt).
+   - De hele kaart blijft klikbaar (::after van de titellink, d5): de strook heeft pointer-events:none en er komt geen
+     position op de tekst. */
+main > .sectie.sb-diensten:has(.sb-diensten__grid--wit){background-color:var(--goud-diep)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label{color:var(--goud-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .label::before{background:var(--goud-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .kop{color:var(--wit)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sectiekop .intro{color:var(--licht-hover)}
+main > .sb-diensten:has(.sb-diensten__grid--wit) .sb-diensten__kop .sb-pijllink{color:var(--wit);border-bottom-color:rgba(255,255,255,.35)}
+/* ruimte voor wat uitsteekt: boven de eerste rij en tussen de rijen de uitsteek (30px) plus lucht */
+.sb-diensten__grid--wit{--dk-r:4px;row-gap:calc(30px + .35rem);margin-top:calc(30px + .35rem)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst{background:var(--wit);border-radius:var(--dk-r);overflow:visible;
+  box-shadow:0 1px 2px rgba(2,13,65,.25),0 18px 34px -18px rgba(2,13,65,.75)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst:focus-within{outline-color:var(--wit)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst h3{color:var(--bruin)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst p{color:var(--ant-zacht)}
+main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--goud-licht);color:var(--goud-diep)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  main > .sb-diensten .sb-diensten__grid--wit .sb-dienst:hover .sb-dienst__pijl{background:var(--goud-diep);color:var(--wit)}
+}
+.sb-diensten__grid--wit .sb-dienst__beeld{border-radius:var(--dk-r) var(--dk-r) 0 0}
+.sb-diensten__grid--wit .sb-dienst__ico{border-radius:var(--dk-r)}
+/* het fotovak: kader 3,15:1 vanaf 621 (iets lager dan de 3:1 ervoor, zodat de uitsteek er in 1440x900 bij past),
+   op de telefoon 2:1 en de laatste losse kaart 4:1, zoals de foto's ervoor */
+.sb-dpop{--fa:3.15;container-type:inline-size;aspect-ratio:var(--fa);
+  --p:clamp(30px,100cqw / var(--fa) * .16,40px);
+  --ph:max((100cqw / var(--fa) + var(--p)) / (1 - var(--d0)),100cqw / var(--ar));
+  --pw:calc(var(--ph) * var(--ar));
+  --pt:calc(-1 * (var(--d0) * var(--ph) + var(--p)));
+  --pl:clamp(100cqw - var(--pw),50cqw - var(--mid) * var(--pw),0px)}
+.sb-dpop__raam{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.sb-dpop__boven{position:absolute;left:0;right:0;bottom:100%;height:calc(var(--p) + 40px);overflow:hidden;pointer-events:none}
+.sb-diensten__grid--3 .sb-dpop .sb-dienst__foto,.sb-dpop__boven>img{position:absolute;right:auto;bottom:auto;left:var(--pl);
+  width:var(--pw);height:var(--ph);max-width:none;aspect-ratio:auto;object-fit:fill;border-radius:0}
+.sb-diensten__grid--3 .sb-dpop .sb-dienst__foto{top:var(--pt)}
+.sb-dpop__boven>img{top:calc(var(--pt) + var(--p) + 40px);
+  filter:drop-shadow(0 10px 12px rgba(2,13,65,.3)) drop-shadow(0 2px 3px rgba(2,13,65,.22))}
+.sb-dpop--verhuizen{--d0:.067;--mid:.832;--ar:1.3333}
+.sb-dpop--opslag{--d0:.288;--mid:.643;--ar:1.3333}
+.sb-dpop--meubelprojecten{--d0:.106;--mid:.573;--ar:1.4993}
+.sb-dpop--gebouwbeheer{--d0:.103;--mid:.335;--ar:1.5}
+.sb-dpop--assetmanagement{--d0:.111;--mid:.487;--ar:1.3333}
+.sb-dpop--duurzame-werkomgeving{--d0:.286;--mid:.256;--ar:1.3712}
+@media(max-width:620px){
+  .sb-diensten__grid--wit{row-gap:calc(30px + .45rem);margin-top:calc(30px + .45rem)}
+  .sb-dpop{--fa:2}
+  .sb-diensten__grid--wit>li:last-child:nth-child(odd) .sb-dpop{--fa:4}
+}
+/* ==== e0 25-09: Waarmee wij u helpen, witte kaarten die uit de foto stappen: end ==== */
