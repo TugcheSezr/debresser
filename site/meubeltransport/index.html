@@ -25,8 +25,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2210">
-<script src="/assets/js/site.js?v=20260925-2210" defer></script>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2225">
+<script src="/assets/js/site.js?v=20260925-2225" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -117,12 +117,17 @@
           <div class="mega mega--1">
             <div class="mega__grid">
               <div class="mega__col">
-                <ul>
-                  <li><a href="/overzicht-vacatures/">Alle vacatures</a></li>
-                  <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
-                  <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
-                </ul>
+                <div class="mega__groep">
+                  <a class="mega__kop" href="/overzicht-vacatures/#vacatures">Openstaande vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                  <ul>
+                    <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
+                    <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/overzicht-vacatures/">Bekijk alle vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </li>
@@ -152,7 +157,7 @@
       </button>
     </div>
     <nav class="drawer__nav" aria-label="Mobiele navigatie">
-        <details class="drawer__group drawer__group--diensten">
+        <details class="drawer__group drawer__group--koppen drawer__group--diensten">
           <summary>Diensten</summary>
           <a href="/diensten/">Alle diensten</a>
           <a class="drawer__dienst" href="/verhuizen/">Verhuizen</a>
@@ -183,11 +188,12 @@
           <a class="drawer__dienst" href="/duurzame-werkomgeving/">Duurzame werkomgeving</a>
         </details>
         <a class="drawer__link" href="/over-ons/">Over ons</a>
-        <details class="drawer__group">
+        <details class="drawer__group drawer__group--koppen">
           <summary>Vacatures</summary>
           <a href="/overzicht-vacatures/">Alle vacatures</a>
-          <a href="/vacature/verhuizer/">Verhuizer</a>
-          <a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
+          <a class="drawer__dienst" href="/overzicht-vacatures/#vacatures">Openstaande vacatures</a>
+          <a class="drawer__sub" href="/vacature/verhuizer/">Verhuizer</a>
+          <a class="drawer__sub" href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
         </details>
         <a class="drawer__link" href="/blog/">Blog</a>
         <a class="drawer__link" href="/contact/">Contact</a>
@@ -275,7 +281,7 @@
         <ul class="sb-verhaal__lijst">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>inhuizen op de plek van bestemming</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>uitpakken</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>monteren, met onze <a href="#montage">montageservice</a></span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>monteren, met onze <a href="/meubelmontage/">montageservice</a></span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>het verpakkingsmateriaal retour nemen</li>
         </ul>
       </div>
@@ -293,7 +299,7 @@
     </div>
     <ul class="sb-diensten__grid sb-diensten__grid--3 sb-diensten__grid--wit" data-reveal-groep>
       <li class="sb-dienst">
-        <div class="sb-dienst__beeld"><img class="sb-dienst__foto" src="/assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1000.webp" srcset="/assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1000.webp 1000w, /assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1468.webp 1468w" sizes="(max-width:860px) 92vw, 400px" width="1000" height="785" alt="" loading="lazy" decoding="async"></div>
+        <div class="sb-dienst__beeld"><img class="sb-dienst__foto" src="/assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1000.webp" srcset="/assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1000.webp 1000w, /assets/img/bresser/frankrijk-verhuizen-transport-bedrijf-1468.webp 1468w" sizes="(max-width:860px) 92vw, 400px" width="1000" height="785" alt="" style="object-position:50% 62%" loading="lazy" decoding="async"></div>
         <div class="sb-dienst__tekst">
           <h3><a href="/veilingen/">Veilingen</a></h3>
           <p>Uw veilingaankoop geleverd in elk land, inclusief verpakking, opslag en inklaring.</p>

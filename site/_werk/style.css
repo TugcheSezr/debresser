@@ -4147,3 +4147,32 @@ main > .sb-diensten .sb-diensten__grid--wit .sb-dienst__pijl{background:var(--go
   .sectie.sb-impact:has(img[src*="/warehouse-tilburg-"]){padding-bottom:1.75rem}
 }
 /* ==== e0 25-09: uitsnedes van drie foto's op /verhuizen/: end ==== */
+
+/* ==== dc 25-09: Tugche-items (23): start ==== */
+/* Item 23 (/duurzaam-verhuizen/ #initiatieven): zeven feitkaarten zonder link, in het compacte kaartontwerp van
+   "Waarmee wij u helpen" (sb-diensten__grid--3 --wit). Vanaf 861 vier naast elkaar en de zevende over twee kolommen,
+   met een lagere foto zodat hij even hoog is als de rest; 621-860 twee kolommen; telefoon een kolom met de tekst
+   zichtbaar (het zijn feiten, er is geen pagina om naar door te klikken). Alles hangt aan .sb-diensten--feiten. */
+.sb-diensten--feiten .sb-diensten__grid--vier{row-gap:.9rem;margin-top:clamp(1rem,2vw,1.4rem)}
+.sb-diensten--feiten .sb-dienst__tekst{padding-right:1.1rem}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .sb-diensten--feiten .sb-dienst:not(:has(h3 a)):hover{transform:none}
+}
+@media(min-width:621px) and (max-width:860px){
+  .sb-diensten--feiten .sb-diensten__grid--vier{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sb-diensten--feiten .sb-diensten__grid--vier>li:nth-child(7):last-child{grid-column:1/-1}
+  .sb-diensten--feiten .sb-diensten__grid--vier>li:nth-child(7):last-child .sb-dienst__foto{aspect-ratio:6.2/1}
+}
+@media(min-width:861px){
+  .sb-diensten--feiten .sb-diensten__grid--3.sb-diensten__grid--vier{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sb-diensten--feiten .sb-diensten__grid--vier>li:nth-child(7):last-child{grid-column:span 2}
+  .sb-diensten--feiten .sb-diensten__grid--vier>li:nth-child(7):last-child .sb-dienst__foto{aspect-ratio:6.2/1}
+}
+@media(max-width:620px){
+  .sb-diensten--feiten .sb-diensten__grid--vier{grid-template-columns:minmax(0,1fr)}
+  .sb-diensten--feiten .sb-diensten__grid--vier .sb-dienst__foto,
+  .sb-diensten--feiten .sb-diensten__grid--vier>li:last-child:nth-child(odd) .sb-dienst__foto{aspect-ratio:3/1}
+  .sb-diensten--feiten .sb-dienst p{position:static;width:auto;height:auto;overflow:visible;clip:auto;white-space:normal;
+    margin:.2rem 0 0;font-size:.86rem;line-height:1.45}
+}
+/* ==== dc 25-09: Tugche-items (23): end ==== */

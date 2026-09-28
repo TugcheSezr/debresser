@@ -24,8 +24,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2210">
-<script src="/assets/js/site.js?v=20260925-2210" defer></script>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=20260925-2225">
+<script src="/assets/js/site.js?v=20260925-2225" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -35,7 +35,6 @@
   <symbol id="i-mail" viewBox="0 0 256 256"><polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><defs><clipPath id="ti-maila"><polygon points="-100,-100 346.99,-100 -100,346.99" fill="#fff"/></clipPath><clipPath id="ti-mailb"><polygon points="356,356 -93.01,356 356,-93.01" fill="#fff"/></clipPath></defs><g clip-path="url(#ti-maila)"><path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#ti-mailb)"><path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></symbol>
   <symbol id="i-caret" viewBox="0 0 24 24"><path fill="currentColor" d="M8.5 5.5l7 6.5-7 6.5z"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 256 256"><defs><clipPath id="ti-arrowa"><polygon points="-100,-100 375.84,-100 -100,375.84" fill="#fff"/></clipPath><clipPath id="ti-arrowb"><polygon points="356,356 -64.16,356 356,-64.16" fill="#fff"/></clipPath></defs><g clip-path="url(#ti-arrowa)"><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><polyline points="144 56 216 128 144 200" fill="none" stroke="#007DC2" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g><g clip-path="url(#ti-arrowb)"><line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><polyline points="144 56 216 128 144 200" fill="none" stroke="#6DB23F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/></g></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol>
 </svg>
 
 <a class="skiplink" href="#top">Direct naar de inhoud</a>
@@ -116,12 +115,17 @@
           <div class="mega mega--1">
             <div class="mega__grid">
               <div class="mega__col">
-                <ul>
-                  <li><a href="/overzicht-vacatures/">Alle vacatures</a></li>
-                  <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
-                  <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
-                </ul>
+                <div class="mega__groep">
+                  <a class="mega__kop" href="/overzicht-vacatures/#vacatures">Openstaande vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                  <ul>
+                    <li><a href="/vacature/verhuizer/">Verhuizer</a></li>
+                    <li><a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a></li>
+                  </ul>
+                </div>
               </div>
+            </div>
+            <div class="mega__foot">
+              <a href="/overzicht-vacatures/">Bekijk alle vacatures<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
             </div>
           </div>
         </li>
@@ -151,7 +155,7 @@
       </button>
     </div>
     <nav class="drawer__nav" aria-label="Mobiele navigatie">
-        <details class="drawer__group drawer__group--diensten">
+        <details class="drawer__group drawer__group--koppen drawer__group--diensten">
           <summary>Diensten</summary>
           <a href="/diensten/">Alle diensten</a>
           <a class="drawer__dienst" href="/verhuizen/">Verhuizen</a>
@@ -182,11 +186,12 @@
           <a class="drawer__dienst" href="/duurzame-werkomgeving/">Duurzame werkomgeving</a>
         </details>
         <a class="drawer__link" href="/over-ons/">Over ons</a>
-        <details class="drawer__group">
+        <details class="drawer__group drawer__group--koppen">
           <summary>Vacatures</summary>
           <a href="/overzicht-vacatures/">Alle vacatures</a>
-          <a href="/vacature/verhuizer/">Verhuizer</a>
-          <a href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
+          <a class="drawer__dienst" href="/overzicht-vacatures/#vacatures">Openstaande vacatures</a>
+          <a class="drawer__sub" href="/vacature/verhuizer/">Verhuizer</a>
+          <a class="drawer__sub" href="/vacature/chauffeur-verhuizingen-c-ce/">Chauffeur verhuizingen (C/CE)</a>
         </details>
         <a class="drawer__link" href="/blog/">Blog</a>
         <a class="drawer__link" href="/contact/">Contact</a>
@@ -296,7 +301,7 @@
         <p class="label">Meubelprojecten</p>
         <h2 class="kop" id="inleiding-kop">Meubels vervoeren, monteren en opslaan</h2>
         <p class="intro">Zoekt u een betrouwbare partner die uw meubels van ophalen tot plaatsen begeleidt? De Bresser heeft meer dan 100 jaar ervaring in meubelvervoer. Wij vervoeren meubels door Nederland en Europa, monteren ze op locatie en handelen veilingaankopen in het buitenland af.</p>
-        <p>Opslag hoort er ook bij. Lees meer over <a href="/opslag/#zakelijk">zakelijke opslag</a> en <a href="/assetmanagement/#opslag">opslag van assets</a>.</p>
+        <p>Opslag hoort er ook bij. Lees meer over <a href="/zakelijke-opslag/">zakelijke opslag</a> en <a href="/assetmanagement/#opslag">opslag van assets</a>.</p>
       </div>
       <div class="sb-werkwijze__beeld" data-reveal>
         <div class="sb-werkwijze__vlak" aria-hidden="true"></div>
@@ -321,11 +326,10 @@
     <div class="sb-verhaal__tekst" data-reveal>
       <p class="label">Meubeltransport</p>
       <h2 class="kop" id="transport-kop">Meubeltransport door Nederland en Europa</h2>
-      <p class="intro">Wilt u meubels van A naar B laten vervoeren, binnen Nederland of internationaal? Onze vrachtwagens rijden regelmatig door Nederland, België en de rest van Europa, met verpakte en onverpakte meubels.</p>
-      <p>In ons magazijn in Tilburg verpakken wij uw meubels voordat ze voor transport worden geladen. Wij vervoeren onder meer restaurantmeubilair, medisch meubilair, schoolmeubilair, hotelmeubilair en luxe meubelen.</p>
-      <p>Zie ook <a href="/assetmanagement/">assetmanagement</a>, <a href="/assetmanagement/#circulair">circulair meubilair</a> en <a href="/verhuizen/">verhuizen</a>.</p>
+      <p class="intro">Onze vrachtwagens rijden regelmatig door Nederland, België en de rest van Europa, met verpakte en onverpakte meubels. Wij leveren full service, met inhuizen, uitpakken en monteren op de plek van bestemming.</p>
       <div class="sb-verhaal__acties">
         <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="sb-verhaal__meer" href="/meubeltransport/">Lees meer over meubeltransport<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="sb-verhaal__beeld" data-reveal>
@@ -333,80 +337,26 @@
         <div class="sb-verhaal__vlak" aria-hidden="true"></div>
         <figure class="sb-verhaal__foto"><img src="/assets/img/bresser/logistiek-transport-meubels-internationaal-1-1600.webp" sizes="(max-width:900px) 92vw, 640px" alt="Medewerker rijdt een ingepakt paneel op een steekwagen door het magazijn" width="1000" height="667" loading="lazy" decoding="async"></figure>
       </div>
-      <div class="sb-verhaal__kaart">
-        <p class="sb-verhaal__kaartlabel">Wij leveren full service. Dat betekent:</p>
-        <ul class="sb-verhaal__lijst">
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>inhuizen op de plek van bestemming</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>uitpakken</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>monteren, met onze <a href="#montage">montageservice</a></span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>het verpakkingsmateriaal retour nemen</li>
-        </ul>
-      </div>
     </div>
   </div>
 </section>
 
 <section class="sectie sb-verhaal" id="veilingen" aria-labelledby="veilingen-kop">
-  <div class="wrap">
-    <div class="sb-verhaal__raster">
-      <div class="sb-verhaal__tekst" data-reveal>
-        <p class="label">Veilingen</p>
-        <h2 class="kop" id="veilingen-kop">Transport van veilingkavels</h2>
-        <p class="intro">De Bresser werkt samen met TBA Auctions, dat onze diensten promoot bij veilingen in Europa. Wij leveren uw aankoop in elk land ter wereld, over de weg, door de lucht of over zee, inclusief verpakking, opslag en inklaring.</p>
-        <div class="sb-verhaal__acties">
-          <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
-        </div>
-      </div>
-      <div class="sb-verhaal__beeld" data-reveal>
-        <div class="sb-verhaal__podium">
-          <div class="sb-verhaal__vlak" aria-hidden="true"></div>
-          <figure class="sb-verhaal__foto"><img src="/assets/img/bresser/warehouse-tilburg-de-bresser-1600.webp" sizes="(max-width:900px) 92vw, 640px" alt="Opleggers van De Bresser bij het magazijn in Tilburg" width="1000" height="507" loading="lazy" decoding="async"></figure>
-        </div>
-        <div class="sb-verhaal__kaart">
-          <p class="sb-verhaal__kaartlabel">Onze veilingservice</p>
-          <ul class="sb-verhaal__lijst">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Wekelijks door de hele Benelux, heen en terug.</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Wekelijks van en naar Frankrijk, Duitsland en Zwitserland.</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Opslag en cross-dock mogelijk.</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Eigen agent voor in- en uitklaring in Zwitserland.</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Flexibel en scherp geprijsd.</li>
-          </ul>
-        </div>
+  <div class="wrap sb-verhaal__raster">
+    <div class="sb-verhaal__tekst" data-reveal>
+      <p class="label">Veilingen</p>
+      <h2 class="kop" id="veilingen-kop">Transport van veilingkavels</h2>
+      <p class="intro">De Bresser werkt samen met TBA Auctions. Wij halen uw kavels op, verpakken ze in ons magazijn in Tilburg en leveren ze in elk land, inclusief opslag en inklaring.</p>
+      <div class="sb-verhaal__acties">
+        <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="sb-verhaal__meer" href="/veilingen/">Lees meer over veilingen<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
-    <div class="sb-werkwijze__band sb-werkwijze__band--los">
-      <h3 class="sb-werkwijze__bandkop">Zo gaan we te werk</h3>
-      <ol class="sb-werkwijze__stappen" data-reveal-groep>
-        <li><strong>Ophalen</strong><p>Wij halen de gekochte kavels op bij de veilinglocatie.</p></li>
-        <li><strong>Naar Tilburg</strong><p>Wij brengen de kavels naar ons magazijn in Tilburg, in het hart van de Benelux.</p></li>
-        <li><strong>Verpakken</strong><p>In het magazijn verpakken wij de producten vakkundig, afgestemd op het product en de gekozen manier van vervoer.</p></li>
-        <li><strong>Ophalen of bezorgen</strong><p>U haalt uw kavel zelf op, of wij bezorgen hem met ons transportnetwerk.</p></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="sectie sectie--creme2 sb-fs sb-fs--vervolg" id="veilingen-aanvragen" aria-labelledby="veilingen-aanvragen-kop">
-  <div class="wrap">
-    <div class="sb-fs__rij">
-      <div class="sectiekop" data-reveal>
-        <p class="label">Veilingen</p>
-        <h2 class="kop" id="veilingen-aanvragen-kop">Vraag naar transport van uw kavel</h2>
-        <p class="intro">Vertel ons wat u heeft gekocht, waar het staat en waar het naartoe moet. Wij nemen binnen 24 uur contact met u op.</p>
-        <p class="sb-fs__alt">Liever bellen? <a href="tel:+31135282372">+31 (0)13 52 82 372</a>.</p>
+    <div class="sb-verhaal__beeld" data-reveal>
+      <div class="sb-verhaal__podium">
+        <div class="sb-verhaal__vlak" aria-hidden="true"></div>
+        <figure class="sb-verhaal__foto"><img src="/assets/img/bresser/warehouse-tilburg-de-bresser-1600.webp" sizes="(max-width:900px) 92vw, 640px" alt="Opleggers van De Bresser bij het magazijn in Tilburg" width="1000" height="507" loading="lazy" decoding="async"></figure>
       </div>
-      <form class="sbf" id="sbf-veilingen" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw bericht is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
-          <input type="hidden" name="access_key" value="">
-          <input type="hidden" name="subject" value="Vraag over transport van veilingkavels via de website van De Bresser">
-          <input type="hidden" name="from_name" value="De Bresser veilingen">
-          <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <div class="sbf__rij"><p class="sb-veld"><label for="sbf-veilingen-naam">Naam</label><input id="sbf-veilingen-naam" type="text" name="Naam" required data-leeg="Vul uw naam in." autocomplete="name"></p><p class="sb-veld"><label for="sbf-veilingen-telefoonnummer">Telefoonnummer</label><input id="sbf-veilingen-telefoonnummer" type="tel" name="Telefoonnummer" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></p></div>
-          <p class="sb-veld"><label for="sbf-veilingen-e-mailadres">E-mailadres</label><input id="sbf-veilingen-e-mailadres" type="email" name="E-mailadres" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></p>
-          <p class="sb-veld"><label for="sbf-veilingen-bericht">Bericht <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sbf-veilingen-bericht" name="Bericht" placeholder="Uw aanvraag details" rows="2"></textarea></p>
-          <p class="sbf__vink"><input id="sbf-veilingen-akkoord" type="checkbox" name="Akkoord privacyverklaring" value="ja" required data-leeg="Vink aan dat u akkoord gaat met de privacyverklaring."><label for="sbf-veilingen-akkoord">Ik ga akkoord met de verwerking van mijn persoonsgegevens zoals beschreven in de <a href="/privacyverklaring/">privacyverklaring</a>.</label></p>
-          <div class="sbf__verstuur"><button class="btn" type="submit">Versturen</button></div>
-          <p class="sbf__melding" id="sbf-veilingen-melding" role="status" aria-live="polite"></p>
-        </form>
     </div>
   </div>
 </section>
@@ -416,10 +366,10 @@
     <div class="sb-verhaal__tekst" data-reveal>
       <p class="label">Montageservice</p>
       <h2 class="kop" id="montage-kop">Meubelmontage op locatie</h2>
-      <p class="intro">Bij de levering staat onze montageservice voor u klaar. Het monteren doen onze erkende handymans, met VCA- en NEN-certificering. Onze chauffeurs hebben ruime ervaring met het monteren van meubels op locatie.</p>
-      <p>Voor meubelmontage en kleine reparaties op kantoor zijn er onze <a href="/gebouwbeheer/#handyman">handymanservices</a>. Zie ook <a href="/gebouwbeheer/">gebouwbeheer</a> en <a href="/assetmanagement/">assetmanagement</a>.</p>
+      <p class="intro">Bij de levering staat onze montageservice voor u klaar. Onze erkende handymans, met VCA- en NEN-certificering, monteren kasten, bedden en tafels op locatie.</p>
       <div class="sb-verhaal__acties">
         <a class="btn btn--offerte" href="/offerte/"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+        <a class="sb-verhaal__meer" href="/meubelmontage/">Lees meer over de montageservice<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <div class="sb-verhaal__beeld" data-reveal>
@@ -427,15 +377,6 @@
         <div class="sb-verhaal__vlak" aria-hidden="true"></div>
         <figure class="sb-verhaal__foto"><img src="/assets/img/bresser/de-bresser-zakelijk-verhuizen-1-1000.webp" srcset="/assets/img/bresser/de-bresser-zakelijk-verhuizen-1-1000.webp 1000w, /assets/img/bresser/de-bresser-zakelijk-verhuizen-1-1600.webp 1500w" sizes="(max-width:900px) 92vw, 640px" alt="Verhuizer pakt een toetsenbord in bij een bureau in een kantoor" width="1000" height="667" loading="lazy" decoding="async"></figure>
         <img class="sb-verhaal__persoon" src="/assets/img/beeld/werker-accuboor-uitsnede-700.webp" srcset="/assets/img/beeld/werker-accuboor-uitsnede-700.webp 240w, /assets/img/beeld/werker-accuboor-uitsnede-1100.webp 377w" sizes="(max-width:560px) 90px, 150px" alt="" width="240" height="700" loading="lazy" decoding="async">
-      </div>
-      <div class="sb-verhaal__kaart">
-        <p class="sb-verhaal__kaartlabel">Dit doen wij op locatie:</p>
-        <ul class="sb-verhaal__lijst">
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>kasten, bedden en tafels monteren</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>lampen elektrisch aansluiten</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>uw meubilair verpakken en ompakken, zodat alles veilig op de juiste bestemming aankomt</li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg>het afval van de beschermende verpakking netjes afvoeren</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -459,6 +400,34 @@
     </div>
   </div>
 </section>
+
+<section class="sectie sb-bericht" id="stuur-een-bericht" aria-labelledby="stuur-een-bericht-kop">
+  <div class="wrap sb-bericht__rij">
+    <div class="sb-bericht__tekst" data-reveal>
+      <p class="label">Contact</p>
+      <h2 class="kop" id="stuur-een-bericht-kop">Stuur ons een bericht</h2>
+      <p class="intro">Heeft u een vraag of wilt u iets met ons overleggen? Laat uw gegevens achter, dan hoort u binnen 24 uur van ons.</p>
+    </div>
+    <div class="sb-bericht__kaartvak" data-reveal>
+      <div class="sb-bericht__vlak" aria-hidden="true"></div>
+      <div class="sb-contact__formkaart sb-bericht__kaart">
+        <div class="sb-contact__beeld sb-bericht__beeld" aria-hidden="true"><img src="/assets/img/hero/drie-werkers-900.webp" srcset="/assets/img/hero/drie-werkers-900.webp 900w, /assets/img/hero/drie-werkers-1600.webp 1600w" sizes="(max-width:560px) 260px, 340px" width="900" height="519" alt="" loading="lazy" decoding="async"></div>
+        <form class="sbf" id="sbf-bericht" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw bericht is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="Bericht via de website van De Bresser">
+          <input type="hidden" name="from_name" value="De Bresser website">
+          <input type="checkbox" name="botcheck" class="sb-verborgen" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="sbf__rij"><p class="sb-veld"><label for="sbf-bericht-naam">Naam</label><input id="sbf-bericht-naam" type="text" name="Naam" required data-leeg="Vul uw naam in." autocomplete="name"></p><p class="sb-veld"><label for="sbf-bericht-telefoonnummer">Telefoonnummer</label><input id="sbf-bericht-telefoonnummer" type="tel" name="Telefoonnummer" required data-leeg="Vul uw telefoonnummer in." autocomplete="tel" inputmode="tel" pattern="[0-9+ \(\)\-]{8,}"></p></div>
+          <p class="sb-veld"><label for="sbf-bericht-e-mailadres">E-mailadres</label><input id="sbf-bericht-e-mailadres" type="email" name="E-mailadres" required data-leeg="Vul uw e-mailadres in." autocomplete="email"></p>
+          <p class="sb-veld"><label for="sbf-bericht-bericht">Bericht <span class="sbf__optioneel">(optioneel)</span></label><textarea id="sbf-bericht-bericht" name="Bericht" placeholder="Vragen of opmerkingen?" rows="2"></textarea></p>
+          <div class="sbf__verstuur"><button class="btn btn--offerte" type="submit"><svg aria-hidden="true"><use href="#i-caret"/></svg>Bericht versturen</button><p>Door dit formulier te versturen gaat u akkoord met onze <a href="/privacyverklaring/">privacyverklaring</a>.</p></div>
+          <p class="sbf__melding" id="sbf-bericht-melding" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
