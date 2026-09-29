@@ -301,6 +301,26 @@ a.merk:hover,a.merk:focus-visible{opacity:1}
 .mcta{display:grid}
 .footer__balk .wrap{padding-bottom:6.5rem}
 }
+.wa-zweef{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:58;
+display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
+box-shadow:0 8px 20px -6px rgba(2,13,65,.45)}
+.wa-zweef svg{width:30px;height:30px}
+.wa-zweef:focus-visible{outline:3px solid var(--geel);outline-offset:3px}
+@media(hover:hover){
+.wa-zweef{transition:box-shadow .2s var(--ease)}
+.wa-zweef:hover{box-shadow:0 12px 26px -6px rgba(2,13,65,.6)}
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+.wa-zweef{transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.wa-zweef:hover{transform:scale(1.08)}
+}
+@media(max-width:767.98px){
+.wa-zweef{bottom:calc(61px + env(safe-area-inset-bottom) + 12px)}
+}
+body.drawer-open .wa-zweef,body:has(.m3c-balk.is-zichtbaar) .wa-zweef{visibility:hidden}
+@media print{
+.wa-zweef{display:none}
+}
 .js [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .js [data-reveal].in{opacity:1;transform:none}
 .js [data-reveal-groep]>*{opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
@@ -1140,6 +1160,18 @@ span.merk{opacity:.82}
 .sb-zakelijk__rij>div{min-width:0}
 .sb-zakelijk__rij h3{margin-bottom:.2rem;font-size:1.1rem}
 .sb-zakelijk__rij p{margin:0;font-size:.95rem;line-height:1.45}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+.sb-dienst__ico{transition:transform .25s var(--ease)}
+.sb-diensten:not(#aanbod,#diensten6) .sb-dienst:is(:hover,:focus-within) .sb-dienst__ico{transform:translateY(-3px) scale(1.08)}
+:is(.sb-zakelijk__kaart,.sb-zakelijk__rij){transition:transform .25s var(--ease),box-shadow .25s var(--ease),background-color .25s var(--ease)}
+.sb-zakelijk__kaart:is(:hover,:focus-within){transform:translateY(-3px)}
+.sb-zakelijk__rij:is(:hover,:focus-within){transform:translateY(-3px);box-shadow:var(--schaduw);background:color-mix(in srgb,var(--bruin) 88%,var(--goud-hover))}
+:is(.sb-zakelijk__icoon,.sb-zakelijk__pijl){transition:transform .25s var(--ease)}
+.sb-zakelijk__rij:is(:hover,:focus-within) .sb-zakelijk__icoon{transform:scale(1.1)}
+:is(.sb-zakelijk__kaart,.sb-zakelijk__rij):is(:hover,:focus-within) .sb-zakelijk__pijl{transform:translateX(2px)}
+.c7-b43__tekst img{transition:transform .25s var(--ease)}
+.c7-b43__stap:is(:hover,:focus-within) .c7-b43__tekst img{transform:translateY(-2px) scale(1.08)}
+}
 @media(max-width:900px){
 .sb-zakelijk__kop{flex-direction:column;align-items:flex-start;gap:1.25rem;margin-bottom:2.75rem}
 .sb-zakelijk__raster{grid-template-columns:minmax(0,1fr);gap:2.5rem}
@@ -1875,11 +1907,11 @@ a.sbr__profiel span{display:none}
 .c7-dpop--meubelmontage{--d0:.191;--mid:.547;--ar:1.3333}
 .c7-dpop--antiek-en-kunst-verhuizen{--d0:.175;--mid:.495;--ar:1.3333}
 .c7-dpop--dozencalculator{--d0:.310;--mid:.551;--ar:1.3333}
-.c7-dpop--full-service-verhuizing{--d0:.573;--mid:.456;--ar:1.3333}
+.c7-dpop--full-service-verhuizing{--d0:.154;--mid:.366;--ar:1.3333}
 .c7-dpop--inpakservice{--d0:.112;--mid:.962;--ar:1.3333}
 .c7-dpop--piano-verhuizen{--d0:.130;--mid:.598;--ar:1.3333}
-.c7-dpop--senioren-verhuizen{--d0:.249;--mid:.401;--ar:1.3333}
-.c7-dpop--spoedverhuizing{--d0:.209;--mid:.650;--ar:1.3333}
+.c7-dpop--senioren-verhuizen{--d0:.084;--mid:.613;--ar:1.3333}
+.c7-dpop--spoedverhuizing{--d0:.347;--mid:.455;--ar:1.3333}
 .c7-dpop--verhuisdozen-huren{--d0:.355;--mid:.645;--ar:1.3333}
 .c7-dpop--verhuisprijscalculator{--d0:.122;--mid:.550;--ar:1.3333}
 .c7-dpop--kantoor-verhuizen{--d0:.158;--mid:.227;--ar:1.3333}
@@ -2371,3 +2403,23 @@ transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transi
 @media(prefers-reduced-motion:reduce){
 .faq__tk::before,.faq__tk::after,.mega,.mega__foot a,.drawer__group>summary::after,a.dienst h3::after{transition:none}
 }
+@media(prefers-reduced-motion:no-preference){
+.js .sb-team__rij>.sb-persoon{transition:opacity .55s var(--ease),transform .55s var(--ease),translate .3s ease;transition-delay:0s,0s,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(2){transition-delay:70ms,70ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(3){transition-delay:140ms,140ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(4){transition-delay:210ms,210ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(5){transition-delay:280ms,280ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(6){transition-delay:350ms,350ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(7){transition-delay:420ms,420ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(8){transition-delay:490ms,490ms,0s!important}
+.js .sb-team__rij>.sb-persoon:nth-child(n+9){transition-delay:560ms,560ms,0s!important}
+}
+@media(prefers-reduced-motion:no-preference){
+@media(hover:hover){.c7-ctp:hover .c7-ctp__persoon{translate:0 -4px;scale:1.03}}
+}
+@media(prefers-reduced-motion:no-preference){
+.js .c7-plek--a .c7-plek__gegevens:not(.in) .c7-plek__lijst>div{opacity:0;translate:0 14px}
+.js .c7-plek--a .c7-plek__kaartvak:not(.in) .c7-plek__bellen{opacity:0;translate:24px 0}
+}
+@keyframes c7a-veer{0%,62%,100%{transform:translate(-50%,-84%)}72%{transform:translate(-50%,-100%)}82%{transform:translate(-50%,-80%)}90%{transform:translate(-50%,-88%)}}
+@keyframes c7a-halo{0%,62%,100%{opacity:.9;transform:scale(1)}72%{opacity:.45;transform:scale(.7)}86%{opacity:1;transform:scale(1.25)}}
