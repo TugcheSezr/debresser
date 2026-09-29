@@ -1,0 +1,92 @@
+/* De Bresser cookiebanner v3 (bb, CF-43: Accepteren in het groen van de site-CTA, #7BD534 met tekst #020D41; CF-45: Bresser-huisstijl met logo, groene band, afgeronde bovenhoeken en kaartschaduw; v2 herstelde de knoppen en de toelichting). Huisstijl: navy #020d41, blauw #33bcfa, geel #ffc400, groen #7bd534.
+   Positie fixed onderaan, geen layout shift van de pagina zelf (position:fixed, geen ruimte in de flow).
+   z-index 9999: ruim boven .mcta (60), .js .m3c-balk (59) en het genoemde a.wa-zweef (58, niet in CE
+   aangetroffen bij bouw; controleer bij integratie of dit nog klopt). .mcta wordt tijdelijk verborgen
+   zolang de banner open is (geen eigen offset-mechanisme zoals --m3c-onder); .m3c-balk schuift omhoog
+   via --m3c-onder, dat de JS op de gerenderde bannerhoogte zet. */
+#cookieBanner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  border-top: 4px solid #7bd534;
+  border-radius: var(--r, 15px) var(--r, 15px) 0 0;
+  box-shadow: 0 -1px 2px rgba(2, 13, 65, .06), 0 -14px 34px -14px rgba(2, 13, 65, .38);
+  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  font: 16px/1.5 var(--font-tekst, system-ui, sans-serif);
+  color: #020d41;
+}
+#cookieBanner[hidden] { display: none; }
+html.heeft-cookiebanner .mcta { display: none !important; }
+
+.cb__tekst { display: flex; gap: 1rem; align-items: flex-start; max-width: 1000px; margin: 0 auto 1rem; }
+.cb__beeld { flex: 0 0 auto; width: 85px; height: 80px; object-fit: contain; object-position: bottom; }
+.cb__kopregel { display: flex; align-items: center; gap: .7rem; margin: 0 0 .35rem; min-width: 0; }
+.cb__logo { height: 52px; width: auto; flex: 0 0 auto; display: block; }
+.cb__badge { height: 28px; width: auto; flex: 0 0 auto; margin-left: auto; display: block; }
+.cb__kop { font: 700 1.05rem/1.3 var(--font-kop, inherit); margin: 0; color: #020d41; }
+.cb__uitleg { margin: 0; font-size: .92rem; }
+.cb__uitleg a { color: #020d41; text-decoration: underline; }
+
+.cb__knoppen { display: flex; gap: .6rem; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
+.cb__btn {
+  flex: 1 1 0;
+  min-width: 9rem;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: .95rem;
+  line-height: 1;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #020d41;
+  cursor: pointer;
+  text-align: center;
+}
+/* Groen zoals de offerteknop op de site (--offerte #7BD534, --offerte-tekst #020D41, --offerte-rand en hover #166909). Contrast gemeten:
+   tekst navy op groen 10,04:1; hover wit op #166909 en rand #166909 op de crème ondergrond: zie LEESMIJ. Maat, gewicht en rand 2px gelijk aan de andere knoppen. */
+.cb__btn--vol { background: #7bd534; color: #020d41; border-color: #166909; }
+.cb__btn--vol:hover { background: #166909; color: #fff; }
+.cb__btn--ghost { background: transparent; color: #020d41; }
+.cb__btn--ghost:hover { background: rgba(2, 13, 65, .08); }
+.cb__btn--ghost:focus-visible { outline: 3px solid #020d41; outline-offset: 2px; }
+.cb__btn--vol:focus-visible { outline: 3px solid #020d41; outline-offset: 2px; }
+
+.cb__lijst { list-style: none; margin: 0 0 1rem; padding: 0; max-width: 1000px; margin-inline: auto; }
+.cb__lijst li { padding: .6rem 0; border-bottom: 1px solid rgba(2, 13, 65, .12); }
+.cb__lijst label { display: flex; align-items: flex-start; gap: .6rem; cursor: pointer; }
+.cb__lijst input[type="checkbox"] { margin-top: .2rem; width: 1.1rem; height: 1.1rem; accent-color: #7bd534; flex: 0 0 auto; }
+.cb__kolom { display: block; min-width: 0; }
+.cb__labeltekst { display: block; font-weight: 700; }
+.cb__note { display: block; font-size: .85rem; color: #3b4570; font-weight: 400; }
+
+@media (max-width: 620px) {
+  .cb__tekst { gap: .7rem; }
+  .cb__beeld { width: 64px; height: 60px; }
+  .cb__logo { height: 34px; }
+  .cb__badge { height: 18px; }
+  #cookieBanner { padding: .7rem .8rem calc(.7rem + env(safe-area-inset-bottom)); }
+  .cb__tekst { margin-bottom: .6rem; }
+  .cb__kop { font-size: .98rem; line-height: 1.2; }
+  .cb__uitleg { font-size: .85rem; line-height: 1.4; }
+  .cb__btn { padding: .7rem .4rem; font-size: .92rem; }
+  .cb__lijst li { padding: .45rem 0; }
+  .cb__btn { min-width: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #cookieBanner { animation: cb-op .25s ease-out; }
+  @keyframes cb-op { from { transform: translateY(12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+}
+
+@media print {
+  #cookieBanner { display: none !important; }
+}
+
+@media (max-width: 360px) {
+  .cb__beeld { width: 48px; height: 45px; }
+  .cb__badge { display: none; }
+  .cb__uitleg { font-size: .8rem; }
+  .cb__btn { font-size: .85rem; padding-inline: .2rem; }
+}

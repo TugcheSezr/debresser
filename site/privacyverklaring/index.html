@@ -25,8 +25,9 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260929-2017">
-<script src="/assets/js/site.js?v=20260929-2017" defer></script>
+<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260929-2313">
+<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20260929-2313">
+<script src="/assets/js/site.js?v=20260929-2313" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -376,7 +377,7 @@
 <section class="jur" aria-label="Privacyverklaring">
   <div class="wrap">
     <div class="jur__intro">
-      <p class="jur__versie">Laatste update: september 2026</p>
+      <p class="jur__versie">Laatste update: 29 september 2026</p>
     </div>
 
     <section class="jur__blok" id="inleiding">
@@ -445,6 +446,7 @@
         <li>Administratie: 7 jaar</li>
         <li>Offertes: maximaal 2 jaar</li>
         <li>Marketing: tot intrekking toestemming</li>
+        <li>Cookiekeuze: 365 dagen in uw browser, zie ons <a href="/cookiebeleid/">cookiebeleid</a></li>
       </ul>
     </section>
 
@@ -459,15 +461,15 @@
       </ul>
       <p>Vult u een formulier op deze website in, dan gaan uw gegevens via de formulierdienst Web3Forms naar ons e-mailadres.</p>
       <p>Typt u in een offerteformulier op deze website een vertrek- of bestemmingsadres, dan stuurt uw browser de getypte tekst naar de PDOK Locatieserver van het Kadaster (api.pdok.nl), zodat het formulier passende adressen kan voorstellen.</p>
-      <p>Op de homepage laadt uw browser op grotere schermen direct een film van YouTube, een dienst van Google. Uw browser maakt daarbij verbinding met diensten van YouTube en Google (www.youtube.com, www.youtube-nocookie.com, www.google.com, googleapis.com, googlevideo.com en fonts.gstatic.com) en stuurt onder meer uw IP-adres en browsergegevens mee. Wat Google met die gegevens doet, staat in de <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacyverklaring van Google</a>.</p>
+      <p>Geeft u toestemming voor video's van YouTube, dan laadt uw browser op de homepage op grotere schermen een film van YouTube, een dienst van Google. Uw browser maakt daarbij verbinding met diensten van YouTube en Google (www.youtube.com, www.youtube-nocookie.com, www.google.com, googleapis.com, googlevideo.com en fonts.gstatic.com) en stuurt onder meer uw IP-adres en browsergegevens mee. Wat Google met die gegevens doet, staat in de <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacyverklaring van Google</a>.</p>
       <p>Google kan deze gegevens ook buiten de Europese Economische Ruimte verwerken, onder meer in de Verenigde Staten.</p>
     </section>
 
     <section class="jur__blok" id="cookies">
       <h2><span class="jur__nr">8.</span> Cookies</h2>
-      <p>Onze website plaatst zelf geen cookies en gebruikt geen analytics.</p>
-      <p>Op de homepage plaatst YouTube op grotere schermen wel eigen cookies op het domein youtube.com, direct bij het laden van de pagina, ook als u niet op de film klikt. Bij onze controle in september 2026 waren dat VISITOR_INFO1_LIVE, YSC, VISITOR_PRIVACY_METADATA, __Secure-YNID en __Secure-ROLLOUT_TOKEN. De speler slaat daarnaast gegevens op in de opslag van uw browser.</p>
-      <p>U kunt deze cookies verwijderen of blokkeren in de instellingen van uw browser.</p>
+      <p>Onze website zelf gebruikt geen analytics en geen advertentie- of trackingcookies. Wij bewaren alleen functionele gegevens in uw browser, zoals uw cookiekeuze. Zie ons <a href="/cookiebeleid/">cookiebeleid</a>.</p>
+      <p>Op de homepage staat op grotere schermen een film van YouTube. Die laden wij pas als u toestemming geeft voor "Video's (YouTube)". Zodra de film laadt, plaatst YouTube eigen cookies op het domein youtube.com. Bij onze controle in september 2026 waren dat VISITOR_INFO1_LIVE, YSC, VISITOR_PRIVACY_METADATA, __Secure-YNID en __Secure-ROLLOUT_TOKEN. De speler slaat daarnaast gegevens op in de opslag van uw browser. Geeft u geen toestemming, dan laden wij de film niet.</p>
+      <p>U kunt uw keuze op elk moment wijzigen via Cookie-instellingen onderaan elke pagina, en cookies verwijderen of blokkeren in de instellingen van uw browser.</p>
     </section>
 
     <section class="jur__blok" id="beveiliging">
@@ -644,7 +646,13 @@
       <small>&copy; 2026 De Bresser Verhuizingen B.V.<span class="footer__sep" aria-hidden="true"> &middot; </span><span class="footer__kvk">KvK 18014730 &middot; Btw NL0055.15.452.B.01</span></small>
       <div class="footer__legal">
         <a href="/faq/">FAQ</a>
+        <a href="/algemene-voorwaarden/">Algemene voorwaarden</a>
         <a href="/privacyverklaring/">Privacyverklaring</a>
+        <a href="/cookiebeleid/">Cookiebeleid</a>
+        <button type="button" class="footer__legal-knop" data-cookie-instellingen>Cookie-instellingen</button>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="/toegankelijkheid/">Toegankelijkheid</a>
+        <a href="/klachtenregeling/">Klachtenregeling</a>
         <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
       </div>
     </div>
@@ -673,5 +681,34 @@
 (function(){var b=document.getElementById('topbar');
  var f=function(){b.classList.toggle('is-stuck',window.scrollY>40)};f();addEventListener('scroll',f,{passive:true})})();
 </script>
+
+<div id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cbKopHoofd" hidden>
+  <div class="cb__laag" data-laag="hoofd">
+    <div class="cb__tekst">
+      <img class="cb__beeld" src="/assets/img/cookie/cf36-a2-hand-350.webp" srcset="/assets/img/cookie/cf36-a2-hand-350.webp 350w, /assets/img/cookie/cf36-a2-hand-700.webp 700w" sizes="85px" width="350" height="445" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div>
+        <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopHoofd">Cookies bij De Bresser</p></div>
+        <p class="cb__uitleg">Wij gebruiken alleen techniek die nodig is om de site te laten werken. Met uw toestemming laden we ook video's van YouTube. <a href="/privacyverklaring/">Meer weten</a></p>
+      </div>
+    </div>
+    <div class="cb__knoppen">
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="aanpassen">Aanpassen</button>
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
+      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="accepteren">Accepteren</button>
+    </div>
+  </div>
+  <div class="cb__laag" data-laag="aanpassen" hidden>
+    <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopAanpassen">Cookie-instellingen</p></div>
+    <ul class="cb__lijst">
+      <li><label><input type="checkbox" checked disabled><span class="cb__kolom"><span class="cb__labeltekst">Noodzakelijk</span><span class="cb__note">Altijd aan, nodig om de site te laten werken.</span></span></label></li>
+      <li><label><input type="checkbox" data-cb-categorie="voorkeuren"><span class="cb__kolom"><span class="cb__labeltekst">Video's&nbsp;(YouTube)</span><span class="cb__note">Laadt video's van YouTube, bijvoorbeeld op de homepage.</span></span></label></li>
+    </ul>
+    <div class="cb__knoppen">
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
+      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="bewaren">Keuze opslaan</button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/cookie-consent-v2.js?v=20260929-2313" defer></script>
 </body>
 </html>

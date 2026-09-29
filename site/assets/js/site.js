@@ -21,22 +21,30 @@
     var target=document.getElementById('offerte');if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
     var naam=document.getElementById('lf-naam');if(naam)setTimeout(function(){naam.focus({preventScroll:true})},600);
   });
-  if(!lf)return;
+  // CF-48: /offerte/ heeft geen groot formulier meer maar het offerteblok (#offerte-aanvragen); daar gaan de waarden in.
+  var ob=!lf&&/^\/offerte\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
+  if(!lf&&!ob)return;
+  var doel=lf?map:[['of-van','sb-ob-van','van'],['of-naar','sb-ob-naar','naar'],['of-datum','sb-ob-datum','datum'],['of-dienst','sb-ob-dienst','dienst']];
   var bewaard='';try{bewaard=sessionStorage.getItem('ofPill')||'';sessionStorage.removeItem('ofPill')}catch(x){}
   if(!bewaard&&!location.search)return;
   var q=new URLSearchParams(bewaard||location.search);
-  map.forEach(function(p){
+  doel.forEach(function(p){
     var v=(q.get(p[2])||'').trim().slice(0,150),el=document.getElementById(p[1]);if(!v||!el)return;
     // Alleen wat het formulier zelf ook kan bevatten: een echte datum en een keuze uit de lijst.
     if(el.type==='date'&&!/^\d{4}-\d{2}-\d{2}$/.test(v))return;
     if(el.tagName==='SELECT'&&![].some.call(el.options,function(o){return o.value===v}))return;
     el.value=v;
     // Een adres uit de pill is nog niet aangevuld; de adresaanvulling verderop kijkt naar deze vlag.
-    if(p[2]==='van'||p[2]==='naar')lf.dataset.pill='1';
+    if(p[2]==='van'||p[2]==='naar')(lf||ob).dataset.pill='1';
   });
+  // CF11-v2: het offerteblok heeft geen woningveld; een gekozen type woning uit het headerformulier komt vooraan bij Opmerkingen.
+  var woning=(q.get('woning')||'').trim(),opm=ob&&document.getElementById('sb-ob-opm');
+  if(opm&&['Appartement','Eengezinswoning','Studio / kamer','Tussenwoning','Vrijstaande woning','Kantoor / bedrijf','Anders'].indexOf(woning)>-1)
+    opm.value='Woning: '+woning+(opm.value?'\n'+opm.value:'');
   if(!location.search)return;
   var u=new URLSearchParams(location.search),weg=false;
-  map.forEach(function(p){if(u.has(p[2])){u.delete(p[2]);weg=true}});
+  doel.forEach(function(p){if(u.has(p[2])){u.delete(p[2]);weg=true}});
+  if(ob&&u.has('woning')){u.delete('woning');weg=true}
   if(weg)history.replaceState(null,'',location.pathname+(u.toString()?'?'+u:'')+location.hash);
 })();
 

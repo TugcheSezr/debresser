@@ -237,10 +237,8 @@ a.keurmerk:hover{opacity:.82}
 }
 .lf__done{padding:1.5rem 1.3rem;background:#fff;border:1px solid var(--lijn);border-radius:16px;color:var(--ant);line-height:1.55}
 .lf__done a{font-weight:700}
+.lfcalc{margin-top:.2rem;border:1px solid rgba(255,255,255,.45);border-radius:14px;background:rgba(0,0,0,.12);overflow:hidden}
 .lfcalc.is-toegevoegd{border-color:#fff;background:rgba(0,0,0,.2)}
-.lfcalc.is-toegevoegd .lfcalc__titel::before{content:"\2713";margin-right:.45rem;font-weight:900}
-.lfcalc.is-toegevoegd .lfcalc__ok{background:rgba(0,0,0,.22);color:#fff;cursor:default}
-.lfcalc.is-toegevoegd .lfcalc__ok:hover{background:rgba(0,0,0,.22)}
 .footer{position:relative;isolation:isolate;background:var(--bruin);color:#fff;font-size:.95rem}
 .footer a:not(.btn){color:#fff;text-decoration:none}
 .footer a:not(.btn):hover{text-decoration:underline}
@@ -297,9 +295,11 @@ a.merk:hover,a.merk:focus-visible{opacity:1}
 }
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;gap:.5rem;padding:.55rem var(--pad) calc(.55rem + env(safe-area-inset-bottom));background:rgba(246,244,236,.96);backdrop-filter:blur(8px);border-top:1px solid var(--lijn)}
 .mcta .btn{width:100%;padding:.78rem .5rem;font-size:.82rem}
+.mcta .btn--lijn{background:var(--bruin);border-color:var(--bruin);color:#fff}
+.mcta .btn--lijn:hover,.mcta .btn--lijn:focus-visible{background:var(--goud-diep);border-color:var(--goud-diep);color:#fff}
 @media(max-width:767.98px){
 .mcta{display:grid}
-.footer__balk .wrap{padding-bottom:6.5rem}
+.footer__balk .wrap{padding-bottom:calc(9rem + env(safe-area-inset-bottom))}
 }
 .wa-zweef{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:58;
 display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
@@ -640,6 +640,8 @@ a.dienst:focus-visible{outline:3px solid var(--geel);outline-offset:3px}
 .footer__legal{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.3rem}
 .footer__legal a{color:rgba(255,255,255,.8);text-decoration:none}
 .footer__legal a:hover,.footer__legal a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.footer__legal-knop{appearance:none;background:none;border:0;padding:0;margin:0;font:inherit;line-height:inherit;color:#fff;text-decoration:none;cursor:pointer}
+.footer__legal-knop:hover,.footer__legal-knop:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .jur{padding-block:clamp(2rem,4vw,3rem) clamp(2.6rem,5vw,4rem)}
 .jur__intro{max-width:66ch}
 .jur__intro p{margin:0 0 .9rem;color:var(--ant-zacht);line-height:1.75;font-size:1.02rem}
@@ -829,7 +831,7 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-opslag{padding-top:2rem}
 .sb-opslag .opslag__kaart{margin-bottom:0}
 .sb-opslag .opslag__fig{height:250px;padding-top:0}
-.sb-opslag .opslag__persoon{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);height:236px;width:auto;max-width:none;margin:0}
+.sb-opslag .opslag__persoon{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);height:236px;width:auto;max-width:none;margin:0;clip-path:polygon(0 0,100% 0,100% calc(100% - 14.55px),0 100%)}
 .sb-opslag .opslag__band{bottom:14px;height:150px}
 .sb-opslag .opslag__mark{height:34%}
 .sb-opslag .opslag__script{height:40%}
@@ -1877,15 +1879,19 @@ a.sbr__profiel span{display:none}
 .c7-dpop--container-opslag{--d0:.109;--mid:.193;--ar:1.3333}
 .c7-dpop--veilingen{--d0:.211;--mid:.405;--ar:1.3333}
 .c7-dpop--opslag-assets{--d0:.119;--mid:.696;--ar:1.3333}
-.c7-dpop--handyman-services{--d0:.226;--mid:.460;--ar:1.3333}
+.c7-dpop--handyman-services{--d0:.22;--mid:.524;--ar:1.3333}
 .c7-dpop--offerte-videogesprek{--d0:.156;--mid:.545;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-baarle-nassau{--d0:.018;--mid:.401;--ar:1.3333}
 .c7-dpop--bergen-op-zoom{--d0:.139;--mid:.425;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-best{--d0:.021;--mid:.263;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-boxtel{--d0:.070;--mid:.515;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-dongen{--d0:.058;--mid:.630;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-dordrecht{--d0:.058;--mid:.362;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-drunen{--d0:.077;--mid:.475;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-etten-leur{--d0:.019;--mid:.305;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-helvoirt{--d0:.035;--mid:.426;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-kaatsheuvel{--d0:.056;--mid:.394;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-moerdijk{--d0:.077;--mid:.720;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-oirschot{--d0:.100;--mid:.483;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-oosterhout{--d0:.077;--mid:.578;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-oss{--d0:.018;--mid:.270;--ar:1.3333}
@@ -1902,6 +1908,7 @@ a.sbr__profiel span{display:none}
 .c7-dpop--verhuisbedrijf-vlijmen{--d0:.079;--mid:.355;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-vught{--d0:.107;--mid:.570;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-waalwijk{--d0:.060;--mid:.733;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-weert{--d0:.039;--mid:.674;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-zevenbergen{--d0:.093;--mid:.552;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-zundert{--d0:.082;--mid:.505;--ar:1.3333}
 .c7-dpop--meubelmontage{--d0:.191;--mid:.547;--ar:1.3333}
@@ -2371,6 +2378,7 @@ transition:transform .6s var(--ease);pointer-events:none}
 }
 .c7-dpop--de-bresser-brussel{--d0:.065;--mid:.497;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-den-bosch{--d0:.030;--mid:.429;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-eindhoven{--d0:.091;--mid:.660;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-tilburg{--d0:.120;--mid:.424;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-oisterwijk{--d0:.081;--mid:.339;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-venlo{--d0:.057;--mid:.492;--ar:1.3333}
@@ -2378,6 +2386,7 @@ transition:transform .6s var(--ease);pointer-events:none}
 .c7-dpop--verhuisbedrijf-maastricht{--d0:.053;--mid:.487;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-hilvarenbeek{--d0:.063;--mid:.367;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-goirle{--d0:.068;--mid:.356;--ar:1.3333}
+.c7-dpop--verhuisbedrijf-bavel{--d0:.070;--mid:.636;--ar:1.3333}
 @media(max-width:359.98px){
 .c7-wg .sb-dpop{--p:min(30px,max(100cqw / var(--fa) * .269 / (.731 - var(--d0)),100cqw / var(--ar) * .269))}
 }

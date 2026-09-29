@@ -528,7 +528,9 @@ a.merk:hover,a.merk:focus-visible{opacity:1}
 @media(max-width:520px){.footer__rooster{grid-template-columns:1fr}}
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;grid-template-columns:1fr 1fr;gap:.5rem;padding:.55rem var(--pad) calc(.55rem + env(safe-area-inset-bottom));background:rgba(246,244,236,.96);backdrop-filter:blur(8px);border-top:1px solid var(--lijn)}
 .mcta .btn{width:100%;padding:.78rem .5rem;font-size:.82rem}
-@media(max-width:767.98px){.mcta{display:grid}.footer__balk .wrap{padding-bottom:6.5rem}}
+.mcta .btn--lijn{background:var(--bruin);border-color:var(--bruin);color:#fff}
+.mcta .btn--lijn:hover,.mcta .btn--lijn:focus-visible{background:var(--goud-diep);border-color:var(--goud-diep);color:#fff}
+@media(max-width:767.98px){.mcta{display:grid}.footer__balk .wrap{padding-bottom:calc(9rem + env(safe-area-inset-bottom))}}
 .wa-zweef{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:58;
 display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;
 box-shadow:0 8px 20px -6px rgba(2,13,65,.45)}
@@ -1296,6 +1298,8 @@ background:rgba(255,255,255,.62);border-radius:24px;padding:clamp(1.3rem,2.4vw,2
 .footer__legal{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.3rem}
 .footer__legal a{color:rgba(255,255,255,.8);text-decoration:none}
 .footer__legal a:hover,.footer__legal a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.footer__legal-knop{appearance:none;background:none;border:0;padding:0;margin:0;font:inherit;line-height:inherit;color:#fff;text-decoration:none;cursor:pointer}
+.footer__legal-knop:hover,.footer__legal-knop:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .jurtoc{padding-block:clamp(1.6rem,3vw,2.2rem) 0}
 .jurtoc__lijst{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
 .jurtoc__lijst a{display:inline-block;padding:.45rem .95rem;border:1px solid var(--lijn);border-radius:999px;
@@ -1613,7 +1617,7 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-opslag{padding-top:2rem}
 .sb-opslag .opslag__kaart{margin-bottom:0}
 .sb-opslag .opslag__fig{height:250px;padding-top:0}
-.sb-opslag .opslag__persoon{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);height:236px;width:auto;max-width:none;margin:0}
+.sb-opslag .opslag__persoon{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);height:236px;width:auto;max-width:none;margin:0;clip-path:polygon(0 0,100% 0,100% calc(100% - 14.55px),0 100%)}
 .sb-opslag .opslag__band{bottom:14px;height:150px}
 .sb-opslag .opslag__mark{height:34%}
 .sb-opslag .opslag__script{height:40%}
@@ -2984,6 +2988,10 @@ filter:drop-shadow(0 10px 12px rgba(2,13,65,.3)) drop-shadow(0 2px 3px rgba(2,13
 .sb-ob__vn{grid-template-columns:minmax(0,1fr);row-gap:6px;padding:14px 16px 16px}
 .sb-ob__vn::before{display:none}
 .sb-ob__pijl{justify-self:center;width:36px;height:36px;transform:rotate(90deg)}
+.sb-ob--boven .sb-ob__kaart{margin-top:0}
+.sb-ob--boven .sb-ob__zij{order:2}
+.sb-ob--boven .sb-ob__beeld{display:none}
+.sb-ob--boven .sb-ob__paneel::before{top:0;bottom:1px;clip-path:none;border-radius:0 0 calc(var(--r) - 1px) calc(var(--r) - 1px)}
 }
 @media (max-width:620px){
 .sb-ob__verstuur .btn{width:100%}
@@ -3304,7 +3312,7 @@ a.sbr__profiel span{display:none}
 .c7-dpop--veilingen{--d0:.211;--mid:.405;--ar:1.3333}
 .c7-dpop--opslag-assets{--d0:.119;--mid:.696;--ar:1.3333}
 @media(min-width:600px) and (max-width:860px){.c7-team__rij{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}}
-.c7-dpop--handyman-services{--d0:.226;--mid:.460;--ar:1.3333}
+.c7-dpop--handyman-services{--d0:.22;--mid:.524;--ar:1.3333}
 .c7-dpop--offerte-videogesprek{--d0:.156;--mid:.545;--ar:1.3333}
 .c7-dpop--verhuisbedrijf-baarle-nassau{--d0:.018;--mid:.401;--ar:1.3333}
 .c7-dpop--bergen-op-zoom{--d0:.139;--mid:.425;--ar:1.3333}
@@ -3469,6 +3477,7 @@ box-shadow:0 18px 34px -20px rgba(2,13,65,.55)}
 .c7-ctp__persoon{position:absolute;z-index:1;left:50%;bottom:0;height:92%;aspect-ratio:1;transform:translateX(-50%);
 filter:drop-shadow(0 12px 14px rgba(2,13,65,.3))}
 .c7-ctp__persoon img{display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:50% 100%}
+.c7-ctp--betty .c7-ctp__persoon{height:100%}
 .c7-ctp__boog{position:relative;z-index:3;order:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;
 width:78cqw;aspect-ratio:1;margin-top:-26cqw;padding:9cqw;border:1.5px solid #fff;border-radius:50%;background:#fff;box-shadow:var(--schaduw);
 color:var(--bruin);text-align:center;text-decoration:none}
@@ -4712,6 +4721,7 @@ transition:transform .6s var(--ease);pointer-events:none}
 .c7-stad .sb-zakelijk__rij{grid-template-columns:auto minmax(0,1fr);gap:.8rem}
 .c7-stad .sb-zakelijk__icoon{display:block;width:2.6rem;height:2.6rem;padding:.45rem}
 }
+.c7-stad .sb-toennu__paneel:not(:has(.sb-zakelijk__rij)){grid-template-columns:1fr}
 .c7-stad .sb-zakelijk__rij p.c7-stad__bron{margin-top:.35rem;font-size:.8rem;line-height:1.45;color:var(--licht-hover)}
 .c7-stad .c7-stad__bron a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .c7-stad .c7-stad__bron a:focus-visible{outline:2px solid var(--goud-hover);outline-offset:2px;border-radius:2px}

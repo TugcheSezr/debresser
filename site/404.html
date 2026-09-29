@@ -11,8 +11,9 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260929-2017">
-<script src="/assets/js/site.js?v=20260929-2017" defer></script>
+<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260929-2313">
+<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20260929-2313">
+<script src="/assets/js/site.js?v=20260929-2313" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -406,7 +407,13 @@
       <small>&copy; 2026 De Bresser Verhuizingen B.V.<span class="footer__sep" aria-hidden="true"> &middot; </span><span class="footer__kvk">KvK 18014730 &middot; Btw NL0055.15.452.B.01</span></small>
       <div class="footer__legal">
         <a href="/faq/">FAQ</a>
+        <a href="/algemene-voorwaarden/">Algemene voorwaarden</a>
         <a href="/privacyverklaring/">Privacyverklaring</a>
+        <a href="/cookiebeleid/">Cookiebeleid</a>
+        <button type="button" class="footer__legal-knop" data-cookie-instellingen>Cookie-instellingen</button>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="/toegankelijkheid/">Toegankelijkheid</a>
+        <a href="/klachtenregeling/">Klachtenregeling</a>
         <span class="footer__credit">Gemaakt door <a href="https://www.linkedin.com/in/shan-morshedian-80339715a/" target="_blank" rel="nofollow noopener">Shan Morshedian</a></span>
       </div>
     </div>
@@ -435,5 +442,34 @@
 (function(){var b=document.getElementById('topbar');
  var f=function(){b.classList.toggle('is-stuck',window.scrollY>40)};f();addEventListener('scroll',f,{passive:true})})();
 </script>
+
+<div id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cbKopHoofd" hidden>
+  <div class="cb__laag" data-laag="hoofd">
+    <div class="cb__tekst">
+      <img class="cb__beeld" src="/assets/img/cookie/cf36-a2-hand-350.webp" srcset="/assets/img/cookie/cf36-a2-hand-350.webp 350w, /assets/img/cookie/cf36-a2-hand-700.webp 700w" sizes="85px" width="350" height="445" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div>
+        <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopHoofd">Cookies bij De Bresser</p></div>
+        <p class="cb__uitleg">Wij gebruiken alleen techniek die nodig is om de site te laten werken. Met uw toestemming laden we ook video's van YouTube. <a href="/privacyverklaring/">Meer weten</a></p>
+      </div>
+    </div>
+    <div class="cb__knoppen">
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="aanpassen">Aanpassen</button>
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
+      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="accepteren">Accepteren</button>
+    </div>
+  </div>
+  <div class="cb__laag" data-laag="aanpassen" hidden>
+    <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopAanpassen">Cookie-instellingen</p></div>
+    <ul class="cb__lijst">
+      <li><label><input type="checkbox" checked disabled><span class="cb__kolom"><span class="cb__labeltekst">Noodzakelijk</span><span class="cb__note">Altijd aan, nodig om de site te laten werken.</span></span></label></li>
+      <li><label><input type="checkbox" data-cb-categorie="voorkeuren"><span class="cb__kolom"><span class="cb__labeltekst">Video's&nbsp;(YouTube)</span><span class="cb__note">Laadt video's van YouTube, bijvoorbeeld op de homepage.</span></span></label></li>
+    </ul>
+    <div class="cb__knoppen">
+      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
+      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="bewaren">Keuze opslaan</button>
+    </div>
+  </div>
+</div>
+<script src="/assets/js/cookie-consent-v2.js?v=20260929-2313" defer></script>
 </body>
 </html>
