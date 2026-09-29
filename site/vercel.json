@@ -14,23 +14,8 @@
       "permanent": true
     },
     {
-      "source": "/kantoor-verhuizen/",
-      "destination": "/zakelijke-verhuizing/",
-      "statusCode": 301
-    },
-    {
-      "source": "/winkelverhuizing/",
-      "destination": "/zakelijke-verhuizing/",
-      "statusCode": 301
-    },
-    {
       "source": "/verhuisservice-zakelijk/",
       "destination": "/zakelijke-verhuizing/",
-      "statusCode": 301
-    },
-    {
-      "source": "/full-service-verhuizing/",
-      "destination": "/particuliere-verhuizing/",
       "statusCode": 301
     },
     {
@@ -66,16 +51,6 @@
     {
       "source": "/verhuisbedrijf-europa/",
       "destination": "/internationale-verhuizing/",
-      "statusCode": 301
-    },
-    {
-      "source": "/groupage-transport/",
-      "destination": "/internationale-verhuizing/",
-      "statusCode": 301
-    },
-    {
-      "source": "/senioren-verhuizen/",
-      "destination": "/zorg-verhuizing/",
       "statusCode": 301
     },
     {
@@ -214,11 +189,6 @@
       "statusCode": 301
     },
     {
-      "source": "/logistiek-full-service/",
-      "destination": "/opslag/",
-      "statusCode": 301
-    },
-    {
       "source": "/2024/03/29/logistieke-dienstverlening/",
       "destination": "/opslag/",
       "statusCode": 301
@@ -264,7 +234,7 @@
       "headers": [
         {
           "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
+          "value": "max-age=63072000"
         },
         {
           "key": "X-Content-Type-Options",
@@ -285,6 +255,10 @@
         {
           "key": "Cross-Origin-Opener-Policy",
           "value": "same-origin"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://api.web3forms.com; script-src 'self' 'sha256-G50p3OQJdzmNSHgmrckkRv9E5DVGNkEspwW0gLrWXBE=' 'sha256-c36NisVbSyurh7k10vkL4bQWAjzn4sOsULBKZ3g+ojY=' 'sha256-nxPrnSr4Eb7e8bm8qGp23yv8zPNwM5TPWXoNrED7cAM=' 'sha256-GQruYDMMR7kUwSMN48nrUm0LIkehp5AYTOqatiYUYvI=' https://www.youtube.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self' https://api.web3forms.com https://api.pdok.nl; frame-src https://www.youtube-nocookie.com; worker-src 'none'; manifest-src 'self'"
         }
       ]
     }

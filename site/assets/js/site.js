@@ -1,9 +1,11 @@
 // Offerteformulier in de header (#ofForm, homepage): het grote formulier (#lfForm) staat alleen op /offerte/.
-// Staat het op dezelfde pagina, dan gaan de waarden erin over en springen wij erheen (Feitsma). Anders gaan alleen
-// de ingevulde velden als ?van=&naar=&datum=&woning= naar /offerte/#offerte (zonder script doet het formulier
-// dat zelf, met de lege velden erbij). Op /offerte/ zet dit blok die waarden in het formulier (25-09-2026).
+// Staat het op dezelfde pagina, dan gaan de waarden erin over en springen wij erheen. Anders gaan alleen
+// de ingevulde velden via sessionStorage naar /offerte/#offerte, zodat het adres niet in de URL, de geschiedenis en
+// de logboeken komt; lukt sessionStorage niet, dan als ?van=&naar=&datum=&woning= of &dienst= (zonder script doet het formulier
+// dat zelf, met de lege velden erbij). Op /offerte/ zet dit blok die waarden in het formulier en haalt ze daarna
+// uit de adresbalk (25-09-2026, adres uit de URL 28-09-2026).
 (function(){
-  var map=[['of-van','lf-van','van'],['of-naar','lf-naar','naar'],['of-datum','lf-datum','datum'],['of-woning','lf-woning','woning']];
+  var map=[['of-van','lf-van','van'],['of-naar','lf-naar','naar'],['of-datum','lf-datum','datum'],['of-woning','lf-woning','woning'],['of-dienst','lf-dienst','dienst']];
   var top=document.getElementById('ofForm'),lf=document.getElementById('lfForm');
   if(top)top.addEventListener('submit',function(e){
     e.preventDefault();
@@ -11,25 +13,34 @@
       var q=new URLSearchParams();
       map.forEach(function(p){var el=document.getElementById(p[0]),v=el&&el.value.trim();if(v)q.set(p[2],v)});
       var s=q.toString();
+      try{sessionStorage.setItem('ofPill',s);s=''}catch(x){}
       location.href=top.getAttribute('action').split('#')[0]+(s?'?'+s:'')+'#offerte';
       return;
     }
     map.forEach(function(p){var from=document.getElementById(p[0]),to=document.getElementById(p[1]);if(from&&to&&from.value)to.value=from.value});
-    var target=document.getElementById('offerte');if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+    var target=document.getElementById('offerte');if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
     var naam=document.getElementById('lf-naam');if(naam)setTimeout(function(){naam.focus({preventScroll:true})},600);
   });
-  if(!lf||!location.search)return;
-  var q=new URLSearchParams(location.search);
+  if(!lf)return;
+  var bewaard='';try{bewaard=sessionStorage.getItem('ofPill')||'';sessionStorage.removeItem('ofPill')}catch(x){}
+  if(!bewaard&&!location.search)return;
+  var q=new URLSearchParams(bewaard||location.search);
   map.forEach(function(p){
     var v=(q.get(p[2])||'').trim().slice(0,150),el=document.getElementById(p[1]);if(!v||!el)return;
     // Alleen wat het formulier zelf ook kan bevatten: een echte datum en een keuze uit de lijst.
     if(el.type==='date'&&!/^\d{4}-\d{2}-\d{2}$/.test(v))return;
     if(el.tagName==='SELECT'&&![].some.call(el.options,function(o){return o.value===v}))return;
     el.value=v;
+    // Een adres uit de pill is nog niet aangevuld; de adresaanvulling verderop kijkt naar deze vlag.
+    if(p[2]==='van'||p[2]==='naar')lf.dataset.pill='1';
   });
+  if(!location.search)return;
+  var u=new URLSearchParams(location.search),weg=false;
+  map.forEach(function(p){if(u.has(p[2])){u.delete(p[2]);weg=true}});
+  if(weg)history.replaceState(null,'',location.pathname+(u.toString()?'?'+u:'')+location.hash);
 })();
 
-// Datum en het vinkje "weet ik nog niet" sluiten elkaar uit, in twee richtingen (Feitsma).
+// Datum en het vinkje "weet ik nog niet" sluiten elkaar uit, in twee richtingen.
 (function(){
   var vink=document.getElementById('lf-geendatum'),datum=document.getElementById('lf-datum');if(!vink||!datum)return;
   vink.addEventListener('change',function(){if(vink.checked)datum.value=''});
@@ -69,7 +80,7 @@
 })();
 
 // Web3Forms: knop op slot tijdens versturen, succesblok in de plaats van het formulier, bij een fout de
-// melding met bellen of mailen als uitweg (Feitsma-patroon). Key staat als hidden veld in het formulier.
+// melding met bellen of mailen als uitweg. Key staat als hidden veld in het formulier.
 (function(){
   var f=document.getElementById('lfForm');if(!f||f.dataset.w)return;f.dataset.w=1;
   var fout=document.getElementById('lf-fout');
@@ -213,9 +224,9 @@ document.addEventListener('click',function(e){
   if(r)r.checked=true;
 });
 
-// Verhuisdozen-schatting in het offerteformulier (#lfcalc op /offerte/), rekenkern 1-op-1 pro.feitsma.nl.
-// Het losse calculatorblok (blok-dozencalculator.html) is op 25-09-2026 verwijderd (verzoek gebruiker).
-// Rekenmodel van studentverhuisservice.nl: m2 x factor per pakgedrag + opslag per kamer en per bewoner,
+// Verhuisdozen-schatting in het offerteformulier (#lfcalc op /offerte/).
+// Het losse calculatorblok (blok-dozencalculator.html) is op 25-09-2026 verwijderd.
+// Rekenmodel: m2 x factor per pakgedrag + opslag per kamer en per bewoner,
 // bandbreedte 0,9x tot 1,15x, advies is het midden. Extra's schalen mee met bewoners (boeken, kleding,
 // hobby) of met m2 (volle berging). Boven de 50 afgerond op vijftallen.
 (function(){
@@ -262,7 +273,9 @@ document.addEventListener('click',function(e){
     toonForm();voegToe(true);
   }
   // Komt de bezoeker van /m3-calculator/, dan staat het volume in de URL: als schatting in de aanvraag zetten.
-  if(verborgen&&q.get('m3')){verborgen.value='Inboedel ongeveer '+q.get('m3')+' m3 volgens de m3-calculator';verborgen.setAttribute('name','Inschatting via m3-calculator')}
+  // Alleen een getal (tot drie cijfers, hoogstens twee decimalen); andere tekst uit een link komt niet in de aanvraag.
+  var m3=(q.get('m3')||'').trim();
+  if(verborgen&&/^\d{1,3}([.,]\d{1,2})?$/.test(m3)){verborgen.value='Inboedel ongeveer '+m3+' m3 volgens de m3-calculator';verborgen.setAttribute('name','Inschatting via m3-calculator')}
 })();
 // Adresaanvulling op de twee offertevelden (9-09-2026). Bron: PDOK Locatieserver v3_1, open data
 // van BZK/Kadaster, gratis en zonder sleutel. Typen op postcode + huisnummer geeft daar precies een
@@ -361,8 +374,11 @@ document.addEventListener('click',function(e){
     keur(el);
   }
   var van=document.getElementById('lf-van'),naar=document.getElementById('lf-naar');
-  if(van)koppel(van);
-  if(naar)koppel(naar);
+  // Sinds 26-09-2026 ook het headerformulier (of-) en het offerteblok boven de footer (sb-ob-):
+  // de bezoeker typt straat + huisnummer en kiest het volledige adres, zonder zelf de postcode te weten.
+  ['lf-van','lf-naar','of-van','of-naar','sb-ob-van','sb-ob-naar'].forEach(function(id){
+    var el=document.getElementById(id);if(el)koppel(el);
+  });
 
   // Het vinkje bij "Naar" haalt de eis van dat veld af, voor wie nog geen bestemming heeft of naar
   // het buitenland verhuist (daar past geen Nederlandse postcode bij). De getypte tekst blijft
@@ -379,8 +395,10 @@ document.addEventListener('click',function(e){
   // De pill in de hero zet zijn waarden in dit formulier; die zijn dan nog niet aangevuld.
   var pill=document.getElementById('ofForm');
   if(pill)pill.addEventListener('submit',function(){setTimeout(function(){aanvullen(van);aanvullen(naar)},0)});
-  // Idem voor de waarden die via de URL uit het headerformulier van de homepage komen (bovenaan dit bestand).
-  if(/[?&](van|naar)=/.test(location.search)){aanvullen(van);aanvullen(naar)}
+  // Idem voor de waarden die uit het headerformulier van een andere pagina komen: het blok bovenaan dit bestand
+  // zet ze uit sessionStorage of de URL in het formulier en zet dan data-pill, want de URL is daarna leeg.
+  var lfForm=document.getElementById('lfForm');
+  if(lfForm&&lfForm.dataset.pill){aanvullen(van);aanvullen(naar)}
 
   // Vangnet: een waarde die NIET door de bezoeker is getypt (de pill, autofill van de browser,
   // terug in de geschiedenis) geeft geen input-event, dus is er dan ook niet gekeurd. Deze
@@ -399,6 +417,10 @@ document.addEventListener('click',function(e){
     var knop=li.querySelector('.nav__trigger');
     if(knop)knop.setAttribute('aria-expanded',open?'true':'false');
     if(open)items.forEach(function(a){if(a!==li)zet(a,false)});
+    // een breed paneel schuift naar links tot het binnen het venster valt (26-09)
+    var m=li.querySelector('.mega');
+    if(open&&m){m.style.left='0px';var rand=document.documentElement.clientWidth-16,r=m.getBoundingClientRect();
+      if(r.right>rand)m.style.left=Math.max(16-li.getBoundingClientRect().left,rand-r.right)+'px';}
   }
   function sluitAlles(){items.forEach(function(li){zet(li,false)})}
   items.forEach(function(li){
@@ -406,7 +428,7 @@ document.addEventListener('click',function(e){
     li.addEventListener('mouseleave',function(){timer=setTimeout(function(){zet(li,false)},140)});
     li.addEventListener('focusin',function(){clearTimeout(timer);zet(li,true)});
     li.addEventListener('focusout',function(e){if(!li.contains(e.relatedTarget))zet(li,false)});
-    // Zoals op de De Kievit-site: hover en focus openen het paneel, een muisklik verandert niets
+    // Hover en focus openen het paneel, een muisklik verandert niets
     // (de oude klik-wissel sloot het paneel dat de hover net had geopend). Diensten heeft geen eigen
     // pagina om naartoe te gaan, dus Enter/spatie op de knop (detail 0) opent het paneel alleen.
     var k=li.querySelector('button.nav__trigger');
@@ -451,7 +473,7 @@ document.addEventListener('click',function(e){
   addEventListener('resize',function(){if(innerWidth>1080&&drawer&&drawer.classList.contains('is-open'))zetDrawer(false)});
 })();
 
-/* Tabbladen in de kaarten van .sb-verhaal (/verhuizen/, 8d 25-09-2026). De knoppen staan in [data-tablijst],
+/* Tabbladen in de kaarten van .sb-verhaal (/verhuizen/, 25-09-2026). De knoppen staan in [data-tablijst],
    elk met aria-controls naar zijn paneel. Het script zet de rollen, kiest het eerste tabblad en laat de pijltjes,
    Home en End wisselen. De panelen liggen in de CSS op elkaar, dus de kaart springt niet bij het wisselen. */
 (function(){
@@ -488,7 +510,25 @@ document.addEventListener('click',function(e){
   });
 })();
 
-// Homekop (Tugches header, 25-09-2026): "Geweldig in" wisselt tussen verhuizen, opslag en logistiek, zoals op
+// Paginahero in Top Movers-stijl (.tmh, 26-09-2026): de band begint onder de vaste topbalk (--tb), en het
+// wisselwoord toont elke 2,6 s het volgende woord; het vorige krijgt even is-weg voor de uitgaande beweging. Bij
+// reduced motion blijft het eerste woord staan; de volledige zin staat verborgen in de h1.
+(function(){
+  var h=document.querySelector('.tmh');if(!h)return;
+  var tb=document.getElementById('topbar');
+  function zet(){if(tb&&!tb.classList.contains('is-stuck'))h.style.setProperty('--tb',tb.offsetHeight+'px')}
+  zet();addEventListener('resize',zet);
+  var w=h.querySelector('.tmh-wissel');if(!w||w.children.length<2)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var s=w.children,i=0;
+  setInterval(function(){
+    var oud=s[i];oud.classList.remove('is-actief');oud.classList.add('is-weg');
+    setTimeout(function(){oud.classList.remove('is-weg')},650);
+    i=(i+1)%s.length;s[i].classList.add('is-actief');
+  },2600);
+})();
+
+// Homekop (25-09-2026): "Geweldig in" wisselt tussen verhuizen, opslag en logistiek, zoals op
 // debresser.nl. Bij reduced motion blijft het eerste woord staan; de volledige zin staat verborgen in de h1.
 (function(){
   var el=document.querySelector('.hero__wissel');if(!el)return;

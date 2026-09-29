@@ -5,3 +5,12 @@
 # robots.txt heeft wel Disallow op /_werk/, maar dat is een crawlinstructie en geen
 # slot: de bestanden bleven gewoon te downloaden.
 _werk
+_qa-varianten/
+# Vier herofilms zonder verwijzing vanuit een pagina, css of js (sweep bouw BM, 28-09-2026): samen 31.177.651 B.
+# Ze blijven in de repo; alleen de deploy laat ze weg. Wordt een film weer gebruikt, dan hier de regel schrappen.
+assets/video/hero-compleet.mp4
+assets/video/hero-compleet-1280.mp4
+assets/video/hero-debresser-1280.mp4
+assets/video/hero-debresser-1920.mp4
+# README.md is voor wie aan de site werkt, niet voor bezoekers.
+/README.md

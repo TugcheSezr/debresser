@@ -1,4 +1,0 @@
-TITLE: Login screen
-
-Inloggen dashboard
-Password
