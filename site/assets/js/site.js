@@ -24,7 +24,8 @@
       var wn=document.getElementById('of-woning'),op=document.getElementById('sb-ob-opm');
       if(wn&&op&&['Appartement','Eengezinswoning','Studio / kamer','Tussenwoning','Vrijstaande woning','Kantoor / bedrijf','Anders'].indexOf(wn.value)>-1)
         op.value='Woning: '+wn.value+'\n'+op.value.replace(/^Woning: [^\n]*\n?/,'');
-      var doel1=document.getElementById('offerte');
+      // Mobiel (paneel met foto en uitleg staat boven het formulier): naar de velden zelf (Van en Naar), anders zijn Van, Naar, Datum en Naam niet in beeld en blijft de vaste balk onderin er niet voor.
+      var doel1=matchMedia('(max-width:900px)').matches?(ob1.querySelector('.sb-ob__vn')||ob1):document.getElementById('offerte');
       if(doel1)doel1.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
       var nm=document.getElementById('sb-ob-naam');if(nm)setTimeout(function(){nm.focus({preventScroll:true})},600);
       return;
@@ -66,6 +67,16 @@
   doel.forEach(function(p){if(u.has(p[2])){u.delete(p[2]);weg=true}});
   if(ob&&u.has('woning')){u.delete('woning');weg=true}
   if(weg)history.replaceState(null,'',location.pathname+(u.toString()?'?'+u:'')+location.hash);
+})();
+
+// Komt de bezoeker via het kleine formulier van een andere pagina op /offerte/#offerte of /offerte/videogesprek/#offerte, dan staat op mobiel
+// (paneel met foto en uitleg boven het formulier) het formulier zelf pas onder de vouw: spring naar de velden Van en Naar (scroll-padding-top van html geldt).
+(function(){
+  if(!/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)||location.hash!=='#offerte'||!matchMedia('(max-width:900px)').matches)return;
+  var f=document.querySelector('#offerte-aanvragen form');if(!f)return;
+  f=f.querySelector('.sb-ob__vn')||f;
+  function ga(){f.scrollIntoView({behavior:'instant',block:'start'})}
+  if(document.readyState==='complete')setTimeout(ga,0);else addEventListener('load',function(){setTimeout(ga,0)});
 })();
 
 // Datum en het vinkje "weet ik nog niet" sluiten elkaar uit, in twee richtingen.
