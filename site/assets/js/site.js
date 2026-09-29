@@ -9,6 +9,26 @@
   var top=document.getElementById('ofForm'),lf=document.getElementById('lfForm');
   if(top)top.addEventListener('submit',function(e){
     e.preventDefault();
+    // CF-53: alleen op /offerte/ en /offerte/videogesprek/ staat het hoofdformulier (#offerte-aanvragen) op dezelfde pagina onder dit kleine
+    // formulier (elders staat het blok wel boven de footer, maar daar gaat de aanvrager naar /offerte/): de waarden gaan direct erin (zonder sessionStorage en zonder nieuwe pagina), daarna springen wij erheen.
+    var ob1=!lf&&/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
+    if(ob1){
+      [['of-van','sb-ob-van'],['of-naar','sb-ob-naar'],['of-datum','sb-ob-datum'],['of-dienst','sb-ob-dienst']].forEach(function(p){
+        var from=document.getElementById(p[0]),el=document.getElementById(p[1]),v=from&&from.value.trim().slice(0,150);
+        if(!v||!el)return;
+        if(el.type==='date'&&!/^\d{4}-\d{2}-\d{2}$/.test(v))return;
+        if(el.tagName==='SELECT'&&![].some.call(el.options,function(o){return o.value===v}))return;
+        el.value=v;
+        if(p[0]==='of-van'||p[0]==='of-naar')ob1.dataset.pill='1';
+      });
+      var wn=document.getElementById('of-woning'),op=document.getElementById('sb-ob-opm');
+      if(wn&&op&&['Appartement','Eengezinswoning','Studio / kamer','Tussenwoning','Vrijstaande woning','Kantoor / bedrijf','Anders'].indexOf(wn.value)>-1)
+        op.value='Woning: '+wn.value+'\n'+op.value.replace(/^Woning: [^\n]*\n?/,'');
+      var doel1=document.getElementById('offerte');
+      if(doel1)doel1.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+      var nm=document.getElementById('sb-ob-naam');if(nm)setTimeout(function(){nm.focus({preventScroll:true})},600);
+      return;
+    }
     if(!lf){
       var q=new URLSearchParams();
       map.forEach(function(p){var el=document.getElementById(p[0]),v=el&&el.value.trim();if(v)q.set(p[2],v)});

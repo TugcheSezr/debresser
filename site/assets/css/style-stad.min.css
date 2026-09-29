@@ -661,6 +661,12 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-dienst h3{font-size:1.02rem;margin-bottom:.3rem}
 .sb-dienst p{margin:0;font-size:.88rem}
 }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.js .sb-pop+.sb-voordelen__kaarten li{transition:opacity .55s var(--ease),transform .55s var(--ease),translate .22s ease,box-shadow .22s ease;transition-delay:0s,0s,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(2){transition-delay:70ms,70ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(3){transition-delay:140ms,140ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(4){transition-delay:210ms,210ms,0s,0s!important}
+}
 .sb-toennu__paneel{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center;padding:clamp(1.4rem,4.5vw,3.5rem);border-radius:28px;background:linear-gradient(135deg,#fff 0%,var(--creme-2) 100%);box-shadow:var(--schaduw)}
 .sb-toennu__links,.sb-toennu__rechts{min-width:0}
 .sb-toennu__fotos{position:relative;display:flex;align-items:flex-end;margin-top:clamp(1.2rem,2.4vw,1.8rem);padding-bottom:1rem}

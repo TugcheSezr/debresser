@@ -902,6 +902,12 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 @media(min-width:861px){
 .sb-voordelen__actie{margin-top:1.25rem}
 }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.js .sb-pop+.sb-voordelen__kaarten li{transition:opacity .55s var(--ease),transform .55s var(--ease),translate .22s ease,box-shadow .22s ease;transition-delay:0s,0s,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(2){transition-delay:70ms,70ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(3){transition-delay:140ms,140ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(4){transition-delay:210ms,210ms,0s,0s!important}
+}
 .sb-veld{margin:0;display:grid;align-content:start;gap:.35rem;min-width:0}
 .sb-veld label{font-weight:700;font-size:.9rem}
 .sb-veld input,.sb-veld textarea{width:100%;padding:.75rem .85rem;border:1.5px solid #8A9199;border-radius:10px;font:inherit;font-size:1rem;background:#fff;color:var(--ant)}
@@ -1933,10 +1939,6 @@ filter:drop-shadow(0 10px 12px rgba(2,13,65,.3)) drop-shadow(0 2px 3px rgba(2,13
 .sb-ob__vn{grid-template-columns:minmax(0,1fr);row-gap:6px;padding:14px 16px 16px}
 .sb-ob__vn::before{display:none}
 .sb-ob__pijl{justify-self:center;width:36px;height:36px;transform:rotate(90deg)}
-.sb-ob--boven .sb-ob__kaart{margin-top:0}
-.sb-ob--boven .sb-ob__zij{order:2}
-.sb-ob--boven .sb-ob__beeld{display:none}
-.sb-ob--boven .sb-ob__paneel::before{top:0;bottom:1px;clip-path:none;border-radius:0 0 calc(var(--r) - 1px) calc(var(--r) - 1px)}
 }
 @media (max-width:620px){
 .sb-ob__verstuur .btn{width:100%}

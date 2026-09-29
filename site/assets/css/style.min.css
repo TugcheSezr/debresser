@@ -1479,6 +1479,16 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 @media(max-width:860px){.sb-voordelen__foto.sb-pop{aspect-ratio:505/420}}
 .sb-voordelen__foto.sb-pop--vlak img{inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:20% 50%}
 .sb-pop--vlak .sb-pop__foto{clip-path:inset(0 round var(--r))}
+.sb-voordelen__foto.sb-pop--vlak img{object-position:60% 40%}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.js .sb-pop+.sb-voordelen__kaarten li{transition:opacity .55s var(--ease),transform .55s var(--ease),translate .22s ease,box-shadow .22s ease;transition-delay:0s,0s,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(2){transition-delay:70ms,70ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(3){transition-delay:140ms,140ms,0s,0s!important}
+.js .sb-pop+.sb-voordelen__kaarten li:nth-child(4){transition-delay:210ms,210ms,0s,0s!important}
+.sb-pop+.sb-voordelen__kaarten li img{transition:scale .22s ease}
+.sb-pop+.sb-voordelen__kaarten li:hover{translate:0 -5px;box-shadow:0 10px 22px rgba(0,30,60,.18)}
+.sb-pop+.sb-voordelen__kaarten li:hover img{scale:1.12}
+}
 @media(min-width:861px){
 .sb-voordelen__rij:has(>.sb-pop){grid-template-columns:1.15fr .85fr}
 .sb-voordelen__foto.sb-pop{grid-column:2;grid-row:1;aspect-ratio:100/77.652;align-self:end}
