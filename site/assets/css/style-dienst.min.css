@@ -1394,6 +1394,13 @@ span.merk{opacity:.82}
 .sb-crew__ploeg img:nth-child(1){left:0}
 .sb-crew__ploeg img:nth-child(2){right:0}
 .sb-crew__ploeg img:nth-child(3){z-index:1;top:0;left:50%;height:140%;transform:translateX(-50%)}
+@media(min-width:561px){
+.sb-crew__ploeg{container-type:size}
+.sb-crew__ploeg img:is(:nth-child(1),:nth-child(2)){top:auto;bottom:0;height:auto}
+.sb-crew__ploeg img:nth-child(1){width:min(290px,46.85cqw,50.6cqh)}
+.sb-crew__ploeg img:nth-child(2){width:min(260px,42cqw,41.8cqh)}
+.sb-crew__ploeg img:nth-child(3){top:auto;height:auto;width:min(64.02cqh,64.8cqw);bottom:calc(min(64.02cqh,64.8cqw) * -.625)}
+}
 .sb-crew__rollen{position:relative;z-index:2;display:flex;align-items:center;gap:1rem;padding:.5rem .6rem .5rem 1.25rem;border-radius:12px;background:var(--wit);box-shadow:var(--schaduw-kaart)}
 .sb-crew__rollen-label{flex:none;margin:0;color:var(--goud-diep);font:700 .68rem/1.2 var(--font-kop);letter-spacing:.16em;text-transform:uppercase}
 .sb-crew__rollen ul{display:flex;flex:1;min-width:0;margin:0;padding:0;list-style:none}
@@ -2294,14 +2301,14 @@ a.sbr__profiel span{display:none}
 .c7-dpop--verhuisbedrijf-zundert{--d0:.082;--mid:.505;--ar:1.3333}
 .c7-dpop--meubelmontage{--d0:.191;--mid:.547;--ar:1.3333}
 .c7-dpop--antiek-en-kunst-verhuizen{--d0:.175;--mid:.495;--ar:1.3333}
-.c7-dpop--dozencalculator{--d0:.168;--mid:.508;--ar:1.3333}
-.c7-dpop--full-service-verhuizing{--d0:.037;--mid:.380;--ar:1.3333}
+.c7-dpop--dozencalculator{--d0:.310;--mid:.551;--ar:1.3333}
+.c7-dpop--full-service-verhuizing{--d0:.573;--mid:.456;--ar:1.3333}
 .c7-dpop--inpakservice{--d0:.112;--mid:.962;--ar:1.3333}
 .c7-dpop--piano-verhuizen{--d0:.130;--mid:.598;--ar:1.3333}
-.c7-dpop--senioren-verhuizen{--d0:.293;--mid:.443;--ar:1.3333}
-.c7-dpop--spoedverhuizing{--d0:.088;--mid:.488;--ar:1.3333}
-.c7-dpop--verhuisdozen-huren{--d0:.081;--mid:.472;--ar:1.3333}
-.c7-dpop--verhuisprijscalculator{--d0:.209;--mid:.537;--ar:1.3333}
+.c7-dpop--senioren-verhuizen{--d0:.249;--mid:.401;--ar:1.3333}
+.c7-dpop--spoedverhuizing{--d0:.209;--mid:.650;--ar:1.3333}
+.c7-dpop--verhuisdozen-huren{--d0:.355;--mid:.645;--ar:1.3333}
+.c7-dpop--verhuisprijscalculator{--d0:.122;--mid:.550;--ar:1.3333}
 .c7-dpop--kantoor-verhuizen{--d0:.158;--mid:.227;--ar:1.3333}
 .c7-dpop--logistiek-full-service{--d0:.316;--mid:.593;--ar:1.3333}
 .c7-dpop--groupage-transport{--d0:.244;--mid:.362;--ar:1.3333}
