@@ -55,12 +55,12 @@
     },
     {
       "source": "/quick-scan/",
-      "destination": "/gebouwbeheer/#quick-scan",
+      "destination": "/gebouwbeheer/",
       "statusCode": 301
     },
     {
       "source": "/100-jarig-jubileum/",
-      "destination": "/over-ons/#geschiedenis",
+      "destination": "/over-ons/",
       "statusCode": 301
     },
     {
@@ -80,32 +80,32 @@
     },
     {
       "source": "/opslagruimte-breda/",
-      "destination": "/breda/#opslag",
+      "destination": "/breda/",
       "statusCode": 301
     },
     {
       "source": "/opslagruimte-den-bosch/",
-      "destination": "/verhuisbedrijf-den-bosch/#opslag",
+      "destination": "/verhuisbedrijf-den-bosch/",
       "statusCode": 301
     },
     {
       "source": "/opslagruimte-etten-leur/",
-      "destination": "/verhuisbedrijf-etten-leur/#opslag",
+      "destination": "/verhuisbedrijf-etten-leur/",
       "statusCode": 301
     },
     {
       "source": "/opslagruimte-goirle/",
-      "destination": "/verhuisbedrijf-goirle/#opslag",
+      "destination": "/verhuisbedrijf-goirle/",
       "statusCode": 301
     },
     {
       "source": "/opslagruimte-oirschot/",
-      "destination": "/verhuisbedrijf-oirschot/#opslag",
+      "destination": "/verhuisbedrijf-oirschot/",
       "statusCode": 301
     },
     {
       "source": "/opslagruimte-roosendaal/",
-      "destination": "/roosendaal/#opslag",
+      "destination": "/roosendaal/",
       "statusCode": 301
     },
     {
@@ -190,7 +190,7 @@
     },
     {
       "source": "/2024/03/29/logistieke-dienstverlening/",
-      "destination": "/opslag/",
+      "destination": "/logistiek-full-service/",
       "statusCode": 301
     },
     {
@@ -201,6 +201,71 @@
     {
       "source": "/2019/09/06/handyman-services/",
       "destination": "/handyman-services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/internationale-verhuizing/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/particuliere-verhuizing/",
+      "destination": "/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/Internationale/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisbedrijf-breda/",
+      "destination": "/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/bedrijfsverhuizing/",
+      "destination": "/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/zorgverhuizing/",
+      "destination": "/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/opslag-zakelijk/",
+      "destination": "/zakelijke-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport/bedrijf-naar-bedrijf-b2b/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/stappenplan/verhuizingen/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/videochat/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijfsverhuizing-zo-kan-je-het-aanpakken/",
+      "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
     }
   ],
