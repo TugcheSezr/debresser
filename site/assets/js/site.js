@@ -7,11 +7,12 @@
 (function(){
   var map=[['of-van','lf-van','van'],['of-naar','lf-naar','naar'],['of-datum','lf-datum','datum'],['of-woning','lf-woning','woning'],['of-dienst','lf-dienst','dienst']];
   var top=document.getElementById('ofForm'),lf=document.getElementById('lfForm');
+  var obf=!lf&&/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
   if(top)top.addEventListener('submit',function(e){
     e.preventDefault();
     // CF-53: alleen op /offerte/ en /offerte/videogesprek/ staat het hoofdformulier (#offerte-aanvragen) op dezelfde pagina onder dit kleine
     // formulier (elders staat het blok wel boven de footer, maar daar gaat de aanvrager naar /offerte/): de waarden gaan direct erin (zonder sessionStorage en zonder nieuwe pagina), daarna springen wij erheen.
-    var ob1=!lf&&/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
+    var ob1=obf;
     if(ob1){
       [['of-van','sb-ob-van'],['of-naar','sb-ob-naar'],['of-datum','sb-ob-datum'],['of-dienst','sb-ob-dienst']].forEach(function(p){
         var from=document.getElementById(p[0]),el=document.getElementById(p[1]),v=from&&from.value.trim().slice(0,150);
@@ -24,9 +25,8 @@
       var wn=document.getElementById('of-woning'),op=document.getElementById('sb-ob-opm');
       if(wn&&op&&['Appartement','Eengezinswoning','Studio / kamer','Tussenwoning','Vrijstaande woning','Kantoor / bedrijf','Anders'].indexOf(wn.value)>-1)
         op.value='Woning: '+wn.value+'\n'+op.value.replace(/^Woning: [^\n]*\n?/,'');
-      // Mobiel (paneel met foto en uitleg staat boven het formulier): naar de velden zelf (Van en Naar), anders zijn Van, Naar, Datum en Naam niet in beeld en blijft de vaste balk onderin er niet voor.
-      var doel1=matchMedia('(max-width:900px)').matches?(ob1.querySelector('.sb-ob__vn')||ob1):document.getElementById('offerte');
-      if(doel1)doel1.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+      var doel1=naarVelden(zacht())?null:document.getElementById('offerte');
+      if(doel1)doel1.scrollIntoView({behavior:zacht(),block:'start'});
       var nm=document.getElementById('sb-ob-naam');if(nm)setTimeout(function(){nm.focus({preventScroll:true})},600);
       return;
     }
@@ -42,6 +42,32 @@
     var target=document.getElementById('offerte');if(target)target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
     var naam=document.getElementById('lf-naam');if(naam)setTimeout(function(){naam.focus({preventScroll:true})},600);
   });
+  // Op /offerte/ en /offerte/videogesprek/ staat op mobiel (max 900px) het paneel met foto en uitleg boven het formulier: elke aankomst bij het offerteblok
+  // (het kleine formulier op dezelfde pagina, de knoppen naar #offerte-aanvragen en de hash #offerte of #offerte-aanvragen van een andere pagina) landt op de
+  // velden Van en Naar (de scroll-padding-top van html geldt). Passen Van, Naar, Datum en Naam samen tussen de topbalk en de vaste balk (.mcta), dan
+  // staat Naam daarboven; anders blijft Van bovenaan. Desktop en zonder script: de gewone ankersprong.
+  function zacht(){return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}
+  function naarVelden(gedrag){
+    var vn=obf&&obf.querySelector('.sb-ob__vn'),nm=document.getElementById('sb-ob-naam');
+    if(!vn||!matchMedia('(max-width:900px)').matches)return false;
+    var kop=document.getElementById('topbar'),balk=document.querySelector('.mcta'),boven=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||100,
+      hoogte=nm?nm.getBoundingClientRect().bottom-vn.getBoundingClientRect().top:0,
+      plek=innerHeight-(balk&&getComputedStyle(balk).display!=='none'?balk.offsetHeight:0)-8;
+    if(hoogte&&boven+hoogte>plek&&plek-hoogte>=(kop?kop.offsetHeight:64)+8)boven=plek-hoogte;
+    scrollTo({top:vn.getBoundingClientRect().top+scrollY-boven,behavior:gedrag});
+    return true;
+  }
+  if(obf){
+    document.addEventListener('click',function(e){
+      var a=e.target.closest&&e.target.closest('a[href="#offerte-aanvragen"]');
+      if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+      if(naarVelden(zacht()))e.preventDefault();
+    });
+    if(location.hash==='#offerte'||location.hash==='#offerte-aanvragen'){
+      var ga=function(){naarVelden('instant')};
+      if(document.readyState==='complete')setTimeout(ga,0);else addEventListener('load',function(){setTimeout(ga,0)});
+    }
+  }
   // CF-48: /offerte/ heeft geen groot formulier meer maar het offerteblok (#offerte-aanvragen); daar gaan de waarden in.
   var ob=!lf&&/^\/offerte\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
   if(!lf&&!ob)return;
@@ -67,16 +93,6 @@
   doel.forEach(function(p){if(u.has(p[2])){u.delete(p[2]);weg=true}});
   if(ob&&u.has('woning')){u.delete('woning');weg=true}
   if(weg)history.replaceState(null,'',location.pathname+(u.toString()?'?'+u:'')+location.hash);
-})();
-
-// Komt de bezoeker via het kleine formulier van een andere pagina op /offerte/#offerte of /offerte/videogesprek/#offerte, dan staat op mobiel
-// (paneel met foto en uitleg boven het formulier) het formulier zelf pas onder de vouw: spring naar de velden Van en Naar (scroll-padding-top van html geldt).
-(function(){
-  if(!/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)||location.hash!=='#offerte'||!matchMedia('(max-width:900px)').matches)return;
-  var f=document.querySelector('#offerte-aanvragen form');if(!f)return;
-  f=f.querySelector('.sb-ob__vn')||f;
-  function ga(){f.scrollIntoView({behavior:'instant',block:'start'})}
-  if(document.readyState==='complete')setTimeout(ga,0);else addEventListener('load',function(){setTimeout(ga,0)});
 })();
 
 // Datum en het vinkje "weet ik nog niet" sluiten elkaar uit, in twee richtingen.
