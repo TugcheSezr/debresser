@@ -1624,11 +1624,11 @@ a.btn[href$="#offerte"]:hover,a.btn[href$="#offerte"]:focus-visible,a.ev-btn[hre
 .sb-venster .venster__persoon--doos{clip-path:inset(-80px -80px 0 -80px)}
 @media(min-width:901px){.sb-venster .venster__persoon--doos{height:calc(clamp(415px,44vw,530px) + clamp(40px,4.5vw,65px))}}
 @media(max-width:900px){
-.sb-opslag{padding-top:2rem}
+.sb-opslag{padding-top:2rem;padding-bottom:calc(4.4vw + clamp(12px,2.2vw,30px) - 2px)}
 .sb-opslag .opslag__kaart{margin-bottom:0}
 .sb-opslag .opslag__fig{height:250px;padding-top:0}
 .sb-opslag .opslag__persoon{position:absolute;left:50%;bottom:7px;transform:translateX(-50%);height:236px;width:auto;max-width:none;margin:0;clip-path:polygon(0 0,100% 0,100% calc(100% - 14.55px),0 100%)}
-.sb-opslag .opslag__band{bottom:14px;height:150px}
+.sb-opslag .opslag__band{bottom:calc(4.4vw + clamp(12px,2.2vw,30px) + 12px);height:150px}
 .sb-opslag .opslag__mark{height:34%}
 .sb-opslag .opslag__script{height:40%}
 .sb-venster{padding-top:2rem}
