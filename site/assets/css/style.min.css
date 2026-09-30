@@ -3397,27 +3397,27 @@ a.sbr__profiel span{display:none}
 .c7-dgroep+.c7-dgroep{margin-top:clamp(2.4rem,4.5vw,3.4rem)}
 .c7-dgroep__kop{display:flex;align-items:center;gap:.8rem;margin:0;font-size:clamp(1.3rem,1.05rem + .9vw,1.65rem);font-weight:800;line-height:1.2;color:var(--bruin)}
 .c7-dgroep__kop::after{content:"";flex:1;height:1px;background:rgba(2,13,65,.14)}
-:is(#aanbod,#diensten6) .sb-dienst__ico:has(>img[src*="/img/clay/"]){width:3.4rem;height:3.4rem}
-:is(#aanbod,#diensten6) .sb-dienst__ico>img[src*="/img/clay/"]{width:46px;height:46px}
+:is(#aanbod,#diensten6) .sb-dienst__ico:has(>img[src*="/img/iconen/"]){width:3.4rem;height:3.4rem}
+:is(#aanbod,#diensten6) .sb-dienst__ico>img[src*="/img/iconen/"]{width:46px;height:46px}
 @media(min-width:621px){
-:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst__ico:has(>img[src*="/img/clay/"]){width:3rem;height:3rem}
-:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst__ico>img[src*="/img/clay/"]{width:40px;height:40px}
-:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst:has(.sb-dienst__ico>img[src*="/img/clay/"]) h3{padding-right:3.6rem}
+:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst__ico:has(>img[src*="/img/iconen/"]){width:3rem;height:3rem}
+:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst__ico>img[src*="/img/iconen/"]{width:40px;height:40px}
+:is(#aanbod,#diensten6) .sb-diensten__grid--3 .sb-dienst:has(.sb-dienst__ico>img[src*="/img/iconen/"]) h3{padding-right:3.6rem}
 }
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst{
 box-shadow:0 0 0 1px rgba(51,188,250,.55),0 1px 2px rgba(2,13,65,.08),0 16px 32px -20px rgba(2,13,65,.4)}
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst__pijl{background:var(--teal-paneel)}
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst__pijl svg{filter:brightness(0) invert(1)}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){
-#aanbod .sb-dienst__ico>img[src*="/img/clay/"]{transition:transform .25s var(--ease)}
-#aanbod .sb-dienst:hover .sb-dienst__ico>img[src*="/img/clay/"]{transform:translateY(-3px) scale(1.25)}
+#aanbod .sb-dienst__ico>img[src*="/img/iconen/"]{transition:transform .25s var(--ease)}
+#aanbod .sb-dienst:hover .sb-dienst__ico>img[src*="/img/iconen/"]{transform:translateY(-3px) scale(1.25)}
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst:hover{
 box-shadow:0 0 0 1.5px var(--offerte),0 0 26px -6px rgba(51,188,250,.55),0 22px 38px -22px rgba(2,13,65,.45)}
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst__pijl{transition:background-color .25s var(--ease)}
 :is(main > :is(#aanbod,#diensten6) .sb-diensten__grid--wit, main > #aanbod.sb-diensten--overzicht .sb-diensten__grid) .sb-dienst:hover .sb-dienst__pijl{background:var(--goud-diep)}
 }
 @media(prefers-reduced-motion:no-preference){
-#aanbod .sb-dienst:focus-within .sb-dienst__ico>img[src*="/img/clay/"]{transition:transform .25s var(--ease);transform:translateY(-3px) scale(1.25)}
+#aanbod .sb-dienst:focus-within .sb-dienst__ico>img[src*="/img/iconen/"]{transition:transform .25s var(--ease);transform:translateY(-3px) scale(1.25)}
 }
 .cert-chip.c7-chip--eigen{background:var(--bruin);border-color:var(--bruin)}
 .c7-duurz .c7-sdg__lijst b{width:auto;min-width:2.3rem;padding:0 .45rem;border-radius:999px;background:var(--offerte);color:var(--bruin)}
@@ -4144,7 +4144,7 @@ background:none;color:var(--wit);text-align:left;text-transform:none;letter-spac
 .sb-werkwijze__foto::before{content:"";position:absolute;z-index:1;left:1rem;right:3.5rem;bottom:calc(var(--ww-over) + 5.1rem);height:4px;border-radius:2px;
 background:repeating-linear-gradient(90deg,var(--geel) 0 14px,transparent 14px 24px) 0 0/100% 100% no-repeat}
 .sb-werkwijze__foto::after{content:"";position:absolute;z-index:2;right:1rem;bottom:calc(var(--ww-over) + 2.9rem);width:4.5rem;height:4.5rem;border-radius:50%;
-background:var(--wit) image-set(url(/assets/img/clay/vrachtwagen-104.webp) 1x,url(/assets/img/clay/vrachtwagen-156.webp) 2x) center/56px no-repeat;
+background:var(--wit) url(/assets/img/iconen/kleur/vrachtwagen.svg) center/56px no-repeat;
 box-shadow:0 10px 24px -10px rgba(2,13,65,.6)}
 @media(prefers-reduced-motion:no-preference){
 .sb-werkwijze__persoon{transition:translate .8s var(--ease) .1s,opacity .8s var(--ease) .1s,transform .35s ease}
@@ -5066,3 +5066,11 @@ box-shadow:0 18px 28px -16px rgba(0,0,0,.7)}
 @container (max-height:64px){.drawer__ev{display:none}}
 .drawer__panel:has(.drawer__group[open]) .drawer__evruimte{display:none}
 .drawer__panel:has(.drawer__group[open]) .drawer__nav{flex:1 1 auto}
+
+/* c7-f12b */
+.c7-kev__ster{background:#fff;border-radius:50%;padding:.7rem;box-sizing:border-box;object-fit:contain}
+.drawer__ev img{width:min(84cqw,340px,calc(78cqh*4.03));height:auto;max-width:none}
+.mega__ev img{height:44px}
+/* c7-f12c */
+.c7-blog__clay{background:#fff;border-radius:50%;box-sizing:border-box;padding:4px;object-fit:contain;filter:none;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.c7-dz-kaart__ico,.c7-dz-tegel__ico,.c7-faq__icoon,.c7-plek__pin,.dzc__doos{filter:none}
