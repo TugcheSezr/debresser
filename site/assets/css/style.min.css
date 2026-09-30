@@ -1010,8 +1010,8 @@ display:inline-flex;align-items:center;gap:.5rem;
 font:600 .92rem/1 var(--font-kop);color:var(--goud-diep);text-decoration:none;
 transition:gap .2s var(--ease);
 }
-.mega__foot a:hover{gap:.85rem}
-.mega__foot svg{width:14px;height:14px}
+.mega__foot a:hover svg{transform:translateX(.35rem)}
+.mega__foot svg{width:14px;height:14px;transition:transform .2s var(--ease)}
 .nav-toggle{
 display:none;align-items:center;justify-content:center;
 width:44px;height:44px;padding:0;margin-left:.2rem;
@@ -4945,7 +4945,7 @@ transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transi
 @media (hover:hover){.ovg-b42b .c7-b42b__podium:hover .c7-b42b__figuur{transform:scale(1.03)}}
 @media (prefers-reduced-motion:reduce){.ovg-b42b .c7-b42b__podium:hover .c7-b42b__figuur{transform:none}.ovg-b42b .c7-b42b__figuur{transition-duration:.001ms}}
 @media(prefers-reduced-motion:reduce){
-.faq__tk::before,.faq__tk::after,.mega,.mega__foot a,.drawer__group>summary::after,a.dienst h3::after{transition:none}
+.faq__tk::before,.faq__tk::after,.mega,.mega__foot a,.mega__foot svg,.drawer__group>summary::after,a.dienst h3::after{transition:none}
 .vcl-bar span{transition:none}
 }
 .sb-persoon__rol{background:var(--geel);color:var(--bruin)}

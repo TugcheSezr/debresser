@@ -496,8 +496,8 @@ display:inline-flex;align-items:center;gap:.5rem;
 font:600 .92rem/1 var(--font-kop);color:var(--goud-diep);text-decoration:none;
 transition:gap .2s var(--ease);
 }
-.mega__foot a:hover{gap:.85rem}
-.mega__foot svg{width:14px;height:14px}
+.mega__foot a:hover svg{transform:translateX(.35rem)}
+.mega__foot svg{width:14px;height:14px;transition:transform .2s var(--ease)}
 .nav-toggle{
 display:none;align-items:center;justify-content:center;
 width:44px;height:44px;padding:0;margin-left:.2rem;
@@ -2420,7 +2420,7 @@ transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transi
 .m3c-som::before,.m3c-som::after,.m3c-tab,.m3c-knop,.js .m3c-balk,.js .m3c-balk.is-zichtbaar{transition:none}
 }
 @media(prefers-reduced-motion:reduce){
-.faq__tk::before,.faq__tk::after,.mega,.mega__foot a,.drawer__group>summary::after,a.dienst h3::after{transition:none}
+.faq__tk::before,.faq__tk::after,.mega,.mega__foot a,.mega__foot svg,.drawer__group>summary::after,a.dienst h3::after{transition:none}
 }
 @media(prefers-reduced-motion:no-preference){
 .js .sb-team__rij>.sb-persoon{transition:opacity .55s var(--ease),transform .55s var(--ease),translate .3s ease;transition-delay:0s,0s,0s!important}
