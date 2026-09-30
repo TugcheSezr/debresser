@@ -1789,7 +1789,7 @@ font:700 .74rem/1.2 var(--font-kop);letter-spacing:.12em;text-transform:uppercas
 .hf1 .of-field{padding-block:6px}
 }
 @media(max-width:359px){.hf1-kv .sb-sterren{display:none}}
-.topbar__kv{display:inline-flex;align-items:center;gap:.4rem;color:#fff;text-decoration:none;line-height:1;padding:.3rem .25rem;margin-right:.3rem;white-space:nowrap}
+.topbar__kv{display:inline-flex;align-items:center;gap:.4rem;color:#fff;text-decoration:none;line-height:1;padding:.3rem .25rem;margin-right:.3rem;white-space:nowrap;flex:none}
 .topbar__kv .kv-icoon{width:20px;height:18px;flex:none}
 .topbar__kv b{font:700 .95rem/1 var(--font-titel)}
 .topbar__kv .sb-sterren{font-size:.62rem}

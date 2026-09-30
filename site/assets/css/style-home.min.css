@@ -951,7 +951,7 @@ body:not(:has(.hero)) .topbar::before{display:none}
 .hf1 .of-title{margin-bottom:6px}
 .hf1 .of-field{padding-block:6px}
 }
-.topbar__kv{display:inline-flex;align-items:center;gap:.4rem;color:#fff;text-decoration:none;line-height:1;padding:.3rem .25rem;margin-right:.3rem;white-space:nowrap}
+.topbar__kv{display:inline-flex;align-items:center;gap:.4rem;color:#fff;text-decoration:none;line-height:1;padding:.3rem .25rem;margin-right:.3rem;white-space:nowrap;flex:none}
 .topbar__kv .kv-icoon{width:20px;height:18px;flex:none}
 .topbar__kv b{font:700 .95rem/1 var(--font-titel)}
 .topbar__kv .sb-sterren{font-size:.62rem}

@@ -25,9 +25,9 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260930-1556">
-<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20260930-1556">
-<script src="/assets/js/site.js?v=20260930-1556" defer></script>
+<link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20260930-1704">
+<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20260930-1704">
+<script src="/assets/js/site.js?v=20260930-1704" defer></script>
 </head>
 <body>
 <!-- gegenereerd door _werk/build_paginas.py -->
@@ -630,8 +630,8 @@
   </div>
   <img class="art-b2" src="/assets/img/deco/kroon-sinds-1923.svg" alt="" width="727" height="463" loading="lazy" decoding="async">
 </section>
-<script src="/assets/js/reviews.js?v=20260930-1556" defer></script>
-<script src="/assets/js/dienst-intro.js?v=20260930-1556" defer></script>
+<script src="/assets/js/reviews.js?v=20260930-1704" defer></script>
+<script src="/assets/js/dienst-intro.js?v=20260930-1704" defer></script>
 
 <section class="sectie sectie--creme2 sb-ob" id="offerte-aanvragen" aria-labelledby="offerte-aanvragen-kop">
   <div class="wrap">
@@ -650,7 +650,7 @@
           <a class="sb-ob__bel" href="tel:+31135282372"><span class="sb-ob__belico" aria-hidden="true"><svg><image href="/assets/img/iconen/kleur/telefoon-hoorn.svg" width="100%" height="100%"/></svg></span>+31 (0)13 52 82 372</a>
         </div>
       </div>
-      <form class="sb-ob__form" action="https://api.web3forms.com/submit" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw aanvraag is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
+      <form class="sb-ob__form" action="https://api.web3forms.com/submit#offerte" method="POST" data-w3f data-mail="info@debresser.nl" data-bedankt="Bedankt, uw aanvraag is verstuurd." data-verder="Wij nemen binnen 24 uur contact met u op. Liever direct? Bel +31 (0)13 52 82 372.">
         <input type="hidden" name="access_key" value="e6f9abc0-5baf-4026-939d-707f2f1d9e53">
         <input type="hidden" name="subject" value="Nieuwe offerteaanvraag via de website van De Bresser">
         <input type="hidden" name="from_name" value="De Bresser offerteformulier">
@@ -826,7 +826,7 @@
       <img class="cb__beeld" src="/assets/img/cookie/cf36-a2-hand-350.webp" srcset="/assets/img/cookie/cf36-a2-hand-350.webp 350w, /assets/img/cookie/cf36-a2-hand-700.webp 700w" sizes="85px" width="350" height="445" alt="" aria-hidden="true" loading="lazy" decoding="async">
       <div>
         <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopHoofd">Cookies bij De Bresser</p></div>
-        <p class="cb__uitleg">Wij gebruiken alleen techniek die nodig is om de site te laten werken. Met uw toestemming laden we ook video's van YouTube. <a href="/privacyverklaring/">Meer weten</a></p>
+        <p class="cb__uitleg">Wij gebruiken techniek die nodig is om de site te laten werken. Met uw toestemming laden we ook video's van YouTube en meten we met Google Analytics hoe de site wordt gebruikt. <a href="/privacyverklaring/">Meer weten</a></p>
       </div>
     </div>
     <div class="cb__knoppen">
@@ -840,6 +840,7 @@
     <ul class="cb__lijst">
       <li><label><input type="checkbox" checked disabled><span class="cb__kolom"><span class="cb__labeltekst">Noodzakelijk</span><span class="cb__note">Altijd aan, nodig om de site te laten werken.</span></span></label></li>
       <li><label><input type="checkbox" data-cb-categorie="voorkeuren"><span class="cb__kolom"><span class="cb__labeltekst">Video's&nbsp;(YouTube)</span><span class="cb__note">Laadt video's van YouTube, bijvoorbeeld op de homepage.</span></span></label></li>
+      <li><label><input type="checkbox" data-cb-categorie="statistieken"><span class="cb__kolom"><span class="cb__labeltekst">Statistieken&nbsp;(Google&nbsp;Analytics)</span><span class="cb__note">Meet hoe bezoekers de site gebruiken, zodat wij hem kunnen verbeteren.</span></span></label></li>
     </ul>
     <div class="cb__knoppen">
       <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
@@ -847,6 +848,7 @@
     </div>
   </div>
 </div>
-<script src="/assets/js/cookie-consent-v2.js?v=20260930-1556" defer></script>
+<script type="text/plain" data-cb-categorie="statistieken" src="/assets/js/meting-v1.js?v=20260930-1704"></script>
+<script src="/assets/js/cookie-consent-v3.js?v=20260930-1704" defer></script>
 </body>
 </html>
