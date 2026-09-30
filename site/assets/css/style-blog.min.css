@@ -2275,3 +2275,19 @@ transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transi
 }
 @keyframes c7a-veer{0%,62%,100%{transform:translate(-50%,-84%)}72%{transform:translate(-50%,-100%)}82%{transform:translate(-50%,-80%)}90%{transform:translate(-50%,-88%)}}
 @keyframes c7a-halo{0%,62%,100%{opacity:.9;transform:scale(1)}72%{opacity:.45;transform:scale(.7)}86%{opacity:1;transform:scale(1.25)}}
+
+/* c7-f12 */
+.merk--ev img{height:50px;width:auto}
+@media(max-width:940px){.merk--ev img{height:40px}}
+.mega__foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left}
+.mega__foot a.mega__ev{display:block;flex:none;line-height:0;gap:0}
+.mega__ev img{display:block;height:36px;width:auto}
+.mega__foot a.mega__ev:focus-visible{outline:2px solid var(--goud-diep);outline-offset:3px;border-radius:4px}
+.drawer__evruimte{flex:1 1 0;min-height:0;container-type:size;display:flex;align-items:center;justify-content:center;padding:0 1.25rem}
+.drawer__ev{display:block;line-height:0}
+.drawer__ev img{display:block;height:40px;width:auto;max-width:100%}
+.drawer__ev:focus-visible{outline:2px solid var(--goud-diep);outline-offset:3px;border-radius:4px}
+.drawer__nav{flex:0 1 auto}
+@container (max-height:64px){.drawer__ev{display:none}}
+.drawer__panel:has(.drawer__group[open]) .drawer__evruimte{display:none}
+.drawer__panel:has(.drawer__group[open]) .drawer__nav{flex:1 1 auto}
