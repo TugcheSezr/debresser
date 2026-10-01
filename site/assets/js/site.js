@@ -207,7 +207,7 @@
       .then(function(res){
         if(!res.success)return mis();
         if(window.kvFormConversie)window.kvFormConversie();
-        f.innerHTML='<div class="lf__done" role="status"><strong>Bedankt, uw aanvraag is verstuurd.</strong><br>Wij nemen zo snel mogelijk contact met u op. Liever direct? Bel <a href="tel:+31135425935">+31 (0)13 54 25 935</a> of mail naar <a href="mailto:info@debresser.nl">info@debresser.nl</a>.</div>';
+        f.innerHTML='<div class="lf__done" role="status"><strong>Bedankt, uw aanvraag is verstuurd.</strong><br>Wij nemen zo snel mogelijk contact met u op. Liever direct? Bel <a href="tel:+31135425935">013 542 59 35</a> of mail naar <a href="mailto:info@debresser.nl">info@debresser.nl</a>.</div>';
       })
       .catch(mis);
   });
@@ -266,7 +266,7 @@
         .catch(function(){
           k.disabled=false;k.innerHTML=o;
           var mail=f.getAttribute('data-mail')||'info@debresser.nl';
-          m.textContent='Het versturen is niet gelukt. Bel ons op +31 (0)13 54 25 935 of mail naar '+mail+'.';
+          m.textContent='Het versturen is niet gelukt. Bel ons op 013 542 59 35 of mail naar '+mail+'.';
         });
     });
   });
