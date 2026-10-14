@@ -222,6 +222,8 @@
   if(!window.fetch||!window.FormData)return;
   [].forEach.call(document.querySelectorAll('form[data-w3f]'),function(f){
     var m=f.querySelector('.sbf__melding'),k=f.querySelector('button[type=submit]');
+    // Vaste soort voor de meting (meting-v1.js): het #-deel van de action, of het sollicitatieformulier op id.
+    var soort={'#offerte':'offerte','#videogesprek':'videogesprek'}[(f.getAttribute('action')||'').replace(/^[^#]*/,'')]||{'sbf-sollicitatie':'sollicitatie','sbf-tekenbonus':'tekenbonus'}[f.id]||'';
     f.noValidate=true;
     function melding(el){
       var v=el.validity;
@@ -237,6 +239,7 @@
     })});
     f.addEventListener('submit',function(e){
       e.preventDefault();
+      if(f.dataset.bezig)return;  // al onderweg of al verstuurd: niet nog een keer
       [].forEach.call(f.querySelectorAll('[aria-invalid]'),wis);
       var stuk=[].filter.call(f.elements,function(el){return el.willValidate&&!el.checkValidity()});
       if(stuk.length){
@@ -251,19 +254,20 @@
       Array.from(d.keys()).forEach(function(x){if(!d.getAll(x).join('').trim())d.delete(x)});
       var re=f.querySelector('input[type=email]');if(re&&re.value)d.append('replyto',re.value);
       d.append('Pagina',document.title+' ('+location.pathname+')');
-      var o=k.innerHTML;k.disabled=true;k.textContent='Versturen...';m.textContent='';
+      var o=k.innerHTML;k.disabled=true;k.textContent='Versturen...';m.textContent='';f.dataset.bezig='1';
       // Zonder Web3Forms-key (navigatie.WEB3FORMS leeg) gaat er niets weg: meteen naar de uitweg hieronder.
       ((f.querySelector('input[name=access_key]')||{}).value?fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:d}):Promise.reject(0))
-        .then(function(r){return r.json()})
+        .then(function(r){if(!r.ok)throw 0;return r.json()})
         .then(function(r){
-          if(!r||!r.success)throw 0;
-          if(window.kvFormConversie)window.kvFormConversie();
+          if(!r||r.success!==true)throw 0;
+          try{if(window.kvFormConversie)window.kvFormConversie(soort)}catch(x){/* de meting mag het bedankje niet breken */}
           var ok=document.createElement('div');ok.className='sbf__klaar';ok.setAttribute('role','status');ok.tabIndex=-1;
           var s=document.createElement('strong');s.textContent=f.getAttribute('data-bedankt');ok.appendChild(s);
           ok.appendChild(document.createTextNode(f.getAttribute('data-verder')||''));
           f.innerHTML='';f.appendChild(ok);ok.focus();
         })
         .catch(function(){
+          delete f.dataset.bezig;
           k.disabled=false;k.innerHTML=o;
           var mail=f.getAttribute('data-mail')||'info@debresser.nl';
           m.textContent='Het versturen is niet gelukt. Bel ons op 013 542 59 35 of mail naar '+mail+'.';

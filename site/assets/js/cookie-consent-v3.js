@@ -7,12 +7,19 @@
    meting krijgt zonder er zelf voor te kiezen. Zonder toestemming voor statistieken worden meetcookies (_ga, _gcl_) gewist.
    Gate voor embeds: <script type="text/plain" data-cb-categorie="voorkeuren">...</script> wordt pas
    geactiveerd (type verwijderd, opnieuw ingevoegd zodat de browser hem uitvoert) na toestemming voor die
-   categorie; de inhoud van zo'n script blijft ongewijzigd, dus een CSP-hash op de inhoud blijft geldig. */
+   categorie; de inhoud van zo'n script blijft ongewijzigd, dus een CSP-hash op de inhoud blijft geldig.
+   14-10-2026 (meting zonder GTM): een bewaarde keuze telt alleen met echte true/false per categorie en een geldige tijd,
+   anders komt de banner terug. De actuele keuze van deze pagina staat ook in het geheugen (window.bresserCookies), zodat
+   meting-v1.js bij het uitvoeren de keuze van dat moment leest, ook als opslag geblokkeerd is. Een keuze die in een ander
+   tabblad wordt opgeslagen of ingetrokken, geldt via het storage-event meteen ook hier; wordt de keuze daar verwijderd
+   (removeItem of clear), dan telt dat hier als intrekken, ook als de terugvalcookie nog een oude keuze bevat. */
 (function () {
   'use strict';
   var BRESSER_KEY = 'bresser_cookie_consent_v1';
   var MAX_DAGEN = 365;
   var CATEGORIEEN = ['voorkeuren', 'statistieken'];
+
+  var huidig = null;  // de keuze die nu in deze pagina geldt
 
   function nu() { return new Date(); }
 
@@ -28,11 +35,11 @@
     if (!ruw) return null;
     var data;
     try { data = JSON.parse(ruw); } catch (e) { return null; }
-    if (!data || data.v !== 1 || !data.tijd) return null;
+    if (!data || data.v !== 1 || typeof data.tijd !== 'string') return null;
     var leeftijdDagen = (nu().getTime() - new Date(data.tijd).getTime()) / 86400000;
-    if (leeftijdDagen > MAX_DAGEN || leeftijdDagen < 0) return null;
+    if (!isFinite(leeftijdDagen) || leeftijdDagen > MAX_DAGEN || leeftijdDagen < 0) return null;
     for (var i = 0; i < CATEGORIEEN.length; i++) {
-      if (!data.categorieen || !(CATEGORIEEN[i] in data.categorieen)) return null;
+      if (!data.categorieen || typeof data.categorieen[CATEGORIEEN[i]] !== 'boolean') return null;
     }
     return data;
   }
@@ -74,6 +81,7 @@
   }
 
   function pasToe(data) {
+    huidig = data;
     for (var i = 0; i < CATEGORIEEN.length; i++) {
       var c = CATEGORIEEN[i];
       if (data.categorieen && data.categorieen[c]) activeerCategorie(c);
@@ -182,6 +190,15 @@
       }
     });
 
+    // Keuze opgeslagen of ingetrokken in een ander tabblad (alleen via localStorage). Verwijderd (removeItem of clear), leeg
+    // of ongeldig telt als intrekken; de terugvalcookie geldt alleen bij het openen van een pagina en bij geblokkeerde opslag.
+    window.addEventListener('storage', function (e) {
+      if (e.key !== BRESSER_KEY && e.key !== null) return;
+      var data = e.newValue ? leesOpslag() : null;
+      if (data) pasToe(data);
+      else if (huidig) pasToe({ v: 1, tijd: nu().toISOString(), keuze: 'denied', categorieen: alleCategorieen(false) });
+    });
+
     var opgeslagen = leesOpslag();
     if (opgeslagen) { pasToe(opgeslagen); return; }
     openBanner(false);
@@ -192,6 +209,10 @@
     for (var i = 0; i < CATEGORIEEN.length; i++) out[CATEGORIEEN[i]] = waarde;
     return out;
   }
+
+  window.bresserCookies = {
+    toestemming: function (categorie) { return !!(huidig && huidig.categorieen && huidig.categorieen[categorie] === true); }
+  };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

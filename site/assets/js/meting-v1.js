@@ -1,48 +1,116 @@
-/* De Bresser meting v1 (FINAAL12e, 30-9-2026): Google Tag Manager GTM-KW9T4MD met GA4 G-4SC19GL438, zoals op de vorige site.
+/* De Bresser meting v1 (14-10-2026, GA4-herstel): de Google-tag (gtag.js) rechtstreeks naar GA4 G-4SC19GL438 (property
+   351891814). Geen Google Tag Manager meer: de oude container GTM-KW9T4MD telde een formulierpoging al voordat Web3Forms
+   antwoordde, telde sollicitaties als aanvraag en mat WhatsApp niet.
    Dit bestand staat in elke pagina als <script type="text/plain" data-cb-categorie="statistieken" src="...">; cookie-consent-v3.js
-   voert het pas uit na toestemming voor "statistieken". Alleen op www.debresser.nl, zodat de dummy en lokale kopieen niets meten.
-   Alleen Google-tags: de blocklist houdt eigen html, eigen pixels en scripts, pixels en iframes van derden tegen, en daarmee ook
-   alle templates uit de container (Leadinfo, Clarity, Cookiebot, Smartlook, Promptwatch en de oude Product-JSON-LD).
-   Geen advertentiecookies: ad_storage, ad_user_data en ad_personalization blijven denied.
-   Formulierevents komen uit de container zelf (gtm.formSubmit, gefilterd op de form-action): de aanvraagformulieren posten
-   naar api.web3forms.com/submit#offerte of #videogesprek (een fragment gaat niet mee naar de server), de sollicitaties
-   zonder fragment en tellen dus als form_submit_rest. */
+   voert het pas uit na toestemming voor "statistieken". Alleen op https://www.debresser.nl, zodat de dummy en lokale kopieen
+   niets meten. Bij het uitvoeren telt de actuele keuze (window.bresserCookies), niet de keuze van het moment van activeren.
+   Geen advertentiemeting: ad_storage, ad_user_data en ad_personalization blijven denied, Google Signals en
+   advertentiepersonalisatie staan uit en ads_data_redaction haalt klik-ID's uit signalen naar Google Ads.
+   Gebeurtenissen: page_view (een per pagina); phone_clicks, email_clicks en whatsapp_clicks (alleen ons eigen nummer) met een
+   vaste link_location; form_submit_offerte en form_submit_videochat (aanvragen) en sollicitatie_verstuurd (sollicitatie of
+   tekenbonus, geen klantaanvraag), pas na een geslaagde verzending via site.js (window.kvFormConversie).
+   Wat zonder toestemming gebeurde, wordt nooit later alsnog verstuurd. */
 (function () {
   'use strict';
-  if (location.hostname !== 'www.debresser.nl' || window.bresserMeting) return;
+  if (location.hostname !== 'www.debresser.nl' || location.protocol !== 'https:' || window.bresserMeting) return;
   window.bresserMeting = true;
-  var GA4 = 'G-4SC19GL438';
+  var ID = 'G-4SC19GL438', UIT = 'ga-disable-' + ID;
   var dl = window.dataLayer = window.dataLayer || [];
   function gtag() { dl.push(arguments); }
+  var aan = false, geladen = false, laden = false, ingesteld = false, paginaGemeten = false, wacht = [];
+  window[UIT] = true;
 
-  gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-  dl.push({ 'gtm.blocklist': ['html', 'customScripts', 'customPixels', 'nonGooglePixels', 'nonGoogleScripts', 'nonGoogleIframes'] });
-  dl.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KW9T4MD';
-  document.head.appendChild(s);
+  function toestemming(analytics) {
+    return { analytics_storage: analytics, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+  }
+  gtag('consent', 'default', toestemming('denied'));
+  gtag('set', 'ads_data_redaction', true);
 
-  // Het adresformulier in de hero (#ofForm) stuurt alleen door naar /offerte/. Omdat zijn action "offerte" bevat, zou de
-  // container er al form_submit_offerte voor tellen; daarom bereikt zijn submit de formulierluisteraar van GTM niet.
-  var hero = document.getElementById('ofForm');
-  if (hero) hero.addEventListener('submit', function (e) { e.stopPropagation(); });
-
-  // site.js zet novalidate op de Web3Forms-formulieren (form[data-w3f]) en keurt zelf met checkValidity. Een ongeldige poging
-  // of een botcheck-treffer geeft dus wel een submit-event, maar verstuurt niets. De container telt de eerste gtm.formSubmit
-  // per pagina als aanvraag, dus zo'n poging mag GTM niet bereiken.
-  [].forEach.call(document.querySelectorAll('form[data-w3f]'), function (f) {
-    f.addEventListener('submit', function (e) {
-      var bot = f.querySelector('input[name=botcheck]');
-      if (!f.checkValidity() || (bot && bot.checked)) e.stopPropagation();
+  // Adres voor Google: alleen het pad van een bestaande pagina (uit de canonical; een onbekend adres krijgt de 404-pagina,
+  // die geen canonical heeft) plus korte campagnecodes. Formulierinvoer, zoektermen en het #-deel gaan nooit mee.
+  function adres() {
+    var pad = '/404.html', c = document.querySelector('link[rel="canonical"]');
+    try { var u = new URL(c.href); if (u.hostname === 'www.debresser.nl') pad = u.pathname; } catch (e) { /* geen canonical */ }
+    var q = new URLSearchParams(location.search), mee = new URLSearchParams();
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_id', 'utm_content', 'utm_term'].forEach(function (k) {
+      var v = q.get(k);
+      // korte labels; vrije tekst, e-mailadressen en lange cijferreeksen (telefoon) vallen af
+      if (v && /^[a-zA-Z][\w-]{0,99}$/.test(v) && !/\d{7}/.test(v)) mee.set(k, v);
     });
-  });
+    ['gclid', 'gbraid', 'wbraid'].forEach(function (k) {
+      var v = q.get(k);
+      if (v && /^[\w-]{10,200}$/.test(v) && /[a-zA-Z]/.test(v)) mee.set(k, v);
+    });
+    var s = mee.toString();
+    return 'https://www.debresser.nl' + pad + (s ? '?' + s : '');
+  }
+  // Vorige pagina: alleen de herkomstsite, nooit het pad of de zoekopdracht.
+  function herkomst() {
+    try { var u = new URL(document.referrer); return /^https?:$/.test(u.protocol) ? u.origin + '/' : ''; } catch (e) { return ''; }
+  }
+  var plek = adres(), vorige = herkomst();
 
-  // Keuze later gewijzigd via Cookie-instellingen: meting uit of weer aan in deze pagina.
-  // Het wissen van de meetcookies bij intrekken doet cookie-consent-v3.js, ook op pagina's waar dit script niet laadde.
-  document.addEventListener('bresser:consent', function (e) {
-    var aan = !!(e.detail && e.detail.categorieen && e.detail.categorieen.statistieken);
-    window['ga-disable-' + GA4] = !aan;
-    gtag('consent', 'update', { analytics_storage: aan ? 'granted' : 'denied' });
-  });
+  function stuur(naam, extra) {
+    if (!aan) return;  // zonder toestemming niets, ook niet bewaren voor later
+    var p = { send_to: ID, page_location: plek, page_referrer: vorige };
+    for (var k in extra) p[k] = extra[k];
+    if (!geladen) { wacht.push([naam, p]); return; }  // toestemming is er, de tag laadt nog
+    gtag('event', naam, p);
+  }
+  function start() {
+    if (!aan || !geladen) return;
+    if (!ingesteld) {
+      ingesteld = true;
+      gtag('config', ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false,
+        page_location: plek, page_referrer: vorige });
+    }
+    if (!paginaGemeten) { paginaGemeten = true; stuur('page_view'); }
+    var w = wacht; wacht = [];
+    w.forEach(function (e) { gtag('event', e[0], e[1]); });
+  }
+  function laad() {
+    if (geladen || laden) return;
+    laden = true;
+    gtag('js', new Date());
+    var s = document.createElement('script');
+    s.async = true;
+    s.referrerPolicy = 'no-referrer';
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    s.onload = function () { geladen = true; laden = false; start(); };
+    s.onerror = function () { laden = false; wacht = []; s.remove(); };
+    document.head.appendChild(s);
+  }
+  function pas(nieuw) {
+    aan = nieuw;
+    window[UIT] = !aan;  // eerst: ook een al geladen Google-tag stuurt dan niets meer
+    if (!aan) wacht = [];
+    gtag('consent', 'update', toestemming(aan ? 'granted' : 'denied'));
+    if (aan) { laad(); start(); }
+  }
+  function actueel() { return !!(window.bresserCookies && window.bresserCookies.toestemming('statistieken')); }
+
+  // Bellen, mailen en WhatsApp naar ons eigen nummer. Een klik is interesse in contact, geen bewezen gesprek. Het mailadres
+  // voor sollicitaties (pz@) telt niet: dat is geen klantcontact. Capture-fase, zodat ook links in later ingevoegde blokken en
+  // klikken die verderop worden tegengehouden meetellen; het click-event komt ook bij Enter op een link en bij een tik op mobiel.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var naam = a.protocol === 'tel:' ? 'phone_clicks' :
+      a.protocol === 'mailto:' ? (/^mailto:pz@/i.test(a.href) ? '' : 'email_clicks') :
+      a.hostname === 'wa.me' && a.pathname === '/31773232100' ? 'whatsapp_clicks' : '';
+    if (!naam) return;
+    stuur(naam, { link_location: a.closest('.sbf__klaar, .sbf__melding, .lf__done') ? 'form_result' :
+      a.closest('.wa-zweef') ? 'floating' : a.closest('.mcta') ? 'mobile_bar' :
+      a.closest('.topbar, .drawer') ? 'header' : a.closest('footer') ? 'footer' : 'content' });
+  }, true);
+
+  // site.js roept dit aan na HTTP 2xx met success === true van Web3Forms, met een vaste soort per formulier.
+  var SOORTEN = { offerte: 'form_submit_offerte', videogesprek: 'form_submit_videochat',
+    sollicitatie: 'sollicitatie_verstuurd', tekenbonus: 'sollicitatie_verstuurd' };
+  window.kvFormConversie = function (soort) {
+    if (Object.prototype.hasOwnProperty.call(SOORTEN, soort)) stuur(SOORTEN[soort], { form_type: soort });
+  };
+  // Keuze gewijzigd via Cookie-instellingen of in een ander tabblad: meting uit of weer aan in deze pagina.
+  document.addEventListener('bresser:consent', function () { if (actueel() !== aan) pas(!aan); });
+  pas(actueel());
 })();
