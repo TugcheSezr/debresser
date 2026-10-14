@@ -688,6 +688,7 @@ cursor:pointer}
 @media(max-width:760px),(prefers-reduced-motion:reduce){
 .hero__videoknop{display:none}
 }
+.hero__videoknop[hidden]{display:none}
 main[tabindex="-1"]:focus{outline:none}
 .lf__adresveld{position:relative}
 .lf__keuzes{position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:30;margin:0;padding:.25rem;list-style:none;background:#fff;border-radius:12px;box-shadow:0 12px 28px rgba(29,29,27,.3);max-height:14rem;overflow:auto}

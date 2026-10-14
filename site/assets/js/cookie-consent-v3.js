@@ -12,7 +12,10 @@
    anders komt de banner terug. De actuele keuze van deze pagina staat ook in het geheugen (window.bresserCookies), zodat
    meting-v1.js bij het uitvoeren de keuze van dat moment leest, ook als opslag geblokkeerd is. Een keuze die in een ander
    tabblad wordt opgeslagen of ingetrokken, geldt via het storage-event meteen ook hier; wordt de keuze daar verwijderd
-   (removeItem of clear), dan telt dat hier als intrekken, ook als de terugvalcookie nog een oude keuze bevat. */
+   (removeItem of clear), dan telt dat hier als intrekken, ook als de terugvalcookie nog een oude keuze bevat.
+   14-10-2026 (popup 0.3.3): de schakelaars tonen bij heropenen de keuze die nu in deze pagina geldt (huidig), focus gaat
+   naar de titel van de laag, Escape in de instellingen gaat de eerste keer terug naar de eerste laag. Zonder geldige
+   bewaarde keuze worden meetcookies bij het openen van een pagina gewist, net als bij weigeren. */
 (function () {
   'use strict';
   var BRESSER_KEY = 'bresser_cookie_consent_v1';
@@ -102,26 +105,36 @@
   }
 
   var FOCUSBAAR = 'button:not([disabled]), input:not([disabled])';
-  var banner, laagHoofd, laagAanpassen, vorigeFocus, m3cHerstel;
+  var banner, laagHoofd, laagAanpassen, vorigeFocus, voorkeurLijst, meerKeuzes;
 
-  function zetM3cOffset(hoogtePx) {
-    try {
-      document.documentElement.style.setProperty('--m3c-onder', hoogtePx ? hoogtePx + 'px' : '0px');
-    } catch (e) { /* geen custom property-steun: geen probleem, alleen geen verschuiving */ }
+  // De schakelaars tonen de keuze die nu in deze pagina geldt, niet wat er (nog) in opslag staat.
+  function zetVinkjes() {
+    laagAanpassen.querySelectorAll('[data-cb-categorie]').forEach(function (input) {
+      input.checked = !!(huidig && huidig.categorieen && huidig.categorieen[input.dataset.cbCategorie] === true);
+    });
   }
 
   function toonLaag(laag) {
     laagHoofd.hidden = laag !== 'hoofd';
     laagAanpassen.hidden = laag !== 'aanpassen';
+    banner.classList.toggle('is-custom', laag === 'aanpassen');
     banner.setAttribute('aria-labelledby', laag === 'hoofd' ? 'cbKopHoofd' : 'cbKopAanpassen');
-    var eersteVeld = (laag === 'hoofd' ? laagHoofd : laagAanpassen).querySelector(FOCUSBAAR);
-    if (eersteVeld) eersteVeld.focus();
+    if (laag === 'aanpassen') { zetVinkjes(); voorkeurLijst.scrollTop = 0; }
+    document.getElementById(laag === 'hoofd' ? 'cbKopHoofd' : 'cbKopAanpassen').focus();
+    requestAnimationFrame(toonScrollhulp);
+  }
+
+  // "Meer keuzes bekijken" alleen als de keuzelijst in de instellingen niet in zijn geheel past.
+  function toonScrollhulp() {
+    if (banner.hidden || laagAanpassen.hidden) { meerKeuzes.hidden = true; return; }
+    var ruimte = voorkeurLijst.clientHeight + (meerKeuzes.hidden ? 0 : meerKeuzes.getBoundingClientRect().height);
+    meerKeuzes.hidden = voorkeurLijst.scrollHeight <= ruimte + 1;
+    meerKeuzes.textContent = voorkeurLijst.scrollTop + voorkeurLijst.clientHeight >= voorkeurLijst.scrollHeight - 2 ? 'Terug naar boven ↑' : 'Meer keuzes bekijken ↓';
   }
 
   function sluitBanner() {
     banner.hidden = true;
     document.documentElement.classList.remove('heeft-cookiebanner');
-    zetM3cOffset(0);
     if (vorigeFocus && typeof vorigeFocus.focus === 'function') vorigeFocus.focus();
   }
 
@@ -130,18 +143,16 @@
     banner.hidden = false;
     document.documentElement.classList.add('heeft-cookiebanner');
     toonLaag('hoofd');
-    // hoogte na render meten voor de m3c-balk-verschuiving (--m3c-onder), alleen als de balk zichtbaar zou zijn
-    requestAnimationFrame(function () { zetM3cOffset(banner.offsetHeight); });
     banner.dataset.herinstelling = alsHerinstelling ? '1' : '0';
   }
 
   function focusVal(e) {
     if (banner.hidden || e.key !== 'Tab') return;
     var actief = laagHoofd.hidden ? laagAanpassen : laagHoofd;
-    var velden = actief.querySelectorAll(FOCUSBAAR + ', a[href]');
+    var velden = Array.prototype.filter.call(actief.querySelectorAll(FOCUSBAAR + ', a[href]'), function (veld) { return veld.getClientRects().length; });
     if (!velden.length) return;
     var eerste = velden[0], laatste = velden[velden.length - 1];
-    if (!actief.contains(document.activeElement)) { (e.shiftKey ? laatste : eerste).focus(); e.preventDefault(); }
+    if (velden.indexOf(document.activeElement) === -1) { (e.shiftKey ? laatste : eerste).focus(); e.preventDefault(); }
     else if (e.shiftKey && document.activeElement === eerste) { laatste.focus(); e.preventDefault(); }
     else if (!e.shiftKey && document.activeElement === laatste) { eerste.focus(); e.preventDefault(); }
   }
@@ -150,6 +161,7 @@
     if (e.key !== 'Escape' || banner.hidden) return;
     // alleen sluiten als er al een geldige keuze lag (heropend via Cookie-instellingen), nooit de allereerste keer
     if (banner.dataset.herinstelling === '1') sluitBanner();
+    else if (!laagAanpassen.hidden) toonLaag('hoofd');
   }
 
   function init() {
@@ -158,6 +170,15 @@
     laagHoofd = banner.querySelector('[data-laag="hoofd"]');
     laagAanpassen = banner.querySelector('[data-laag="aanpassen"]');
     if (!laagHoofd || !laagAanpassen) return;
+    voorkeurLijst = document.getElementById('cbVoorkeuren');
+    meerKeuzes = document.getElementById('cbMeerKeuzes');
+    meerKeuzes.addEventListener('click', function () {
+      if (voorkeurLijst.scrollTop + voorkeurLijst.clientHeight >= voorkeurLijst.scrollHeight - 2) voorkeurLijst.scrollTop = 0;
+      else voorkeurLijst.scrollTop += Math.max(48, voorkeurLijst.clientHeight * .8);
+      toonScrollhulp();
+    });
+    voorkeurLijst.addEventListener('scroll', toonScrollhulp);
+    if (window.ResizeObserver) new ResizeObserver(function () { requestAnimationFrame(toonScrollhulp); }).observe(voorkeurLijst);
 
     banner.addEventListener('click', function (e) {
       var knop = e.target.closest('[data-cb-actie]');
@@ -179,12 +200,6 @@
     document.addEventListener('keydown', opEscape);
     document.addEventListener('click', function (e) {
       if (e.target.closest('[data-cookie-instellingen]')) {
-        var opgeslagen = leesOpslag();
-        if (opgeslagen && opgeslagen.categorieen) {
-          laagAanpassen.querySelectorAll('[data-cb-categorie]').forEach(function (input) {
-            input.checked = !!opgeslagen.categorieen[input.dataset.cbCategorie];
-          });
-        }
         openBanner(true);
         toonLaag('aanpassen');
       }
@@ -197,10 +212,13 @@
       var data = e.newValue ? leesOpslag() : null;
       if (data) pasToe(data);
       else if (huidig) pasToe({ v: 1, tijd: nu().toISOString(), keuze: 'denied', categorieen: alleCategorieen(false) });
+      if (!banner.hidden && !laagAanpassen.hidden) zetVinkjes();
     });
 
     var opgeslagen = leesOpslag();
     if (opgeslagen) { pasToe(opgeslagen); return; }
+    // Geen geldige keuze (nooit gekozen, verlopen of ongeldig): oude meetcookies weg, zoals bij weigeren.
+    try { wisMeetcookies(); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
     openBanner(false);
   }
 

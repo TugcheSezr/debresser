@@ -1,92 +1,72 @@
-/* De Bresser cookiebanner v3 (bb, CF-43: Accepteren in het groen van de site-CTA, #7BD534 met tekst #020D41; CF-45: Bresser-huisstijl met logo, groene band, afgeronde bovenhoeken en kaartschaduw; v2 herstelde de knoppen en de toelichting). Huisstijl: navy #020d41, blauw #33bcfa, geel #ffc400, groen #7bd534.
-   Positie fixed onderaan, geen layout shift van de pagina zelf (position:fixed, geen ruimte in de flow).
-   z-index 9999: ruim boven .mcta (60), .js .m3c-balk (59) en het genoemde a.wa-zweef (58, niet in CE
-   aangetroffen bij bouw; controleer bij integratie of dit nog klopt). .mcta wordt tijdelijk verborgen
-   zolang de banner open is (geen eigen offset-mechanisme zoals --m3c-onder); .m3c-balk schuift omhoog
-   via --m3c-onder, dat de JS op de gerenderde bannerhoogte zet. */
-#cookieBanner {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  background: #fff;
-  border-top: 4px solid #7bd534;
-  border-radius: var(--r, 15px) var(--r, 15px) 0 0;
-  box-shadow: 0 -1px 2px rgba(2, 13, 65, .06), 0 -14px 34px -14px rgba(2, 13, 65, .38);
-  padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
-  font: 16px/1.5 var(--font-tekst, system-ui, sans-serif);
-  color: #020d41;
+/* De Bresser NL: goedgekeurde cookiepopup 0.3.3 (Accepteren, Afwijzen, Wijzigen), aangesloten op de bestaande consentengine.
+   Alle regels hangen onder #cookieBanner (of de eigen ids #cbVoorkeuren en #cbMeerKeuzes); geen globale reset.
+   Foto, logo en Sora zijn bestaande NL-assets, bytegelijk aan de preview. Vorm en schaal volgen preview/popup.css 0.3.3;
+   achtergrondwaas en scrollvergrendeling zoals bij Bresser BE. */
+#cookieBanner{--cb-ink:#020d41;--cb-accent:#33bcfa;--cb-green:#7bd534;position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:28px 22px;background:rgba(2,13,65,.2);color:var(--cb-ink);font:15px/1.55 Sora,sans-serif}
+#cookieBanner,#cookieBanner *{box-sizing:border-box}
+#cookieBanner[hidden],#cookieBanner [hidden]{display:none!important}
+html.heeft-cookiebanner{overflow:hidden}
+html.heeft-cookiebanner .mcta{display:none!important}
+#cookieBanner button,#cookieBanner input{font:inherit;touch-action:manipulation}
+#cookieBanner button{cursor:pointer}
+#cookieBanner a{touch-action:manipulation}
+#cookieBanner button:focus-visible,#cookieBanner a:focus-visible,#cookieBanner input:focus-visible{outline:3px solid var(--cb-ink);outline-offset:4px}
+#cookieBanner .cb__kaart{background:#fff;width:100%;max-width:900px;padding:26px;border-radius:18px;border-top:4px solid var(--cb-accent);box-shadow:0 12px 36px #142f2412;max-height:calc(100svh - 56px);overflow:auto}
+#cookieBanner .cb__intro{display:flex;align-items:center;gap:22px}
+#cookieBanner .cb__foto{width:95px;height:120px;object-fit:contain;flex:none;align-self:center}
+#cookieBanner .cb__copy{min-width:0;flex:1}
+#cookieBanner .cb__merk{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+#cookieBanner .cb__logo{height:48px;width:auto;max-width:180px;object-fit:contain;object-position:left center}
+#cookieBanner .cb__land{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#53605c}
+#cookieBanner .cb__titel{font:700 21px/1.3 Sora,sans-serif;letter-spacing:-.35px;margin:0 0 10px;color:var(--cb-ink)}
+#cookieBanner .cb__titel:focus{outline:none}
+#cookieBanner .cb__intro-tekst{margin:0;font-size:14px;line-height:1.65}
+#cookieBanner .cb__beleid{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;font-size:12px}
+#cookieBanner .cb__beleid a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+#cookieBanner .cb__acties{display:flex;gap:10px}
+#cookieBanner .cb__acties button{flex:1;min-width:0;min-height:48px;border-radius:9px;border:2px solid var(--cb-ink);background:#fff;color:var(--cb-ink);padding:10px 8px;font-weight:700;font-size:14px;line-height:1.25}
+#cookieBanner .cb__acties button:hover{background:#f1f4f2}
+#cookieBanner .cb__acties .cb__accepteer{background:var(--cb-green);border-color:#286314;color:#152c15}
+#cookieBanner .cb__acties .cb__accepteer:hover{background:#b2ec83}
+#cookieBanner .cb__doel{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid #e0e7e2;padding:16px 0}
+#cookieBanner .cb__doel strong{font-size:14px}
+#cookieBanner .cb__doel p{font-size:12px;margin:5px 0 0;line-height:1.55;color:#4a5756}
+#cbVoorkeuren{margin-top:12px}
+#cookieBanner .cb__schakelaar{position:relative;flex:0 0 46px;width:46px;height:28px}
+#cookieBanner .cb__schakelaar input{appearance:none;margin:0;width:46px;height:28px;background:#fff;border:2px solid #64726d;border-radius:20px;cursor:pointer}
+#cookieBanner .cb__schakelaar span{pointer-events:none;position:absolute;top:5px;left:5px;width:18px;height:18px;border-radius:50%;background:#64726d;transition:transform .12s}
+#cookieBanner .cb__schakelaar input:checked{background:var(--cb-green);border-color:#286314}
+#cookieBanner .cb__schakelaar input:checked+span{background:#1f4b19;transform:translateX(18px)}
+#cookieBanner .cb__schakelaar input:disabled{cursor:default;opacity:.65}
+#cookieBanner .cb__schakelaar input:disabled+span{opacity:.65}
+#cookieBanner.is-custom .cb__kaart{display:flex;flex-direction:column;overflow:hidden}
+#cookieBanner.is-custom [data-laag="aanpassen"]{display:flex;flex-direction:column;min-height:0}
+#cookieBanner.is-custom .cb__intro,#cookieBanner.is-custom .cb__beleid,#cookieBanner.is-custom .cb__acties{flex-shrink:0}
+#cookieBanner.is-custom #cbVoorkeuren{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;flex:1 1 auto;padding-right:6px}
+#cbMeerKeuzes{flex-shrink:0;min-height:44px;border:0;border-top:1px solid #d4dfd8;background:#f3f6f3;color:var(--cb-ink);font:600 12px/1.4 Sora,sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:8px}
+@media(max-width:520px){
+ #cookieBanner{padding:16px 12px}
+ #cookieBanner .cb__kaart{padding:20px 16px;border-radius:15px;max-height:calc(100svh - 32px)}
+ #cookieBanner .cb__intro{gap:12px;align-items:flex-start;position:relative}
+ #cookieBanner .cb__foto{width:60px;height:76px;position:absolute;right:0;top:0}
+ #cookieBanner .cb__merk{min-height:76px;padding-right:68px;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+ #cookieBanner .cb__logo{height:44px;max-width:155px}
+ #cookieBanner .cb__land{font-size:9px}
+ #cookieBanner .cb__titel{font-size:19px}
+ #cookieBanner .cb__intro-tekst{font-size:13px;line-height:1.65}
+ #cookieBanner .cb__acties{flex-direction:column;gap:8px}
+ #cookieBanner .cb__acties button{flex:none;width:100%;min-height:46px;font-size:14px}
+ #cookieBanner .cb__beleid{font-size:11px;gap:8px;margin:16px 0}
+ #cookieBanner .cb__doel{padding:12px 0}
+ #cookieBanner .cb__doel strong{font-size:13px}
+ #cookieBanner .cb__doel p{font-size:11px}
+ #cookieBanner.is-custom .cb__acties{margin-top:16px}
+ #cookieBanner.is-custom .cb__merk{min-height:44px;margin-bottom:8px}
+ #cookieBanner.is-custom .cb__logo{height:36px}
+ #cookieBanner.is-custom .cb__foto{width:44px;height:56px}
+ #cookieBanner.is-custom .cb__titel{font-size:18px;margin-bottom:6px}
+ #cookieBanner.is-custom .cb__intro-tekst{font-size:12px;line-height:1.5}
+ #cookieBanner.is-custom .cb__doel{padding:8px 0}
 }
-#cookieBanner[hidden] { display: none; }
-html.heeft-cookiebanner .mcta { display: none !important; }
-
-.cb__tekst { display: flex; gap: 1rem; align-items: flex-start; max-width: 1000px; margin: 0 auto 1rem; }
-.cb__beeld { flex: 0 0 auto; width: 85px; height: 80px; object-fit: contain; object-position: bottom; }
-.cb__kopregel { display: flex; align-items: center; gap: .7rem; margin: 0 0 .35rem; min-width: 0; }
-.cb__logo { height: 52px; width: auto; flex: 0 0 auto; display: block; }
-.cb__badge { height: 28px; width: auto; flex: 0 0 auto; margin-left: auto; display: block; }
-.cb__kop { font: 700 1.05rem/1.3 var(--font-kop, inherit); margin: 0; color: #020d41; }
-.cb__uitleg { margin: 0; font-size: .92rem; }
-.cb__uitleg a { color: #020d41; text-decoration: underline; }
-
-.cb__knoppen { display: flex; gap: .6rem; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
-.cb__btn {
-  flex: 1 1 0;
-  min-width: 9rem;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: .95rem;
-  line-height: 1;
-  padding: .8rem 1rem;
-  border-radius: 10px;
-  border: 2px solid #020d41;
-  cursor: pointer;
-  text-align: center;
-}
-/* Groen zoals de offerteknop op de site (--offerte #7BD534, --offerte-tekst #020D41, --offerte-rand en hover #166909). Contrast gemeten:
-   tekst navy op groen 10,04:1; hover wit op #166909 en rand #166909 op de crème ondergrond: zie LEESMIJ. Maat, gewicht en rand 2px gelijk aan de andere knoppen. */
-.cb__btn--vol { background: #7bd534; color: #020d41; border-color: #166909; }
-.cb__btn--vol:hover { background: #166909; color: #fff; }
-.cb__btn--ghost { background: transparent; color: #020d41; }
-.cb__btn--ghost:hover { background: rgba(2, 13, 65, .08); }
-.cb__btn--ghost:focus-visible { outline: 3px solid #020d41; outline-offset: 2px; }
-.cb__btn--vol:focus-visible { outline: 3px solid #020d41; outline-offset: 2px; }
-
-.cb__lijst { list-style: none; margin: 0 0 1rem; padding: 0; max-width: 1000px; margin-inline: auto; }
-.cb__lijst li { padding: .6rem 0; border-bottom: 1px solid rgba(2, 13, 65, .12); }
-.cb__lijst label { display: flex; align-items: flex-start; gap: .6rem; cursor: pointer; }
-.cb__lijst input[type="checkbox"] { margin-top: .2rem; width: 1.1rem; height: 1.1rem; accent-color: #7bd534; flex: 0 0 auto; }
-.cb__kolom { display: block; min-width: 0; }
-.cb__labeltekst { display: block; font-weight: 700; }
-.cb__note { display: block; font-size: .85rem; color: #3b4570; font-weight: 400; }
-
-@media (max-width: 620px) {
-  .cb__tekst { gap: .7rem; }
-  .cb__beeld { width: 64px; height: 60px; }
-  .cb__logo { height: 34px; }
-  .cb__badge { height: 18px; }
-  #cookieBanner { padding: .7rem .8rem calc(.7rem + env(safe-area-inset-bottom)); }
-  .cb__tekst { margin-bottom: .6rem; }
-  .cb__kop { font-size: .98rem; line-height: 1.2; }
-  .cb__uitleg { font-size: .85rem; line-height: 1.4; }
-  .cb__btn { padding: .7rem .4rem; font-size: .92rem; }
-  .cb__lijst li { padding: .45rem 0; }
-  .cb__btn { min-width: 0; }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  #cookieBanner { animation: cb-op .25s ease-out; }
-  @keyframes cb-op { from { transform: translateY(12px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-}
-
-@media print {
-  #cookieBanner { display: none !important; }
-}
-
-@media (max-width: 360px) {
-  .cb__beeld { width: 48px; height: 45px; }
-  .cb__badge { display: none; }
-  .cb__uitleg { font-size: .8rem; }
-  .cb__btn { font-size: .85rem; padding-inline: .2rem; }
-}
+@media(prefers-reduced-motion:reduce){#cookieBanner .cb__schakelaar span{transition:none}}
+@media print{#cookieBanner{display:none!important}}

@@ -25,8 +25,8 @@
 <link rel="apple-touch-icon" href="/assets/img/merk/apple-touch-icon.png">
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/style-home.min.css?v=20261014-1245">
-<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20261001-1914">
+<link rel="stylesheet" href="/assets/css/style-home.min.css?v=20261014-popup033">
+<link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20261014-popup033">
 <script src="/assets/js/site.js?v=20261014-1346" defer></script>
 </head>
 <body>
@@ -328,26 +328,7 @@
       <h1 class="hero__title hero__title--merk" id="hero-titel"><span class="sb-verborgen">Geweldig in verhuizen, opslag en logistiek. </span><span aria-hidden="true">Geweldig in <span class="hero__wissel" data-woorden="verhuizen|opslag|logistiek">verhuizen</span></span><span class="hero__title__sub">Erkende verhuizers &amp; uw partner in full service logistiek</span></h1>
     </div>
   </div>
-  <script type="text/plain" data-cb-categorie="voorkeuren">
-  (function(){var h=document.querySelector('.hero__yt'),k=document.getElementById('heroVideoKnop');if(!h||!k)return;
-   var mq=matchMedia('(min-width:761px) and (prefers-reduced-motion:no-preference)'),START=+h.dataset.start,EINDE=+h.dataset.einde,p,gestart=false,klaar=false,uit=false;
-   var PAUZE='<rect x="1" y="1" width="3.5" height="12" rx="1"/><rect x="7.5" y="1" width="3.5" height="12" rx="1"/>',SPEEL='<path d="M2 1l9 6-9 6z"/>';
-   function toon(){k.hidden=!mq.matches||!klaar}
-   function stand(e){var S=YT.PlayerState;
-    if(e.data===S.PLAYING){if(p.unloadModule)p.unloadModule('captions');h.classList.add('is-speelt')}
-    else if(e.data===S.PAUSED||e.data===S.ENDED)h.classList.remove('is-speelt');
-    if(e.data===S.ENDED){p.seekTo(START,true);p.playVideo()}}
-   function start(){if(!mq.matches||gestart)return;gestart=true;
-    window.onYouTubeIframeAPIReady=function(){p=new YT.Player('heroYouTube',{host:'https://www.youtube-nocookie.com',videoId:h.dataset.youtube,
-     playerVars:{autoplay:1,mute:1,controls:0,disablekb:1,fs:0,rel:0,iv_load_policy:3,cc_load_policy:0,playsinline:1},
-     events:{onReady:function(){klaar=true;p.seekTo(START,true);p.playVideo();toon();
-      setInterval(function(){if(p.getCurrentTime()>EINDE)p.seekTo(START,true)},250)},onStateChange:stand}})};
-    var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s)}
-   k.addEventListener('click',function(){uit=!uit;if(uit)p.pauseVideo();else p.playVideo();
-    k.setAttribute('aria-pressed',uit?'true':'false');k.querySelector('.hero__videoknop__lbl').textContent=uit?'Film afspelen':'Film pauzeren';k.querySelector('svg').innerHTML=uit?SPEEL:PAUZE});
-   if(document.readyState==='complete')start();else addEventListener('load',start);
-   mq.addEventListener('change',function(){if(klaar){if(!mq.matches)p.pauseVideo();else if(!uit)p.playVideo()}start();toon()})})();
-  </script>
+  <script type="text/plain" data-cb-categorie="voorkeuren" src="/assets/js/hero-youtube.js?v=20261014-popup033"></script>
   <img class="art-b6" src="/assets/img/deco/logo-topmovers-wit.svg" alt="" width="813" height="387" loading="lazy" decoding="async">
 </section>
 
@@ -1031,34 +1012,47 @@
 </script>
 
 <div id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cbKopHoofd" hidden>
+ <div class="cb__kaart">
   <div class="cb__laag" data-laag="hoofd">
-    <div class="cb__tekst">
-      <img class="cb__beeld" src="/assets/img/cookie/cf36-a2-hand-350.webp" srcset="/assets/img/cookie/cf36-a2-hand-350.webp 350w, /assets/img/cookie/cf36-a2-hand-700.webp 700w" sizes="85px" width="350" height="445" alt="" aria-hidden="true" loading="lazy" decoding="async">
-      <div>
-        <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopHoofd">Cookies bij De Bresser</p></div>
-        <p class="cb__uitleg">Wij gebruiken techniek die nodig is om de site te laten werken. Met uw toestemming laden we ook video's van YouTube en meten we met Google Analytics hoe de site wordt gebruikt, inclusief klikken op telefoon, e-mail of WhatsApp en succesvol verstuurde formulieren. <a href="/privacyverklaring/">Meer weten</a></p>
+    <div class="cb__intro">
+      <img class="cb__foto" src="/assets/img/cookie/cf36-a2-hand-350.webp" width="350" height="445" alt="" loading="lazy" decoding="async">
+      <div class="cb__copy">
+        <div class="cb__merk"><img class="cb__logo" src="/assets/img/merk/logo-debresser-lossless.webp" width="243" height="240" alt="De Bresser NL" decoding="async"><span class="cb__land">Nederland</span></div>
+        <p class="cb__titel" id="cbKopHoofd" tabindex="-1">Cookies bij De Bresser</p>
+        <p class="cb__intro-tekst">We gebruiken noodzakelijke techniek om de website te laten werken. Met uw toestemming meten we met Google Analytics paginabezoek, contactklikken en succesvol verstuurde formulieren. Ook laden we dan video’s van YouTube. U kunt uw keuze altijd wijzigen of intrekken via Cookie-instellingen.</p>
       </div>
     </div>
-    <div class="cb__knoppen">
-      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="aanpassen">Aanpassen</button>
-      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
-      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="accepteren">Accepteren</button>
+    <p class="cb__beleid"><a href="/privacyverklaring/" target="_blank" rel="noopener">Privacyverklaring</a><span aria-hidden="true">·</span><a href="/cookiebeleid/" target="_blank" rel="noopener">Cookiebeleid</a></p>
+    <div class="cb__acties">
+      <button type="button" class="cb__accepteer" data-cb-actie="accepteren">Accepteren</button>
+      <button type="button" data-cb-actie="weigeren">Afwijzen</button>
+      <button type="button" data-cb-actie="aanpassen">Wijzigen</button>
     </div>
   </div>
   <div class="cb__laag" data-laag="aanpassen" hidden>
-    <div class="cb__kopregel"><img class="cb__logo" src="/assets/img/merk/logo-debresser.webp" width="243" height="240" alt="" aria-hidden="true" decoding="async"><p class="cb__kop" id="cbKopAanpassen">Cookie-instellingen</p></div>
-    <ul class="cb__lijst">
-      <li><label><input type="checkbox" checked disabled><span class="cb__kolom"><span class="cb__labeltekst">Noodzakelijk</span><span class="cb__note">Altijd aan, nodig om de site te laten werken.</span></span></label></li>
-      <li><label><input type="checkbox" data-cb-categorie="voorkeuren"><span class="cb__kolom"><span class="cb__labeltekst">Video's&nbsp;(YouTube)</span><span class="cb__note">Laadt video's van YouTube, bijvoorbeeld op de homepage.</span></span></label></li>
-      <li><label><input type="checkbox" data-cb-categorie="statistieken"><span class="cb__kolom"><span class="cb__labeltekst">Statistieken&nbsp;(Google&nbsp;Analytics)</span><span class="cb__note">Meet hoe bezoekers de site gebruiken, inclusief klikken op telefoon, e-mail of WhatsApp en succesvol verstuurde formulieren.</span></span></label></li>
-    </ul>
-    <div class="cb__knoppen">
-      <button type="button" class="cb__btn cb__btn--ghost" data-cb-actie="weigeren">Weigeren</button>
-      <button type="button" class="cb__btn cb__btn--vol" data-cb-actie="bewaren">Keuze opslaan</button>
+    <div class="cb__intro">
+      <img class="cb__foto" src="/assets/img/cookie/cf36-a2-hand-350.webp" width="350" height="445" alt="" loading="lazy" decoding="async">
+      <div class="cb__copy">
+        <div class="cb__merk"><img class="cb__logo" src="/assets/img/merk/logo-debresser-lossless.webp" width="243" height="240" alt="De Bresser NL" decoding="async"><span class="cb__land">Nederland</span></div>
+        <p class="cb__titel" id="cbKopAanpassen" tabindex="-1">Uw cookievoorkeuren</p>
+        <p class="cb__intro-tekst">U kiest zelf wat u toestaat. Noodzakelijke techniek staat altijd aan. U kunt uw toestemming later weer intrekken.</p>
+      </div>
+    </div>
+    <div id="cbVoorkeuren">
+      <div class="cb__doel"><div><strong>Noodzakelijk</strong><p>Nodig om de website te laten werken en uw keuze te onthouden.</p></div><label class="cb__schakelaar"><input type="checkbox" role="switch" checked disabled aria-label="Noodzakelijk, altijd aan"><span></span></label></div>
+      <div class="cb__doel"><div><strong id="cbLabel-statistieken">Statistieken</strong><p id="cbBeschrijving-statistieken">Met Google Analytics meten we paginabezoek, klikken op telefoon, e-mail of WhatsApp en succesvol verstuurde formulieren. Een klik betekent niet dat er een gesprek is geweest.</p></div><label class="cb__schakelaar"><input type="checkbox" role="switch" data-cb-categorie="statistieken" aria-labelledby="cbLabel-statistieken" aria-describedby="cbBeschrijving-statistieken"><span></span></label></div>
+      <div class="cb__doel"><div><strong id="cbLabel-voorkeuren">Video’s van YouTube</strong><p id="cbBeschrijving-voorkeuren">Sta toe dat video’s van YouTube worden geladen en afgespeeld.</p></div><label class="cb__schakelaar"><input type="checkbox" role="switch" data-cb-categorie="voorkeuren" aria-labelledby="cbLabel-voorkeuren" aria-describedby="cbBeschrijving-voorkeuren"><span></span></label></div>
+    </div>
+    <button id="cbMeerKeuzes" type="button" aria-controls="cbVoorkeuren" hidden>Meer keuzes bekijken ↓</button>
+    <p class="cb__beleid"><a href="/privacyverklaring/" target="_blank" rel="noopener">Privacyverklaring</a><span aria-hidden="true">·</span><a href="/cookiebeleid/" target="_blank" rel="noopener">Cookiebeleid</a></p>
+    <div class="cb__acties">
+      <button type="button" class="cb__accepteer" data-cb-actie="bewaren">Keuze opslaan</button>
+      <button type="button" data-cb-actie="weigeren">Afwijzen</button>
     </div>
   </div>
+ </div>
 </div>
 <script type="text/plain" data-cb-categorie="statistieken" src="/assets/js/meting-v1.js?v=20261014-1346"></script>
-<script src="/assets/js/cookie-consent-v3.js?v=20261014-1346" defer></script>
+<script src="/assets/js/cookie-consent-v3.js?v=20261014-popup033" defer></script>
 </body>
 </html>
