@@ -2470,3 +2470,10 @@ transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transi
 /* c7-geel-rand */ :root{--c7-geel-rand:1px} .sb-dienst__ico,.sb-zakelijk__icoon,.c7-blog__clay,.c7-kev__ster,.c7-wb-badge,.usps .ico{outline:var(--c7-geel-rand) solid #FFC400;outline-offset:calc(-1 * var(--c7-geel-rand))}
 /* c7-12g */ .sb-kerncijfers .kc-logo--ev{width:144px}@media(min-width:901px){.sb-kerncijfers .kc-logo--ev{width:200px}}@media(min-width:768px){.footer__balk .wrap{padding-inline:max(var(--pad),88px)}}
 .sb-dpop__boven{bottom:calc(100% - 1px);height:calc(var(--p) + 41px)}
+/* WhatsApp-knop rechtsboven (14-10-2026): zelfde knopstijl als Offerte, alleen kleur en icoon eigen */
+.topbar .btn--whatsapp{background:#25D366;border-color:#25D366;color:#052e16}
+.topbar .btn--whatsapp:hover{background:#3ee07a;border-color:#3ee07a;color:#052e16}
+.topbar .btn--whatsapp svg{order:0;width:18px;height:18px;margin:-3px 0}
+@media (min-width:1024px) and (max-width:1199.98px),(max-width:767.98px){.topbar .btn--whatsapp{gap:0;padding-inline:.7rem}.topbar .btn--whatsapp span{display:inline-block;width:0;overflow:hidden}}
+@media (max-width:620px){.topbar__kv{display:none}.nav-toggle{flex:none}}
+@media (max-width:359.98px){.topbar .btn{padding-inline:.6rem}.topbar .btn--offerte svg{display:none}}
