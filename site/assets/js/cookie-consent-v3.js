@@ -18,9 +18,12 @@
    bewaarde keuze worden meetcookies bij het openen van een pagina gewist, net als bij weigeren.
    14-10-2026 avond (besluit Shahab): derde categorie "advertenties" (Google Ads-conversiemeting via meting-v1.js, geen
    remarketing). Een bewaarde keuze zonder "advertenties" telt daardoor niet meer (zelfde regel als hierboven, schema blijft
-   v1): de banner komt terug, zodat ook wie eerder accepteerde opnieuw kiest. Een script met meerdere categorieen in
-   data-cb-categorie (gescheiden door een spatie) draait na toestemming voor een van die categorieen. _ga-cookies worden
-   gewist zonder toestemming voor statistieken, _gcl_-cookies zonder toestemming voor advertenties. */
+   v1): de banner komt terug, zodat ook wie eerder accepteerde opnieuw kiest. _ga-cookies worden gewist zonder toestemming
+   voor statistieken, _gcl_-cookies zonder toestemming voor advertenties.
+   14-10-2026 nacht (geavanceerde consent mode): meting-v1.js staat niet meer achter een categorie maar laadt altijd, als
+   deferred script direct na dit bestand. Dit bestand leest de bewaarde keuze daarom synchroon bij het uitvoeren (init), zodat
+   window.bresserCookies de keuze al geeft voordat meting-v1.js draait. Zonder toestemming voor advertenties wist het ook
+   _gcl_-sleutels in localStorage (_gcl_ls). */
 (function () {
   'use strict';
   var BRESSER_KEY = 'bresser_cookie_consent_v1';
@@ -62,6 +65,13 @@
         document.cookie = n + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/' + (d ? ';domain=' + d : '');
       });
     });
+    // Met toestemming voor advertenties bewaart Google klikgegevens ook in localStorage (_gcl_ls).
+    try {
+      for (var i = window.localStorage.length - 1; i >= 0; i--) {
+        var k = window.localStorage.key(i);
+        if (patroon.test(k)) window.localStorage.removeItem(k);
+      }
+    } catch (e) { /* geen toegang tot opslag: dan staat er ook niets te wissen */ }
   }
 
   function schrijfOpslag(data) {
@@ -75,7 +85,7 @@
   }
 
   function activeerCategorie(categorie) {
-    var scripts = document.querySelectorAll('script[type="text/plain"][data-cb-categorie~="' + categorie + '"]');
+    var scripts = document.querySelectorAll('script[type="text/plain"][data-cb-categorie="' + categorie + '"]');
     for (var i = 0; i < scripts.length; i++) {
       var oud = scripts[i];
       var nieuw = document.createElement('script');
