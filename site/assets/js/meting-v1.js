@@ -9,8 +9,9 @@
    en ad_user_data volgen "advertenties"; ad_personalization blijft altijd denied (geen remarketing), Google Signals en
    advertentiepersonalisatie staan uit. Zonder toestemming plaatst de tag geen cookies en stuurt hij alleen cookieloze
    signalen. Intrekken zet alles terug op denied (cookie-consent-v3.js wist _ga en _gcl_), de tag blijft draaien.
-   url_passthrough en ads_data_redaction staan op de standaard (niet gezet). Alleen op https://www.debresser.nl, zodat de
-   dummy en lokale kopieen niets meten.
+   ads_data_redaction staat aan: zolang ad_storage denied is, schermt de tag de advertentieklik-ID af in het signaal naar
+   Google Ads (gclaw=0); url_passthrough staat uit. Alleen op https://www.debresser.nl, zodat de dummy en lokale kopieen
+   niets meten.
    Gebeurtenissen: page_view (een per pagina); phone_clicks, email_clicks en whatsapp_clicks (alleen ons eigen nummer) met een
    vaste link_location; form_submit_offerte en form_submit_videochat (aanvragen) en sollicitatie_verstuurd (sollicitatie of
    tekenbonus, geen klantaanvraag), pas na een geslaagde verzending via site.js (window.kvFormConversie). Ze gaan altijd
@@ -30,6 +31,7 @@
   var standaard = toestemming('denied', 'denied');
   standaard.wait_for_update = 500;
   gtag('consent', 'default', standaard);
+  gtag('set', 'ads_data_redaction', true);
 
   // Adres voor Google: alleen het pad van een bestaande pagina (uit de canonical; een onbekend adres krijgt de 404-pagina,
   // die geen canonical heeft) plus korte campagnecodes. Formulierinvoer, zoektermen en het #-deel gaan nooit mee.
