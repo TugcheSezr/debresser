@@ -15,12 +15,18 @@
    (removeItem of clear), dan telt dat hier als intrekken, ook als de terugvalcookie nog een oude keuze bevat.
    14-10-2026 (popup 0.3.3): de schakelaars tonen bij heropenen de keuze die nu in deze pagina geldt (huidig), focus gaat
    naar de titel van de laag, Escape in de instellingen gaat de eerste keer terug naar de eerste laag. Zonder geldige
-   bewaarde keuze worden meetcookies bij het openen van een pagina gewist, net als bij weigeren. */
+   bewaarde keuze worden meetcookies bij het openen van een pagina gewist, net als bij weigeren.
+   14-10-2026 avond (besluit Shahab): derde categorie "advertenties" (Google Ads-conversiemeting via meting-v1.js, geen
+   remarketing). Een bewaarde keuze zonder "advertenties" telt daardoor niet meer (zelfde regel als hierboven, schema blijft
+   v1): de banner komt terug, zodat ook wie eerder accepteerde opnieuw kiest. Een script met meerdere categorieen in
+   data-cb-categorie (gescheiden door een spatie) draait na toestemming voor een van die categorieen. _ga-cookies worden
+   gewist zonder toestemming voor statistieken, _gcl_-cookies zonder toestemming voor advertenties. */
 (function () {
   'use strict';
   var BRESSER_KEY = 'bresser_cookie_consent_v1';
   var MAX_DAGEN = 365;
-  var CATEGORIEEN = ['voorkeuren', 'statistieken'];
+  var GA_COOKIES = /^(_ga|_ga_.+)$/, ADS_COOKIES = /^_gcl_.+$/;
+  var CATEGORIEEN = ['voorkeuren', 'statistieken', 'advertenties'];
 
   var huidig = null;  // de keuze die nu in deze pagina geldt
 
@@ -47,11 +53,11 @@
     return data;
   }
 
-  function wisMeetcookies() {
+  function wisMeetcookies(patroon) {
     var basis = window.location.hostname.replace(/^www\./, '');
     document.cookie.split(';').forEach(function (c) {
       var n = c.split('=')[0].trim();
-      if (!/^(_ga|_ga_.+|_gcl_.+)$/.test(n)) return;
+      if (!patroon.test(n)) return;
       ['', window.location.hostname, '.' + basis].forEach(function (d) {
         document.cookie = n + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/' + (d ? ';domain=' + d : '');
       });
@@ -69,7 +75,7 @@
   }
 
   function activeerCategorie(categorie) {
-    var scripts = document.querySelectorAll('script[type="text/plain"][data-cb-categorie="' + categorie + '"]');
+    var scripts = document.querySelectorAll('script[type="text/plain"][data-cb-categorie~="' + categorie + '"]');
     for (var i = 0; i < scripts.length; i++) {
       var oud = scripts[i];
       var nieuw = document.createElement('script');
@@ -90,7 +96,10 @@
       if (data.categorieen && data.categorieen[c]) activeerCategorie(c);
     }
     if (!(data.categorieen && data.categorieen.statistieken)) {
-      try { wisMeetcookies(); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
+      try { wisMeetcookies(GA_COOKIES); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
+    }
+    if (!(data.categorieen && data.categorieen.advertenties)) {
+      try { wisMeetcookies(ADS_COOKIES); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
     }
     try {
       document.dispatchEvent(new CustomEvent('bresser:consent', { detail: data }));
@@ -218,7 +227,7 @@
     var opgeslagen = leesOpslag();
     if (opgeslagen) { pasToe(opgeslagen); return; }
     // Geen geldige keuze (nooit gekozen, verlopen of ongeldig): oude meetcookies weg, zoals bij weigeren.
-    try { wisMeetcookies(); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
+    try { wisMeetcookies(GA_COOKIES); wisMeetcookies(ADS_COOKIES); } catch (e) { /* geen toegang tot cookies: dan zijn er ook geen te wissen */ }
     openBanner(false);
   }
 

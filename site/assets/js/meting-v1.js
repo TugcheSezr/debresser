@@ -9,7 +9,12 @@
    Gebeurtenissen: page_view (een per pagina); phone_clicks, email_clicks en whatsapp_clicks (alleen ons eigen nummer) met een
    vaste link_location; form_submit_offerte en form_submit_videochat (aanvragen) en sollicitatie_verstuurd (sollicitatie of
    tekenbonus, geen klantaanvraag), pas na een geslaagde verzending via site.js (window.kvFormConversie).
-   Wat zonder toestemming gebeurde, wordt nooit later alsnog verstuurd. */
+   Wat zonder toestemming gebeurde, wordt nooit later alsnog verstuurd.
+   14-10-2026 avond (categorie "advertenties", besluit Shahab): het script staat nu als data-cb-categorie="statistieken
+   advertenties" en draait na toestemming voor een van beide. analytics_storage volgt "statistieken"; ad_storage en
+   ad_user_data volgen "advertenties", zodat Google Ads de geimporteerde GA4-conversies kan ontvangen. ad_personalization
+   blijft altijd denied (geen remarketing), Google Signals en advertentiepersonalisatie blijven uit. Hierboven is
+   "Geen advertentiemeting" daarmee vervangen; ads_data_redaction werkt alleen zolang ad_storage denied is. */
 (function () {
   'use strict';
   if (location.hostname !== 'www.debresser.nl' || location.protocol !== 'https:' || window.bresserMeting) return;
@@ -17,13 +22,14 @@
   var ID = 'G-4SC19GL438', UIT = 'ga-disable-' + ID;
   var dl = window.dataLayer = window.dataLayer || [];
   function gtag() { dl.push(arguments); }
-  var aan = false, geladen = false, laden = false, ingesteld = false, paginaGemeten = false, wacht = [];
+  var aan = false, statistieken = false, advertenties = false;
+  var geladen = false, laden = false, ingesteld = false, paginaGemeten = false, wacht = [];
   window[UIT] = true;
 
-  function toestemming(analytics) {
-    return { analytics_storage: analytics, ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+  function toestemming(analytics, ads) {
+    return { analytics_storage: analytics, ad_storage: ads, ad_user_data: ads, ad_personalization: 'denied' };
   }
-  gtag('consent', 'default', toestemming('denied'));
+  gtag('consent', 'default', toestemming('denied', 'denied'));
   gtag('set', 'ads_data_redaction', true);
 
   // Adres voor Google: alleen het pad van een bestaande pagina (uit de canonical; een onbekend adres krijgt de 404-pagina,
@@ -80,14 +86,14 @@
     s.onerror = function () { laden = false; wacht = []; s.remove(); };
     document.head.appendChild(s);
   }
-  function pas(nieuw) {
-    aan = nieuw;
+  function pas(stat, adv) {
+    statistieken = stat; advertenties = adv; aan = stat || adv;
     window[UIT] = !aan;  // eerst: ook een al geladen Google-tag stuurt dan niets meer
     if (!aan) wacht = [];
-    gtag('consent', 'update', toestemming(aan ? 'granted' : 'denied'));
+    gtag('consent', 'update', toestemming(stat ? 'granted' : 'denied', adv ? 'granted' : 'denied'));
     if (aan) { laad(); start(); }
   }
-  function actueel() { return !!(window.bresserCookies && window.bresserCookies.toestemming('statistieken')); }
+  function actueel(categorie) { return !!(window.bresserCookies && window.bresserCookies.toestemming(categorie)); }
 
   // Bellen, mailen en WhatsApp naar ons eigen nummer. Een klik is interesse in contact, geen bewezen gesprek. Het mailadres
   // voor sollicitaties (pz@) telt niet: dat is geen klantcontact. Capture-fase, zodat ook links in later ingevoegde blokken en
@@ -111,6 +117,9 @@
     if (Object.prototype.hasOwnProperty.call(SOORTEN, soort)) stuur(SOORTEN[soort], { form_type: soort });
   };
   // Keuze gewijzigd via Cookie-instellingen of in een ander tabblad: meting uit of weer aan in deze pagina.
-  document.addEventListener('bresser:consent', function () { if (actueel() !== aan) pas(!aan); });
-  pas(actueel());
+  document.addEventListener('bresser:consent', function () {
+    var stat = actueel('statistieken'), adv = actueel('advertenties');
+    if (stat !== statistieken || adv !== advertenties) pas(stat, adv);
+  });
+  pas(actueel('statistieken'), actueel('advertenties'));
 })();
