@@ -6,6 +6,7 @@
 #cookieBanner{--cb-ink:#020d41;--cb-accent:#33bcfa;--cb-green:#7bd534;position:fixed;left:0;right:0;bottom:0;z-index:9999;color:var(--cb-ink);font:15px/1.55 Sora,sans-serif}
 #cookieBanner,#cookieBanner *{box-sizing:border-box}
 #cookieBanner[hidden],#cookieBanner [hidden]{display:none!important}
+html.heeft-cookiebanner{overflow:hidden}
 html.heeft-cookiebanner .mcta{display:none!important}
 #cookieBanner button,#cookieBanner input{font:inherit;touch-action:manipulation}
 #cookieBanner button{cursor:pointer}
