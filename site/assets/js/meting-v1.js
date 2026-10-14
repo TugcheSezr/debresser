@@ -10,9 +10,8 @@
    advertentiepersonalisatie staan uit. Zonder toestemming plaatst de tag geen cookies en stuurt hij alleen cookieloze
    signalen. Intrekken zet alles terug op denied (cookie-consent-v3.js wist _ga en _gcl_), de tag blijft draaien.
    ads_data_redaction staat aan: zolang ad_storage denied is, schermt de tag de advertentieklik-ID af in het signaal naar
-   Google Ads (gclaw=0); url_passthrough staat uit. Zonder toestemming voor statistieken of advertenties gaat het
-   paginaadres zonder klik-ID's (gclid, gbraid, wbraid, dclid) naar Google, ook bij automatische events; met toestemming
-   met klik-ID. Alleen op https://www.debresser.nl, zodat de dummy en lokale kopieen niets meten.
+   Google Ads (gclaw=0); url_passthrough staat uit. Alleen op https://www.debresser.nl, zodat de dummy en lokale kopieen
+   niets meten.
    Gebeurtenissen: page_view (een per pagina); phone_clicks, email_clicks en whatsapp_clicks (alleen ons eigen nummer) met een
    vaste link_location; form_submit_offerte en form_submit_videochat (aanvragen) en sollicitatie_verstuurd (sollicitatie of
    tekenbonus, geen klantaanvraag), pas na een geslaagde verzending via site.js (window.kvFormConversie). Ze gaan altijd
@@ -35,9 +34,8 @@
   gtag('set', 'ads_data_redaction', true);
 
   // Adres voor Google: alleen het pad van een bestaande pagina (uit de canonical; een onbekend adres krijgt de 404-pagina,
-  // die geen canonical heeft) plus korte campagnecodes. Klik-ID's (gclid, gbraid, wbraid, dclid) alleen met toestemming voor
-  // statistieken of advertenties. Formulierinvoer, zoektermen en het #-deel gaan nooit mee.
-  function adres(metKlik) {
+  // die geen canonical heeft) plus korte campagnecodes. Formulierinvoer, zoektermen en het #-deel gaan nooit mee.
+  function adres() {
     var pad = '/404.html', c = document.querySelector('link[rel="canonical"]');
     try { var u = new URL(c.href); if (u.hostname === 'www.debresser.nl') pad = u.pathname; } catch (e) { /* geen canonical */ }
     var q = new URLSearchParams(location.search), mee = new URLSearchParams();
@@ -46,7 +44,7 @@
       // korte labels; vrije tekst, e-mailadressen en lange cijferreeksen (telefoon) vallen af
       if (v && /^[a-zA-Z][\w-]{0,99}$/.test(v) && !/\d{7}/.test(v)) mee.set(k, v);
     });
-    if (metKlik) ['gclid', 'gbraid', 'wbraid', 'dclid'].forEach(function (k) {
+    ['gclid', 'gbraid', 'wbraid'].forEach(function (k) {
       var v = q.get(k);
       if (v && /^[\w-]{10,200}$/.test(v) && /[a-zA-Z]/.test(v)) mee.set(k, v);
     });
@@ -57,29 +55,24 @@
   function herkomst() {
     try { var u = new URL(document.referrer); return /^https?:$/.test(u.protocol) ? u.origin + '/' : ''; } catch (e) { return ''; }
   }
-  var vorige = herkomst();
-  function plek() { return adres(statistieken || advertenties); }
+  var plek = adres(), vorige = herkomst();
 
   function stuur(naam, extra) {
-    var p = { send_to: ID, page_location: plek(), page_referrer: vorige };
+    var p = { send_to: ID, page_location: plek, page_referrer: vorige };
     for (var k in extra) p[k] = extra[k];
     gtag('event', naam, p);
   }
-  // Het adres voor alle events, ook automatische zoals scroll, volgt de toestemming van dit moment (met of zonder klik-ID).
-  // Via set en niet via config: een tweede config voor hetzelfde ID negeert de Google-tag.
-  function zetAdres() { gtag('set', { page_location: plek(), page_referrer: vorige }); }
   function pas(stat, adv) {
     statistieken = stat; advertenties = adv;
     gtag('consent', 'update', toestemming(stat ? 'granted' : 'denied', adv ? 'granted' : 'denied'));
-    zetAdres();
   }
   function actueel(categorie) { return !!(window.bresserCookies && window.bresserCookies.toestemming(categorie)); }
 
   // Bewaarde keuze voor js en config, zodat al de eerste hit de juiste toestemming heeft.
   if (actueel('statistieken') || actueel('advertenties')) pas(actueel('statistieken'), actueel('advertenties'));
-  else zetAdres();
   gtag('js', new Date());
-  gtag('config', ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false });
+  gtag('config', ID, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false,
+    page_location: plek, page_referrer: vorige });
   stuur('page_view');
   var s = document.createElement('script');
   s.async = true;
