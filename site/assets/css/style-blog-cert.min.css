@@ -82,3 +82,19 @@ clip-path:inset(-50vh -3rem 0 -3rem);pointer-events:none}
 @media (max-width:700px){
 .c7-cert-band--drie .c7-cert-item:nth-child(3){grid-column:1/-1}
 }
+/* --vijf (15-10-2026, interview Tomas Brands): vijf tegels als drie plus twee; mobiel twee plus twee en de vijfde gecentreerd. */
+@media (min-width:701px){
+.c7-cert-band--vijf .c7-cert-raster{grid-template-columns:repeat(3,140px)}
+}
+@media (min-width:900px){
+.c7-cert-band--vijf{min-height:clamp(19rem,30vw,25rem)}
+}
+@media (min-width:900px) and (max-width:1240px){
+.c7-cert-band--vijf .c7-cert-raster{grid-template-columns:repeat(3,112px)}
+}
+@media (max-width:700px){
+.c7-cert-band--vijf .c7-cert-item:nth-child(5){grid-column:1/-1}
+}
+/* .tmh__foto--uit (15-10-2026): vrijstaande persoon over de herofoto, zonder schuine afsnede en onder de tekst. De box is links
+   --uit-l (een fractie van de fotobreedte) breder; met object-position 100% op foto en uitsnede vallen ze precies op elkaar. */
+.tmh__foto--uit{left:calc(var(--naad) - (100% - var(--naad)) * var(--uit-l,0));width:calc((100% - var(--naad)) * (1 + var(--uit-l,0)));clip-path:none;z-index:1;pointer-events:none}
