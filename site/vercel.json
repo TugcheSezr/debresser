@@ -14,6 +14,6064 @@
       "permanent": true
     },
     {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "0"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "0"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "1"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "1"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "10"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "10"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "11"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "11"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "12"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "12"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "13"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "13"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "14"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "14"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "15"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "15"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "16"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "16"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "17"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "17"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "18"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "18"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "19"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "19"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "2"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "2"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "20"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "20"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "21"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "21"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "22"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "22"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "23"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "23"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "24"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "24"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "25"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubelprojecten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "25"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubelprojecten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "26"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "26"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "27"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "27"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "28"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "28"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "30"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "30"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "31"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "31"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "32"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "32"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "33"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "33"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "34"
+        }
+      ],
+      "destination": "https://www.debresser.nl/erkende-projectverhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "34"
+        }
+      ],
+      "destination": "https://www.debresser.nl/erkende-projectverhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "35"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "35"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "36"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "36"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "37"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "37"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "38"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "38"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "4"
+        }
+      ],
+      "destination": "https://www.debresser.nl/disclaimer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "4"
+        }
+      ],
+      "destination": "https://www.debresser.nl/disclaimer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "6"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "6"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "7"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "7"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "8"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "8"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "9"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "9"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-makkelijk-te-voorkomen-problemen-bij-een-zakelijke-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-makkelijk-te-voorkomen-problemen-bij-een-zakelijke-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-tips-tegen-verhuisstress-bij-bedrijfsverhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-tips-tegen-verhuisstress-bij-bedrijfsverhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-tips-voor-het-inlichten-van-werknemers-bij-bedrijfsverhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/5-tips-voor-het-inlichten-van-werknemers-bij-bedrijfsverhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/aandachtspunten-bij-een-internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/aandachtspunten-bij-een-internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/alle-ins-en-outs-van-een-verhuizing-regelen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/alle-ins-en-outs-van-een-verhuizing-regelen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/bedrijfsontruiming-en-bezemschoon-opleveren-bij-de-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/bedrijfsontruiming-en-bezemschoon-opleveren-bij-de-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/beter-te-vroeg-dan-te-laat-en-te-vroeg-bestaat-niet/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/beter-te-vroeg-dan-te-laat-en-te-vroeg-bestaat-niet/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/checklist-voor-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/checklist-voor-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-dos-en-donts-tijdens-het-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/de-drie-grootste-verhuisblunders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-dos-en-donts-tijdens-het-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/de-drie-grootste-verhuisblunders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-meest-handige-tips-voor-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-meest-handige-tips-voor-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-voorbereiding-van-de-verhuizing-door-de-bril-van-de-exper/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/de-voorbereiding-van-de-verhuizing-door-de-bril-van-de-exper/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/een-zakelijke-verhuizing-regelen-als-facility-manager/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/een-zakelijke-verhuizing-regelen-als-facility-manager/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/expat-verhuizing-een-hele-opgave/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/expat-verhuizing-een-hele-opgave/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/handige-tips-om-uw-nieuwe-buurt-te-verkennen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/handige-tips-om-uw-nieuwe-buurt-te-verkennen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/handyman-services/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/handyman-services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/handyman-services/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/handyman-services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-ik-woon-op-10-hoog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-ik-woon-op-10-hoog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-wat-te-doen-bij-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-wat-te-doen-bij-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/het-domino-effect-van-vertraging-tijdens-de-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/het-domino-effect-van-vertraging-tijdens-de-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-meer-partijen-des-te-complexer-het-wordt/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/erkende-projectverhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-meer-partijen-des-te-complexer-het-wordt/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/erkende-projectverhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-regel-ik-een-verhuiskaartje/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-regel-ik-een-verhuiskaartje/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-zit-het-met-de-verzekering-van-de-inboedel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoe-zit-het-met-de-verzekering-van-de-inboedel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoeveel-tijd-ben-ik-kwijt-met-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hoeveel-tijd-ben-ik-kwijt-met-verhuizen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hulp-bij-verhuizen-in-alle-opzichten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/hulp-bij-verhuizen-in-alle-opzichten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/in-%C3%A9%C3%A9n-keer-verhuizen-wanneer-tijdsdruk-een-grote-rol-speelt/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/spoedverhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/in-%C3%A9%C3%A9n-keer-verhuizen-wanneer-tijdsdruk-een-grote-rol-speelt/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/spoedverhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/inpakken-voor-zakelijke-verhuizingen-waar-moet-u-op-letten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/inpakken-voor-zakelijke-verhuizingen-waar-moet-u-op-letten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/inventariseren-bij-een-verhuizing-de-grootste-onderschatting/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/m3-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/inventariseren-bij-een-verhuizing-de-grootste-onderschatting/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/m3-calculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/onvoorziene-problemen-bij-verhuizingen-liever-te-vroeg-dan-te-laat/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/onvoorziene-problemen-bij-verhuizingen-liever-te-vroeg-dan-te-laat/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/opslag-inboedels/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/opslag-inboedels/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/slim-verhuizen-door-het-simpel-te-houden/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/slim-verhuizen-door-het-simpel-te-houden/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/stressvrij-verhuizen-stoof-de-bresser-top-movers-helpt-u-hiermee/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/stressvrij-verhuizen-stoof-de-bresser-top-movers-helpt-u-hiermee/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-om-te-verhuizen-zonder-schade/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-om-te-verhuizen-zonder-schade/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-tegen-stress-bij-zakelijke-verhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-tegen-stress-bij-zakelijke-verhuizingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-voor-een-goede-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-voor-een-goede-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-voor-het-verhuizen-van-grote-machines-en-apparatuur/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-voor-het-verhuizen-van-grote-machines-en-apparatuur/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/uw-allereerste-bedrijfsverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/uw-allereerste-bedrijfsverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuisdatum-prikken/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuisdatum-prikken/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuisdekens-voor-een-onbeschadigde-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuisdekens-voor-een-onbeschadigde-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-brengt-emoties-met-zich-mee/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-brengt-emoties-met-zich-mee/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-denk-aan-stoof-de-bresser-top-movers/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-denk-aan-stoof-de-bresser-top-movers/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-naar-een-nieuwbouwhuis-waar-moet-ik-op-letten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-naar-een-nieuwbouwhuis-waar-moet-ik-op-letten/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-wat-blijft-en-wat-mag-weg/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizen-wat-blijft-en-wat-mag-weg/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizing-in-het-verzorgingstehuis-omgaan-met-kwetsbare-mensen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizing-in-het-verzorgingstehuis-omgaan-met-kwetsbare-mensen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizing-van-uw-bedrijf/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/verhuizing-van-uw-bedrijf/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/over-ons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/over-ons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/referenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/referenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/archief-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/archief-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/aanpak.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/aanpak.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adres.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adres.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adres.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adres.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adresgegevens/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adresgegevens/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-ik-woon-op-10-hoog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/help-ik-woon-op-10-hoog/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-om-te-verhuizen-zonder-schade/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/blog/tips-om-te-verhuizen-zonder-schade/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/over-ons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeen/over-ons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/nuttigelinks/000000974b09e0417.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/nuttigelinks/000000974b09e0417.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/overons/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/overons/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefbeheer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefbeheer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefbeheerofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefbeheerofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefverhuizing.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/archiefverhuizing.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedankt.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedankt.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijfsofferte.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijfsofferte.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven-instellingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven-instellingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/archiefverhuizing/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/archiefverhuizing/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/interneverhuizing/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/interneverhuizing/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerteaanvragen/bedrijfsofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/offerteaanvragen/bedrijfsofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/referenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/referenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijvenofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijvenofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijvenreferenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijvenreferenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/checklist.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/checklist.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/adresgegevens/adres.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/adresgegevens/adres.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/routebeschrijving/route.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/routebeschrijving/route.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/vacatures/vacatures.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact/vacatures/vacatures.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/disclaimer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/disclaimer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/disclaimer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/disclaimer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/doehetzelf.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/doehetzelf.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/doehetzelf.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/doehetzelf.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/downloads/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/algemene-voorwaarden/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/archiefopslag-beheer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/archiefopslag-beheer/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/bedrijven-instellingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/bedrijven-instellingen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/erkend-in/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gastenboek.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gastenboek.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home1.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home1.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inboedelopslag.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inboedelopslag.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inboedelopslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inboedelopslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "missing": [
+        {
+          "type": "query",
+          "key": "id"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "missing": [
+        {
+          "type": "query",
+          "key": "id"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inpakken.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/inpakken.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-binnen-europa/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-binnen-europa/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-buiten-europa/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-buiten-europa/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-duitsland/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-duitsland/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-frankrijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-frankrijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-oostenrijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-oostenrijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-zwitserland/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/internationale-verhuizing/verhuizen-van-naar-zwitserland/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/interne%20verhuizingen.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/interne%20verhuizingen.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logo.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logo.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/main.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/main.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nieuws/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nieuws/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte%20bedrijven.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte%20bedrijven.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte%20particulier.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte%20particulier.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte_opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte_opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte_particulier.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/offerte_particulier.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/archief-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/archief-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/doe-het-zelf-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/doe-het-zelf-opslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/doehetzelfopslag/doehetzelf.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/doehetzelfopslag/doehetzelf.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/inboedel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/inboedel.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/inboedelopslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/inboedelopslag/inboedelopslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerteaanvragen/opslagofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/offerteaanvragen/opslagofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/opslag.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/overons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/overons/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulier-offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulier-offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/internationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/internationaleverhuizing/internationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/internationaleverhuizing/internationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationale-verhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationaleverhuizing/nationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/nationaleverhuizing/nationaal.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-simpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerteaanvragen/particuliereofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerteaanvragen/particuliereofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/particulieren.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/particulieren.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/aanpak/aanpak.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/aanpak/aanpak.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/checklist/checklist.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/checklist/checklist.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/inpakken/inpakken.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/inpakken/inpakken.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/verhuistips.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verhuistips/verhuistips.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verzekering/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verzekering/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verzekering/verzekering.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/verzekering/verzekering.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/voorbereiding/voorbereiding.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/voorbereiding/voorbereiding.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulierofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulierofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/algemeen.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/nuttigelinks/000000974b09e0417.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/nuttigelinks/000000974b09e0417.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/overons/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/overons/overons.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/archiefverhuizing/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/archiefverhuizing/archief.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/bedrijven.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/interneverhuizing/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/interneverhuizing/intern.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/offerteaanvragen/bedrijfsofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/bedrijven/offerteaanvragen/bedrijfsofferte.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/contact/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/contact/contact.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/routebeschrijving/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/routebeschrijving/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/samenwerkingsverbanden/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/samenwerkingsverbanden/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/diensten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/diensten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap/sitemap.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/diensten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap/sitemap.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/diensten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/submit/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/submit/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/submit2/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/submit2/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transport/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transport/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transportofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transportofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transportreferenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/transportreferenties/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuistips.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuistips.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuistips.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuistips.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-breda/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-breda/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-dongen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-dongen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-dongen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-dongen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-oisterwijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-oisterwijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-oisterwijk/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-oisterwijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-oosterhout/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-oosterhout/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-oosterhout/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-oosterhout/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-tilburg/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-tilburg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-tilburg/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuisbedrijf-tilburg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verzekering.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verzekering.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verzekering.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verzekering.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verzekering/",
+      "statusCode": 301
+    },
+    {
+      "source": "/voorbereiding.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/voorbereiding.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/voorbereiding.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/voorbereiding.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vto.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vto.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/welkom.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/welkom.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorg-senioren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/senioren-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorg-senioren/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/senioren-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragensimpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragensimpel/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragenuitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgofferteaanvragenuitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/extra-services/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/extra-services/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zorg-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/zorgverhuizing/offerte-aanvragen/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijven/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/zakelijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulieren/offerte-aanvragen-uitgebreid/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/nuttigelinks/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/algemeneinfo/nuttigelinks/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "5"
+        }
+      ],
+      "destination": "https://www.debresser.nl/certificeringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        },
+        {
+          "type": "query",
+          "key": "id",
+          "value": "5"
+        }
+      ],
+      "destination": "https://www.debresser.nl/certificeringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/links.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/links.htm",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partners/",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/certificeringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/partners/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/certificeringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/nuttigelinks/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plaintext/algemeneinfo/nuttigelinks/links.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:pad(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/:pad",
+      "statusCode": 301
+    },
+    {
+      "source": "/:pad(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.stoof-debresser.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/:pad",
+      "statusCode": 301
+    },
+    {
+      "source": "/:pad(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/:pad",
+      "statusCode": 301
+    },
+    {
+      "source": "/:pad(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.debresserverhuizingen.nl"
+        }
+      ],
+      "destination": "https://www.debresser.nl/:pad",
+      "statusCode": 301
+    },
+    {
       "source": "/verhuisservice-zakelijk/",
       "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
@@ -267,6 +6325,909 @@
       "source": "/bedrijfsverhuizing-zo-kan-je-het-aanpakken/",
       "destination": "/zakelijke-verhuizing/",
       "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/checklist-voor-je-verhuizing/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/de-opleverdatum-is-uitgesteld-wat-nu/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/de-populairste-reden-om-te-verhuizen/",
+      "destination": "/2024/03/29/de-populairste-reden-om-te-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/interne-verhuizing/",
+      "destination": "/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/kijkje-achter-de-schermen/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/nieuw-qwiek-snooze-reinigingsservice/",
+      "destination": "/2024/03/29/nieuw-qwiek-snooze-reinigingsservice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "destination": "/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/stadslogistiek/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/vanuit-ons-magazijn-bij-uw-klant-thuis/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/verhuislift-maakt-alles-makkelijker/",
+      "destination": "/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/verhuizen-met-kinderen/",
+      "destination": "/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/18/waarom-verhuizen-met-een-erkende-verhuizer/",
+      "destination": "/2024/03/29/waarom-verhuizen-met-een-erkende-verhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/25/de-drie-grootste-verhuisblunders/",
+      "destination": "/2024/03/29/de-drie-grootste-verhuisblunders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/25/duurzaam-verhuizen/",
+      "destination": "/duurzaam-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/25/logistieke-dienstverlening/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/01/25/senioren-verhuizen-hoe-doe-je-dat/",
+      "destination": "/senioren-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/06/15/complete-verhuisgids-checklist/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/06/15/hulp-bij-verhuizen/",
+      "destination": "/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2023/06/15/kosten-van-een-verhuizing/",
+      "destination": "/verhuisprijscalculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/checklist-voor-je-verhuizing/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/de-opleverdatum-is-uitgesteld-wat-nu/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/duurzaam-verhuizen/",
+      "destination": "/duurzaam-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/een-complete-verhuisgids-checklist-kosten-en-tips/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/hulp-bij-verhuizen-waarom-het-inhuren-van-professionals-het-stressniveau-kan-verminderen/",
+      "destination": "/2024/03/29/inhuren-professionals-kan-stressniveau-verminderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/kijkje-achter-de-schermen/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/kosten-van-een-verhuizing-wat-bepaalt-de-prijs/",
+      "destination": "/verhuisprijscalculator/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/senioren-verhuizen-hoe-doe-je-dat/",
+      "destination": "/senioren-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/stadslogistiek/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/vanuit-ons-magazijn-bij-uw-klant-thuis/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/2024/03/29/verhuizen-met-kinderen/",
+      "destination": "/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/aandachtspunten-internationale-verhuizing/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/aanpak-tijdens-het-coronavirus/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/bas-joris/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/debresser/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/webinet/page/2/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedankt-voor-je-aanvraag/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedankt-voor-uw-bericht/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bedrijfsverhuizing-slim-verhuizen/",
+      "destination": "/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/beter-te-vroeg-dan-te-laat/",
+      "destination": "/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/2/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/geen-onderdeel-van-een-categorie/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/checklist-voor-je-verhuizing/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de-drie-grootste-verhuisblunders-hoe-je-deze-kunt-voorkomen/",
+      "destination": "/2024/03/29/de-drie-grootste-verhuisblunders/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de-opleverdatum-van-je-nieuwe-huis-is-uitgesteld-wat-nu/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/de-populairste-reden-om-te-verhuizen/",
+      "destination": "/2024/03/29/de-populairste-reden-om-te-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/den-bosch/",
+      "destination": "/verhuisbedrijf-den-bosch/",
+      "statusCode": 301
+    },
+    {
+      "source": "/duurzaam-verhuizen-2/",
+      "destination": "/duurzaam-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/benelux-relocation/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/category/geen-onderdeel-van-een-categorie/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/category/uncategorized/",
+      "destination": "/blog/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/de-bresser-relocations/",
+      "destination": "/verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/furniture-transport/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/get-in-touch/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/logistics/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/logistics/auctions/",
+      "destination": "/veilingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/movings/",
+      "destination": "/verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/movings/international-relocation/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/quotation/",
+      "destination": "/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/schedule-a-visit-or-a-video-survey/",
+      "destination": "/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/stappenplan/de-bresser-relocations/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/storage/",
+      "destination": "/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/storage-private/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/tilburg/",
+      "destination": "/verhuisbedrijf-tilburg/",
+      "statusCode": 301
+    },
+    {
+      "source": "/full-service/",
+      "destination": "/full-service-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gemak-tijdens-het-verhuizen/",
+      "destination": "/verhuischecklist/",
+      "statusCode": 301
+    },
+    {
+      "source": "/handige-tips-om-uw-nieuwe-buurt-te-verkennen/",
+      "destination": "/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/het-domino-effect-van-vertraging-tijdens-de-verhuizing/",
+      "destination": "/zakelijke-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/info/contact/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/interne-verhuizing/",
+      "destination": "/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/interview-met-een-klant-verhuizen-naar-zwitserland/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/kantoor-herinrichten-voor-de-15-m-samenleving/",
+      "destination": "/2024/03/29/interne-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/kijkje-achter-de-schermen/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/location/de-bresser-logistiek/",
+      "destination": "/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/location/de-bresser-verhuizingen/",
+      "destination": "/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/location/stoof-de-bresser-top-movers/",
+      "destination": "/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/location/warehouse-logistiek-centrum/",
+      "destination": "/vestigingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/auctions/",
+      "destination": "/veilingen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/duurzame-stadsdistributie/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/duurzame-stadslogistiek/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/simplymile-lastmile-distributie/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistiek/warehousing/",
+      "destination": "/zakelijke-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/logistieke-dienstverlening-wij-staan-voor-u-klaar/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/map_location_categories/contact-pagina/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-almelo/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-almere/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-amersfoort/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-amsterdam/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-apeldoorn/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-arnhem/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-belgie/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-bergen-op-zoom/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-breda/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-den-bosch/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-den-haag/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-dordrecht/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-drachten/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-eindhoven/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-enschede/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-groningen/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-leiden/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-luxemburg/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-nijmegen/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-roermond/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-utrecht/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-venlo/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport-zwolle/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport/bedrijf-naar-consument-b2c/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport/internationaal-transport/",
+      "destination": "/meubeltransport/",
+      "statusCode": 301
+    },
+    {
+      "source": "/meubeltransport/montage-service/",
+      "destination": "/meubelmontage/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nieuw-qwiek-snooze-reinigingsservice/",
+      "destination": "/2024/03/29/nieuw-qwiek-snooze-reinigingsservice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/onbeschadigde-verhuizing/",
+      "destination": "/inpaktips/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ons-team/",
+      "destination": "/over-ons/ons-team/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag-voor-al-uw-spullen/",
+      "destination": "/opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/doe-het-zelf-opslag/",
+      "destination": "/particuliere-opslag/",
+      "statusCode": 301
+    },
+    {
+      "source": "/opslag/full-service/",
+      "destination": "/full-service-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/particulier-verhuizing-zo-doe-je-dat/",
+      "destination": "/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personeel/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plan-een-fysiek-bezoek-of-een-video-survey/",
+      "destination": "/offerte/",
+      "statusCode": 301
+    },
+    {
+      "source": "/senioren-verhuizen-hoe-doe-je-dat/",
+      "destination": "/senioren-verhuizen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/",
+      "destination": "/diensten/",
+      "statusCode": 301
+    },
+    {
+      "source": "/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "destination": "/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/stadslogistiek-postnl/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/stoof-de-bresser-gaan-verder-als-een/",
+      "destination": "/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/test/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/testimonials/",
+      "destination": "/klantervaringen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tijdlijn/",
+      "destination": "/over-ons/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacature/medewerker-binnendienst/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacature/medewerker-wasserij/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacature/move-coordinator/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacature/vakantiemedewerker-verhuizer/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/accountmanager/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/assistent-verhuizer-bijrijder/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/chauffeur-meubel-logistiek/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/elementor-2789/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/financieel-administratief-medewerker/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/financieel-medewerker-2/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/internationaal-move-coordinator/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/logistiek-medewerker/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/teamleider-magazijn-wasserij/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/vacature-chauffeur-verhuizer/",
+      "destination": "/vacature/chauffeur-verhuizingen-c-ce/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/vacature-verhuizer-40-uur/",
+      "destination": "/vacature/verhuizer/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/vakantiekracht-bijrijder/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vacatures/vakantiekracht-verhuizer/",
+      "destination": "/overzicht-vacatures/",
+      "statusCode": 301
+    },
+    {
+      "source": "/vanuit-ons-magazijn-bij-uw-klant-thuis/",
+      "destination": "/logistiek-full-service/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisbedrijf-bergen-op-zoom/",
+      "destination": "/bergen-op-zoom/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisbedrijf-roosendaal/",
+      "destination": "/roosendaal/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuisdatum-prikken/",
+      "destination": "/faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-binnen-europa/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-buiten-europa/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-met-een-verhuislift-maakt-alles-veel-makkelijker/",
+      "destination": "/2024/03/29/verhuislift-maakt-alles-makkelijker/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-met-kinderen/",
+      "destination": "/2025/11/06/verhuizen-met-kinderen/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-naar-een-nieuwbouwhuis-tips/",
+      "destination": "/particuliere-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-tijdens-de-coronacrisis/",
+      "destination": "/werkwijze/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizen-wat-blijft-en-wat-mag-weg/",
+      "destination": "/2024/03/29/spullen-weg-doen-waarom-is-het-zo-moeilijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizers-of-verhuissterren/",
+      "destination": "/2024/03/29/nieuw-qwiek-snooze-reinigingsservice/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/internationale-verhuizing/verhuizen-van-naar-duitsland/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/internationale-verhuizing/verhuizen-van-naar-frankrijk/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizing/internationale-verhuizing/verhuizen-van-naar-zwitserland/",
+      "destination": "/internationale-verhuizing/",
+      "statusCode": 301
+    },
+    {
+      "source": "/verhuizingen-breda/",
+      "destination": "/breda/",
+      "statusCode": 301
+    },
+    {
+      "source": "/videochat/bedankt-voor-je-aanvraag/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/videogesprek/bedankt-voor-je-aanvraag/",
+      "destination": "/offerte/videogesprek/",
+      "statusCode": 301
+    },
+    {
+      "source": "/villa-pardoes-maand-donatie/",
+      "destination": "/duurzaamheid/",
+      "statusCode": 301
+    },
+    {
+      "source": "/waalwijk/",
+      "destination": "/verhuisbedrijf-waalwijk/",
+      "statusCode": 301
+    },
+    {
+      "source": "/waarom-verhuizen-met-een-erkende-verhuizer/",
+      "destination": "/2024/03/29/waarom-verhuizen-met-een-erkende-verhuizer/",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/algemeen/blog/beveiligen-tegen-inbraak/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/algemeen/blog/energiebesparing-in-huis/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/algemeen/links/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/bezorgtijden/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/cron/bc_generate.php",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/cron/ftp_sync_itfits.php",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/cron/ftp_sync_roc.php",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/heutink/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/heutink/archief.php",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/heutink/index.php",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/index.php",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "29"
+        }
+      ],
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/levertijden/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/links/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/meubilex/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/ontruiming/",
+      "destination": "/api/vervallen"
+    },
+    {
+      "source": "/ontruimingen/",
+      "destination": "/api/vervallen"
     }
   ],
   "headers": [
