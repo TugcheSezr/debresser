@@ -1,0 +1,20 @@
+/* Alleen de internationale sectie; de kaarten gebruiken het bestaande hubontwerp. */
+.c7-dgroep .sb-dienst[hidden]{display:none!important}
+.c7-dgroep__meer{display:flex;margin:1.5rem auto 0}
+#aanbod,#diensten6{padding-top:clamp(2rem,5vw,4rem);background:var(--creme)}
+.sb-dpop--land .sb-dpop__raam{background:linear-gradient(160deg,#88b9de,#c1dbed)}
+@media(min-width:621px){:is(#aanbod,#diensten6) .sb-diensten__grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.fotobronnen{margin-top:3rem;color:var(--ant-zacht);font-size:.78rem}.fotobronnen summary{cursor:pointer;width:fit-content}.fotobronnen ul{padding-left:1.2rem;margin-top:.7rem}.fotobronnen li{margin-bottom:.35rem}.fotobronnen a{color:var(--goud-diep)}
+
+.c7-dgroep{margin-top:clamp(1.6rem,3vw,2.2rem)}
+.c7-dgroep+.c7-dgroep{margin-top:clamp(2.4rem,4.5vw,3.4rem)}
+.c7-dgroep__kop{display:flex;align-items:center;gap:.8rem;margin:0;font-size:clamp(1.3rem,1.05rem + .9vw,1.65rem);font-weight:800;line-height:1.2;color:var(--bruin)}
+.c7-dgroep__kop::after{content:"";flex:1;height:1px;background:rgba(2,13,65,.14)}
+.c7-wg{overflow-x:clip}
+.c7-wg .label::before{background:var(--geel)}
+.c7-wg .kop{position:relative;display:inline-block;padding-bottom:.35rem}
+.c7-wg .kop::after{content:"";position:absolute;left:0;bottom:0;width:3.2rem;height:4px;border-radius:2px;background:var(--geel)}
+
+/* Doorkliklinks volgen zodra de bestemmingspagina’s bestaan. */
+:is(#aanbod,#diensten6) .sb-dienst:has([data-bestemming-pad]) .sb-dienst__pijl{display:none}
