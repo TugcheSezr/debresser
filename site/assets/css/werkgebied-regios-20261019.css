@@ -1,0 +1,19 @@
+/* Compact regio-overzicht, uitsluitend op de werkgebiedpagina. */
+.c7-wg .c7-regios{margin-top:clamp(2.4rem,4.5vw,3.4rem)}
+.c7-wg .c7-regios__intro{margin:0 0 1.2rem;max-width:65ch}
+.c7-wg .c7-regio{border-top:1px solid rgba(2,13,65,.18)}
+.c7-wg .c7-regio:last-child{border-bottom:1px solid rgba(2,13,65,.18)}
+.c7-wg .c7-regio>summary{list-style:none;cursor:pointer;padding:1.2rem .2rem;border-radius:4px}
+.c7-wg .c7-regio>summary::-webkit-details-marker{display:none}
+.c7-wg .c7-regio>summary:focus-visible{outline:3px solid var(--teal-paneel);outline-offset:3px}
+.c7-wg .c7-regio>summary h3{display:flex;align-items:center;gap:1rem;margin:0;color:var(--bruin);font-size:clamp(1.1rem,1rem + .5vw,1.4rem);line-height:1.4}
+.c7-wg .c7-regio__aantal{margin-left:auto;flex-shrink:0;font-size:.85rem;font-weight:500;color:var(--ant-zacht)}
+.c7-wg .c7-regio>summary h3::after{content:"+";display:grid;place-items:center;flex:0 0 2rem;width:2rem;height:2rem;border-radius:50%;background:var(--goud);color:var(--bruin);font-size:1.4rem;font-weight:500;line-height:1}
+.c7-wg .c7-regio[open]>summary h3::after{content:"−"}
+.c7-wg .c7-regio[open]>summary h3{color:var(--teal-paneel)}
+.c7-wg .c7-regio>.sb-diensten__grid{margin-bottom:2rem}
+@media(max-width:620px){
+  .c7-wg .c7-regio>summary{padding:1rem .15rem}
+  .c7-wg .c7-regio>summary h3{gap:.65rem}
+  .c7-wg .c7-regio__aantal{font-size:.75rem}
+}
