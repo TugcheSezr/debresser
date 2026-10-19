@@ -11,3 +11,6 @@
 .c7-dpop--verhuisbedrijf-rijen{--d0:0.011719;--mid:0.501953;--ar:1.333333}
 .c7-dpop--verhuisbedrijf-rijsbergen{--d0:0.01237;--mid:0.507812;--ar:1.333333}
 .c7-dpop--verhuisbedrijf-veldhoven{--d0:0.036082;--mid:0.501105;--ar:1.333333}
+
+/* De uitgebreide toelichting blijft ook op mobiel leesbaar. */
+#aanbod.c7-wg .sectiekop>.intro{display:block}
