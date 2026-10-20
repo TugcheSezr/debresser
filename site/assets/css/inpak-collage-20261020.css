@@ -1,0 +1,38 @@
+/* Blauwe collage over inpakken (gekozen voorbeeld 4, 20-10-2026). Alleen op de 27 internationale pagina's; bouwt op .sectie, .wrap, .label, .kop, .intro, .knoprij en .btn uit de sitestijl. */
+.ip4{--ip4-blauw:var(--teal-paneel,#007AC0);--ip4-navy:var(--ant-diep,#020D41)}
+.ip4__paneel{position:relative;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(1.6rem,3.5vw,3rem);padding:clamp(1.6rem,3.5vw,3rem);border-radius:calc(var(--r) + 6px);background:var(--ip4-blauw);color:var(--wit);margin-bottom:4.6rem}
+.ip4__paneel .label{color:var(--wit)}
+.ip4__paneel .label::before{background:var(--geel)}
+.ip4__paneel .kop{color:var(--wit)}
+.ip4__paneel .intro{color:#EAF4FB}
+.ip4__tekst p{color:#EAF4FB}
+.ip4__tekst a:not(.btn){color:var(--wit);text-decoration:underline;text-underline-offset:.18em}
+.ip4__collage{display:grid;grid-template-columns:1.08fr .92fr;grid-template-rows:1fr 1fr;gap:.8rem}
+.ip4__tegel{position:relative;margin:0;border-radius:var(--r);overflow:hidden;background:var(--ip4-navy);box-shadow:0 14px 30px -18px rgba(0,0,0,.5)}
+.ip4__tegel--krat{grid-row:1/3}
+.ip4__tegel img{width:100%;height:100%;object-fit:cover;display:block}
+.ip4__tegel--krat img{object-position:50% 45%}
+.ip4__tegel--wagen img{object-position:50% 12%;transform:scale(1.32);transform-origin:50% 22%}
+.ip4__tegel figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.8rem .9rem .7rem;color:var(--wit);font:600 .78rem/1.3 var(--font-kop);letter-spacing:.04em;background:linear-gradient(to top,rgba(2,13,65,.78),rgba(2,13,65,0))}
+.ip4__materiaal{position:absolute;left:clamp(1.2rem,3vw,3rem);bottom:-4.8rem;list-style:none;margin:0;padding:.9rem 1.2rem;display:flex;gap:1.3rem;background:var(--wit);color:var(--ant);border-radius:var(--r);box-shadow:var(--schaduw)}
+.ip4__materiaal li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.75rem;align-items:center;max-width:13.5rem;margin:0;padding:0}
+.ip4__materiaal li::before{content:none}
+.ip4__materiaal img{width:72px;height:72px;object-fit:contain;mix-blend-mode:multiply}
+.ip4__materiaal img.ip4__alpha{mix-blend-mode:normal;width:82px;height:82px;filter:drop-shadow(0 6px 8px rgba(2,13,65,.2))}
+.ip4__materiaal img.ip4__alpha--noppen{object-fit:cover}
+.ip4__materiaal h3{margin:0;font-size:.9rem;line-height:1.2;color:var(--ant)}
+.ip4__materiaal p{margin:.15rem 0 0;font-size:.78rem;line-height:1.35;color:var(--ant-zacht)}
+.ip4__acties{margin-top:1.4rem}
+@media (max-width:860px){
+  .ip4__paneel{grid-template-columns:minmax(0,1fr);margin-bottom:0}
+  .ip4__materiaal{position:static;flex-wrap:wrap;gap:.8rem 1.4rem}
+  .ip4__materiaal li{max-width:none}
+}
+@media (max-width:560px){
+  .ip4__collage{grid-template-columns:1fr 1fr}
+  .ip4__tegel--krat{grid-row:1/3}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ip4__materiaal img{transition:translate .45s var(--ease,ease),rotate .45s var(--ease,ease),scale .45s var(--ease,ease)}
+  .ip4__materiaal li:hover img{translate:0 -6px;rotate:-4deg;scale:1.1}
+}
