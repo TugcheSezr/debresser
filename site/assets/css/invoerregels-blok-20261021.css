@@ -1,0 +1,19 @@
+/* Invoerregelsblok op de inkomende Engelse pagina's (style-dienst): letterlijke kopie van de .c7-stad-regels
+   uit style-stad.min.css?v=20261014-1245, zodat het blok gelijk oogt aan het australia-blok. */
+.c7-stad .sb-toennu__fotos{margin-top:calc(clamp(2.4rem,4.6vw,3.6rem) + 1.25rem)}
+.c7-stad .sb-toennu__fotos .sb-toennu__nu{width:min(100%,33rem);margin-left:0;transform:rotate(-2deg)}
+.c7-stad .c7-vest__wie .sb-dpop{--fa:1.45;--p:30px;position:relative}
+.c7-stad .sb-zakelijk__rijen{grid-template-rows:none;grid-template-columns:minmax(0,1fr)}
+.c7-stad .sb-zakelijk__rij{align-items:start}
+.c7-stad .sb-zakelijk__rij p{overflow-wrap:anywhere}
+@media(max-width:480px){
+.c7-stad .sb-zakelijk__rij p{-webkit-hyphens:auto;hyphens:auto}
+}
+@media(max-width:560px){
+.c7-stad .sb-zakelijk__rij{grid-template-columns:auto minmax(0,1fr);gap:.8rem}
+.c7-stad .sb-zakelijk__icoon{display:block;width:2.6rem;height:2.6rem;padding:.45rem}
+}
+.c7-stad .sb-toennu__paneel:not(:has(.sb-zakelijk__rij)){grid-template-columns:1fr}
+.c7-stad .sb-zakelijk__rij p.c7-stad__bron{margin-top:.35rem;font-size:.8rem;line-height:1.45;color:var(--licht-hover)}
+.c7-stad .c7-stad__bron a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.c7-stad .c7-stad__bron a:focus-visible{outline:2px solid var(--goud-hover);outline-offset:2px;border-radius:2px}
