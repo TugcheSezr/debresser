@@ -1,0 +1,34 @@
+/* Artikelopmaak De Bresser-blogs. Tabelregels letterlijk uit /assets/css/style-dienst.min.css (.cert-vak, .cert-tabel,
+   zoals op /verzekering/); de blogstylesheet heeft geen tabelopmaak. */
+.cert-vak{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--wit);border:1px solid var(--lijn);border-radius:var(--r)}
+.cert-tabel{width:100%;min-width:40rem;border-collapse:collapse}
+.cert-tabel caption{caption-side:top;text-align:left;padding:.85rem 1.1rem .2rem;font:600 .76rem/1.3 var(--font-kop);letter-spacing:.1em;text-transform:uppercase;color:var(--ant-zacht)}
+.cert-tabel th,.cert-tabel td{padding:.85rem 1.1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--lijn);font-size:.95rem;line-height:1.55}
+.cert-tabel thead th{background:var(--creme-2);font:700 .74rem/1.35 var(--font-kop);letter-spacing:.09em;text-transform:uppercase;color:var(--goud-diep)}
+.cert-tabel tbody th{font-weight:700;color:var(--ant);width:22%}
+.cert-tabel tbody td{color:var(--ant-zacht)}
+.cert-tabel tbody tr:last-child th,.cert-tabel tbody tr:last-child td{border-bottom:0}
+@media (max-width:700px){.cert-tabel{min-width:0}.cert-tabel,.cert-tabel caption,.cert-tabel tbody,.cert-tabel tr,.cert-tabel th,.cert-tabel td{display:block}.cert-tabel thead{display:none}.cert-tabel tbody tr{padding:.85rem 1.1rem;border-bottom:1px solid var(--lijn)}.cert-tabel tbody tr:last-child{border-bottom:0}.cert-tabel tbody th,.cert-tabel tbody td{width:auto;padding:0;border-bottom:0}.cert-tabel tbody td{margin-top:.55rem}.cert-tabel td[data-label]::before{content:attr(data-label);display:block;margin-bottom:.1rem;font:700 .7rem/1.35 var(--font-kop);letter-spacing:.09em;text-transform:uppercase;color:var(--goud-diep)}}
+
+/* Ruimte boven een tabel zoals boven een alinea in .jur__blok; de balk springt naar de H2-id, met dezelfde marge als .jur__blok. */
+.jur__blok .cert-vak{margin-top:.85rem}
+.jur__blok h2[id]{scroll-margin-top:96px}
+/* Tweede offerteband midden in het artikel (LEAD-FABLE-033, keuze A): de site zet .of-wrap op clamp(-104px,-7.5vw,-56px)
+   voor de plek onder de hero; midden in het artikel dekt die marge de vorige sectie af. Alleen die marge op 0. */
+#prijs-artikel .of-wrap{margin-top:0}
+/* Knop van de tweede band: de site kleurt de offerteknop via #ofForm .of-cta; het formulier in de tweede band heet
+   ofForm-artikel (geen dubbele id). Dezelfde vier siteregels uit style-blog.min.css, alleen met die id. */
+#ofForm-artikel .of-cta{background:var(--offerte);border:1px solid var(--offerte);color:var(--offerte-tekst)}
+#ofForm-artikel .of-cta svg{color:inherit}
+#ofForm-artikel .of-cta:hover,#ofForm-artikel .of-cta:focus-visible{background:var(--offerte-hover);border-color:var(--offerte-rand);color:#fff;box-shadow:none}
+#ofForm-artikel .of-cta:focus-visible{outline:2px solid transparent;outline-offset:2px;box-shadow:0 0 0 2px #fff,0 0 0 5px var(--offerte-rand)}
+/* Inhoudsbalk onder 480px twee pillen per rij (LEAD-FABLE-090); de chip vult de pilbreedte */
+@media (max-width:480px){.cert-merken.toc{gap:.9rem}.cert-merken.toc .cert-spring{width:calc((100% - .9rem) / 2);margin-inline:0;padding-inline:0}.cert-merken.toc .cert-chip{width:100%}}
+/* Eigen kop zonder harde spatie (woordbreuk gemeten, LEAD-FABLE-153): regels in balans, zodat het laatste woord niet los valt */
+.kop-balans{text-wrap:balance}
+/* Lijst in de tekstkolom van een fotoblok (LEAD-FABLE-191): dezelfde kleur als een lijst in section.jur, die de bodykleur erft */
+.sb-verhaal__tekst ul{color:var(--ant)}
+/* Lijst in de tekstkolom van een fotoblok (LEAD-FABLE-195): even groot en met dezelfde regelafstand als de alinea's onder de eerste */
+.sb-verhaal__tekst ul{font-size:.97rem;line-height:1.62}
+/* H1 onder 375px kleiner, zodat het langste woord in de kolom past (LEAD-FABLE-215, variant C); de tekst van de H1 blijft gelijk */
+@media (max-width:374px){#hero-titel{font-size:8.3vw}}

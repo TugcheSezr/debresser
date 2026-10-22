@@ -1,7 +1,7 @@
-/* Per categorie drie kaarten; de overige kaarten blijven zonder JavaScript bereikbaar. */
+/* Per categorie drie kaarten (of het aantal in data-zichtbaar); de overige kaarten blijven zonder JavaScript bereikbaar. */
 document.querySelectorAll('.c7-dgroep').forEach(groep => {
   const lijst = groep.querySelector('.sb-diensten__grid');
-  const extra = Array.from(lijst.children).slice(3);
+  const extra = Array.from(lijst.children).slice(Number(lijst.dataset.zichtbaar) || 3);
   if (!extra.length) return;
 
   const naam = groep.querySelector('.c7-dgroep__kop').textContent;
