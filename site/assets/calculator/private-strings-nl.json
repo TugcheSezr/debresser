@@ -1,0 +1,31 @@
+{
+  "liters": "{liter} liter, precies {exact} m³",
+  "prijs_volume": "Voor de prijsberekening: {m3} m³.",
+  "prijs_te_klein": "De prijsberekening begint bij 1 m³. Tel verder, of vul het volume zelf in bij de prijsberekening.",
+  "prijs_te_groot": "Uw telling is {m3} m³, meer dan de 300 m³ van de prijscalculator. Er gaat geen volume mee; vraag een offerte aan, dan rekenen wij het voor u uit.",
+  "prijs_fout": "Nog niet compleet: verbeter eerst de rode velden. Tot dan gaat er geen volume mee naar de prijsberekening.",
+  "formulier_totaal": "Totaal: ongeveer {m3} m³ (precies {exact} m³, {liter} liter).",
+  "formulier_prijs": "Volume voor de prijsberekening: {m3} m³.",
+  "formulier_prijs_te_groot": "Meer dan 300 m³: buiten de prijscalculator, volume en prijs in overleg.",
+  "formulier_prijs_geen": "Geen volume voor de prijsberekening (onder 1 m³ of nog niet compleet).",
+  "formulier_concept": "Niet meegeteld, eigen item zonder naam: {regels}.",
+  "prive_items": {
+    "prive-eethoek": "Eethoek",
+    "prive-diversen-klein": "Diversen klein",
+    "prive-diversen-groot": "Diversen groot"
+  },
+  "prive_zoek": {
+    "prive-eethoek": [
+      "Eethoek",
+      "Dining set"
+    ],
+    "prive-diversen-klein": [
+      "Diversen klein",
+      "Miscellaneous, small"
+    ],
+    "prive-diversen-groot": [
+      "Diversen groot",
+      "Miscellaneous, large"
+    ]
+  }
+}

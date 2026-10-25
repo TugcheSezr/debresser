@@ -1,0 +1,131 @@
+/* Internationale m³-calculator, v6 (GO-90-007 v2, proef v2.3, besluit 37, 25-10-2026). Alleen de onderdelen die de bestaande
+   m3c-opmaak uit style-dienst.min.css niet heeft: vervoerswijze, kamer toevoegen en hernoemen, het zoekveld per kamer,
+   de teleenheid onder een itemnaam, eigen items met een grootte, advies met groupage, eigen vrachtwagen en container, het
+   exacte getal bij een grens en minder meenemen. De keuzelijsten, het naamveld en het zoekveld hebben de invoerstijl van
+   het offerteformulier (.sb-ob__veld). */
+.im3[hidden],.im3 [hidden]{display:none!important}
+
+.im3-route{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.2rem;padding:0;border:0;min-width:0}
+.im3-route legend{width:100%;margin:0 0 .6rem;padding:0;font:700 .76rem/1.3 var(--font-kop);letter-spacing:.18em;text-transform:uppercase;color:var(--goud-diep)}
+.im3-route label{position:relative;cursor:pointer}
+.im3-route input{position:absolute;opacity:0;width:1px;height:1px}
+.im3-route span{display:inline-flex;align-items:center;min-height:40px;padding:.35rem .95rem;border:1px solid var(--lijn);border-radius:2rem;background:var(--wit);color:var(--bruin);font:600 .8rem/1.2 var(--font-kop);transition:border-color .2s var(--ease),background .2s var(--ease)}
+.im3-route label:hover span{border-color:var(--goud)}
+.im3-route input:checked+span{background:var(--goud);border-color:var(--goud)}
+.im3-route input:focus-visible+span{outline:3px solid var(--goud-diep);outline-offset:2px}
+
+.im3-erbij{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.6rem .8rem;margin:.9rem 0 0}
+.im3-erbij p{display:flex;flex-direction:column;gap:.3rem;margin:0;min-width:0}
+.im3-erbij label{font:600 .8rem/1.3 var(--font-kop);color:var(--bruin)}
+.im3-erbij select,.im3-erbij input{min-height:48px;max-width:100%;margin:0;padding:11px 14px;border:1px solid #7C8AA0;border-radius:8px;background:#fff;color:var(--ant-diep);font:500 1rem/1.3 var(--font-tekst)}
+.im3-erbij select{-webkit-appearance:none;appearance:none;padding-right:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23020D41' d='M5.5 8.5l6.5 7 6.5-7z'/%3E%3C/svg%3E") no-repeat right 14px center/16px}
+.im3-erbij select:focus-visible,.im3-erbij input:focus-visible{outline:3px solid var(--goud-diep);outline-offset:1px}
+.im3-erbij--boven{margin:0 0 1.2rem}
+.im3-erbij__knop{min-height:44px}
+.im3-erbij__knop:disabled,.im3-eigen__erbij:disabled{opacity:.5;cursor:not-allowed}
+.im3-erbij .im3-fout{flex:1 1 100%}
+.im3-kamers-leeg{margin:.8rem 0 0;padding:1rem;border:1px dashed var(--lijn);border-radius:10px;color:var(--ant-zacht)}
+
+.im3-paneel__kop{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:.4rem 1rem;margin:.8rem 0 0}
+.im3-paneel__naam{display:flex;flex-direction:column;gap:.25rem;flex:1 1 14rem;margin:0;min-width:0}
+.im3-paneel__naam label{font:600 .75rem/1.3 var(--font-kop);color:var(--ant-zacht)}
+.im3-kamer__naam{width:100%;max-width:22rem;height:40px;padding:0 .7rem;border:1px solid var(--lijn);border-radius:10px;background:var(--wit);color:var(--bruin);font:700 1.05rem/1 var(--font-kop)}
+.im3-kamer__weg{padding:0;border:0;background:none;color:var(--ant-zacht);font:inherit;font-size:.85rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.im3-kamer__weg:hover{color:var(--bruin)}
+
+/* zoekveld van de kamer (besluit 37): zelfde invoerstijl als de keuzelijsten, met een loep; de treffers als knoppen eronder */
+.im3-zoek{margin:.9rem 0 0}
+.im3-zoek__invoer{width:100%;max-width:34rem;min-height:48px;margin:0;padding:11px 14px 11px 44px;border:1px solid #7C8AA0;border-radius:8px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23020D41' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5L21 21'/%3E%3C/svg%3E") no-repeat 14px center/18px;color:var(--ant-diep);font:500 1rem/1.3 var(--font-tekst);-webkit-appearance:none;appearance:none}
+.im3-zoek__invoer::placeholder{color:#5B6478;opacity:1}
+.im3-zoek__invoer:focus-visible{outline:3px solid var(--goud-diep);outline-offset:1px}
+.im3-zoek__status{margin:.35rem 0 0;font-size:.8rem;line-height:1.4;color:var(--ant-zacht)}
+.im3-zoek__status:empty{display:none}
+.im3-zoek__lijst{display:grid;gap:.35rem;max-width:34rem;margin:.4rem 0 0;padding:0;list-style:none}
+.im3-zoek__lijst:empty{display:none}
+.im3-zoek__kies{display:flex;align-items:center;gap:.6rem;width:100%;min-height:44px;padding:.45rem .75rem;border:1px solid var(--lijn);border-radius:10px;background:var(--creme);color:var(--ant);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.im3-zoek__kies:hover{border-color:var(--goud);background:var(--wit)}
+.im3-zoek__kies:focus-visible{outline:3px solid var(--goud-diep);outline-offset:1px;background:var(--wit)}
+.im3-zoek__naam{font-weight:600;font-size:.95rem}
+.im3-zoek__via{min-width:0;font-size:.8rem;color:var(--ant-zacht)}
+.im3-zoek__kies svg{flex:none;width:14px;height:14px;margin-left:auto;color:var(--bruin)}
+.im3-rij__per{display:block;font-size:.78rem;color:var(--ant-zacht)}
+.im3 input[aria-invalid="true"]{border-color:var(--fout);box-shadow:0 0 0 1px var(--fout);background:var(--wit)}
+.im3-fout{margin:.3rem 0 0;font-size:.8rem;line-height:1.4;font-weight:600;color:var(--fout)}
+.im3-rij__hulp{display:block;margin:.25rem 0 0;font-size:.78rem;line-height:1.4;color:var(--ant-zacht)}
+
+.im3-eigen__kop{margin:1rem 0 .2rem;font:700 .72rem/1.3 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud-diep)}
+.im3-eigenlijst:empty{display:none}
+/* eigen items over de hele paneelbreedte, in twee regels: naam en teller, daaronder de grootte en het kruisje. Zo past
+   'Middel, zoals een fauteuil' ook op 390 en houdt de naam daar de ruimte naast de teller */
+.im3-eigenlijst{grid-template-columns:1fr}
+.im3-eigenlijst .m3c-rij:nth-child(2){border-top:1px solid var(--lijn)}
+.m3c-rij.im3-eigen{display:grid;grid-template-columns:minmax(0,22rem) auto auto;justify-content:start;align-items:center;gap:.4rem .8rem}
+.im3-eigen .m3c-rij__wat{grid-column:1;max-width:22rem}
+.im3-eigen .m3c-rij__tel{grid-column:2/-1}
+.im3-eigen .im3-eigen__maat{grid-column:1/3}
+.im3-eigen .im3-eigen__weg{grid-column:3;justify-self:end}
+.im3-eigen__naam{width:100%;height:36px;padding:0 .6rem;border:1px solid var(--lijn);border-radius:10px;background:var(--wit);color:var(--ant);font:600 .95rem/1 var(--font-tekst)}
+.im3-eigen__maat{display:block;width:100%;max-width:22rem;height:40px;margin:0;padding:0 36px 0 .6rem;border:1px solid var(--lijn);border-radius:10px;background:var(--wit) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23020D41' d='M5.5 8.5l6.5 7 6.5-7z'/%3E%3C/svg%3E") no-repeat right 10px center/14px;color:var(--ant);font:500 .88rem/1 var(--font-tekst);-webkit-appearance:none;appearance:none}
+.im3-eigen__maat:focus-visible,.im3-eigen__naam:focus-visible{outline:3px solid var(--goud-diep);outline-offset:1px}
+.im3-eigen__weg{display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:none;color:var(--ant-zacht);cursor:pointer}
+.im3-eigen__weg:hover{color:var(--bruin);background:var(--creme)}
+.im3-eigen__weg svg{width:14px;height:14px}
+.im3-eigen__erbij{margin:.6rem 0 0}
+
+.im3-advies{margin:1rem 0 0;padding-top:.8rem;border-top:1px solid rgba(255,255,255,.18)}
+.im3-optie{margin:.8rem 0 0;padding:.8rem 1rem;border-radius:10px;background:rgba(255,255,255,.08)}
+.im3-optie__titel{margin:0 0 .3rem;font:700 1.05rem/1.3 var(--font-kop);color:var(--wit)}
+.im3-optie__route{margin:0 0 .35rem;font:700 .7rem/1.3 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}
+.im3-advies:not(.is-beide) .im3-optie__route{display:none}
+/* totaalkaart hoger dan het beeld: niet sticky (K1 B13-01); intl-m3.js zet de klasse */
+.im3 .m3c-som.im3-som--los{position:relative;top:auto}
+/* totaalbalk ook boven 1000px als de kaart niet meeschuift (Shahab 25-10): dan blijven totaal en offerteknop in beeld.
+   Zelfde opmaak als de balk van de site tot 1000px, met de inhoud uitgelijnd op .wrap; zichtbaar via dezelfde
+   is-zichtbaar (kamerlijst in beeld, totaalkaart niet) */
+@media (min-width:1000.02px){
+.js .im3 .m3c-som.im3-som--los~.m3c-balk{position:fixed;left:0;right:0;bottom:0;z-index:59;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem max(var(--pad),calc((100% - var(--maxw))/2 + var(--pad))) calc(.6rem + env(safe-area-inset-bottom));background:var(--bruin);color:var(--wit);box-shadow:0 -10px 24px -14px rgba(2,13,65,.5);transform:translateY(100%);visibility:hidden;transition:transform .35s var(--ease),visibility 0s linear .35s}
+.js .im3 .m3c-som.im3-som--los~.m3c-balk.is-zichtbaar{transform:none;visibility:visible;transition:transform .35s var(--ease)}
+.im3 .m3c-balk__som{margin:0;display:flex;align-items:baseline;gap:.4rem;font-weight:700}
+.im3 .m3c-balk__som span{font:700 .72rem/1.2 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}
+.im3 .m3c-balk__som b{font:700 1.6rem/1 var(--font-display);color:var(--geel)}
+.im3 .m3c-balk .btn{flex:none;padding:.7rem 1.1rem}
+.im3 .m3c-tab,.im3 .m3c-knop,.im3 .m3c-rij__tel input{scroll-margin-bottom:calc(5rem + env(safe-area-inset-bottom))}
+}
+@media (min-width:1000.02px) and (prefers-reduced-motion:reduce){.js .im3 .m3c-som.im3-som--los~.m3c-balk,.js .im3 .m3c-som.im3-som--los~.m3c-balk.is-zichtbaar{transition:none}}
+.im3-optie__tekst{margin:.5rem 0 0;font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.86)}
+.im3-advies__keuze{margin:.8rem 0 0;font-size:.85rem;line-height:1.5;color:rgba(255,255,255,.8)}
+.im3-advies__label{margin:0;font:700 .72rem/1.3 var(--font-kop);letter-spacing:.16em;text-transform:uppercase;color:var(--goud)}
+.im3-stappen{display:flex;flex-wrap:wrap;gap:.35rem;margin:.4rem 0 0;padding:0;list-style:none}
+.im3-stappen li{padding:.24rem .6rem;border:1px solid rgba(255,255,255,.3);border-radius:2rem;font:700 .72rem/1.2 var(--font-kop);color:rgba(255,255,255,.78);white-space:nowrap}
+.im3-stappen li.is-voorbij{opacity:.55}
+.im3-stappen li.is-nu{background:var(--geel);border-color:var(--geel);color:var(--bruin)}
+.im3-vul{height:8px;margin:.7rem 0 0;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.im3-vul span{display:block;height:100%;background:var(--geel);transition:width .3s var(--ease)}
+
+.im3-minder{margin:1rem 0 0;padding:.8rem 1rem;border-left:3px solid var(--geel);border-radius:0 10px 10px 0;background:rgba(255,255,255,.08)}
+.im3-minder__kop{margin:0;font:700 .95rem/1.3 var(--font-kop);color:var(--geel)}
+.im3-minder__tekst{margin:.3rem 0 0;font-size:.9rem;line-height:1.5}
+.im3-minder__label{margin:.8rem 0 .2rem;font:700 .7rem/1.3 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}
+.im3-posten{margin:0;padding:0;list-style:none}
+.im3-posten li{padding:.3rem 0;border-top:1px solid rgba(255,255,255,.14);font-size:.88rem}
+
+.im3-precies{margin:.4rem 0 0;font-size:.85rem;line-height:1.45;color:var(--geel)}
+.im3-onvolledig{margin:.8rem 0 0;padding:.6rem .8rem;border-left:3px solid var(--fout);border-radius:0 8px 8px 0;background:var(--wit);color:var(--fout);font-size:.85rem;line-height:1.45;font-weight:600}
+
+.im3-verpakking{margin:1rem 0 0;font-size:.8rem;line-height:1.5;color:rgba(255,255,255,.72)}
+
+@media (max-width:560px){.im3-erbij p{flex:1 1 100%}.im3-erbij select,.im3-erbij input{width:100%}.im3-kamer__naam{max-width:none}}
+/* smal scherm: 'Zoek een item, bijvoorbeeld piano' moet heel blijven. Alleen de voorbeeldtekst wordt kleiner; de getypte
+   tekst blijft 16px, anders zoomt iOS in bij het tikken */
+@media (max-width:560px){.im3-zoek__invoer{padding-left:40px;padding-right:12px;background-position:12px center}.im3-zoek__invoer::placeholder{font-size:.875rem}}
+@media (max-width:374px){.im3-zoek__invoer::placeholder{font-size:.8125rem}}
+@media (max-width:340px){.im3-zoek__invoer::placeholder{font-size:.75rem}}
+@media (prefers-reduced-motion:reduce){.im3-vul span,.im3-route span{transition:none}}
+
+/* Eén balk onderin op telefoon (Shahab 25-10, regel van 53): zolang de totaalbalk van de calculator in beeld is, vervangt
+   die de vaste bel- en offertebalk .mcta (die alleen onder 768px staat). De totaalbalk zakt dan naar de onderrand en krijgt
+   de veilige marge. Alleen met :has, anders schuift de totaalbalk onder .mcta; zonder :has blijven de twee balken gestapeld. */
+@supports selector(body:has(a)){@media (max-width:767.98px){body:has(.im3 .m3c-balk.is-zichtbaar) .mcta{display:none}.js .im3 .m3c-balk{bottom:0;padding-bottom:calc(.6rem + env(safe-area-inset-bottom));transform:translateY(100%)}.js .im3 .m3c-balk.is-zichtbaar{transform:none}}}
+
+/* Lange itemnamen mogen de kamerkolom op een smal scherm niet verbreden. */
+.im3 .m3c-rij__naam{overflow-wrap:anywhere}

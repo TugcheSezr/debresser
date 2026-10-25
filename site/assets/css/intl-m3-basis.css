@@ -1,0 +1,70 @@
+/* Scoped m3c basisregels overgenomen uit reference-pro-css (style-dienst.min.css) voor www.debresser.nl */
+.im3 .m3c-ico{display:inline-block;width:28px;height:28px;margin:-.3rem .5rem 0 0;vertical-align:middle}
+.im3 .m3c-som__ico{display:block;width:56px;height:56px;margin:0 0 .5rem}
+.im3 .m3c-noscript{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;margin:0 0 1.4rem;padding:1rem 1.2rem;background:var(--wit);border-left:4px solid var(--geel);border-radius:0 12px 12px 0}
+.im3 .m3c-raster{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
+.im3 .m3c-kamers__label{margin:0 0 .6rem;font:700 .76rem/1.3 var(--font-kop);letter-spacing:.18em;text-transform:uppercase;color:var(--goud-diep)}
+.im3 .m3c-tabs{display:flex;flex-wrap:wrap;gap:.45rem}
+.im3 .m3c-tab{display:inline-flex;align-items:center;gap:.5rem;min-height:40px;padding:.35rem .4rem .35rem .85rem;border:1px solid var(--lijn);border-radius:2rem;background:var(--wit);color:var(--bruin);font:600 .8rem/1.2 var(--font-kop);cursor:pointer;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.im3 .m3c-tab:hover{border-color:var(--goud)}
+.im3 .m3c-tab[aria-selected="true"]{background:var(--goud);border-color:var(--goud);color:var(--bruin)}
+.im3 .m3c-tab__som{font-size:.72rem;font-weight:700;color:var(--ant-zacht);background:var(--creme-2);border-radius:2rem;padding:.24rem .55rem;white-space:nowrap}
+.im3 .m3c-tab__som.is-actief{background:var(--bruin);color:var(--wit)}
+.im3 .m3c-tab[aria-selected="true"] .m3c-tab__som:not(.is-actief){background:rgba(255,255,255,.55)}
+.im3 .m3c-panelen{margin-top:1rem}
+.im3 .m3c-paneel{background:var(--wit);border:1px solid var(--lijn);border-radius:var(--r);box-shadow:var(--schaduw-kaart);padding:.3rem 1.3rem 1rem}
+.im3 .m3c-paneel+.m3c-paneel{margin-top:1rem}
+.js .im3 .m3c-kamers.is-klaar .m3c-paneel:not(.is-actief){display:none}
+.js .im3 .m3c-kamers.is-klaar .m3c-paneel+.m3c-paneel{margin-top:0}
+.im3 .m3c-paneel:focus-visible{outline:3px solid var(--goud-diep);outline-offset:3px}
+.im3 .m3c-paneel__hulp{margin:.8rem 0 .2rem;font-size:.9rem;color:var(--ant-zacht)}
+.im3 .m3c-paneel__rijen{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem}
+.im3 .m3c-rij{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.55rem 0;border-top:1px solid var(--lijn)}
+.im3 .m3c-paneel__rijen .m3c-rij:nth-child(-n+2){border-top:0}
+.im3 .m3c-rij__wat{margin:0;min-width:0;line-height:1.3}
+.im3 .m3c-rij__naam{display:block;font-weight:600;font-size:.95rem;color:var(--ant)}
+.im3 .m3c-rij__maat{display:block;font-size:.78rem;color:var(--ant-zacht)}
+.im3 .m3c-rij.is-actief .m3c-rij__naam{color:var(--goud-diep)}
+.im3 .m3c-rij__tel{display:flex;align-items:center;gap:.35rem;flex:none}
+.im3 .m3c-knop{display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid var(--lijn);border-radius:50%;background:var(--creme);color:var(--bruin);cursor:pointer;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.im3 .m3c-knop:hover{border-color:var(--goud);background:var(--wit)}
+.im3 .m3c-knop svg{width:14px;height:14px}
+.im3 .m3c-rij__tel input{width:46px;height:36px;border:1px solid var(--lijn);border-radius:10px;background:var(--wit);color:var(--ant);font:700 .95rem/1 var(--font-tekst);text-align:center;-moz-appearance:textfield;appearance:textfield}
+.im3 .m3c-rij__tel input::-webkit-outer-spin-button,.im3 .m3c-rij__tel input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.im3 .m3c-rij.is-actief input{border-color:var(--teal-paneel);color:var(--goud-diep)}
+.im3 .m3c-som{--v:1.68rem;position:sticky;top:120px;isolation:isolate;margin:calc(var(--v) + .5rem) calc(var(--v) + .5rem) 0 0;border-radius:var(--r)}
+.im3 .m3c-som__kaart{position:relative;z-index:1;background:var(--bruin);color:var(--wit);border-radius:var(--r);box-shadow:var(--schaduw);padding:clamp(1.3rem,2.5vw,1.7rem)}
+.im3 .m3c-som::before,.im3 .m3c-som::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:var(--r);transition:transform .6s var(--ease)}
+.im3 .m3c-som::before{background:linear-gradient(150deg,var(--teal-paneel),var(--goud-diep));transform:translate(var(--v),calc(-1*var(--v)));box-shadow:0 18px 34px -20px rgba(2,13,65,.55)}
+.im3 .m3c-som::after{background:#D6EEFB;transform:translate(calc(var(--v)/2),calc(-.5*var(--v)));box-shadow:0 1px 2px rgba(2,13,65,.06),0 16px 30px -18px rgba(2,13,65,.4)}
+.im3 .m3c-som__kaart>:first-child{margin-top:0}
+.im3 .m3c-som .label{color:var(--goud);margin:0}
+.im3 .m3c-som .label::before{background:var(--goud)}
+.im3 .m3c-som__cijfer{display:flex;align-items:baseline;gap:.45rem;margin:.6rem 0 0}
+.im3 .m3c-som__cijfer b{font:700 clamp(2.6rem,5vw,3.4rem)/1 var(--font-display);color:var(--geel)}
+.im3 .m3c-som__cijfer span{font-size:1.15rem;font-weight:700;color:rgba(255,255,255,.8)}
+.im3 .m3c-som__lijst{list-style:none;margin:1rem 0 0;padding:0}
+.im3 .m3c-som__lijst li{display:flex;justify-content:space-between;gap:1rem;padding:.42rem 0;border-top:1px solid rgba(255,255,255,.18);font-size:.9rem}
+.im3 .m3c-som__lijst li span:last-child{font-weight:700;white-space:nowrap}
+.im3 .m3c-som__leeg{margin:1rem 0 0;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.18);font-size:.9rem;color:rgba(255,255,255,.8)}
+.im3 .m3c-som__acties{display:flex;flex-direction:column;gap:.6rem;margin-top:1.3rem}
+.im3 .m3c-som__acties .btn{width:100%}
+.im3 .m3c-som__video{margin:1rem 0 0;font-size:.9rem;color:rgba(255,255,255,.85)}
+.im3 .m3c-som__video a{color:var(--goud);font-weight:700;text-underline-offset:3px}
+.im3 .m3c-som__wis{margin-top:.8rem;padding:0;border:0;background:none;color:rgba(255,255,255,.8);font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer}
+.im3 .m3c-som__wis:hover{color:var(--wit)}
+.im3 .m3c-som a:focus-visible,.im3 .m3c-som button:focus-visible{outline-color:var(--geel)}
+.im3 .m3c-uitleg{margin:clamp(1.6rem,3vw,2.2rem) 0 0;max-width:78ch;padding:1rem 1.2rem;background:var(--wit);border-left:4px solid var(--goud);border-radius:0 12px 12px 0;font-size:.92rem;line-height:1.6;color:var(--ant-zacht)}
+.im3 .m3c-uitleg b{color:var(--bruin)}
+.im3 .m3c-balk{display:none}
+@media (max-width:1000px){.js .im3 .m3c-balk{position:fixed;left:0;right:0;bottom:var(--m3c-onder,0px);z-index:59;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+padding:.6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));background:var(--bruin);color:var(--wit);box-shadow:0 -10px 24px -14px rgba(2,13,65,.5);
+transform:translateY(calc(100% + var(--m3c-onder,0px)));visibility:hidden;transition:transform .35s var(--ease),visibility 0s linear .35s}.js .im3 .m3c-balk.is-zichtbaar{transform:none;visibility:visible;transition:transform .35s var(--ease)}.im3 .m3c-balk__som{margin:0;display:flex;align-items:baseline;gap:.4rem;font-weight:700}.im3 .m3c-balk__som span{font:700 .72rem/1.2 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}.im3 .m3c-balk__som b{font:700 1.6rem/1 var(--font-display);color:var(--geel)}.im3 .m3c-balk .btn{flex:none;padding:.7rem 1.1rem}.im3 .m3c-tab,.im3 .m3c-knop,.im3 .m3c-rij__tel input{scroll-margin-bottom:calc(5rem + env(safe-area-inset-bottom))}}
+@media (max-width:767.98px){.js .im3 .m3c-balk{padding-bottom:.6rem}.im3 .m3c-tab,.im3 .m3c-knop,.im3 .m3c-rij__tel input{scroll-margin-bottom:calc(10rem + env(safe-area-inset-bottom))}}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.im3 .m3c-som:hover{--v:2.17rem}}
+@media (prefers-reduced-motion:reduce){.im3 .m3c-som::before,.im3 .m3c-som::after,.im3 .m3c-tab,.im3 .m3c-knop,.js .im3 .m3c-balk,.js .im3 .m3c-balk.is-zichtbaar{transition:none}}
+@media (max-width:1000px){.im3 .m3c-raster{grid-template-columns:1fr}.im3 .m3c-som{position:relative;top:auto;max-width:34rem}}
+@media (max-width:720px){.im3 .m3c-paneel{padding-inline:1rem}.im3 .m3c-paneel__rijen{grid-template-columns:1fr}.im3 .m3c-paneel__rijen .m3c-rij:nth-child(2){border-top:1px solid var(--lijn)}.im3 .m3c-tab{min-height:44px}.im3 .m3c-knop{width:40px;height:40px}}
+
+/* De offerteknop moet ook bij 320px volledig in de vaste balk passen. */
+@media (max-width:767.98px){.js .im3 .m3c-balk .btn{flex:0 1 auto;min-width:0;white-space:normal;text-align:center}}

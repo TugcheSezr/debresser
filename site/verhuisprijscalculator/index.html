@@ -25,6 +25,8 @@
 <script>document.documentElement.className+=' js'</script>
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/sora-400-700-latin.woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/style-dienst.min.css?v=20261014-1245">
+  <link rel="stylesheet" href="/assets/css/intl-m3.css?v=53a3ef559e3c">
+  <link rel="stylesheet" href="/assets/css/private-m3.css?v=b6f2d3ebbc02">
 <link rel="stylesheet" href="/assets/css/cookie-consent-v3.css?v=20261014-popup033-breed">
 <script src="/assets/js/site.js?v=20261014-1346" defer></script>
 </head>
@@ -364,6 +366,40 @@
   </div>
 </section>
 
+<section class="sectie m3c im3 pm3" id="rekenen" aria-labelledby="rekenen-kop" data-pm3="" data-pm3-prijs="lokaal" data-pm3-offerte="pagina" data-strings="/assets/calculator/strings-nl.json" data-strings-prive="/assets/calculator/private-strings-nl.json" data-inboedel="/assets/calculator/inboedel.json">
+  <div class="wrap">
+    <div class="sectiekop" data-reveal>
+      <p class="label">M3 calculator</p>
+      <h2 class="kop" id="rekenen-kop">Tel uw inboedel per kamer</h2>
+      <p class="intro">Kies een kamer, zet bij elk meubelstuk het aantal en lees het totaal af in de donkere kaart. Heeft u meer kamers of eigen spullen, voeg ze dan toe of zoek ze op. Er wordt niets verstuurd of bewaard; uw telling komt bij Opmerkingen in het offerteformulier en gaat alleen mee als u dat zelf verstuurt.</p>
+    </div>
+    <noscript><p class="m3c-noscript">Deze calculator rekent met JavaScript, en dat staat in uw browser uit. Bel dan met onze adviseur en neem samen door wat er mee verhuist. <a class="btn btn--omlijnd" href="tel:+31135425935">Bel 013 542 59 35</a></p></noscript>
+    <div class="m3c-raster" data-pm3-raster="">
+      <div data-im3-app=""></div>
+      <aside class="m3c-som" id="uw-totaal" aria-labelledby="m3c-som-label" data-reveal>
+        <div class="m3c-som__kaart">
+          <img class="m3c-som__ico" src="/assets/img/iconen/wit/vrachtwagen.svg" alt="" width="56" height="56" loading="lazy" decoding="async">
+          <p class="label" id="m3c-som-label">Uw inboedel</p>
+          <p class="m3c-som__cijfer" aria-live="polite"><b data-m3totaal>0</b><span>m&sup3;</span></p>
+          <ul class="m3c-som__lijst" data-m3lijst hidden></ul>
+          <p class="m3c-som__leeg" data-m3leeg>Zodra u iets telt, ziet u hier per kamer hoeveel kuub het is.</p>
+          <div class="m3c-som__acties">
+            <a class="btn btn--goud" data-m3prijs href="#berekenen"><svg aria-hidden="true"><use href="#i-caret"/></svg>Bereken uw verhuisprijs</a>
+            <a class="btn btn--offerte" data-m3offerte href="#offerte-aanvragen"><svg aria-hidden="true"><use href="#i-caret"/></svg>Offerte aanvragen</a>
+          </div>
+          <p class="m3c-som__video">Liever samen tellen? <a href="/offerte/videogesprek/">Plan een videogesprek</a></p>
+          <button type="button" class="m3c-som__wis" data-m3wis>Alles op nul zetten</button>
+        </div>
+      </aside>
+      <div class="m3c-balk" data-m3balk role="group" aria-label="Uw totaal">
+        <p class="m3c-balk__som"><span>Uw inboedel</span><b data-m3balktotaal>0</b> m&sup3;</p>
+        <a class="btn btn--offerte" data-m3offerte href="#offerte-aanvragen">Offerte aanvragen</a>
+      </div>
+    </div>
+    <p class="m3c-uitleg" data-reveal><img class="m3c-ico" src="/assets/img/iconen/kleur/rekenmachine.svg" alt="" width="28" height="28" loading="lazy" decoding="async"><b>Zo telt de calculator.</b> Elk item telt met een vaste maat uit onze inboedellijst, keer uw aantal; een eigen item telt als klein, middelgroot of groot. Per kamer en in totaal ziet u de kuub in de donkere kaart. Zo schat u de laadruimte. Het volume in de offerte stelt onze adviseur samen met u vast: telefonisch, in een videogesprek of tijdens een huisbezoek.</p>
+  </div>
+</section>
+
 <section class="leadblock vpc" id="berekenen" aria-labelledby="berekenen-kop" data-vpc>
   <div class="wrap">
     <div class="leadblock__card" data-reveal>
@@ -666,6 +702,7 @@
 </section>
 
 <script src="/assets/js/verhuisprijscalculator.js?v=20261001-1914" defer></script>
+  <script src="/assets/js/private-m3.js?v=8ec97ac9c586" defer></script>
 
 <section class="sectie sectie--creme2 sb-ob" id="offerte-aanvragen" aria-labelledby="offerte-aanvragen-kop">
   <div class="wrap">

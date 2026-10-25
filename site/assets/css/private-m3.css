@@ -1,0 +1,18 @@
+/* Particuliere m³-calculator (HOOFDLEAD-GO-007): alleen wat intl-m3.css en style-dienst.min.css niet hebben. Het blok
+   draagt .im3, dus de opmaak van kamers, zoekveld en eigen items komt ongewijzigd uit intl-m3.css. */
+.pm3 .pm3-liters{margin:.2rem 0 0;font-size:.9rem;line-height:1.4;color:rgba(255,255,255,.85)}
+.pm3 .pm3-status{margin:1rem 0 0;padding:.6rem .8rem;border-left:3px solid var(--goud);font-size:.85rem;line-height:1.45;color:#fff;overflow-wrap:anywhere}
+.pm3 .pm3-status.is-fout{border-left-color:#F2A7A0}
+.pm3 .pm3-status[hidden],.pm3 .pm3-liters[hidden]{display:none!important}
+.pm3 .pm3-status:focus{outline:3px solid var(--goud);outline-offset:2px}
+
+/* Ook bij een sticky kaart blijft het totaal zichtbaar zodra het cijfer buiten beeld valt. */
+@media (min-width:1000.02px){
+.js .pm3 .m3c-balk{position:fixed;left:0;right:0;bottom:0;z-index:59;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem max(var(--pad),calc((100% - var(--maxw))/2 + var(--pad))) calc(.6rem + env(safe-area-inset-bottom));background:var(--bruin);color:var(--wit);box-shadow:0 -10px 24px -14px rgba(2,13,65,.5);transform:translateY(100%);visibility:hidden;transition:transform .35s var(--ease),visibility 0s linear .35s}
+.js .pm3 .m3c-balk.is-zichtbaar{transform:none;visibility:visible;transition:transform .35s var(--ease)}
+.pm3 .m3c-balk__som{margin:0;display:flex;align-items:baseline;gap:.4rem;font-weight:700}
+.pm3 .m3c-balk__som span{font:700 .72rem/1.2 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}
+.pm3 .m3c-balk__som b{font:700 1.6rem/1 var(--font-display);color:var(--geel)}
+.pm3 .m3c-balk .btn{flex:none;padding:.7rem 1.1rem}
+}
+@media (min-width:1000.02px) and (prefers-reduced-motion:reduce){.js .pm3 .m3c-balk,.js .pm3 .m3c-balk.is-zichtbaar{transition:none}}
