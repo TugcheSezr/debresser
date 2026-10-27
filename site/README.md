@@ -18,6 +18,25 @@ paginaboom: `../sitemap-debresser/sitemap-de-bresser.md`.
 - Omleidingen van de oude debresser.nl-adressen staan in `vercel.json`.
 - `_werk/` gaat niet mee met een deploy (`.vercelignore`).
 
+## Calculator en browsercache (vaste regel)
+
+`vercel.json` geeft alles onder `/assets/` `Cache-Control: public, max-age=31536000, immutable`: een browser haalt
+zo'n bestand een jaar lang niet opnieuw op. Daarom laadt elke calculatorpagina de calculatorbestanden met een
+versie: `data-strings`, `data-strings-prive` en `data-inboedel` eindigen op `?v=<eerste 12 tekens van de sha256
+van het bestand>`, net als `intl-m3.js` en `private-m3.js`.
+
+Verander je een bestand in `assets/calculator/` of een calculatorscript, zet dan in dezelfde commit op alle
+pagina's die het laden de nieuwe `?v=`. Anders zien terugkerende bezoekers, en jijzelf, tot een jaar de oude tekst
+of de oude volumes. Controle: dit moet per bestand precies één versie tonen, gelijk aan de sha256 van dat bestand.
+
+```
+grep -rhoE 'calculator/[a-z-]+\.json\?v=[0-9a-f]+|[a-z-]+-m3\.js\?v=[0-9a-f]+' --include=index.html . | sort | uniq -c
+```
+
+Sinds 27-10-2026 zijn de calculatorteksten rechtstreeks in deze JSON-bestanden aangepast: geen liters, en
+"bescherming" in plaats van "verpakking". De bronbestanden in het internationale dossier (`inhoud-ee/m3`,
+ITEMDEFINITIES) hebben nog de oude teksten. Bouw de JSON dus niet opnieuw op uit die bronnen.
+
 ## Formulier
 
 Web3Forms, key in `navigatie.WEB3FORMS`. LET OP: die key bezorgt nog op de inbox van de vorige
