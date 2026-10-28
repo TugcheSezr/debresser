@@ -220,6 +220,24 @@
 // gewoon naar Web3Forms.
 (function(){
   if(!window.fetch||!window.FormData)return;
+  // Bas-koppeling (28-10-2026, 53-ONTWERP v9 §9): een aanvraag gaat naast de Web3Forms-mail ook naar Bas (CRM), via
+  // /api/bas-aanvraag/ op deze site. Eén keer per formulier; de BotID-module laadt pas bij de eerste aanvraag. Fouten
+  // worden ingeslikt: mail en bedankje wachten hier nooit op.
+  var basModule=null;
+  function naarBas(f,d){
+    if(f.dataset.bas)return Promise.resolve();
+    f.dataset.bas='1';
+    var body=Object.create(null),bc=new FormData(f).get('botcheck');
+    d.forEach(function(w,k){if(typeof w!=='string'||k==='access_key')return;body[k]=body[k]?body[k]+', '+w:w});
+    if(typeof bc==='string')body.botcheck=bc;   // de site haalt botcheck uit d; de server toetst hem opnieuw
+    if(!basModule)basModule=new Promise(function(ja,nee){
+      var s=document.createElement('script');s.type='module';s.src='/assets/js/bas-botid-v1.mjs';s.onload=ja;s.onerror=nee;
+      document.head.appendChild(s);
+    });
+    return basModule.then(function(){
+      return fetch('/api/bas-aanvraag/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),keepalive:true});
+    }).then(function(){},function(){});
+  }
   [].forEach.call(document.querySelectorAll('form[data-w3f]'),function(f){
     var m=f.querySelector('.sbf__melding'),k=f.querySelector('button[type=submit]');
     // Vaste soort voor de meting (meting-v1.js): het #-deel van de action, of het sollicitatieformulier op id.
@@ -255,6 +273,7 @@
       var re=f.querySelector('input[type=email]');if(re&&re.value)d.append('replyto',re.value);
       d.append('Pagina',document.title+' ('+location.pathname+')');
       var o=k.innerHTML;k.disabled=true;k.textContent='Sending...';m.textContent='';f.dataset.bezig='1';
+      if(soort==='offerte'||soort==='videogesprek')naarBas(f,d);   // sollicitatie en tekenbonus niet
       // Zonder Web3Forms-key (navigatie.WEB3FORMS leeg) gaat er niets weg: meteen naar de uitweg hieronder.
       ((f.querySelector('input[name=access_key]')||{}).value?fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:d}):Promise.reject(0))
         .then(function(r){if(!r.ok)throw 0;return r.json()})
