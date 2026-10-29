@@ -177,7 +177,8 @@ export function bouwBasPayload(velden, site, vandaag) {
   if (adressen.length) payload.addresses = adressen;
 
   NOTITIEVELDEN.forEach(k => losseTekst(k));
-  payload.customerNotes = kap(notitie.join('\n'), MAX_NOTITIE);
+  // notes is de interne notitie (Notities > Algemeen); customerNotes zou de klant zien (Casper, Bas Software, 28-10).
+  payload.notes = kap(notitie.join('\n'), MAX_NOTITIE);
   return payload;
 }
 
