@@ -14,7 +14,7 @@ sitemap zodra hij in VRIJGEGEVEN staat EN er een bronbestand voor is (_werk/pagi
 import pathlib
 from urllib.parse import quote_plus
 
-BUSTER = "20260925-2216"
+BUSTER = "20260928-1"
 
 # Het voorkeursdomein, met www. canonical, sitemap.xml, robots.txt en de schema-@id's voeren
 # allemaal dit domein; de apex redirect in vercel.json naar www.
@@ -40,8 +40,8 @@ KVK = "18014730"
 BTW = "NL0055.15.452.B.01"
 # GAT: nog geen Web3Forms-key voor De Bresser. De oude key bezorgde op info@de-kievit.nl en is op verzoek
 # van de gebruiker leeggemaakt (25-09-2026). debresser.nl zelf gebruikt Formidable Forms Pro (WordPress, geen
-# publieke key). Zolang dit leeg is, versturen de formulieren niets en tonen ze bellen of mailen als uitweg
-# (site.js). Een eigen key maken op info@debresser.nl en hier invullen.
+# publieke key). Zolang dit leeg is, toont site.js vooraf een melding en maakt het met de ingevulde
+# velden een e-mailconcept. Een eigen key maken op info@debresser.nl en hier invullen.
 WEB3FORMS = ""
 
 LOGO = "/assets/img/merk/logo-debresser.png"          # 243x240, bijgesneden uit de aangeleverde PNG

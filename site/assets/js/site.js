@@ -1,3 +1,37 @@
+// Zonder De Bresser Web3Forms-key maakt de verzendknop een e-mail klaar met de ingevulde velden.
+// De melding staat bovenaan, zodat niemand pas na het invullen ontdekt dat online versturen uitstaat.
+(function(){
+  var forms=document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
+  [].forEach.call(forms,function(f){
+    var key=f.querySelector('input[name="access_key"]');
+    if(key&&key.value.trim())return;
+    var mail=f.getAttribute('data-mail')||(f.id==='sbf-sollicitatie'?'pz@debresser.nl':'info@debresser.nl');
+    var note=document.createElement('p');note.className='form-mail-fallback';note.setAttribute('role','status');
+    note.appendChild(document.createTextNode('Online versturen is tijdelijk niet beschikbaar. Vul het formulier in en maak met de knop een e-mail klaar, of mail direct naar '));
+    var direct=document.createElement('a');direct.href='mailto:'+mail;direct.textContent=mail;note.appendChild(direct);
+    note.appendChild(document.createTextNode('.'));
+    f.insertBefore(note,f.firstChild);
+    var button=f.querySelector('button[type="submit"]');if(button)button.textContent='Maak e-mail klaar';
+  });
+  document.addEventListener('submit',function(e){
+    var f=e.target;if(!f.matches('form[action="https://api.web3forms.com/submit"]'))return;
+    var key=f.querySelector('input[name="access_key"]');if(key&&key.value.trim())return;
+    e.preventDefault();e.stopPropagation();
+    if(!f.checkValidity()){f.reportValidity();return}
+    var d=new FormData(f),mail=f.getAttribute('data-mail')||(f.id==='sbf-sollicitatie'?'pz@debresser.nl':'info@debresser.nl');
+    var skip={access_key:1,subject:1,from_name:1,botcheck:1,replyto:1};
+    var lines=[];d.forEach(function(v,k){if(!skip[k]&&typeof v==='string'&&v.trim())lines.push(k+': '+v.trim())});
+    lines.push('Pagina: '+location.href);
+    var subject=d.get('subject')||'Aanvraag via de website van De Bresser';
+    var url='mailto:'+mail+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+    var note=f.querySelector('.form-mail-fallback');
+    var old=note.querySelector('.form-mail-fallback__draft');if(old)old.remove();
+    var draft=document.createElement('a');draft.className='form-mail-fallback__draft';draft.href=url;
+    draft.textContent='Open uw e-mailprogramma en verstuur uw aanvraag';note.appendChild(draft);
+    note.scrollIntoView({behavior:'smooth',block:'center'});draft.focus({preventScroll:true});
+  },true);
+})();
+
 // Offerteformulier in de header (#ofForm, homepage): het grote formulier (#lfForm) staat alleen op /offerte/.
 // Staat het op dezelfde pagina, dan gaan de waarden erin over en springen wij erheen (Feitsma). Anders gaan alleen
 // de ingevulde velden als ?van=&naar=&datum=&woning= naar /offerte/#offerte (zonder script doet het formulier
@@ -134,7 +168,7 @@
     Array.from(d.keys()).forEach(function(k){if(!d.getAll(k).join('').trim())d.delete(k)});
     var re=f.querySelector('input[type=email]');if(re&&re.value)d.append('replyto',re.value);
     d.append('Pagina',document.title);
-    // Zonder Web3Forms-key (navigatie.WEB3FORMS leeg) gaat er niets weg: meteen de uitweg tonen.
+    // Zonder key vangt de capture-handler bovenaan dit bestand de submit al af.
     if(!(f.querySelector('input[name=access_key]')||{}).value)return mis();
     fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:d})
       .then(function(r){return r.json()})
@@ -186,7 +220,7 @@
       var re=f.querySelector('input[type=email]');if(re&&re.value)d.append('replyto',re.value);
       d.append('Pagina',document.title+' ('+location.pathname+')');
       var o=k.innerHTML;k.disabled=true;k.textContent='Versturen...';m.textContent='';
-      // Zonder Web3Forms-key (navigatie.WEB3FORMS leeg) gaat er niets weg: meteen naar de uitweg hieronder.
+      // Zonder key vangt de capture-handler bovenaan dit bestand de submit al af.
       ((f.querySelector('input[name=access_key]')||{}).value?fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:d}):Promise.reject(0))
         .then(function(r){return r.json()})
         .then(function(r){

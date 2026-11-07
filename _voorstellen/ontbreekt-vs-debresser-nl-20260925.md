@@ -136,3 +136,13 @@ This compares content, not design. Things that are dropped or merged on purpose 
   - PDFs, redirects, meta, schema and route links: 79.
   - Forms: d5.
 - **Top gap 7:** not added, because the client has to confirm the contact persons first (see the corrected row above).
+
+## Status 28-09-2026
+
+- De lokale branch is bijgewerkt met GitHub-commit `ccedeb1`. De bestaande lokale wijzigingen zijn behouden en samen met die commit opnieuw gebouwd: 89 pagina's, 404, sitemap en robots.txt; de builder vindt geen ontbrekende interne doelen.
+- De zes PDF's staan onder `site/downloads/` en de oude WordPress-PDF-paden hebben 301-redirects. De tien ontbrekende URL-redirects uit punt 4 staan in `site/vercel.json`.
+- `og:image`, `og:description`, Twitter-kaarten en relevante schema's worden door de builder gegenereerd. De sociale links, korte berichtformulieren, quick scan en sollicitatieformulieren staan in de bronnen. Cv-upload ontbreekt nog; de vacaturepagina's verwijzen naar `pz@debresser.nl`.
+- De zichtbare `sb-gat`-invulvakken zijn uit de gebouwde pagina's gehaald. Onbekende feiten blijven in broncommentaar staan voor klantcontrole. Op `/contact/` staat nu een routeillustratie met het bestaande adres en de link naar Google Maps; er is geen kaartdienst ingebouwd.
+- **Nog nodig:** een Web3Forms-key die berichten bij De Bresser bezorgt. Tot die tijd tonen de formulieren vooraf een melding en maken ze bij verzenden een e-mailconcept met de ingevulde gegevens. Zonder een ingestelde e-mailapp moet de bezoeker rechtstreeks mailen of bellen.
+- **Klantbesluiten blijven open:** tracking en toestemming, actuele openingstijden en WhatsApp, de details en looptijd van de quick scan en tekenbonus, salaris-eenheid, Brussels contactpersonen en het logistieke voorwaarden-PDF. Daar zijn geen onbevestigde feiten voor ingevuld.
+- GitHub `main` kreeg op 28-09 apart commit `d432b94` met twee hero-uitsnedes en een wijziging in zijn eigen root-`index.html`. `main` en `site-arnas` hebben geen gedeelde Git-geschiedenis. De nieuwe beelden zijn bekeken; de huidige hero van `site-arnas` is behouden.

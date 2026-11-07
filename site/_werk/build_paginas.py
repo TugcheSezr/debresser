@@ -53,19 +53,20 @@ HEADERFORMULIER = ((WERK / "blok-headerformulier.html").read_text(encoding="utf-
 ZONDER_HEADERFORMULIER = {nav.OFFERTE}
 
 # Kort berichtformulier onderaan een pagina (Naam, Telefoonnummer, E-mailadres, Bericht), zoals debresser.nl het onderaan
-# plaats-, dienst- en blogpagina's had. Niet op pagina's met een eigen formulier: /contact/, /offerte/, /opslag/,
-# /gebouwbeheer/, /meubelprojecten/ en de vacatures. 25-09-2026.
+# plaats-, dienst- en blogpagina's had. Niet op pagina's met een eigen formulier: /contact/, /offerte/ en de vacatures.
+# 25-09-2026. Diensten en hun subcategoriepagina's krijgen het vanzelf, tenzij de bron een eigen aanvraagformulier
+# (data-w3f) heeft, zoals /gebouwbeheer/ (quick scan), /particuliere-opslag/ en /veilingen/. Zo kregen /opslag/ en
+# /meubelprojecten/ het blok toen hun aanvraagformulieren naar de subpagina's gingen (7a, 25-09-2026 avond).
 BERICHT = (WERK / "blok-bericht.html").read_text(encoding="utf-8")
-BERICHT_OP = {"/verhuizen/", "/assetmanagement/", "/duurzame-werkomgeving/", "/breda/", "/roosendaal/", "/bergen-op-zoom/"}
+BERICHT_OP = {"/breda/", "/roosendaal/", "/bergen-op-zoom/"}
 # Offerteblok (V2 met gele rand, 25-09-2026): boven de footer op elke pagina behalve /offerte/, ook onder het
 # berichtformulier (keuze gebruiker: "Overal, naast bericht"). Op /offerte/ staat het grote formulier al.
 OFFERTEBLOK = (WERK / "blok-offerteblok.html").read_text(encoding="utf-8")
 
 
 def bericht_op(href, inhoud=""):
-    # subcategoriepagina's (25-09-2026 avond) ook, tenzij ze een eigen aanvraagformulier hebben (data-w3f)
     return (href in BERICHT_OP or href.startswith("/verhuisbedrijf-") or href in nav.BLOG
-            or (href in nav.SUB_OUDER and "data-w3f" not in inhoud))
+            or (nav.is_dienst(href) and "data-w3f" not in inhoud))
 
 
 REVEAL_JS = """// Reveal zodra een blok in beeld komt.
@@ -427,7 +428,7 @@ def document(href, titel, main, beschrijving="", index=True, doc_titel=None, bee
 <link rel="stylesheet" href="/assets/css/style.min.css?v={nav.BUSTER}">
 <script src="/assets/js/site.js?v={nav.BUSTER}" defer></script>
 </head>
-<body>
+<body{' class="page--inner"' if href != '/' else ''}>
 {STEMPEL}
 
 {SPRITE}
