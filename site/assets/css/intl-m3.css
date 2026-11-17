@@ -77,6 +77,10 @@
 .im3-optie__titel{margin:0 0 .3rem;font:700 1.05rem/1.3 var(--font-kop);color:var(--wit)}
 .im3-optie__route{margin:0 0 .35rem;font:700 .7rem/1.3 var(--font-kop);letter-spacing:.14em;text-transform:uppercase;color:var(--goud)}
 .im3-advies:not(.is-beide) .im3-optie__route{display:none}
+/* 17-11-2026: de marge van de totaalkaart hangt niet meer aan --v. De site-css maakt --v groter als de muis op de kaart
+   staat (de vlakken erachter schuiven dan uit), maar gebruikte --v ook voor de marge: de kaart werd dan smaller en hoger en
+   de offerteknop versprong onder de muis; bij sommige vensterhoogtes bleef de kaart knipperen. 2.18rem is de marge in rust. */
+.im3 .m3c-som{margin:2.18rem 2.18rem 0 0}
 /* totaalkaart hoger dan het beeld: niet sticky (K1 B13-01); intl-m3.js zet de klasse */
 .im3 .m3c-som.im3-som--los{position:relative;top:auto}
 /* totaalbalk ook boven 1000px als de kaart niet meeschuift (Shahab 25-10): dan blijven totaal en offerteknop in beeld.

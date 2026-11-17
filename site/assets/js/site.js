@@ -8,6 +8,23 @@
   var map=[['of-van','lf-van','van'],['of-naar','lf-naar','naar'],['of-datum','lf-datum','datum'],['of-woning','lf-woning','woning'],['of-dienst','lf-dienst','dienst']];
   var top=document.getElementById('ofForm'),lf=document.getElementById('lfForm');
   var obf=!lf&&/^\/offerte(\/videogesprek)?\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
+  // 17-11-2026: het offerteblok van deze pagina zelf (staat op elke pagina boven de footer). De calculators zetten hun
+  // uitkomst als blok in Opmerkingen van dit blok: van een regel "--- ... ---" tot en met de regel "--- Einde ... ---".
+  // Wie daarna naar /offerte/ of /offerte/videogesprek/ gaat (een knop of het kopformulier), neemt die blokken mee via
+  // sessionStorage, net als de velden van het kopformulier; daar komen ze in Opmerkingen. Zonder blok gaat er niets mee en
+  // wordt een oud restant gewist. Niet bij een klik die een nieuw tabblad opent (dat tabblad heeft een eigen opslag) en niet
+  // bij een link naar de pagina waar de bezoeker al is.
+  var blok=!lf?document.querySelector('#offerte-aanvragen form'):null;
+  var BLOKKEN=/^--- (?!Einde )[^\n]* ---\n[\s\S]*?\n--- Einde [^\n]* ---$/gm;
+  function neemCalcMee(){
+    var o=blok&&blok.querySelector('#sb-ob-opm'),b=o&&o.value.match(BLOKKEN);
+    try{if(b)sessionStorage.setItem('ofCalc',b.join('\n\n'));else sessionStorage.removeItem('ofCalc')}catch(x){}
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');
+    if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(a.target&&a.target!=='_self'))return;
+    if(a.origin===location.origin&&/^\/offerte(\/videogesprek)?\/?$/.test(a.pathname)&&a.pathname!==location.pathname)neemCalcMee();
+  });
   if(top)top.addEventListener('submit',function(e){
     e.preventDefault();
     // CF-53: alleen op /offerte/ en /offerte/videogesprek/ staat het hoofdformulier (#offerte-aanvragen) op dezelfde pagina onder dit kleine
@@ -35,6 +52,7 @@
       map.forEach(function(p){var el=document.getElementById(p[0]),v=el&&el.value.trim();if(v)q.set(p[2],v)});
       var s=q.toString();
       try{sessionStorage.setItem('ofPill',s);s=''}catch(x){}
+      neemCalcMee();
       location.href=top.getAttribute('action').split('#')[0]+(s?'?'+s:'')+'#offerte';
       return;
     }
@@ -48,7 +66,7 @@
   // staat Naam daarboven; anders blijft Van bovenaan. Desktop en zonder script: de gewone ankersprong.
   function zacht(){return matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}
   function naarVelden(gedrag){
-    var vn=obf&&obf.querySelector('.sb-ob__vn'),nm=document.getElementById('sb-ob-naam');
+    var vn=blok&&blok.querySelector('.sb-ob__vn'),nm=document.getElementById('sb-ob-naam');
     if(!vn||!matchMedia('(max-width:900px)').matches)return false;
     var kop=document.getElementById('topbar'),balk=document.querySelector('.mcta'),boven=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||100,
       hoogte=nm?nm.getBoundingClientRect().bottom-vn.getBoundingClientRect().top:0,
@@ -57,16 +75,25 @@
     scrollTo({top:vn.getBoundingClientRect().top+scrollY-boven,behavior:gedrag});
     return true;
   }
-  if(obf){
+  // 17-11-2026: ook buiten /offerte/ (blok in plaats van obf): de offerteknop van een calculator gaat naar #offerte-aanvragen
+  // op dezelfde pagina en landde op mobiel op het paneel met de foto, boven het formulier.
+  if(blok){
     document.addEventListener('click',function(e){
       var a=e.target.closest&&e.target.closest('a[href="#offerte-aanvragen"]');
       if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
       if(naarVelden(zacht()))e.preventDefault();
     });
-    if(location.hash==='#offerte'||location.hash==='#offerte-aanvragen'){
+    if(location.hash==='#offerte-aanvragen'||(obf&&location.hash==='#offerte')){
       var ga=function(){naarVelden('instant')};
       if(document.readyState==='complete')setTimeout(ga,0);else addEventListener('load',function(){setTimeout(ga,0)});
     }
+  }
+  // Aankomst op /offerte/ of /offerte/videogesprek/: de blokken van de calculators (zie neemCalcMee) komen in Opmerkingen.
+  // Een blok dat al in het veld staat, wordt vervangen.
+  if(obf){
+    var calc='';try{calc=sessionStorage.getItem('ofCalc')||'';sessionStorage.removeItem('ofCalc')}catch(x){}
+    var opmCalc=obf.querySelector('#sb-ob-opm');
+    if(calc&&opmCalc){var rest=opmCalc.value.replace(BLOKKEN,'').trim();opmCalc.value=(rest?rest+'\n\n':'')+calc}
   }
   // CF-48: /offerte/ heeft geen groot formulier meer maar het offerteblok (#offerte-aanvragen); daar gaan de waarden in.
   var ob=!lf&&/^\/offerte\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;

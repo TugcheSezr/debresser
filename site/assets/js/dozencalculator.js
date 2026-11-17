@@ -37,7 +37,28 @@
     var q='m2='+inv.m2+'&kamers='+inv.kamers+'&bewoners='+inv.bewoners+'&pack='+encodeURIComponent(FACTOR[inv.pack]?inv.pack:'gemiddeld')
       +(inv.extras.length?'&extras='+encodeURIComponent(inv.extras.join(',')):'');
     $('dzc-naar-offerte').href='/offerte/?'+q+'#offerte';
+    zetInAanvraag(inv,r);
   }
+  // 17-11-2026: de schatting gaat mee met de aanvraag. Zodra de bezoeker iets verandert of op de knop drukt, staat de
+  // actuele schatting als blok in Opmerkingen van het offerteblok op deze pagina (zelfde opzet als op pro.debresser.nl);
+  // site.js neemt dat blok mee naar /offerte/. Onaangeroerd gaat er niets mee. De eigen tekst van de bezoeker blijft staan.
+  var opm=document.querySelector('#offerte-aanvragen #sb-ob-opm'),mee=false;
+  var BEGIN='--- Dozenschatting ---',EIND='--- Einde dozenschatting ---';
+  var SPULLEN={licht:'weinig',gemiddeld:'gemiddeld veel',zwaar:'veel'};
+  function zetInAanvraag(inv,r){
+    if(!opm||!mee)return;
+    var blok=BEGIN+'\nOngeveer '+r.advies+' dozen ('+r.min+' tot '+r.max+'), waarvan '+r.boeken+' boekendozen'+(r.garderobe?' en '+r.garderobe+' garderobedozen':'')
+      +'. Invoer: '+inv.m2+' m², '+inv.kamers+(inv.kamers===1?' kamer, ':' kamers, ')+inv.bewoners+(inv.bewoners===1?' bewoner, ':' bewoners, ')
+      +(SPULLEN[inv.pack]||SPULLEN.gemiddeld)+' spullen'+(inv.extras.length?'; veel '+inv.extras.join(', '):'')
+      +'. Indicatieve schatting, geen offerte.\n'+EIND;
+    var v=opm.value,b=v.indexOf(BEGIN),e=b<0?-1:v.indexOf(EIND,b);
+    var nieuw=e>=0?v.slice(0,b)+blok+v.slice(e+EIND.length):v+(v?'\n\n':'')+blok;
+    if(nieuw!==v)opm.value=nieuw;
+  }
+  function aan(){mee=true}
+  form.addEventListener('input',aan);
+  form.addEventListener('change',aan);
+  $('dzc-naar-offerte').addEventListener('click',function(){mee=true;toon()});
   form.addEventListener('input',toon);
   form.addEventListener('change',toon);
   form.classList.add('dzc-form--aan');

@@ -136,12 +136,38 @@
     var v=r1(getal('vpc-m3',300));$('vpc-offerte').href='/offerte/'+(eigenM3&&v>=1?'?m3='+v:'')+'#offerte';
     var af=$('vpc-afkoppelen');af.max=String(heel('vpc-witgoed',20));
     $('vpc-weken-veld').hidden=!+$('vpc-opslag').value;
+    zetInAanvraag();
+  }
+  // 17-11-2026: de prijsindicatie gaat mee met de aanvraag. Zodra de bezoeker iets in de berekening verandert of op de
+  // offerteknop drukt, staat de actuele indicatie als blok in Opmerkingen van het offerteblok op deze pagina (zelfde tekst
+  // als op pro.debresser.nl); site.js neemt dat blok mee naar /offerte/. Onaangeroerd gaat er niets mee.
+  var opm=document.querySelector('#offerte-aanvragen #sb-ob-opm'),mee=false;
+  var BEGIN='--- Prijsindicatie ---',EIND='--- Einde prijsindicatie ---';
+  function tekst(el){return el?el.textContent.replace(/\s+/g,' ').trim():''}
+  function zetInAanvraag(){
+    if(!opm||!mee)return;
+    var regels=[].map.call(document.querySelectorAll('#vpc-regels li'),function(li){
+      var naam=li.querySelector('span'),klein=naam&&naam.querySelector('small');
+      return (naam?naam.firstChild.textContent.trim():'')+(klein?' ('+tekst(klein)+')':'')+' '+tekst(li.querySelector('b'));
+    });
+    var woning=$('vpc-woning'),inv=[];
+    [['vpc-m3','volume ',' m³'],['vpc-van','van ',''],['vpc-naar','naar ',''],['vpc-datum','datum ',''],['vpc-etage','verdieping ','']].forEach(function(v){
+      var el=$(v[0]),waarde=el&&el.value.trim();if(waarde)inv.push(v[1]+waarde+v[2]);
+    });
+    if(woning&&woning.value)inv.push('woning '+tekst(woning.options[woning.selectedIndex]));
+    var stuk=BEGIN+'\nIndicatie '+tekst($('vpc-totaal'))+' inclusief btw: '+regels.join('; ')+'. Invoer: '+inv.join(', ')+'. Indicatie, geen offerte.\n'+EIND;
+    var v=opm.value,b=v.indexOf(BEGIN),e=b<0?-1:v.indexOf(EIND,b);
+    var nieuw=e>=0?v.slice(0,b)+stuk+v.slice(e+EIND.length):v+(v?'\n\n':'')+stuk;
+    if(nieuw!==v)opm.value=nieuw;
   }
   // ?m3= uit de m3-calculator: getal met punt, hoogstens één decimaal, 1 tot en met 300; anders negeren
   var eigenM3=false;
   var m=/^\?(?:.*&)?m3=([0-9]{1,3}(?:\.[0-9])?)(?:&|$)/.exec(location.search);
   if(m&&+m[1]>=1&&+m[1]<=300){$('vpc-m3').value=m[1];eigenM3=true;history.replaceState(null,'',location.pathname+location.hash)}
   $('vpc-m3').addEventListener('input',function(){eigenM3=true});
+  function aan(){mee=true}
+  blok.addEventListener('input',aan);blok.addEventListener('change',aan);
+  $('vpc-offerte').addEventListener('click',function(){mee=true;toon()});
   blok.addEventListener('input',toon);blok.addEventListener('change',toon);
   toon();
 })();
