@@ -11,8 +11,11 @@ const BAS_HOST = 'api.bas.app';
 const MAX_BODY = 16000; // bytes JSON
 const BOTID_MS = 5000;
 const BAS_MS = 8000;
-const MAX_NOTITIE = 3000;
-const MAX_WAARDE = 500; // per notitiewaarde, behalve de vrije opmerking
+// v11 (17-11-2026): was 3000 en 500. Bas kent geen maximum voor de notitie; een telling van ruim 19.000 tekens kwam bij
+// Bas helemaal binnen (Bas Software, 30-10-2026). 3000 kapte een grote inventaris uit de m3-calculator af en 500 het einde
+// van een lange prijsindicatie (gemeten: 671 tekens). MAX_BODY begrenst de aanvraag als geheel.
+const MAX_NOTITIE = 19000;
+const MAX_WAARDE = 1000; // per notitiewaarde, behalve de vrije opmerking
 
 const TUSSENVOEGSELS = new Set(['van', 'de', 'der', 'den', 'het', "'t", 'ter', 'ten', 'te', 'in', 'op', 'onder', 'aan',
   'bij', 'uit', 'voor', 'la', 'le', 'du', 'da', 'di', 'del', 'dos', 'des', 'von', 'zu', 'vd', 'v.d.', "'s"]);
@@ -35,6 +38,15 @@ const WONINGTYPE = { 'Appartement': 'apartment', 'Eengezinswoning': 'house', 'St
 // Adres zoals de adreszoekers het in het veld zetten: "Oppe Brik 30, 5953PB Reuver" (PDOK) of "Wetstraat 16, 1000 Brussel".
 // Toevoeging: letters ("12 A", "1a"), na - of / ("1-5", "16/3") of een Belgisch busnummer ("16 bus 3").
 const ADRES = /^(.+?)\s+(\d{1,5})(?:\s*([a-z]{1,4})|\s*([-\/])\s*([a-z0-9]{1,4})|\s+bus\s*([a-z0-9]{1,4}))?\s*,\s*(\d{4})(\s?)([a-z]{2})?\s+(.+)$/i;
+// v12 (17-11-2026): een compleet Nederlands adres zonder komma, of met huisnummer en postcode aan elkaar
+// ("Teststraat 129999 XZ Plaats"). De postcode wordt van achteren gelezen: vier cijfers en twee letters; wat ervoor
+// staat is het huisnummer (advies van Bas Software, 17-11-2026). Alleen geprobeerd als de strenge vorm hierboven niet
+// past, en alleen met postcodeletters: de Belgische vorm zonder letters blijft zoals hij was. Zelfde groepen als ADRES.
+// v13 (18-11-2026): in de losse vorm begint een huisnummer niet met 0 ("Calle Test 03560 el ..." is een buitenlandse
+// postcode, geen huisnummer 0 met postcode 3560EL). De strenge vorm hierboven is niet veranderd.
+const ADRES_LOS = /^(.+?)\s+([1-9]\d{0,4})(?:\s*([a-z]{1,4})|\s*([-\/])\s*([a-z0-9]{1,4})|\s+bus\s*([a-z0-9]{1,4}))?[\s,]*([1-9]\d{3})(\s?)([a-z]{2})[\s,]+(.+)$/i;
+// In de losse vorm is de plaats alleen een naam ("Den Haag", "'s-Hertogenbosch", "St. Willebrord"): geen cijfers.
+const PLAATS_LOS = /^[\p{L}'][\p{L}' .-]*$/u;
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
 // Alleen tekst telt. Een regelovergang (ook NEL en de Unicode-regelscheiders) wordt een spatie, in een opmerking een
@@ -67,11 +79,18 @@ export function parseAdres(tekst, land) {
   const s = ruw.replace(/,\s*nederland$/i, '');
   // Geen echt adres is zo lang; de grens houdt ook de reguliere expressie snel bij vijandige invoer.
   if (s.length > 200) return null;
-  const m = ADRES.exec(s);
+  let m = ADRES.exec(s);
+  const los = !m;
+  if (los) m = ADRES_LOS.exec(s);
   if (!m) return null;
   const [, straat, nummer, letterToevoeging, teken, naTeken, bus, cijfers, spatie, letters, plaats] = m;
   // Nog een deel na de plaats ("Wien, Oostenrijk", "Brussel, België") noemt een ander land of iets onbekends.
   if (plaats.includes(',')) return null;
+  // Losse vorm: een komma in het straatdeel of iets anders dan een naam als plaats maakt de splitsing onzeker.
+  if (los && (straat.includes(',') || !PLAATS_LOS.test(plaats))) return null;
+  // v13: huisnummer en postcode aan elkaar ("129999 XZ") telt alleen als de postcodeletters hoofdletters zijn of aan de
+  // cijfers vastzitten. "Teststrasse 47533 am See" is een buitenlandse postcode van vijf cijfers met een woord erachter.
+  if (los && spatie && letters === letters.toLowerCase() && s.includes(nummer + cijfers)) return null;
   // Op de BE-site komt "Meir 1-11" van Photon: een reeks huisnummers van één gebouw, geen toevoeging.
   if (land === 'BE' && teken === '-') return null;
   if (letters) {

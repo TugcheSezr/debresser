@@ -15,10 +15,19 @@
   // wordt een oud restant gewist. Niet bij een klik die een nieuw tabblad opent (dat tabblad heeft een eigen opslag) en niet
   // bij een link naar de pagina waar de bezoeker al is.
   var blok=!lf?document.querySelector('#offerte-aanvragen form'):null;
-  var BLOKKEN=/^--- (?!Einde )[^\n]* ---\n[\s\S]*?\n--- Einde [^\n]* ---$/gm;
+  // 18-11-2026: de begin- en de eindregel hoeven niet alleen op hun regel te staan. Wie in Opmerkingen klikt, typt ervoor,
+  // erachter of midden in het blok; het blok reist dan nog steeds mee, met wat de bezoeker erin typte. Tekst buiten het
+  // blok reist niet mee. Is een van de twee streepjesregels zelf beschadigd, dan reist dat blok niet mee.
+  // calcBlokken geeft de blokken en de rest van de tekst. Een blok loopt van een beginregel tot en met de eerstvolgende
+  // eindregel. Twee zoekers na elkaar in plaats van 1 uitdrukking: zo groeit de rekentijd niet met het kwadraat van de lengte.
+  function calcBlokken(v){
+    var B=/--- (?!Einde )[^\n]{1,2000}? ---/g,E=/--- Einde [^\n]{1,2000}? ---/g,blokken=[],rest='',i=0,b;
+    while((b=B.exec(v))&&(E.lastIndex=B.lastIndex,E.exec(v))){blokken.push(v.slice(b.index,E.lastIndex));rest+=v.slice(i,b.index);i=B.lastIndex=E.lastIndex}
+    return{blokken:blokken,rest:rest+v.slice(i)};
+  }
   function neemCalcMee(){
-    var o=blok&&blok.querySelector('#sb-ob-opm'),b=o&&o.value.match(BLOKKEN);
-    try{if(b)sessionStorage.setItem('ofCalc',b.join('\n\n'));else sessionStorage.removeItem('ofCalc')}catch(x){}
+    var o=blok&&blok.querySelector('#sb-ob-opm'),b=o?calcBlokken(o.value).blokken:[];
+    try{if(b.length)sessionStorage.setItem('ofCalc',b.join('\n\n'));else sessionStorage.removeItem('ofCalc')}catch(x){}
   }
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a[href]');
@@ -68,12 +77,47 @@
   function naarVelden(gedrag){
     var vn=blok&&blok.querySelector('.sb-ob__vn'),nm=document.getElementById('sb-ob-naam');
     if(!vn||!matchMedia('(max-width:900px)').matches)return false;
+    var start=mee&&!mee.hidden?mee:vn;
     var kop=document.getElementById('topbar'),balk=document.querySelector('.mcta'),boven=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||100,
-      hoogte=nm?nm.getBoundingClientRect().bottom-vn.getBoundingClientRect().top:0,
+      hoogte=nm?nm.getBoundingClientRect().bottom-start.getBoundingClientRect().top:0,
       plek=innerHeight-(balk&&getComputedStyle(balk).display!=='none'?balk.offsetHeight:0)-8;
     if(hoogte&&boven+hoogte>plek&&plek-hoogte>=(kop?kop.offsetHeight:64)+8)boven=plek-hoogte;
-    scrollTo({top:vn.getBoundingClientRect().top+scrollY-boven,behavior:gedrag});
+    scrollTo({top:start.getBoundingClientRect().top+scrollY-boven,behavior:gedrag});
     return true;
+  }
+  // 17-11-2026 (r2): melding boven de velden van het offerteblok zodra een uitkomst van een calculator in de aanvraag staat:
+  // een blok van "--- ... ---" tot en met "--- Einde ... ---" (Engels: "--- End ... ---") in Opmerkingen, of op pro een
+  // zichtbaar veld met een schatting (#pro-...-field). De melding volgt de aanvraag: haalt de bezoeker de uitkomst weg, dan
+  // verdwijnt hij. Op mobiel begint de landing (naarVelden) bij de melding, zodat hij samen met Van en Naar in beeld staat.
+  // 18-11-2026: wie in Opmerkingen klikt, komt midden in het blok, om de beginregel of direct achter de eindregel, en typt
+  // daar zijn eigen zin. De uitkomst gaat dan nog steeds mee. Daarom: heeft er een heel blok gestaan (MEEBLOK), dan blijft
+  // de melding zolang er nog een streepjesregel van een blok staat (MEEREST): een regel die met "--- ... ---" begint, of
+  // ergens een eindregel. Zonder heel blok vooraf komt er geen melding, wat de bezoeker ook typt.
+  var meeForm=document.querySelector('#offerte-aanvragen form'),meeVelden=meeForm&&meeForm.querySelector('.sb-ob__velden'),mee=null;
+  var MEEBLOK=/^--- (?!Einde |End )[^\n]* ---\n[\s\S]*?\n--- (?:Einde|End) [^\n]* ---/m,meeGezien=false;
+  var MEEREST=/^--- [^\n]{1,200} ---|--- (?:Einde|End) [^\n]{1,200} ---/m;
+  function werkMeeBij(){
+    if(!mee)return;
+    var o=meeForm.querySelector('#sb-ob-opm'),v=o?o.value:'';
+    meeGezien=MEEBLOK.test(v)||(meeGezien&&MEEREST.test(v));
+    // 18-11-2026: de m3-calculator stuurt zijn inventaris altijd mee. Haalt de bezoeker het blok uit het veld, dan zet de
+    // calculator het bij versturen terug. Zolang hij een inventaris heeft, staat data-m3-mee op het veld: de melding blijft.
+    var aan=meeGezien||!!(o&&o.hasAttribute('data-m3-mee'));
+    if(!aan)[].forEach.call(meeForm.querySelectorAll('[id^="pro-"][id$="-field"]'),function(v){var t=v.querySelector('textarea');if(!v.hidden&&t&&t.value.trim())aan=true});
+    if(mee.hidden===aan)mee.hidden=!aan;
+  }
+  if(meeVelden){
+    mee=document.createElement('p');mee.className='sb-ob__mee';mee.setAttribute('role','status');mee.hidden=true;
+    mee.style.cssText='grid-column:1/-1;margin:0;padding:11px 14px;border-left:4px solid var(--ok);border-radius:8px;background:var(--creme);color:var(--ant-diep);font:600 .95rem/1.45 var(--font-tekst)';
+    var meeVink=document.createElement('span');meeVink.setAttribute('aria-hidden','true');meeVink.textContent='\u2713';
+    meeVink.style.cssText='margin-right:8px;color:var(--ok);font-weight:700';
+    mee.appendChild(meeVink);mee.appendChild(document.createTextNode('Uw berekening gaat mee met deze aanvraag.'));
+    meeVelden.insertBefore(mee,meeVelden.firstChild);
+    // Na elke invoer of klik, als de calculators hun werk gedaan hebben; en bij terugkomst op de pagina (vorige/volgende).
+    var meeStraks=function(){setTimeout(werkMeeBij,0)};
+    ['input','change','click'].forEach(function(t){document.addEventListener(t,meeStraks)});
+    addEventListener('pageshow',meeStraks);
+    werkMeeBij();
   }
   // 17-11-2026: ook buiten /offerte/ (blok in plaats van obf): de offerteknop van een calculator gaat naar #offerte-aanvragen
   // op dezelfde pagina en landde op mobiel op het paneel met de foto, boven het formulier.
@@ -81,7 +125,7 @@
     document.addEventListener('click',function(e){
       var a=e.target.closest&&e.target.closest('a[href="#offerte-aanvragen"]');
       if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-      if(naarVelden(zacht()))e.preventDefault();
+      werkMeeBij();if(naarVelden(zacht()))e.preventDefault();
     });
     if(location.hash==='#offerte-aanvragen'||(obf&&location.hash==='#offerte')){
       var ga=function(){naarVelden('instant')};
@@ -93,7 +137,7 @@
   if(obf){
     var calc='';try{calc=sessionStorage.getItem('ofCalc')||'';sessionStorage.removeItem('ofCalc')}catch(x){}
     var opmCalc=obf.querySelector('#sb-ob-opm');
-    if(calc&&opmCalc){var rest=opmCalc.value.replace(BLOKKEN,'').trim();opmCalc.value=(rest?rest+'\n\n':'')+calc}
+    if(calc&&opmCalc){var rest=calcBlokken(opmCalc.value).rest.trim();opmCalc.value=(rest?rest+'\n\n':'')+calc;meeGezien=true;werkMeeBij()}
   }
   // CF-48: /offerte/ heeft geen groot formulier meer maar het offerteblok (#offerte-aanvragen); daar gaan de waarden in.
   var ob=!lf&&/^\/offerte\/?$/.test(location.pathname)?document.querySelector('#offerte-aanvragen form'):null;
@@ -389,7 +433,10 @@ document.addEventListener('click',function(e){
 // De eis zelf (postcode plus een naam in de tekst) wordt hieronder lokaal gecontroleerd, dus een
 // bezoeker kan altijd verder, ook als PDOK niet antwoordt.
 (function(){
-  var API='https://api.pdok.nl/bzk/locatieserver/search/v3_1/suggest?fq=type:adres&rows=6&q=';
+  // 17-11-2026: fq=postcode:* erbij. Zonder dat filter zet de zoeker adressen zonder postcode bovenaan (gemeten: bij
+  // "Dorpsstraat 1" alle zes regels). Zo'n regel kan de Bas-koppeling niet als adres lezen.
+  // 18-11-2026: het filter geldt voor de keuzelijst. aanvullen() vraagt zonder filter (zie haal en ene).
+  var API='https://api.pdok.nl/bzk/locatieserver/search/v3_1/suggest?fq=type:adres&fq=postcode:*&rows=6&q=';
   var PC=/[1-9][0-9]{3}\s?[a-z]{2}/i;
   // Per veld een eigen tekst: de foutenlijst zet ze onder elkaar, en twee keer dezelfde regel
   // vertelt de bezoeker niet welk van de twee adressen hij moet aanvullen.
@@ -404,23 +451,71 @@ document.addEventListener('click',function(e){
     if(!el||!el.setCustomValidity)return;
     el.setCustomValidity(el.required&&el.value.trim()&&!compleet(el.value)?(FOUT[el.id]||''):'');
   }
-  function haal(q,klaar){
+  // 17-11-2026: zachte hulp onder Van van het offerteblok. Staat er tekst zonder postcode en is het veld verlaten, dan
+  // komt er een zin onder het veld. Versturen kan altijd; de zin is alleen een aanwijzing en klopt ook bij een
+  // buitenlands adres. Niet onder Naar: daar is een buitenlands adres gewoon. De zin wordt pas gemaakt als hij nodig is.
+  var HULP='Een adres in Nederland? Typ postcode en huisnummer, of kies het adres uit de lijst.';
+  function hulp(el){
+    if(!el||el.id!=='sb-ob-van')return;
+    var p=document.getElementById('sb-ob-van-hulp'),aan=!!el.value.trim()&&!compleet(el.value)&&document.activeElement!==el;
+    if(!p){
+      if(!aan)return;
+      p=document.createElement('p');p.id='sb-ob-van-hulp';p.className='sb-ob__adreshulp';p.setAttribute('role','status');p.textContent=HULP;
+      p.style.cssText='margin:8px 0 0;padding:8px 10px;border-left:4px solid var(--geel);border-radius:6px;background:var(--creme);color:var(--ant-diep);font:500 .85rem/1.4 var(--font-tekst)';
+      el.parentNode.parentNode.insertBefore(p,el.parentNode.nextSibling);
+    }
+    p.hidden=!aan;
+    if(aan)el.setAttribute('aria-describedby',p.id);else el.removeAttribute('aria-describedby');
+  }
+  // 17-11-2026: een voorstel van de zoeker mag het getypte alleen aanvullen, nooit veranderen. Gemeten: voor
+  // "Kerkstraat 12 <plaats>" gaf de zoeker als enige "Oude Kerkstraat 12" terug, en voor huisnummer 2 ook 22 en 24.
+  // 18-11-2026: bij de zoeker past een losse letter of een los cijfer ook op het begin van een ander woord van het adres
+  // ("16 a" en "16-2" gaven nummer 16 terug bij postcode 2513AA).
+  // ene() geeft het ene voorstel dat past, anders null:
+  // - postcode getypt: het voorstel met die postcode en precies dat huisnummer;
+  // - geen postcode getypt: het getypte begint met straat en huisnummer van het voorstel; wat daarna getypt is, is niets
+  //   of precies de plaats van het voorstel ("Gravenhage" en "Den Haag" tellen voor 's-Gravenhage); de zoeker heeft al
+  //   zijn treffers laten zien (alles); en geen ander voorstel begint ook zo in een andere plaats, ook niet een zonder
+  //   postcode (daarom vraagt aanvullen() de zoeker zonder het postcodefilter).
+  var ANDERS={'den haag':'s gravenhage','den bosch':'s hertogenbosch'};
+  function kaal(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim()}
+  function woorden(s){return (s.match(/[a-z0-9]+/g)||[]).join(' ')}
+  function ene(q,namen,alles){
+    var t=kaal(q),m=t.match(PC),nr=m?kaal(t.replace(m[0],' ')):'',goed=[],plek=null,zelfde=true;
+    if(!m&&!alles)return null;
+    namen.forEach(function(n){
+      var k=kaal(n),deel=k.split(',')[0];
+      if(m){if(k.indexOf(', '+m[0].replace(' ','')+' ')>-1&&deel.slice(-nr.length-1)===' '+nr)goed.push(n);return}
+      if(t.indexOf(deel)!==0||/[a-z0-9]/.test(t.charAt(deel.length)))return;
+      var p=k.replace(/, [1-9][0-9]{3}[a-z]{2} /,', '),rest=woorden(t.slice(deel.length)),plaats=woorden(p.slice(deel.length));
+      if(plek===null)plek=p;else if(plek!==p)zelfde=false;
+      if(compleet(n)&&(!rest||rest===plaats||rest===plaats.replace(/^[st] /,'')||ANDERS[rest]===plaats))goed.push(n);
+    });
+    return zelfde&&goed.length===1?goed[0]:null;
+  }
+  function haal(q,klaar,alle){
     // "5953PB30" zonder spatie vindt PDOK niet; met een spatie ervoor wel.
     q=q.replace(/([1-9][0-9]{3})\s*([a-z]{2})\s*/i,'$1$2 ');
-    fetch(API+encodeURIComponent(q),{headers:{Accept:'application/json'}})
+    // 18-11-2026: alle = zonder het postcodefilter. Zo houdt hetzelfde adres zonder postcode in een andere plaats de
+    // aanvulling tegen (gemeten op 40 adressen: met en zonder filter dezelfde aanvullingen).
+    fetch((alle?API.replace('&fq=postcode:*',''):API)+encodeURIComponent(q),{headers:{Accept:'application/json'}})
       .then(function(r){return r.json()})
-      .then(function(j){klaar(((j&&j.response&&j.response.docs)||[]).map(function(d){return d.weergavenaam}).filter(Boolean))})
+      // 17-11-2026: PDOK geeft hetzelfde adres soms meer dan eens terug (meer objecten op een adres); elke naam telt 1 keer.
+      // Het tweede getal zegt of dit alle treffers zijn (numFound) of alleen de eerste zes.
+      .then(function(j){var r=(j&&j.response)||{},d=r.docs||[];klaar(d.map(function(x){return x.weergavenaam}).filter(function(n,i,a){return n&&a.indexOf(n)===i}),r.numFound<=d.length)})
       .catch(function(){klaar(null)});   // niet kunnen kijken mag een aanvraag nooit tegenhouden
   }
   // Staat er precies EEN adres tegenover wat iemand typte, dan vullen wij het zelf aan. Bij meer
   // treffers gebeurt er niets: een gok zet het verkeerde adres in de offerte.
   function aanvullen(el){
     var q=el&&el.value.trim();
-    if(!q||compleet(q))return;
-    haal(q,function(namen){
-      if(!namen||namen.length!==1||document.activeElement===el)return;
-      el.value=namen[0];keur(el);
-    });
+    if(!q||compleet(q)){hulp(el);return}
+    haal(q,function(namen,alles){
+      if(el.value.trim()!==q)return;   // intussen staat er andere tekst: dit antwoord hoort daar niet bij
+      var naam=namen&&ene(q,namen,alles);
+      if(naam&&document.activeElement!==el){el.value=naam;keur(el)}
+      hulp(el);
+    },true);
   }
   function koppel(el){
     var lijst=document.getElementById(el.id+'-keuzes');if(!lijst)return;
@@ -455,7 +550,7 @@ document.addEventListener('click',function(e){
       if(opties.length)setTimeout(function(){lijst.scrollIntoView({block:'nearest'})},0);
     }
     el.addEventListener('input',function(){
-      keur(el);
+      keur(el);hulp(el);
       var q=el.value.trim();
       clearTimeout(timer);
       if(q.length<5){sluit();return}
@@ -504,6 +599,13 @@ document.addEventListener('click',function(e){
   // zet ze uit sessionStorage of de URL in het formulier en zet dan data-pill, want de URL is daarna leeg.
   var lfForm=document.getElementById('lfForm');
   if(lfForm&&lfForm.dataset.pill){aanvullen(van);aanvullen(naar)}
+  // 17-11-2026: sinds 29-09-2026 is het formulier het offerteblok (sb-ob-). De regels hierboven kijken nog naar lf-,
+  // dat op geen pagina meer staat; een adres uit het kleine formulier bovenaan werd daardoor niet meer aangevuld.
+  var obVan=document.getElementById('sb-ob-van'),obNaar=document.getElementById('sb-ob-naar'),obForm=obVan&&obVan.form;
+  if(obForm){
+    if(pill)pill.addEventListener('submit',function(){setTimeout(function(){aanvullen(obVan);aanvullen(obNaar)},0)});
+    if(obForm.dataset.pill){aanvullen(obVan);aanvullen(obNaar)}
+  }
 
   // Vangnet: een waarde die NIET door de bezoeker is getypt (de pill, autofill van de browser,
   // terug in de geschiedenis) geeft geen input-event, dus is er dan ook niet gekeurd. Deze

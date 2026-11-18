@@ -296,17 +296,52 @@
 
     var opm = document.querySelector('#offerte-aanvragen #sb-ob-opm');
     var inventaris = '', fouten = [], prijsM3 = '';
+    // 18-11-2026: wat de bezoeker in het blok typte, mag niet verdwijnen als het blok opnieuw wordt geschreven. Een klik in
+    // Opmerkingen komt in het blok, want het veld toont het begin ervan. Regel: dit script gooit geen tekst weg die het niet
+    // zelf schreef. blokPlek zoekt het blok in het veld. Typte de bezoeker in de begin- of de eindregel zelf, dan is die regel
+    // niet meer te vinden; blokPlek gaat dan uit van het blok dat het script de vorige keer schreef (g) en zoekt het deel dat
+    // voor of achter de getypte tekst nog staat. Staat daartussen een streepjesregel, dan is dat het blok van een andere
+    // rekenhulp: dat blijft staan. blokEigen geeft wat er sinds de vorige keer in het blok bij kwam; de aanroeper zet dat achter
+    // in het veld. Zonder vorige keer (g leeg) en bij een onaangeraakt blok verandert er niets.
+    function blokPlek(v, B, E, g) {
+      var b = v.indexOf(B), e = v.indexOf(E, b < 0 ? 0 : b), n = 0, deel, i;
+      if (b >= 0 && e >= 0) return [b, e + E.length];
+      if (!g || (b < 0 && e < 0)) return null;
+      if (b >= 0) {   // de eindregel is geraakt: tel hoeveel van het vorige blok er vanaf het begin nog staat
+        while (n < g.length && v.charAt(b + n) === g.charAt(n)) n++;
+        deel = g.slice(n); i = deel.length > 4 ? v.indexOf(deel, b + n) : -1;
+        return [b, i < 0 || v.slice(b + n, i).indexOf('--- ') >= 0 ? b + n : i + deel.length];
+      }
+      e += E.length;   // de beginregel is geraakt: tel hoeveel van het vorige blok er voor het eind nog staat
+      while (n < g.length && n < e && v.charAt(e - 1 - n) === g.charAt(g.length - 1 - n)) n++;
+      deel = g.slice(0, g.length - n); i = deel.length > 4 && e - n >= deel.length ? v.lastIndexOf(deel, e - n - deel.length) : -1;
+      return [i < 0 || v.slice(i + deel.length, e - n).indexOf('--- ') >= 0 ? e - n : i, e];
+    }
+    function blokEigen(nu, g) {
+      if (!g || nu === g) return '';
+      var p = 0, s = 0, max = Math.min(nu.length, g.length);
+      while (p < max && nu.charAt(p) === g.charAt(p)) p++;
+      while (s < max - p && nu.charAt(nu.length - 1 - s) === g.charAt(g.length - 1 - s)) s++;
+      return nu.slice(p, nu.length - s).trim();
+    }
+    var geschreven = '';   // het blok zoals dit script het de vorige keer in het veld zette
     function zetInFormulier() {
       if (!opm) return;
-      var v = opm.value, b = v.indexOf(S.blok_begin), e = b < 0 ? -1 : v.indexOf(S.blok_eind, b);
-      var voor = v, na = '';
-      if (e >= 0) {
-        voor = v.slice(0, b);
-        na = v.slice(e + S.blok_eind.length);
+      var v = opm.value, plek = blokPlek(v, S.blok_begin, S.blok_eind, geschreven);
+      var voor = v, na = '', eigen = '';
+      if (plek) {
+        voor = v.slice(0, plek[0]);
+        na = v.slice(plek[1]);
+        eigen = blokEigen(v.slice(plek[0], plek[1]), geschreven);
         if (voor.slice(-2) === '\n\n') voor = voor.slice(0, -2);
       }
       var nieuw = inventaris ? (voor ? voor + '\n\n' : '') + inventaris + na : voor + na;
+      if (eigen) nieuw += (nieuw ? '\n\n' : '') + eigen;
       if (nieuw !== v) opm.value = nieuw;
+      geschreven = inventaris;
+      // De inventaris gaat altijd mee: haalt de bezoeker het blok uit het veld, dan zet dit script het bij versturen terug.
+      // Het merk data-m3-mee op het veld zegt dat tegen het sitescript; dat laat de melding "gaat mee" dan staan.
+      if (inventaris) opm.setAttribute('data-m3-mee', ''); else opm.removeAttribute('data-m3-mee');
     }
 
     function herbereken() {
