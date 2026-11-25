@@ -1,5 +1,9 @@
 # Website De Bresser (site/)
 
+> **LET OP (25-11-2026): deze tak loopt achter en is niet meer de bron van de live site.** De live site wordt
+> onderhouden in de gebouwde pagina's van de repo `debresser-site` (main). Bouw of spiegel niet vanuit deze tak naar
+> live: dat zet onder meer het cookievenster en oudere pagina's terug. Zie de README van `debresser-site`.
+
 Website van De Bresser B.V. (Herastraat 9, Tilburg), voor www.debresser.nl. Gebouwd op de opzet van
 een eerdere site; merk, inhoud en structuur zijn van De Bresser. Huisstijl:
 `../brandbook-debresser/brandbook-de-bresser.html`, feiten: `../brandbook-debresser/bevindingen.md` §3,
